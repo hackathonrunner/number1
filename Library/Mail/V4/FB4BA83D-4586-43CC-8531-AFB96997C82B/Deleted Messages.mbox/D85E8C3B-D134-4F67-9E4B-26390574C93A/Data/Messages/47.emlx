@@ -1,0 +1,769 @@
+39144     
+Return-path: <bounces+2693180-1ee3-austindreier=icloud.com@m.dripemail2.com>
+Received: from mr28p00im-smtpin040.mac.com ([17.110.71.39])
+ by ms60015.mac.com (Oracle Communications Messaging Server 8.0.1.2.20170607
+ 64bit (built Jun  7 2017)) with ESMTP id <0OY800G689MLQH60@ms60015.mac.com>
+ for austindreier@icloud.com; Sun, 22 Oct 2017 14:01:33 +0000 (GMT)
+Original-recipient: rfc822;austindreier@icloud.com
+Received: from o6.m.dripemail2.com (o6.m.dripemail2.com [167.89.79.139])
+ by mr28p00im-smtpin040.me.com
+ (Oracle Communications Messaging Server 8.0.1.2.20170607 64bit (built Jun  7
+ 2017)) with ESMTPS id <0OY8000ER9MIDL20@mr28p00im-smtpin040.me.com> for
+ austindreier@icloud.com (ORCPT austindreier@icloud.com); Sun,
+ 22 Oct 2017 14:01:33 +0000 (GMT)
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 spamscore=0
+ clxscore=12 suspectscore=79 malwarescore=0 phishscore=0 adultscore=0
+ bulkscore=100 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.0.1-1707230000 definitions=main-1710220203
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10432:,,
+ definitions=2017-10-22_04:,, signatures=0
+Authentication-results: mr21p00im-dmarcmilter006.me.com; dmarc=none
+ header.from=flip2freedom.com
+Authentication-results: mr21p00im-spfmilter006.me.com; spf=pass
+ (mr21p00im-spfmilter006.me.com: domain of
+ bounces+2693180-1ee3-austindreier=icloud.com@m.dripemail2.com designates
+ 167.89.79.139 as permitted sender)
+ smtp.mailfrom=bounces+2693180-1ee3-austindreier=icloud.com@m.dripemail2.com;
+Received-SPF: pass (mr21p00im-spfmilter006.me.com: domain of
+ bounces+2693180-1ee3-austindreier=icloud.com@m.dripemail2.com designates
+ 167.89.79.139 as permitted sender) receiver=mr21p00im-spfmilter006.me.com;
+ client-ip=167.89.79.139; helo=o6.m.dripemail2.com;
+ envelope-from=bounces+2693180-1ee3-austindreier=icloud.com@m.dripemail2.com;
+Authentication-results: mr21p00im-dkimmilter004.me.com;	dkim=pass (1024-bit
+ key) header.d=dripemail2.com header.i=@dripemail2.com header.b=jJd7+y0i;
+	dkim-adsp=none
+DKIM-Signature: v=1; a=rsa-sha1; c=relaxed/relaxed; d=dripemail2.com;
+	h=content-type:from:mime-version:reply-to:subject:to; s=s1;
+	bh=qfZkvHMTdFfK7p7koEA3T42gn2I=; b=jJd7+y0iM0y7GVWuGiyaK71I76LPJ
+	HJP9bfc0TiCc9ogaQar7Vb1AFgzF6Xx/3K7A0koZZlKluOVnQeJhEIZGXdzS+6bi
+	sFtsu3RluBWjo0mv7pMyigi8ca2RBWIuHhBCWUAdtwL3xAiUY7QpJOk2xn3DQSbs
+	leAAsVFuFmYu1c=
+Received: by filter0239p1iad2.sendgrid.net with SMTP id
+ filter0239p1iad2-26215-59ECA4BA-18 2017-10-22 14:01:30.362256185 +0000 UTC
+Received: from MjY5MzE4MA
+ (ec2-54-209-139-39.compute-1.amazonaws.com [54.209.139.39])
+	by ismtpd0010p1iad2.sendgrid.net (SG) with HTTP id qe5TL6RnRKuxpKsaTOhpVA	for
+ <austindreier@icloud.com>; Sun, 22 Oct 2017 14:01:30.360 +0000 (UTC)
+Content-type: multipart/alternative;
+ boundary=60fa93f24be533ce6c983071d4cb96392dc1fb4e13483b5399d9de1f684c
+Date: Sun, 22 Oct 2017 14:01:30 +0000 (UTC)
+From: Sean Terry <sean@flip2freedom.com>
+MIME-version: 1.0
+Reply-to: reply-wbspgvnvbxie7nufttkn@in2.getdrip.com
+Subject:
+ =?UTF-8?Q?=F0=9F=98=B3_it's_not_what_you_think=E2=80=A6"stupid_simple"?=
+To: austindreier@icloud.com
+Message-id: <qe5TL6RnRKuxpKsaTOhpVA@ismtpd0010p1iad2.sendgrid.net>
+x-icloud-spam-score: 3311331
+ f=flip2freedom.com;e=m.dripemail2.com;is=yes;ir=no;spf=pass;dkim=pass;dmarc=noPolicy/noPolicy/none;gdwl=absent;pps=ham;clxs=ham;clxw=neutral
+X-CLX-Spam: false
+X-CLX-UnSpecialScore: None
+X-CLX-Score: 12
+X-CLX-UShades: None
+X-CLX-Shades: None
+X-MANTSH: 1TEIXR1gbG1oaGkNHB0tNT0ReQ0QZGxobEQpMQxcbHQQbGxsEGx0ZBBkYEBseGh8
+ aEQpMWRcbGBEKWU0XZEVETxEKWUkXGnEaEBp3BgcScRkdEB4fdwYYGgYaEQpZXhdoY3kRCkNOF
+ 3xTSH9JHmgBH2VLGHh/aV1+UE1velxmElh9HhxmYRh4EQpYXBcZBBoEGRgHTRlOE08TGRgFGx0
+ EGxsbBBsfHwQYHhoQGx4aHxoRCl5ZF3hjQUZyEQpNXBcZHxwRCkxaF2l4elJBTREKRVkXaGtrE
+ QpMXxd6BQUFBQUFBQUFHREKTU4XaBEKTEYXY2trEQpDWhcbHB0EEhMEHRMEGxkTEQpCXhcbEQp
+ CRRdmfRtde2JraU0TGxEKQk4XYX9Dem1NRXl+EkcRCkJMF2FBXUAFS3oaSWxhEQpCbBd6cBN5Y
+ 2gTHlABHhEKQkAXYUsaWk1sbW9lS2URCkJYF25HHRtOZGFFGxJAEQpwZxdnGGR5RkZjW2JoRRA
+ aEQpwaBdjfhlSEh0eewVhQxAaEQpwaBduRBJTZ355HR1/SRAcHhEKcGgXbVlMGh9Qa2ltH2AQB
+ xkaEQpwaBduHVBpemh4HBNTchAdGxEKcGgXenJfGUt5WmJSTUEQGhEKcH8XbgFZbRpwR295Uxo
+ QHRMRCnBfF2AdXBIZfH95E15bEBIaEQpwfRdkZhN7ewEafHpoQRAaEQpwfRdkZhN7ewEafHpoQ
+ RAaEQpwfRdkZhN7ewEafHpoQRAaEQpwfRdkZhN7ewEafHpoQRAaEQpwfRdjGQVbaGhZZFBSRRA
+ aEQpwfRdkZhN7ewEafHpoQRAaEQpwfRdkZhN7ewEafHpoQRAaEQpwbBdnHQF9SU5YHmVbRhAbE
+ hEKcEMXaU9mGn5ISxhoAWYQHR4RCm1+FxoRClhNF0sR
+x-dmarc-info: pass=none; dmarc-policy=(nopolicy); s=u0; d=u0
+x-dmarc-policy: none
+X-SG-EID:
+ wDL73fzM24memzQeYD8vNs60a1/y7ttRZFoC2GN2sWBokZ3lctNV2VyGVtRuJp4iIhDWwjujXmHY4z
+ QKof1g6caB/qlvOyaheo7OLf6kWfDBo5+i5MBUokQF63KgRJVkxR7ZM7zmP7ptRlS7Qzq+iNjofK5q
+ Rsr7v2T+pcmIdGo5GEXW9pv7DILcmby4xK1tkiXIoIo9lmN8QLvZFD3iaLwpEeGJp+3tQKJ3Ioye06
+ 8=
+X-SG-ID:
+ 6l1ICXxVk1U2NQBE+KPgx4bxFkoy1n8wwSkd401ab+xsHu43JNgJE7FR+4BkMCWNsQfcYS+WJK9c8q
+ LZNEjuSA==
+
+--60fa93f24be533ce6c983071d4cb96392dc1fb4e13483b5399d9de1f684c
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=UTF-8
+Mime-Version: 1.0
+
+So I was screwed...
+
+No contract
+
+No Buyers
+
+No Title company
+
+No Idea what price to offer
+
+No ideas how to write the contract
+
+BUT, I had a motivated seller :)
+
+Here's what I did...
+
+Get The Whole Story Here... ( http://t.dripemail2.com/c/eyJhY2NvdW50X2lkIjo=
+iOTE4MzExNyIsImRlbGl2ZXJ5X2lkIjoiMTQ2ODE5NTEwOSIsInVybCI6Imh0dHBzOi8vd3d3Lm=
+ZsaXAyZnJlZWRvbXdlYmNsYXNzLmNvbS9vcmdhbmljLXJlZz9fX3M9c21pZms3cXNlcW84bWU2Z=
+WRjbXoifQ )
+
+[ - - - - - - - - - -TIP - - - - - - - - - -]
+
+you can NEVER screw up a deal with a
+
+truly motivated seller.
+
+[ - - - - - - - - - /TIP - - - - - - - - - -]
+
+My first task was to get a contract but from where?
+
+I went to Staples and bought a "Real Estate Purchase Contract"
+
+...Check!
+
+Now I had to figure out how to write it up, but I didn't have
+time...
+
+...Yikes!
+
+...my appointment was that evening, I only had a couple hours
+left...
+
+I rushed to a title company I found in the phone book and met
+with Barb, she'd been doing transactions for years and knew
+exactly how to do a "simultaneous close"
+
+...Check!
+
+Appointment Time!!
+
+I remember feeling sick to my stomach, weak in the knees.
+I've NEVER met
+
+with a seller and I had no idea what to do or say.
+
+anyhoo
+
+I showed up and greeted the seller at the house - it was a mess!
+The pool was drained, the roof
+
+was leaking and the AC didn't work. Worse off than I expected,
+but who knows,
+
+I didn't know what I was looking for anyways :)
+
+I knew I had to figure out repairs, but how?
+
+Get The Whole Story Here... ( http://t.dripemail2.com/c/eyJhY2NvdW50X2lkIjo=
+iOTE4MzExNyIsImRlbGl2ZXJ5X2lkIjoiMTQ2ODE5NTEwOSIsInVybCI6Imh0dHBzOi8vd3d3Lm=
+ZsaXAyZnJlZWRvbXdlYmNsYXNzLmNvbS9vcmdhbmljLXJlZz9fX3M9c21pZms3cXNlcW84bWU2Z=
+WRjbXoifQ )
+
+We'll get back to that...
+
+So we sat down and I followed this "stupid simple" 3 step process
+to get the deal signed. I learned this from the course I bought.
+
+[ - - - - - - - - STUPID SIMPLE - - - - - - - - ]
+
+Step #1: I showed him the lowest comparable sold
+
+properties within a one-mile radius.
+
+This established a low baseline price.
+
+Step #2: I backed out these numbers:
+
+6% Realtor commissions
+
+5% market risk
+
+3% fix up costs
+
+2% closing cost
+
+This got us down to a number I "hoped" would work.
+
+Step #3: I "assumed the sale" I literally started
+
+writing the contract, and guess what?
+
+He signed it!!!
+
+Yippee!!
+
+[ - - - - - - - - /STUPID SIMPLE - - - - - - - - ]
+
+I had a signed contract for $84,000.
+
+I was so proud..then it hit me...my heart dropped!
+
+I don't have any money to buy this thing.
+
+Now WHAT?
+
+The Whole Story... ( http://t.dripemail2.com/c/eyJhY2NvdW50X2lkIjoiOTE4MzEx=
+NyIsImRlbGl2ZXJ5X2lkIjoiMTQ2ODE5NTEwOSIsInVybCI6Imh0dHBzOi8vd3d3LmZsaXAyZnJ=
+lZWRvbXdlYmNsYXNzLmNvbS9vcmdhbmljLXJlZz9fX3M9c21pZms3cXNlcW84bWU2ZWRjbXoifQ=
+ )
+
+Think "quick cash"
+
+See you tomorrow...
+
+Sean "quick cash" Terry
+
+P.S. Tomorrow I'll share the "secret ingredient" to multiple
+
+$11,000 paydays without using a single dime out of your own
+pocket.
+
+The Secret Ingredient ( http://t.dripemail2.com/c/eyJhY2NvdW50X2lkIjoiOTE4M=
+zExNyIsImRlbGl2ZXJ5X2lkIjoiMTQ2ODE5NTEwOSIsInVybCI6Imh0dHBzOi8vd3d3LmZsaXAy=
+ZnJlZWRvbXdlYmNsYXNzLmNvbS9vcmdhbmljLXJlZz9fX3M9c21pZms3cXNlcW84bWU2ZWRjbXo=
+ifQ )
+
+---------------------
+To make sure you keep getting these emails, please add
+sean@flip2freedom.com to your address book or whitelist us. Want out of
+the loop? <a href=3D"http://t.dripemail2.com/c/eyJhY2NvdW50X2lkIjoiOTE4MzEx=
+NyIsImRlbGl2ZXJ5X2lkIjoiMTQ2ODE5NTEwOSIsInVybCI6Imh0dHBzOi8vd3d3LmdldGRyaXA=
+uY29tL3N1YnNjcmliZXJzL3NtaWZrN3FzZXFvOG1lNmVkY216L3N1YnNjcmlwdGlvbnM_ZD13Yn=
+NwZ3ZudmJ4aWU3bnVmdHRrblx1MDAyNmV4Y2x1ZGVfY2xpY2s9MVx1MDAyNmludGVudD11bnN1Y=
+nNjcmliZVx1MDAyNl9fcz1zbWlmazdxc2VxbzhtZTZlZGNteiJ9">Unsubscribe</a>.
+
+Our postal address: 19420 North 59th Avenue, Glendale, AZ 85308
+
+
+--60fa93f24be533ce6c983071d4cb96392dc1fb4e13483b5399d9de1f684c
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=UTF-8
+Mime-Version: 1.0
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.=
+w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns=3D"http://www.w3.org/1999/xhtml" style=3D"box-sizing: border-bo=
+x; font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif=
+; font-size: 14px; line-height: 1.5">
+<head>
+<meta name=3D"viewport" content=3D"width=3Ddevice-width">
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8">
+
+</head>
+<body style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: none; =
+background: #ffffff; box-sizing: border-box; font-family: 'Helvetica Neue',=
+ 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; height: 100%; =
+line-height: 1.6; width: 100% !important" bgcolor=3D"#ffffff">
+<style type=3D"text/css">
+img {
+max-width: 100%; margin-bottom: 14px;
+}
+body {
+background-color: #ffffff; -ms-text-size-adjust: 100%; -webkit-text-size-ad=
+just: none; width: 100% !important; height: 100%; line-height: 1.6;
+}
+.ExternalClass {
+width: 100%;
+}
+.ExternalClass {
+line-height: 100%;
+}
+img {
+-ms-interpolation-mode: bicubic;
+}
+a:visited {
+color: purple !important;
+}
+a:hover {
+color: #e2911a !important;
+}
+a:active {
+color: #0d3d62 !important;
+}
+.cta-button:hover {
+color: #ffffff; background-color: #B67A0D; text-decoration: none; border-co=
+lor: #B67A0D; border: 12px solid #B67A0D;
+}
+[owa] .cta-button:hover {
+color: #ffffff; background-color: #B67A0D; text-decoration: none; border-co=
+lor: #B67A0D; border: 12px solid #B67A0D;
+}
+[class=3D"cta-button"]:hover {
+color: #ffffff; background-color: #B67A0D; text-decoration: none; border-co=
+lor: #B67A0D; border: 12px solid #B67A0D;
+}
+.cta-button:visited {
+color: #ffffff; background-color: #B67A0D; text-decoration: none; border-co=
+lor: #B67A0D; border: 12px solid #B67A0D;
+}
+[owa] .cta-button:visited {
+color: #ffffff; background-color: #B67A0D; text-decoration: none; border-co=
+lor: #B67A0D; border: 12px solid #B67A0D;
+}
+[class=3D"cta-button"]:visited {
+color: #ffffff; background-color: #B67A0D; text-decoration: none; border-co=
+lor: #B67A0D; border: 12px solid #B67A0D;
+}
+.cta-button:active {
+color: #ffffff; background-color: #B67A0D; text-decoration: none; border-co=
+lor: #B67A0D; border: 12px solid #B67A0D;
+}
+[owa] .cta-button:active {
+color: #ffffff; background-color: #B67A0D; text-decoration: none; border-co=
+lor: #B67A0D; border: 12px solid #B67A0D;
+}
+[class=3D"cta-button"]:active {
+color: #ffffff; background-color: #B67A0D; text-decoration: none; border-co=
+lor: #B67A0D; border: 12px solid #B67A0D;
+}
+</style>
+<!--[if mso 16]>
+    <style type=3D"text/css">
+        a{
+            text-decoration:none !important;
+        }
+    </style>
+<![endif]-->
+
+<table class=3D"body-wrap" style=3D"background: #ffffff; box-sizing: border=
+-box; font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-se=
+rif; font-size: 14px; line-height: 1.5; mso-table-lspace: 0pt; mso-table-rs=
+pace: 0pt; width: 100%" bgcolor=3D"#ffffff">
+  <tr style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helv=
+etica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+    <td class=3D"container" style=3D"box-sizing: border-box; clear: both !i=
+mportant; display: block !important; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5; marg=
+in: 0; max-width: 600px !important; overflow: visible; vertical-align: top"=
+ valign=3D"top">
+      <div class=3D"content" style=3D"box-sizing: border-box; display: bloc=
+k; font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif=
+; font-size: 14px; line-height: 1.5; margin: 0; max-width: 600px; overflow:=
+ visible">
+        <table class=3D"main" width=3D"100%" cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Hel=
+vetica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5; m=
+so-table-lspace: 0pt; mso-table-rspace: 0pt">
+          <tr style=3D"box-sizing: border-box; font-family: 'Helvetica Neue=
+', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; line-height:=
+ 1.5">
+            <td class=3D"main-content" style=3D"box-sizing: border-box; col=
+or: #222222; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-seri=
+f; font-size: 14px; line-height: 1.5; padding: 25px; vertical-align: top" v=
+align=3D"top">
+              <p style=3D"box-sizing: border-box; font-family: 'Helvetica N=
+eue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; font-weig=
+ht: normal; line-height: 1.5; margin-bottom: 14px">So I was screwed...</p>
+
+<p style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helveti=
+ca', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: normal; li=
+ne-height: 1.5; margin-bottom: 14px"><br style=3D"box-sizing: border-box; f=
+ont-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; fo=
+nt-size: 14px; line-height: 1.5">
+No contract=C2=A0<br style=3D"box-sizing: border-box; font-family: 'Helveti=
+ca Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; line-=
+height: 1.5">
+No Buyers=C2=A0<br style=3D"box-sizing: border-box; font-family: 'Helvetica=
+ Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; line-he=
+ight: 1.5">
+No Title company=C2=A0<br style=3D"box-sizing: border-box; font-family: 'He=
+lvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; =
+line-height: 1.5">
+No Idea what price to offer=C2=A0<br style=3D"box-sizing: border-box; font-=
+family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-s=
+ize: 14px; line-height: 1.5">
+No ideas how to write the contract=C2=A0<br style=3D"box-sizing: border-box=
+; font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;=
+ font-size: 14px; line-height: 1.5">
+BUT, I had a motivated seller :)=C2=A0<br style=3D"box-sizing: border-box; =
+font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; f=
+ont-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+Here's what I did...=C2=A0<br style=3D"box-sizing: border-box; font-family:=
+ 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14=
+px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+<span style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helv=
+etica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5"><a=
+ href=3D"http://t.dripemail2.com/c/eyJhY2NvdW50X2lkIjoiOTE4MzExNyIsImRlbGl2=
+ZXJ5X2lkIjoiMTQ2ODE5NTEwOSIsInVybCI6Imh0dHBzOi8vd3d3LmZsaXAyZnJlZWRvbXdlYmN=
+sYXNzLmNvbS9vcmdhbmljLXJlZz9fX3M9c21pZms3cXNlcW84bWU2ZWRjbXoifQ" style=3D"b=
+ox-sizing: border-box; color: #4477bd; font-family: 'Helvetica Neue', 'Helv=
+etica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5; te=
+xt-decoration: underline">Get The Whole Story Here...=C2=A0</a></span><br s=
+tyle=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvetica',=
+ Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+[ - - - - - - - - - -TIP - - - - - - - - - -]=C2=A0<br style=3D"box-sizing:=
+ border-box; font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, =
+sans-serif; font-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+<strong style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'He=
+lvetica', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: bold;=
+ line-height: 1.5">you can NEVER screw up a deal with a=C2=A0<br style=3D"b=
+ox-sizing: border-box; font-family: 'Helvetica Neue', 'Helvetica', Helvetic=
+a, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+truly motivated seller.=C2=A0</strong><br style=3D"box-sizing: border-box; =
+font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; f=
+ont-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+[ - - - - - - - - - /TIP - - - - - - - - - -]=C2=A0<br style=3D"box-sizing:=
+ border-box; font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, =
+sans-serif; font-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+My first task was to get a contract but from where?=C2=A0<br style=3D"box-s=
+izing: border-box; font-family: 'Helvetica Neue', 'Helvetica', Helvetica, A=
+rial, sans-serif; font-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+I went to Staples and bought a "Real Estate Purchase Contract"=C2=A0<br sty=
+le=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvetica', H=
+elvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+...Check!=C2=A0<br style=3D"box-sizing: border-box; font-family: 'Helvetica=
+ Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; line-he=
+ight: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+Now I had to figure out how to write it up, but I didn't have time...=C2=A0=
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+...Yikes!=C2=A0<br style=3D"box-sizing: border-box; font-family: 'Helvetica=
+ Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; line-he=
+ight: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+...my appointment was that evening, I only had a couple hours left...=C2=A0=
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+I rushed to a title company I found in the phone book and met with Barb, sh=
+e'd been doing transactions for years and knew exactly how to do a "simulta=
+neous close"=C2=A0<br style=3D"box-sizing: border-box; font-family: 'Helvet=
+ica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; line=
+-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+...Check!=C2=A0<br style=3D"box-sizing: border-box; font-family: 'Helvetica=
+ Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; line-he=
+ight: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+Appointment Time!!=C2=A0<br style=3D"box-sizing: border-box; font-family: '=
+Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px=
+; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+I remember feeling sick to my stomach, weak in the knees. I've=C2=A0<strong=
+ style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvetica=
+', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: bold; line-h=
+eight: 1.5">NEVER</strong>=C2=A0met<br style=3D"box-sizing: border-box; fon=
+t-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font=
+-size: 14px; line-height: 1.5">
+with a seller and I had no idea what to do or say.=C2=A0<br style=3D"box-si=
+zing: border-box; font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Ar=
+ial, sans-serif; font-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+anyhoo=C2=A0<br style=3D"box-sizing: border-box; font-family: 'Helvetica Ne=
+ue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; line-heigh=
+t: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+I showed up and greeted the seller at the house - it was a mess! The pool w=
+as drained, the roof<br style=3D"box-sizing: border-box; font-family: 'Helv=
+etica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; li=
+ne-height: 1.5">
+was leaking and the AC didn't work. Worse off than I expected, but who know=
+s,<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helv=
+etica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+I didn't know what I was looking for anyways :)=C2=A0<br style=3D"box-sizin=
+g: border-box; font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial=
+, sans-serif; font-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+I knew I had to figure out repairs, but how?=C2=A0<br style=3D"box-sizing: =
+border-box; font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, s=
+ans-serif; font-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+<span style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helv=
+etica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5"><a=
+ href=3D"http://t.dripemail2.com/c/eyJhY2NvdW50X2lkIjoiOTE4MzExNyIsImRlbGl2=
+ZXJ5X2lkIjoiMTQ2ODE5NTEwOSIsInVybCI6Imh0dHBzOi8vd3d3LmZsaXAyZnJlZWRvbXdlYmN=
+sYXNzLmNvbS9vcmdhbmljLXJlZz9fX3M9c21pZms3cXNlcW84bWU2ZWRjbXoifQ" style=3D"b=
+ox-sizing: border-box; color: #4477bd; font-family: 'Helvetica Neue', 'Helv=
+etica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5; te=
+xt-decoration: underline">Get The Whole Story Here...=C2=A0</a></span><br s=
+tyle=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvetica',=
+ Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+We'll get back to that...=C2=A0<br style=3D"box-sizing: border-box; font-fa=
+mily: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-siz=
+e: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+So we sat down and I followed this "stupid simple" 3 step process to get th=
+e deal signed. I learned this from the course I bought.=C2=A0<br style=3D"b=
+ox-sizing: border-box; font-family: 'Helvetica Neue', 'Helvetica', Helvetic=
+a, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+[ - - - - - - - - STUPID SIMPLE - - - - - - - - ]=C2=A0<br style=3D"box-siz=
+ing: border-box; font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Ari=
+al, sans-serif; font-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+Step #1: I showed him the lowest comparable sold=C2=A0<br style=3D"box-sizi=
+ng: border-box; font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Aria=
+l, sans-serif; font-size: 14px; line-height: 1.5">
+properties within a one-mile radius.=C2=A0<br style=3D"box-sizing: border-b=
+ox; font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-seri=
+f; font-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+This established a low baseline price.=C2=A0<br style=3D"box-sizing: border=
+-box; font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-se=
+rif; font-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+Step #2: I backed out these numbers:=C2=A0<br style=3D"box-sizing: border-b=
+ox; font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-seri=
+f; font-size: 14px; line-height: 1.5">
+6% Realtor commissions=C2=A0<br style=3D"box-sizing: border-box; font-famil=
+y: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: =
+14px; line-height: 1.5">
+5% market risk<br style=3D"box-sizing: border-box; font-family: 'Helvetica =
+Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; line-hei=
+ght: 1.5">
+3% fix up costs=C2=A0<br style=3D"box-sizing: border-box; font-family: 'Hel=
+vetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; l=
+ine-height: 1.5">
+2% closing cost=C2=A0<br style=3D"box-sizing: border-box; font-family: 'Hel=
+vetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; l=
+ine-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+This got us down to a number I "hoped" would work.=C2=A0<br style=3D"box-si=
+zing: border-box; font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Ar=
+ial, sans-serif; font-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+Step #3: I "assumed the sale" I literally started=C2=A0<br style=3D"box-siz=
+ing: border-box; font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Ari=
+al, sans-serif; font-size: 14px; line-height: 1.5">
+writing the contract, and guess what?=C2=A0<br style=3D"box-sizing: border-=
+box; font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-ser=
+if; font-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+He signed it!!!=C2=A0<br style=3D"box-sizing: border-box; font-family: 'Hel=
+vetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; l=
+ine-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+Yippee!!=C2=A0<br style=3D"box-sizing: border-box; font-family: 'Helvetica =
+Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; line-hei=
+ght: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+[ - - - - - - - - /STUPID SIMPLE - - - - - - - - ]=C2=A0<br style=3D"box-si=
+zing: border-box; font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Ar=
+ial, sans-serif; font-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+I had a signed contract for $84,000.=C2=A0<br style=3D"box-sizing: border-b=
+ox; font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-seri=
+f; font-size: 14px; line-height: 1.5">
+I was so proud..then it hit me...my heart dropped!=C2=A0<br style=3D"box-si=
+zing: border-box; font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Ar=
+ial, sans-serif; font-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+I don't have any money to buy this thing.=C2=A0<br style=3D"box-sizing: bor=
+der-box; font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans=
+-serif; font-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+Now WHAT?=C2=A0<br style=3D"box-sizing: border-box; font-family: 'Helvetica=
+ Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; line-he=
+ight: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+<a href=3D"http://t.dripemail2.com/c/eyJhY2NvdW50X2lkIjoiOTE4MzExNyIsImRlbG=
+l2ZXJ5X2lkIjoiMTQ2ODE5NTEwOSIsInVybCI6Imh0dHBzOi8vd3d3LmZsaXAyZnJlZWRvbXdlY=
+mNsYXNzLmNvbS9vcmdhbmljLXJlZz9fX3M9c21pZms3cXNlcW84bWU2ZWRjbXoifQ" style=3D=
+"box-sizing: border-box; color: #4477bd; font-family: 'Helvetica Neue', 'He=
+lvetica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5; =
+text-decoration: underline">The Whole Story...</a><br style=3D"box-sizing: =
+border-box; font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, s=
+ans-serif; font-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+Think "quick cash"=C2=A0<br style=3D"box-sizing: border-box; font-family: '=
+Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px=
+; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+See you tomorrow...=C2=A0<br style=3D"box-sizing: border-box; font-family: =
+'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14p=
+x; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+Sean "quick cash" Terry=C2=A0<br style=3D"box-sizing: border-box; font-fami=
+ly: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size:=
+ 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+P.S. Tomorrow I'll share the "secret ingredient" to multiple<br style=3D"bo=
+x-sizing: border-box; font-family: 'Helvetica Neue', 'Helvetica', Helvetica=
+, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+$11,000 paydays without using a single dime out of your own pocket.=C2=A0<b=
+r style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvetic=
+a', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+<a href=3D"http://t.dripemail2.com/c/eyJhY2NvdW50X2lkIjoiOTE4MzExNyIsImRlbG=
+l2ZXJ5X2lkIjoiMTQ2ODE5NTEwOSIsInVybCI6Imh0dHBzOi8vd3d3LmZsaXAyZnJlZWRvbXdlY=
+mNsYXNzLmNvbS9vcmdhbmljLXJlZz9fX3M9c21pZms3cXNlcW84bWU2ZWRjbXoifQ" style=3D=
+"box-sizing: border-box; color: #4477bd; font-family: 'Helvetica Neue', 'He=
+lvetica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5; =
+text-decoration: underline">The Secret Ingredient</a></p>
+
+<p style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helveti=
+ca', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: normal; li=
+ne-height: 1.5; margin-bottom: 14px">=C2=A0</p>
+
+<p style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helveti=
+ca', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: normal; li=
+ne-height: 1.5; margin-bottom: 14px">=C2=A0</p>
+
+<p style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helveti=
+ca', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: normal; li=
+ne-height: 1.5; margin-bottom: 14px">=C2=A0</p>
+
+<p style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helveti=
+ca', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: normal; li=
+ne-height: 1.5; margin-bottom: 14px">=C2=A0</p>
+
+<p style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helveti=
+ca', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: normal; li=
+ne-height: 1.5; margin-bottom: 14px"><br style=3D"box-sizing: border-box; f=
+ont-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; fo=
+nt-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+=C2=A0</p>
+
+<p style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helveti=
+ca', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: normal; li=
+ne-height: 1.5; margin-bottom: 14px">=C2=A0</p>
+
+            </td>
+          </tr>
+        </table>
+      </div>
+=20=20=20=20=20=20
+      <div class=3D"content" style=3D"box-sizing: border-box; display: bloc=
+k; font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif=
+; font-size: 14px; line-height: 1.5; margin: 0; max-width: 600px; overflow:=
+ visible">
+        <table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" style=3D"=
+box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvetica', Helveti=
+ca, Arial, sans-serif; font-size: 14px; line-height: 1.5; mso-table-lspace:=
+ 0pt; mso-table-rspace: 0pt">
+          <tr style=3D"box-sizing: border-box; font-family: 'Helvetica Neue=
+', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; line-height:=
+ 1.5">
+            <td class=3D"footer-content" style=3D"border-top-color: #d0d0d0=
+; border-top-style: solid; border-top-width: 1px; box-sizing: border-box; c=
+lear: both; color: #777; font-family: 'Helvetica Neue', 'Helvetica', 'Arial=
+', sans-serif; font-size: 14px; line-height: 1.5; padding: 25px; vertical-a=
+lign: top; width: 100%" valign=3D"top">
+              To make sure you keep getting these emails, please add sean@f=
+lip2freedom.com to your address book or whitelist us. Want out of the loop?=
+ <a href=3D"http://t.dripemail2.com/c/eyJhY2NvdW50X2lkIjoiOTE4MzExNyIsImRlb=
+Gl2ZXJ5X2lkIjoiMTQ2ODE5NTEwOSIsInVybCI6Imh0dHBzOi8vd3d3LmdldGRyaXAuY29tL3N1=
+YnNjcmliZXJzL3NtaWZrN3FzZXFvOG1lNmVkY216L3N1YnNjcmlwdGlvbnM_ZD13YnNwZ3ZudmJ=
+4aWU3bnVmdHRrblx1MDAyNmV4Y2x1ZGVfY2xpY2s9MVx1MDAyNmludGVudD11bnN1YnNjcmliZV=
+x1MDAyNl9fcz1zbWlmazdxc2VxbzhtZTZlZGNteiJ9">Unsubscribe</a>.<br style=3D"bo=
+x-sizing: border-box; font-family: 'Helvetica Neue', 'Helvetica', Helvetica=
+, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+Our postal address: 19420 North 59th Avenue, Glendale, AZ 85308
+            </td>
+          </tr>
+        </table>
+      </div>
+=20=20=20=20=20=20
+    </td>
+  </tr>
+</table>
+
+<img src=3D"http://o.dripemail2.com/wf/open?upn=3D7XtDdMHRjqIUi4tzSjSp2h-2B=
+oTg8yV1h4-2FGX2SHZpIEpUT1WcYZeziSF1sLE6pr6ZaTc-2BlkKMFr-2FwrPNcFlMz-2F3-2F9=
+R-2Bh6ahR5hqpFCKFZ4fhLUDrgsn4QWqmSElH4x6UKrA-2BZdSklC6B6LQlo6IFxZDteRE8kgHX=
+JGL0wth-2FnMXyUTv801r8G9y9QrZyG3-2BzV2JoZxxL7hI8JOLhKFje5GgDDBsYKUF3-2B8GeO=
+OYH4tWLDdQVUaaj0JX-2BXV8xPB8z-2BTMDBvw5ikEKomoQwidUH14UjuRKiLPHdfmT5Cgpw-2F=
+esR7zH3LpspLxfao3gUKSk-2F" alt=3D"" width=3D"1" height=3D"1" border=3D"0" s=
+tyle=3D"height:1px !important;width:1px !important;border-width:0 !importan=
+t;margin-top:0 !important;margin-bottom:0 !important;margin-right:0 !import=
+ant;margin-left:0 !important;padding-top:0 !important;padding-bottom:0 !imp=
+ortant;padding-right:0 !important;padding-left:0 !important;"/>
+</body>
+</html>
+
+
+--60fa93f24be533ce6c983071d4cb96392dc1fb4e13483b5399d9de1f684c--
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>date-last-viewed</key>
+	<integer>0</integer>
+	<key>date-received</key>
+	<integer>1508680893</integer>
+	<key>flags</key>
+	<integer>8590195712</integer>
+	<key>remote-id</key>
+	<string>4520</string>
+</dict>
+</plist>

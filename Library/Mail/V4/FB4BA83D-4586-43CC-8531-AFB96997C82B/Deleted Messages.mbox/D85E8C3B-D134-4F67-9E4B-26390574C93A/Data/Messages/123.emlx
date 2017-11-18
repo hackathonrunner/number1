@@ -1,0 +1,613 @@
+22927     
+Return-path:
+ <bounces+1089880-86e2-austindreier=icloud.com@mail.sg.homeadvisor.com>
+Received: from st11p00im-smtpin009.mac.com ([17.172.80.58])
+ by ms60015.mac.com (Oracle Communications Messaging Server 8.0.1.2.20170607
+ 64bit (built Jun  7 2017)) with ESMTP id <0OYQ008J5XD7WD30@ms60015.mac.com>
+ for austindreier@icloud.com; Wed, 01 Nov 2017 15:51:07 +0000 (GMT)
+Original-recipient: rfc822;austindreier@icloud.com
+Received: from o2.mail.sg.homeadvisor.com
+ (o2.mail.sg.homeadvisor.com [167.89.4.33]) by st11p00im-smtpin009.me.com
+ (Oracle Communications Messaging Server 8.0.1.2.20170607 64bit (built Jun  7
+ 2017)) with ESMTPS id <0OYQ003O0XD5KG20@st11p00im-smtpin009.me.com> for
+ austindreier@icloud.com (ORCPT austindreier@icloud.com); Wed,
+ 01 Nov 2017 15:51:07 +0000 (GMT)
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 spamscore=0
+ clxscore=1109 suspectscore=95 malwarescore=0 phishscore=0 adultscore=0
+ bulkscore=61 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.0.1-1707230000 definitions=main-1711010216
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10432:,,
+ definitions=2017-11-01_03:,, signatures=0
+Authentication-results: st11p00mm-dmarcmilter010.me.com; dmarc=none
+ header.from=homeadvisor.com
+Authentication-results: st11p00mm-spfmilter006.mac.com; spf=pass
+ (st11p00mm-spfmilter006.mac.com: domain of
+ bounces+1089880-86e2-austindreier=icloud.com@mail.sg.homeadvisor.com
+ designates 167.89.4.33 as permitted sender)
+ smtp.mailfrom=bounces+1089880-86e2-austindreier=icloud.com@mail.sg.homeadvisor.com;
+Received-SPF: pass (st11p00mm-spfmilter006.mac.com: domain of
+ bounces+1089880-86e2-austindreier=icloud.com@mail.sg.homeadvisor.com
+ designates 167.89.4.33 as permitted sender)
+ receiver=st11p00mm-spfmilter006.mac.com; client-ip=167.89.4.33;
+ helo=o2.mail.sg.homeadvisor.com;
+ envelope-from=bounces+1089880-86e2-austindreier=icloud.com@mail.sg.homeadvisor.com;
+Authentication-results: st11p00mm-dkimmilter010.mac.com;	dkim=pass (1024-bit
+ key) header.d=mail.sg.homeadvisor.com header.i=@mail.sg.homeadvisor.com
+ header.b=XZ8Z8aMB;	dkim-adsp=none
+DKIM-Signature: v=1; a=rsa-sha1; c=relaxed/relaxed;	d=mail.sg.homeadvisor.com;
+	h=from:reply-to:to:subject:mime-version:content-type; s=smtpapi;
+	bh=cH2ceYZlfultwRu75nglb8Tt8AM=; b=XZ8Z8aMBjd1aPxbPSXWzbmNMurfvr
+	CtExYzVmChBp9u4ZD+V7lzoRT3QnPfGAQZ/56pNwWRYlm27/k4ryGT2NMEuPaIV0
+	b4kq2mGuisDg7n8AHLeY6x3Y26diaS/cZxK70+HMo45S3xPjM2Gst9+K6WDngzN2
+	JIDjzXXAFz7w9M=
+Received: by filter0556p1las1.sendgrid.net with SMTP id
+ filter0556p1las1-21672-59F9ED68-22 2017-11-01 15:51:04.924755686 +0000 UTC
+Received: from putpr005 (74-63-151-37.viawest.net [74.63.151.37])
+	by ismtpd0010p1sjc2.sendgrid.net (SG) with ESMTP id Be7cCiTlQLqN-cS9lvn6og	for
+ <austindreier@icloud.com>; Wed, 01 Nov 2017 15:51:04.820 +0000 (UTC)
+Return-path: <kburke@homeadvisor.com>
+Date: Wed, 01 Nov 2017 15:51:04 +0000 (UTC)
+From: kburke@homeadvisor.com
+Reply-to: kburke@homeadvisor.com
+To: austindreier@icloud.com
+Message-id:
+ <84920203.1476410.1509551464451.JavaMail.www@putpr005.homeadvisor.com>
+Subject: Quick follow-up for Northern Colorado Moving & Logistics
+MIME-version: 1.0
+Content-type: multipart/alternative;
+ boundary="----=_Part_1476399_2129229531.1509551464263"
+x-icloud-spam-score: 3311311
+ f=homeadvisor.com;e=mail.sg.homeadvisor.com;is=yes;ir=no;spf=pass;dkim=pass;dmarc=noPolicy/noPolicy/none;gdwl=absent;pps=ham;clxs=Ham;clxw=neutral
+X-CLX-Spam: false
+X-CLX-UnSpecialScore: 161
+X-CLX-Score: 1109
+X-CLX-Shades: Ham
+X-MANTSH: 1TEIXWV4bG1oaGkNHB1BeSF8aHBgaGhgaGxEKTEMXGx0EGx0YBBkfBBgSEBseGh8
+ aEQpMWRcbGxoTEQpZTRdiS0cRCl9ZFxscGxEKX00XZEVETxEKWUkXGnEaEBp3BhgbcRgfEBsfd
+ wYYGgYaEQpZXhdra3kRCkNOFx4eHVB5RXtbc0cZHV5OQktLGElJYU1bQEtlaFlFe0NmEQpYXBc
+ ZBBoEGRgHTRlOE08TGRgFGx0EGx0YBBIZBBsTEBseGh8aEQpeWRd4Zh9jbBEKTVwXGBIRCkxaF
+ 2loZU1BTREKQ1oXGxwdBBITBB4EGRkRCkJeFxsRCllFFxMRCkVJFxoRCkVmFxoRCkJcFxsRCl5
+ OFxsRCkJLF21nR31CBR0dTQFNEQpCRRdrRGcabxpMZHIBUhEKQk4XbWdHfUIFHR1NAU0RCkJMF
+ 2tEZxpvGkxkcgFSEQpCbBdrRGcabxpMZHIBUhEKQkAXYnpMWhh5b0hzX1oRCkJYF25HHRtOZGF
+ FGxJAEQpNXhcbEQpwZxdraRhJbmxsTm54WxAbHhEKcGgXYnt+RXhiRXhjTBkQGhEKcGgXZn9Tb
+ Ud9QG1eZF0QGhEKcGgXaGVkfXxjfgFNTVgQGhEKcGgXYhtHGGlMa1NZHHMQGx4RCnBoF29pTml
+ FbH1nelhGEBoRCnB/F2ZvfFxfYWxSHRxmEB8dEQpwXxdnb0hdeEYfZEhGbxAZHBEKcH0XaWUaH
+ xtNE1tsGHMQGhEKcF8XYVJkU0Fub2lkYm4QGBkRCnB9F2BOQ11seXByYHITEBgZEQpwXxdvfRl
+ yYRxmaUVSexAfHREKcH0XaGZYRRoSeWwBWwUQGhEKcH0XaGZYRRoSeWwBWwUQGhEKcH0XaGZYR
+ RoSeWwBWwUQGhEKcF8XZXJbTRscT2NobHMQHhwRCnB9F2dMTE9ie1t9RmlaEBoRCnBfF2RrU0x
+ bR2YdbEVlEB8eEQpwfRdsZFsTfHNZGFIBXxAaEQpwXxdoe21c
+x-dmarc-info: pass=none; dmarc-policy=(nopolicy); s=u0; d=u0
+x-dmarc-policy: none
+X-todo_id: 1808524463
+X-table_id: 1
+X-SG-EID:
+ wDL73fzM24memzQeYD8vNs60a1/y7ttRZFoC2GN2sWCUZykBNTy5KeUnEWqstE6PKMHNUv09Y1UD1G
+ /WasYlxOoKRHFXjR1O/Vl7cPgx2HM1k7lw2t/X3pTD4mStlcL6FmRSbt2OChDmxSwqXYEyOvwupk8R
+ kx2ETRIXVqWAieps6DAsve2/cr9Vzt8ZvUEohzucXS4D6R/lq1WSn0F9gw==
+X-SG-ID: d9IBZ6zAmMl4mOIVX0BUtiidkIuvNWhUnddikrTwQI91NYq54lLMkmfJ/eZ3WGSK
+
+------=_Part_1476399_2129229531.1509551464263
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+------=_Part_1476399_2129229531.1509551464263
+Content-Type: text/html; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+   <title></title>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+   <style type="text/css">
+
+      /*iPhone 6 in portrait & landscape*/
+      @media only screen
+      and (min-width : 375px)
+      and (max-width : 667px) {
+         table[class=button-table-green] {
+            width: 100% !important;
+         }
+         table[class=contentTable] {
+            width: 320px !important;
+         }
+         td[class=havingTrouble], td[class=safeSender] {
+            font-size: .5em !important;
+         }
+         td[class=headerImage] img {
+            width: auto !important;
+            height: auto !important;
+         }
+         td[class=goMobile] {
+            display: none !important;
+         }
+         p[class=breakLine] {
+            width: auto !important;
+         }
+         p[class=shortPara] {
+            width: 59% !important;
+            margin: 0 auto !important;
+         }
+         /*a[href^=tel] {*/
+            /*color: inherit !important;*/
+         /*}*/
+         span[class=mobile-break] {
+            display: block !important;
+         }
+      }
+
+      /*iPhone 6 Plus in portrait & landscape*/
+      @media only screen
+      and (min-width : 540px)
+      and (max-width : 960px) {
+         table[class=button-table-green] {
+            width: 100% !important;
+         }
+         table[class=contentTable] {
+            width: 414px !important;
+         }
+         td[class=havingTrouble], td[class=safeSender] {
+            font-size: .5em !important;
+         }
+         td[class=headerImage] img {
+            width: auto !important;
+            height: auto !important;
+         }
+         td[class=goMobile] {
+            display: none !important;
+         }
+         p[class=breakLine] {
+            width: auto !important;
+         }
+         p[class=shortPara] {
+            width: 59% !important;
+            margin: 0 auto !important;
+         }
+         /*a[href^=tel] {*/
+            /*color: inherit !important;*/
+         /*}*/
+         span[class=mobile-break] {
+            display: block !important;
+         }
+      }
+
+      /*iPhone 5 & 5S in portrait & landscape*/
+      @media only screen
+      and (min-width : 320px)
+      and (max-width : 568px) {
+         table[class=button-table-green] {
+            width: 100% !important;
+         }
+         table[class=contentTable] {
+            width: 320px !important;
+         }
+         td[class=havingTrouble], td[class=safeSender] {
+            font-size: .5em !important;
+         }
+         td[class=headerImage] img {
+            width: auto !important;
+            height: auto !important;
+         }
+         td[class=goMobile] {
+            display: none !important;
+         }
+         p[class=breakLine] {
+            width: auto !important;
+         }
+         p[class=shortPara] {
+            width: 59% !important;
+            margin: 0 auto !important;
+         }
+         /*a[href^=tel]{*/
+            /*color: inherit !important;*/
+         /*}*/
+         span[class=mobile-break] {
+            display: block !important;
+         }
+      }
+
+      /*iPhone 2G, 3G, 4, 4S Media Queries*/
+      @media only screen
+      and (min-width : 320px)
+      and (max-width : 480px) {
+         table[class=button-table-green] {
+            width: 100% !important;
+         }
+         table[class=contentTable] {
+            width: 320px !important;
+         }
+         td[class=havingTrouble], td[class=safeSender] {
+            font-size: .5em !important;
+         }
+         td[class=headerImage] img {
+            width: auto !important;
+            height: auto !important;
+         }
+         td[class=goMobile] {
+            display: none !important;
+         }
+         p[class=breakLine] {
+            width: auto !important;
+         }
+         p[class=shortPara] {
+            width: 59% !important;
+            margin: 0 auto !important;
+         }
+         /*a[href^=tel] {*/
+            /*color: inherit !important;*/
+         /*}*/
+         span[class=mobile-break] {
+            display: block !important;
+         }
+      }
+
+      /***** desktop CSS styles go here *****/
+      table.contentTable {
+         width: 650px;
+         font-size: 16px;
+         color: #666;
+      }
+      td.havingTrouble, td.safeSender {
+         font-size: .69em;
+      }
+      table {
+         font-size: 11px;
+         font-family: arial, verdana, sans-serif;
+         font-weight: normal;
+         color: #566166;
+      }
+      table.memberFooter {
+         font-size: 12px;
+         font-family: arial, verdana, sans-serif;
+         font-weight: bold;
+      }
+      a.mobileEmailLinks {
+         color: #666;
+         text-decoration: none;
+      }
+      a.mobileEmailLinks:hover {
+         text-decoration: none;
+      }
+      a:hover { text-decoration: underline }
+      span.mobile-break { display: inline; }
+
+      /***** Begin: Button Styles *****/
+      table.button-table-green {
+         font: 1.38em arial, sans-serif;
+         color:#fff;
+         width: 45%;
+         font-weight: bold;
+         text-align: center;
+      }
+      .button-outer-green {
+         border:2px solid #65ab00;
+         width:100%;
+         border-radius: 5px;
+      }
+      .button-inner-green {
+         border-top:1px solid #65ab00;
+         background:#65ab00;
+      }
+      .button-text a, .button-text a:hover {
+         color:#fff;
+         display:block;
+         padding:4px 0px;
+         text-decoration: none;
+      }
+      /***** End: Button Styles *****/
+
+   </style>
+</head>
+<body>
+
+<style type="text/css">
+    td.havingTrouble a:link, td.havingTrouble a:visited, td.havingTrouble a:hover, td.havingTrouble a:active,
+    td.safeSender a:link, td.safeSender a:visited, td.safeSender a:hover, td.safeSender a:active{
+        text-decoration: underline;
+        color: #666;
+    }
+</style>
+
+
+
+
+
+
+
+<table align="center" border="0" cellpadding="0" cellspacing="0" class="contentTable" width="650">
+    
+    <!-- isViewMobileVer not being used yet, need to update link to a page -->
+    
+    
+    
+    <tr>
+        
+            
+            
+                <td align="left" style="padding: 15px; border-top: 2px solid #e4e6e7; border-bottom: 2px solid #e4e6e7; background: #f4f4f4;" class="headerImage">
+            
+        
+            <a href="http://pro.homeadvisor.com/servlet/RedirectServlet?D=HOME&m=smcommtemps&template_id=537&todo_id=1808524463&entry_point_id=15727939&entityID=57690210&comm_auth_dt=201711010950&comm_auth_id=homeadv&comm_auth_hash=1e62560adff8acc75c37dc2c93362e62">
+                
+                    
+                    
+                        <img src="http://www.homeadvisor.com/templates/includes/headers/sp/images/ha_logo_271x36.png" width="271" height="36" border="0" alt="HomeAdvisor Pro" title="HomeAdvisor Pro" />
+                    
+                
+            </a>
+        </td>
+        <td align="right" valign="bottom" style="background-color: #f4f4f4; padding: 15px; border-top: 2px solid #e4e6e7; border-bottom: 2px solid #e4e6e7;" >&nbsp;
+            
+        </td>
+    </tr>
+</table>
+<!-- end commTopNav_member_html.jsp -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table style="color:#3d4549; font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:13px;" width="650" cellspacing="0" align="center">
+   <tr>
+      <td style="padding:20px;"><p>Hey Austin,</p>
+
+         <p>It's Kaitlyn over at <a href="http://www.homeadvisor.com/servlet/RedirectServlet?D=STATIC&targetPage=/rfs/popup/urlForward.jsp&urlForward=http://welcome.homeadvisor.com/membership/&m=sptraining&template_id=537&todo_id=1808524463&entry_point_id=32039045&entityID=57690210&comm_auth_dt=201711010950&comm_auth_id=homeadv&comm_auth_hash=1e62560adff8acc75c37dc2c93362e62" style="color:#5486a3; font-weight: bold; text-decoration: underline;">HomeAdvisor</a>. I have your file here on my desk and wanted to
+            see if you could follow up with a few homeowners we have looking for a good Other contractor in the area.
+            Demand in your city has spiked quite a bit since I last reached out, so I'm wondering
+            what your schedule looks like for the next few months.</p>
+
+         <p>I have a few incentives I can offer to make it worth your while, but I need to hear back within the next few
+            days since we're currently turning homeowners away. As a reminder,
+            <a href="http://www.homeadvisor.com/servlet/RedirectServlet?D=STATIC&targetPage=/rfs/popup/urlForward.jsp&urlForward=http://welcome.homeadvisor.com/membership/&m=sptraining&template_id=537&todo_id=1808524463&entry_point_id=32039045&entityID=57690210&comm_auth_dt=201711010950&comm_auth_id=homeadv&comm_auth_hash=1e62560adff8acc75c37dc2c93362e62" style="color:#5486a3; font-weight: bold; text-decoration: underline;">here's a video</a>
+            that covers who we are and how HomeAdvisor works.
+            <a href="http://www.homeadvisor.com/servlet/RedirectServlet?D=STATIC&targetPage=/rfs/popup/urlForward.jsp&urlForward=http://welcome.homeadvisor.com/membership/&m=sptraining&template_id=537&todo_id=1808524463&entry_point_id=32039045&entityID=57690210&comm_auth_dt=201711010950&comm_auth_id=homeadv&comm_auth_hash=1e62560adff8acc75c37dc2c93362e62" style="color:#5486a3; font-weight: bold; text-decoration: underline;">Click here to watch it</a>.</p>
+
+         <p>Give me a call or shoot me an email if you have any questions. I'll try to give you a shout this week as well.</p>
+
+      </td>
+   </tr>
+   <tr>
+      <td style="padding-left:10px;">
+         
+
+<table border="0" cellpadding="0" cellspacing="0" style="color:#3d4549; font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:13px;">
+    <tr>
+        <td style="padding:10px;"><p>Regards, </p>
+            <p>
+                
+                    Kaitlyn Burke<br />
+                
+
+                
+                    Online Marketing Consultant<br />
+                
+
+                HomeAdvisor<br />
+
+                
+                    877-800-3177 ext. 7144<br />
+                
+
+                
+                    720-770-7144<br />
+                
+
+                
+                    <a href="mailto: kburke@homeadvisor.com" style="text-decoration:none;color:#5486a3;">kburke@homeadvisor.com</a>
+                
+            </p>
+        </td>
+    </tr>
+</table>
+      </td>
+   </tr>
+</table>
+<img src="http://www.homeadvisor.com/servlet/EmailTracking?campaign=Welcome_to_HomeAdvisor_Login_and_Success_Tips&template_id=537&todo_id=1808524463&comm_addr=austindreier@icloud.com&image_source=/images/clear.gif" />
+
+
+
+<style type="text/css">
+   tr.linkBkgd a:link {
+      text-decoration: none;
+      color: #566166;
+      font-weight: normal;
+      padding: 0 5px;
+   }
+   tr.linkBkgd a:visited {
+      text-decoration: none;
+      color: #566166;
+      font-weight: normal;
+      padding: 0 5px;
+   }
+   tr.linkBkgd a:hover {
+      text-decoration: underline;
+      color: #566166;
+      font-weight: normal;
+      padding: 0 5px;
+   }
+   tr.linkBkgd a:active {
+      text-decoration: none;
+      color: #566166;
+      font-weight: normal;
+      padding: 0 5px;
+   }
+   td.unsubscribe a:link {
+      text-decoration: none;
+      color: #5486a3;
+      font-weight: bold;
+   }
+   td.unsubscribe a:visited {
+      text-decoration: none;
+      color: #5486a3;
+      font-weight: bold;
+   }
+   td.unsubscribe a:hover {
+      text-decoration: underline;
+      color: #5486a3;
+      font-weight: bold;
+   }
+   td.unsubscribe a:active {
+      text-decoration: none;
+      color: #5486a3;
+      font-weight: bold;
+   }
+</style>
+
+
+<table class="contentTable" border="0" cellpadding="0" cellspacing="0" style="font: bold 15px arial, verdana, sans-serif;" align="center" width="650">
+   <tr>
+      <td style="color: #f7901e; padding: 35px 0 15px; text-align: center; border-bottom: 2px solid #e4e6e7;">
+         
+            
+            
+               <p>Reach More Customers. Win More Jobs. <sup style="font-size: 8px;">TM</sup></p>
+            
+         
+      </td>
+   </tr>
+   <tr>
+      <td align="center" style="background-color: #f4f4f4; border-bottom: 2px solid #E4E6E7; padding: 5px 0;">
+         <table width="98%" border="0" cellpadding="0" cellspacing="0" style="font: bold 10px arial, verdana, sans-serif; color: #566166;">
+            <tr class="linkBkgd">
+               <td width="80%">
+                  <p>
+                     <a href="http://pro.homeadvisor.com/?template_id=537&todo_id=1808524463&entry_point_id=15727958&entityID=57690210&comm_auth_dt=201711010950&comm_auth_id=homeadv&comm_auth_hash=1e62560adff8acc75c37dc2c93362e62">Get Targeted Lead</a> |
+                     <a href="http://pro.homeadvisor.com/how-it-works/?template_id=537&todo_id=1808524463&entry_point_id=15727959&entityID=57690210&comm_auth_dt=201711010950&comm_auth_id=homeadv&comm_auth_hash=1e62560adff8acc75c37dc2c93362e62">How It Works</a> |
+                     <a href="http://pro.homeadvisor.com/success-stories/?template_id=537&todo_id=1808524463&entry_point_id=15727960&entityID=57690210&comm_auth_dt=201711010950&comm_auth_id=homeadv&comm_auth_hash=1e62560adff8acc75c37dc2c93362e62">Success Stories</a> |
+                     <a href="http://pro.homeadvisor.com/home/Privacy-Policy/?template_id=537&todo_id=1808524463&entry_point_id=15727961&entityID=57690210&comm_auth_dt=201711010950&comm_auth_id=homeadv&comm_auth_hash=1e62560adff8acc75c37dc2c93362e62">Privacy Statement</a> |
+                     <a href="http://pro.homeadvisor.com/terms/terms-conditions/?template_id=537&todo_id=1808524463&entry_point_id=15727962&entityID=57690210&comm_auth_dt=201711010950&comm_auth_id=homeadv&comm_auth_hash=1e62560adff8acc75c37dc2c93362e62">Terms & Conditions</a>
+                  </p>
+               </td>
+               <td>
+                  <a href="http://www.homeadvisor.com/servlet/RedirectServlet?D=REDIR&urlForward=http://itunes.apple.com/us/app/servicemagic-pros/id437003175?mt=8&template_id=537&todo_id=1808524463&entry_point_id=15727963"><img src="http://www.homeadvisor.com/templates/includes/footers/sp/images/icon_iphone.png" width="20" height="18" alt="iTunes" title="iTunes" border="0" /></a>
+               </td>
+               <td>
+                  <a href="http://www.homeadvisor.com/servlet/RedirectServlet?D=REDIR&urlForward=https://play.google.com/store/apps/details?id=com.servicemagic.pros&template_id=537&todo_id=1808524463&entry_point_id=15727964"><img src="http://www.homeadvisor.com/templates/includes/footers/sp/images/icon_android.png" width="19" height="18" alt="Android" title="Android" border="0" /></a>
+               </td>
+               <td>
+                  <a href="http://www.homeadvisor.com/servlet/RedirectServlet?D=REDIR&urlForward=http://www.facebook.com/HomeAdvisor&template_id=537&todo_id=1808524463&entry_point_id=15727965"><img src="http://www.homeadvisor.com/templates/includes/footers/sp/images/icon_facebook.png" width="21" height="22" alt="Facebook" title="Facebook" border="0" /></a>
+               </td>
+               <td>
+                  <a href="http://www.homeadvisor.com/servlet/RedirectServlet?D=REDIR&urlForward=https://twitter.com/HomeAdvisor&template_id=537&todo_id=1808524463&entry_point_id=15727966"><img src="http://www.homeadvisor.com/templates/includes/footers/sp/images/icon_twitter.png" width="21" height="20" alt="Twitter" title="Twitter" border="0" /></a>
+               </td>
+               <td>
+                  <a href="http://www.homeadvisor.com/servlet/RedirectServlet?D=REDIR&urlForward=https://www.youtube.com/user/HomeAdvisor&template_id=537&todo_id=1808524463&entry_point_id=15727967"><img src="http://www.homeadvisor.com/templates/includes/footers/sp/images/icon_youtube.png" width="20" height="20" alt="YouTube" title="YouTube" border="0" /></a>
+               </td>
+            </tr>
+         </table>
+      </td>
+   </tr>
+   
+      
+      
+         <tr>
+            <td class="unsubscribe" style="font-size: 10px; font-family: arial, verdana, sans-serif; color: #566166; padding: 15px 0;">
+               <p>You are receiving this email because you have a HomeAdvisor Pro account.<br />
+                  You may <a href="http://pro.homeadvisor.com/account/communication/transactional-unsubscribe/?contact_method_id=125592863&template_id=537&todo_id=1808524463&entry_point_id=28464631&entityID=57690210&comm_auth_dt=201711010950&comm_auth_id=homeadv&comm_auth_hash=1e62560adff8acc75c37dc2c93362e62">UNSUBSCRIBE</a> from newsletters, surveys and special offers.</p>
+            </td>
+         </tr>
+      
+   
+   <tr>
+      <td style="padding-top: 20px;">
+         <p style="color: #b2b2b2; font-size: 12px; font-weight: normal;">14023 Denver West Parkway, Building 64<br />
+                                                                          Golden, CO 80401</p>
+      </td>
+   </tr>
+</table>
+
+
+
+<img src="http://mail.sg.homeadvisor.com/wf/open?upn=7XtDdMHRjqIUi4tzSjSp2h-2BoTg8yV1h4-2FGX2SHZpIEp49jZGpO5Ygf05rVaQeCJhpu5OZds6SnfQs3L2hDoObnNvfjXMt6y97gR4o-2F2AMXIkQr-2F0xI0TfqR02aX92cq8mIOcUG2quOV-2BPHob3t5T6EKjODvPP78JX2wghgkZpgg1nsVwt9GlA8NDLhVW07tn0ZwGpQmkIegmIPwDgUX-2F1M2kRluIl5iOECjEpS-2FdJa1ol0kKc2KZez8ZQw0bMlPk7-2Bep1l2twhRbqkaSyJ6pJA-3D-3D" alt="" width="1" height="1" border="0" style="height:1px !important;width:1px !important;border-width:0 !important;margin-top:0 !important;margin-bottom:0 !important;margin-right:0 !important;margin-left:0 !important;padding-top:0 !important;padding-bottom:0 !important;padding-right:0 !important;padding-left:0 !important;"/>
+</body>
+</html>
+
+
+------=_Part_1476399_2129229531.1509551464263--
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>date-last-viewed</key>
+	<integer>0</integer>
+	<key>date-received</key>
+	<integer>1509551467</integer>
+	<key>flags</key>
+	<integer>8590195712</integer>
+	<key>remote-id</key>
+	<string>4596</string>
+</dict>
+</plist>

@@ -1,0 +1,263 @@
+9299      
+Return-path: <2017110905582617bf7353a62549f6953e26435450p0na@bounces.amazon.com>
+Received: from pv33p00im-smtpin011.mac.com ([17.142.194.136])
+ by ms60015.mac.com
+ (Oracle Communications Messaging Server 8.0.1.2.20170607 64bit (built Jun  7
+ 2017)) with ESMTP id <0OZ400D8NZ9HJ480@ms60015.mac.com> for
+ austindreier@icloud.com; Thu, 09 Nov 2017 05:58:29 +0000 (GMT)
+Original-recipient: rfc822;austindreier@icloud.com
+Received: from a13-23.smtp-out.amazonses.com
+ (a13-23.smtp-out.amazonses.com [54.240.13.23]) by pv33p00im-smtpin011.me.com
+ (Oracle Communications Messaging Server 8.0.1.2.20170607 64bit (built Jun  7
+ 2017)) with ESMTPS id <0OZ4008X1Z9FSH40@pv33p00im-smtpin011.me.com> for
+ austindreier@icloud.com (ORCPT austindreier@icloud.com); Thu,
+ 09 Nov 2017 05:58:29 +0000 (GMT)
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 spamscore=0
+ clxscore=1103 suspectscore=72 malwarescore=0 phishscore=0 adultscore=0
+ bulkscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.0.1-1707230000 definitions=main-1711090086
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10432:,,
+ definitions=2017-11-09_01:,, signatures=0
+Authentication-results: pv33p00im-dmarcmilter009.me.com; dmarc=pass
+ header.from=amazon.com
+Authentication-results: pv33p00im-spfmilter004.me.com; spf=pass
+ (pv33p00im-spfmilter004.me.com: domain of
+ 2017110905582617bf7353a62549f6953e26435450p0na@bounces.amazon.com designates
+ 54.240.13.23 as permitted sender)
+ smtp.mailfrom=2017110905582617bf7353a62549f6953e26435450p0na@bounces.amazon.com;
+Received-SPF: pass (pv33p00im-spfmilter004.me.com: domain of
+ 2017110905582617bf7353a62549f6953e26435450p0na@bounces.amazon.com designates
+ 54.240.13.23 as permitted sender) receiver=pv33p00im-spfmilter004.me.com;
+ client-ip=54.240.13.23; helo=a13-23.smtp-out.amazonses.com;
+ envelope-from=2017110905582617bf7353a62549f6953e26435450p0na@bounces.amazon.com;
+Authentication-results: pv33p00im-dkimmilter018.me.com;	dkim=pass (1024-bit
+ key) header.d=amazonses.com header.i=@amazonses.com header.b=K0w5SubH;
+	dkim-adsp=pass
+Authentication-results: pv33p00im-dkimmilter018.me.com;	dkim=pass (1024-bit
+ key) header.d=amazon.com header.i=@amazon.com header.b=aUHXPzu5;	dkim-adsp=pass
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=yg4mwqurec7fkhzutopddd3ytuaqrvuz; d=amazon.com; t=1510207107;
+	h=From:To:Message-ID:Subject:MIME-Version:Content-Type:Date;
+	bh=y3KivviHHyZ7wfu7mFcCYZZH2rJOolLGUnbqXHHYKp0=;
+	b=aUHXPzu5Uxdpug5bjDCghs/7lXYhNjnK0VZR+W87g+ykPlAmuw5nCdCYx39Bpnit
+	/5cdUWKL6YI8IOqiC6ZK4zoC9PHuO3+RnIYSYhsQR3/Al+YGf+zbQRUnTv9aoaSA6DC
+	4y/n5DPZpteHSxBqXnxft1iviSLZM8VTM2Pm/8kU=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=224i4yxa5dv7c2xz3womw6peuasteono; d=amazonses.com; t=1510207107;
+	h=From:To:Message-ID:Subject:MIME-Version:Content-Type:Date:Feedback-ID;
+	bh=y3KivviHHyZ7wfu7mFcCYZZH2rJOolLGUnbqXHHYKp0=;
+	b=K0w5SubHI5IfnU6q/uE/5vGXnNFDXGse34J71hh7+RRHCXH7ojrCk4leMDqn/Knp
+	NwXhWVqFjh/Fj2lXOuOjjXNxwaIs3iQCwGdZo0YpTAWCKT0JOK0oKO7duV9dB6GkBI1
+	TRRPAl/YpsSVOOhIDecZCOQ0ND9/lX8+FAzTEsIE=
+From: "Amazon.com" <account-update@amazon.com>
+To: austindreier@icloud.com
+Message-id:
+ <0100015f9f5baf1d-428a7891-7691-44b7-9d85-77c445ccb7b2-000000@email.amazonses.com>
+Subject: Your Amazon verification code
+MIME-version: 1.0
+Content-type: multipart/alternative;
+ boundary="----=_Part_153787_1076195293.1510207106841"
+Bounces-to: 2017110905582617bf7353a62549f6953e26435450p0na@bounces.amazon.com
+X-Original-MessageID:
+ <urn.rtn.msg.2017110905582617bf7353a62549f6953e26435450p0na@1510207106842.rtn-svc-na-back-m4l1a-cc22bc24.us-east-1.amazon.com>
+Date: Thu, 09 Nov 2017 05:58:26 +0000
+Feedback-ID: 1.us-east-1.ZHcGJK6s+x+i9lRHKog4RW3tECwWIf1xzTYCZyUaiec=:AmazonSES
+x-icloud-spam-score: 3333311
+ f=amazon.com;e=bounces.amazon.com;is=yes;ir=no;spf=pass;dkim=pass;dmarc=pass/quarantine/none;gdwl=present;pps=ham;clxs=Ham;clxw=neutral
+X-CLX-Spam: false
+X-CLX-UnSpecialScore: 546
+X-CLX-Score: 1103
+X-CLX-UShades: Ham
+X-CLX-Shades: Ham
+X-MANTSH: 1TEIXWlwZGVoaGkNHB0tNT0ReQ0QeGBoYEQpMQxcbHQQbHhgEGxMfBBkYEBseGh8
+ aEQpMWRcbGxoZEQpZTRdiS0cRCl9ZFx8eHBEKX00XYktHEQpZSRcacRoQGncGEhxxHxsSGxAdG
+ Bt3BhgaBhoRClleF2treREKQ04XUmtjTH1pBWt5X2ESQmsYbkJkX3l/QGFsT1loQ2x4fFgRClh
+ cFxkEGgQZGAdNGU4TTxMZGAUbHQQbHhgEGxMTBBsaGBAbHhofGhEKXlkXeGVwZ0wRCk1cFxgTG
+ xEKTFoXaWtlTUFNEQpDWhcfHgQYHhoEGxkEGBkRCkJeFxsRCllFFxkRCkVJFxoRCkVmFxoRCkJ
+ cFxsRCl5OFxsRCkJLF2ZTYVxJY3BrfxtnEQpCRRdlTh1da04SSFt8bREKQk4XZlNhXEljcGt/G
+ 2cRCkJMF2heRF5vY0duQ3xjEQpCbBdiTmYaRFp8SxJrWhEKQkAXYW96S3taRBt4fRkRCkJYF25
+ HHRtOZGFFGxJAEQpNXhcbEQpwaBdic34bc11zSERsBRAaEQpwaBdtQB8ccltTc38YehAdGhEKc
+ GgXaAVkBXxQU35bT3sQGhEKcGgXbB5nQVt4ARpBBR4QExoRCnBoF2wdck5MaUVETEB7EBMaEQp
+ wfxdpZUlyWRh6Rx9fUBAHHh8RCnBfF28dRwFhZ1tATVx9EBMeEQpwfRdrTE9BfWhbTXlYfBAaE
+ QpwfxdrQ0RgTGAcSB9BehAYHBEKcF8XY1x4YFpbHBJ8TWAQEh8RCnB9F2d/HH1tHgUBeFNcEBs
+ bGREKcH0XZ35cY3NFYRNzRB8QGhEKcGwXa0EZHU96a0RfGXMQGx8bEQptfhcbEQpYTRdLEQ==
+x-dmarc-info: pass=pass; dmarc-policy=quarantine; s=r1; d=r1
+x-dmarc-policy: v=DMARC1; p=quarantine; pct=100;
+ rua=mailto:dmarc-reports@bounces.amazon.com;
+ ruf=mailto:dmarc-reports@bounces.amazon.com
+X-AMAZON-MAIL-RELAY-TYPE: notification
+X-AMAZON-METADATA: CA=C1HRFLBWX4HK1T-RI=A1G77Y9VJB2KH4
+X-SES-Outgoing: 2017.11.09-54.240.13.23
+
+------=_Part_153787_1076195293.1510207106841
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: 7bit
+
+
+  <html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <style type="text/css">
+body {
+    margin:0;
+    color:#333;
+}
+
+a {
+    text-decoration:none;
+    color:#006699;
+}
+
+p {
+    margin:0px;
+}
+
+img {
+    border:0;
+    margin:0;
+}
+
+/* container */
+#container {
+    width:540px;
+    margin:0 auto;
+}
+
+#content {
+    width:500px;
+    margin:0 20px;
+}
+
+/* header */
+#header {
+    border-bottom:1px solid #eaeaea;
+    padding-top:10px;
+    padding-left:0px;
+    padding-right:0px;
+    padding-bottom:10px;
+}
+
+#title p{
+    font-size:20px;
+    font-family: "arial", "sans-serif";
+}
+
+#amazonLogo{
+    width:107px;
+    height:31px;
+}
+
+/* verification msg */
+#verificationMsg {
+    padding-left:0;
+    padding-top:9px;
+    padding-bottom:9px;
+}
+
+#verificationMsg p {
+    font-size:14px;
+    font-family: "arial", "sans-serif";
+}
+
+#verificationMsg .otp {
+    font-size:18px;
+    font-weight:bold;
+    padding-top:18px;
+}
+
+/* account security */
+#accountSecurity {
+    padding-left:0;
+    padding-top:9px;
+    padding-bottom:9px;
+}
+
+#accountSecurity p {
+    font-size:14px;
+    font-family: "arial", "sans-serif";
+}
+
+/* closing */
+#closing {
+    padding-left:0;
+    padding-top:9px;
+    padding-bottom:9px;
+}
+
+#closing p {
+    font-size:14px;
+    font-family: "arial", "sans-serif";
+}
+
+    </style>
+    <title></title>
+  </head>
+  <body><img width="1" height="1" src="https://www.amazon.com/gp/r.html?C=PEZFBQGDUNSN&M=urn:rtn:msg:2017110905582617bf7353a62549f6953e26435450p0na&R=397NU8P05O80Z&T=O&U=https%3A%2F%2Fimages-na.ssl-images-amazon.com%2Fimages%2FG%2F01%2Fnav%2Ftransp.gif&A=KWBHTGSSIIACCXCH1J9RVHYBGNYA&H=QGF7DVMZ6EYUXQT4XEA1RYFNHMCA&ref_=pe_1568390_127719720_opens" />
+  <table align="center" cellspacing="0" id="container" cellpadding="0">
+    <tbody>
+    <tr>
+      <td>
+        <table cellspacing="0" id="content" cellpadding="0">
+          <tbody>
+          <tr>
+            <td id="header">
+              <table cellspacing="0" cellpadding="0">
+                <tbody>
+                <tr>
+                  <td width="250" id="logo">
+<img src="https://images-na.ssl-images-amazon.com/images/G/01/x-locale/cs/te/logo._CB152417367_.png" id="amazonLogo"/>                  </td>
+                  <td width="250" id="title" valign="top" align="right"><p></p></td>
+                </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+
+          <tr>
+            <td id="verificationMsg">
+              <p>Hello,<br/> We noticed that there was an attempt to sign in to your Amazon account. If you were prompted for a verification code, please enter the following to complete your sign-in.</p>
+              <p class="otp">849136</p>
+            </td>
+          </tr>
+
+          <tr>
+            <td id="accountSecurity">
+              <p>This code will expire in 10 minutes. 
+<br/><br/>
+If you did not try to sign in to your account, please change your password immediately by visiting your account settings on Amazon. We also recommend changing password on other non-Amazon websites if you use the same password. 
+<br/><br/>
+If you have additional questions about account security, please visit amazon.com/security. 
+              </p>
+            </td>
+          </tr>
+
+          <tr>
+            <td id="closing">
+              <p>Thanks for visiting Amazon!
+              </p>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  <img width="1" height="1" src="https://www.amazon.com/gp/r.html?C=PEZFBQGDUNSN&M=urn:rtn:msg:2017110905582617bf7353a62549f6953e26435450p0na&R=397NU8P05O80Z&T=E&U=https%3A%2F%2Fimages-na.ssl-images-amazon.com%2Fimages%2FG%2F01%2Fnav%2Ftransp.gif&A=VOAZ1B2ECTZI7INAZIZKPJHKVREA&H=R07BPXTQVOCIR2MKXVDJKQIBTDIA&ref_=pe_1568390_127719720_open" /></body>
+  </html>
+
+------=_Part_153787_1076195293.1510207106841--
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>date-last-viewed</key>
+	<integer>0</integer>
+	<key>date-received</key>
+	<integer>1510207109</integer>
+	<key>flags</key>
+	<integer>8590195713</integer>
+	<key>remote-id</key>
+	<string>4668</string>
+</dict>
+</plist>

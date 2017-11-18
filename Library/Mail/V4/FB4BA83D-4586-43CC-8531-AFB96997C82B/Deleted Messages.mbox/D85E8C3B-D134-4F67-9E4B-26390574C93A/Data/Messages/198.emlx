@@ -1,0 +1,827 @@
+44974     
+Return-path:
+ <bounces+546346-b29d-austindreier=icloud.com@email.outboundsend.com>
+Received: from st11p00im-smtpin005.mac.com ([17.172.80.23])
+ by ms60015.mac.com (Oracle Communications Messaging Server 8.0.1.2.20170607
+ 64bit (built Jun  7 2017)) with ESMTP id <0OY200E7CPUTYL20@ms60015.mac.com>
+ for austindreier@icloud.com; Thu, 19 Oct 2017 14:06:29 +0000 (GMT)
+Original-recipient: rfc822;austindreier@icloud.com
+Received: from o1.email.outboundsend.com
+ (o1.email.outboundsend.com [198.37.153.3]) by st11p00im-smtpin005.me.com
+ (Oracle Communications Messaging Server 8.0.1.2.20170607 64bit (built Jun  7
+ 2017)) with ESMTPS id <0OY200D0APUOQK10@st11p00im-smtpin005.me.com> for
+ austindreier@icloud.com (ORCPT austindreier@icloud.com); Thu,
+ 19 Oct 2017 14:06:28 +0000 (GMT)
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 spamscore=0
+ clxscore=64 suspectscore=51 malwarescore=0 phishscore=0 adultscore=0
+ bulkscore=100 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.0.1-1707230000 definitions=main-1710190194
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10432:,,
+ definitions=2017-10-19_05:,, signatures=0
+Authentication-results: st11p00mm-dmarcmilter003.me.com; dmarc=fail
+ header.from=kw.com
+Authentication-results: st11p00mm-spfmilter002.mac.com; spf=pass
+ (st11p00mm-spfmilter002.mac.com: domain of
+ bounces+546346-b29d-austindreier=icloud.com@email.outboundsend.com designates
+ 198.37.153.3 as permitted sender)
+ smtp.mailfrom=bounces+546346-b29d-austindreier=icloud.com@email.outboundsend.com;
+Received-SPF: pass (st11p00mm-spfmilter002.mac.com: domain of
+ bounces+546346-b29d-austindreier=icloud.com@email.outboundsend.com designates
+ 198.37.153.3 as permitted sender) receiver=st11p00mm-spfmilter002.mac.com;
+ client-ip=198.37.153.3; helo=o1.email.outboundsend.com;
+ envelope-from=bounces+546346-b29d-austindreier=icloud.com@email.outboundsend.com;
+Authentication-results: st11p00mm-dkimmilter006.mac.com;	dkim=pass (1024-bit
+ key) header.d=outboundsend.com header.i=@outboundsend.com header.b=jg/sYi57;
+	dkim-adsp=temperror
+ reason="'_adsp._domainkey.kw.com' reply was unresolved CNAME"
+DKIM-Signature: v=1; a=rsa-sha1; c=relaxed/relaxed;	d=outboundsend.com;
+	h=content-type:from:mime-version:reply-to:to:subject; s=s1;
+	bh=BrP8C4Nx3eMD+pv0hnS+MKXP0z8=; b=jg/sYi5729Z+i0c16W2etdFtlBkKX
+	m0qp1Q3yzLxMG8yAEtrB8TZj3elYK/9mydfBSepeTOoJhl7c/8DBs+BAZUo5vCQG
+	+Z5eIZijAe3VNGOiu8mTVXdTJNRoAwIgZi6Dq/uG7VZwbe7bKUoEWj6qgJCh2xuT
+	+zSOg1VAsktiy4=
+Received: by filter0052p1las1.sendgrid.net with SMTP id
+ filter0052p1las1-31222-59E8B155-D 2017-10-19 14:06:13.292525146 +0000 UTC
+Received: from NTQ2MzQ2
+ (ec2-35-167-179-74.us-west-2.compute.amazonaws.com [35.167.179.74])
+	by ismtpd0005p1sjc2.sendgrid.net (SG) with HTTP id b1xCmLEcQjK_xsGBRKkM2A	Thu,
+ 19 Oct 2017 14:06:13.115 +0000 (UTC)
+Content-type: multipart/alternative;
+ boundary=0bb3c68281430414a01e051a0dcb720e1b546a50d836901654a0ae0e3599
+Date: Thu, 19 Oct 2017 14:06:24 +0000 (UTC)
+From: Robert Tait <tait@kw.com>
+MIME-version: 1.0
+Reply-to: Robert Tait <tait@kw.com>
+To: austindreier@icloud.com
+Message-id: <b1xCmLEcQjK_xsGBRKkM2A@ismtpd0005p1sjc2.sendgrid.net>
+Subject: Trends in Today's Luxury Home Market
+x-icloud-spam-score: 3321331
+ f=kw.com;e=email.outboundsend.com;is=yes;ir=no;spf=pass;dkim=pass;dmarc=fail/none/none;gdwl=absent;pps=ham;clxs=ham;clxw=neutral
+X-CLX-Spam: false
+X-CLX-UnSpecialScore: None
+X-CLX-Score: 64
+X-CLX-Shades: None
+X-MANTSH: 1TEIXWV4bG1oaGkdHB0tNT0ReQ0QYExodEQpMQxcbHQQbHRgEGR8EGBIQGx4aHxo
+ RCkxZFxweEQpZTRdkRURPEQpZSRcacRoQGncGHB5xHBIQGx53BhoGGhEKWV4XY255EQpDThdae
+ xpSW1xgaH9zWn4FHX5oZVoTQXleXEVeUh1NcF5GfhEKWFwXGQQaBBkYB00ZThNPExkYBRsdBBs
+ dGAQSGQQbHRAbHhofGhEKXlkXeGJGcgERCk1cFxoRCkxaF3htTU1rEQpFWRdzEQpMXxd6BQUFB
+ QUFBQUTWxEKQ1oXGxMSBBkdBBsfGQQZEQpCXhcbEQpCRRdmGk5abHl/GntMWxEKQk4Xb1MccEt
+ MBRteZ1oRCkJMF2tSSG9ecgVCfWgdEQpCbBdgYUxjYxMTSFBlfhEKQkAXY31fTn8YUHJsSEURC
+ kJYF25HHRtOZGFFGxJAEQpNXhcbEQpwaBd6cGNpG3AdcHhBaRAZGhEKcGgXbRhjaRwbRB8fRHM
+ QGRoRCnBoF2kZR256f00bHh1FEBkaEQpwaBdpbExMTUkTQXpTaxAZGhEKcGgXbEV7Hx1pGU8fc
+ 20QGRoRCnB/F2tHAVtmWWFjegUcEBkaEQpwfRdrRwFbZllhY3oFHBAZGhEKcH8XZUVGAWNefhp
+ vQlAQGx4RCnBfF2R/aE9rSGlucmZsEBkaEQpwfRdmf1tfZ2xoR3NYEhAZGhEKcF8XY0lLRnt9f
+ lBHaEwQGRoRCnB9F2RGSWtJaWdsRFl5EBkaEQpwfxdoH39mQE9hYm54bxAeHxEKcF8XYmNfRhh
+ fHm1vT3gQHAQeEQpwfRdhQ0diQR9CY0d5chAcBB4RCnB/F2NaT01ESV98S0JZEB4aEQpwXxdpW
+ 1pDbWNiTwF/HRASBBMRCnB9F2BnfR9nX0h5EmtTEBkaEQpwfxdlem9tWRtwYGx9QxAdBBMRCnB
+ fF2NYZGliH1lZAW5iEBIEGBEKcH0XaR9Lb2FITU5ve3oQGRoR
+x-dmarc-info: pass=fail; dmarc-policy=none; s=r0; d=r0
+x-dmarc-policy: v=DMARC1; p=none;
+ rua=mailto:dmarc_agg@vali.email,mailto:kw@rua.agari.com,mailto:romf0l72@ag.dmarcian.com;
+ ruf=mailto:kw@ruf.agari.com,mailto:romf0l72@fr.dmarcian.com
+X-SG-EID:
+ wDL73fzM24memzQeYD8vNs60a1/y7ttRZFoC2GN2sWCNgZuPQZjGFWzjiu4t96tS8uqCqAdg9OLhm6
+ 1eX2vyqbYD5J5Wf3vzNhtt8Bw+EPHw11YB+1KE23NgNwhIhsGKHO842pAZABdIpcnjo2CdDWvDjgVW
+ J+h/bCXkOLQzQlILP49A/dzZDShxjnmGwBlCg02/T98WrJ5WD1Sw11alBpAiH9NPXXf07aIruCFihc
+ 0=
+X-SG-ID:
+ tOFtD8/DFsLAxRdORIavOY033PLiJ6aSWP4hAzWoyFhUEyibKqE/sc0QUTWUk7gYGX4N0tq44+kj6z
+ OyC2ALWobJ/fjGBTozmGmud9KD3eTWb1Ezy+jXhWS/78Hd6AAqRCQ/afIz8nzUTnA7j3J5Hx/bFDgD
+ IhCJ+vpmgOkKKCyGvY4Bkkj5vFWIT/LAN/E1hZTdDa2zV9DyLnt9ODvhYfaKtNWe2pdTjtiTOJwdd9
+ A=
+
+--0bb3c68281430414a01e051a0dcb720e1b546a50d836901654a0ae0e3599
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=UTF-8
+Mime-Version: 1.0
+
+Trends in Today's Luxury Home Market Are your clients looking for upscale a=
+menities and designs?... In 2019, the NFL's Los Angeles Rams plan to unveil=
+ a stadium complex that will include a hotel, a casino and 620,000 square f=
+eet of retail space, as well as a luxury residential property development. =
+Perfect for die-hard sports fans, Hollywood Park will consist of some 3,000=
+ homes, mostly targeting the high-end sector. So what else is happening in =
+the world of luxury real estate? Indoor Sports Courts: Some affluent homeow=
+ners, especially in cities with inclement weather, have opted to bring the =
+fun and games indoors. We're talking about full-sized basketball courts, te=
+nnis courts and surf simulators. Imagine waking up to catch a wave in the m=
+iddle of winter without ever having to leave the house. Smart Technology: D=
+esign trends include all manner of home automation, including security alar=
+ms and cameras, lighting and climate control, and entertainment systems, al=
+l operable with the touch of a button and remotely by way of a smartphone. =
+Voice-activated assistants such as Alexa and Google Home are also hugely po=
+pular. Artistic Furniture: Furniture isn't just for comfort, and art isn't =
+relegated to shelves and walls. Benches, tables, chairs and armoires are no=
+w doubling as artistic statement pieces. Who says art can't be beautiful an=
+d functional? Luxury Renting: Some high-end homeowners are entering the ren=
+tal market, dressing up their digs to attract the right clientele. With app=
+ealing bedding, books and art (not to mention that artistic furniture), hom=
+es are doubling as rental spaces when the owners are away. These are just a=
+ handful of trends in luxury real estate and design. But there are plenty o=
+f new and unusual developments happening every day. What's recently caught =
+your eye? The culture at Keller Williams ensures agents are committed to pr=
+oviding creative, helpful solutions for clients. Learn more about how we ca=
+n help you too. Thank you for reading! - Robert Tait Robert Tait |Team Lead=
+er |Keller Williams Realty Northern Colorado Phone (303) 888-0194 tait@kw.c=
+om 3720 South College Ave. Unit A Fort Collins, CO 80525 Designed and Deliv=
+ered By OutboundEngine, Inc Don't want to get these emails anymore? Unsubsc=
+ribe here. Problem viewing email? View online version.
+
+---------------------------------------------------------------------------=
+-----
+Thank you for reading!
+---------------------------------------------------------------------------=
+-----
+
+Keller Williams Realty Northern Colorado
+Robert Tait
+Team Leader
+
+3720 South College Ave. Unit A
+Fort Collins, CO 80525 USA
+http://Taitestates.com
+
+Email: tait@kw.com
+Phone: (303) 888-0194
+
+---------------------------------------------------------------------------=
+-----
+Having trouble viewing this e-mail? See it in your browser using this link:
+http://robtait.myhomehq.biz/4-trends-in-todays-luxury-home-market
+---------------------------------------------------------------------------=
+-----
+Unsubscribe: http://robtait.myhomehq.biz/microsite/unsubscribe/rpCuQG3V2ZOn=
+Bug/reCwfAx9wyeGgCLWdF4=
+
+--0bb3c68281430414a01e051a0dcb720e1b546a50d836901654a0ae0e3599
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=UTF-8
+Mime-Version: 1.0
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org=
+/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns=3D"http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8=
+"/>
+    <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=
+=3D1.0"/>
+    <!-- head_meta -->
+    <meta property=3D"og:image" content=3D"http://d1k3c4xlx29yaw.cloudfront=
+.net/uploads/original/20834/nUGFEDGfh0JoEig9LLVW8n4nLeQxFzksHMyXe-NZIx8.jpg=
+" />
+    <meta property=3D"og:image" content=3D"http://d1k3c4xlx29yaw.cloudfront=
+.net/uploads/original/20834/nUGFEDGfh0JoEig9LLVW8n4nLeQxFzksHMyXe-NZIx8.jpg=
+" />
+    <meta property=3D"og:title" content=3D"Today's Luxury Home Market Trend=
+s"/>=20
+    <meta property=3D"og:description" content=3D"The country's most affluen=
+t homeowners are currently interested in indoor sports courts, smart techno=
+logy, artistic furniture and rental spaces. "/>
+    <link href=3D'https://s3.amazonaws.com/outboundengine/resources/fonts/f=
+onts.css' rel=3D'stylesheet' type=3D'text/css'>
+    <meta name=3D"viewport" content=3D"initial-scale=3D1">
+
+        <meta name=3D"twitter:card" content=3D"summary_large_image">
+    <meta name=3D"twitter:image" content=3D"http://d1k3c4xlx29yaw.cloudfron=
+t.net/uploads/original/20834/nUGFEDGfh0JoEig9LLVW8n4nLeQxFzksHMyXe-NZIx8.jp=
+g">
+    <meta name=3D"twitter:url" content=3D"http://robtait.myhomehq.biz/4-tre=
+nds-in-todays-luxury-home-market">
+    <meta name=3D"twitter:title" content=3D"Trends in Today's Luxury Home M=
+arket">
+=20=20=20=20
+
+    <title>Trends in Today's Luxury Home Market</title>
+    <style type=3D"text/css">
+        /* end media queries */
+        body {
+            margin: 0;
+            padding: 0;
+            color: #666666;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 12px;
+            -webkit-text-size-adjust: none;
+            -ms-text-size-adjust: none;
+        }
+
+        h1 {
+            color: #666666;
+            font-weight: 300;
+            font-size: 20px;
+            margin: 0 !important;
+            margin-bottom: 10px !important;
+        }
+
+        h2 {
+            color: #666666 !important;
+            font-weight: 700;
+            font-size: 14px;
+            text-transform: uppercase;
+            margin: 0 !important;
+            margin-bottom: 0px !important;
+        }
+
+        h3 {
+            color: #1b836e !important;
+            margin: 0 !important;
+            margin-bottom: 10px !important;
+            font-size: 18px;
+            font-style: italic;
+            line-height: 26px;
+            font-weight: 600;
+        }
+
+        h4 {
+            color: #1b836e !important;
+            margin: 0 !important;
+            margin-bottom: 0 !important;
+            font-style: italic;
+            font-size: 14px;
+            font-weight: 300;
+            line-height: 10px;
+        }
+
+        a, a:link, a:visited {
+            color: #2980b9 !important;
+            text-decoration: none;
+        }
+
+        a:hover, a:active {
+            text-decoration: none;
+            color: #2980b9 !important;
+        }
+
+        .highlighted {
+            background-color: #ffdc75;
+            color: #444444;
+            padding: 1px 4px;
+            border-radius: 3px;
+        }
+
+        p {
+            margin: 0 !important;
+            margin-bottom: 10px !important;
+            font-family: font-family:Arial, Helvetica, sans-serif !importan=
+t;
+        }
+
+        img {
+            border: 0;
+        }
+
+        table td {
+            border-collapse: collapse;
+        }
+
+        /*Hotmail and Yahoo specific code*/
+        .ReadMsgBody {
+            width: 100%;
+        }
+
+        .ExternalClass {
+            width: 100%;
+        }
+
+        .yshortcuts {
+            color: #2980b9;
+        }
+
+        .yshortcuts a span {
+            color: #2980b9;
+            border-bottom: none !important;
+            background: none !important;
+        }
+        /*Hotmail and Yahoo specific code*/
+    </style>
+</head>
+
+<body>
+<div class=3D"preheader" style=3D"display: none !important; max-height:0px =
+!important; overflow:hidden !important; mso-hide:all;">Are your clients loo=
+king for upscale amenities and designs?...</div>
+<table id=3D"pageContainer" align=3D"center" cellpadding=3D"0" cellspacing=
+=3D"0"
+       style=3D"border-collapse:collapse; border:0;" bgcolor=3D"#333" class=
+=3D"full-width" width=3D"100%">
+    <tr>
+        <td  width=3D"800" align=3D"center">
+        <table align=3D"center" cellpadding=3D"0" cellspacing=3D"0" border=
+=3D"0">
+            <tbody>
+            <tr>
+                <td>
+                        <table align=3D"center" height=3D"30" width=3D"800"=
+ bgcolor=3D"#ffffff" cellpadding=3D"0" cellspacing=3D"0" border=3D"0"><tbod=
+y><tr><td> <img style=3D"display:block;" src=3D"http://d1k3c4xlx29yaw.cloud=
+front.net/templatesV2/U12302/C13234/6DX2l3hS0Gi2nqumR0fUuA/1728762117jExGzJ=
+IojFQbRUdZ5_ElKA1508421963060bBtem6VOfWMSlZ5Cb8CN.png" width=3D"548" height=
+=3D"30"></td><td> <a href=3D"http://email.outboundsend.com/wf/click?upn=3Do=
+bAb0qNX-2BItM75kab8Vj6WexSjf-2B-2FFQbiWta1P-2FJ-2BwD6VhBF5-2BJFj-2BqJgZu7V2=
+MA_7XtDdMHRjqIUi4tzSjSp2h-2BoTg8yV1h4-2FGX2SHZpIEqypF03TjaBwvgmw9oU99pw08sR=
+A9KoXQqrFM-2BA5GsWg8tFENtgyUWrBpbTUqR9CWaM9awaVOjkx63ogc9146OT-2BS9y5pbbmmm=
+Ka3cJJbMokRZ78lytKee7JrsFJ86EiK-2BFuCGvRywF5mmOtcHKVe50doLbeIStHSahiahSYoII=
+OQ-2Bq-2BUysebZc7iyOrnsxsNeXgtuXQVz-2FNO9e8qD14A9rRMYENObsExp1fAMcfl99Ob9fz=
+x3cdVDeq0uvNnIenIstcnuflIKYKJyK6QtWSwYnfdo-2FxeZM0Dkb0heoFKQ-2FfBa4ySkfJkxQ=
+irtuUZiZAGrBQArOoUCEEfgd-2FGClZ921vqGKI5QZM4ooxj-2FpTuWPvkQk6SQtvEtmVA9IouJ=
+FwxM4YhnzpWDZmCVVUZJri5QF" class=3D"link2" style=3D""><img style=3D"display=
+:block;" src=3D"http://d1k3c4xlx29yaw.cloudfront.net/templatesV2/U12302/C13=
+234/6DX2l3hS0Gi2nqumR0fUuA/398393607mZ0T7zgm0WhMetQztFglA1508421963060lix85=
+J2SalSp0bHeaPF9.png" width=3D"30" height=3D"30"></a></td><td> <img style=3D=
+"display:block;" src=3D"http://d1k3c4xlx29yaw.cloudfront.net/templatesV2/U1=
+2302/C13234/6DX2l3hS0Gi2nqumR0fUuA/1459324415prp8t-KI2747UPwe5C3A9A15084219=
+630602tIgaqpGyEIgZnXEFgYh.png" width=3D"2" height=3D"30"></td><td> <a href=
+=3D"http://email.outboundsend.com/wf/click?upn=3DXb6lpTB2O11vWpVKoqEkUIN-2F=
+kvOwo3AxRsf9wP0vm0E-3D_7XtDdMHRjqIUi4tzSjSp2h-2BoTg8yV1h4-2FGX2SHZpIEqypF03=
+TjaBwvgmw9oU99pw08sRA9KoXQqrFM-2BA5GsWg8tFENtgyUWrBpbTUqR9CWaM9awaVOjkx63og=
+c9146OT-2BS9y5pbbmmmKa3cJJbMokRZ78lytKee7JrsFJ86EiK-2BFuCGvRywF5mmOtcHKVe50=
+doLbeIStHSahiahSYoIIOQ-2Bq-2BUysebZc7iyOrnsxsNeXgtuXQVz-2FNO9e8qD14A9rRMYEN=
+ObsExp1fAMcfl99Ob9fzx3cdVDeq0uvNnIenIs1-2FtH5nvuR3Kb6REx3ah0LGXG1Uc6K7YuZfe=
+h3rj7D5Py-2FMeW3wxxEHegdVdVnXSmazf2YTvcvA-2F1MCOA2ZDSC6aLweBW6ccce0rJG556av=
+JZbmPMLEomTVZkCgde7BVWEoz2RGdCthZ4bnMroO-2FGG" class=3D"link2" style=3D""><=
+img style=3D"display:block;" src=3D"http://d1k3c4xlx29yaw.cloudfront.net/te=
+mplatesV2/U12302/C13234/6DX2l3hS0Gi2nqumR0fUuA/1419381124sWe5al5LNuUKOD0HHV=
+7GRg1508421963060zge8d9aHLzGGAfj49xVy.png" width=3D"30" height=3D"30"></a><=
+/td><td> <img style=3D"display:block;" src=3D"http://d1k3c4xlx29yaw.cloudfr=
+ont.net/templatesV2/U12302/C13234/6DX2l3hS0Gi2nqumR0fUuA/1697216747CpB5tvUi=
+XUJbmeZL9TPlYQ1508421963060qlZTe5X6qTeLxB2kqLsJ.png" width=3D"2" height=3D"=
+30"></td><td> <a href=3D"http://email.outboundsend.com/wf/click?upn=3DhJPUP=
+54qVNdinMqXi-2BWvENIVJX-2F-2FgYYkbe6O6WgW4OE-3D_7XtDdMHRjqIUi4tzSjSp2h-2BoT=
+g8yV1h4-2FGX2SHZpIEqypF03TjaBwvgmw9oU99pw08sRA9KoXQqrFM-2BA5GsWg8tFENtgyUWr=
+BpbTUqR9CWaM9awaVOjkx63ogc9146OT-2BS9y5pbbmmmKa3cJJbMokRZ78lytKee7JrsFJ86Ei=
+K-2BFuCGvRywF5mmOtcHKVe50doLbeIStHSahiahSYoIIOQ-2Bq-2BUysebZc7iyOrnsxsNeXgt=
+uXQVz-2FNO9e8qD14A9rRMYENObsExp1fAMcfl99Ob9fzx3cdVDeq0uvNnIenIvV5ct7ncQuNmT=
+-2FBQNFk2-2BOvAka5hXTsoIP1vliYWfPHhJiWjMcfCCca8leLBBm3Pv6gjZdjNBKBgpHHS0419=
+-2Byq1X3zKLf2sbDJtSNLRzmkBBW73U-2BcVWvvwlgafANrQX5OQEW1iytWD3-2BF3hllyei" c=
+lass=3D"link2" style=3D""><img style=3D"display:block;" src=3D"http://d1k3c=
+4xlx29yaw.cloudfront.net/templatesV2/U12302/C13234/6DX2l3hS0Gi2nqumR0fUuA/4=
+06845736UEs6JBrF0EaNV-DgIApQOQ1508421963060kh58TOUEGmk4E7V0XDbo.png" width=
+=3D"30" height=3D"30"></a></td><td> <img style=3D"display:block;" src=3D"ht=
+tp://d1k3c4xlx29yaw.cloudfront.net/templatesV2/U12302/C13234/6DX2l3hS0Gi2nq=
+umR0fUuA/308368301DkWOCFHRFSWcpy_iFSkEHQ1508421963060CoKUPyGWXEUQQJEwRAH1.p=
+ng" width=3D"2" height=3D"30"></td><td> <a href=3D"http://email.outboundsen=
+d.com/wf/click?upn=3DwoKBu10O-2F-2FtFoH79Rm4MCF8lCS3McQljvuwl7I42ZEaSVSe8qP=
+6m6P20mIlpH11a_7XtDdMHRjqIUi4tzSjSp2h-2BoTg8yV1h4-2FGX2SHZpIEqypF03TjaBwvgm=
+w9oU99pw08sRA9KoXQqrFM-2BA5GsWg8tFENtgyUWrBpbTUqR9CWaM9awaVOjkx63ogc9146OT-=
+2BS9y5pbbmmmKa3cJJbMokRZ78lytKee7JrsFJ86EiK-2BFuCGvRywF5mmOtcHKVe50doLbeISt=
+HSahiahSYoIIOQ-2Bq-2BUysebZc7iyOrnsxsNeXgtuXQVz-2FNO9e8qD14A9rRMYENObsExp1f=
+AMcfl99Ob9fzx3cdVDeq0uvNnIenIsSI-2BI1K5VhuNyDP8s7lZU6JpzKnfz1V5IuVSlWPJno0G=
+kFBBzyMULdXvVHy87vcO46lXLDrr95BWwH6Cm0-2Ffj37CZCLWc2hYp6aVvYTKxl6OfD3zgjetd=
+5VQpHlfqG3xIkvN8SwRWMdjOvPtjTvxhu" class=3D"link2" style=3D""><img style=3D=
+"display:block;" src=3D"http://d1k3c4xlx29yaw.cloudfront.net/templatesV2/U1=
+2302/C13234/6DX2l3hS0Gi2nqumR0fUuA/372489804dv-B1k07Gf6fTWadsTVHug150842196=
+3060HSLv1PqumD9uxRaB1gi9.png" width=3D"30" height=3D"30"></a></td><td> <img=
+ style=3D"display:block;" src=3D"http://d1k3c4xlx29yaw.cloudfront.net/templ=
+atesV2/U12302/C13234/6DX2l3hS0Gi2nqumR0fUuA/955478593WDBfik5KH02mRgfKxhYAkA=
+1508421963060WGmxJiqj1Soiw0hgiwJB.png" width=3D"2" height=3D"30"></td><td> =
+<a href=3D"http://email.outboundsend.com/wf/click?upn=3DUaqtj9J-2ByPZxuihgB=
+JGsPWnodi-2FSVcsCdqV1-2BKu9ZA-2FAqTBBWUr-2BZOW1VC9Pfb9BGcTV6VD29YnYfbw1zXKK=
+fw-3D-3D_7XtDdMHRjqIUi4tzSjSp2h-2BoTg8yV1h4-2FGX2SHZpIEqypF03TjaBwvgmw9oU99=
+pw08sRA9KoXQqrFM-2BA5GsWg8tFENtgyUWrBpbTUqR9CWaM9awaVOjkx63ogc9146OT-2BS9y5=
+pbbmmmKa3cJJbMokRZ78lytKee7JrsFJ86EiK-2BFuCGvRywF5mmOtcHKVe50doLbeIStHSahia=
+hSYoIIOQ-2Bq-2BUysebZc7iyOrnsxsNeXgtuXQVz-2FNO9e8qD14A9rRMYENObsExp1fAMcfl9=
+9Ob9fzx3cdVDeq0uvNnIenIuBOBzyVwZjOLBt-2FdhjDYih78a1G7dIFd6oUSpOBZS3Az1f3mRP=
+hluasszYnUQ4QSpA5LmTpa7jV-2B9TqqJ-2F-2BXSEfnBaoDKEZRgqse4Hy-2FUbG64H937Ds5U=
+Cxyk-2FQoRZmR55OmdZdWsrQzpIIACHQ-2B-2Fc" class=3D"link2" style=3D""><img st=
+yle=3D"display:block;" src=3D"http://d1k3c4xlx29yaw.cloudfront.net/template=
+sV2/U12302/C13234/6DX2l3hS0Gi2nqumR0fUuA/1608661710Luyih8K8bBeWFFTfKF90kw15=
+08421963060i2CjAtLKBRjfqGhHCLEe.png" width=3D"30" height=3D"30"></a></td><t=
+d> <img style=3D"display:block;" src=3D"http://d1k3c4xlx29yaw.cloudfront.ne=
+t/templatesV2/U12302/C13234/6DX2l3hS0Gi2nqumR0fUuA/1200023204drlZIcsAR5fm1q=
+J3-SoKgg1508421963060dg6iqslHxb0NFE0PNTBF.png" width=3D"2" height=3D"30"></=
+td><td> <a href=3D"http://email.outboundsend.com/wf/click?upn=3DxZGRLFTqd7l=
+tTLnNJBv3PBwh1cCZEoLpuHnUovsKXhHKzt0CxyLxW2eOrmgNrDAY_7XtDdMHRjqIUi4tzSjSp2=
+h-2BoTg8yV1h4-2FGX2SHZpIEqypF03TjaBwvgmw9oU99pw08sRA9KoXQqrFM-2BA5GsWg8tFEN=
+tgyUWrBpbTUqR9CWaM9awaVOjkx63ogc9146OT-2BS9y5pbbmmmKa3cJJbMokRZ78lytKee7Jrs=
+FJ86EiK-2BFuCGvRywF5mmOtcHKVe50doLbeIStHSahiahSYoIIOQ-2Bq-2BUysebZc7iyOrnsx=
+sNeXgtuXQVz-2FNO9e8qD14A9rRMYENObsExp1fAMcfl99Ob9fzx3cdVDeq0uvNnIenIs4me-2F=
+rf6j7TAzU8so5YpoYn4P2UmBMg1emBAncuFOd1g2NTnq381GZqrikRtDtq-2BblpG1T3iWRpj2s=
+uImVAvaEOEh48MTvUzv-2FZU2xGJ5B0uC27wSrRxWDT-2BM-2BZQ1XfCqGSx2-2FeBq00NCxdml=
+NGKSD" class=3D"link2" style=3D""><img style=3D"display:block;" src=3D"http=
+://d1k3c4xlx29yaw.cloudfront.net/templatesV2/U12302/C13234/6DX2l3hS0Gi2nqum=
+R0fUuA/1288499654fBQW0Sws4nL2ryKlFZcXgg1508421963060xKFeBw1xdm9r3VJXyxhc.pn=
+g" width=3D"30" height=3D"30"></a></td><td> <img style=3D"display:block;" s=
+rc=3D"http://d1k3c4xlx29yaw.cloudfront.net/templatesV2/U12302/C13234/6DX2l3=
+hS0Gi2nqumR0fUuA/1863250788WV54i4J6tyC4MtT-ccQsPg1508421963060tb8he2dlnqYn4=
+mCdFW7C.png" width=3D"2" height=3D"30"></td><td> <a href=3D"http://email.ou=
+tboundsend.com/wf/click?upn=3DwoKBu10O-2F-2FtFoH79Rm4MCKtFj-2BA1hGD9Pr37dH1=
+PMFCcij4OU136UN1S9HlKNL1RAGW7ulwa1K-2BOXnt1o5RjnA-3D-3D_7XtDdMHRjqIUi4tzSjS=
+p2h-2BoTg8yV1h4-2FGX2SHZpIEqypF03TjaBwvgmw9oU99pw08sRA9KoXQqrFM-2BA5GsWg8tF=
+ENtgyUWrBpbTUqR9CWaM9awaVOjkx63ogc9146OT-2BS9y5pbbmmmKa3cJJbMokRZ78lytKee7J=
+rsFJ86EiK-2BFuCGvRywF5mmOtcHKVe50doLbeIStHSahiahSYoIIOQ-2Bq-2BUysebZc7iyOrn=
+sxsNeXgtuXQVz-2FNO9e8qD14A9rRMYENObsExp1fAMcfl99Ob9fzx3cdVDeq0uvNnIenIvjeWJ=
+uRokHyVzr3GfSuVXY0-2BzO-2FACHjwE5HH-2BCKQMA1SZCWucf8CSVmqdGm9O1sN6Tegl1p3xU=
+TYiQ-2F7rOjCG8rwvgwAXPKHy9Td1O1udK0Sp37-2FpdGZzSJL1MsWDJISR28tOznDkDxMue-2F=
+3QeD-2F3l" class=3D"link2" style=3D""><img style=3D"display:block;" src=3D"=
+http://d1k3c4xlx29yaw.cloudfront.net/templatesV2/U12302/C13234/6DX2l3hS0Gi2=
+nqumR0fUuA/569671681FZtw3KFikDZKLryO9xshBw1508421963060qIN5cFGHG3gKpXROgG2m=
+.png" width=3D"30" height=3D"30"></a></td><td> <img style=3D"display:block;=
+" src=3D"http://d1k3c4xlx29yaw.cloudfront.net/templatesV2/U12302/C13234/6DX=
+2l3hS0Gi2nqumR0fUuA/13626166691XBfKPdvExKLnQON8BiggQ15084219630605UNzvipEd2=
+5V5Lwnehuh.png" width=3D"30" height=3D"30"></td></tr></tbody></table>
+                    <!-- HERO IMAGE SECTION -->
+                        <table align=3D"center" height=3D"465" width=3D"800=
+" cellpadding=3D"0" cellspacing=3D"0" border=3D"0"><tbody><tr><td> <img sty=
+le=3D"display:block;" src=3D"http://d1k3c4xlx29yaw.cloudfront.net/templates=
+V2/U12302/C13234/6DX2l3hS0Gi2nqumR0fUuA/1552864505kM5UZaMNiImsrhqZf0lQdw150=
+8421959117zFE82jlzHA0kgKqjOEUm.png" width=3D"800" height=3D"465"></td></tr>=
+</tbody></table>
+                    <!-- END HERO IMAGE SECTION -->
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+            <!-- CALL TO ACTION BUTTONS SECTION -->
+            <!-- CALL TO ACTION BUTTONS COULD BE NULL IF THIS USER DOESN'T =
+HAVE ANY SET -->
+            <table bgcolor=3D"#ffffff" cellpadding=3D"0" cellspacing=3D"0" =
+border=3D"0" align=3D"center" class=3D"email-width" width=3D"800">
+                <tbody>
+                    <tr>
+                        <td align=3D"center" style=3D"padding: 20px 0px 0px=
+ 0px;">
+                                <table align=3D"center" height=3D"140" widt=
+h=3D"750" cellpadding=3D"0" cellspacing=3D"0" border=3D"0"><tbody><tr><td r=
+owspan=3D"3"> <img style=3D"display:block;" src=3D"http://d1k3c4xlx29yaw.cl=
+oudfront.net/templatesV2/U12302/C13234/6DX2l3hS0Gi2nqumR0fUuA/16496193446H-=
+ZYxylczc0STdprhUMKg1508421964250k4qbNTo2BtHQ802YPV0l.png" width=3D"130" hei=
+ght=3D"140"></td><td> <a href=3D"http://email.outboundsend.com/wf/click?upn=
+=3DobAb0qNX-2BItM75kab8Vj6WexSjf-2B-2FFQbiWta1P-2FJ-2BwApAlGxcUQDcCZtWXauIc=
+Xt99PljSxZGbSmRS1XKQdWv1vY1eGOwa4-2FfR0SEIOQXcDuBO4OmWhasHY9vmOxdeiNoDdqiDP=
+6AupYvngzWjFb7zuDdH1t-2B9duPeQr0AvkfWg-3D_7XtDdMHRjqIUi4tzSjSp2h-2BoTg8yV1h=
+4-2FGX2SHZpIEqypF03TjaBwvgmw9oU99pw08sRA9KoXQqrFM-2BA5GsWg8tFENtgyUWrBpbTUq=
+R9CWaM9awaVOjkx63ogc9146OT-2BS9y5pbbmmmKa3cJJbMokRZ78lytKee7JrsFJ86EiK-2BFu=
+CGvRywF5mmOtcHKVe50doLbeIStHSahiahSYoIIOQ-2Bq-2BUysebZc7iyOrnsxsNeXgtuXQVz-=
+2FNO9e8qD14A9rRMYENObsExp1fAMcfl99Ob9fzx3cdVDeq0uvNnIenIviX5of5DWivKyICiSk9=
+-2B-2FjLrZZLeg8QCU7-2FaYHDex5U8BgnEfa8glBdpcEGqWmqXplM9Plb9LrnPgkxpAPnrX-2F=
+IDfeMyy9b5tIEweif2SAIiILJEy0kjIzw7ci6mJZhqnjL35t0IvoycwUh-2BW0MRMv" class=
+=3D"link2" style=3D""><img style=3D"display:block;" src=3D"http://d1k3c4xlx=
+29yaw.cloudfront.net/templatesV2/U12302/C13234/6DX2l3hS0Gi2nqumR0fUuA/17386=
+86803RrXyObkSC0ptoU6Yd3ohYw1508421964250RdBdI6RVEo7RYpdSOSMn.png" width=3D"=
+234" height=3D"65"></a></td><td rowspan=3D"3"> <img style=3D"display:block;=
+" src=3D"http://d1k3c4xlx29yaw.cloudfront.net/templatesV2/U12302/C13234/6DX=
+2l3hS0Gi2nqumR0fUuA/166820339qphZLGLcxScEzsuzMOzsXw15084219642507qwHiC2Ov9u=
+PMpRMqmf0.png" width=3D"23" height=3D"140"></td><td> <a href=3D"http://emai=
+l.outboundsend.com/wf/click?upn=3DobAb0qNX-2BItM75kab8Vj6WexSjf-2B-2FFQbiWt=
+a1P-2FJ-2BwDps9f1uGYtnHVg3i4-2BE0vohqKAP9bIFcOAFrQDHn60LCf37TH4yrfdPGQDFQik=
+29qBezJ-2BpFBlrKnV62Mxe9Ge3nl7XuQrjrn7h9Sc3LEtqNX76nTheIkeF1foy4sBf3ZJ4zaX3=
+Tyl2cQJUOVaJdGe_7XtDdMHRjqIUi4tzSjSp2h-2BoTg8yV1h4-2FGX2SHZpIEqypF03TjaBwvg=
+mw9oU99pw08sRA9KoXQqrFM-2BA5GsWg8tFENtgyUWrBpbTUqR9CWaM9awaVOjkx63ogc9146OT=
+-2BS9y5pbbmmmKa3cJJbMokRZ78lytKee7JrsFJ86EiK-2BFuCGvRywF5mmOtcHKVe50doLbeIS=
+tHSahiahSYoIIOQ-2Bq-2BUysebZc7iyOrnsxsNeXgtuXQVz-2FNO9e8qD14A9rRMYENObsExp1=
+fAMcfl99Ob9fzx3cdVDeq0uvNnIenIvtWnDV1f-2Fk3yd3xz4-2FffYNmbw4NN10x7Iw5mgTnvE=
+PV5Dm61PRDyalG1wWqTAo-2FtUJGcoeWYSvRqVG6jS-2Bc-2BFTbJ7VTwcT4-2FMVUg1SyreFlS=
+HtBSodMK0gsFNnrM2YyZAYBB1-2BACV5STY4jooGlcb5" class=3D"link2" style=3D""><i=
+mg style=3D"display:block;" src=3D"http://d1k3c4xlx29yaw.cloudfront.net/tem=
+platesV2/U12302/C13234/6DX2l3hS0Gi2nqumR0fUuA/66839456JwrKt9fH1sPUT-CtDk0UQ=
+15084219642505niNI1e4JpQmQzzBVz7a.png" width=3D"234" height=3D"65"></a></td=
+><td rowspan=3D"3"> <img style=3D"display:block;" src=3D"http://d1k3c4xlx29=
+yaw.cloudfront.net/templatesV2/U12302/C13234/6DX2l3hS0Gi2nqumR0fUuA/2067890=
+948qjIrbAv_kmfQaIqBHMQ-Rw1508421964250rBem1Fo9y9rzOWW7JB9n.png" width=3D"12=
+9" height=3D"140"></td><td class=3D"oe-table-spacer"><img style=3D"display:=
+block;" src=3D"http://d1k3c4xlx29yaw.cloudfront.net/templatesV2/images/spac=
+er.gif" width=3D"1" height=3D"65"></td></tr><tr><td> <img style=3D"display:=
+block;" src=3D"http://d1k3c4xlx29yaw.cloudfront.net/templatesV2/U12302/C132=
+34/6DX2l3hS0Gi2nqumR0fUuA/245169638hCYjneb4TrlJW2nou98n6A1508421964250Eec4Q=
+IpzU8GsxI9vI9J6.png" width=3D"234" height=3D"10"></td><td> <img style=3D"di=
+splay:block;" src=3D"http://d1k3c4xlx29yaw.cloudfront.net/templatesV2/U1230=
+2/C13234/6DX2l3hS0Gi2nqumR0fUuA/203432743BsuQR1rahzfjGvIA7o8N0w150842196425=
+09xO1jx6txOy96O2Il5d6.png" width=3D"234" height=3D"10"></td><td class=3D"oe=
+-table-spacer"><img style=3D"display:block;" src=3D"http://d1k3c4xlx29yaw.c=
+loudfront.net/templatesV2/images/spacer.gif" width=3D"1" height=3D"10"></td=
+></tr><tr><td> <a href=3D"http://email.outboundsend.com/wf/click?upn=3DobAb=
+0qNX-2BItM75kab8Vj6WexSjf-2B-2FFQbiWta1P-2FJ-2BwBRDk9liAujIVqGaEvgF99ivXkOf=
+RO2XU7qt7gCeb0e7Nk1njYZoclpAgnOrPQSgYGAnIToPzQqDi8YyL8Vlizlkf5vQxzBA2Qw-2FG=
+7CIp4MfKT4w1e0OaZNwT7htdpz2GE-3D_7XtDdMHRjqIUi4tzSjSp2h-2BoTg8yV1h4-2FGX2SH=
+ZpIEqypF03TjaBwvgmw9oU99pw08sRA9KoXQqrFM-2BA5GsWg8tFENtgyUWrBpbTUqR9CWaM9aw=
+aVOjkx63ogc9146OT-2BS9y5pbbmmmKa3cJJbMokRZ78lytKee7JrsFJ86EiK-2BFuCGvRywF5m=
+mOtcHKVe50doLbeIStHSahiahSYoIIOQ-2Bq-2BUysebZc7iyOrnsxsNeXgtuXQVz-2FNO9e8qD=
+14A9rRMYENObsExp1fAMcfl99Ob9fzx3cdVDeq0uvNnIenIvJypk-2FH88UFh5si9X0lq2ENuyg=
+UClCKRr0Uc5Y5AQApRuJ1cZhEu3JBOpc7yBqftuY4WVymtnN013K9sY2Jq6aIapwdSHK8ukFlt7=
+Uouk7d7Lfn5l-2F1a0rQiFfizB2y1O2u5bLugy7ey9sq8n-2BaKR5" class=3D"link2" styl=
+e=3D""><img style=3D"display:block;" src=3D"http://d1k3c4xlx29yaw.cloudfron=
+t.net/templatesV2/U12302/C13234/6DX2l3hS0Gi2nqumR0fUuA/587402047I7bFKjNQPHU=
+AHxUimVYUHg15084219642502AONcULKCC2ohMPKQPS3.png" width=3D"234" height=3D"6=
+5"></a></td><td> <a href=3D"http://email.outboundsend.com/wf/click?upn=3Dob=
+Ab0qNX-2BItM75kab8Vj6WexSjf-2B-2FFQbiWta1P-2FJ-2BwDVq6BKLhabhaak0imRfdDIMbH=
+QSC3ZqWM0jicchjXEc9MZ9SqiMquw8K9P-2FC5rm3oFXeQus2y7gP1oQNQ2VUPLyFjMw9-2BJ8e=
+vxkJH-2BQoQSjHUSZPq0iWgrnj-2FQ8h3Og-2FQ-3D_7XtDdMHRjqIUi4tzSjSp2h-2BoTg8yV1=
+h4-2FGX2SHZpIEqypF03TjaBwvgmw9oU99pw08sRA9KoXQqrFM-2BA5GsWg8tFENtgyUWrBpbTU=
+qR9CWaM9awaVOjkx63ogc9146OT-2BS9y5pbbmmmKa3cJJbMokRZ78lytKee7JrsFJ86EiK-2BF=
+uCGvRywF5mmOtcHKVe50doLbeIStHSahiahSYoIIOQ-2Bq-2BUysebZc7iyOrnsxsNeXgtuXQVz=
+-2FNO9e8qD14A9rRMYENObsExp1fAMcfl99Ob9fzx3cdVDeq0uvNnIenIvJ4jjrbpFJgic6Nrht=
+tZFobl2r246WgLCSz6HCWoYE4m2w6AxqXZWR5zXh1Iks9lmiOVzzbqvT8bt25logbwetpwYPoNI=
+SWjC23UDNDZokMFv-2Ft1LnZrA8mkJCiL05MOc70zWHHyezO0pMGuNDRwHB" class=3D"link2=
+" style=3D""><img style=3D"display:block;" src=3D"http://d1k3c4xlx29yaw.clo=
+udfront.net/templatesV2/U12302/C13234/6DX2l3hS0Gi2nqumR0fUuA/1412298232GL9Z=
+nXy1QCje8FhNjzO0Fw1508421964250XZncbHTvAJvEnIuj75A9.png" width=3D"234" heig=
+ht=3D"65"></a></td><td class=3D"oe-table-spacer"><img style=3D"display:bloc=
+k;" src=3D"http://d1k3c4xlx29yaw.cloudfront.net/templatesV2/images/spacer.g=
+if" width=3D"1" height=3D"65"></td></tr><tr class=3D"oe-table-spacer"><td c=
+lass=3D"oe-table-spacer"><img style=3D"display:block;" src=3D"http://d1k3c4=
+xlx29yaw.cloudfront.net/templatesV2/images/spacer.gif" width=3D"130" height=
+=3D"1"></td><td class=3D"oe-table-spacer"><img style=3D"display:block;" src=
+=3D"http://d1k3c4xlx29yaw.cloudfront.net/templatesV2/images/spacer.gif" wid=
+th=3D"234" height=3D"1"></td><td class=3D"oe-table-spacer"><img style=3D"di=
+splay:block;" src=3D"http://d1k3c4xlx29yaw.cloudfront.net/templatesV2/image=
+s/spacer.gif" width=3D"23" height=3D"1"></td><td class=3D"oe-table-spacer">=
+<img style=3D"display:block;" src=3D"http://d1k3c4xlx29yaw.cloudfront.net/t=
+emplatesV2/images/spacer.gif" width=3D"234" height=3D"1"></td><td class=3D"=
+oe-table-spacer"><img style=3D"display:block;" src=3D"http://d1k3c4xlx29yaw=
+.cloudfront.net/templatesV2/images/spacer.gif" width=3D"129" height=3D"1"><=
+/td><td class=3D"oe-table-spacer"><img style=3D"display:block;" src=3D"http=
+://d1k3c4xlx29yaw.cloudfront.net/templatesV2/images/spacer.gif" width=3D"1"=
+ height=3D"1"></td></tr></tbody></table>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <!-- END CALL TO ACTION BUTTON SECTION -->
+
+            <!-- CONTENT SECTION -->
+            <table bgcolor=3D"#ffffff" align=3D"center" cellpadding=3D"0" c=
+ellspacing=3D"0" class=3D"email-width" width=3D"800"
+                   style=3D"border-collapse:collapse; text-align:left; font=
+-family:Arial, Helvetica, sans-serif; font-weight:normal; font-size:12px; l=
+ine-height:15pt; color:#666666;">
+                <tr>
+                    <td align=3D"center">
+                        <table align=3D"center" cellpadding=3D"0" cellspaci=
+ng=3D"0" class=3D"content-width" width=3D"600"
+                               style=3D"border-collapse:collapse; text-alig=
+n:left; font-family:Arial, Helvetica, sans-serif; font-weight:normal; font-=
+size:12px; line-height:15pt; color:#666666;">
+                            <!-- PRIMARY CONTENT -->
+                            <tr>
+                                <!-- "line-height: 1.3" style is necessary,=
+ otherwise larger font sizes can overlap previous line -->
+                                <td width=3D"600" style=3D"padding: 25px 0p=
+x; line-height: 1.3;" class=3D"content-width">
+<p>In 2019, the NFL's Los Angeles Rams plan to unveil a stadium complex tha=
+t will include a hotel, a casino and 620,000 square feet of retail space, a=
+s well as a <a href=3D"http://email.outboundsend.com/wf/click?upn=3DwoKBu10=
+O-2F-2FtFoH79Rm4MCDdupF3-2BkFmz6wj1MUAgHe-2BQy8C-2BmlrVUoFwsy527vBN1uOLv3ix=
+MnwH1AQLcIf4iM7rQSzmbnqSntA6xxDETGHJ3bMq9Kp5qZ5wJjYmprbITCaQi5CMhsx7tD95tlC=
+4xO-2FAdgAqy8ajBQ4KdFAcUJbPJFPJOgvju8GOtnMN3b9ohP2d6pa0G5Qy-2FDk5YTMuxZk3EU=
+S5UaWY-2BCev-2FGNmRLqGCDvaEUgtDf4YtDQsONNzTFhxdd9cDjQcEi1S6i4jDA-3D-3D_7XtD=
+dMHRjqIUi4tzSjSp2h-2BoTg8yV1h4-2FGX2SHZpIEqypF03TjaBwvgmw9oU99pw08sRA9KoXQq=
+rFM-2BA5GsWg8tFENtgyUWrBpbTUqR9CWaM9awaVOjkx63ogc9146OT-2BS9y5pbbmmmKa3cJJb=
+MokRZ78lytKee7JrsFJ86EiK-2BFuCGvRywF5mmOtcHKVe50doLbeIStHSahiahSYoIIOQ-2Bq-=
+2BUysebZc7iyOrnsxsNeXgtuXQVz-2FNO9e8qD14A9rRMYENObsExp1fAMcfl99Ob9fzx3cdVDe=
+q0uvNnIenIs7XbOizcKHn8ddyRi61F-2Bfp2AC-2BrFXQQPp5H7pQ-2F43e0wO-2BxQUdOPLmjl=
+N1I-2Bwj6SofkHIMsE2ojmIf4mCL48BQmuiXLYIBJaCx4kRUzm9gwp0Qvhz3lM54KDXuHL0LeSG=
+V4jF9fR1xi9h1ufMig6U">luxury residential property development</a>. Perfect =
+for die-hard sports fans, Hollywood Park will consist of some 3,000 homes, =
+mostly targeting the high-end sector. So what else is happening in the worl=
+d of luxury real estate?</p>=20
+
+<p><b>Indoor Sports Courts:</b> Some affluent homeowners, especially in cit=
+ies with inclement weather, have opted to <a href=3D"http://email.outbounds=
+end.com/wf/click?upn=3DwoKBu10O-2F-2FtFoH79Rm4MCFryaRn-2BPaXqvy9MoxNiiKHYjU=
+OpXAC2zQjf6N64lmafiYS4etzTJJItDLwzFrwCraMFPCW-2B4DN-2F-2FCNm635Qlta9GBVCFxS=
+Ix-2FJdVoxJsned_7XtDdMHRjqIUi4tzSjSp2h-2BoTg8yV1h4-2FGX2SHZpIEqypF03TjaBwvg=
+mw9oU99pw08sRA9KoXQqrFM-2BA5GsWg8tFENtgyUWrBpbTUqR9CWaM9awaVOjkx63ogc9146OT=
+-2BS9y5pbbmmmKa3cJJbMokRZ78lytKee7JrsFJ86EiK-2BFuCGvRywF5mmOtcHKVe50doLbeIS=
+tHSahiahSYoIIOQ-2Bq-2BUysebZc7iyOrnsxsNeXgtuXQVz-2FNO9e8qD14A9rRMYENObsExp1=
+fAMcfl99Ob9fzx3cdVDeq0uvNnIenItBnCMFCwuyY9RDHKVpNEm8DHL6u6Z3c9-2BKsjAJqwAeR=
+kWCwqL8BsSF96cVxe6ERSEFMdA9IFsdtagb5Lg5C9i0-2FjzFGQbEozTbH2YdIamShqt8tFKCeB=
+jOlqT-2BXIo0iY2fkV84agA5fhCzv-2BqpLXrm">bring the fun and games indoors</a>=
+. We're talking about full-sized basketball courts, tennis courts and surf =
+simulators. Imagine waking up to catch a wave in the middle of winter witho=
+ut ever having to leave the house.</p>
+
+<p><b>Smart Technology:</b> Design trends include all manner of home automa=
+tion, including security alarms and cameras, lighting and climate control, =
+and entertainment systems, all operable with the touch of a button and remo=
+tely by way of a smartphone. Voice-activated assistants such as Alexa and G=
+oogle Home are also hugely popular.</p>=20
+
+<p><b>Artistic Furniture:</b> Furniture isn't just for comfort, and art isn=
+'t relegated to shelves and walls. Benches, tables, chairs and armoires are=
+ now doubling as artistic statement pieces. Who says art can't be beautiful=
+ and functional?</p>
+
+<p><b>Luxury Renting:</b> Some high-end homeowners are <a href=3D"http://em=
+ail.outboundsend.com/wf/click?upn=3DXHTPxzJZOwt0Og3vAIPrQ4xfuqxZs-2F67w2H-2=
+BWvcqHRNm2J8Cyqm23AfgOwpZfn1rphoJUwZEq-2FZBmjBUe5jp3z1b8ub6LHYmblGwZ4kFrWa-=
+2B0zbTyyT0u3y5Eu7reaZoG7qnSNef5J6fNqfr6TI7tg-3D-3D_7XtDdMHRjqIUi4tzSjSp2h-2=
+BoTg8yV1h4-2FGX2SHZpIEqypF03TjaBwvgmw9oU99pw08sRA9KoXQqrFM-2BA5GsWg8tFENtgy=
+UWrBpbTUqR9CWaM9awaVOjkx63ogc9146OT-2BS9y5pbbmmmKa3cJJbMokRZ78lytKee7JrsFJ8=
+6EiK-2BFuCGvRywF5mmOtcHKVe50doLbeIStHSahiahSYoIIOQ-2Bq-2BUysebZc7iyOrnsxsNe=
+XgtuXQVz-2FNO9e8qD14A9rRMYENObsExp1fAMcfl99Ob9fzx3cdVDeq0uvNnIenIshiogDuZ4l=
+r8tNB9ZdianETJ2Qwd7ojdWcdWWkl1DKuGFGuV8-2BKb5mnljD9odVaBuAVbyfGcQmDOCTSjz2G=
+zC-2BdTkV4qGsWe0PdV2WBMYoSXVNggt73-2B5sc3FYM2ubQI1szs3b9IKSOLyn079LeWfP">en=
+tering the rental market</a>, dressing up their digs to attract the right c=
+lientele. With appealing bedding, books and art (not to mention that artist=
+ic furniture), homes are doubling as rental spaces when the owners are away=
+.</p>
+=20
+<p>These are just a handful of trends in luxury real estate and design. But=
+ there are plenty of new and unusual developments happening every day. What=
+'s recently caught your eye?</p>
+
+<p><i>The <a href=3D"http://email.outboundsend.com/wf/click?upn=3DXHTPxzJZO=
+wt0Og3vAIPrQ9heFauKzny91Wp6UG7D6840C0mo6rw24Sw6H5qNYcHn_7XtDdMHRjqIUi4tzSjS=
+p2h-2BoTg8yV1h4-2FGX2SHZpIEqypF03TjaBwvgmw9oU99pw08sRA9KoXQqrFM-2BA5GsWg8tF=
+ENtgyUWrBpbTUqR9CWaM9awaVOjkx63ogc9146OT-2BS9y5pbbmmmKa3cJJbMokRZ78lytKee7J=
+rsFJ86EiK-2BFuCGvRywF5mmOtcHKVe50doLbeIStHSahiahSYoIIOQ-2Bq-2BUysebZc7iyOrn=
+sxsNeXgtuXQVz-2FNO9e8qD14A9rRMYENObsExp1fAMcfl99Ob9fzx3cdVDeq0uvNnIenIvbnc5=
+A5w8MHyBo5iNpaUPFd6zB1nULcu3XIrh1NC1xywU8GRziHhvMu4AeMTFzt-2B2PPYsG-2BUdf-2=
+BDXrV1bkQjGYwLdbbi70PiTI2VBVLSlntYqhw5Q8qrvWmpuOd05Cz1kf9FRYe0bat3zpbcWdu-2=
+FIt">culture</a> at Keller Williams ensures agents are committed to providi=
+ng creative, helpful solutions for clients. Learn more about how we can hel=
+p you too.</i></p>                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <!--<tr>-->
+                    <!--<td>-->
+                        <!-- TODO: FOR V2 ENABLE SOCIAL SHARE BUTTONS -->
+                    <!--<img height=3D"25"-->
+                         <!--src=3D"http://outboundengine.s3.amazonaws.com/=
+images/test-images/platform/facebook-share.jpg">-->
+                    <!--<img height=3D"25"-->
+                         <!--src=3D"http://outboundengine.s3.amazonaws.com/=
+images/test-images/platform/pinterest-share.jpg"-->
+                         <!--style=3D"margin-left:10px;">-->
+                    <!--<img height=3D"25"-->
+                         <!--src=3D"http://outboundengine.s3.amazonaws.com/=
+images/test-images/platform/twitter-share.jpg"-->
+                         <!--style=3D"margin-left:10px;">-->
+                    <!--</td>-->
+                <!--</tr>-->
+                <!-- END PRIMARY CONTENT -->
+
+                <!-- CUSTOM CONTENT BLOCK 1 -->
+                <!-- TODO: Custom Content Blocks need to be updated when ad=
+ding new custom content types -->
+
+                <!-- BEGIN PREMIUM CONTENT -->
+                <tr>
+                    <td align=3D"center">
+                        <table align=3D"center" cellpadding=3D"0" cellspaci=
+ng=3D"0" class=3D"content-width" width=3D"600">
+                            <!-- we assume there are an even number of prem=
+ium content blocks -->
+                        </table>
+                    </td>
+                </tr>
+                <!-- END PREMIUM CONTENT -->
+
+                <!-- CUSTOM CONTENT BLOCK 2 -->
+                <!-- TODO: Custom Content Blocks need to be updated when ad=
+ding new custom content types -->
+
+                <!-- PERSONAL NOTE -->
+                    <tr>
+                        <td align=3D"center" style=3D"padding: 25px 0px;">
+                            <table class=3D"content-width" width=3D"600" al=
+ign=3D"center">
+                                <tr>
+                                    <td style=3D"width: 750px; background: =
+#dce8e4 !important; padding: 30px 50px;" align=3D"left">
+                                        <h3 style=3D"font-weight: normal; t=
+ext-align: left;">Thank you for reading!</h3>
+                                        <h4 style=3D"text-align: left;">- R=
+obert Tait</h4>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                <!-- END PERSONAL NOTE -->
+
+                <!-- BEGIN CONTACT INFO -->
+                <tr>
+                    <td align=3D"center" style=3D"padding: 0px 0px 25px;">
+                        <table class=3D"content-width" width=3D"600" align=
+=3D"center">
+                            <tr>
+                                <!-- HEADSHOT -->
+                                    <td valign=3D"top" width=3D"75">
+                                        <table align=3D"center" height=3D"7=
+2" width=3D"72" cellpadding=3D"0" cellspacing=3D"0" border=3D"0"><tbody><tr=
+><td> <img style=3D"display:block;" src=3D"http://d1k3c4xlx29yaw.cloudfront=
+.net/templatesV2/U12302/C13234/6DX2l3hS0Gi2nqumR0fUuA/430553911AZjegfUYry7u=
+JWWSNJ2Z3w1508421962459JUp5ta3DlB2dC1vhCVHV.png" width=3D"72" height=3D"72"=
+></td></tr></tbody></table>
+                                    </td>
+                                <!-- CONTACT -->
+                                <td style=3D"padding-left: 15px; color: #1b=
+836e; font-size: 12px; line-height: 17px; text-align: left;" align=3D"left">
+                                    <span>Robert Tait</span>
+                                    <span style=3D"padding: 0 6px; font-siz=
+e: 10px; position: relative; top: -2px;">|</span><span>Team Leader</span>
+                                    <span style=3D"padding: 0 6px; font-siz=
+e: 10px; position: relative; top: -2px;">|</span><span>Keller Williams Real=
+ty Northern Colorado</span><br>
+=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=
+=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20
+                                                <span style=3D"text-transfo=
+rm: capitalize;">Phone</span> <span style=3D"color: #00b37e !important">(30=
+3) 888-0194</span>
+=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=
+=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20
+                                    <br>
+                                    <span style=3D"color: #00b37e !importan=
+t">tait@kw.com</span><br>
+                                    <span>3720 South College Ave. Unit A</s=
+pan>=20
+                                    <span>Fort Collins</span><span>, CO</sp=
+an> <span>80525</span><br>
+=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=
+=20=20=20=20=20=20=20=20=20=20=20
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <!-- END CONTACT INFO -->
+
+                <!-- CUSTOM HR -->
+                <tr>
+                    <td class=3D"content-width" width=3D"600" height=3D"2" =
+style=3D"background: #ccc;">
+                    </td>
+                </tr>
+                <!-- END CUSTOM HR -->
+
+                <!-- BADGES AND DISCLAIMERS -->
+                <!-- END BADGES AND DISCLAIMERS -->
+
+                <!-- DELIVERED BY SECTION -->
+                <tr>
+                    <td class=3D"content-width" width=3D"600" align=3D"cent=
+er" style=3D"color: #999; padding: 0px 0px 25px 0px;">
+                                Designed and Delivered By <a href=3D"http:/=
+/email.outboundsend.com/wf/click?upn=3DOx91vvrSxfspOB8Ld7YiM5uZMqEM24nc0jgt=
+kyMLUjs-3D_7XtDdMHRjqIUi4tzSjSp2h-2BoTg8yV1h4-2FGX2SHZpIEqypF03TjaBwvgmw9oU=
+99pw08sRA9KoXQqrFM-2BA5GsWg8tFENtgyUWrBpbTUqR9CWaM9awaVOjkx63ogc9146OT-2BS9=
+y5pbbmmmKa3cJJbMokRZ78lytKee7JrsFJ86EiK-2BFuCGvRywF5mmOtcHKVe50doLbeIStHSah=
+iahSYoIIOQ-2Bq-2BUysebZc7iyOrnsxsNeXgtuXQVz-2FNO9e8qD14A9rRMYENObsExp1fAMcf=
+l99Ob9fzx3cdVDeq0uvNnIenIucaErhZ4TtYP-2BVquK5Zfel-2F8-2FFNggJp-2FFM2VDGEoxO=
+A0q-2Bt6SSZN3dIs6uiJFnC72-2BUlRea1izN7SvcteJYhzt9nEsRHDeQPy8VQ5YHP8P-2Bs9OU=
+EyLbafajOlG1nMRdoFtpRxf1xbfLgjTM6qlXAPO">OutboundEngine, Inc</a><br>
+                            Don't want to get these emails anymore? <a href=
+=3D"http://email.outboundsend.com/wf/click?upn=3DobAb0qNX-2BItM75kab8Vj6Wex=
+Sjf-2B-2FFQbiWta1P-2FJ-2BwAyLAapUJfXi6pJa7EmgxnTcDGSfMNcGiOKTVYpVDmAPsUEzwe=
+dR5D0GPDx1rYVR7kJ7y4dVjgaANvXkh97Acg-2F_7XtDdMHRjqIUi4tzSjSp2h-2BoTg8yV1h4-=
+2FGX2SHZpIEqypF03TjaBwvgmw9oU99pw08sRA9KoXQqrFM-2BA5GsWg8tFENtgyUWrBpbTUqR9=
+CWaM9awaVOjkx63ogc9146OT-2BS9y5pbbmmmKa3cJJbMokRZ78lytKee7JrsFJ86EiK-2BFuCG=
+vRywF5mmOtcHKVe50doLbeIStHSahiahSYoIIOQ-2Bq-2BUysebZc7iyOrnsxsNeXgtuXQVz-2F=
+NO9e8qD14A9rRMYENObsExp1fAMcfl99Ob9fzx3cdVDeq0uvNnIenIt-2B4CGm1gjzGtcLTDE8e=
+UZYi-2FBujWpMP5hm8DsHYoWfk8l4RJQJHuBDEpH3Mqle6-2BAma-2Fz8fXapSZuHhu8yeGl-2F=
+RV-2BqqXWr85juuDxy5kFzugpj5oIetHD97xZ7C45TdcAA-2BhVpZPeNcaisj994GWyd">Unsub=
+scribe here. </a>
+                            Problem viewing email? <a href=3D"http://email.=
+outboundsend.com/wf/click?upn=3DobAb0qNX-2BItM75kab8Vj6WexSjf-2B-2FFQbiWta1=
+P-2FJ-2BwBw-2FuVLZaIzDGmUtNZapcDD71evm2wPVn0Wae6qJxYVDruVPycyq8WTJoXBHQK4qF=
+U-3D_7XtDdMHRjqIUi4tzSjSp2h-2BoTg8yV1h4-2FGX2SHZpIEqypF03TjaBwvgmw9oU99pw08=
+sRA9KoXQqrFM-2BA5GsWg8tFENtgyUWrBpbTUqR9CWaM9awaVOjkx63ogc9146OT-2BS9y5pbbm=
+mmKa3cJJbMokRZ78lytKee7JrsFJ86EiK-2BFuCGvRywF5mmOtcHKVe50doLbeIStHSahiahSYo=
+IIOQ-2Bq-2BUysebZc7iyOrnsxsNeXgtuXQVz-2FNO9e8qD14A9rRMYENObsExp1fAMcfl99Ob9=
+fzx3cdVDeq0uvNnIenIuvMea6ioEJhVgmSd49oB75fUp-2BreHX302xLcxNtMjrCaLtR8v-2BYH=
+B4fbECJ01vdiWgqXIh0OI6Y18rUc-2Bgh-2BeBt7ITfCgvZFY7Q6FcPh2Aeml9WbRXV1-2FHEb2=
+0HDEYagRwWcurqSgX6bPJGu3vA9Ii">View online version.</a>
+                    </td>
+                </tr>
+                <!-- END DELIVERED BY SECTION -->
+            </table>
+        </td>
+    </tr>
+</table>
+
+
+<img src=3D"http://email.outboundsend.com/wf/open?upn=3D7XtDdMHRjqIUi4tzSjS=
+p2h-2BoTg8yV1h4-2FGX2SHZpIEqypF03TjaBwvgmw9oU99pw08sRA9KoXQqrFM-2BA5GsWg8tF=
+ENtgyUWrBpbTUqR9CWaM9awaVOjkx63ogc9146OT-2BS9y5pbbmmmKa3cJJbMokRZ78lytKee7J=
+rsFJ86EiK-2BFuCGvRywF5mmOtcHKVe50doLbeIStHSahiahSYoIIOQ-2Bq-2BUysebZc7iyOrn=
+sxsNeXgtuXQVz-2FNO9e8qD14A9rRMYENObsExp1fAMcfl99Ob9fzx3cdVDeq0uvNnIenItQsMg=
+-2FgPFwmpbPJ7sWJpL9hs98CtRJNLmuL9EI7Eoc-2BwAqcyJ-2Br1PaFNwj95toLNlmeE1QEYYb=
+A5dVVfCNpH9kO5ZlO0XPkq4T4hcs9517CNgVG4g-2B2S-2BzKXcShxIr0OYrcOZWJywdWmedbd1=
+Hqd3F" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=3D"height:1px !=
+important;width:1px !important;border-width:0 !important;margin-top:0 !impo=
+rtant;margin-bottom:0 !important;margin-right:0 !important;margin-left:0 !i=
+mportant;padding-top:0 !important;padding-bottom:0 !important;padding-right=
+:0 !important;padding-left:0 !important;"/>
+</body>
+</html>
+
+
+--0bb3c68281430414a01e051a0dcb720e1b546a50d836901654a0ae0e3599--
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>date-last-viewed</key>
+	<integer>0</integer>
+	<key>date-received</key>
+	<integer>1508421989</integer>
+	<key>flags</key>
+	<integer>8590195712</integer>
+	<key>remote-id</key>
+	<string>4799</string>
+</dict>
+</plist>

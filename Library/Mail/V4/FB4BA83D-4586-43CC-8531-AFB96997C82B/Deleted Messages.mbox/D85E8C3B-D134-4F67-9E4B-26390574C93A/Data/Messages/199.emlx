@@ -1,0 +1,177 @@
+9525      
+Return-path: <bounces+3922699-c948-austindreier=icloud.com@sendgrid.meetup.com>
+Received: from st11p00im-smtpin035.mac.com ([17.172.80.181])
+ by ms60015.mac.com (Oracle Communications Messaging Server 8.0.1.2.20170607
+ 64bit (built Jun  7 2017)) with ESMTP id <0OY200082X479C40@ms60015.mac.com>
+ for austindreier@icloud.com; Thu, 19 Oct 2017 16:43:19 +0000 (GMT)
+Original-recipient: rfc822;austindreier@icloud.com
+Received: from o8.sendgrid.meetup.com (o8.sendgrid.meetup.com [167.89.55.135])
+ by st11p00im-smtpin035.me.com
+ (Oracle Communications Messaging Server 8.0.1.2.20170607 64bit (built Jun  7
+ 2017)) with ESMTPS id <0OY201D8BX4593L0@st11p00im-smtpin035.me.com> for
+ austindreier@icloud.com (ORCPT austindreier@icloud.com); Thu,
+ 19 Oct 2017 16:43:19 +0000 (GMT)
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 spamscore=0
+ clxscore=165 suspectscore=70 malwarescore=0 phishscore=0 adultscore=0
+ bulkscore=100 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.0.1-1707230000 definitions=main-1710190231
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10432:,,
+ definitions=2017-10-19_08:,, signatures=0
+Authentication-results: st11p00mm-dmarcmilter006.me.com; dmarc=none
+ header.from=meetup.com
+Authentication-results: st11p00mm-spfmilter007.mac.com; spf=pass
+ (st11p00mm-spfmilter007.mac.com: domain of
+ bounces+3922699-c948-austindreier=icloud.com@sendgrid.meetup.com designates
+ 167.89.55.135 as permitted sender)
+ smtp.mailfrom=bounces+3922699-c948-austindreier=icloud.com@sendgrid.meetup.com;
+Received-SPF: pass (st11p00mm-spfmilter007.mac.com: domain of
+ bounces+3922699-c948-austindreier=icloud.com@sendgrid.meetup.com designates
+ 167.89.55.135 as permitted sender) receiver=st11p00mm-spfmilter007.mac.com;
+ client-ip=167.89.55.135; helo=o8.sendgrid.meetup.com;
+ envelope-from=bounces+3922699-c948-austindreier=icloud.com@sendgrid.meetup.com;
+Authentication-results: st11p00mm-dkimmilter013.mac.com;	dkim=pass (1024-bit
+ key) header.d=meetup.com header.i=@meetup.com header.b=Yb7D37s9;	dkim-adsp=pass
+DKIM-Signature: v=1; a=rsa-sha1; c=relaxed/relaxed; d=meetup.com;
+	h=from:sender:to:subject:mime-version:content-type:content-transfer-encoding:reply-to:list-id;
+	s=s1; bh=CwkuDvexUfOIkpdmKDSL19/rfWg=; b=Yb7D37s9kaqpczCRLIGqIGW
+	VJy/QScbTWhEJ9xRK2mfIE2Fn4uJoyJwT5bl3s2AHjceoZQxcrM6iOa5uC7FMJcS
+	ZCGaUWV3lH9RLgxRL5g+ELlDK413QX+Q6m0H/NJQfMJ5xDb/+W5j/FjGWJmh+oML
+	L6sQPOwaDlNP5DmEBeec=
+Received: by filter0979p1mdw1.sendgrid.net with SMTP id
+ filter0979p1mdw1-28303-59E8D625-26 2017-10-19 16:43:17.620535389 +0000 UTC
+Received: from mail.sendgrid.meetup.com
+ (ec2-34-197-179-31.compute-1.amazonaws.com [34.197.179.31])
+	by ismtpd0001p1iad1.sendgrid.net (SG) with ESMTP id _xPBjVC8TtKTDC5YOOrAVw	for
+ <austindreier@icloud.com>; Thu, 19 Oct 2017 16:43:17.388 +0000 (UTC)
+Received: from mail.meetup.com (ip-10-192-2-11.ec2.internal [10.192.2.11])
+	by mail.sendgrid.meetup.com (Postfix) with ESMTP id 570B25CCF1	for
+ <austindreier@icloud.com>; Thu, 19 Oct 2017 16:43:17 +0000 (UTC)
+From: James Orr <The-NCREIG-announce@meetup.com>
+Sender: The-NCREIG-announce@meetup.com
+To: The-NCREIG-announce@meetup.com
+Subject: [The-NCREIG] number of "off-market" deals (FSBOs) in NoCo
+MIME-version: 1.0
+Content-type: text/html; charset=UTF-8
+Content-transfer-encoding: quoted-printable
+Reply-to: jamesorr@gmail.com
+Mailing-List: list The-NCREIG-list@meetup.com; contact postmaster@meetup.com
+List-Id: <The-NCREIG-list.meetup.com>
+Errors-to: info@meetup.com
+Precedence: list
+Message-id: <1626096226.224328.1508431397337.JavaMail.nobody@984664bf7091>
+Date: Thu, 19 Oct 2017 16:43:17 +0000 (UTC)
+x-icloud-spam-score: 3311331
+ f=meetup.com;e=sendgrid.meetup.com;is=yes;ir=no;spf=pass;dkim=pass;dmarc=noPolicy/noPolicy/none;gdwl=absent;pps=ham;clxs=ham;clxw=neutral
+X-CLX-Spam: false
+X-CLX-UnSpecialScore: None
+X-CLX-Score: 165
+X-CLX-UShades: None
+X-CLX-Shades: None
+X-MANTSH: 1TEIXWV4bG1oaGkNHB1BeSF8aHxgZGRgaGxEKTEMXGx0EGx0YBBkfBBgSEBseGh8
+ aEQpMWRcbHB8RCllNF2RFRE8RCllJFxpxGhAadwYbHh9xGB0QGncGGBoGGhEKWV4Xa2tmEQpDT
+ hdBW1sZTHppR0AYfGQdb1lpeUIdel9mE2VeehheXUVCaBEKWFwXGQQaBBkYB00ZThNPExkYBRs
+ dBBsdGAQSGQQbHBAbHhofGhEKXlkXeGJEWGgRCk1cFxkSHxEKTFoXaG1dTXsRCkxGF0VraxEKQ
+ 1oXGxwdBBITBB8fBBsZHxEKQl4XGxEKQkYXaWx4Xx98HBlFEmURCkJHF2J/TVBbfxpzUGBLEQp
+ CXBcbEQpeThcbEQpCSxdhXk54cm9kTmhSbxEKQkUXaB5ZQUZaWnBLRV8RCkJOF2FeTnhyb2ROa
+ FJvEQpCTBdnfEZlb1p7fnphTREKQmwXa0cfU3BdR1tySGERCkJAF2FaBW9vYUhST35NEQpCWBd
+ uRx0bTmRhRRsSQBEKcGcXYHh7TxNkWWIZbmwQGRoRCnBoF2IBY2NvbkZDXGtjEBkaEQpwaBdhS
+ H94cHNlRFIcfxAZGhEKcGgXYAFPeU1ybh1/b2kQGRoRCnBoF2ZAbn9DaBpGa09HEBkaEQpwaBd
+ iRX4FElxGXV9CWxAZGhEKcH8Xb1JEWk4YcBhjYkAQGRMRCnBfF2dHe19ORlNEfE0aEBkTEQpwf
+ RdpQwFeHl8YeGBdThAZGhEKcH8Xblp8XBpIeR1wHxwQHhsRCnBfF3poW3pwchx6HHNvEBkTEQp
+ wfRdkH2ITawFbGGAbehAZGhEKcH0Xa2NIG0RpbUtQXxoQGRoRCnB9F2NeRx0cYntkUGVTEBkaE
+ QpwfRdtbR8fGU4dSF1+cxAZGhEKcH0XZG5BGllGGG9DGH8QGRoRCnBnF25LAUhLbh1McmIFEBk
+ SEQpwXxdmSGVyY0V/YUIdSxAZExEKcH0XYRlkaQF4XVB+QEgQ
+x-dmarc-info: pass=none; dmarc-policy=(nopolicy); s=u0; d=u0
+x-dmarc-policy: none
+X-MEETUP-TRACK: bc1
+X-MEETUP-RECIP-ID: 216200702
+X-MEETUP-MESG-ID: 80678159
+X-SG-EID:
+ wDL73fzM24memzQeYD8vNs60a1/y7ttRZFoC2GN2sWCsYVW8wh1wsiYDaXkUY63jP/sSLOd4weyPx3
+ 2ngpKIu78QfKxqTdL1MluUgmY1wHGDrz0xnNsvKzQsPiWmQyCE9P/K0Lj3DZO6H+JtRij4taTHTJJh
+ O/e2JG3I1CCrejd0GX0Hbb6GryZ7NFoDiJK7d0rmU9OXtV1Zq0oMjiij4NHowIbJGVdENBc11Tw9qa
+ Q=
+
+<html><body><div style=3D"color:#333;font-family:Verdana,Arial,sans-serif;f=
+ont-size:12px;"><font face=3D"verdana,arial,sans-serif"><p>I had mentioned =
+this last night in class. Here's a chart showing the number of "off-market"=
+ FSBOs in Northern Colorado:</p>
+<p><img src=3D"https://secure.meetupstatic.com/photos/event/6/1/0/8/event_4=
+65444840.jpeg" style=3D"margin : 5px ; max-width : 700px ; max-height : 700=
+px"></img></p>
+<p>Their stats include the following cities:=C2=A0Fort Collins, Drake, Este=
+s Park, Greeley, Loveland, Wellington, and Windsor.</p>
+<p style=3D"text-align : left">This obviously doesn't count properties you'=
+d find by spending money on marketing like sending out postcards, but it do=
+es show how small the FSBO market is.</p>
+<br /><br />
+<br />
+<br />
+--<br />
+This message was sent by Meetup on behalf of <a href=3D"http://meet.meetup.=
+com/wf/click?upn=3DpEEcc35imY7Cq0tG1vyTt6zEs68RbcMfjPcajNHTKtnyI1dl-2BPdB4V=
+SQtPk6A0gdFcDdqzF1VC4K-2BmbS1-2BUDSt-2BsxH8m32VVRl2bey4ZIuqdHxID3e-2FKulH6S=
+1DHJ5Yw_7XtDdMHRjqIUi4tzSjSp2h-2BoTg8yV1h4-2FGX2SHZpIEqIKqHQuDuw-2FhhDMGlC8=
+y1GLZp68-2Bq3m9QcTNmCZTIJKvMpa09TOT2j3jEeRHPX7puWFaap0XY2qqz4OUMObODd4m7aSe=
+ga522BTwjuEBscFwo3d-2BQcGbwTi-2FGOPZQf-2BgqweUPU0M-2FWPHyw7JSTDNvTiqmpGqCLr=
+-2ByqBHl-2FnMkSiMPfhgohr4DySz2O8bQfles-3D">James Orr</a> from <a href=3D"ht=
+tp://meet.meetup.com/wf/click?upn=3DpEEcc35imY7Cq0tG1vyTt6zEs68RbcMfjPcajNH=
+TKtnyI1dl-2BPdB4VSQtPk6A0gdFcDdqzF1VC4K-2BmbS1-2BUDSlfODQWYxX0ySilFVriyOOM-=
+3D_7XtDdMHRjqIUi4tzSjSp2h-2BoTg8yV1h4-2FGX2SHZpIEqIKqHQuDuw-2FhhDMGlC8y1GLZ=
+p68-2Bq3m9QcTNmCZTIJKiDATzf3SszUW4XXRI1h370vfWv68HmYG7W94vrXrdI5GPTOEmcs9YC=
+Ng-2BgQgetdCdtN1WEuI3tqzrDlhQlkMnjtaYJnyutf7UQZfjAy3nC9wHb9posQyr6eWfD55V-2=
+F4lu7QQ11c4dmo4a6VnHvoNLo-3D">Northern Colorado Real Estate Investor Group<=
+/a>.
+<br />
+To report this message, please <a href=3D"http://meet.meetup.com/wf/click?u=
+pn=3DpEEcc35imY7Cq0tG1vyTtwJVcz-2FJYTCTZukqQTrPJ4k2KBrOmA3BVnT-2BCXw-2FnVJM=
+8UHoNOKaUNDyo5Z8aIykAIptdduzXFDLoht1WH6dB68-3D_7XtDdMHRjqIUi4tzSjSp2h-2BoTg=
+8yV1h4-2FGX2SHZpIEqIKqHQuDuw-2FhhDMGlC8y1GLZp68-2Bq3m9QcTNmCZTIJKhSkoRn9Q0F=
+W4WdFlffV7ao1FrCAPf7yN0syHb641dx4EFWmHTqAF1Lv6DyJyVgcuH4p2nEepWfCyltMjkGT5x=
+mHqSbAlM-2BjthnosicDeUi-2F1m-2B2xr7F7aDSV6fBu7WB7Pytp8JT8XKzUzOPwojVoDE-3D"=
+>click here</a><br>
+To block the sender of this message, please <a href=3D"http://meet.meetup.c=
+om/wf/click?upn=3DpEEcc35imY7Cq0tG1vyTt-2FfH78ByS2gkGngEP9PHfkyD1tOpwzFZBb2=
+gNxqk0Wnn_7XtDdMHRjqIUi4tzSjSp2h-2BoTg8yV1h4-2FGX2SHZpIEqIKqHQuDuw-2FhhDMGl=
+C8y1GLZp68-2Bq3m9QcTNmCZTIJKhbi-2BgwJ2OAHusRjMirXhbHI7bSC8boO01KConWymImLfW=
+4GeyOOPin9ofqONjg-2FjF3LfsP8TO14J3wXTJZem0yTUPx2PQc4kevsQTr90rD6K6yBxtMxHR-=
+2Fa-2Flug481iX3VrET82R3F-2Bh8FKsprSn8A-3D">click here</a><br>
+To unsubscribe from special announcements from your Organizer(s), <a href=
+=3D"http://meet.meetup.com/wf/click?upn=3DpEEcc35imY7Cq0tG1vyTt6zEs68RbcMfj=
+PcajNHTKtnyI1dl-2BPdB4VSQtPk6A0gdFcDdqzF1VC4K-2BmbS1-2BUDSt9P7lx-2BrbUnQkHL=
+5FioLm7gz-2Fl-2F4hntpTPKQbjyrm2S4qERm1c-2BBhPVQTkFCakDIOV6Ip3q6EJB5QgA4PkhT=
+9Q-3D_7XtDdMHRjqIUi4tzSjSp2h-2BoTg8yV1h4-2FGX2SHZpIEqIKqHQuDuw-2FhhDMGlC8y1=
+GLZp68-2Bq3m9QcTNmCZTIJKsoVmsZocDqAV39WyQR9g8k9eizARhKDR0LQFhFr0K2EBm2kNXCR=
+pV-2FhZzVX0iitoGcrI1md3ybqdNMokc0XZy85DnfcenYI132aeP6IxyV7S6WmvVmsHfWX1Jgc1=
+ArCGkeMQj6gu6O5dqVKIpUtByw-3D">click here</a>
+<br /><br />
+<small style=3D"color:gray">
+<a href=3D"#" style=3D"color:#ccc;text-decoration:none;cursor:default;">Mee=
+tup, POB 4668 #37895 NY NY USA 10163</a> | support@meetup.com
+</small>
+</div>
+<img src=3D"http://meet.meetup.com/wf/open?upn=3D7XtDdMHRjqIUi4tzSjSp2h-2Bo=
+Tg8yV1h4-2FGX2SHZpIEqIKqHQuDuw-2FhhDMGlC8y1Gmav6ot1JBWhByUXjlU6QgVn1QXWE6lT=
+-2BqOKF260vjbdupppKB0itLBDrp276xPbbDMvCecgv9iFv6wIvLyA47lam0RAPY5ertbky3t12=
+hwHmoF0XXY0mSSNfBJYGLpMkKF3iAXBypHOCS30343kZWxLAKRid4uRJOeCm5UGIGsE-3D" alt=
+=3D"" width=3D"1" height=3D"1" border=3D"0" style=3D"height:1px !important;=
+width:1px !important;border-width:0 !important;margin-top:0 !important;marg=
+in-bottom:0 !important;margin-right:0 !important;margin-left:0 !important;p=
+adding-top:0 !important;padding-bottom:0 !important;padding-right:0 !import=
+ant;padding-left:0 !important;"/>
+</body></html>
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>date-last-viewed</key>
+	<integer>0</integer>
+	<key>date-received</key>
+	<integer>1508431399</integer>
+	<key>flags</key>
+	<integer>8590195712</integer>
+	<key>remote-id</key>
+	<string>4800</string>
+</dict>
+</plist>

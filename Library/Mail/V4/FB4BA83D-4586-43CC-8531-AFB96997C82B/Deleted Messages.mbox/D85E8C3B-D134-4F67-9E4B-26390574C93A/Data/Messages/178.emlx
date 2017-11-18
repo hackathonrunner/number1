@@ -1,0 +1,380 @@
+19310     
+Return-path: <bounce+ad35a3.2a69f5-austindreier=icloud.com@ckmail2.com>
+Received: from mr11p00im-smtpin007.mac.com ([17.110.69.195])
+ by ms60015.mac.com (Oracle Communications Messaging Server 8.0.1.2.20170607
+ 64bit (built Jun  7 2017)) with ESMTP id <0OZ200KN5GC0FGD0@ms60015.mac.com>
+ for austindreier@icloud.com; Tue, 07 Nov 2017 21:14:24 +0000 (GMT)
+Original-recipient: rfc822;austindreier@icloud.com
+Received: from mail-m44.mailgun.net (mail-m44.mailgun.net [146.20.112.44])
+ by mr11p00im-smtpin007.me.com
+ (Oracle Communications Messaging Server 8.0.1.2.20170607 64bit (built Jun  7
+ 2017)) with ESMTPS id <0OZ2000F7GADM240@mr11p00im-smtpin007.me.com> for
+ austindreier@icloud.com (ORCPT austindreier@icloud.com); Tue,
+ 07 Nov 2017 21:14:24 +0000 (GMT)
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 spamscore=0
+ clxscore=204 suspectscore=21 malwarescore=0 phishscore=0 adultscore=0
+ bulkscore=100 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.0.1-1707230000 definitions=main-1711070277
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10432:,,
+ definitions=2017-11-07_07:,, signatures=0
+Authentication-results: mr21p00im-dmarcmilter007.me.com; dmarc=none
+ header.from=flip2freedom.com
+Authentication-results: mr21p00im-spfmilter006.me.com; spf=pass
+ (mr21p00im-spfmilter006.me.com: domain of
+ bounce+ad35a3.2a69f5-austindreier=icloud.com@ckmail2.com designates
+ 146.20.112.44 as permitted sender)
+ smtp.mailfrom=bounce+ad35a3.2a69f5-austindreier=icloud.com@ckmail2.com;
+Received-SPF: pass (mr21p00im-spfmilter006.me.com: domain of
+ bounce+ad35a3.2a69f5-austindreier=icloud.com@ckmail2.com designates
+ 146.20.112.44 as permitted sender) receiver=mr21p00im-spfmilter006.me.com;
+ client-ip=146.20.112.44; helo=mail-m44.mailgun.net;
+ envelope-from=bounce+ad35a3.2a69f5-austindreier=icloud.com@ckmail2.com;
+Authentication-results: mr21p00im-dkimmilter002.me.com;	dkim=pass (1024-bit
+ key) header.d=ckmail2.com header.i=@ckmail2.com header.b=AbLxKHdO;
+	dkim-adsp=none
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=ckmail2.com; q=dns/txt;
+ s=pic; t=1510089263; h=Content-Type: Mime-Version: Subject: From: To:
+ List-Unsubscribe: Message-Id: Date: Sender;
+ bh=Wf5Pxt/2mHD6MZXO6z2Vvhxi5p2HJxLhY9pBW4DWFvU=;
+ b=AbLxKHdOzj9SO8nrmydDl7UGJbSLcUrh3dJ2lRoUEyTKw/VijsCQIJG6bkAT5Vs5P0NzjVfO
+ 2WCnlZynNWHjED050RrUCHKnVzioe98HFY3qrhuVvKDVGFrjNElWwkI4mwWWcSg5pWFu2uNO
+ q1E5Ngclg8hZxa3dC/Z+yTmXOB4=
+Sender: sean=flip2freedom.com@ckmail2.com
+Date: Tue, 07 Nov 2017 21:14:23 +0000
+Received: by luna.mailgun.net with HTTP; Tue, 07 Nov 2017 21:14:23 +0000
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+Message-id: <911340b0-2401-n4u0qllo9tvhxp45e@ckmail2.com>
+List-Unsubscribe: http://el2.convertkit-mail.com/u/n4u0qllo9tvhxp45e
+To: Austin <austindreier@icloud.com>
+From: Sean Terry <sean@flip2freedom.com>
+Subject: =?utf-8?b?Y2xvc2luZyBkb3duLi4u8J+YpSAoNiBsZWZ0KQ==?=
+MIME-version: 1.0
+Content-type: multipart/alternative; boundary=e82e287639114c16b051282b32379407
+x-icloud-spam-score: 3311331
+ f=flip2freedom.com;e=ckmail2.com;is=yes;ir=no;spf=pass;dkim=pass;dmarc=noPolicy/noPolicy/none;gdwl=absent;pps=ham;clxs=ham;clxw=neutral
+X-CLX-Spam: false
+X-CLX-UnSpecialScore: None
+X-CLX-Score: 204
+X-CLX-Shades: None
+X-MANTSH: 1TEIXR1gYEloaGkNHB0tNT0ReQ0QZGRoTEQpMQxcbHQQbGxsEGx0ZBBkYEBseGh8
+ aEQpMWRcYGh4RCllNF2RFRE8RCllJFwccEnESBgcbHHcGGxoTBhkaQhsbBhoGHhkGExpxHRAad
+ wYaBhoGGgYaBhoGGnEaEBp3BhoRClleF2NjeREKQ04XYxIFbhkcZH5hfXl4WUhgX1p5BURreBp
+ OGGNyXxlaU2YRClhcFxkEGgQZGAdNGU4TTxMZGAUbHQQbGxsEGx8fBBgYGxAbHhofGhEKXlkXe
+ GQSSGYRCk1cFxIcEQpMWhdpaEdoa10RCkNaFxseHAQYGgQbGxgEHh4RCkJeFxsRCkJGF2taRnh
+ jH2Z6W28YEQpCRxdgXkhBGhtfGV9jUxEKQkUXb2Z8Q2QeQW1/flIRCkJOF2F/Q3ptTUV5fhJHE
+ QpCTBdhQV1ABUt6GklsYREKQmwXenATeWNoEx5QAR4RCkJAF3pwGn1Zb0MZZlNBEQpCWBduRx0
+ bTmRhRRsSQBEKcGgXYUhvZmZBXkZvRG4QGhEKcGgXYGJPaHIdXRsFa0cQGhEKcGgXax1vWxhdU
+ xxdRn0QGhEKcGgXZk5IQFBEel9wTlsQGhEKcGgXYmFZRmdybB5TEmQQGhEKcH8XaE99eXITXH5
+ aXl8QGhEKcH8XaB9/ZkBPYWJueG8QHh8RCnB9F2xlZhhMYWRAHUdIEBoRCnB/F2RuGAVeTklgb
+ VhnEB8cEQpwXxdrAV4SQGdZaUwdUBAZGhEKcH0Xeh9/ax1eWR1bQlwQGhEKcF8XYG1HZER5WGR
+ TeHkQGRoRCnB9F2lbZlpkXEIeX0hzEBoRCnBfF2RScG5NGhpnSWBhEBoRCnB9F2RScG5NGhpnS
+ WBhEBoRCnBfF2USfxkFUhtdRn9TEAcZGhEKcH0XenhjSEtiQgFGSR4QGhEKcF8XYEVBbl1zXUR
+ nRx0QBxkaEQpwfRdreQF4YXIeTG4SYBAaEQpwfRdsZWYYTGFk
+x-dmarc-info: pass=none; dmarc-policy=(nopolicy); s=u0; d=u0
+x-dmarc-policy: none
+X-Mailgun-Sending-Ip: 146.20.112.44
+X-Mailgun-Sid: WyI2OGFlZSIsICJhdXN0aW5kcmVpZXJAaWNsb3VkLmNvbSIsICIyYTY5ZjUiXQ==
+X-Mailgun-Variables: {"email_id": "%recipient.email_id%"}
+X-Mailgun-Drop-Message: false
+
+--e82e287639114c16b051282b32379407
+Content-Type: text/plain; charset="ascii"
+Mime-Version: 1.0
+Content-Transfer-Encoding: 7bit
+
+OK, I've got some killer news...
+
+First, I added a new bonus that you are absolutely going to LOVE!
+I'm going to partner with you on your 1st deal!!!
+
+Yep, my team and I will help you sell your first deal to may
+national buyers list and we can split profits.
+
+So if you've been hesitating on getting started, well NOW is YOUR
+time!
+Follow the steps in Phase I and the 9-Step Seller Conversion
+Sequence, get your 1st contract and my team and I will help you
+sell it!
+
+Remember, I do coaching calls every TWO weeks and answer ALL your
+questions
+
+Grab You Seat NOW!!! (only 6 left)
+https://www.extremefreedomonline.com/now (
+https://el2.convertkit-mail.com/c/n4u0qllo9tvhxp45e/dpheh0/aHR0cHM6Ly93d3cuZXh0cmVtZWZyZWVkb21vbmxpbmUuY29tL25vdw== )
+
+Now second, TODAY is the LAST day and there are only 6 seats
+left!!!
+
+Not only do you get ALL the recordings in high def from Extreme
+Freedom 2017 @ 70% OFF!
+PLUS you get $5,482 in BONUSES!!!
+That's a whopping $6,812 id discounts!!! (
+https://el2.convertkit-mail.com/c/n4u0qllo9tvhxp45e/e5uph7/aHR0cHM6Ly93d3cuZXh0cmVtZWZyZWVkb21vbmxpbmUuY29tL25vdw== )
+
+You can now get ALL this and the recordings of the ENTIRE event
+right here:
+https://www.extremefreedomonline.com/no (
+https://el2.convertkit-mail.com/c/n4u0qllo9tvhxp45e/78i7h8/aHR0cHM6Ly93d3cuZXh0cmVtZWZyZWVkb21vbmxpbmUuY29tL25vdw== )w ( https://el2.convertkit-mail.com/c/n4u0qllo9tvhxp45e/opfkhq/aHR0cHM6Ly93d3cuZXh0cmVtZWZyZWVkb21vbmxpbmUuY29tL25vdw== )
+
+Also Austin, you get a FULL 60
+days to see if you like it (I know you'll LOVE it)
+if not you'll get 100% of your money back with no hassles!
+
+Remember, Extreme Freedom 2017 Online will be closing
+soon or when the 6 seats are gone
+whichever comes first.
+
+Everyone is going crazy about this, it's insane!
+
+Here's what comes with Extreme Freedom 2017 Online.
+
+1. Access to the Extreme Freedom APP for Android and iPhone.
+This app is amazing, it's like a mini Facebook just for the event
+PLUS it has every download file that we covered at the event.
+Here's just to name a few: My top-performing letter and postcard,
+Super Seller Script for Local, FSBO & Craigs List, the 1st Check
+Matrix, Comp Calculator, Marketing Maximizer Worksheet, Revenue
+Matrix, and Scorecard. Plus
+I covered all the closing doc in a recent transaction, AND you
+can download my AB contract and BC contract. PLUS much more...
+(the app only hold 400 people, and we have only 6 seats left)
+
+Secure Your Seat Here:
+https://www.extremefreedomonline.com/now (
+https://el2.convertkit-mail.com/c/n4u0qllo9tvhxp45e/zvtghn/aHR0cHM6Ly93d3cuZXh0cmVtZWZyZWVkb21vbmxpbmUuY29tL25vdw== )
+
+2. Every Keynote we covered from
+EVERY speaker for the entire weekend.
+
+3. Access to the private membership site
+where you'll have instant access to the entire weekend
+in HIGH DEFINITION VIDEO
+
+Here's what we covered:
+
+PHASE I: The exact step-by-step process to secure you first
+$10,000 check using no cash or credit in 6 weeks or less.
+You'll get every spreadsheet, tool, and access to the most
+cutting-edge
+NEW material I use every day on my business.
+
+PHASE II: The Escape Plan: The specific numbers needed to quit
+your JOB and go full time using this killer FORMULA.
+You'll also understand how to read people like a book by
+identifying their personality types, their handshakes and there
+tonality to negotiate the best deals possible.
+
+PHASE III: How to scale your business by using deal structuring
+techniques to make money on deals with little to NO equity.
+
+PHASE IV: How to grow you how flipping business to $100K a month
+or more. In this keynote, we covered some high-level stuff.
+
+THE TRIANGLE EFFECT: How to get massive results using the law of
+attraction, spiritual laws of success and the January Letter.
+This was
+the most talked about section of the entire weekend.
+
+Secure Your Seat HERE (only 6 left)
+https://www.extremefreedomonline.com/now (
+https://el2.convertkit-mail.com/c/n4u0qllo9tvhxp45e/pnceh9/aHR0cHM6Ly93d3cuZXh0cmVtZWZyZWVkb21vbmxpbmUuY29tL25vdw== )
+
+Then you have access to all the Speaker Training including:
+
+Jesse Itzler: Owner of Atlanta Hawks, Best Selling Autor, and
+Ulta Marathon runner shared exactly how to go from ZERO to worth
+$100,000,000 PLUS!!!
+
+Kent Clothier: How only 25 buyers can make you $250,000 a year
+and exactly HOW to find those buyers!
+
+Corey Petterson: This was AMAZING! He shared how he flipped a
+property and made over $4 MILLION DOLLARS and you can do the same
+with NO money or CREDIT!
+
+Alex Joungblood: On How to make $100K Virtual Wholesaling
+(this ROCKED)
+
+Justin Colby: How to make an extra $50K per deal "WHOLETAILING"
+
+Pat Precourt: How to breakthrough ANY obstacle big or small.
+
+Raphael Cortez: How to close over $1 million dollars in
+wholesale fees in 12 months or less! (this was off the hook)
+
+Brandon Simmions: Watch a day in the life of a "Dispositions
+Manager" selling a wholesale deal and making $33,000!
+
+Secure Your Seat HERE (only 6 left)
+https://www.extremefreedomonline.com/now (
+https://el2.convertkit-mail.com/c/n4u0qllo9tvhxp45e/xksph6/aHR0cHM6Ly93d3cuZXh0cmVtZWZyZWVkb21vbmxpbmUuY29tL25vdw== )
+
+Once these 6 seats are GONE this
+material will VANISH
+
+Have a great evening!
+
+Sean
+
+P.S. If you're wondering if Extreme Freedom Principles work,
+check out this picture below!
+
+What to be like Tyler???
+
+Sign up here:
+https://www.extremefreedomonline.com/now (
+https://el2.convertkit-mail.com/c/n4u0qllo9tvhxp45e/60aeh8/aHR0cHM6Ly93d3cuZXh0cmVtZWZyZWVkb21vbmxpbmUuY29tL25vdw== )
+
+( https://el2.convertkit-mail.com/c/n4u0qllo9tvhxp45e/kmbmh6/aHR0cHM6Ly93d3cuZXh0cmVtZWZyZWVkb21vbmxpbmUuY29tL25vdw== )
+
+Unsubscribe ( http://el2.convertkit-mail.com/u/n4u0qllo9tvhxp45e ) | 19420 North 59th Avenue, Glendale, Arizona 85308
+--e82e287639114c16b051282b32379407
+Content-Type: text/html; charset="ascii"
+Mime-Version: 1.0
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8">
+</head>
+<body>
+<div class=3D"message-content" style=3D"max-width:600px">
+  <p style=3D"margin-bottom:1em">OK, I've got some killer news...<br><br>Fi=
+rst, I added a new bonus that you are absolutely going to LOVE!<br>I'm goin=
+g to partner with you on your 1st deal!!!<br><br>Yep, my team and I will he=
+lp you sell your first deal to may national buyers list and we can split pr=
+ofits.<br><br>So if you've been hesitating on getting started, well NOW is =
+YOUR time!<br>Follow the steps in Phase I and the 9-Step Seller Conversion =
+Sequence, get your 1st contract and my team and I will help you sell it!<br=
+><br>Remember, I do coaching calls every TWO weeks and answer ALL your ques=
+tions<br><br>Grab You Seat NOW!!! (only 6 left)<br><strong><a href=3D"https=
+://el2.convertkit-mail.com/c/n4u0qllo9tvhxp45e/dpheh0/aHR0cHM6Ly93d3cuZXh0c=
+mVtZWZyZWVkb21vbmxpbmUuY29tL25vdw=3D=3D" target=3D"_blank" style=3D"color: =
+rgb(68, 119, 189); line-height: 1.5; text-decoration-line: underline;">http=
+s://www.extremefreedomonline.com/now</a></strong><br><br><strong>Now second=
+, TODAY is the LAST day and there are only 6 seats left!!!</strong><br><br>=
+Not only do you get ALL the recordings in high def from Extreme Freedom 201=
+7 @ 70% OFF!<br><a href=3D"https://el2.convertkit-mail.com/c/n4u0qllo9tvhxp=
+45e/e5uph7/aHR0cHM6Ly93d3cuZXh0cmVtZWZyZWVkb21vbmxpbmUuY29tL25vdw=3D=3D" ta=
+rget=3D"_blank" style=3D'color: rgb(68, 119, 189); background-color: rgb(25=
+5, 255, 255); font-family: "Helvetica Neue", Helvetica, Helvetica, Arial, s=
+ans-serif; line-height: 1.5; text-decoration-line: underline;'>PLUS you get=
+ $5,482 in BONUSES!!!<br>That's a whopping $6,812 id discounts!!!</a><br><b=
+r>You can now get ALL this and the recordings of the ENTIRE event right her=
+e:<br><strong><a href=3D"https://el2.convertkit-mail.com/c/n4u0qllo9tvhxp45=
+e/78i7h8/aHR0cHM6Ly93d3cuZXh0cmVtZWZyZWVkb21vbmxpbmUuY29tL25vdw=3D=3D" targ=
+et=3D"_blank" style=3D"color: rgb(68, 119, 189); line-height: 1.5; text-dec=
+oration-line: underline;">https://www.extremefreedomonline.com/no</a></stro=
+ng><a href=3D"https://el2.convertkit-mail.com/c/n4u0qllo9tvhxp45e/opfkhq/aH=
+R0cHM6Ly93d3cuZXh0cmVtZWZyZWVkb21vbmxpbmUuY29tL25vdw=3D=3D" target=3D"_blan=
+k" style=3D'color: rgb(68, 119, 189); background-color: rgb(255, 255, 255);=
+ font-family: "Helvetica Neue", Helvetica, Helvetica, Arial, sans-serif; li=
+ne-height: 1.5; text-decoration-line: underline;'>w</a><br><br>Also Austin,=
+ you get a FULL 60 days to see if you like it (I know you'll LOVE it)<br>if=
+ not you'll get 100% of your money back with no hassles!<br><br>Remember,  =
+Extreme Freedom 2017 Online will be closing <br>soon or when the <strong>6 =
+seats are gone<br>whichever comes first.</strong><br><br>Everyone is going =
+crazy about this, it's insane!<br><br>Here's what comes with Extreme Freedo=
+m 2017 Online.<br><br>1. Access to the Extreme Freedom APP for Android and =
+iPhone.<br>This app is amazing, it's like a mini Facebook just for the even=
+t PLUS it has every download file that we covered at the event.  Here's jus=
+t to name a few: My top-performing letter and postcard, Super Seller Script=
+ for Local, FSBO &amp; Craigs List, the 1st Check Matrix, Comp Calculator, =
+Marketing Maximizer Worksheet, Revenue Matrix, and Scorecard.  Plus <br>I c=
+overed all the closing doc in a recent transaction, AND you can download my=
+ AB contract and BC contract. PLUS much more...<br>(the app only hold 400 p=
+eople, and we have only 6 seats left)<br><br>Secure Your Seat Here:<br><str=
+ong><a href=3D"https://el2.convertkit-mail.com/c/n4u0qllo9tvhxp45e/zvtghn/a=
+HR0cHM6Ly93d3cuZXh0cmVtZWZyZWVkb21vbmxpbmUuY29tL25vdw=3D=3D" target=3D"_bla=
+nk" style=3D"color: rgb(68, 119, 189); line-height: 1.5; text-decoration-li=
+ne: underline;">https://www.extremefreedomonline.com/now</a></strong><br><b=
+r>2. Every Keynote we covered from <br>EVERY speaker for the entire weekend=
+.<br><br>3. Access to the private membership site <br>where you'll have ins=
+tant access to the entire weekend<br>in <strong>HIGH DEFINITION VIDEO</stro=
+ng><br><br>Here's what we covered:<br><br><strong><u>PHASE I</u></strong>: =
+The exact step-by-step process to secure you first <br>$10,000 check using =
+no cash or credit in 6 weeks or less.<br>You'll get every spreadsheet, tool=
+, and access to the most cutting-edge<br>NEW material I use every day on my=
+ business.<br><br><u><strong>PHASE II</strong></u>:  The Escape Plan:  The =
+specific numbers needed to quit<br>your JOB and go full time using this kil=
+ler FORMULA.<br>You'll also understand how to read people like a book by<br=
+>identifying their personality types, their handshakes and there<br>tonalit=
+y to negotiate the best deals possible.<br><br><u><strong>PHASE III</strong=
+></u>: How to scale your business by using deal structuring<br>techniques t=
+o make money on deals with little to NO equity.<br><br><u><strong>PHASE IV<=
+/strong></u>: How to grow you how flipping business to $100K a month or mor=
+e.  In this keynote, we covered some high-level stuff.<br><br><u><strong>TH=
+E TRIANGLE EFFECT:</strong></u>  How to get massive results using the law o=
+f attraction, spiritual laws of success and the January Letter.  This was<b=
+r>the most talked about section of the entire weekend.<br><br><strong>Secur=
+e Your Seat HERE (only 6 left)</strong><br><strong><a href=3D"https://el2.c=
+onvertkit-mail.com/c/n4u0qllo9tvhxp45e/pnceh9/aHR0cHM6Ly93d3cuZXh0cmVtZWZyZ=
+WVkb21vbmxpbmUuY29tL25vdw=3D=3D" target=3D"_blank" style=3D"color: rgb(68, =
+119, 189); line-height: 1.5; text-decoration-line: underline;">https://www.=
+extremefreedomonline.com/now</a></strong><br><br>Then you have access to al=
+l the Speaker Training including:<br><br><strong>Jesse Itzler</strong>: Own=
+er of Atlanta Hawks, Best Selling Autor, and Ulta Marathon runner shared ex=
+actly how to go from ZERO to worth $100,000,000 PLUS!!!<br><br><strong>Kent=
+ Clothier:</strong> How only 25 buyers can make you $250,000 a year and exa=
+ctly HOW to find those buyers!<br><br><strong>Corey Petterson</strong>: Thi=
+s was AMAZING!  He shared how he flipped a property and made over $4 MILLIO=
+N DOLLARS and you can do the same with NO money or CREDIT!<br><br><strong>A=
+lex Joungblood</strong>: On How to make $100K Virtual Wholesaling<br>(this =
+ROCKED)<br><br><strong>Justin Colby:</strong> How to make an extra $50K per=
+ deal "WHOLETAILING"<br><br><strong>Pat Precourt:</strong> How to breakthro=
+ugh ANY obstacle big or small.<br><br><strong>Raphael Cortez:</strong>  How=
+ to close over $1 million dollars in wholesale fees in 12 months or less! (=
+this was off the hook)<br><br><strong>Brandon Simmions:</strong>  Watch a d=
+ay in the life of a "Dispositions Manager" selling a wholesale deal and mak=
+ing $33,000!<br><br>Secure Your Seat HERE <strong>(only 6 left)</strong><br=
+><strong><a href=3D"https://el2.convertkit-mail.com/c/n4u0qllo9tvhxp45e/xks=
+ph6/aHR0cHM6Ly93d3cuZXh0cmVtZWZyZWVkb21vbmxpbmUuY29tL25vdw=3D=3D" target=3D=
+"_blank" style=3D"color: rgb(68, 119, 189); line-height: 1.5; text-decorati=
+on-line: underline;">https://www.extremefreedomonline.com/now</a></strong><=
+br><br><em><strong>Once these 6 seats are GONE this <br>material will VANIS=
+H </strong></em><br><br>Have a great evening!<br><br>Sean<br><br>P.S.  If y=
+ou're wondering if Extreme Freedom Principles work, check out this picture =
+below!<br><br>What to be like Tyler???<br><br>Sign up here:<br><strong><a h=
+ref=3D"https://el2.convertkit-mail.com/c/n4u0qllo9tvhxp45e/60aeh8/aHR0cHM6L=
+y93d3cuZXh0cmVtZWZyZWVkb21vbmxpbmUuY29tL25vdw=3D=3D" target=3D"_blank" styl=
+e=3D"color: rgb(68, 119, 189); line-height: 1.5; text-decoration-line: unde=
+rline;">https://www.extremefreedomonline.com/now</a></strong><br><br><a hre=
+f=3D"https://el2.convertkit-mail.com/c/n4u0qllo9tvhxp45e/kmbmh6/aHR0cHM6Ly9=
+3d3cuZXh0cmVtZWZyZWVkb21vbmxpbmUuY29tL25vdw=3D=3D" target=3D"_blank" style=
+=3D'color: rgb(68, 119, 189); background-color: rgb(255, 255, 255); font-fa=
+mily: "Helvetica Neue", Helvetica, Helvetica, Arial, sans-serif; line-heigh=
+t: 1.5; text-decoration-line: underline;'><img alt=3D"Image" src=3D"https:/=
+/getdrip.s3.amazonaws.com/uploads/image_upload/image/124027/embeddable_a715=
+8ced-c14b-4c48-b90b-ff7ffc2e71e8.png" style=3D"max-width:100%;height:auto">=
+</a><br><br><br><br><br><br><br><br> </p>
+  <br>
+  <br>
+  <small>
+    <a href=3D'http://el2.convertkit-mail.com/u/n4u0qllo9tvhxp45e'>Unsubscr=
+ibe</a> | 19420 North 59th Avenue, Glendale, Arizona  85308
+    <br>
+  </small>
+</div>
+
+<!-- --><img src=3D"http://el2.convertkit-mail.com/o/n4u0qllo9tvhxp45e" alt=
+=3D"">
+</body>
+</html>
+
+--e82e287639114c16b051282b32379407--
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>date-last-viewed</key>
+	<integer>0</integer>
+	<key>date-received</key>
+	<integer>1510089264</integer>
+	<key>flags</key>
+	<integer>8590195712</integer>
+	<key>remote-id</key>
+	<string>4651</string>
+</dict>
+</plist>

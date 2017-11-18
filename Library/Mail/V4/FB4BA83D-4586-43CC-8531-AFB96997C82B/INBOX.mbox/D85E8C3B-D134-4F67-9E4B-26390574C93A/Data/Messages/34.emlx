@@ -1,0 +1,852 @@
+46764     
+Return-path:
+ <bounces+546346-b29d-austindreier=icloud.com@email.outboundsend.com>
+Received: from pv33p00im-smtpin011.mac.com ([17.142.194.136])
+ by ms60015.mac.com
+ (Oracle Communications Messaging Server 8.0.1.2.20170607 64bit (built Jun  7
+ 2017)) with ESMTP id <0OZ5004YQOMHVZE0@ms60015.mac.com> for
+ austindreier@icloud.com; Thu, 09 Nov 2017 15:06:18 +0000 (GMT)
+Original-recipient: rfc822;austindreier@icloud.com
+Received: from o1.email.outboundsend.com
+ (o1.email.outboundsend.com [198.37.153.3]) by pv33p00im-smtpin011.me.com
+ (Oracle Communications Messaging Server 8.0.1.2.20170607 64bit (built Jun  7
+ 2017)) with ESMTPS id <0OZ5001D8OMFCV50@pv33p00im-smtpin011.me.com> for
+ austindreier@icloud.com (ORCPT austindreier@icloud.com); Thu,
+ 09 Nov 2017 15:06:17 +0000 (GMT)
+X-Spam-Flag: yes
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 spamscore=0
+ clxscore=-87 suspectscore=51 malwarescore=0 phishscore=0 adultscore=0
+ bulkscore=80 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.0.1-1707230000 definitions=main-1711090206
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10432:,,
+ definitions=2017-11-09_05:,, signatures=0
+Authentication-results: pv33p00im-dmarcmilter004.me.com; dmarc=fail
+ header.from=kw.com
+Authentication-results: pv33p00im-spfmilter005.me.com; spf=pass
+ (pv33p00im-spfmilter005.me.com: domain of
+ bounces+546346-b29d-austindreier=icloud.com@email.outboundsend.com designates
+ 198.37.153.3 as permitted sender)
+ smtp.mailfrom=bounces+546346-b29d-austindreier=icloud.com@email.outboundsend.com;
+Received-SPF: pass (pv33p00im-spfmilter005.me.com: domain of
+ bounces+546346-b29d-austindreier=icloud.com@email.outboundsend.com designates
+ 198.37.153.3 as permitted sender) receiver=pv33p00im-spfmilter005.me.com;
+ client-ip=198.37.153.3; helo=o1.email.outboundsend.com;
+ envelope-from=bounces+546346-b29d-austindreier=icloud.com@email.outboundsend.com;
+Authentication-results: pv33p00im-dkimmilter003.me.com;	dkim=pass (1024-bit
+ key) header.d=outboundsend.com header.i=@outboundsend.com header.b=i963ASww;
+	dkim-adsp=temperror
+ reason="'_adsp._domainkey.kw.com' reply was unresolved CNAME"
+DKIM-Signature: v=1; a=rsa-sha1; c=relaxed/relaxed;	d=outboundsend.com;
+	h=content-type:from:mime-version:reply-to:to:subject; s=s1;
+	bh=JD8hFc5bM6X3Y1gwGP9/XN9eKzA=; b=i963ASwwfSUsWLRRcOCSeA/frgHVi
+	j++ZZwXMHcSt83r0K6beibRiueVBXcLKbP6mpV7Olo0937xFQ7xkroZJnbxsXJ/7
+	8Xy71ZT8WIAV8Y7pGsviJGlj293+/6nJE9NPLRjynBfi42VCzFhfLp/Xlc2/92v9
+	E3/+mFpKQRfGi8=
+Received: by filter0537p1las1.sendgrid.net with SMTP id
+ filter0537p1las1-27067-5A046EDA-A2 2017-11-09 15:06:02.891860313 +0000 UTC
+Received: from NTQ2MzQ2
+ (ec2-35-167-179-74.us-west-2.compute.amazonaws.com [35.167.179.74])
+	by ismtpd0001p1las1.sendgrid.net (SG) with HTTP id T3JFcly3R5Sj9q9_SqblQA	Thu,
+ 09 Nov 2017 15:06:03.080 +0000 (UTC)
+Content-type: multipart/alternative;
+ boundary=f4fbf1bb029194a610df6fea4ee9cf24759e199c27a061a0dde8d25f3034
+Date: Thu, 09 Nov 2017 15:06:15 +0000 (UTC)
+From: Robert Tait <tait@kw.com>
+MIME-version: 1.0
+Reply-to: Robert Tait <tait@kw.com>
+To: austindreier@icloud.com
+Message-id: <T3JFcly3R5Sj9q9_SqblQA@ismtpd0001p1las1.sendgrid.net>
+Subject: What can you do for millennial buyers?
+x-icloud-spam-score: 3321341
+ f=kw.com;e=email.outboundsend.com;is=yes;ir=no;spf=pass;dkim=pass;dmarc=fail/none/none;gdwl=absent;pps=ham;clxs=spam;clxw=neutral
+X-CLX-Spam: true
+X-CLX-UnSpecialScore: None
+X-CLX-Score: -87
+X-CLX-Shades: Dark
+X-MANTSH: 1TEIXWlwZHFoaGkNHB0tNT0ReQ0QeHxsYEQpMQxcbHQQbHhgEGxMfBBkYEBseGh8
+ aEQpMWRcHEh0RCllNF25LWEERCllJFxpxGhAadwYHHB1xEhAeG3cGBxgaBhoRClleF2NueREKQ
+ 04XGhNPY2h7GEFTRnNwbUhLYnBuW0RiXl9Pc0hJbUcSHQERClhcFxkEGgQZGAdNGU4TTxMZGAU
+ bHQQbHhgEGxMTBBsaGBAbHhofGhEKXlkXeGVCZW8RCk1cFxoRCkxaF2h7YkJNaxEKRVkXcxEKT
+ F8XegUFBQUFBQUFE1sRCkNaFxsTEgQZHQQbHxkEGREKQl4XGxEKQkUXZhpOWmx5fxp7TFsRCkJ
+ OF29THHBLTAUbXmdaEQpCTBdrUkhvXnIFQn1oHREKQmwXYGFMY2MTE0hQZX4RCkJAF2hEY2tNQ
+ H4aZmRHEQpCWBduRx0bTmRhRRsSQBEKTV4XBxsRCnBoF2l7Ex0Te0MSBXpmEAcZGhEKcGgXbhp
+ AX2diTHpdX2QQBxkaEQpwaBdsaW5/Ux1AGVodHxAHGRoRCnBoF2JtckhgRwVGQFx5EAcZGhEKc
+ GgXbxpcRktnQm0bckcQBxkaEQpwfxdrRwFbZllhY3oFHBAHGRoRCnB9F2tHAVtmWWFjegUcEAc
+ ZGhEKcH8XZUVGAWNefhpvQlAQGxMRCnBfF2hCHG9ybhkfWn9yEAcZGhEKcH0XYxJyZB9lbE1Je
+ R0QBxkaEQpwXxdpQ3xwa1gfHGxvYRAHGRoRCnB9F2IcH3tGaHBSGx5ZEAcZGhEKcH8XaB9/ZkB
+ PYWJueG8QHh4RCnBfF2JjX0YYXx5tb094EBsbEQpwfRdhQ0diQR9CY0d5chAcBBMRCnB/F2NaT
+ 01ESV98S0JZEBkcEQpwXxdpW1pDbWNiTwF/HRATBB4RCnB9F25dcBNpAR5aUGAeEAcZGhEKcH8
+ XZXpvbVkbcGBsfUMQGxsRCnBfF2NYZGliH1lZAW5iEBsbEQpw
+x-dmarc-info: pass=fail; dmarc-policy=none; s=r0; d=r0
+x-dmarc-policy: v=DMARC1; p=none;
+ rua=mailto:dmarc_agg@vali.email,mailto:kw@rua.agari.com,mailto:romf0l72@ag.dmarcian.com;
+ ruf=mailto:kw@ruf.agari.com,mailto:romf0l72@fr.dmarcian.com
+X-SG-EID:
+ wDL73fzM24memzQeYD8vNs60a1/y7ttRZFoC2GN2sWCbl/78+fLnfZOH8ZeOqP78E4M2V3xtmt3JcN
+ a6KqNA1xBakYjXKWyAozKc/5cRo3hLOQg+7lleiQTEb6TmMLTjg/Yxx0v/l2g2VHGkzoSD6OW42FdI
+ xYWjELm/4/x7SrGmfrYsp0OElreOLbZcQ8HCZnunybPrPaqc6upiI4Q8gt4ai4HvnWXsW1AV9ZXyte
+ 0=
+X-SG-ID:
+ tOFtD8/DFsLAxRdORIavOVgSq2XuYYDZEvIg+Qrt9DPgqGbz9Q/rG+JhnRKK1UV4X2H3lm+VRwevvf
+ miXddwM19BVQ9YWlXJ9pEDrM8FmbjxXpd2mybzKk4b7IEOqRc4IRf0XDarga7OTaXRM62Xk/cdK47S
+ kxmAm+v6I0bnMLS/0EtqpYfcacrb5WwNYXcES1N7O6oPc7UcZ9aD1CBeAQBPZl2Sfi1BE5jETPj1wE
+ Q=
+
+--f4fbf1bb029194a610df6fea4ee9cf24759e199c27a061a0dde8d25f3034
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=UTF-8
+Mime-Version: 1.0
+
+What can you do for millennial buyers? Know how to attract and connect with=
+ the largest generation of homebuyers.... For the fourth year in a row, mil=
+lennials are the largest group of homebuyers. In fact, they represented 45 =
+percent of all purchase loans in January 2017. But they're facing some stif=
+f competition -- buyers with more experience and financial leverage. They n=
+eed a competitive advantage, and that's where you come in. How to Attract M=
+illennial Buyers Here's the good news: Ninety-two percent of millennials ch=
+oose to work with a real estate agent. But they don't tend to reach out imm=
+ediately. Instead, they like to do their own research. So if you want to ge=
+t in front of them, you have to make sure they can find you online. That me=
+ans publishing educational resources that are optimized for search: blogs, =
+FAQs and downloadable content. A first-time buyer's guide, for example, all=
+ows them to find the information they need without having to ask. Plus, it =
+establishes you as a trusted resource when they're ready to call an agent. =
+How to Help Millennial Buyers Millennials may do their homework online, but=
+ nothing can replace good, old-fashioned experience. Earn their trust by li=
+stening to their concerns, answering their questions and providing expertis=
+e. When you don't have the answer, introduce them to your network of profes=
+sionals and help them get the information they need. For example, as first-=
+timers, millennials may not understand that they need to budget for more th=
+an the list price. Concepts such as property taxes and HOA fees may be unfa=
+miliar to them. And they may not think to budget for renovations. You can g=
+uide them through the process, set expectations and make the journey as pai=
+nless as possible. This type of guidance not only puts the client at ease i=
+n the moment, but it also establishes trust and builds a relationship that =
+can lead to referrals down the line. Training and coaching are key componen=
+ts of the Keller Williams experience. Our award-winning programs provide ag=
+ents with education and resources to create a successful real estate practi=
+ce. Learn more about how we can help you too. Thank you for reading! - Robe=
+rt Tait Robert Tait |Team Leader |Keller Williams Realty Northern Colorado =
+Phone (303) 888-0194 tait@kw.com 3720 South College Ave. Unit A Fort Collin=
+s, CO 80525 Designed and Delivered By OutboundEngine, Inc Don't want to get=
+ these emails anymore? Unsubscribe here. Problem viewing email? View online=
+ version.
+
+---------------------------------------------------------------------------=
+-----
+Thank you for reading!
+---------------------------------------------------------------------------=
+-----
+
+Keller Williams Realty Northern Colorado
+Robert Tait
+Team Leader
+
+3720 South College Ave. Unit A
+Fort Collins, CO 80525 USA
+http://Taitestates.com
+
+Email: tait@kw.com
+Phone: (303) 888-0194
+
+---------------------------------------------------------------------------=
+-----
+Having trouble viewing this e-mail? See it in your browser using this link:
+http://robtait.myhomehq.biz/what-can-you-do-for-millennial-buyers
+---------------------------------------------------------------------------=
+-----
+Unsubscribe: http://robtait.myhomehq.biz/microsite/unsubscribe/QqV0KHPw8hAR=
+EhM/Qqd1LXWDlbGHQhAREhM=
+
+--f4fbf1bb029194a610df6fea4ee9cf24759e199c27a061a0dde8d25f3034
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=UTF-8
+Mime-Version: 1.0
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org=
+/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns=3D"http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8=
+"/>
+    <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=
+=3D1.0"/>
+    <!-- head_meta -->
+    <meta property=3D"og:image" content=3D"http://d1k3c4xlx29yaw.cloudfront=
+.net/uploads/original/20834/Vf65A1vJ8EPzSWv6W6PDQ27EMS7Tu9HLylCajvGFwV8.jpg=
+" />
+    <meta property=3D"og:image" content=3D"http://d1k3c4xlx29yaw.cloudfront=
+.net/uploads/original/20834/Vf65A1vJ8EPzSWv6W6PDQ27EMS7Tu9HLylCajvGFwV8.jpg=
+" />
+    <meta property=3D"og:title" content=3D"Understanding Millennial Buyers"=
+/>=20
+    <meta property=3D"og:description" content=3D"You may need to rely on ce=
+rtain strategies to be able to attract and help clients aged 35 and under."=
+/>
+    <link href=3D'https://s3.amazonaws.com/outboundengine/resources/fonts/f=
+onts.css' rel=3D'stylesheet' type=3D'text/css'>
+    <meta name=3D"viewport" content=3D"initial-scale=3D1">
+
+        <meta name=3D"twitter:card" content=3D"summary_large_image">
+    <meta name=3D"twitter:image" content=3D"http://d1k3c4xlx29yaw.cloudfron=
+t.net/uploads/original/20834/Vf65A1vJ8EPzSWv6W6PDQ27EMS7Tu9HLylCajvGFwV8.jp=
+g">
+    <meta name=3D"twitter:url" content=3D"http://robtait.myhomehq.biz/what-=
+can-you-do-for-millennial-buyers">
+    <meta name=3D"twitter:title" content=3D"What can you do for millennial =
+buyers?">
+=20=20=20=20
+
+    <title>What can you do for millennial buyers?</title>
+    <style type=3D"text/css">
+        /* end media queries */
+        body {
+            margin: 0;
+            padding: 0;
+            color: #666666;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 12px;
+            -webkit-text-size-adjust: none;
+            -ms-text-size-adjust: none;
+        }
+
+        h1 {
+            color: #666666;
+            font-weight: 300;
+            font-size: 20px;
+            margin: 0 !important;
+            margin-bottom: 10px !important;
+        }
+
+        h2 {
+            color: #666666 !important;
+            font-weight: 700;
+            font-size: 14px;
+            text-transform: uppercase;
+            margin: 0 !important;
+            margin-bottom: 0px !important;
+        }
+
+        h3 {
+            color: #1b836e !important;
+            margin: 0 !important;
+            margin-bottom: 10px !important;
+            font-size: 18px;
+            font-style: italic;
+            line-height: 26px;
+            font-weight: 600;
+        }
+
+        h4 {
+            color: #1b836e !important;
+            margin: 0 !important;
+            margin-bottom: 0 !important;
+            font-style: italic;
+            font-size: 14px;
+            font-weight: 300;
+            line-height: 10px;
+        }
+
+        a, a:link, a:visited {
+            color: #2980b9 !important;
+            text-decoration: none;
+        }
+
+        a:hover, a:active {
+            text-decoration: none;
+            color: #2980b9 !important;
+        }
+
+        .highlighted {
+            background-color: #ffdc75;
+            color: #444444;
+            padding: 1px 4px;
+            border-radius: 3px;
+        }
+
+        p {
+            margin: 0 !important;
+            margin-bottom: 10px !important;
+            font-family: font-family:Arial, Helvetica, sans-serif !importan=
+t;
+        }
+
+        img {
+            border: 0;
+        }
+
+        table td {
+            border-collapse: collapse;
+        }
+
+        /*Hotmail and Yahoo specific code*/
+        .ReadMsgBody {
+            width: 100%;
+        }
+
+        .ExternalClass {
+            width: 100%;
+        }
+
+        .yshortcuts {
+            color: #2980b9;
+        }
+
+        .yshortcuts a span {
+            color: #2980b9;
+            border-bottom: none !important;
+            background: none !important;
+        }
+        /*Hotmail and Yahoo specific code*/
+    </style>
+</head>
+
+<body>
+<div class=3D"preheader" style=3D"display: none !important; max-height:0px =
+!important; overflow:hidden !important; mso-hide:all;">Know how to attract =
+and connect with the largest generation of homebuyers....</div>
+<table id=3D"pageContainer" align=3D"center" cellpadding=3D"0" cellspacing=
+=3D"0"
+       style=3D"border-collapse:collapse; border:0;" bgcolor=3D"#333" class=
+=3D"full-width" width=3D"100%">
+    <tr>
+        <td  width=3D"800" align=3D"center">
+        <table align=3D"center" cellpadding=3D"0" cellspacing=3D"0" border=
+=3D"0">
+            <tbody>
+            <tr>
+                <td>
+                        <table align=3D"center" height=3D"30" width=3D"800"=
+ bgcolor=3D"#ffffff" cellpadding=3D"0" cellspacing=3D"0" border=3D"0"><tbod=
+y><tr><td> <img style=3D"display:block;" src=3D"http://d1k3c4xlx29yaw.cloud=
+front.net/templatesV2/U12302/C13237/r_1TTiINku9jPGw_j-wZYw/369292993jExGzJI=
+ojFQbRUdZ5_ElKA1510239952448xSX6XuqeygfvQGjwSV3O.png" width=3D"548" height=
+=3D"30"></td><td> <a href=3D"http://email.outboundsend.com/wf/click?upn=3Do=
+bAb0qNX-2BItM75kab8Vj6WexSjf-2B-2FFQbiWta1P-2FJ-2BwD6VhBF5-2BJFj-2BqJgZu7V2=
+MA_7XtDdMHRjqIUi4tzSjSp2h-2BoTg8yV1h4-2FGX2SHZpIEqypF03TjaBwvgmw9oU99pw08sR=
+A9KoXQqrFM-2BA5GsWg879XNvadFmbQVpvcIyyFx2m-2FFivppxS0nPbLMx-2F-2F55G5cUdzfn=
+6t8Nyiq4oZdftCsV3Lr3ljCbKqHsss6mLF9zTaTg7UPHQXMRwQOpOGi8-2Bt-2BnYwi-2FG-2FY=
+8KPxmCyhL9kHb725DS3pSmAPAng17lVNBCPa6PhXpYlGyPfiE6h0A-2FHTrfa8h8oEPa-2BXvzg=
+xHtdtmJve-2FG44FxKrhJS36jYFq39i5lsoCdC1tnA9LT-2BMfi6RP2GcRYWdvWpbJ0C9qdNDq-=
+2B0-2BLuVRaHePaPWNvqY5db4gyKfjjR-2Be2ILloxwB-2BpVatgdo-2FioJwrpUMwhw6BH4dxm=
+ILEKKaQ2F15-2B4BavbTYU4kIe5dUmgvp5r0Wlg9-2B" class=3D"link2" style=3D""><im=
+g style=3D"display:block;" src=3D"http://d1k3c4xlx29yaw.cloudfront.net/temp=
+latesV2/U12302/C13237/r_1TTiINku9jPGw_j-wZYw/12579548927mZ0T7zgm0WhMetQztFg=
+lA1510239952448aZFL2YyURJTjDQ2pHqFC.png" width=3D"30" height=3D"30"></a></t=
+d><td> <img style=3D"display:block;" src=3D"http://d1k3c4xlx29yaw.cloudfron=
+t.net/templatesV2/U12302/C13237/r_1TTiINku9jPGw_j-wZYw/113746601prp8t-KI274=
+7UPwe5C3A9A1510239952448mZ1PE1CV5Z5HMHDZhWE3.png" width=3D"2" height=3D"30"=
+></td><td> <a href=3D"http://email.outboundsend.com/wf/click?upn=3DXb6lpTB2=
+O11vWpVKoqEkUIN-2FkvOwo3AxRsf9wP0vm0E-3D_7XtDdMHRjqIUi4tzSjSp2h-2BoTg8yV1h4=
+-2FGX2SHZpIEqypF03TjaBwvgmw9oU99pw08sRA9KoXQqrFM-2BA5GsWg879XNvadFmbQVpvcIy=
+yFx2m-2FFivppxS0nPbLMx-2F-2F55G5cUdzfn6t8Nyiq4oZdftCsV3Lr3ljCbKqHsss6mLF9zT=
+aTg7UPHQXMRwQOpOGi8-2Bt-2BnYwi-2FG-2FY8KPxmCyhL9kHb725DS3pSmAPAng17lVNBCPa6=
+PhXpYlGyPfiE6h0A-2FHTrfa8h8oEPa-2BXvzgxHtdtmJve-2FG44FxKrhJS36jYFoC4907BAnP=
+UiEfqRWSwSU8D-2BQxAWsFVSRogcPUqBt9L5T3Ef815yYgdTyxqpbnTvE-2FYq4Z-2BCZRuDyHg=
+Tf2-2FtirBKJ7tj8rdFySYR1uPU8iD-2FX3NQpwnnfPP-2FJUVK3eXk3SC9LtY4FPKYSp-2FmCI=
+kwur" class=3D"link2" style=3D""><img style=3D"display:block;" src=3D"http:=
+//d1k3c4xlx29yaw.cloudfront.net/templatesV2/U12302/C13237/r_1TTiINku9jPGw_j=
+-wZYw/2008436588sWe5al5LNuUKOD0HHV7GRg1510239952448BEt7ZAthxQkZOTX2aCP5.png=
+" width=3D"30" height=3D"30"></a></td><td> <img style=3D"display:block;" sr=
+c=3D"http://d1k3c4xlx29yaw.cloudfront.net/templatesV2/U12302/C13237/r_1TTiI=
+Nku9jPGw_j-wZYw/1979911077CpB5tvUiXUJbmeZL9TPlYQ1510239952448NLx5SvOUJUyccY=
+DqpiSb.png" width=3D"2" height=3D"30"></td><td> <a href=3D"http://email.out=
+boundsend.com/wf/click?upn=3DhJPUP54qVNdinMqXi-2BWvENIVJX-2F-2FgYYkbe6O6WgW=
+4OE-3D_7XtDdMHRjqIUi4tzSjSp2h-2BoTg8yV1h4-2FGX2SHZpIEqypF03TjaBwvgmw9oU99pw=
+08sRA9KoXQqrFM-2BA5GsWg879XNvadFmbQVpvcIyyFx2m-2FFivppxS0nPbLMx-2F-2F55G5cU=
+dzfn6t8Nyiq4oZdftCsV3Lr3ljCbKqHsss6mLF9zTaTg7UPHQXMRwQOpOGi8-2Bt-2BnYwi-2FG=
+-2FY8KPxmCyhL9kHb725DS3pSmAPAng17lVNBCPa6PhXpYlGyPfiE6h0A-2FHTrfa8h8oEPa-2B=
+XvzgxHtdtmJve-2FG44FxKrhJS36jYFpeBQG8ETpKfGQY-2Fpzt6xQrGgd8E-2FYCddUwg5HnfT=
+Zktt13aXmf0nx6qcOLov4ZDoGnEGxpAMRTcuFQf5X1Zix08at5YMnZz2y7lNixk6XNq2IF-2FMF=
+VF2I-2BRDaWcj-2BNx9wRVoJggQeYa5RqqFyRgDj2" class=3D"link2" style=3D""><img =
+style=3D"display:block;" src=3D"http://d1k3c4xlx29yaw.cloudfront.net/templa=
+tesV2/U12302/C13237/r_1TTiINku9jPGw_j-wZYw/1788326807UEs6JBrF0EaNV-DgIApQOQ=
+1510239952448aImbzQBSSbdhmT9axEc3.png" width=3D"30" height=3D"30"></a></td>=
+<td> <img style=3D"display:block;" src=3D"http://d1k3c4xlx29yaw.cloudfront.=
+net/templatesV2/U12302/C13237/r_1TTiINku9jPGw_j-wZYw/1375639174DkWOCFHRFSWc=
+py_iFSkEHQ1510239952448j0IlwTOQb9mdueID3Gsd.png" width=3D"2" height=3D"30">=
+</td><td> <a href=3D"http://email.outboundsend.com/wf/click?upn=3DwoKBu10O-=
+2F-2FtFoH79Rm4MCF8lCS3McQljvuwl7I42ZEaSVSe8qP6m6P20mIlpH11a_7XtDdMHRjqIUi4t=
+zSjSp2h-2BoTg8yV1h4-2FGX2SHZpIEqypF03TjaBwvgmw9oU99pw08sRA9KoXQqrFM-2BA5GsW=
+g879XNvadFmbQVpvcIyyFx2m-2FFivppxS0nPbLMx-2F-2F55G5cUdzfn6t8Nyiq4oZdftCsV3L=
+r3ljCbKqHsss6mLF9zTaTg7UPHQXMRwQOpOGi8-2Bt-2BnYwi-2FG-2FY8KPxmCyhL9kHb725DS=
+3pSmAPAng17lVNBCPa6PhXpYlGyPfiE6h0A-2FHTrfa8h8oEPa-2BXvzgxHtdtmJve-2FG44FxK=
+rhJS36jYFqLcxVTk6BvjLRHJEgWJKWy5WXSXBIxbKCA1c3JjTXqAc0j8VdZU2K4ftcQX4W4JBL7=
+PMEZotLlrzdP-2BvVA3oNxbCr3AQH3-2FP6TBQNFTXl7Yr-2BO4qJc55UG-2BkKcLdctVgIumXn=
+Hl1Wn6iJT-2FubHcT31" class=3D"link2" style=3D""><img style=3D"display:block=
+;" src=3D"http://d1k3c4xlx29yaw.cloudfront.net/templatesV2/U12302/C13237/r_=
+1TTiINku9jPGw_j-wZYw/351698682dv-B1k07Gf6fTWadsTVHug1510239952448Qi9NnDi9BN=
+f8PLVK4XhR.png" width=3D"30" height=3D"30"></a></td><td> <img style=3D"disp=
+lay:block;" src=3D"http://d1k3c4xlx29yaw.cloudfront.net/templatesV2/U12302/=
+C13237/r_1TTiINku9jPGw_j-wZYw/2059801058WDBfik5KH02mRgfKxhYAkA1510239952448=
+Zw2kUMvJ0dNN0EOYsiyE.png" width=3D"2" height=3D"30"></td><td> <a href=3D"ht=
+tp://email.outboundsend.com/wf/click?upn=3DUaqtj9J-2ByPZxuihgBJGsPWnodi-2FS=
+VcsCdqV1-2BKu9ZA-2FAqTBBWUr-2BZOW1VC9Pfb9BGcTV6VD29YnYfbw1zXKKfw-3D-3D_7XtD=
+dMHRjqIUi4tzSjSp2h-2BoTg8yV1h4-2FGX2SHZpIEqypF03TjaBwvgmw9oU99pw08sRA9KoXQq=
+rFM-2BA5GsWg879XNvadFmbQVpvcIyyFx2m-2FFivppxS0nPbLMx-2F-2F55G5cUdzfn6t8Nyiq=
+4oZdftCsV3Lr3ljCbKqHsss6mLF9zTaTg7UPHQXMRwQOpOGi8-2Bt-2BnYwi-2FG-2FY8KPxmCy=
+hL9kHb725DS3pSmAPAng17lVNBCPa6PhXpYlGyPfiE6h0A-2FHTrfa8h8oEPa-2BXvzgxHtdtmJ=
+ve-2FG44FxKrhJS36jYFrtODT-2Bv-2Ff75ZBD3hIPbTQn-2FeQVxWc6Kg-2BRM3PyBCWwm6mEF=
+vSGvysRBeyQ88UT2iI-2FMR4qm80gDiQb0HkMwwvfL2eT8n36vjXyRdJujoxF0eBAHIFNBVzlS3=
+pzzZYHWnHb3xrqBBja3xft1yS0PLjl" class=3D"link2" style=3D""><img style=3D"di=
+splay:block;" src=3D"http://d1k3c4xlx29yaw.cloudfront.net/templatesV2/U1230=
+2/C13237/r_1TTiINku9jPGw_j-wZYw/765070886Luyih8K8bBeWFFTfKF90kw151023995244=
+8RDmRmATKRFDj8BjlNLrb.png" width=3D"30" height=3D"30"></a></td><td> <img st=
+yle=3D"display:block;" src=3D"http://d1k3c4xlx29yaw.cloudfront.net/template=
+sV2/U12302/C13237/r_1TTiINku9jPGw_j-wZYw/141948853drlZIcsAR5fm1qJ3-SoKgg151=
+0239952448jhLXEwNTiiU7erJttblf.png" width=3D"2" height=3D"30"></td><td> <a =
+href=3D"http://email.outboundsend.com/wf/click?upn=3DxZGRLFTqd7ltTLnNJBv3PB=
+wh1cCZEoLpuHnUovsKXhHKzt0CxyLxW2eOrmgNrDAY_7XtDdMHRjqIUi4tzSjSp2h-2BoTg8yV1=
+h4-2FGX2SHZpIEqypF03TjaBwvgmw9oU99pw08sRA9KoXQqrFM-2BA5GsWg879XNvadFmbQVpvc=
+IyyFx2m-2FFivppxS0nPbLMx-2F-2F55G5cUdzfn6t8Nyiq4oZdftCsV3Lr3ljCbKqHsss6mLF9=
+zTaTg7UPHQXMRwQOpOGi8-2Bt-2BnYwi-2FG-2FY8KPxmCyhL9kHb725DS3pSmAPAng17lVNBCP=
+a6PhXpYlGyPfiE6h0A-2FHTrfa8h8oEPa-2BXvzgxHtdtmJve-2FG44FxKrhJS36jYFqf3wImUR=
+tWKnWYm8pRiFh5skDmjRJtKtjcvWjawVSMr5ErwussblW0CcOfSckX7RVy5o5OlbzG-2FZAdW9L=
+eRFyUPjngIPxreT6SK-2Fi-2FVkt68OAQl6ptKrP7A2eaPxDF-2BXlzGHLGZYVaswfxWCFlIqPN=
+" class=3D"link2" style=3D""><img style=3D"display:block;" src=3D"http://d1=
+k3c4xlx29yaw.cloudfront.net/templatesV2/U12302/C13237/r_1TTiINku9jPGw_j-wZY=
+w/793991663fBQW0Sws4nL2ryKlFZcXgg1510239952448lurRxcPiNOFNelGSzUrB.png" wid=
+th=3D"30" height=3D"30"></a></td><td> <img style=3D"display:block;" src=3D"=
+http://d1k3c4xlx29yaw.cloudfront.net/templatesV2/U12302/C13237/r_1TTiINku9j=
+PGw_j-wZYw/1708135654WV54i4J6tyC4MtT-ccQsPg1510239952448KYx5PPqADvlBBjrWypD=
+z.png" width=3D"2" height=3D"30"></td><td> <a href=3D"http://email.outbound=
+send.com/wf/click?upn=3DwoKBu10O-2F-2FtFoH79Rm4MCKtFj-2BA1hGD9Pr37dH1PMFCci=
+j4OU136UN1S9HlKNL1RAGW7ulwa1K-2BOXnt1o5RjnA-3D-3D_7XtDdMHRjqIUi4tzSjSp2h-2B=
+oTg8yV1h4-2FGX2SHZpIEqypF03TjaBwvgmw9oU99pw08sRA9KoXQqrFM-2BA5GsWg879XNvadF=
+mbQVpvcIyyFx2m-2FFivppxS0nPbLMx-2F-2F55G5cUdzfn6t8Nyiq4oZdftCsV3Lr3ljCbKqHs=
+ss6mLF9zTaTg7UPHQXMRwQOpOGi8-2Bt-2BnYwi-2FG-2FY8KPxmCyhL9kHb725DS3pSmAPAng1=
+7lVNBCPa6PhXpYlGyPfiE6h0A-2FHTrfa8h8oEPa-2BXvzgxHtdtmJve-2FG44FxKrhJS36jYFp=
+k8KaqXF1NGfsBR-2Ffup-2BwVURCyP5FUXecgzRulYKK3VERYoGp-2F4SO2VIU-2FQfBPKAD-2B=
+96hiomwZT2kFGLm8ORHKLk833Xn7Edt-2FrY9MdQwCv6hvv2e1UPKYaoa6NCH07oH29iM-2BYcm=
+5ITrnchJfJbvs" class=3D"link2" style=3D""><img style=3D"display:block;" src=
+=3D"http://d1k3c4xlx29yaw.cloudfront.net/templatesV2/U12302/C13237/r_1TTiIN=
+ku9jPGw_j-wZYw/407297348FZtw3KFikDZKLryO9xshBw1510239952448UoNFsD3wtsJlh9Gp=
+t7An.png" width=3D"30" height=3D"30"></a></td><td> <img style=3D"display:bl=
+ock;" src=3D"http://d1k3c4xlx29yaw.cloudfront.net/templatesV2/U12302/C13237=
+/r_1TTiINku9jPGw_j-wZYw/10596745341XBfKPdvExKLnQON8BiggQ1510239952448yqob0T=
+0ToqoqwmROBavs.png" width=3D"30" height=3D"30"></td></tr></tbody></table>
+                    <!-- HERO IMAGE SECTION -->
+                        <table align=3D"center" height=3D"465" width=3D"800=
+" cellpadding=3D"0" cellspacing=3D"0" border=3D"0"><tbody><tr><td> <img sty=
+le=3D"display:block;" src=3D"http://d1k3c4xlx29yaw.cloudfront.net/templates=
+V2/U12302/C13237/r_1TTiINku9jPGw_j-wZYw/2135454631kM5UZaMNiImsrhqZf0lQdw151=
+0239949085WzJpNfQ7pgRhvQUeJlhY.png" width=3D"800" height=3D"465"></td></tr>=
+</tbody></table>
+                    <!-- END HERO IMAGE SECTION -->
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+            <!-- CALL TO ACTION BUTTONS SECTION -->
+            <!-- CALL TO ACTION BUTTONS COULD BE NULL IF THIS USER DOESN'T =
+HAVE ANY SET -->
+            <table bgcolor=3D"#ffffff" cellpadding=3D"0" cellspacing=3D"0" =
+border=3D"0" align=3D"center" class=3D"email-width" width=3D"800">
+                <tbody>
+                    <tr>
+                        <td align=3D"center" style=3D"padding: 20px 0px 0px=
+ 0px;">
+                                <table align=3D"center" height=3D"140" widt=
+h=3D"750" cellpadding=3D"0" cellspacing=3D"0" border=3D"0"><tbody><tr><td r=
+owspan=3D"3"> <img style=3D"display:block;" src=3D"http://d1k3c4xlx29yaw.cl=
+oudfront.net/templatesV2/U12302/C13237/r_1TTiINku9jPGw_j-wZYw/18634918556H-=
+ZYxylczc0STdprhUMKg1510239954582HlByjeKVxj5dHHNTHQyr.png" width=3D"130" hei=
+ght=3D"140"></td><td> <a href=3D"http://email.outboundsend.com/wf/click?upn=
+=3DobAb0qNX-2BItM75kab8Vj6WexSjf-2B-2FFQbiWta1P-2FJ-2BwApAlGxcUQDcCZtWXauIc=
+XtVmjGkgFq4yFTYX6oYaA4VHYNqMAZk1a4FbPpJZaOaqtJArL19-2BW6jMn9xgig0C3xNM0ZFBw=
+95-2BBq9MQW86dIxYdCXrhETfsl-2BSynKKJVUsc-3D_7XtDdMHRjqIUi4tzSjSp2h-2BoTg8yV=
+1h4-2FGX2SHZpIEqypF03TjaBwvgmw9oU99pw08sRA9KoXQqrFM-2BA5GsWg879XNvadFmbQVpv=
+cIyyFx2m-2FFivppxS0nPbLMx-2F-2F55G5cUdzfn6t8Nyiq4oZdftCsV3Lr3ljCbKqHsss6mLF=
+9zTaTg7UPHQXMRwQOpOGi8-2Bt-2BnYwi-2FG-2FY8KPxmCyhL9kHb725DS3pSmAPAng17lVNBC=
+Pa6PhXpYlGyPfiE6h0A-2FHTrfa8h8oEPa-2BXvzgxHtdtmJve-2FG44FxKrhJS36jYFodgIdOJ=
+e7-2BKEWkNA-2FS-2BuPFILTGXMrgw3-2Bl3CPqGQZzkzb-2B-2Fo9B64bgEEF1RG6QImknitB-=
+2FzdjNPWpF5SdNKK5Z2LaMX88m4sP2BGDCb4S2bMXsXTIBg1hB48Br4zaPKBeRMypngZuGPeXhR=
+ITX64bW" class=3D"link2" style=3D""><img style=3D"display:block;" src=3D"ht=
+tp://d1k3c4xlx29yaw.cloudfront.net/templatesV2/U12302/C13237/r_1TTiINku9jPG=
+w_j-wZYw/1091628372RrXyObkSC0ptoU6Yd3ohYw1510239954582OLGHghByYudEz8okL2R7.=
+png" width=3D"234" height=3D"65"></a></td><td rowspan=3D"3"> <img style=3D"=
+display:block;" src=3D"http://d1k3c4xlx29yaw.cloudfront.net/templatesV2/U12=
+302/C13237/r_1TTiINku9jPGw_j-wZYw/880896185qphZLGLcxScEzsuzMOzsXw1510239954=
+582fJlzaXqWMK2Ds1AVrwGb.png" width=3D"23" height=3D"140"></td><td> <a href=
+=3D"http://email.outboundsend.com/wf/click?upn=3DobAb0qNX-2BItM75kab8Vj6Wex=
+Sjf-2B-2FFQbiWta1P-2FJ-2BwDps9f1uGYtnHVg3i4-2BE0vohqKAP9bIFcOAFrQDHn60LC1j6=
+IZ8Igt7l2dhUQjTKd4l4k4yX29zkQcKDZ-2FbGvqXrNmG6pgBlLFjB3X4ASV7QDmQxmUISSXZBo=
+8GW9qjGzWixjGr3-2FSgwHC3M2I2rzIR_7XtDdMHRjqIUi4tzSjSp2h-2BoTg8yV1h4-2FGX2SH=
+ZpIEqypF03TjaBwvgmw9oU99pw08sRA9KoXQqrFM-2BA5GsWg879XNvadFmbQVpvcIyyFx2m-2F=
+FivppxS0nPbLMx-2F-2F55G5cUdzfn6t8Nyiq4oZdftCsV3Lr3ljCbKqHsss6mLF9zTaTg7UPHQ=
+XMRwQOpOGi8-2Bt-2BnYwi-2FG-2FY8KPxmCyhL9kHb725DS3pSmAPAng17lVNBCPa6PhXpYlGy=
+PfiE6h0A-2FHTrfa8h8oEPa-2BXvzgxHtdtmJve-2FG44FxKrhJS36jYFqjlWUWuIp-2FAizRGr=
+F-2BWXFFQFjk8GRBe-2B75OSqfKhFU60oevdeQpkQfLtsaPiQHVNR3FXBK01K-2B5q9by36V0qH=
+oJHLw75V54UR3TFMwxOySiKBv8qVpMg3qUKbd7d9SZHk-2Fob4WFJyEp6nAnksGz1SA" class=
+=3D"link2" style=3D""><img style=3D"display:block;" src=3D"http://d1k3c4xlx=
+29yaw.cloudfront.net/templatesV2/U12302/C13237/r_1TTiINku9jPGw_j-wZYw/95741=
+36796JwrKt9fH1sPUT-CtDk0UQ1510239954582czUMya17athUUo92QbKU.png" width=3D"2=
+34" height=3D"65"></a></td><td rowspan=3D"3"> <img style=3D"display:block;"=
+ src=3D"http://d1k3c4xlx29yaw.cloudfront.net/templatesV2/U12302/C13237/r_1T=
+TiINku9jPGw_j-wZYw/1131425243qjIrbAv_kmfQaIqBHMQ-Rw15102399545825ETGesjMkxE=
+5xtRWIFQf.png" width=3D"129" height=3D"140"></td><td class=3D"oe-table-spac=
+er"><img style=3D"display:block;" src=3D"http://d1k3c4xlx29yaw.cloudfront.n=
+et/templatesV2/images/spacer.gif" width=3D"1" height=3D"65"></td></tr><tr><=
+td> <img style=3D"display:block;" src=3D"http://d1k3c4xlx29yaw.cloudfront.n=
+et/templatesV2/U12302/C13237/r_1TTiINku9jPGw_j-wZYw/97256108hCYjneb4TrlJW2n=
+ou98n6A15102399545820gP4V6iZr2Cp1ZY9z5MW.png" width=3D"234" height=3D"10"><=
+/td><td> <img style=3D"display:block;" src=3D"http://d1k3c4xlx29yaw.cloudfr=
+ont.net/templatesV2/U12302/C13237/r_1TTiINku9jPGw_j-wZYw/976709132BsuQR1rah=
+zfjGvIA7o8N0w1510239954582NCMGEFGKkx945okjuJYq.png" width=3D"234" height=3D=
+"10"></td><td class=3D"oe-table-spacer"><img style=3D"display:block;" src=
+=3D"http://d1k3c4xlx29yaw.cloudfront.net/templatesV2/images/spacer.gif" wid=
+th=3D"1" height=3D"10"></td></tr><tr><td> <a href=3D"http://email.outbounds=
+end.com/wf/click?upn=3DobAb0qNX-2BItM75kab8Vj6WexSjf-2B-2FFQbiWta1P-2FJ-2Bw=
+BRDk9liAujIVqGaEvgF99it9NkXhVgrD9-2BG1VoqXze1ySMOHTyhKAXtkU-2BZhsNlo-2BeEGe=
+PK2KF2R1POHu44zfltLX33kn2bxQF4U8060dvUy-2FyhlT5kskPlvB0vaaPCMA-3D_7XtDdMHRj=
+qIUi4tzSjSp2h-2BoTg8yV1h4-2FGX2SHZpIEqypF03TjaBwvgmw9oU99pw08sRA9KoXQqrFM-2=
+BA5GsWg879XNvadFmbQVpvcIyyFx2m-2FFivppxS0nPbLMx-2F-2F55G5cUdzfn6t8Nyiq4oZdf=
+tCsV3Lr3ljCbKqHsss6mLF9zTaTg7UPHQXMRwQOpOGi8-2Bt-2BnYwi-2FG-2FY8KPxmCyhL9kH=
+b725DS3pSmAPAng17lVNBCPa6PhXpYlGyPfiE6h0A-2FHTrfa8h8oEPa-2BXvzgxHtdtmJve-2F=
+G44FxKrhJS36jYFrgf6p6vUM-2F-2FqPEBv-2FnGrU7oe-2FEBPtevpc4UZs9l-2Fxbfaka-2Be=
+4nNNhmpZOiGeLyJkudnp-2FwKTnAJUpE4dSdupinJjiCWfGtx53VX0vOtdVcS4qtPslDoZ-2BiV=
+kLTkiitqmCn5HGdVqizd3mlRse3K52n" class=3D"link2" style=3D""><img style=3D"d=
+isplay:block;" src=3D"http://d1k3c4xlx29yaw.cloudfront.net/templatesV2/U123=
+02/C13237/r_1TTiINku9jPGw_j-wZYw/80755172I7bFKjNQPHUAHxUimVYUHg151023995459=
+3Gq3OrNyynnxsjT0n3TtK.png" width=3D"234" height=3D"65"></a></td><td> <a hre=
+f=3D"http://email.outboundsend.com/wf/click?upn=3DobAb0qNX-2BItM75kab8Vj6We=
+xSjf-2B-2FFQbiWta1P-2FJ-2BwDVq6BKLhabhaak0imRfdDI8fd1FIIo8DqQ-2FqITHCPcFVAa=
+rKgOw5ASQ1zg-2BBkjDAmBoCHnnwr8TrIp3OI8Syv4GOMDJGhIZ4ZbT9KT1jrwoWxSLajT47RGf=
+Pq4Sz2qIa8-3D_7XtDdMHRjqIUi4tzSjSp2h-2BoTg8yV1h4-2FGX2SHZpIEqypF03TjaBwvgmw=
+9oU99pw08sRA9KoXQqrFM-2BA5GsWg879XNvadFmbQVpvcIyyFx2m-2FFivppxS0nPbLMx-2F-2=
+F55G5cUdzfn6t8Nyiq4oZdftCsV3Lr3ljCbKqHsss6mLF9zTaTg7UPHQXMRwQOpOGi8-2Bt-2Bn=
+Ywi-2FG-2FY8KPxmCyhL9kHb725DS3pSmAPAng17lVNBCPa6PhXpYlGyPfiE6h0A-2FHTrfa8h8=
+oEPa-2BXvzgxHtdtmJve-2FG44FxKrhJS36jYFpGWV-2Foey7bN6D6U3c7-2Bzf1cIcPLth6LW4=
+NB-2FDdk-2FXL-2FBICAAbjoFGq0qUXQchOxNaemeD4lcT0FqNmicqqivJLYSX09oCHBTD0Af6U=
+cpcph3IbuRmpO-2FFdI6N669d1iVq3rlu6YVQNtjynSCjHgSJE" class=3D"link2" style=
+=3D""><img style=3D"display:block;" src=3D"http://d1k3c4xlx29yaw.cloudfront=
+.net/templatesV2/U12302/C13237/r_1TTiINku9jPGw_j-wZYw/1183634000GL9ZnXy1QCj=
+e8FhNjzO0Fw1510239954593z5z6JBWfM8vnc34raBWb.png" width=3D"234" height=3D"6=
+5"></a></td><td class=3D"oe-table-spacer"><img style=3D"display:block;" src=
+=3D"http://d1k3c4xlx29yaw.cloudfront.net/templatesV2/images/spacer.gif" wid=
+th=3D"1" height=3D"65"></td></tr><tr class=3D"oe-table-spacer"><td class=3D=
+"oe-table-spacer"><img style=3D"display:block;" src=3D"http://d1k3c4xlx29ya=
+w.cloudfront.net/templatesV2/images/spacer.gif" width=3D"130" height=3D"1">=
+</td><td class=3D"oe-table-spacer"><img style=3D"display:block;" src=3D"htt=
+p://d1k3c4xlx29yaw.cloudfront.net/templatesV2/images/spacer.gif" width=3D"2=
+34" height=3D"1"></td><td class=3D"oe-table-spacer"><img style=3D"display:b=
+lock;" src=3D"http://d1k3c4xlx29yaw.cloudfront.net/templatesV2/images/space=
+r.gif" width=3D"23" height=3D"1"></td><td class=3D"oe-table-spacer"><img st=
+yle=3D"display:block;" src=3D"http://d1k3c4xlx29yaw.cloudfront.net/template=
+sV2/images/spacer.gif" width=3D"234" height=3D"1"></td><td class=3D"oe-tabl=
+e-spacer"><img style=3D"display:block;" src=3D"http://d1k3c4xlx29yaw.cloudf=
+ront.net/templatesV2/images/spacer.gif" width=3D"129" height=3D"1"></td><td=
+ class=3D"oe-table-spacer"><img style=3D"display:block;" src=3D"http://d1k3=
+c4xlx29yaw.cloudfront.net/templatesV2/images/spacer.gif" width=3D"1" height=
+=3D"1"></td></tr></tbody></table>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <!-- END CALL TO ACTION BUTTON SECTION -->
+
+            <!-- CONTENT SECTION -->
+            <table bgcolor=3D"#ffffff" align=3D"center" cellpadding=3D"0" c=
+ellspacing=3D"0" class=3D"email-width" width=3D"800"
+                   style=3D"border-collapse:collapse; text-align:left; font=
+-family:Arial, Helvetica, sans-serif; font-weight:normal; font-size:12px; l=
+ine-height:15pt; color:#666666;">
+                <tr>
+                    <td align=3D"center">
+                        <table align=3D"center" cellpadding=3D"0" cellspaci=
+ng=3D"0" class=3D"content-width" width=3D"600"
+                               style=3D"border-collapse:collapse; text-alig=
+n:left; font-family:Arial, Helvetica, sans-serif; font-weight:normal; font-=
+size:12px; line-height:15pt; color:#666666;">
+                            <!-- PRIMARY CONTENT -->
+                            <tr>
+                                <!-- "line-height: 1.3" style is necessary,=
+ otherwise larger font sizes can overlap previous line -->
+                                <td width=3D"600" style=3D"padding: 25px 0p=
+x; line-height: 1.3;" class=3D"content-width">
+<p>For the fourth year in a row, millennials are the <a href=3D"http://emai=
+l.outboundsend.com/wf/click?upn=3DwoKBu10O-2F-2FtFoH79Rm4MCIautxLMSuKBB-2FU=
+zNE003nUdl4lxIwuio16APZyKvdt9EjuFPh944wbCytLAr9Wvlp346oHcfy-2BDZkFOT7zDuM8-=
+3D_7XtDdMHRjqIUi4tzSjSp2h-2BoTg8yV1h4-2FGX2SHZpIEqypF03TjaBwvgmw9oU99pw08sR=
+A9KoXQqrFM-2BA5GsWg879XNvadFmbQVpvcIyyFx2m-2FFivppxS0nPbLMx-2F-2F55G5cUdzfn=
+6t8Nyiq4oZdftCsV3Lr3ljCbKqHsss6mLF9zTaTg7UPHQXMRwQOpOGi8-2Bt-2BnYwi-2FG-2FY=
+8KPxmCyhL9kHb725DS3pSmAPAng17lVNBCPa6PhXpYlGyPfiE6h0A-2FHTrfa8h8oEPa-2BXvzg=
+xHtdtmJve-2FG44FxKrhJS36jYFqdNyF7Q1OKZdEYKqvD-2FqefUTjIPWsHQZ0to3tw3Fcx0ILL=
+RyMYUq2RrrrJqRXkIwOQ-2BqUiAvVu-2F5sXfRzfWAvQVCOCOtoqzS6AfIIu5AGU2xw7fuc5Wbs=
+lKsZ3nfluRgxAenWat111FIIOhJ-2FFjO2M">largest group of homebuyers</a>. In fa=
+ct, they represented <a href=3D"http://email.outboundsend.com/wf/click?upn=
+=3DExkOqOn7eQR4-2BMXvNF4Z30bACJb9o4B0beKHBi4gFUHuf3GntXuAo2oLp4vX4tHlVF7BNX=
+CiRMAwOXcrSSl-2Bj4pT5GAi-2BtePeCXx-2F4-2FquhiJNha0PItcjc7hrueRRSWR_7XtDdMHR=
+jqIUi4tzSjSp2h-2BoTg8yV1h4-2FGX2SHZpIEqypF03TjaBwvgmw9oU99pw08sRA9KoXQqrFM-=
+2BA5GsWg879XNvadFmbQVpvcIyyFx2m-2FFivppxS0nPbLMx-2F-2F55G5cUdzfn6t8Nyiq4oZd=
+ftCsV3Lr3ljCbKqHsss6mLF9zTaTg7UPHQXMRwQOpOGi8-2Bt-2BnYwi-2FG-2FY8KPxmCyhL9k=
+Hb725DS3pSmAPAng17lVNBCPa6PhXpYlGyPfiE6h0A-2FHTrfa8h8oEPa-2BXvzgxHtdtmJve-2=
+FG44FxKrhJS36jYFqm-2B-2Bp2ZVJ7LVTSXjk6mzgETGVhuzhrHOIEp1bfiwVd45rczjHyjP3Ny=
+iQ11PLV3jhpINzOgTYUlvUj09dLmZeLNCjQUCwkoTsaWsgRgMolN1e2yq3Xj-2B-2FPg1vE8SwM=
+dviH35tdWwKLMnB2MKiZHIgd">45 percent</a> of all purchase loans in January 2=
+017. But they're facing some stiff competition -- buyers with more experien=
+ce and financial leverage. They need a competitive advantage, and that's wh=
+ere you come in.</p>
+
+<p><b>How to Attract Millennial Buyers</b><br>
+Here's the good news: <a href=3D"http://email.outboundsend.com/wf/click?upn=
+=3DKDBevoWYNhXMzADxC9ZRlD1UNijNSHu39-2B2ihzTH3D6fGfqFFIQdgrXOnfP9r0PWuWY66n=
+pZKdyrDm0lEBxQuORmAIRUs5zJ2C2LRoruLVlCKd7GedqmDSzUxA8XQ8Yf_7XtDdMHRjqIUi4tz=
+SjSp2h-2BoTg8yV1h4-2FGX2SHZpIEqypF03TjaBwvgmw9oU99pw08sRA9KoXQqrFM-2BA5GsWg=
+879XNvadFmbQVpvcIyyFx2m-2FFivppxS0nPbLMx-2F-2F55G5cUdzfn6t8Nyiq4oZdftCsV3Lr=
+3ljCbKqHsss6mLF9zTaTg7UPHQXMRwQOpOGi8-2Bt-2BnYwi-2FG-2FY8KPxmCyhL9kHb725DS3=
+pSmAPAng17lVNBCPa6PhXpYlGyPfiE6h0A-2FHTrfa8h8oEPa-2BXvzgxHtdtmJve-2FG44FxKr=
+hJS36jYFrsYVQ25Qq0z9DCOSj4sFllz0d1Evv-2FtyU6PCkPnIrcNz95HexVg4zOpEz01emGQbs=
+g0TYc46ZNPhsNZHcGHsTwuuX92ZmhHqS4u2QM7xIFtHgoWffCmeZ9w5xIVPvEyk0gP-2FAhvCb-=
+2FSBkRG5g-2BVoir">Ninety-two percent</a> of millennials choose to work with=
+ a real estate agent. But they don't tend to reach out immediately. Instead=
+, they like to do their own research. So if you want to get in front of the=
+m, you have to make sure they can find you online. That means publishing ed=
+ucational resources that are optimized for search: blogs, FAQs and download=
+able content. A first-time buyer's guide, for example, allows them to find =
+the information they need without having to ask. Plus, it establishes you a=
+s a trusted resource when they're ready to call an agent.</p>
+
+<p><b>How to Help Millennial Buyers</b><br>
+Millennials may do their homework online, but nothing can replace good, old=
+-fashioned experience. Earn their trust by listening to their concerns, ans=
+wering their questions and <a href=3D"http://email.outboundsend.com/wf/clic=
+k?upn=3DwoKBu10O-2F-2FtFoH79Rm4MCFryaRn-2BPaXqvy9MoxNiiKGS-2B-2BMHEyYG-2FBX=
+Re5LpCRuH6vOTnTBhx9STd6g-2B46Qx1f84TZSnMXYweI-2FfyGhOjMB0t0p818-2BD83-2BIKv=
+05YY8P_7XtDdMHRjqIUi4tzSjSp2h-2BoTg8yV1h4-2FGX2SHZpIEqypF03TjaBwvgmw9oU99pw=
+08sRA9KoXQqrFM-2BA5GsWg879XNvadFmbQVpvcIyyFx2m-2FFivppxS0nPbLMx-2F-2F55G5cU=
+dzfn6t8Nyiq4oZdftCsV3Lr3ljCbKqHsss6mLF9zTaTg7UPHQXMRwQOpOGi8-2Bt-2BnYwi-2FG=
+-2FY8KPxmCyhL9kHb725DS3pSmAPAng17lVNBCPa6PhXpYlGyPfiE6h0A-2FHTrfa8h8oEPa-2B=
+XvzgxHtdtmJve-2FG44FxKrhJS36jYFqaTHNZwUy0Q4jTPECiRDKHAT-2BgGOjXaD-2B6b8ruA7=
+9-2FE4e5wx1rjktDEGzvkt2xi2unbZyzNh-2FZ9yaYaosmQWumUOWzzx34QKRg84tvMXRSXnSxH=
+8KRYP3UJojLf3iHVaxcrvxxMAtmpmWtgOUjlUIx">providing expertise</a>. When you =
+don't have the answer, introduce them to your network of professionals and =
+help them get the information they need. For example, as first-timers, mill=
+ennials may not understand that they need to budget for more than the list =
+price. Concepts such as property taxes and HOA fees may be unfamiliar to th=
+em. And they may not think to <a href=3D"http://email.outboundsend.com/wf/c=
+lick?upn=3DwoKBu10O-2F-2FtFoH79Rm4MCLR-2BmoM3y-2Bc6GgwxQZM5rY4NWbR7gbC-2B7V=
+vOdChA7SDs-2BMvrFvhhHBmZPvheR2eisL0qD-2BIeoy1a9cOTK-2B3SpdukHxYKsxoxBsMDH5P=
+6C59-2BBDIjeOqrek2xR4EnyUAUEmTjowD8Gw-2FEcU977z-2Fc3D4-3D_7XtDdMHRjqIUi4tzS=
+jSp2h-2BoTg8yV1h4-2FGX2SHZpIEqypF03TjaBwvgmw9oU99pw08sRA9KoXQqrFM-2BA5GsWg8=
+79XNvadFmbQVpvcIyyFx2m-2FFivppxS0nPbLMx-2F-2F55G5cUdzfn6t8Nyiq4oZdftCsV3Lr3=
+ljCbKqHsss6mLF9zTaTg7UPHQXMRwQOpOGi8-2Bt-2BnYwi-2FG-2FY8KPxmCyhL9kHb725DS3p=
+SmAPAng17lVNBCPa6PhXpYlGyPfiE6h0A-2FHTrfa8h8oEPa-2BXvzgxHtdtmJve-2FG44FxKrh=
+JS36jYFplXqlGs-2F-2BnoIusNdZ2FO92tAglDQvLhrFJ6rgrD615jbL7SSEqK2YPltPNuESLpR=
+UXprhf-2FRmrhoBYJPlZ6YXe8UEkeAK31f557bpjprG7lcUIqZb5FGKEQTQEuAnYKdwHCFP7NiK=
+jbvlb3Ozv-2BWlW">budget for renovations</a>.</p>
+
+<p>You can guide them through the process, set expectations and make the jo=
+urney as painless as possible. This type of guidance not only puts the clie=
+nt at ease in the moment, but it also establishes trust and builds a relati=
+onship that can lead to referrals down the line.</p>
+
+<p><i>Training and coaching are key components of the Keller Williams exper=
+ience. Our <a href=3D"http://email.outboundsend.com/wf/click?upn=3DE9SHOYNK=
+pC7uY7AvzBDCBcl9FeILTfkDVxMfMVjXe-2BQTKC0nx0s44RJQYk-2BIUzWd_7XtDdMHRjqIUi4=
+tzSjSp2h-2BoTg8yV1h4-2FGX2SHZpIEqypF03TjaBwvgmw9oU99pw08sRA9KoXQqrFM-2BA5Gs=
+Wg879XNvadFmbQVpvcIyyFx2m-2FFivppxS0nPbLMx-2F-2F55G5cUdzfn6t8Nyiq4oZdftCsV3=
+Lr3ljCbKqHsss6mLF9zTaTg7UPHQXMRwQOpOGi8-2Bt-2BnYwi-2FG-2FY8KPxmCyhL9kHb725D=
+S3pSmAPAng17lVNBCPa6PhXpYlGyPfiE6h0A-2FHTrfa8h8oEPa-2BXvzgxHtdtmJve-2FG44Fx=
+KrhJS36jYFoxWWd2-2Bz6sod-2BeX9qy6pNv5Xdqzw3HQEMnm9NODCXSBPvaQH0sdgIZs-2FLEv=
+FFtg-2BRkBcOthN-2Fb-2BC-2F2oDEUsjWDIT0-2FJs-2BxklpQbIzdpeEAwsQXDs9nKN3zfN9f=
+2ipd5-2BgZr81F-2FcxFhlLJ5vctvGxV">award-winning programs</a> provide agents=
+ with education and resources to create a successful real estate practice. =
+Learn more about how we can help you too.</i></p>                          =
+      </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <!--<tr>-->
+                    <!--<td>-->
+                        <!-- TODO: FOR V2 ENABLE SOCIAL SHARE BUTTONS -->
+                    <!--<img height=3D"25"-->
+                         <!--src=3D"http://outboundengine.s3.amazonaws.com/=
+images/test-images/platform/facebook-share.jpg">-->
+                    <!--<img height=3D"25"-->
+                         <!--src=3D"http://outboundengine.s3.amazonaws.com/=
+images/test-images/platform/pinterest-share.jpg"-->
+                         <!--style=3D"margin-left:10px;">-->
+                    <!--<img height=3D"25"-->
+                         <!--src=3D"http://outboundengine.s3.amazonaws.com/=
+images/test-images/platform/twitter-share.jpg"-->
+                         <!--style=3D"margin-left:10px;">-->
+                    <!--</td>-->
+                <!--</tr>-->
+                <!-- END PRIMARY CONTENT -->
+
+                <!-- CUSTOM CONTENT BLOCK 1 -->
+                <!-- TODO: Custom Content Blocks need to be updated when ad=
+ding new custom content types -->
+
+                <!-- BEGIN PREMIUM CONTENT -->
+                <tr>
+                    <td align=3D"center">
+                        <table align=3D"center" cellpadding=3D"0" cellspaci=
+ng=3D"0" class=3D"content-width" width=3D"600">
+                            <!-- we assume there are an even number of prem=
+ium content blocks -->
+                        </table>
+                    </td>
+                </tr>
+                <!-- END PREMIUM CONTENT -->
+
+                <!-- CUSTOM CONTENT BLOCK 2 -->
+                <!-- TODO: Custom Content Blocks need to be updated when ad=
+ding new custom content types -->
+
+                <!-- PERSONAL NOTE -->
+                    <tr>
+                        <td align=3D"center" style=3D"padding: 25px 0px;">
+                            <table class=3D"content-width" width=3D"600" al=
+ign=3D"center">
+                                <tr>
+                                    <td style=3D"width: 750px; background: =
+#dce8e4 !important; padding: 30px 50px;" align=3D"left">
+                                        <h3 style=3D"font-weight: normal; t=
+ext-align: left;">Thank you for reading!</h3>
+                                        <h4 style=3D"text-align: left;">- R=
+obert Tait</h4>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                <!-- END PERSONAL NOTE -->
+
+                <!-- BEGIN CONTACT INFO -->
+                <tr>
+                    <td align=3D"center" style=3D"padding: 0px 0px 25px;">
+                        <table class=3D"content-width" width=3D"600" align=
+=3D"center">
+                            <tr>
+                                <!-- HEADSHOT -->
+                                    <td valign=3D"top" width=3D"75">
+                                        <table align=3D"center" height=3D"7=
+2" width=3D"72" cellpadding=3D"0" cellspacing=3D"0" border=3D"0"><tbody><tr=
+><td> <img style=3D"display:block;" src=3D"http://d1k3c4xlx29yaw.cloudfront=
+.net/templatesV2/U12302/C13237/r_1TTiINku9jPGw_j-wZYw/1330672702AZjegfUYry7=
+uJWWSNJ2Z3w1510239951791zFwaSNcNacDgGIIPBNiE.png" width=3D"72" height=3D"72=
+"></td></tr></tbody></table>
+                                    </td>
+                                <!-- CONTACT -->
+                                <td style=3D"padding-left: 15px; color: #1b=
+836e; font-size: 12px; line-height: 17px; text-align: left;" align=3D"left">
+                                    <span>Robert Tait</span>
+                                    <span style=3D"padding: 0 6px; font-siz=
+e: 10px; position: relative; top: -2px;">|</span><span>Team Leader</span>
+                                    <span style=3D"padding: 0 6px; font-siz=
+e: 10px; position: relative; top: -2px;">|</span><span>Keller Williams Real=
+ty Northern Colorado</span><br>
+=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=
+=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20
+                                                <span style=3D"text-transfo=
+rm: capitalize;">Phone</span> <span style=3D"color: #00b37e !important">(30=
+3) 888-0194</span>
+=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=
+=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20
+                                    <br>
+                                    <span style=3D"color: #00b37e !importan=
+t">tait@kw.com</span><br>
+                                    <span>3720 South College Ave. Unit A</s=
+pan>=20
+                                    <span>Fort Collins</span><span>, CO</sp=
+an> <span>80525</span><br>
+=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=
+=20=20=20=20=20=20=20=20=20=20=20
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <!-- END CONTACT INFO -->
+
+                <!-- CUSTOM HR -->
+                <tr>
+                    <td class=3D"content-width" width=3D"600" height=3D"2" =
+style=3D"background: #ccc;">
+                    </td>
+                </tr>
+                <!-- END CUSTOM HR -->
+
+                <!-- BADGES AND DISCLAIMERS -->
+                <!-- END BADGES AND DISCLAIMERS -->
+
+                <!-- DELIVERED BY SECTION -->
+                <tr>
+                    <td class=3D"content-width" width=3D"600" align=3D"cent=
+er" style=3D"color: #999; padding: 0px 0px 25px 0px;">
+                                Designed and Delivered By <a href=3D"http:/=
+/email.outboundsend.com/wf/click?upn=3DOx91vvrSxfspOB8Ld7YiM5uZMqEM24nc0jgt=
+kyMLUjs-3D_7XtDdMHRjqIUi4tzSjSp2h-2BoTg8yV1h4-2FGX2SHZpIEqypF03TjaBwvgmw9oU=
+99pw08sRA9KoXQqrFM-2BA5GsWg879XNvadFmbQVpvcIyyFx2m-2FFivppxS0nPbLMx-2F-2F55=
+G5cUdzfn6t8Nyiq4oZdftCsV3Lr3ljCbKqHsss6mLF9zTaTg7UPHQXMRwQOpOGi8-2Bt-2BnYwi=
+-2FG-2FY8KPxmCyhL9kHb725DS3pSmAPAng17lVNBCPa6PhXpYlGyPfiE6h0A-2FHTrfa8h8oEP=
+a-2BXvzgxHtdtmJve-2FG44FxKrhJS36jYFpIcBfKxmPaFbul0c2b1Wp0s6bxTRe4e25b04Uf1N=
+T93lBD7WmaRembRxzP5eXhhTyv-2BYEq744-2Bz4lma5Vd15OXvnrhbcoK1A-2B7Vf4R2XV71vu=
+Y1oYbK5aIoHJ-2BEx3BiYnuPeXwwcE9K2gQbXummPyU">OutboundEngine, Inc</a><br>
+                            Don't want to get these emails anymore? <a href=
+=3D"http://email.outboundsend.com/wf/click?upn=3DobAb0qNX-2BItM75kab8Vj6Wex=
+Sjf-2B-2FFQbiWta1P-2FJ-2BwAyLAapUJfXi6pJa7EmgxnT8K0aVjmVRV9U1Lmd6IgXEkaLnJn=
+EINzvKILIqu-2BCYXg2tw2wfngvsXbMI8H2JSO9_7XtDdMHRjqIUi4tzSjSp2h-2BoTg8yV1h4-=
+2FGX2SHZpIEqypF03TjaBwvgmw9oU99pw08sRA9KoXQqrFM-2BA5GsWg879XNvadFmbQVpvcIyy=
+Fx2m-2FFivppxS0nPbLMx-2F-2F55G5cUdzfn6t8Nyiq4oZdftCsV3Lr3ljCbKqHsss6mLF9zTa=
+Tg7UPHQXMRwQOpOGi8-2Bt-2BnYwi-2FG-2FY8KPxmCyhL9kHb725DS3pSmAPAng17lVNBCPa6P=
+hXpYlGyPfiE6h0A-2FHTrfa8h8oEPa-2BXvzgxHtdtmJve-2FG44FxKrhJS36jYFqOZF-2Fik4r=
+h9iAKXdXdZCynji5Kwq9TZYmAeSiA8jvQ0sZTh5sQcXh4y6tHfcgmbuv-2B4kcQPgvQ0f-2Fjin=
+aQI3S6OJ9bwByr9ymid0ojDPrax-2BijToZnSnmz3LEsKhGTrp6amLbjR9eZmsKuvxd-2B-2BdS=
+O">Unsubscribe here. </a>
+                            Problem viewing email? <a href=3D"http://email.=
+outboundsend.com/wf/click?upn=3DobAb0qNX-2BItM75kab8Vj6WexSjf-2B-2FFQbiWta1=
+P-2FJ-2BwAc02wLunHtaAhzAYBFBx7d93JOaPViX9BFh3f6TuZm5qy3E2FzswzvWpZQH-2FpSN5=
+I-3D_7XtDdMHRjqIUi4tzSjSp2h-2BoTg8yV1h4-2FGX2SHZpIEqypF03TjaBwvgmw9oU99pw08=
+sRA9KoXQqrFM-2BA5GsWg879XNvadFmbQVpvcIyyFx2m-2FFivppxS0nPbLMx-2F-2F55G5cUdz=
+fn6t8Nyiq4oZdftCsV3Lr3ljCbKqHsss6mLF9zTaTg7UPHQXMRwQOpOGi8-2Bt-2BnYwi-2FG-2=
+FY8KPxmCyhL9kHb725DS3pSmAPAng17lVNBCPa6PhXpYlGyPfiE6h0A-2FHTrfa8h8oEPa-2BXv=
+zgxHtdtmJve-2FG44FxKrhJS36jYFqN0WcUDTOCdpZYrH7foiREjLwnGJzz0nfIJyiytP9vQZjB=
+0byWzJ-2Fiac6cnD-2BA1Qxb7KpP0IuXGS750wJS6kZ2LhksEJhcPNhgycFb5z6aXXp7lqacagV=
+bfi5lEggiNFxRvp-2FfvHE6B8Xs9SncCYHk">View online version.</a>
+                    </td>
+                </tr>
+                <!-- END DELIVERED BY SECTION -->
+            </table>
+        </td>
+    </tr>
+</table>
+
+
+<img src=3D"http://email.outboundsend.com/wf/open?upn=3D7XtDdMHRjqIUi4tzSjS=
+p2h-2BoTg8yV1h4-2FGX2SHZpIEqypF03TjaBwvgmw9oU99pw08sRA9KoXQqrFM-2BA5GsWg879=
+XNvadFmbQVpvcIyyFx2m-2FFivppxS0nPbLMx-2F-2F55G5cUdzfn6t8Nyiq4oZdftCsV3Lr3lj=
+CbKqHsss6mLF9zTaTg7UPHQXMRwQOpOGi8-2Bt-2BnYwi-2FG-2FY8KPxmCyhL9kHb725DS3pSm=
+APAng17lVNBCPa6PhXpYlGyPfiE6h0A-2FHTrfa8h8oEPa-2BXvzgxHtdtmJve-2FG44FxKrhJS=
+36jYFocWYrXsEnZvUZrPS4Ai4E-2FPQtp4izUfvn7XZBVmGWPYcxV5hqCRfHwDgNnQUCBqPBBga=
+Klg9AgxQE50i-2F3JMSNZrOyTIPrpRSKJtTl0Is4GtvIR5-2Ft48RFkqknuiTHkK4Frdn89-2Fd=
+KSXmtsbxvLG9u" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=3D"heig=
+ht:1px !important;width:1px !important;border-width:0 !important;margin-top=
+:0 !important;margin-bottom:0 !important;margin-right:0 !important;margin-l=
+eft:0 !important;padding-top:0 !important;padding-bottom:0 !important;paddi=
+ng-right:0 !important;padding-left:0 !important;"/>
+</body>
+</html>
+
+
+--f4fbf1bb029194a610df6fea4ee9cf24759e199c27a061a0dde8d25f3034--
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>color</key>
+	<string>000000</string>
+	<key>date-last-viewed</key>
+	<integer>0</integer>
+	<key>date-received</key>
+	<integer>1510239978</integer>
+	<key>flags</key>
+	<integer>8590195840</integer>
+	<key>remote-id</key>
+	<string>7789</string>
+</dict>
+</plist>

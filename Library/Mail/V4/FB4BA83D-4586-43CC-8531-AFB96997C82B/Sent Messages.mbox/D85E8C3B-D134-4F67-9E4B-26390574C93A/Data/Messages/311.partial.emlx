@@ -1,0 +1,103 @@
+2123      
+Content-Type: multipart/mixed;
+	boundary=Apple-Mail-80A769E4-7F53-49AB-881E-F330A3796F36
+Content-Transfer-Encoding: 7bit
+From: Austin Dreier <austindreier@icloud.com>
+Message-Id: <DA276605-9234-425E-8C63-3469F6197E03@icloud.com>
+Date: Thu, 4 Jun 2015 08:35:35 -0700
+To: Austin Dreier <Austin.Dreier@wallawalla.edu>
+Mime-Version: 1.0 (1.0)
+
+
+--Apple-Mail-80A769E4-7F53-49AB-881E-F330A3796F36
+Content-Transfer-Encoding: 7BIT
+Content-Type: TEXT/PLAIN;
+	charset=us-ascii
+
+
+
+--Apple-Mail-80A769E4-7F53-49AB-881E-F330A3796F36
+Content-Transfer-Encoding: BASE64
+Content-Disposition: INLINE;
+	filename=image4.JPG
+Content-Type: IMAGE/JPEG;
+	name=image4.JPG;
+	x-apple-part-url=E9AF7FAE-5621-440E-B4B8-58F03D49926C
+X-Apple-Content-Length: 508715
+
+
+--Apple-Mail-80A769E4-7F53-49AB-881E-F330A3796F36
+Content-Transfer-Encoding: 7BIT
+Content-Type: TEXT/PLAIN;
+	charset=us-ascii
+
+
+
+--Apple-Mail-80A769E4-7F53-49AB-881E-F330A3796F36
+Content-Transfer-Encoding: BASE64
+Content-Disposition: INLINE;
+	filename=image3.JPG
+Content-Type: IMAGE/JPEG;
+	name=image3.JPG;
+	x-apple-part-url=0988CCD3-EB6F-4DAC-8158-213A2B095DD7
+X-Apple-Content-Length: 496560
+
+
+--Apple-Mail-80A769E4-7F53-49AB-881E-F330A3796F36
+Content-Transfer-Encoding: 7BIT
+Content-Type: TEXT/PLAIN;
+	charset=us-ascii
+
+
+
+
+--Apple-Mail-80A769E4-7F53-49AB-881E-F330A3796F36
+Content-Transfer-Encoding: BASE64
+Content-Disposition: INLINE;
+	filename=image2.JPG
+Content-Type: IMAGE/JPEG;
+	name=image2.JPG;
+	x-apple-part-url=37A6EFB6-67D9-40AC-BB6F-1C9D2EC43B07
+X-Apple-Content-Length: 452958
+
+
+--Apple-Mail-80A769E4-7F53-49AB-881E-F330A3796F36
+Content-Transfer-Encoding: 7BIT
+Content-Type: TEXT/PLAIN;
+	charset=us-ascii
+
+
+
+
+--Apple-Mail-80A769E4-7F53-49AB-881E-F330A3796F36
+Content-Transfer-Encoding: BASE64
+Content-Disposition: INLINE;
+	filename=image1.JPG
+Content-Type: IMAGE/JPEG;
+	name=image1.JPG;
+	x-apple-part-url=D49D1E0A-76B6-4397-8507-347DAEA3D922
+X-Apple-Content-Length: 565739
+
+
+--Apple-Mail-80A769E4-7F53-49AB-881E-F330A3796F36
+Content-Transfer-Encoding: 7BIT
+Content-Type: TEXT/PLAIN;
+	charset=us-ascii
+
+
+Sent from my iPhone
+--Apple-Mail-80A769E4-7F53-49AB-881E-F330A3796F36--
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>date-last-viewed</key>
+	<integer>0</integer>
+	<key>date-received</key>
+	<integer>1433432135</integer>
+	<key>flags</key>
+	<integer>25803558913</integer>
+	<key>remote-id</key>
+	<string>89</string>
+</dict>
+</plist>

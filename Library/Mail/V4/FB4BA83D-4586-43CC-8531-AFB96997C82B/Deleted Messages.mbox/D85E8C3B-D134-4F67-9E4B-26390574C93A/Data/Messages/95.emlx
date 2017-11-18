@@ -1,0 +1,162 @@
+9472      
+Return-path: <jobnotification@noreply.jobs2web.com>
+Received: from st11p00im-smtpin018.mac.com ([17.172.80.102])
+ by ms60015.mac.com (Oracle Communications Messaging Server 8.0.1.2.20170607
+ 64bit (built Jun  7 2017)) with ESMTP id <0OYJ00NXMOR1SZ20@ms60015.mac.com>
+ for austindreier@icloud.com; Sat, 28 Oct 2017 18:01:50 +0000 (GMT)
+Original-recipient: rfc822;austindreier@icloud.com
+Received: from cloudmail03.ondemand.com
+ (cloudmail03.ondemand.com [155.56.222.13]) by st11p00im-smtpin018.me.com
+ (Oracle Communications Messaging Server 8.0.1.2.20170607 64bit (built Jun  7
+ 2017)) with ESMTPS id <0OYJ003CKOR0VV40@st11p00im-smtpin018.me.com> for
+ austindreier@icloud.com (ORCPT austindreier@icloud.com); Sat,
+ 28 Oct 2017 18:01:49 +0000 (GMT)
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 spamscore=0
+ clxscore=1000 suspectscore=0 malwarescore=0 phishscore=0 adultscore=0
+ bulkscore=0 classifier=clx:PersonalWhite adjust=0 reason=mlx scancount=1
+ engine=8.0.1-1707230000 definitions=main-1710280253
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10432:,,
+ definitions=2017-10-28_05:,, signatures=0
+Authentication-results: st11p00mm-dmarcmilter008.me.com; dmarc=pass
+ header.from=noreply.jobs2web.com
+Authentication-results: st11p00mm-spfmilter001.mac.com; spf=pass
+ (st11p00mm-spfmilter001.mac.com: domain of
+ jobnotification@noreply.jobs2web.com designates 155.56.222.13 as permitted
+ sender) smtp.mailfrom=jobnotification@noreply.jobs2web.com;
+Received-SPF: pass (st11p00mm-spfmilter001.mac.com: domain of
+ jobnotification@noreply.jobs2web.com designates 155.56.222.13 as permitted
+ sender) receiver=st11p00mm-spfmilter001.mac.com; client-ip=155.56.222.13;
+ helo=cloudmail03.ondemand.com;
+ envelope-from=jobnotification@noreply.jobs2web.com;
+Authentication-results: st11p00mm-dkimmilter001.mac.com;	dkim=temperror (0-bit
+ key) header.d=noreply.jobs2web.com header.i=@noreply.jobs2web.com
+ header.b=s8M0te1k;	dkim-adsp=none
+Received: from localhost (localhost [127.0.0.1])	by cloudmail03.ondemand.com
+ (Postfix) with ESMTP id 0FD808390	for <austindreier@icloud.com>; Sat,
+ 28 Oct 2017 18:01:48 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=noreply.jobs2web.com;
+	s=1; t=1509213708; bh=iStRQVI0Vr+/s/mKsPakac88fb1lLQ+KZR+lKsXJafg=;
+	h=From:To:Subject:List-Unsubscribe:Date;
+	b=s8M0te1k09F7Ur+tpf/h2buolV2eZV+i7vE/4axEb/vhkETJGG2TT/kpRF+BYDs/L
+ IzSHSfCWD+Qw+iKS/biXQVkE5rNAMz7pRhWG1DI37He6jJlOpZLQhPueJkGQ/adncG
+ BNrgn2MI3VZEfHh2WG8rpFm7N6gy6VOSTUgnmyck=
+X-Virus-Scanned: amavisd-new at ondemand.com
+Received: from cloudmail03.ondemand.com ([127.0.0.1])
+	by localhost (cloudmail.ondemand.com [127.0.0.1]) (amavisd-new, port 10024)
+	with ESMTP id KvXgfbbEAahU for <austindreier@icloud.com>;	Sat,
+ 28 Oct 2017 18:01:48 +0000 (UTC)
+Received: from 514391-CXXMAL01.j2w.local (unknown [50.57.26.65])
+	by cloudmail03.ondemand.com (Postfix) with ESMTP id B802882ED	for
+ <austindreier@icloud.com>; Sat, 28 Oct 2017 18:01:47 +0000 (UTC)
+Received: from 514391-CXXMAL01.j2w.local (localhost [127.0.0.1])
+	by 514391-CXXMAL01.j2w.local (Postfix) with ESMTP id B003C8805	for
+ <austindreier@icloud.com>; Sat, 28 Oct 2017 12:56:57 -0500 (CDT)
+From: kroger-jobnotification@noreply.jobs2web.com
+To: Austin Dreier <austindreier@icloud.com>
+Message-id:
+ <1218228127.16011891509213417717.JavaMail.tomee@514391-CXXMAL01.j2w.local>
+Subject: New jobs posted from jobs.kroger.com
+MIME-version: 1.0
+Content-type: text/html; charset=utf-8
+Content-transfer-encoding: quoted-printable
+List-Unsubscribe:
+ <https://jobs.kroger.com/unsubscribe/?email=austindreier%40icloud%2ecom&from=email&refid=4004482600&utm_source=J2WEmail&source=2&eid=517-201756281256-8395611000&locale=en_US>
+Date: Sat, 28 Oct 2017 12:56:57 -0500 (CDT)
+x-icloud-spam-score: 3631333
+ f=noreply.jobs2web.com;e=noreply.jobs2web.com;is=yes;ir=no;spf=pass;dkim=other
+ failure;dmarc=pass/none/none;gdwl=absent;pps=ham;clxs=ham;clxw=whitelist
+X-CLX-Spam: false
+X-CLX-UnSpecialScore: 57
+X-CLX-Score: 1000
+X-CLX-Shades: PersonalWhite
+X-MANTSH: 1TEIXWV4bG1oaGkNHB1BeSF8aHBgYHxgaGxEKTEMXGx0EGx0YBBkfBBgSEBseGh8
+ aEQpMWRcbGhoaEQpZTRd6T1hZRURLRn1CQ15PEQpfWRcfHREKX00XZEVETxEKWUkXGnEaEBp3B
+ hkdcRsaHB8QHh8YdwYYGgYaEQpZXhdjbnkRCkNOF1MBbwFmYmd7TBxSQ05QYnh6U3BYeklHbml
+ aAUxGRVpzEQpYXBcZBBoEGRgHTRlOE08TGRgFGx0EGx0YBBIZBBsTEBseGh8aEQpeWRd4YUdbR
+ REKTVwXGRMYEQpMWhdlRkFdEQpNThdoEQpDWhcbHx8EHxwEGBgYBBsZEQpCXhcbEQpCRhdrYm5
+ oTxt4SXxvWREKQkcXbmdAT2RTf1AaX18RCkJFF21obUhmXRIaZxpgEQpCThdufEh8W3JfQhheb
+ hEKQkwXbWhtSGZdEhpnGmARCkJsF21obUhmXRIaZxpgEQpCQBdoH01dHkRoHFl4fhEKQlgXbkc
+ dG05kYUUbEkARCnBnF2xjUENYcnpDZx5uEB4SEQpwaBdrZAVde1NQfEAZRBAeEhEKcGgXaU8bb
+ 3ATZkBieh4QGxsaEQpwaBduW1NBR2cbXUdjGRAbGBoRCnBoF29cHVsfbmtlbkNdEB4SEQpwaBd
+ oXRgBU3JHckR9ZxAeEhEKcH8XZk96YkdjbF8STm8QGR0RCnBfF2sTGWNoa3N7e0FbEBwaEQpwf
+ RdrXVBebkFDHXxsRxAeEhEKcF8XZGseRFxOTXN6ZWIQHhIRCnB9F2UcGk97WGNBWm1IEB4SEQp
+ wfRdrbmlAbk4af1tpUxAaEQpwfxd6WmZGfhhYH1JmZBAdEhEKcF8XbGYcYRt7QBhHaX0QGxocE
+ QpwfRdhHB5ufXJnXn9sbBAeEhEKcF8XbkYSUkFFRFNQWGsQGhEKcH0XaV16cmlpGWVzQBwQGhE
+ KcH0XaW4BWE5ORVJuXxwQGhEKcH0XZkZkWhpQcGxhfWMQGhEK
+x-dmarc-info: pass=pass; dmarc-policy=none; s=r1; d=r0
+x-dmarc-policy: v=DMARC1; p=none; rua=mailto:fbl@noreply.jobs2web.com;
+ ruf=mailto:fbl@noreply.jobs2web.com!10m; rf=afrf; pct=100; ri=86400
+
+<table align=3D"center" width=3D"575" cellspacing=3D"0" cellpadding=3D"20" =
+style=3D"color: #000000; font-size: 12px; line-height: 15px; font-family: A=
+rial,Helvetica,sans-serif;"><tr><td><a href=3D"http://jobs=2Ekroger=2Ecom/"=
+ title=3D"Click here to view jobs with Kroger"><img src=3D"http://jobs=2Ekr=
+oger=2Ecom/sites/kroger/mobile/kroger-mobile-logo=2Epng" alt=3D"Kroger Logo=
+" border=3D"0"/></a></td></tr><tr><td>The following jobs matched your searc=
+h agent at The Kroger Co=2E and our family of companies and can be found at=
+ <a class=3D"agentsitelink" href=3D"http://jobs=2Ekroger=2Ecom/?from=3Demai=
+l&refid=3D4004482600&utm_source=3DJ2WEmail&source=3D2&eid=3D517-20175628125=
+6-8395611000&locale=3Den_US">jobs=2Ekroger=2Ecom</a>=2E<br/><br/>Agent:<br/=
+>&quot;Hourly&quot; OR &quot;Medical&quot; OR &quot;Retail Sales&quot;ANDFo=
+rt Collins<br/><a class=3D"agentmodifylink" href=3D"https://career8=2Esucce=
+ssfactors=2Ecom/careers?site=3D&company=3DKroger&clientId=3Djobs2web&lang=
+=3Den_US&navBarLevel=3DJOB_MGMT&subNavBarLevel=3DJOB_ALERTS">(Click to modi=
+fy)</a><br/><br/>Job Matches:<br/><b><span class=3D"agentjoblink_bullet"></=
+span> <a class=3D"agentjoblink" href=3D"http://jobs=2Ekroger=2Ecom/loaf-n-j=
+ug/job/Johnstown-Store-Associate-Full-Time-CO-80534/438372000/?from=3Demail=
+&refid=3D4004482600&utm_source=3DJ2WEmail&source=3D2&eid=3D517-201756281256=
+-8395611000&locale=3Den_US">Store Associate Full Time - Johnstown, CO, US, =
+80534</a><br/>
+<span class=3D"agentjoblink_bullet"></span> <a class=3D"agen=
+tjoblink" href=3D"http://jobs=2Ekroger=2Ecom/loaf-n-jug/job/Johnstown-Store=
+-Associate-Part-Time-CO-80534/438380000/?from=3Demail&refid=3D4004482600&ut=
+m_source=3DJ2WEmail&source=3D2&eid=3D517-201756281256-8395611000&locale=3De=
+n_US">Store Associate Part Time - Johnstown, CO, US, 80534</a><br/>
+<span c=
+lass=3D"agentjoblink_bullet"></span> <a class=3D"agentjoblink" href=3D"http=
+://jobs=2Ekroger=2Ecom/loaf-n-jug/job/Johnstown-Part-Time-SUBWAY-Clerk-CO-8=
+0534/438384600/?from=3Demail&refid=3D4004482600&utm_source=3DJ2WEmail&sourc=
+e=3D2&eid=3D517-201756281256-8395611000&locale=3Den_US">Part-Time SUBWAY Cl=
+erk - Johnstown, CO, US, 80534</a><br/>
+<span class=3D"agentjoblink_bullet"=
+></span> <a class=3D"agentjoblink" href=3D"http://jobs=2Ekroger=2Ecom/loaf-=
+n-jug/job/Johnstown-Full-Time-SUBWAY-Clerk-CO-80534/438390600/?from=3Demail=
+&refid=3D4004482600&utm_source=3DJ2WEmail&source=3D2&eid=3D517-201756281256=
+-8395611000&locale=3Den_US">Full-Time SUBWAY Clerk - Johnstown, CO, US, 805=
+34</a><br/>
+</b><br/><br/>Remember to forward job openings to any of your f=
+riends who might have interest in these positions=2E<br/><br/>Getting these=
+ notifications too often?<br/><a class=3D"agentmodifylink" href=3D"https://=
+career8=2Esuccessfactors=2Ecom/careers?site=3D&company=3DKroger&clientId=3D=
+jobs2web&lang=3Den_US&navBarLevel=3DJOB_MGMT&subNavBarLevel=3DJOB_ALERTS">C=
+hange the frequency here=2E</a><br/><a class=3D"agentmodifylink" href=3D"ht=
+tps://career8=2Esuccessfactors=2Ecom/careers?site=3D&company=3DKroger&clien=
+tId=3Djobs2web&lang=3Den_US&navBarLevel=3DJOB_MGMT&subNavBarLevel=3DJOB_ALE=
+RTS">Add another agent=2E</a><br/><br/><br/><img src=3D"http://jobs=2Ekroge=
+r=2Ecom/sites/kroger/images/email-logos-img=2Ejpg" alt=3D"Kroger Logo" bord=
+er=3D"0"/><br/><br/><span style=3D"font-size:0=2E8em"><hr align=3D"left"/><=
+i>* To ensure delivery to your inbox, please add <strong>kroger-jobnotifica=
+tion@noreply=2Ejobs2web=2Ecom</strong> to your address book=2E<br/>* Please=
+ do not reply to this email, as we are unable to respond from this address=
+=2E<br />* Don=E2=80=99t want to receive this notification anymore? <a clas=
+s=3D"agentmodifylink" href=3D"https://career8=2Esuccessfactors=2Ecom/career=
+s?site=3D&company=3DKroger&clientId=3Djobs2web&lang=3Den_US&navBarLevel=3DJ=
+OB_MGMT&subNavBarLevel=3DJOB_ALERTS">Manage your Job Preferences</a> or <a =
+class=3D"agentunsubscribelink" href=3D"https://jobs=2Ekroger=2Ecom/unsubscr=
+ibe/?email=3Daustindreier%40icloud%2ecom&from=3Demail&refid=3D4004482600&ut=
+m_source=3DJ2WEmail&source=3D2&eid=3D517-201756281256-8395611000&locale=3De=
+n_US">Click here to unsubscribe=2E</a></i></span></td></tr></table>
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>date-last-viewed</key>
+	<integer>0</integer>
+	<key>date-received</key>
+	<integer>1509213710</integer>
+	<key>flags</key>
+	<integer>8590195712</integer>
+	<key>remote-id</key>
+	<string>4568</string>
+</dict>
+</plist>

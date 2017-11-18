@@ -1,0 +1,55 @@
+1116      
+Content-Type: multipart/mixed;
+	boundary=Apple-Mail-20093885-A094-4DB1-A4E8-0992FC35C2BE
+Content-Transfer-Encoding: 7bit
+From: Austin Alexander Dreier <austindreier@icloud.com>
+Mime-Version: 1.0 (1.0)
+Date: Sat, 26 Mar 2016 15:19:21 -0600
+Subject: Resume.pdf
+Message-Id: <A823688E-D082-4584-A52B-7849A1B11FB8@icloud.com>
+To: nfollender@cartridgeworldusa.com
+
+
+--Apple-Mail-20093885-A094-4DB1-A4E8-0992FC35C2BE
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain;
+	charset=us-ascii
+
+Hi, my name is Austin Dreier and I just stopped into the store and talked to=
+ you about employment. Here is a copy of my resume.=20
+
+
+--Apple-Mail-20093885-A094-4DB1-A4E8-0992FC35C2BE
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment;
+	filename=Resume.pdf
+Content-Type: application/pdf;
+	name=Resume.pdf;
+	x-apple-part-url=A9A63F68-6A87-43C1-B946-2758539E3F19
+X-Apple-Content-Length: 286906
+
+
+--Apple-Mail-20093885-A094-4DB1-A4E8-0992FC35C2BE
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain;
+	charset=us-ascii
+
+
+
+
+-Austin Alexander Dreier
+--Apple-Mail-20093885-A094-4DB1-A4E8-0992FC35C2BE--
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>date-last-viewed</key>
+	<integer>0</integer>
+	<key>date-received</key>
+	<integer>1459027161</integer>
+	<key>flags</key>
+	<integer>8623686657</integer>
+	<key>remote-id</key>
+	<string>151</string>
+</dict>
+</plist>

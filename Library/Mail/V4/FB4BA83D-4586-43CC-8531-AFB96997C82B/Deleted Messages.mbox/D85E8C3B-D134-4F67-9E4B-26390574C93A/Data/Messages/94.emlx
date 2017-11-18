@@ -1,0 +1,592 @@
+29092     
+Return-path:
+ <bounce-mc.us6_13323443.910474-austindreier=icloud.com@mail83.suw13.rsgsv.net>
+Received: from pv33p00im-smtpin023.me.com ([17.142.180.49])
+ by ms60015.mac.com (Oracle Communications Messaging Server 8.0.1.2.20170607
+ 64bit (built Jun  7 2017)) with ESMTP id <0OYJ00BHLM6SMCB0@ms60015.mac.com>
+ for austindreier@icloud.com; Sat, 28 Oct 2017 17:06:28 +0000 (GMT)
+Original-recipient: rfc822;austindreier@icloud.com
+Received: from mail83.suw13.rsgsv.net (mail83.suw13.rsgsv.net [198.2.183.83])
+ by pv33p00im-smtpin023.me.com
+ (Oracle Communications Messaging Server 8.0.1.2.20170607 64bit (built Jun  7
+ 2017)) with ESMTP id <0OYJ00075M4EWH50@pv33p00im-smtpin023.me.com> for
+ austindreier@icloud.com (ORCPT austindreier@icloud.com); Sat,
+ 28 Oct 2017 17:06:28 +0000 (GMT)
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 spamscore=0
+ clxscore=92 suspectscore=57 malwarescore=0 phishscore=0 adultscore=0
+ bulkscore=100 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.0.1-1707230000 definitions=main-1710280240
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10432:,,
+ definitions=2017-10-28_05:,, signatures=0
+Authentication-results: pv33p00im-dmarcmilter002.me.com; dmarc=pass
+ header.from=roli.com
+Authentication-results: pv33p00im-spfmilter005.me.com; spf=pass
+ (pv33p00im-spfmilter005.me.com: domain of
+ bounce-mc.us6_13323443.910474-austindreier=icloud.com@mail83.suw13.rsgsv.net
+ designates 198.2.183.83 as permitted sender)
+ smtp.mailfrom=bounce-mc.us6_13323443.910474-austindreier=icloud.com@mail83.suw13.rsgsv.net;
+Received-SPF: pass (pv33p00im-spfmilter005.me.com: domain of
+ bounce-mc.us6_13323443.910474-austindreier=icloud.com@mail83.suw13.rsgsv.net
+ designates 198.2.183.83 as permitted sender)
+ receiver=pv33p00im-spfmilter005.me.com; client-ip=198.2.183.83;
+ helo=mail83.suw13.rsgsv.net;
+ envelope-from=bounce-mc.us6_13323443.910474-austindreier=icloud.com@mail83.suw13.rsgsv.net;
+Authentication-results: pv33p00im-dkimmilter014.me.com;	dkim=pass (1024-bit
+ key) header.d=roli.com header.i=noreply@roli.com header.b=RFEKjgAX;
+	dkim-adsp=pass
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=k1; d=roli.com;
+ h=Subject:From:Reply-To:To:Date:Message-ID:List-ID:List-Unsubscribe:
+ Content-Type:MIME-Version; i=noreply@roli.com;
+ bh=Ss+wkcmGb20ppob/CRJU7QN8tExzoZzoqJXdJcishII=;
+ b=RFEKjgAXRiknO3qTp2RaF5MOxoJR/nwKjIxRcuk126fVlPUH6W3m+azwFN4AdINSnHCsCkwxuG4R
+   1g9mYAwSeJ9qTtwytxmlCkvF807NknonbHo/dDLHr8BgLWGX4NFxXfQUATHEdWtVcbYOH5/01vlk
+   6SsbVEFMIv5JLAwJhAs=
+Received: from (127.0.0.1) by mail83.suw13.rsgsv.net id huish62akec8 for
+ <austindreier@icloud.com>; Sat,
+ 28 Oct 2017 17:03:39 +0000 (envelope-from <bounce-mc.us6_13323443.910474-austindreier=icloud.com@mail83.suw13.rsgsv.net>)
+Subject:
+ =?utf-8?Q?Get=20your=20hands=20on=20a=20whole=20new=20way=20to=20control=20Ableton=20Live=C2=A0?=
+From: =?utf-8?Q?ROLI?= <noreply@roli.com>
+Reply-to: =?utf-8?Q?ROLI?= <noreply@roli.com>
+To: austindreier@icloud.com
+Date: Sat, 28 Oct 2017 17:03:39 +0000
+Message-id:
+ <de5b31d43bd17b6dd173ed2b4.87db4d35bb.20171028170317.02adfae0eb.b39e4f99@mail83.suw13.rsgsv.net>
+X-Mailer: MailChimp Mailer - **CID02adfae0eb87db4d35bb**
+Feedback-ID: 13323443:13323443.910474:us6:mc
+List-Id: de5b31d43bd17b6dd173ed2b4mc list
+ <de5b31d43bd17b6dd173ed2b4.202809.list-id.mcsv.net>
+List-Unsubscribe:
+ <https://roli.us6.list-manage.com/unsubscribe?u=de5b31d43bd17b6dd173ed2b4&id=0b59ea513b&e=87db4d35bb&c=02adfae0eb>,
+ <mailto:unsubscribe-mc.us6_de5b31d43bd17b6dd173ed2b4.02adfae0eb-87db4d35bb@mailin1.us2.mcsv.net?subject=unsubscribe>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+Content-type: multipart/alternative; boundary="_----------=_MCPart_1325822220"
+MIME-version: 1.0
+x-icloud-spam-score: 3331331
+ f=roli.com;e=mail83.suw13.rsgsv.net;is=yes;ir=no;spf=pass;dkim=pass;dmarc=pass/quarantine/none;gdwl=absent;pps=ham;clxs=ham;clxw=neutral
+X-CLX-Spam: false
+X-CLX-UnSpecialScore: None
+X-CLX-Score: 92
+X-CLX-Shades: None
+X-MANTSH: 1TEIXWlwZGVoaGkNHB0tNT0ReQ0QeHhofEQpMQxcbHQQbHhgEGxMfBBkYEBseGh8
+ aEQpMWRcTGBEKWU0XZEVETxEKWUkXGnEaEBp3Bh0YcRseHR4QGBIadwYYGgYaEQpZXhdra3kRC
+ kNOF1oBU2BQXgEdcntQQW9dH0x9bAEefWJsH1tjQF9SGWhZEQpYXBcZBBoEGRgHTRlOE08TGRg
+ FGx0EGx4YBBsTEgQeGBAbHhofGhEKXlkXeGFGGFwRCk1cFx4aHREKTFoXeGVNQV0RCkVZF28RC
+ kxfF3oFBQUFBQUFBQVDEQpDWhcbExIEGAQbEhkEEhkRCkJeFxsRCkJGF2sYRV5nW1l9BVgeEQp
+ CRxdoZh9SYXhCQGBBEhEKQlwXGxEKXk4XGxEKQksXbEcTaRhZH3BOUn4RCkJFF2ZZTR9ebR5HQ
+ kh/EQpCThdsRxNpGFkfcE5SfhEKQkwXbF5BGgVPZFgabBkRCkJsF2BHHW18elMBTWJzEQpCQBd
+ hGVliUkFMflBJWBEKQlgXbkcdG05kYUUbEkARCnBoF2BdaXtPX2caXFB7EBkaEQpwaBdjH3NTQ
+ UFiXx1OYBAaEQpwaBdlXGJnBWJYAUt6WhAaEQpwaBdkH10SZmhNQgFNbBAeEhEKcGgXbH0SaHx
+ Ea2VtQl8QGhEKcH8XY0EaZm5MRGxzSW8QHhoRCnB/F2VLbl9tU3l8SXhMEAcbExEKcH8XaFhiX
+ Hpkf1gbRXMQHRoRCnB/F2tSHm8cfRxnUG9+EB0aEQpwfxdrRhxgAXBQcmJkWBAfGREKcH0XekB
+ fQmViHl9PAR0QGhEKcF8XemxkE2ZuRRpdHHsQGhEKcH0XaWVtYlBjU2NHS2QQGhEKcH0XYxwaS
+ FlAHx5YQEcQGhEKcF8XaVxmWGhJaGJyeGYQGRoRCnB9F2B9YE9CH2d/cklQEBoRCnBfF2YFAV4
+ cYF4BQH5/EBoRCnB9F2J5TmBgHGBrcEsSEBoRCnB9F2d/ZFpO
+x-dmarc-info: pass=pass; dmarc-policy=quarantine; s=r0; d=r1
+x-dmarc-policy: v=DMARC1; p=quarantine; pct=5;
+ rua=mailto:googlesecurity@roli.com
+X-Campaign: mailchimpde5b31d43bd17b6dd173ed2b4.02adfae0eb
+X-campaignid: mailchimpde5b31d43bd17b6dd173ed2b4.02adfae0eb
+X-Report-Abuse: Please report abuse for this campaign here:
+ http://www.mailchimp.com/abuse/abuse.phtml?u=de5b31d43bd17b6dd173ed2b4&id=02adfae0eb&e=87db4d35bb
+X-MC-User: de5b31d43bd17b6dd173ed2b4
+X-Accounttype: pr
+x-mcda: FALSE
+
+This is a multi-part message in MIME format
+
+--_----------=_MCPart_1325822220
+Content-Type: text/plain; charset="utf-8"; format="fixed"
+Content-Transfer-Encoding: quoted-printable
+
+https://www.roli.com?utm_source=3DMaster+ROLI+Creators+List&utm_campaign=
+=3D02adfae0eb-Ableton+Live+%28Lightpad+users%29&utm_medium=3Demail&utm_ter=
+m=3D0_0b59ea513b-02adfae0eb-113104277&mc_cid=3D02adfae0eb&mc_eid=3D[=
+UNIQID] Read in your browser (http://mailchi.mp/roli/get-your-hands-on-a-=
+whole-new-way-to-control-ableton-live-910474?e=3D87db4d35bb)
+https://roli.com/article/my-studio-marclohttps://roli.com/stories/ableton-=
+lightpad?autoplay&utm_source=3DMaster+ROLI+Creators+List&utm_campaign=3D02=
+adfae0eb-Ableton+Live+%28Lightpad+users%29&utm_medium=3Demail&utm_term=3D0=
+_0b59ea513b-02adfae0eb-113104277&mc_cid=3D02adfae0eb&mc_eid=3D[UNIQ=
+ID]
+
+Great news =E2=80=94 as a Lightpad creator you get now get access to Ablet=
+on Live Lite free! Check out a one-of-a-kind=2C customized integration bet=
+ween your Lightpad and the feature-packed digital audio workstation (DAW)=
+ that has become a staple for music producers.
+
+Record and launch clips within Ableton from pads on your Lightpad Block=E2=
+=80=99s LED-illuminated surface. Explore powerful tools in Live Lite such=
+ as MIDI sequencing=2C studio effects and instrumental racks =E2=80=94 and=
+ upgrade to the full version of Ableton Live for a discount price.
+
+Learn more here (https://roli.com/stories/ableton-lightpad?utm_source=3DMa=
+ster+ROLI+Creators+List&utm_campaign=3D02adfae0eb-Ableton+Live+%28Lightpad=
++users%29&utm_medium=3Demail&utm_term=3D0_0b59ea513b-02adfae0eb-=
+113104277&mc_cid=3D02adfae0eb&mc_eid=3D[UNIQID]) =2C and watch our video to l=
+earn more about using your Lightpad Block with Ableton below:
+
+https://roli.com/stories/ableton-lightpad?autoplay&utm_source=3DMaster+ROL=
+I+Creators+List&utm_campaign=3D02adfae0eb-Ableton+Live+%28Lightpad+users%2=
+9&utm_medium=3Demail&utm_term=3D0_0b59ea513b-02adfae0eb-113104277&mc=
+_cid=3D02adfae0eb&mc_eid=3D[UNIQID]
+
+It=E2=80=99s now easy to bring your NOISE (https://roli.com/products/softw=
+are/noise?utm_source=3DMaster+ROLI+Creators+List&utm_campaign=3D02adfae0eb=
+-Ableton+Live+%28Lightpad+users%29&utm_medium=3Demail&utm_term=3D0_0b59ea5=
+13b-02adfae0eb-113104277&mc_cid=3D02adfae0eb&mc_eid=3D[UNIQID]) pro=
+jects into Ableton Live too using our new export functio (https://support.=
+roli.com/article/how-to-export-your-noise-projects-into-ableton-live/?utm_=
+source=3DMaster+ROLI+Creators+List&utm_campaign=3D02adfae0eb-Ableton+Live+=
+%28Lightpad+users%29&utm_medium=3Demail&utm_term=3D0_0b59ea513b-02adfae0eb=
+-113104277&mc_cid=3D02adfae0eb&mc_eid=3D[UNIQID]) n =E2=80=94 so yo=
+u can sketch ideas out and about with NOISE and refine them in the studio=
+ with Live Lite.
+
+Find out how to download Ableton Live Lite here (https://support.roli.com/=
+article/how-to-redeem-your-copy-of-ableton-live-lite/?utm_source=3DMaster+=
+ROLI+Creators+List&utm_campaign=3D02adfae0eb-Ableton+Live+%28Lightpad+user=
+s%29&utm_medium=3Demail&utm_term=3D0_0b59ea513b-02adfae0eb-113104277=
+&mc_cid=3D02adfae0eb&mc_eid=3D[UNIQID]) . And don=E2=80=99t hesitate to c=
+ontact our support team (https://support.roli.com/request/?utm_source=3DMa=
+ster+ROLI+Creators+List&utm_campaign=3D02adfae0eb-Ableton+Live+%28Lightpad=
++users%29&utm_medium=3Demail&utm_term=3D0_0b59ea513b-02adfae0eb-=
+113104277&mc_cid=3D02adfae0eb&mc_eid=3D[UNIQID]) if you have any questions ab=
+out using your Lightpad with Ableton Live Lite.
+
+11c3a673-7fb3-4071-ac26-939635cbc618.png
+#https://roli.com/products/blocks/lightpad-m #https://roli.com/products/bl=
+ocks/lightpad-block
+Explore the BLOCKS Collection (https://roli.com/products/blocks/?utm_sourc=
+e=3DMaster+ROLI+Creators+List&utm_campaign=3D02adfae0eb-Ableton+Live+%28Li=
+ghtpad+users%29&utm_medium=3Demail&utm_term=3D0_0b59ea513b-02adfae0eb-=
+113104277&mc_cid=3D02adfae0eb&mc_eid=3D[UNIQID])
+https://www.roli.com?utm_source=3DMaster+ROLI+Creators+List&utm_campaign=
+=3D02adfae0eb-Ableton+Live+%28Lightpad+users%29&utm_medium=3Demail&utm_ter=
+m=3D0_0b59ea513b-02adfae0eb-113104277&mc_cid=3D02adfae0eb&mc_eid=3D[=
+UNIQID]
+https://www.facebook.com/ROLI?utm_source=3DMaster+ROLI+Creators+List&utm_c=
+ampaign=3D02adfae0eb-Ableton+Live+%28Lightpad+users%29&utm_medium=3Demail&=
+utm_term=3D0_0b59ea513b-02adfae0eb-113104277&mc_cid=3D02adfae0eb&mc_=
+eid=3D[UNIQID] https://twitter.com/WeAreROLI?utm_source=3DMaster+ROLI+Cre=
+ators+List&utm_campaign=3D02adfae0eb-Ableton+Live+%28Lightpad+users%29&utm=
+_medium=3Demail&utm_term=3D0_0b59ea513b-02adfae0eb-113104277&mc_cid=
+=3D02adfae0eb&mc_eid=3D[UNIQID] https://www.youtube.com/channel/UCz5nFP_y=
+Sbbsmo1tWldOuZA?utm_source=3DMaster+ROLI+Creators+List&utm_campaign=3D02ad=
+fae0eb-Ableton+Live+%28Lightpad+users%29&utm_medium=3Demail&utm_term=3D0_0=
+b59ea513b-02adfae0eb-113104277&mc_cid=3D02adfae0eb&mc_eid=3D[UNIQID=
+] https://instagram.com/we.are.roli/?utm_source=3DMaster+ROLI+Creators+Lis=
+t&utm_campaign=3D02adfae0eb-Ableton+Live+%28Lightpad+users%29&utm_medium=
+=3Demail&utm_term=3D0_0b59ea513b-02adfae0eb-113104277&mc_cid=3D02adf=
+ae0eb&mc_eid=3D[UNIQID]
+
+Unsubscribe (https://roli.us6.list-manage.com/unsubscribe?u=3Dde5b31d43bd1=
+7b6dd173ed2b4&id=3D0b59ea513b&e=3D87db4d35bb&c=3D02adfae0eb)
+Copyright =C2=A9 2017 ROLI. All rights reserved.
+--_----------=_MCPart_1325822220
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www=
+=2Ew3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns=3D"http://www.w3.org/1999/xhtml">
+  <head>
+
+  <style type=3D"text/css">
+=09=09html body{
+=09=09=09margin-bottom:0 !important;
+=09=09}
+=09=09td{
+=09=09=09line-height:1.6;
+=09=09=09font-size:16px;
+=09=09=09font-family:"Contax Pro"=2C"ContaxPro45Lig"=2CVerdana=2CGeneva=2C=
+sans-serif;
+=09=09=09color:#323D48;
+=09=09}
+=09=09a{
+=09=09=09text-decoration:none;
+=09=09=09color:#323D48;
+=09=09}
+=09=09.mainbutton a{
+=09=09=09color:#ffffff;
+=09=09}
+=09=09h1=2Ch2=2Ch3{
+=09=09=09font-weight:300;
+=09=09=09margin:.4em 0;
+=09=09}
+=09=09h1{
+=09=09=09font-size:28px;
+=09=09}
+=09=09.archive{
+=09=09=09text-align:right;
+=09=09}
+=09=09.archive a{
+=09=09=09color:#999;
+=09=09=09font-size:12px;
+=09=09}
+=09=09.headerimg img{
+=09=09=09border-radius:0;
+=09=09}
+=09=09.body p a=2C.fancylink{
+=09=09=09font-weight:bold;
+=09=09=09border-bottom:1px solid #b1bdc8;
+=09=09}
+=09=09.quad h2{
+=09=09=09margin:0;
+=09=09}
+=09=09td.quad-box:first-child{
+=09=09=09padding-right:20px;
+=09=09}
+=09=09td.quad-box:nth-child(2){
+=09=09=09padding-left:20px;
+=09=09}
+=09=09.footer td{
+=09=09=09color:#aaaaaa;
+=09=09=09font-size:12px;
+=09=09=09padding-right:0;
+=09=09}
+=09=09.footer td a{
+=09=09=09color:#eeeeee;
+=09=09}
+=09=09.footer td a:hover{
+=09=09=09text-decoration:underline;
+=09=09}
+=09=09td.footer-logo{
+=09=09=09padding-left:0;
+=09=09}
+=09=09.sub-footer{
+=09=09=09text-align:center;
+=09=09}
+=09=09.sub-footer td{
+=09=09=09color:#4c4c4c;
+=09=09=09text-align:center;
+=09=09}
+=09=09.header=2C.footer=2C.body=2C.copyright{
+=09=09=09padding:10px;
+=09=09}
+=09=09.header=2C.footer=2C.copyright{
+=09=09=09width:650px;
+=09=09=09min-width:650px;
+=09=09}
+</style></head>
+  <body style=3D"margin-bottom: 0 !important;">
+    <p>
+  </p>
+  <meta http-equiv=3D"content-type" content=3D"text/html; charset=3DUTF-8"=
+>
+  <meta property=3D"og:title" content=3D"Get your hands on a whole new way=
+ to control Ableton Live=C2=A0">
+  <title>Get your hands on a whole new way to control Ableton Live=C2=A0</=
+title>
+  <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%">
+    <tr>
+      <td align=3D"center" style=3D"line-height:1.6;font-size:16px;font-fa=
+mily:'Contax Pro'=2C ContaxPro45Lig=2C Verdana=2C Geneva=2C sans-serif;col=
+or:#323D48;">
+        <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"6=
+50" style=3D"width:650px;min-width:650px;background-color:#000000;padding:=
+10px;" class=3D"header" bgcolor=3D"#000000">
+          <tr>
+            <td align=3D"center" style=3D"line-height:1.6;font-size:16px;f=
+ont-family:'Contax Pro'=2C ContaxPro45Lig=2C Verdana=2C Geneva=2C sans-ser=
+if;color:#323D48;">
+              <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" widt=
+h=3D"600">
+                <tr>
+                  <td style=3D"line-height:1.6;font-size:16px;font-family:=
+'Contax Pro'=2C ContaxPro45Lig=2C Verdana=2C Geneva=2C sans-serif;color:#3=
+23D48;">
+                    <a href=3D"https://roli.us6.list-manage.com/track/clic=
+k?u=3Dde5b31d43bd17b6dd173ed2b4&id=3Da6e193a32e&e=3D87db4d35bb" style=3D"=
+color:#ffffff;text-decoration:none;"><img src=3D"https://d30pueezughrda.cl=
+oudfront.net/email/roli-monogram-white.gif" alt=3D"ROLI" width=3D"40" heig=
+ht=3D"40"></a>
+                  </td>
+                  <td class=3D"archive" style=3D"line-height:1.6;font-size=
+:16px;font-family:'Contax Pro'=2C ContaxPro45Lig=2C Verdana=2C Geneva=2C s=
+ans-serif;color:#323D48;padding-bottom:0;text-align:right;" align=3D"right=
+">
+                    <a href=3D"http://mailchi.mp/roli/get-your-hands-on-a-=
+whole-new-way-to-control-ableton-live-910474?e=3D87db4d35bb" target=3D"_blan=
+k" style=3D"text-decoration:none;color:#ffffff;font-size:12px;">Read in yo=
+ur browser</a>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+        <!-- BEGIN CONTENT -->
+        <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"6=
+50" style=3D"background-color:#F0F0F0;min-height:100px;" bgcolor=3D"#F0F0F=
+0">
+          <tr>
+            <td align=3D"center" style=3D"line-height:1.6;font-size:16px;f=
+ont-family:'Contax Pro'=2C ContaxPro45Lig=2C Verdana=2C Geneva=2C sans-ser=
+if;color:#323D48;">
+              <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" widt=
+h=3D"650">
+                <tr>
+                  <td align=3D"center" style=3D"line-height:1.6;font-size:=
+16px;font-family:'Contax Pro'=2C ContaxPro45Lig=2C Verdana=2C Geneva=2C sa=
+ns-serif;color:#323D48;">
+                    <a href=3D"https://roli.us6.list-manage.com/track/clic=
+k?u=3Dde5b31d43bd17b6dd173ed2b4&id=3D051395d831&e=3D87db4d35bb" target=3D=
+"_blank" style=3D"text-decoration: none;color: #323D48;"><a href=3D"https:=
+//roli.us6.list-manage.com/track/click?u=3Dde5b31d43bd17b6dd173ed2b4&id=3D=
+9160fe0a44&e=3D87db4d35bb" target=3D"_blank" style=3D"text-decoration: no=
+ne;color: #323D48;"><img data-file-id=3D"1359978" height=3D"325" src=3D"ht=
+tps://gallery.mailchimp.com/de5b31d43bd17b6dd173ed2b4/images/11f652d8-5909=
+-49c2-b8a2-e9e753e99bda.jpg" style=3D"border: 0px  ; width: 650px; height:=
+ 325px; margin: 0px;" width=3D"650"></a></a>
+                  </td>
+                </tr>
+                <tr>
+                  <td align=3D"center" style=3D"line-height:1.6;font-size:=
+16px;font-family:'Contax Pro'=2C ContaxPro45Lig=2C Verdana=2C Geneva=2C sa=
+ns-serif;color:#323D48;">
+                    <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0=
+" width=3D"600" class=3D"body" style=3D"padding:10px 10px 30px;">
+                      <tr>
+                        <td style=3D"line-height:1.6;font-size:16px;font-f=
+amily:'Contax Pro'=2C ContaxPro45Lig=2C Verdana=2C Geneva=2C sans-serif;co=
+lor:#323D48;"><p dir=3D"ltr">Great news &mdash; as a Lightpad creator you=
+ get now get access to Ableton Live Lite&nbsp;free! Check out a one-of-a-k=
+ind=2C customized integration between your&nbsp;Lightpad and the feature-p=
+acked digital audio workstation (DAW) that has become a staple for music p=
+roducers.<br>
+<br>
+Record and launch clips within Ableton from pads on your&nbsp;Lightpad Blo=
+ck&rsquo;s LED-illuminated surface. Explore powerful tools in Live Lite su=
+ch as MIDI sequencing=2C studio effects and instrumental racks &mdash; and=
+ upgrade to the full version of Ableton Live for a discount price.<br>
+<br>
+Learn more <span class=3D"fancylink" style=3D"font-weight: bold;border-bot=
+tom: 1px solid #b1bdc8;"><a href=3D"https://roli.us6.list-manage.com/track=
+/click?u=3Dde5b31d43bd17b6dd173ed2b4&id=3D3e95a7d73f&e=3D87db4d35bb" targ=
+et=3D"_blank" style=3D"text-decoration: none;color: #323D48;font-weight: b=
+old;border-bottom: 1px solid #b1bdc8;">here</a></span>=2C and watch our vi=
+deo to learn more about using your Lightpad Block with Ableton below:<br>
+<br>
+<a href=3D"https://roli.us6.list-manage.com/track/click?u=3Dde5b31d43bd17b=
+6dd173ed2b4&id=3D2f9fb311a1&e=3D87db4d35bb" target=3D"_blank" style=3D"te=
+xt-decoration: none;color: #323D48;font-weight: bold;border-bottom: 1px so=
+lid #b1bdc8;"><img data-file-id=3D"1359982" height=3D"300" src=3D"https://=
+gallery.mailchimp.com/de5b31d43bd17b6dd173ed2b4/images/4752f57a-fc73-47f9-=
+ac9f-1135e3575bb2.jpg" style=3D"border: 0px  ; width: 600px; height: 300px=
+; margin: 0px;" width=3D"600"></a><br>
+<br>
+It&rsquo;s now easy to bring your <span class=3D"fancylink" style=3D"font-=
+weight: bold;border-bottom: 1px solid #b1bdc8;"><a href=3D"https://roli.us=
+6.list-manage.com/track/click?u=3Dde5b31d43bd17b6dd173ed2b4&id=3Dd25d22fe2=
+d&e=3D87db4d35bb" target=3D"_blank" style=3D"text-decoration: none;color:=
+ #323D48;font-weight: bold;border-bottom: 1px solid #b1bdc8;">NOISE</a></s=
+pan> projects into Ableton Live too using <span class=3D"fancylink" style=
+=3D"font-weight: bold;border-bottom: 1px solid #b1bdc8;"><a href=3D"https:=
+//roli.us6.list-manage.com/track/click?u=3Dde5b31d43bd17b6dd173ed2b4&id=3D=
+a6e76a6af5&e=3D87db4d35bb" target=3D"_blank" style=3D"text-decoration: no=
+ne;color: #323D48;font-weight: bold;border-bottom: 1px solid #b1bdc8;">our=
+ new export functio</a>n</span>&nbsp;&mdash; so you can sketch ideas out a=
+nd about with NOISE and refine them in the studio with Live Lite.<br>
+<br>
+Find out how to download Ableton Live Lite <span class=3D"fancylink" style=
+=3D"font-weight: bold;border-bottom: 1px solid #b1bdc8;"><a href=3D"https:=
+//roli.us6.list-manage.com/track/click?u=3Dde5b31d43bd17b6dd173ed2b4&id=3D=
+a64acf4c49&e=3D87db4d35bb" target=3D"_blank" style=3D"text-decoration: no=
+ne;color: #323D48;font-weight: bold;border-bottom: 1px solid #b1bdc8;">her=
+e</a></span>. And don&rsquo;t hesitate to <span class=3D"fancylink" style=
+=3D"font-weight: bold;border-bottom: 1px solid #b1bdc8;"><a href=3D"https:=
+//roli.us6.list-manage.com/track/click?u=3Dde5b31d43bd17b6dd173ed2b4&id=3D=
+775e4e5112&e=3D87db4d35bb" target=3D"_blank" style=3D"text-decoration: no=
+ne;color: #323D48;font-weight: bold;border-bottom: 1px solid #b1bdc8;">con=
+tact our support team</a></span> if you have any questions about using you=
+r Lightpad with Ableton Live Lite.</p>
+
+<p dir=3D"ltr"><br>
+<img alt=3D"11c3a673-7fb3-4071-ac26-939635cbc618.png" height=3D"35" src=3D=
+"https://gallery.mailchimp.com/de5b31d43bd17b6dd173ed2b4/images/11c3a673-7=
+fb3-4071-ac26-939635cbc618.png" style=3D"border: 0px  ; width: 250px; heig=
+ht: 35px; margin: 0px;" width=3D"250"></p>
+</td>
+                    </tr>
+                    <tr>
+                      <td style=3D"line-height: 1.6;font-size: 16px;font-f=
+amily: &quot;Contax Pro&quot;=2C&quot;ContaxPro45Lig&quot;=2CVerdana=2CGen=
+eva=2Csans-serif;color: #323D48;">
+                        <table style=3D"margin-left:auto;margin-right:auto=
+;border-collapse:separate;border-spacing:16px;">
+                          <tr>
+                            <td style=3D"width: 262px;height: 280px;text-a=
+lign: center;line-height: 1.6;font-size: 16px;font-family: &quot;Contax Pr=
+o&quot;=2C&quot;ContaxPro45Lig&quot;=2CVerdana=2CGeneva=2Csans-serif;color=
+: #323D48;">
+                              <a href=3D"#" target=3D"_blank" style=3D"tex=
+t-decoration: none;color: #323D48;"><a href=3D"https://roli.us6.list-manag=
+e.com/track/click?u=3Dde5b31d43bd17b6dd173ed2b4&id=3D7c84809367&e=3D=
+87db4d35bb" target=3D"_blank" style=3D"text-decoration: none;color: #323D48;"><=
+img data-file-id=3D"1359777" height=3D"277" src=3D"https://gallery.mailchi=
+mp.com/de5b31d43bd17b6dd173ed2b4/images/aefffed3-a088-4d02-bffc-34cd2b7df7=
+de.jpg" style=3D"border: 0px  ; width: 260px; height: 277px; margin: 0px;"=
+ width=3D"260"></a></a>
+                            </td>
+                            <td style=3D"width: 262px;height: 280px;text-a=
+lign: center;line-height: 1.6;font-size: 16px;font-family: &quot;Contax Pr=
+o&quot;=2C&quot;ContaxPro45Lig&quot;=2CVerdana=2CGeneva=2Csans-serif;color=
+: #323D48;">
+                              <a href=3D"#" target=3D"_blank" style=3D"tex=
+t-decoration: none;color: #323D48;"><a href=3D"https://roli.us6.list-manag=
+e.com/track/click?u=3Dde5b31d43bd17b6dd173ed2b4&id=3D4b3359865c&e=3D=
+87db4d35bb" target=3D"_blank" style=3D"text-decoration: none;color: #323D48;"><=
+img data-file-id=3D"1358981" height=3D"277" src=3D"https://gallery.mailchi=
+mp.com/de5b31d43bd17b6dd173ed2b4/images/eee5e09f-5d1e-4635-8bf4-99c5483cdf=
+83.jpg" style=3D"border: 0px  ; width: 260px; height: 277px; margin: 0px;"=
+ width=3D"260"></a></a>
+                            </td>
+                          </tr>
+                        </table>
+                        <table style=3D"margin-left:auto;margin-right:auto=
+;border-collapse:separate;border-spacing:16px;">
+                          <tr>
+                            <td style=3D"width: 542px;height: 56px;backgro=
+und-color: #9b9b9b;text-align: center;color: #ffffff;font-size: 18px;line-=
+height: 1.6;font-family: &quot;Contax Pro&quot;=2C&quot;ContaxPro45Lig&quo=
+t;=2CVerdana=2CGeneva=2Csans-serif;" class=3D"mainbutton"><a href=3D"https=
+://roli.us6.list-manage.com/track/click?u=3Dde5b31d43bd17b6dd173ed2b4&id=
+=3D3d06de8640&e=3D87db4d35bb" target=3D"_blank" style=3D"text-decoration:=
+ none;color: #ffffff;">Explore the BLOCKS Collection</a></td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <!-- END CONTENT -->
+      <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"650=
+" style=3D"width:650px;min-width:650px;background-color:#000000;padding:10=
+px;" class=3D"footer" bgcolor=3D"#000000">
+        <tr>
+          <td align=3D"center" style=3D"line-height: 1.6;font-size: 11px;f=
+ont-family: 'Contax Pro'=2C ContaxPro45Lig=2C Verdana=2C Geneva=2C sans-se=
+rif;color: #aaaaaa;padding-bottom: 0;padding-right: 0;">
+            <table border=3D"0" cellpadding=3D"40" cellspacing=3D"0" width=
+=3D"600" style=3D"padding-bottom:30px;">
+              <tr>
+                <td style=3D"width: 40%;line-height: 1.6;font-size: 11px;f=
+ont-family: 'Contax Pro'=2C ContaxPro45Lig=2C Verdana=2C Geneva=2C sans-se=
+rif;color: #aaaaaa;padding-bottom: 0;padding-left: 0;padding-right: 0;" al=
+ign=3D"center" class=3D"footer-logo">
+                  <a href=3D"https://roli.us6.list-manage.com/track/click?=
+u=3Dde5b31d43bd17b6dd173ed2b4&id=3Dac8f9a6800&e=3D87db4d35bb" style=3D"co=
+lor:#ffffff;text-decoration:none;"><img src=3D"https://d30pueezughrda.clou=
+dfront.net/email/roli-logotype-white.gif" alt=3D"ROLI.com" width=3D"132" h=
+eight=3D"48" style=3D"vertical-align: bottom;"></a>
+                </td>
+              </tr>
+              <tr>
+                <td align=3D"center" style=3D"padding-left: 0;line-height:=
+ 1.6;font-size: 11px;font-family: 'Contax Pro'=2C ContaxPro45Lig=2C Verdan=
+a=2C Geneva=2C sans-serif;color: #aaaaaa;padding-bottom: 0;padding-right:=
+ 0;">
+                  <table border=3D"0" cellpadding=3D"0" cellspacing=3D"5"=
+ align=3D"center" width=3D"40%">
+                    <tr>
+                      <td align=3D"center" style=3D"line-height: 1.6;font-=
+size: 12px;font-family: 'Contax Pro'=2C ContaxPro45Lig=2C Verdana=2C Genev=
+a=2C sans-serif;color: #aaaaaa;padding-right: 0;">
+                        <a href=3D"https://roli.us6.list-manage.com/track/=
+click?u=3Dde5b31d43bd17b6dd173ed2b4&id=3D9c254457dd&e=3D87db4d35bb" title=
+=3D"Facebook" style=3D"text-decoration:none;color:#eeeeee;"><img src=3D"ht=
+tps://d30pueezughrda.cloudfront.net/email/social-facebook-white.gif" width=
+=3D"26" height=3D"22" alt=3D"Facebook"></a>
+                      </td>
+                      <td align=3D"center" style=3D"line-height: 1.6;font-=
+size: 12px;font-family: 'Contax Pro'=2C ContaxPro45Lig=2C Verdana=2C Genev=
+a=2C sans-serif;color: #aaaaaa;padding-right: 0;">
+                        <a href=3D"https://roli.us6.list-manage.com/track/=
+click?u=3Dde5b31d43bd17b6dd173ed2b4&id=3D2c366ce154&e=3D87db4d35bb" title=
+=3D"Twitter" style=3D"text-decoration:none;color:#eeeeee;"><img src=3D"htt=
+ps://d30pueezughrda.cloudfront.net/email/social-twitter-white.gif" width=
+=3D"26" height=3D"22" alt=3D"Twitter"></a>
+                      </td>
+                      <td align=3D"center" style=3D"line-height: 1.6;font-=
+size: 12px;font-family: 'Contax Pro'=2C ContaxPro45Lig=2C Verdana=2C Genev=
+a=2C sans-serif;color: #aaaaaa;padding-right: 0;">
+                        <a href=3D"https://roli.us6.list-manage.com/track/=
+click?u=3Dde5b31d43bd17b6dd173ed2b4&id=3Df9ae6f8ce5&e=3D87db4d35bb" title=
+=3D"Youtube" style=3D"text-decoration:none;color:#eeeeee;"><img src=3D"htt=
+ps://d30pueezughrda.cloudfront.net/email/social-youtube-white.gif" width=
+=3D"26" height=3D"22" alt=3D"Youtube"></a>
+                      </td>
+                      <td align=3D"center" style=3D"line-height: 1.6;font-=
+size: 12px;font-family: 'Contax Pro'=2C ContaxPro45Lig=2C Verdana=2C Genev=
+a=2C sans-serif;color: #aaaaaa;padding-right: 0;">
+                        <a href=3D"https://roli.us6.list-manage.com/track/=
+click?u=3Dde5b31d43bd17b6dd173ed2b4&id=3D259226ec33&e=3D87db4d35bb" title=
+=3D"Instagram" style=3D"text-decoration:none;color:#eeeeee;"><img src=3D"h=
+ttps://d30pueezughrda.cloudfront.net/email/social-instagram-white.gif" wid=
+th=3D"26" height=3D"22" alt=3D"Instagram"></a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan=3D"4" style=3D"line-height: 1.6;font-siz=
+e: 12px;font-family: 'Contax Pro'=2C ContaxPro45Lig=2C Verdana=2C Geneva=
+=2C sans-serif;color: #aaaaaa;padding-right: 0;">
+                        <p align=3D"center"><a href=3D"https://roli.us6.li=
+st-manage.com/unsubscribe?u=3Dde5b31d43bd17b6dd173ed2b4&id=3D0b59ea513b&e=
+=3D87db4d35bb&c=3D02adfae0eb" style=3D"text-decoration:none;color:#eeeeee;">=
+Unsubscribe</a>
+                      </p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+    <table border=3D"0" cellpadding=3D"0" style=3D"width:650px;min-width:6=
+50px;background-color:#d1d3d3;padding:10px;" bgcolor=3D"#d1d3d3" cellspaci=
+ng=3D"0" width=3D"650" class=3D"copyright">
+      <tr>
+        <td style=3D"line-height:1.6;font-size:16px;font-family:'Contax Pr=
+o'=2C ContaxPro45Lig=2C Verdana=2C Geneva=2C sans-serif;color:#323D48;">
+          <table class=3D"sub-footer" align=3D"center" style=3D"text-align=
+:center;">
+            <tr>
+              <td style=3D"text-align:center;font-size:13px;line-height:1.=
+6;font-family:'Contax Pro'=2C ContaxPro45Lig=2C Verdana=2C Geneva=2C sans-=
+serif;color:#4c4c4c;" align=3D"center">Copyright =C2=A9 2017 ROLI. All rig=
+hts reserved.</td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<img src=3D"https://roli.us6.list-manage.com/track/open.php?u=3Dde5b31d43b=
+d17b6dd173ed2b4&id=3D02adfae0eb&e=3D87db4d35bb" height=3D"1" width=3D"1">=
+</body>
+</html>
+--_----------=_MCPart_1325822220--
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>date-last-viewed</key>
+	<integer>0</integer>
+	<key>date-received</key>
+	<integer>1509210388</integer>
+	<key>flags</key>
+	<integer>8590195712</integer>
+	<key>remote-id</key>
+	<string>4567</string>
+</dict>
+</plist>

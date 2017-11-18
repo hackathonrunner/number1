@@ -1,0 +1,602 @@
+30049     
+Return-path:
+ <bounce-mc.us6_13323443.910469-austindreier=icloud.com@mail213.atl221.rsgsv.net>
+Received: from mr28p00im-smtpin039.mac.com ([17.110.71.38])
+ by ms60015.mac.com (Oracle Communications Messaging Server 8.0.1.2.20170607
+ 64bit (built Jun  7 2017)) with ESMTP id <0OYF00FLIWETOEE0@ms60015.mac.com>
+ for austindreier@icloud.com; Thu, 26 Oct 2017 16:56:53 +0000 (GMT)
+Original-recipient: rfc822;austindreier@icloud.com
+Received: from mail213.atl221.rsgsv.net
+ (mail213.atl221.rsgsv.net [198.2.139.213]) by mr28p00im-smtpin039.me.com
+ (Oracle Communications Messaging Server 8.0.1.2.20170607 64bit (built Jun  7
+ 2017)) with ESMTP id <0OYF004Y9WCCPK30@mr28p00im-smtpin039.me.com> for
+ austindreier@icloud.com (ORCPT austindreier@icloud.com); Thu,
+ 26 Oct 2017 16:56:53 +0000 (GMT)
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 spamscore=0
+ clxscore=160 suspectscore=85 malwarescore=0 phishscore=0 adultscore=0
+ bulkscore=100 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.0.1-1707230000 definitions=main-1710260223
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10432:,,
+ definitions=2017-10-26_06:,, signatures=0
+Authentication-results: mr21p00im-dmarcmilter004.me.com; dmarc=pass
+ header.from=roli.com
+Authentication-results: mr21p00im-spfmilter001.me.com; spf=pass
+ (mr21p00im-spfmilter001.me.com: domain of
+ bounce-mc.us6_13323443.910469-austindreier=icloud.com@mail213.atl221.rsgsv.net
+ designates 198.2.139.213 as permitted sender)
+ smtp.mailfrom=bounce-mc.us6_13323443.910469-austindreier=icloud.com@mail213.atl221.rsgsv.net;
+Received-SPF: pass (mr21p00im-spfmilter001.me.com: domain of
+ bounce-mc.us6_13323443.910469-austindreier=icloud.com@mail213.atl221.rsgsv.net
+ designates 198.2.139.213 as permitted sender)
+ receiver=mr21p00im-spfmilter001.me.com; client-ip=198.2.139.213;
+ helo=mail213.atl221.rsgsv.net;
+ envelope-from=bounce-mc.us6_13323443.910469-austindreier=icloud.com@mail213.atl221.rsgsv.net;
+Authentication-results: mr21p00im-dkimmilter004.me.com;	dkim=pass (1024-bit
+ key) header.d=roli.com header.i=noreply@roli.com header.b=ND1bMQUX;
+	dkim-adsp=pass
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=k1; d=roli.com;
+ h=Subject:From:Reply-To:To:Date:Message-ID:List-ID:List-Unsubscribe:
+ Content-Type:MIME-Version; i=noreply@roli.com;
+ bh=LA2/KF+S+Uzb8K3fDO7m806rbLwk7sbbn2jOIVfI/oc=;
+ b=ND1bMQUXtPnluisLxHIkrlx4oB0zqqg4nwsTzb2bLFjuORz5aVmQfL/2MQA5OBuODxaZDql6MC0K
+   IDZt/qvPTTXaat7IJApkGItJi+xsBycqs71JF4ofCFLiiyKUyvvH5qY8/+wSaXMqcTW/kvSiGWSC
+   2Xg9ybHy+fVpMLZLZrc=
+Received: from (127.0.0.1) by mail213.atl221.rsgsv.net id hu89t82akec5 for
+ <austindreier@icloud.com>; Thu,
+ 26 Oct 2017 16:54:04 +0000 (envelope-from <bounce-mc.us6_13323443.910469-austindreier=icloud.com@mail213.atl221.rsgsv.net>)
+Subject: =?utf-8?Q?Pharrell=20is=20our=20new=20Chief=20Creative=20Officer?=
+From: =?utf-8?Q?ROLI?= <noreply@roli.com>
+Reply-to: =?utf-8?Q?ROLI?= <noreply@roli.com>
+To: austindreier@icloud.com
+Date: Thu, 26 Oct 2017 16:54:04 +0000
+Message-id:
+ <de5b31d43bd17b6dd173ed2b4.87db4d35bb.20171026165223.9a296e9585.2e72aef6@mail213.atl221.rsgsv.net>
+X-Mailer: MailChimp Mailer - **CID9a296e958587db4d35bb**
+Feedback-ID: 13323443:13323443.910469:us6:mc
+List-Id: de5b31d43bd17b6dd173ed2b4mc list
+ <de5b31d43bd17b6dd173ed2b4.202809.list-id.mcsv.net>
+List-Unsubscribe:
+ <https://roli.us6.list-manage.com/unsubscribe?u=de5b31d43bd17b6dd173ed2b4&id=0b59ea513b&e=87db4d35bb&c=9a296e9585>,
+ <mailto:unsubscribe-mc.us6_de5b31d43bd17b6dd173ed2b4.9a296e9585-87db4d35bb@mailin1.us2.mcsv.net?subject=unsubscribe>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+Content-type: multipart/alternative; boundary="_----------=_MCPart_1215980574"
+MIME-version: 1.0
+x-icloud-spam-score: 3331331
+ f=roli.com;e=mail213.atl221.rsgsv.net;is=yes;ir=no;spf=pass;dkim=pass;dmarc=pass/quarantine/none;gdwl=absent;pps=ham;clxs=ham;clxw=neutral
+X-CLX-Spam: false
+X-CLX-UnSpecialScore: None
+X-CLX-Score: 160
+X-CLX-Shades: None
+X-MANTSH: 1TEIXR1gYEloaGkNHB0tNT0ReQ0QZGRoeEQpMQxcbHQQbGxsEGx0ZBBkYEBseGh8
+ aEQpMWRcbHBoRCllNF2RFRE8RCllJFxpxGhAadwYeGnEfEh0QGBkZdwYYGgYbGhoRClleF2tre
+ REKQ04XHGdyG3BHRRp4T05/Wx9oGn8FTEZtWXkTTx5TeUt+Un4RClhcFxkEGgQZGAdNGU4TTxM
+ ZGAUbHQQbGxsEGx8fBBgeGhAbHhofGhEKXlkXeGAdQlwRCk1cFx4TGxEKTFoXaXhlQUFdEQpFW
+ RdvEQpMXxd6BQUFBQUFBQUFQxEKQ1oXGxMSBBgEGxkTBBgbGREKQl4XGxEKWUUXExEKRUkXGhE
+ KRWYXGREKQkYXaxhFXmdbWX0FWB4RCkJHF2xSTVtBckhuUFkSEQpCXBcbEQpeThcbEQpCSxdsR
+ xNpGFkfcE5SfhEKQkUXZllNH15tHkdCSH8RCkJOF2xHE2kYWR9wTlJ+EQpCTBdsXkEaBU9kWBp
+ sGREKQmwXYEcdbXx6UwFNYnMRCkJAF2dYZXhee2x7WGZQEQpCWBduRx0bTmRhRRsSQBEKcGgXb
+ GJYHXlYbmN9YV0QGhEKcGgXYF1pe09fZxpcUHsQGhEKcGgXawV+XXBScn9zY1gQGhEKcGgXZB9
+ dEmZoTUIBTWwQHhIRCnBoF2tOYhl6Z0ZbWGx6EBoRCnB/F2NBGmZuTERsc0lvEBkaEQpwfxdlS
+ 25fbVN5fEl4TBAHGAQcEQpwfxdoWGJcemR/WBtFcxAcHREKcH8Xa1Iebxx9HGdQb34QHRIRCnB
+ /F2tGHGABcFByYmRYEB8fEQpwfxdneFtpSRIBQm9AWxAZGhEKcF8Xbh58U25kYEtZYhkQBxkaE
+ QpwfRdrSURSeFAZZRkeSxAaEQpwXxdrXFNlRlpnax9YUhAHGRoRCnB9F2kfYEhcTWJaEm1uEBo
+ RCnBfF2BtARpnAXxrSUJQEBoRCnB9F2RcfnhjUhhIa2NBEBoR
+x-dmarc-info: pass=pass; dmarc-policy=quarantine; s=r0; d=r1
+x-dmarc-policy: v=DMARC1; p=quarantine; pct=5;
+ rua=mailto:googlesecurity@roli.com
+X-Campaign: mailchimpde5b31d43bd17b6dd173ed2b4.9a296e9585
+X-campaignid: mailchimpde5b31d43bd17b6dd173ed2b4.9a296e9585
+X-Report-Abuse: Please report abuse for this campaign here:
+ http://www.mailchimp.com/abuse/abuse.phtml?u=de5b31d43bd17b6dd173ed2b4&id=9a296e9585&e=87db4d35bb
+X-MC-User: de5b31d43bd17b6dd173ed2b4
+X-Accounttype: pr
+x-mcda: FALSE
+
+This is a multi-part message in MIME format
+
+--_----------=_MCPart_1215980574
+Content-Type: text/plain; charset="utf-8"; format="fixed"
+Content-Transfer-Encoding: quoted-printable
+
+https://www.roli.com?utm_source=3DMaster+ROLI+Creators+List&utm_campaign=
+=3D9a296e9585-Pharrell+announcement+mailing+list&utm_medium=3Demail&utm_te=
+rm=3D0_0b59ea513b-9a296e9585-113104277&mc_cid=3D9a296e9585&mc_eid=3D=
+[UNIQID] Read in your browser (http://mailchi.mp/roli/pharrell-is-our-new=
+-chief-creative-officer?e=3D87db4d35bb)
+https://roli.com/article/my-studio-marclohttps://www.roli.com/stories/play=
+-happy-by-pharrell?utm_source=3DMaster+ROLI+Creators+List&utm_campaign=3D9=
+a296e9585-Pharrell+announcement+mailing+list&utm_medium=3Demail&utm_term=
+=3D0_0b59ea513b-9a296e9585-113104277&mc_cid=3D9a296e9585&mc_eid=3D[=
+UNIQID]
+
+Our new starter has quite the track record! We=E2=80=99re super happy to a=
+nnounce that Pharrell Williams =E2=80=94 singer=2C producer=2C designer=2C=
+ cultural icon =E2=80=94 is joining ROLI as Chief Creative Officer. He=E2=
+=80=99ll be helping Roland Lamb=2C our founder=2C create next-generation i=
+nstruments that are as innovative as the Seaboard (https://roli.com/produc=
+ts/seaboard/?utm_source=3DMaster+ROLI+Creators+List&utm_campaign=3D9a296e9=
+585-Pharrell+announcement+mailing+list&utm_medium=3Demail&utm_term=3D0_0b5=
+9ea513b-9a296e9585-113104277&mc_cid=3D9a296e9585&mc_eid=3D[UNIQID])=
+ and BLOCKS (https://roli.com/products/blocks/?utm_source=3DMaster+ROLI+Cr=
+eators+List&utm_campaign=3D9a296e9585-Pharrell+announcement+mailing+list&u=
+tm_medium=3Demail&utm_term=3D0_0b59ea513b-9a296e9585-113104277&mc_ci=
+d=3D9a296e9585&mc_eid=3D[UNIQID]) and that help even more people make mus=
+ic. Read more about it here (https://roli.com/stories/play-happy-by-pharre=
+ll?utm_source=3DMaster+ROLI+Creators+List&utm_campaign=3D9a296e9585-Pharre=
+ll+announcement+mailing+list&utm_medium=3Demail&utm_term=3D0_0b59ea513b-9a=
+296e9585-113104277&mc_cid=3D9a296e9585&mc_eid=3D[UNIQID]) .
+
+We=E2=80=99ve already launched our first collaborative project=2C and more=
+ are to come. =E2=80=9CHappy by Pharrell=E2=80=9D is fun=2C free=2C and re=
+ady for you to download right now. It=E2=80=99s a special studiopack for N=
+OISE (https://roli.com/products/software/noise?utm_source=3DMaster+ROLI+Cr=
+eators+List&utm_campaign=3D9a296e9585-Pharrell+announcement+mailing+list&u=
+tm_medium=3Demail&utm_term=3D0_0b59ea513b-9a296e9585-113104277&mc_ci=
+d=3D9a296e9585&mc_eid=3D[UNIQID]) that deconstructs all the elements of P=
+harrell=E2=80=99s hit =E2=80=9CHappy=2C=E2=80=9D so you can make your own=
+ song with its unmistakable vocals=2C beats=2C and bass. Clap along to the=
+ demo film here:
+
+https://roli.com/stories/play-happy-by-pharrell?autoplay&utm_source=3DMast=
+er+ROLI+Creators+List&utm_campaign=3D9a296e9585-Pharrell+announcement+mail=
+ing+list&utm_medium=3Demail&utm_term=3D0_0b59ea513b-9a296e9585-=
+113104277&mc_cid=3D9a296e9585&mc_eid=3D[UNIQID]
+
+Pharrell and ROLI kicked off the partnership yesterday at the Hackney Empi=
+re theater in London. Watch Roland and Pharrell (https://www.youtube.com/w=
+atch?v=3DpuNtyUHmXDw&utm_source=3DMaster+ROLI+Creators+List&utm_campaign=
+=3D9a296e9585-Pharrell+announcement+mailing+list&utm_medium=3Demail&utm_te=
+rm=3D0_0b59ea513b-9a296e9585-113104277&mc_cid=3D9a296e9585&mc_eid=3D=
+[UNIQID]) =2C discussing the question of why people create =E2=80=94 and=
+ how everyone is more creative than they may realize. It=E2=80=99s just th=
+e start of many more discussions in the months and years ahead.
+
+Check out =E2=80=9CHappy by Pharrell=E2=80=9D in the NOISE app (https://ro=
+li.com/products/software/noise?utm_source=3DMaster+ROLI+Creators+List&utm_=
+campaign=3D9a296e9585-Pharrell+announcement+mailing+list&utm_medium=3Demai=
+l&utm_term=3D0_0b59ea513b-9a296e9585-113104277&mc_cid=3D9a296e9585&m=
+c_eid=3D[UNIQID]) today. You=E2=80=99ll find it under =E2=80=9CBundles.=
+=E2=80=9D
+
+11c3a673-7fb3-4071-ac26-939635cbc618.png
+#https://roli.com/products/blocks/seaboard-block #https://roli.com/product=
+s/blocks/lightpad-block
+Explore the BLOCKS Collection (https://roli.com/products/blocks/?utm_sourc=
+e=3DMaster+ROLI+Creators+List&utm_campaign=3D9a296e9585-Pharrell+announcem=
+ent+mailing+list&utm_medium=3Demail&utm_term=3D0_0b59ea513b-9a296e9585-=
+113104277&mc_cid=3D9a296e9585&mc_eid=3D[UNIQID])
+https://www.roli.com?utm_source=3DMaster+ROLI+Creators+List&utm_campaign=
+=3D9a296e9585-Pharrell+announcement+mailing+list&utm_medium=3Demail&utm_te=
+rm=3D0_0b59ea513b-9a296e9585-113104277&mc_cid=3D9a296e9585&mc_eid=3D=
+[UNIQID]
+https://www.facebook.com/ROLI?utm_source=3DMaster+ROLI+Creators+List&utm_c=
+ampaign=3D9a296e9585-Pharrell+announcement+mailing+list&utm_medium=3Demail=
+&utm_term=3D0_0b59ea513b-9a296e9585-113104277&mc_cid=3D9a296e9585&mc=
+_eid=3D[UNIQID] https://twitter.com/WeAreROLI?utm_source=3DMaster+ROLI+Cr=
+eators+List&utm_campaign=3D9a296e9585-Pharrell+announcement+mailing+list&u=
+tm_medium=3Demail&utm_term=3D0_0b59ea513b-9a296e9585-113104277&mc_ci=
+d=3D9a296e9585&mc_eid=3D[UNIQID] https://www.youtube.com/channel/UCz5nFP_=
+ySbbsmo1tWldOuZA?utm_source=3DMaster+ROLI+Creators+List&utm_campaign=3D9a2=
+96e9585-Pharrell+announcement+mailing+list&utm_medium=3Demail&utm_term=3D0=
+_0b59ea513b-9a296e9585-113104277&mc_cid=3D9a296e9585&mc_eid=3D[UNIQ=
+ID] https://instagram.com/we.are.roli/?utm_source=3DMaster+ROLI+Creators+L=
+ist&utm_campaign=3D9a296e9585-Pharrell+announcement+mailing+list&utm_mediu=
+m=3Demail&utm_term=3D0_0b59ea513b-9a296e9585-113104277&mc_cid=3D9a29=
+6e9585&mc_eid=3D[UNIQID]
+
+Unsubscribe (https://roli.us6.list-manage.com/unsubscribe?u=3Dde5b31d43bd1=
+7b6dd173ed2b4&id=3D0b59ea513b&e=3D87db4d35bb&c=3D9a296e9585)
+Copyright =C2=A9 2017 ROLI. All rights reserved.
+--_----------=_MCPart_1215980574
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www=
+=2Ew3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns=3D"http://www.w3.org/1999/xhtml">
+  <head>
+
+  <style type=3D"text/css">
+=09=09html body{
+=09=09=09margin-bottom:0 !important;
+=09=09}
+=09=09td{
+=09=09=09line-height:1.6;
+=09=09=09font-size:16px;
+=09=09=09font-family:"Contax Pro"=2C"ContaxPro45Lig"=2CVerdana=2CGeneva=2C=
+sans-serif;
+=09=09=09color:#323D48;
+=09=09}
+=09=09a{
+=09=09=09text-decoration:none;
+=09=09=09color:#323D48;
+=09=09}
+=09=09.mainbutton a{
+=09=09=09color:#ffffff;
+=09=09}
+=09=09h1=2Ch2=2Ch3{
+=09=09=09font-weight:300;
+=09=09=09margin:.4em 0;
+=09=09}
+=09=09h1{
+=09=09=09font-size:28px;
+=09=09}
+=09=09.archive{
+=09=09=09text-align:right;
+=09=09}
+=09=09.archive a{
+=09=09=09color:#999;
+=09=09=09font-size:12px;
+=09=09}
+=09=09.headerimg img{
+=09=09=09border-radius:0;
+=09=09}
+=09=09.body p a=2C.fancylink{
+=09=09=09font-weight:bold;
+=09=09=09border-bottom:1px solid #b1bdc8;
+=09=09}
+=09=09.quad h2{
+=09=09=09margin:0;
+=09=09}
+=09=09td.quad-box:first-child{
+=09=09=09padding-right:20px;
+=09=09}
+=09=09td.quad-box:nth-child(2){
+=09=09=09padding-left:20px;
+=09=09}
+=09=09.footer td{
+=09=09=09color:#aaaaaa;
+=09=09=09font-size:12px;
+=09=09=09padding-right:0;
+=09=09}
+=09=09.footer td a{
+=09=09=09color:#eeeeee;
+=09=09}
+=09=09.footer td a:hover{
+=09=09=09text-decoration:underline;
+=09=09}
+=09=09td.footer-logo{
+=09=09=09padding-left:0;
+=09=09}
+=09=09.sub-footer{
+=09=09=09text-align:center;
+=09=09}
+=09=09.sub-footer td{
+=09=09=09color:#4c4c4c;
+=09=09=09text-align:center;
+=09=09}
+=09=09.header=2C.footer=2C.body=2C.copyright{
+=09=09=09padding:10px;
+=09=09}
+=09=09.header=2C.footer=2C.copyright{
+=09=09=09width:650px;
+=09=09=09min-width:650px;
+=09=09}
+</style></head>
+  <body style=3D"margin-bottom: 0 !important;">
+    <p>
+  </p>
+  <meta http-equiv=3D"content-type" content=3D"text/html; charset=3DUTF-8"=
+>
+  <meta property=3D"og:title" content=3D"Pharrell is our new Chief Creativ=
+e Officer">
+  <title>Pharrell is our new Chief Creative Officer</title>
+  <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%">
+    <tr>
+      <td align=3D"center" style=3D"line-height:1.6;font-size:16px;font-fa=
+mily:'Contax Pro'=2C ContaxPro45Lig=2C Verdana=2C Geneva=2C sans-serif;col=
+or:#323D48;">
+        <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"6=
+50" style=3D"width:650px;min-width:650px;background-color:#000000;padding:=
+10px;" class=3D"header" bgcolor=3D"#000000">
+          <tr>
+            <td align=3D"center" style=3D"line-height:1.6;font-size:16px;f=
+ont-family:'Contax Pro'=2C ContaxPro45Lig=2C Verdana=2C Geneva=2C sans-ser=
+if;color:#323D48;">
+              <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" widt=
+h=3D"600">
+                <tr>
+                  <td style=3D"line-height:1.6;font-size:16px;font-family:=
+'Contax Pro'=2C ContaxPro45Lig=2C Verdana=2C Geneva=2C sans-serif;color:#3=
+23D48;">
+                    <a href=3D"https://roli.us6.list-manage.com/track/clic=
+k?u=3Dde5b31d43bd17b6dd173ed2b4&id=3D2b1f97cafa&e=3D87db4d35bb" style=3D"=
+color:#ffffff;text-decoration:none;"><img src=3D"https://d30pueezughrda.cl=
+oudfront.net/email/roli-monogram-white.gif" alt=3D"ROLI" width=3D"40" heig=
+ht=3D"40"></a>
+                  </td>
+                  <td class=3D"archive" style=3D"line-height:1.6;font-size=
+:16px;font-family:'Contax Pro'=2C ContaxPro45Lig=2C Verdana=2C Geneva=2C s=
+ans-serif;color:#323D48;padding-bottom:0;text-align:right;" align=3D"right=
+">
+                    <a href=3D"http://mailchi.mp/roli/pharrell-is-our-new-=
+chief-creative-officer?e=3D87db4d35bb" target=3D"_blank" style=3D"text-decor=
+ation:none;color:#ffffff;font-size:12px;">Read in your browser</a>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+        <!-- BEGIN CONTENT -->
+        <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"6=
+50" style=3D"background-color:#F0F0F0;min-height:100px;" bgcolor=3D"#F0F0F=
+0">
+          <tr>
+            <td align=3D"center" style=3D"line-height:1.6;font-size:16px;f=
+ont-family:'Contax Pro'=2C ContaxPro45Lig=2C Verdana=2C Geneva=2C sans-ser=
+if;color:#323D48;">
+              <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" widt=
+h=3D"650">
+                <tr>
+                  <td align=3D"center" style=3D"line-height:1.6;font-size:=
+16px;font-family:'Contax Pro'=2C ContaxPro45Lig=2C Verdana=2C Geneva=2C sa=
+ns-serif;color:#323D48;">
+                    <a href=3D"https://roli.us6.list-manage.com/track/clic=
+k?u=3Dde5b31d43bd17b6dd173ed2b4&id=3D464e1694ab&e=3D87db4d35bb" target=3D=
+"_blank" style=3D"text-decoration: none;color: #323D48;"><a href=3D"https:=
+//roli.us6.list-manage.com/track/click?u=3Dde5b31d43bd17b6dd173ed2b4&id=3D=
+9f19bbcf5f&e=3D87db4d35bb" target=3D"_blank" style=3D"text-decoration: no=
+ne;color: #323D48;"><img data-file-id=3D"1359977" height=3D"325" src=3D"ht=
+tps://gallery.mailchimp.com/de5b31d43bd17b6dd173ed2b4/_compresseds/044faad=
+4-cee2-43a4-85b4-2bdf874d6043.jpg" style=3D"border: 0px  ; width: 650px; h=
+eight: 325px; margin: 0px;" width=3D"650"></a></a>
+                  </td>
+                </tr>
+                <tr>
+                  <td align=3D"center" style=3D"line-height:1.6;font-size:=
+16px;font-family:'Contax Pro'=2C ContaxPro45Lig=2C Verdana=2C Geneva=2C sa=
+ns-serif;color:#323D48;">
+                    <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0=
+" width=3D"600" class=3D"body" style=3D"padding:10px 10px 30px;">
+                      <tr>
+                        <td style=3D"line-height:1.6;font-size:16px;font-f=
+amily:'Contax Pro'=2C ContaxPro45Lig=2C Verdana=2C Geneva=2C sans-serif;co=
+lor:#323D48;"><p dir=3D"ltr">Our new starter has quite the track record! W=
+e&rsquo;re super happy to announce that Pharrell Williams &mdash; singer=
+=2C producer=2C designer=2C cultural icon &mdash;&nbsp;is joining ROLI as=
+ Chief Creative Officer. He&rsquo;ll be helping Roland Lamb=2C our founder=
+=2C create next-generation instruments that are as innovative as the <span=
+ class=3D"fancylink" style=3D"font-weight: bold;border-bottom: 1px solid #=
+b1bdc8;"><a href=3D"https://roli.us6.list-manage.com/track/click?u=3Dde5b3=
+1d43bd17b6dd173ed2b4&id=3D9f6cfae242&e=3D87db4d35bb" target=3D"_blank" st=
+yle=3D"text-decoration: none;color: #323D48;font-weight: bold;border-botto=
+m: 1px solid #b1bdc8;">Seaboard</a></span> and <span class=3D"fancylink" s=
+tyle=3D"font-weight: bold;border-bottom: 1px solid #b1bdc8;"><a href=3D"ht=
+tps://roli.us6.list-manage.com/track/click?u=3Dde5b31d43bd17b6dd173ed2b4&i=
+d=3D1ba5929db3&e=3D87db4d35bb" target=3D"_blank" style=3D"text-decoration=
+: none;color: #323D48;font-weight: bold;border-bottom: 1px solid #b1bdc8;"=
+>BLOCKS</a></span> and that help even more people make music. Read more ab=
+out it <span class=3D"fancylink" style=3D"font-weight: bold;border-bottom:=
+ 1px solid #b1bdc8;"><a href=3D"https://roli.us6.list-manage.com/track/cli=
+ck?u=3Dde5b31d43bd17b6dd173ed2b4&id=3Dc0267d4353&e=3D87db4d35bb" target=
+=3D"_blank" style=3D"text-decoration: none;color: #323D48;font-weight: bol=
+d;border-bottom: 1px solid #b1bdc8;">here</a></span>.</p>
+
+<p dir=3D"ltr">We&rsquo;ve already launched our first collaborative projec=
+t=2C and more are to come. &ldquo;Happy by Pharrell&rdquo; is fun=2C free=
+=2C and ready for you to download right now. It&rsquo;s a special studiopa=
+ck for <span class=3D"fancylink" style=3D"font-weight: bold;border-bottom:=
+ 1px solid #b1bdc8;"><a href=3D"https://roli.us6.list-manage.com/track/cli=
+ck?u=3Dde5b31d43bd17b6dd173ed2b4&id=3D900ec39cdf&e=3D87db4d35bb" target=
+=3D"_blank" style=3D"text-decoration: none;color: #323D48;font-weight: bol=
+d;border-bottom: 1px solid #b1bdc8;">NOISE</a></span> that deconstructs al=
+l the elements of Pharrell&rsquo;s hit &ldquo;Happy=2C&rdquo; so you can m=
+ake your own song with its unmistakable vocals=2C beats=2C and bass. Clap=
+ along to the demo film here:<br>
+<br>
+<a href=3D"https://roli.us6.list-manage.com/track/click?u=3Dde5b31d43bd17b=
+6dd173ed2b4&id=3Db386128f78&e=3D87db4d35bb" target=3D"_blank" style=3D"te=
+xt-decoration: none;color: #323D48;font-weight: bold;border-bottom: 1px so=
+lid #b1bdc8;"><img data-file-id=3D"1359973" height=3D"300" src=3D"https://=
+gallery.mailchimp.com/de5b31d43bd17b6dd173ed2b4/images/2f595029-2d73-4bfc-=
+b9d8-66ea670189c9.jpg" style=3D"border: 0px  ; width: 600px; height: 300px=
+; margin: 0px;" width=3D"600"></a></p>
+
+<p dir=3D"ltr">Pharrell and ROLI kicked off the partnership yesterday at t=
+he Hackney Empire theater in London. <span class=3D"fancylink" style=3D"fo=
+nt-weight: bold;border-bottom: 1px solid #b1bdc8;"><a href=3D"https://roli=
+=2Eus6.list-manage.com/track/click?u=3Dde5b31d43bd17b6dd173ed2b4&id=3D66bdb1=
+dd9e&e=3D87db4d35bb" target=3D"_blank" style=3D"text-decoration: none;col=
+or: #323D48;font-weight: bold;border-bottom: 1px solid #b1bdc8;">Watch&nbs=
+p;Roland and Pharrell</a></span>=2C discussing the question of why people=
+ create &mdash; and how everyone is more creative than they may realize. I=
+t&rsquo;s just the start of many more discussions in the months and years=
+ ahead.</p>
+
+<p dir=3D"ltr">Check out &ldquo;Happy by Pharrell&rdquo; in the <span clas=
+s=3D"fancylink" style=3D"font-weight: bold;border-bottom: 1px solid #b1bdc=
+8;"><a href=3D"https://roli.us6.list-manage.com/track/click?u=3Dde5b31d43b=
+d17b6dd173ed2b4&id=3D904332f9f9&e=3D87db4d35bb" target=3D"_blank" style=
+=3D"text-decoration: none;color: #323D48;font-weight: bold;border-bottom:=
+ 1px solid #b1bdc8;">NOISE app</a></span> today. You&rsquo;ll find it unde=
+r &ldquo;Bundles.&rdquo;</p>
+
+<p><br>
+<img alt=3D"11c3a673-7fb3-4071-ac26-939635cbc618.png" height=3D"35" src=3D=
+"https://gallery.mailchimp.com/de5b31d43bd17b6dd173ed2b4/images/11c3a673-7=
+fb3-4071-ac26-939635cbc618.png" style=3D"border: 0px  ; width: 250px; heig=
+ht: 35px; margin: 0px;" width=3D"250"></p>
+</td>
+                    </tr>
+                    <tr>
+                      <td style=3D"line-height: 1.6;font-size: 16px;font-f=
+amily: &quot;Contax Pro&quot;=2C&quot;ContaxPro45Lig&quot;=2CVerdana=2CGen=
+eva=2Csans-serif;color: #323D48;">
+                        <table style=3D"margin-left:auto;margin-right:auto=
+;border-collapse:separate;border-spacing:16px;">
+                          <tr>
+                            <td style=3D"width: 262px;height: 280px;text-a=
+lign: center;line-height: 1.6;font-size: 16px;font-family: &quot;Contax Pr=
+o&quot;=2C&quot;ContaxPro45Lig&quot;=2CVerdana=2CGeneva=2Csans-serif;color=
+: #323D48;">
+                              <a href=3D"#" target=3D"_blank" style=3D"tex=
+t-decoration: none;color: #323D48;"><a href=3D"https://roli.us6.list-manag=
+e.com/track/click?u=3Dde5b31d43bd17b6dd173ed2b4&id=3D9a695fbfad&e=3D=
+87db4d35bb" target=3D"_blank" style=3D"text-decoration: none;color: #323D48;"><=
+img data-file-id=3D"1358985" height=3D"277" src=3D"https://gallery.mailchi=
+mp.com/de5b31d43bd17b6dd173ed2b4/images/7baefca1-83e4-418a-86b2-b07387e953=
+b4.jpg" style=3D"border: 0px  ; width: 260px; height: 277px; margin: 0px;"=
+ width=3D"260"></a></a>
+                            </td>
+                            <td style=3D"width: 262px;height: 280px;text-a=
+lign: center;line-height: 1.6;font-size: 16px;font-family: &quot;Contax Pr=
+o&quot;=2C&quot;ContaxPro45Lig&quot;=2CVerdana=2CGeneva=2Csans-serif;color=
+: #323D48;">
+                              <a href=3D"#" target=3D"_blank" style=3D"tex=
+t-decoration: none;color: #323D48;"><a href=3D"https://roli.us6.list-manag=
+e.com/track/click?u=3Dde5b31d43bd17b6dd173ed2b4&id=3D66ad0c14c4&e=3D=
+87db4d35bb" target=3D"_blank" style=3D"text-decoration: none;color: #323D48;"><=
+img data-file-id=3D"1358981" height=3D"277" src=3D"https://gallery.mailchi=
+mp.com/de5b31d43bd17b6dd173ed2b4/images/eee5e09f-5d1e-4635-8bf4-99c5483cdf=
+83.jpg" style=3D"border: 0px  ; width: 260px; height: 277px; margin: 0px;"=
+ width=3D"260"></a></a>
+                            </td>
+                          </tr>
+                        </table>
+                        <table style=3D"margin-left:auto;margin-right:auto=
+;border-collapse:separate;border-spacing:16px;">
+                          <tr>
+                            <td style=3D"width: 542px;height: 56px;backgro=
+und-color: #9b9b9b;text-align: center;color: #ffffff;font-size: 18px;line-=
+height: 1.6;font-family: &quot;Contax Pro&quot;=2C&quot;ContaxPro45Lig&quo=
+t;=2CVerdana=2CGeneva=2Csans-serif;" class=3D"mainbutton"><a href=3D"https=
+://roli.us6.list-manage.com/track/click?u=3Dde5b31d43bd17b6dd173ed2b4&id=
+=3De4944b88ee&e=3D87db4d35bb" target=3D"_blank" style=3D"text-decoration:=
+ none;color: #ffffff;">Explore the BLOCKS Collection</a></td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <!-- END CONTENT -->
+      <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"650=
+" style=3D"width:650px;min-width:650px;background-color:#000000;padding:10=
+px;" class=3D"footer" bgcolor=3D"#000000">
+        <tr>
+          <td align=3D"center" style=3D"line-height: 1.6;font-size: 11px;f=
+ont-family: 'Contax Pro'=2C ContaxPro45Lig=2C Verdana=2C Geneva=2C sans-se=
+rif;color: #aaaaaa;padding-bottom: 0;padding-right: 0;">
+            <table border=3D"0" cellpadding=3D"40" cellspacing=3D"0" width=
+=3D"600" style=3D"padding-bottom:30px;">
+              <tr>
+                <td style=3D"width: 40%;line-height: 1.6;font-size: 11px;f=
+ont-family: 'Contax Pro'=2C ContaxPro45Lig=2C Verdana=2C Geneva=2C sans-se=
+rif;color: #aaaaaa;padding-bottom: 0;padding-left: 0;padding-right: 0;" al=
+ign=3D"center" class=3D"footer-logo">
+                  <a href=3D"https://roli.us6.list-manage.com/track/click?=
+u=3Dde5b31d43bd17b6dd173ed2b4&id=3Db55a6834f8&e=3D87db4d35bb" style=3D"co=
+lor:#ffffff;text-decoration:none;"><img src=3D"https://d30pueezughrda.clou=
+dfront.net/email/roli-logotype-white.gif" alt=3D"ROLI.com" width=3D"132" h=
+eight=3D"48" style=3D"vertical-align: bottom;"></a>
+                </td>
+              </tr>
+              <tr>
+                <td align=3D"center" style=3D"padding-left: 0;line-height:=
+ 1.6;font-size: 11px;font-family: 'Contax Pro'=2C ContaxPro45Lig=2C Verdan=
+a=2C Geneva=2C sans-serif;color: #aaaaaa;padding-bottom: 0;padding-right:=
+ 0;">
+                  <table border=3D"0" cellpadding=3D"0" cellspacing=3D"5"=
+ align=3D"center" width=3D"40%">
+                    <tr>
+                      <td align=3D"center" style=3D"line-height: 1.6;font-=
+size: 12px;font-family: 'Contax Pro'=2C ContaxPro45Lig=2C Verdana=2C Genev=
+a=2C sans-serif;color: #aaaaaa;padding-right: 0;">
+                        <a href=3D"https://roli.us6.list-manage.com/track/=
+click?u=3Dde5b31d43bd17b6dd173ed2b4&id=3D402106bc41&e=3D87db4d35bb" title=
+=3D"Facebook" style=3D"text-decoration:none;color:#eeeeee;"><img src=3D"ht=
+tps://d30pueezughrda.cloudfront.net/email/social-facebook-white.gif" width=
+=3D"26" height=3D"22" alt=3D"Facebook"></a>
+                      </td>
+                      <td align=3D"center" style=3D"line-height: 1.6;font-=
+size: 12px;font-family: 'Contax Pro'=2C ContaxPro45Lig=2C Verdana=2C Genev=
+a=2C sans-serif;color: #aaaaaa;padding-right: 0;">
+                        <a href=3D"https://roli.us6.list-manage.com/track/=
+click?u=3Dde5b31d43bd17b6dd173ed2b4&id=3D4d6b2394e3&e=3D87db4d35bb" title=
+=3D"Twitter" style=3D"text-decoration:none;color:#eeeeee;"><img src=3D"htt=
+ps://d30pueezughrda.cloudfront.net/email/social-twitter-white.gif" width=
+=3D"26" height=3D"22" alt=3D"Twitter"></a>
+                      </td>
+                      <td align=3D"center" style=3D"line-height: 1.6;font-=
+size: 12px;font-family: 'Contax Pro'=2C ContaxPro45Lig=2C Verdana=2C Genev=
+a=2C sans-serif;color: #aaaaaa;padding-right: 0;">
+                        <a href=3D"https://roli.us6.list-manage.com/track/=
+click?u=3Dde5b31d43bd17b6dd173ed2b4&id=3D7bb878f33b&e=3D87db4d35bb" title=
+=3D"Youtube" style=3D"text-decoration:none;color:#eeeeee;"><img src=3D"htt=
+ps://d30pueezughrda.cloudfront.net/email/social-youtube-white.gif" width=
+=3D"26" height=3D"22" alt=3D"Youtube"></a>
+                      </td>
+                      <td align=3D"center" style=3D"line-height: 1.6;font-=
+size: 12px;font-family: 'Contax Pro'=2C ContaxPro45Lig=2C Verdana=2C Genev=
+a=2C sans-serif;color: #aaaaaa;padding-right: 0;">
+                        <a href=3D"https://roli.us6.list-manage.com/track/=
+click?u=3Dde5b31d43bd17b6dd173ed2b4&id=3D1bde98a1f7&e=3D87db4d35bb" title=
+=3D"Instagram" style=3D"text-decoration:none;color:#eeeeee;"><img src=3D"h=
+ttps://d30pueezughrda.cloudfront.net/email/social-instagram-white.gif" wid=
+th=3D"26" height=3D"22" alt=3D"Instagram"></a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan=3D"4" style=3D"line-height: 1.6;font-siz=
+e: 12px;font-family: 'Contax Pro'=2C ContaxPro45Lig=2C Verdana=2C Geneva=
+=2C sans-serif;color: #aaaaaa;padding-right: 0;">
+                        <p align=3D"center"><a href=3D"https://roli.us6.li=
+st-manage.com/unsubscribe?u=3Dde5b31d43bd17b6dd173ed2b4&id=3D0b59ea513b&e=
+=3D87db4d35bb&c=3D9a296e9585" style=3D"text-decoration:none;color:#eeeeee;">=
+Unsubscribe</a>
+                      </p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+    <table border=3D"0" cellpadding=3D"0" style=3D"width:650px;min-width:6=
+50px;background-color:#d1d3d3;padding:10px;" bgcolor=3D"#d1d3d3" cellspaci=
+ng=3D"0" width=3D"650" class=3D"copyright">
+      <tr>
+        <td style=3D"line-height:1.6;font-size:16px;font-family:'Contax Pr=
+o'=2C ContaxPro45Lig=2C Verdana=2C Geneva=2C sans-serif;color:#323D48;">
+          <table class=3D"sub-footer" align=3D"center" style=3D"text-align=
+:center;">
+            <tr>
+              <td style=3D"text-align:center;font-size:13px;line-height:1.=
+6;font-family:'Contax Pro'=2C ContaxPro45Lig=2C Verdana=2C Geneva=2C sans-=
+serif;color:#4c4c4c;" align=3D"center">Copyright =C2=A9 2017 ROLI. All rig=
+hts reserved.</td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<img src=3D"https://roli.us6.list-manage.com/track/open.php?u=3Dde5b31d43b=
+d17b6dd173ed2b4&id=3D9a296e9585&e=3D87db4d35bb" height=3D"1" width=3D"1">=
+</body>
+</html>
+--_----------=_MCPart_1215980574--
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>date-last-viewed</key>
+	<integer>0</integer>
+	<key>date-received</key>
+	<integer>1509037013</integer>
+	<key>flags</key>
+	<integer>8590195712</integer>
+	<key>remote-id</key>
+	<string>4548</string>
+</dict>
+</plist>

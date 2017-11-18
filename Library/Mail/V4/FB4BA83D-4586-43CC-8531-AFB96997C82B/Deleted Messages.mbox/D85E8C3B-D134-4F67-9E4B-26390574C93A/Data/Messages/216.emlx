@@ -1,0 +1,2330 @@
+175625    
+Return-path: <bounces@alerts.trulia.com>
+Received: from st11p00im-smtpin009.mac.com ([17.172.80.58])
+ by ms60015.mac.com (Oracle Communications Messaging Server 8.0.1.2.20170607
+ 64bit (built Jun  7 2017)) with ESMTP id <0OY700CCX1OASLA0@ms60015.mac.com>
+ for austindreier@icloud.com; Sat, 21 Oct 2017 22:12:10 +0000 (GMT)
+Original-recipient: rfc822;austindreier@icloud.com
+Received: from mta1a3.update.trulia.com
+ (mta1a3.update.trulia.com [52.36.50.254]) by st11p00im-smtpin009.me.com
+ (Oracle Communications Messaging Server 8.0.1.2.20170607 64bit (built Jun  7
+ 2017)) with ESMTPS id <0OY7004X91O3M5X7@st11p00im-smtpin009.me.com> for
+ austindreier@icloud.com (ORCPT austindreier@icloud.com); Sat,
+ 21 Oct 2017 22:12:10 +0000 (GMT)
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 spamscore=0
+ clxscore=62 suspectscore=97 malwarescore=0 phishscore=0 adultscore=0
+ bulkscore=100 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.0.1-1707230000 definitions=main-1710210323
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10432:,,
+ definitions=2017-10-21_06:,, signatures=0
+Authentication-results: st11p00mm-dmarcmilter004.me.com; dmarc=pass
+ header.from=alerts.trulia.com
+Authentication-results: st11p00mm-spfmilter009.mac.com; spf=pass
+ (st11p00mm-spfmilter009.mac.com: domain of bounces@alerts.trulia.com
+ designates 52.36.50.254 as permitted sender)
+ smtp.mailfrom=bounces@alerts.trulia.com;
+Received-SPF: pass (st11p00mm-spfmilter009.mac.com: domain of
+ bounces@alerts.trulia.com designates 52.36.50.254 as permitted sender)
+ receiver=st11p00mm-spfmilter009.mac.com; client-ip=52.36.50.254;
+ helo=mta1a3.update.trulia.com; envelope-from=bounces@alerts.trulia.com;
+Authentication-results: st11p00mm-dkimmilter005.mac.com;	dkim=pass (1024-bit
+ key) header.d=alerts.trulia.com header.i=@alerts.trulia.com header.b=1QLfG6i/;
+	dkim-adsp=pass
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=alerts.trulia.com;
+	s=scph0117; t=1508623920; i=@alerts.trulia.com;
+	bh=QWxgjCWdfKWhQW3CVG7bt1CNbGo/Z3qw5pL2EZI6xLY=;
+	h=To:Message-ID:Date:Content-Type:Subject:From;
+	b=1QLfG6i/8uYO5DzHTIbQ3IJIxUL0S7JOMTI/GIPdgmBozGgKtGxeRU3mOnciJp6p7
+ 8Fl92LKNi6WP2uiJvARRwhLDlEUjI1r4aWIB5H4HkTOnHfK3adHK8AXJIDwTYmL/v6
+ GPJb0vSeSBoyJh8XqHPfJSKwlMHrSsEdKjJ+RteE=
+To: austindreier@icloud.com
+Message-id: <14.DF.06032.036CBE95@c.plat1.trulia.aws-usw2c.prd.sparkpost>
+Date: Sat, 21 Oct 2017 22:12:00 +0000
+Content-type: multipart/alternative;
+ boundary="_----O2SzLMCiPikTL3baElrWsg===_E0/DF-06032-036CBE95"
+MIME-version: 1.0
+guid:
+ dXNlcl9pZD00Mzk1MjA2NyZjb21tc1BsYXRmb3JtPWVtdjImZ3VpZD0xNTA4NTk4OTQ1MDU0Xzg3ZjcyZjA2YjNkNDM1MGQ4YWY1NWZmNGUyYzRjOWQ4X2lwLTE3Mi0xOC0yNS0xNTAmZW1haWxfdHlwZV9pZD0yNjcmZW1haWw9YXVzdGluZHJlaWVyQGljbG91ZC5jb20=
+Subject: 7 new rentals were just listed in Los Angeles, CA and more
+From: Trulia <no-reply@alerts.trulia.com>
+Reply-to: no-reply@alerts.trulia.com
+Feedback-ID: 43952067:267:mta:trulia
+List-Unsubscribe:
+ <mailto:unsubscribe@update.trulia.com?subject=unsubscribe:E1xP8Xb-FOImELb3vogdvAw75hUtiTUUdphskE54JpA~|eyAicmNwdF90byI6ICJhdXN0aW5kcmVpZXJAaWNsb3VkLmNvbSIsICJyY3B0X21ldGEiOiAie1wiZ3VpZFwiOlwiZFhObGNsOXBaRDAwTXprMU1qQTJOeVpqYjIxdGMxQnNZWFJtYjNKdFBXVnRkakltWjNWcFpEMHhOVEE0TlRrNE9UUTFNRFUwWHpnM1pqY3laakEyWWpOa05ETTFNR1E0WVdZMU5XWm1OR1V5WXpSak9XUTRYMmx3TFRFM01pMHhPQzB5TlMweE5UQW1aVzFoYVd4ZmRIbHdaVjlwWkQweU5qY21aVzFoYVd3OVlYVnpkR2x1WkhKbGFXVnlRR2xqYkc5MVpDNWpiMjA9XCIsXCJiaW5kaW5nXCI6XCJhbGVydHNcIixcInByb3BlcnR5X2NvdW50XCI6XCI3XCJ9IiwgInRlbmFudF9pZCI6ICJ0cnVsaWEiLCAidHJhbnNtaXNzaW9uX2lkIjogIjY2NjkxOTIxOTU4MTQ2NDgyIiwgImNhbXBhaWduX2lkIjogIjI2NyIsICJtYWlsZnJvbSI6ICJib3VuY2VzQGFsZXJ0cy50cnVsaWEuY29tIiwgImN1c3RvbWVyX2lkIjogIjEiLCAibWVzc2FnZV9pZCI6ICIwMDAzMzBjNmViNTk5MDE3NDFmZCIsICJzdWJhY2NvdW50X2lkIjogIjAiLCAiZnJpZW5kbHlfZnJvbSI6ICJuby1yZXBseUBhbGVydHMudHJ1bGlhLmNvbSIgfQ~~>
+List-Id: <trulia-1-0>
+x-icloud-spam-score: 3331331
+ f=alerts.trulia.com;e=alerts.trulia.com;is=yes;ir=no;spf=pass;dkim=pass;dmarc=pass/none/none;gdwl=absent;pps=ham;clxs=ham;clxw=neutral
+X-CLX-Spam: false
+X-CLX-UnSpecialScore: None
+X-CLX-Score: 62
+X-CLX-UShades: None
+X-CLX-Shades: None
+X-MANTSH: 1TEIXWV4bG1oaGkNHB1BeSF8aHxgeGR0aGxEKTEMXGx0EGx0YBBkfBBgSEBseGh8
+ aEQpMWRccGBEKWU0XZEVETxEKWUkXGnEaEBp3Bh4YcRsaEhocEB4aHRx3BhgaBhoRClleF2trZ
+ hEKQ04XU01eEh5bTV9Cc2kdW2hpTVxrTxNYSXxiXUFzZF1Sa18RClhcFxkEGgQZGAdNGU4TTxM
+ ZGAUbHQQbHRgEEhkEGxwQGx4aHxoRCl5ZF3hjfVh5EQpNXBcaEQpMWhd7ZUFBXREKRVkXcxEKT
+ F8XegUFBQUFBQUFE1sRCkNaFx8YBBkcBB8aBBgfHhEKQl4XGxEKQkYXa0xjUl9vfGFufGYRCkJ
+ HF2J9SVBmSRlTaUVnEQpCXBcbEQpCSxdheUtkWV58c15NZxEKQkUXYUZDGGUca3xiAW8RCkJOF
+ 2NPHh54cwFcWlp8EQpCTBdsWxpeZ21kSV4cexEKQmwXbENjfWlZa1ABTxkRCkJAF2N9XV9yGmw
+ bWBtdEQpCWBduRx0bTmRhRRsSQBEKTV4XGxEKcGcXZlJJaWtJSXNQWWMQGhEKcGgXYhtTRBJQR
+ kB+XxsQGhEKcGgXbn1eThkBYE5mbBMQGhEKcGgXbH55eBMZXGVNcBkQGhEKcGgXYExmAUNMaB9
+ HYmgQHBoRCnBoF2NfTV8SaVpTZWdpEB4aEQpwfxdgfVpSenhpExNtHBAcGBEKcF8XbkVlHGQSf
+ 0ZEeloQBxgeEQpwfRdvXxsSTWdlRVlCBRAaEQpwfRdoQFMae2FpfnkTRhAaEQpwfRdra25mTXN
+ lRUl5ExAaEQpwfRdjHWZfExsbGkh8HhAaEQpwfRdgc0ZhXnpmeUBoYxAaEQpwfRdjHF5QeWweU
+ 29QcxAaEQpwfRdnZ11kRFpYeB18YxAaEQpwfxdmXRlMbVgFTRlPRBAYHREKcF8Xbk1aaWQFeEl
+ YTHoQGhEKcH0XemhCSRlSSW1lTl4QGhEKcH0Xa2xnWnAFW2ht
+x-dmarc-info: pass=pass; dmarc-policy=none; s=r1; d=r1
+x-dmarc-policy: v=DMARC1; p=none; rua=mailto:dmarc_agg@dmarc.250ok.net;
+ ruf=mailto:dmarc_fr@dmarc.250ok.net; fo=1; pct=100; rf=afrf
+X-MSFBL: a/vQXT0/+6YjrUI5kM+03N8O71DU42PVM8HMJU71KvE=|eyJzdWJhY2NvdW50X2l
+	kIjoiMCIsInRlbXBsYXRlX3ZlcnNpb24iOiIwIiwiZyI6ImFsZXJ0cyIsIm1lc3N
+	hZ2VfaWQiOiIwMDAzMzBjNmViNTk5MDE3NDFmZCIsInRlbmFudF9pZCI6InRydWx
+	pYSIsImNhbXBhaWduX2lkIjoiMjY3IiwiZnJpZW5kbHlfZnJvbSI6Im5vLXJlcGx
+	5QGFsZXJ0cy50cnVsaWEuY29tIiwicmNwdF90YWdzIjpbIF0sInIiOiJhdXN0aW5
+	kcmVpZXJAaWNsb3VkLmNvbSIsImN1c3RvbWVyX2lkIjoiMSIsInJjcHRfbWV0YSI
+	6eyAiZ3VpZCI6ICJkWE5sY2w5cFpEMDBNemsxTWpBMk55WmpiMjF0YzFCc1lYUm1
+	iM0p0UFdWdGRqSW1aM1ZwWkQweE5UQTROVGs0T1RRMU1EVTBYemczWmpjeVpqQTJ
+	Zak5rTkRNMU1HUTRZV1kxTldabU5HVXlZelJqT1dRNFgybHdMVEUzTWkweE9DMHl
+	OUzB4TlRBbVpXMWhhV3hmZEhsd1pWOXBaRDB5TmpjbVpXMWhhV3c5WVhWemRHbHV
+	aSEpsYVdWeVFHbGpiRzkxWkM1amIyMD0iLCAiYmluZGluZyI6ICJhbGVydHMiLCA
+	icHJvcGVydHlfY291bnQiOiAiNyIgfSwiYiI6ImlwXzUyLjM2LjUwLjI1NCIsInR
+	lbXBsYXRlX2lkIjoidGVtcGxhdGVfNjY2OTE5MjE5NTgxNDY0ODIiLCJ0cmFuc21
+	pc3Npb25faWQiOiI2NjY5MTkyMTk1ODE0NjQ4MiJ9
+X-Transport: web
+X-Trulia-Platform: emv2
+X-Sent-Using: SPARKPOST-API
+X-Trulia-Campaign: 267
+X-Trulia-PayloadId:
+ 1508598945054_87f72f06b3d4350d8af55ff4e2c4c9d8_ip-172-18-25-150
+
+--_----O2SzLMCiPikTL3baElrWsg===_E0/DF-06032-036CBE95
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="UTF-8"
+
+----------------------------------------------
+
+----------------------------------------------
+
+
+Suggested New Homes
+Check out these rentals. There are no new homes that match your saved search.
+..............................................
+
+    -----------------------------------
+$850
+4 bd   2 ba   5 photo/s
+ Address Not Disclosed 
+: https://www.trulia.com/handshake/?alat=b55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7&alrt=951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a&ecampaign=eml|frb|con_day_infrentsearchfill_bk_emv2|group_3&return=https%3A%2F%2Fwww.trulia.com%2Femail%2Feml%7Cfrb%7Ccon_day_infrentsearchfill_bk_emv2%7Cgroup_3%2Fwww.trulia.com%2Frental%2F4037331856%3Falat%3Db55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7%26alrt%3D951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a
+-----------------------------------
+
+
+
+    -----------------------------------
+$900
+3 bd   2 ba   5 photo/s
+ Address Not Disclosed 
+: https://www.trulia.com/handshake/?alat=b55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7&alrt=951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a&ecampaign=eml|frb|con_day_infrentsearchfill_bk_emv2|group_3&return=https%3A%2F%2Fwww.trulia.com%2Femail%2Feml%7Cfrb%7Ccon_day_infrentsearchfill_bk_emv2%7Cgroup_3%2Fwww.trulia.com%2Frental%2F4035255622%3Falat%3Db55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7%26alrt%3D951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a
+-----------------------------------
+
+
+
+    -----------------------------------
+$925
+Studio   1 ba   8 photo/s
+ Address Not Disclosed 
+: https://www.trulia.com/handshake/?alat=b55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7&alrt=951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a&ecampaign=eml|frb|con_day_infrentsearchfill_bk_emv2|group_3&return=https%3A%2F%2Fwww.trulia.com%2Femail%2Feml%7Cfrb%7Ccon_day_infrentsearchfill_bk_emv2%7Cgroup_3%2Fwww.trulia.com%2Frental%2F4010294185%3Falat%3Db55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7%26alrt%3D951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a
+-----------------------------------
+
+
+
+    -----------------------------------
+$850
+2 bd   1 ba   4 photo/s
+6129 Alcott St
+    Los Angeles, CA (Pico - Robertson)
+
+: https://www.trulia.com/handshake/?alat=b55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7&alrt=951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a&ecampaign=eml|frb|con_day_infrentsearchfill_bk_emv2|group_3&return=https%3A%2F%2Fwww.trulia.com%2Femail%2Feml%7Cfrb%7Ccon_day_infrentsearchfill_bk_emv2%7Cgroup_3%2Fwww.trulia.com%2Frental%2F4037296642%3Falat%3Db55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7%26alrt%3D951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a
+-----------------------------------
+
+
+
+    -----------------------------------
+$1,100
+4 bd   2 ba   18 photo/s
+ Address Not Disclosed 
+: https://www.trulia.com/handshake/?alat=b55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7&alrt=951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a&ecampaign=eml|frb|con_day_infrentsearchfill_bk_emv2|group_3&return=https%3A%2F%2Fwww.trulia.com%2Femail%2Feml%7Cfrb%7Ccon_day_infrentsearchfill_bk_emv2%7Cgroup_3%2Fwww.trulia.com%2Frental%2F4036769412%3Falat%3Db55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7%26alrt%3D951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a
+-----------------------------------
+
+
+
+    -----------------------------------
+$1,050
+Studio   1 ba   18 photo/s
+ Address Not Disclosed 
+: https://www.trulia.com/handshake/?alat=b55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7&alrt=951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a&ecampaign=eml|frb|con_day_infrentsearchfill_bk_emv2|group_3&return=https%3A%2F%2Fwww.trulia.com%2Femail%2Feml%7Cfrb%7Ccon_day_infrentsearchfill_bk_emv2%7Cgroup_3%2Fwww.trulia.com%2Frental%2F4037325580%3Falat%3Db55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7%26alrt%3D951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a
+-----------------------------------
+
+
+
+    -----------------------------------
+$900
+2 bd   1 ba   2 photo/s
+6944 La Tijera Blvd
+    Los Angeles, CA 
+
+: https://www.trulia.com/handshake/?alat=b55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7&alrt=951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a&ecampaign=eml|frb|con_day_infrentsearchfill_bk_emv2|group_3&return=https%3A%2F%2Fwww.trulia.com%2Femail%2Feml%7Cfrb%7Ccon_day_infrentsearchfill_bk_emv2%7Cgroup_3%2Fwww.trulia.com%2Frental%2F4037337988%3Falat%3Db55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7%26alrt%3D951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a
+-----------------------------------
+
+
+
+----------------------------------------------
+Know exactly what you want?
+Save a search:  on Trulia
+to have new homes delivered to your inbox every day.
+Comments, compliments or complaints? Let us know:
+http://www.trulia.com/leave_feedback
+
+This email was sent to austindreier@icloud.com.
+If you would like to unsubscribe from this email, follow this link
+https://www.trulia.com/handshake/?alat=b55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7&alrt=951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a&ecampaign=eml|frb|con_day_infrentsearchfill_bk_emv2|group_3&return=https%3A%2F%2Fwww.trulia.com%2Funsubscribe%3Fuid%3D43952067%26auth%3D226c87ed06%26ecampaign%3Deml%257Cfrb%257Ccon_day_infrentsearchfill_bk_emv2%257Cgroup_3%26email%3Daustindreier%2540icloud.com%26et%3D267%3Falat%3Db55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7%26alrt%3D951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a
+
+_________________________________________________
+
+Trulia, Inc. | 535 Mission Street, Suite 700, San Francisco, CA 94105 |
+
+https://www.trulia.com/handshake/?alat=b55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7&alrt=951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a&ecampaign=eml|frb|con_day_infrentsearchfill_bk_emv2|group_3&return=https%3A%2F%2Fwww.trulia.com%2Femail%2Feml%7Cfrb%7Ccon_day_infrentsearchfill_bk_emv2%7Cgroup_3%2Fwww.trulia.com%2Fprivacy%3Falat%3Db55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7%26alrt%3D951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a
+
+
+
+--_----O2SzLMCiPikTL3baElrWsg===_E0/DF-06032-036CBE95
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset="UTF-8"
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.=
+w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">=0A<html xmlns=3D"http://www.=
+w3.org/1999/xhtml">=0A<head>=0A    <meta http-equiv=3D"Content-Type" conten=
+t=3D"text/html; charset=3DUTF-8"/>=0A    <!--[if !mso]><!-->=0A    <meta ht=
+tp-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge"/>=0A    <!--<![endif]-->=
+=0A    <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-sca=
+le=3D1.0"/>=0A    <title></title>=0A    <!--[if (gte mso 9)|(IE)]>=0A    <s=
+tyle type=3D"text/css">=0A        table {=0A            border-collapse: co=
+llapse;=0A        }=0A    </style>=0A    <![endif]-->=0A=0A    <style type=
+=3D"text/css">=0A        @media screen {=0A        @import url(https://stat=
+ic.trulia-cdn.com/images/fonts/PostGroteskBook_20150623/PostGrotesk-Book.ot=
+f);=0A            @font-face {=0A                font-family: 'PostGroteskB=
+ook';=0A                font-weight: 400;=0A                src: url('https=
+://static.trulia-cdn.com/images/fonts/PostGroteskBook_20150623/PostGrotesk-=
+Book.eot');=0A                src: url('https://static.trulia-cdn.com/image=
+s/fonts/PostGroteskBook_20150623/PostGrotesk-Book.eot') format('eot'),=0A  =
+              url('https://static.trulia-cdn.com/images/fonts/PostGroteskBo=
+ok_20150623/PostGrotesk-Book.woff') format('woff2'),=0A                url(=
+'https://static.trulia-cdn.com/images/fonts/PostGroteskBook_20150623/PostGr=
+otesk-Book.woff') format('woff'),=0A                url('https://static.tru=
+lia-cdn.com/images/fonts/PostGroteskBook_20150623/PostGrotesk-Book.svg') fo=
+rmat('svg'),=0A                url('https://static.trulia-cdn.com/images/fo=
+nts/PostGroteskBook_20150623/PostGrotesk-Book.otf') format('opentype');=0A =
+           }=0A=0A        @import url(https://static.trulia-cdn.com/images/=
+fonts/PostGroteskMedium/PostGrotesk-Medium.otf);=0A            @font-face {=
+=0A                font-family: 'PostGroteskMedium';=0A                font=
+-weight: 500;=0A                src: url('https://static.trulia-cdn.com/ima=
+ges/fonts/PostGroteskMedium/PostGrotesk-Medium.eot');=0A                src=
+: url('https://static.trulia-cdn.com/images/fonts/PostGroteskMedium/PostGro=
+tesk-Medium.eot') format('eot'),=0A                url('https://static.trul=
+ia-cdn.com/images/fonts/PostGroteskMedium/PostGrotesk-Medium.woff') format(=
+'woff2'),=0A                url('https://static.trulia-cdn.com/images/fonts=
+/PostGroteskMedium/PostGrotesk-Medium.woff') format('woff'),=0A            =
+    url('https://static.trulia-cdn.com/images/fonts/PostGroteskMedium/PostG=
+rotesk-Medium.svg') format('svg'),=0A                url('https://static.tr=
+ulia-cdn.com/images/fonts/PostGroteskMedium/PostGrotesk-Medium.otf') format=
+('opentype');=0A            }=0A        }=0A=0A        /*Media Queries*/=0A=
+        @media screen and (min-width: 320px) and (max-width: 599px) {=0A   =
+         .hide-on-mobile {=0A                display: none;=0A            }=
+=0A        }=0A=0A        @media screen and (min-width: 320px) and (max-wid=
+th: 375px) {=0A            .column {=0A                max-width: 100% !imp=
+ortant;=0A            }=0A=0A            .column-sixty {=0A                =
+width: 60% !important;=0A            }=0A=0A            .column-sixty img {=
+=0A                width: 100% !important;=0A                height: 140px =
+!important;=0A            }=0A=0A            .column-forty {=0A            =
+    width: 40% !important;=0A            }=0A=0A            .column-forty i=
+mg {=0A                width: 100% !important;=0A                height: 14=
+0px !important;=0A            }=0A=0A            .fullwidth {=0A           =
+     width: 100% !important;=0A                height: auto !important;=0A =
+           }=0A        }=0A=0A        @media screen and (min-width: 375px) =
+and (max-width: 480px) {=0A            .column {=0A                max-widt=
+h: 100% !important;=0A            }=0A=0A            .column-sixty {=0A    =
+            width: 60% !important;=0A            }=0A=0A            .column=
+-sixty img {=0A                width: 100% !important;=0A                he=
+ight: 160px !important;=0A            }=0A=0A            .column-forty {=0A=
+                width: 40% !important;=0A            }=0A=0A            .co=
+lumn-forty img {=0A                width: 100% !important;=0A              =
+  height: 160px !important;=0A            }=0A=0A            .fullwidth {=
+=0A                width: 100% !important;=0A                height: auto !=
+important;=0A            }=0A        }=0A=0A        @media only screen and =
+(min-width: 414px) and (max-width: 599px) {=0A            .column {=0A     =
+           max-width: 100% !important;=0A            }=0A=0A            .co=
+lumn-sixty {=0A                width: 60% !important;=0A            }=0A=0A=
+            .column-sixty img {=0A                width: 220px !important;=
+=0A                height: 170px !important;=0A            }=0A=0A         =
+   .column-forty {=0A                width: 40% !important;=0A            }=
+=0A=0A            .column-forty img {=0A                width: 100% !import=
+ant;=0A                height: 170px !important;=0A            }=0A=0A     =
+       .fullwidth {=0A                width: 100% !important;=0A           =
+     height: auto !important;=0A            }=0A        }=0A=0A    </style>=
+=0A</head>=0A=0A=0A<body style=3D"width: 100%; height: 100%; margin: 0 !imp=
+ortant; padding: 0 !important; background-color: #F5F6F7; -webkit-text-size=
+-adjust: 100%;"=0A      align=3D"left">=0A<table cellpadding=3D"0" cellspac=
+ing=3D"0"=0A       style=3D"width: 100%; height: 100%; margin: 0 !important=
+; padding: 0 !important; background-color: #F5F6F7; -webkit-text-size-adjus=
+t: 100%;"=0A       align=3D"left">=0A    <tr>=0A    <td>=0A        <table c=
+ellspacing=3D"0" cellpadding=3D"0" border=3D"0" width=3D"100%">=0A         =
+   <tr>=0A                <td height=3D"5"=0A                    style=3D"h=
+eight: 5px;=0A                            margin:0px;=0A                   =
+         font-size: 0px;=0A                            line-height: 1px;=0A=
+                            background-color: #20C063;=0A                  =
+          color: #20C063;">Check out 4110 Prospect Ave and more</td>=0A    =
+        </tr>=0A        </table>=0A    </td>=0A</tr>=0A=0A    <tr>=0A      =
+  <td>=0A            <!--[if (gte mso 9)|(IE)]>=0A            <center>=0A  =
+              <table align=3D"center" width=3D"620" cellpadding=3D"0" cells=
+pacing=3D"0"=0A                       style=3D"width: 620px;">=0A          =
+          <tr>=0A                        <td width=3D"620px" style=3D"width=
+:620px;">=0A            <![endif]-->=0A            <table style=3D"margin:a=
+uto; max-width:620px; width: 100%; background-color: #F5F6F7; padding-top: =
+0px;"=0A                   align=3D"center">=0A                <tr>=0A     =
+               <td style=3D"padding: 10px;">=0A                        <tab=
+le width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"10"=0A     =
+                          style=3D"margin-right:0; max-width:600px; width:1=
+00%"=0A                               bgcolor=3D"#F5F6F7">=0A              =
+              <tr>=0A                                <td>=0A               =
+                     <table border=3D"0" cellspacing=3D"0" cellpadding=3D"0=
+" align=3D"center" width=3D"100%">=0A    <tr>=0A        <td>=0A            =
+<a href=3D"https://et.trulia.com/tracker=3Ftype=3Dclick&emailid=3Daustindre=
+ier@icloud.com&userid=3DdXNlcl9pZD00Mzk1MjA2NyZjb21tc1BsYXRmb3JtPWVtdjImZ3V=
+pZD0xNTA4NTk4OTQ1MDU0Xzg3ZjcyZjA2YjNkNDM1MGQ4YWY1NWZmNGUyYzRjOWQ4X2lwLTE3Mi=
+0xOC0yNS0xNTAmZW1haWxfdHlwZV9pZD0yNjcmZW1haWw9YXVzdGluZHJlaWVyQGljbG91ZC5jb=
+20=3D&extra=3DMultivariateId=3D&&&2000&&&https://www.trulia.com" id=3D"w_lo=
+go">=0A                <img width=3D"95"=0A                     src=3D"http=
+://static.trulia-cdn.com/images/email/trulia_logos/2016_trulia_logo_rgb_reg=
+ister_172x46.png"=0A                     alt=3D"Trulia"=0A                 =
+    align=3D"left"=0A                     border=3D"0"=0A                  =
+   style=3D"font-size: 16px;=0A                             font-family: He=
+lvetica, Arial, sans-serif;=0A                             color: #20C063;"=
+>=0A            </a>=0A        </td>=0A    </tr>=0A    <tr>=0A    <td  heig=
+ht=3D"10" style=3D"background-color:transparent;font-size: 10;line-height:1=
+px;padding-top: 0px;padding-bottom: 0px;">=0A        &nbsp;=0A    </td>=0A<=
+/tr>=0A=0A</table>=0A=0A                                </td>=0A           =
+                 </tr>=0A                            <tr style=3D"text-alig=
+n:;">=0A                                <td id=3D"tp">=0A                  =
+                  <IMG SRC=3D"https://et.trulia.com/tracker=3Ftype=3Dopen&a=
+mp;emailid=3Daustindreier@icloud.com&amp;userid=3DdXNlcl9pZD00Mzk1MjA2NyZjb=
+21tc1BsYXRmb3JtPWVtdjImZ3VpZD0xNTA4NTk4OTQ1MDU0Xzg3ZjcyZjA2YjNkNDM1MGQ4YWY1=
+NWZmNGUyYzRjOWQ4X2lwLTE3Mi0xOC0yNS0xNTAmZW1haWxfdHlwZV9pZD0yNjcmZW1haWw9YXV=
+zdGluZHJlaWVyQGljbG91ZC5jb20=3D" WIDTH=3D"1" HEIGHT=3D"1" STYLE=3D"border-w=
+idth:0; border-style:hidden;display:none" alt=3D""/>=0A=0A                 =
+                   <table border=3D"0" cellspacing=3D"0" cellpadding=3D"0" =
+align=3D"center" width=3D"100%">=0A                                        =
+=0A=0A  =0A<tr align=3D"left">=0A    =0A    =0A    <td style=3D"color: #474=
+E52;=0A            display:inline;=0A            background-color: transpar=
+ent;=0A            font-family: PostGroteskMedium, Helvetica, Arial, sans-s=
+erif;=0A            font-weight: 500;=0A            font-size: 34px;=0A    =
+        text-align: left;=0A            letter-spacing: 0px;=0A            =
+line-height: 38px;=0A            padding-left: 0px;=0A            padding-r=
+ight: 0px;=0A            padding-top: 0px;=0A            padding-bottom: 0p=
+x;">=0A        Suggested New Homes=0A        =0A    </td>=0A</tr>=0A=0A=0A =
+ =0A    <tr>=0A    <td  height=3D"15" style=3D"background-color:transparent=
+;font-size: 15;line-height:1px;padding-top: 0px;padding-bottom: 0px;">=0A  =
+      &nbsp;=0A    </td>=0A</tr>=0A=0A=0A<tr align=3D"left">=0A    =0A    =
+=0A    <td style=3D"color: #474E52;=0A            display:inline;=0A       =
+     background-color: transparent;=0A            font-family: PostGroteskB=
+ook, Helvetica, Arial;=0A            font-weight: 300;=0A            font-s=
+ize: 16px;=0A            text-align: left;=0A            letter-spacing: 0p=
+x;=0A            line-height: 22px;=0A            padding-left: 0px;=0A    =
+        padding-right: 0px;=0A            padding-top: 0px;=0A            p=
+adding-bottom: 0px;">=0A        We don't have any matches for your saved se=
+arch today, but here are similar rentals we think you'll like.=0A        =
+=0A    </td>=0A</tr>=0A=0A    <tr>=0A    <td  height=3D"20" style=3D"backgr=
+ound-color:transparent;font-size: 20;line-height:1px;padding-top: 0px;paddi=
+ng-bottom: 0px;">=0A        &nbsp;=0A    </td>=0A</tr>=0A=0A=0A=0A=0A    =
+=0A  =0A=0A=0A=0A=0A=0A<!-- START Two Columns -->=0A<tr  >=0A    <td class=
+=3D"column"=0A        style=3D"padding: 0; font-size: 0; background-color: =
+#ffffff; width: 100%">=0A        <a  >=0A        <!--[if (gte mso 9)|(IE)]>=
+=0A        <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" width=3D=
+"600"=0A               style=3D"width:600px;">=0A            <tr>=0A       =
+         <td width=3D"355" style=3D"width: 355px;"> =0A        <![endif]-->=
+=0A        <div class=3D"column"=0A             style=3D"overflow:hidden; m=
+ax-width: 355px; width: 100%; display: inline-block; vertical-align: top;">=
+=0A            <table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpad=
+ding=3D"0"=0A                   style=3D"border-spacing: 0; font-family: 'P=
+ostGroteskBook', Helvetica, Arial, sans-serif;">=0A                <tr>=0A =
+                   <td style=3D"padding: 15px 15px 0px 15px; background-col=
+or: #ffffff">=0A=0A<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0">=
+=0A    <tr>=0A        <td >=0A            <table cellspacing=3D"0" cellpadd=
+ing=3D"0" width=3D"100%" border=3D"0">=0A    <tr valign=3D"top">=0A        =
+<td class=3D"column-sixty" valign=3D"middle"=0A    style=3D"width: 192px;=
+=0A            background-color: transparent;=0A            padding: 0px;">=
+=0A    =0A    <a href=3D"https://et.trulia.com/tracker=3Ftype=3Dclick&email=
+id=3Daustindreier@icloud.com&userid=3DdXNlcl9pZD00Mzk1MjA2NyZjb21tc1BsYXRmb=
+3JtPWVtdjImZ3VpZD0xNTA4NTk4OTQ1MDU0Xzg3ZjcyZjA2YjNkNDM1MGQ4YWY1NWZmNGUyYzRj=
+OWQ4X2lwLTE3Mi0xOC0yNS0xNTAmZW1haWxfdHlwZV9pZD0yNjcmZW1haWw9YXVzdGluZHJlaWV=
+yQGljbG91ZC5jb20=3D&extra=3DMultivariateId=3D&&&2000&&&https://www.trulia.c=
+om/handshake/=3Falat=3Db55264e32f803ed221d81f78145dd5914999c6de024a2b3c7848=
+5ba78cf85bd7&alrt=3D951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb02=
+27f7f4c0a&ecampaign=3Deml|frb|con_day_infrentsearchfill_bk_emv2|group_3&ret=
+urn=3Dhttps%3A%2F%2Fwww.trulia.com%2Femail%2Feml%7Cfrb%7Ccon_day_infrentsea=
+rchfill_bk_emv2%7Cgroup_3%2Fwww.trulia.com%2Frental%2F4037331856%3Falat%3Db=
+55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7%26alrt%3D95=
+1184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a" id=3Dw_imag=
+e0 title=3D"Property details">=0A        <img src=3D"https://thumbs.trulia-=
+cdn.com/pictures/thumbs_6/ps.109/7/3/b/b/picture-uh=3Dd4a78efd1c4d3f9f487a4=
+4306ec932-ps=3D73bb711aa149d6c966dcd7ae85b95.jpg"=0A             border=3D"=
+0"=0A             width=3D"195"=0A             height=3D"170"=0A           =
+  class=3D"fullwidth"=0A             alt=3D"Home Image"=0A             styl=
+e=3D"font-family: Helvetica, Arial, sans-serif;=0A                     font=
+-size: 14px;=0A                     color: #B1B6BB;=0A                     =
+border: 0;" />=0A    </a>=0A    =0A</td>=0A=0A        <td class=3D"column-f=
+orty" style=3D"width: 127px; background-color: transparent;">  =0A    =0A  =
+  <a href=3D"https://et.trulia.com/tracker=3Ftype=3Dclick&emailid=3Daustind=
+reier@icloud.com&userid=3DdXNlcl9pZD00Mzk1MjA2NyZjb21tc1BsYXRmb3JtPWVtdjImZ=
+3VpZD0xNTA4NTk4OTQ1MDU0Xzg3ZjcyZjA2YjNkNDM1MGQ4YWY1NWZmNGUyYzRjOWQ4X2lwLTE3=
+Mi0xOC0yNS0xNTAmZW1haWxfdHlwZV9pZD0yNjcmZW1haWw9YXVzdGluZHJlaWVyQGljbG91ZC5=
+jb20=3D&extra=3DMultivariateId=3D&&&2000&&&https://www.trulia.com/handshake=
+/=3Falat=3Db55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7=
+&alrt=3D951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a&ec=
+ampaign=3Deml|frb|con_day_infrentsearchfill_bk_emv2|group_3&return=3Dhttps%=
+3A%2F%2Fwww.trulia.com%2Femail%2Feml%7Cfrb%7Ccon_day_infrentsearchfill_bk_e=
+mv2%7Cgroup_3%2Fwww.trulia.com%2Frental%2F4037331856%3Falat%3Db55264e32f803=
+ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7%26alrt%3D951184f4c70cee=
+06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a#map" id=3Dw_map0 title=
+=3D"Property details">=0A        <img src=3D"https://maps.googleapis.com/ma=
+ps/api/staticmap=3Fmaptype=3Droadmap&client=3Dgme-zillowinc3&zoom=3D13&sens=
+or=3Dfalse&size=3D130x170&center=3D34.101536%2C-118.280785&markers=3Dicon%3=
+Ahttps%3A%2F%2Fstatic.trulia-cdn.com%2Fimages%2Fmap%2Fmarkers%2Ffor_rent.pn=
+g%7C34.101536%2C-118.280785&signature=3DsHPONq4AB3GnJ1p9CiMh8No9b8s=3D" bor=
+der=3D"0" width=3D"130" height=3D"170" class=3D"fullwidth" alt=3D"Map View"=
+ style=3D"font-family: Helvetica, Arial, sans-serif; font-size: 14px; color=
+: #B1B6BB; border: 0;  height: auto;" />=0A    </a>=0A    =0A</td>=0A=0A   =
+ </tr>=0A</table>=0A=0A        </td>=0A    </tr>=0A    <tr>=0A    <td  heig=
+ht=3D"15" style=3D"background-color:transparent;font-size: 15;line-height:1=
+px;padding-top: 0px;padding-bottom: 0px;">=0A        &nbsp;=0A    </td>=0A<=
+/tr>=0A=0A=0A    =0A        =0A<tr align=3D"left">=0A    =0A    =0A    <td =
+style=3D"color: #474E52;=0A            display:inline;=0A            backgr=
+ound-color: transparent;=0A            font-family: PostGroteskBook, Helvet=
+ica, Arial, san-serif;=0A            font-weight: 300;=0A            font-s=
+ize: 16px;=0A            text-align: center;=0A            letter-spacing: =
+0px;=0A            line-height: 18px;=0A            padding-left: 0px;=0A  =
+          padding-right: 0px;=0A            padding-top: 0px;=0A           =
+ padding-bottom: 0px;">=0A        =0A                <div align=3D"left" st=
+yle=3D"display:inline"><!--[if (gte mso 9)|(IE)]>=0A    <v:roundrect xmlns:=
+v=3D"urn:schemas-microsoft-com:vml" xmlns:w=3D"urn:schemas-microsoft-com:of=
+fice:word"=0A                 href=3D"https://et.trulia.com/tracker=3Ftype=
+=3Dclick&amp;emailid=3Daustindreier@icloud.com&amp;userid=3DdXNlcl9pZD00Mzk=
+1MjA2NyZjb21tc1BsYXRmb3JtPWVtdjImZ3VpZD0xNTA4NTk4OTQ1MDU0Xzg3ZjcyZjA2YjNkND=
+M1MGQ4YWY1NWZmNGUyYzRjOWQ4X2lwLTE3Mi0xOC0yNS0xNTAmZW1haWxfdHlwZV9pZD0yNjcmZ=
+W1haWw9YXVzdGluZHJlaWVyQGljbG91ZC5jb20=3D&amp;extra=3DMultivariateId=3D&amp=
+;&amp;&amp;2000&amp;&amp;&amp;https://www.trulia.com/handshake/=3Falat=3Db5=
+5264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7&alrt=3D95118=
+4f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a&ecampaign=3Deml=
+|frb|con_day_infrentsearchfill_bk_emv2|group_3&return=3Dhttps%3A%2F%2Fwww.t=
+rulia.com%2Femail%2Feml%7Cfrb%7Ccon_day_infrentsearchfill_bk_emv2%7Cgroup_3=
+%2Fwww.trulia.com%2Frental%2F4037331856%3Falat%3Db55264e32f803ed221d81f7814=
+5dd5914999c6de024a2b3c78485ba78cf85bd7%26alrt%3D951184f4c70cee06642d5bf437a=
+6e9715b1fe284c8181876066fb0227f7f4c0a#photo-1"=0A                 id=3D"w_b=
+utton0"=0A                 style=3D"height:44px;v-text-anchor:middle;width:=
+325px;" arcsize=3D"15%"=0A                 stroke=3D"f" fillcolor=3D"#20C06=
+3">=0A        <center>=0A    <![endif]-->=0A    <!--[if (gte mso 9)|(IE)]>=
+=0A    <a href=3D"https://et.trulia.com/tracker=3Ftype=3Dclick&amp;emailid=
+=3Daustindreier@icloud.com&amp;userid=3DdXNlcl9pZD00Mzk1MjA2NyZjb21tc1BsYXR=
+mb3JtPWVtdjImZ3VpZD0xNTA4NTk4OTQ1MDU0Xzg3ZjcyZjA2YjNkNDM1MGQ4YWY1NWZmNGUyYz=
+RjOWQ4X2lwLTE3Mi0xOC0yNS0xNTAmZW1haWxfdHlwZV9pZD0yNjcmZW1haWw9YXVzdGluZHJla=
+WVyQGljbG91ZC5jb20=3D&amp;extra=3DMultivariateId=3D&amp;&amp;&amp;2000&amp;=
+&amp;&amp;https://www.trulia.com/handshake/=3Falat=3Db55264e32f803ed221d81f=
+78145dd5914999c6de024a2b3c78485ba78cf85bd7&alrt=3D951184f4c70cee06642d5bf43=
+7a6e9715b1fe284c8181876066fb0227f7f4c0a&ecampaign=3Deml|frb|con_day_infrent=
+searchfill_bk_emv2|group_3&return=3Dhttps%3A%2F%2Fwww.trulia.com%2Femail%2F=
+eml%7Cfrb%7Ccon_day_infrentsearchfill_bk_emv2%7Cgroup_3%2Fwww.trulia.com%2F=
+rental%2F4037331856%3Falat%3Db55264e32f803ed221d81f78145dd5914999c6de024a2b=
+3c78485ba78cf85bd7%26alrt%3D951184f4c70cee06642d5bf437a6e9715b1fe284c818187=
+6066fb0227f7f4c0a#photo-1" align=3D"left"=0A       id=3D"w_button0"=0A     =
+  title=3D"Property Details" style=3D"background-color:#20C063;=0A       bo=
+rder-radius:5;=0A       color:#ffffff;=0A       display:block;=0A       fon=
+t-family:  PostGroteskBook, Helvetica, Arial, sans-serif;=0A    font-weight=
+: 300;=0A    font-size:16px;=0A    line-height:44px;=0A    text-align:cente=
+r;=0A    text-decoration:none;=0A    width:325px;=0A    height:44px;=0A    =
+-webkit-text-size-adjust:none;">=0A    View 4 More Photos & Details=0A    <=
+/a>=0A    <![endif]-->=0A    <!--[if !((gte mso 9)|(IE))]><!-- -->=0A    <a=
+ href=3D"https://et.trulia.com/tracker=3Ftype=3Dclick&emailid=3Daustindreie=
+r@icloud.com&userid=3DdXNlcl9pZD00Mzk1MjA2NyZjb21tc1BsYXRmb3JtPWVtdjImZ3VpZ=
+D0xNTA4NTk4OTQ1MDU0Xzg3ZjcyZjA2YjNkNDM1MGQ4YWY1NWZmNGUyYzRjOWQ4X2lwLTE3Mi0x=
+OC0yNS0xNTAmZW1haWxfdHlwZV9pZD0yNjcmZW1haWw9YXVzdGluZHJlaWVyQGljbG91ZC5jb20=
+=3D&extra=3DMultivariateId=3D&&&2000&&&https://www.trulia.com/handshake/=3F=
+alat=3Db55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7&alr=
+t=3D951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a&ecampa=
+ign=3Deml|frb|con_day_infrentsearchfill_bk_emv2|group_3&return=3Dhttps%3A%2=
+F%2Fwww.trulia.com%2Femail%2Feml%7Cfrb%7Ccon_day_infrentsearchfill_bk_emv2%=
+7Cgroup_3%2Fwww.trulia.com%2Frental%2F4037331856%3Falat%3Db55264e32f803ed22=
+1d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7%26alrt%3D951184f4c70cee0664=
+2d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a#photo-1" align=3D"left"=0A  =
+     id=3D"w_button0"=0A       title=3D"View 4 More Photos & Details" style=
+=3D"background-color:#20C063;=0A            border-radius:5px;=0A          =
+  border-color:transparent;=0A            border-width:0px;=0A            b=
+order-style:none;=0A            color:#ffffff;=0A            display:block;=
+=0A            font-family: PostGroteskBook, Helvetica, Arial, sans-serif;=
+=0A            font-weight: 300;=0A            font-size:16px;=0A          =
+  line-height:44px;=0A            text-align:center;=0A            text-dec=
+oration:none;=0A            min-width:325px;=0A            max-width:100%;=
+=0A            height:44px;=0A            -webkit-text-size-adjust:none;">=
+=0A        View 4 More Photos & Details=0A    </a>=0A    <!--<![endif]-->=
+=0A    <!--[if (gte mso 9)|(IE)]>=0A    </center>=0A    </v:roundrect>=0A  =
+  <![endif]--></div>=0A=0A            =0A    </td>=0A</tr>=0A=0A=0A        =
+<tr>=0A    <td class=3D"hide-on-mobile"  height=3D"15" style=3D"background-=
+color:transparent;font-size: 15;line-height:1px;padding-top: 0px;padding-bo=
+ttom: 0px;">=0A        &nbsp;=0A    </td>=0A</tr>=0A=0A    =0A</table>=0A</=
+td>=0A</tr>=0A</table>=0A</div>=0A<!--[if (gte mso 9)|(IE)]>=0A</td>       =
+                                        =0A<td width=3D"215" valign=3D"top"=
+ style=3D"width:215px;"> =0A<![endif]-->=0A<div class=3D"column"=0A     sty=
+le=3D"max-width: 215px; width: 100%; display: inline-block; vertical-align:=
+ top;">=0A    <table width=3D"100%" align=3D"left"=0A           style=3D"bo=
+rder-spacing: 0; font-family: 'PostGroteskBook', Helvetica, Arial, sans-ser=
+if; background-color: #ffffff;">=0A        <tr>=0A            <td style=3D"=
+background-color: #ffffff; padding: 15px 15px 15px 15px;">=0A=0A<!--[if (gt=
+e mso 9)|(IE)]>=0A<table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" w=
+idth=3D"205" style=3D"width: 205px;">=0A    <tr>=0A        <td width=3D"205=
+" style=3D"width: 205px;">=0A<![endif]-->=0A<table cellpadding=3D"0" cellsp=
+acing=3D"0" width=3D"100%" style=3D"text-align: left;">=0A    <tr> =0A     =
+   <td>=0A            =0A    <style>=0A        .removeAutomaticLink a {=0A =
+           color: #474E52 !important;=0A            text-decoration: none;=
+=0A        }=0A    </style>=0A=0A<a  class=3D"removeAutomaticLink" =0A     =
+    id=3D"w_price0" =0A         href=3D"https://et.trulia.com/tracker=3Ftyp=
+e=3Dclick&emailid=3Daustindreier@icloud.com&userid=3DdXNlcl9pZD00Mzk1MjA2Ny=
+Zjb21tc1BsYXRmb3JtPWVtdjImZ3VpZD0xNTA4NTk4OTQ1MDU0Xzg3ZjcyZjA2YjNkNDM1MGQ4Y=
+WY1NWZmNGUyYzRjOWQ4X2lwLTE3Mi0xOC0yNS0xNTAmZW1haWxfdHlwZV9pZD0yNjcmZW1haWw9=
+YXVzdGluZHJlaWVyQGljbG91ZC5jb20=3D&extra=3DMultivariateId=3D&&&2000&&&https=
+://www.trulia.com/handshake/=3Falat=3Db55264e32f803ed221d81f78145dd5914999c=
+6de024a2b3c78485ba78cf85bd7&alrt=3D951184f4c70cee06642d5bf437a6e9715b1fe284=
+c8181876066fb0227f7f4c0a&ecampaign=3Deml|frb|con_day_infrentsearchfill_bk_e=
+mv2|group_3&return=3Dhttps%3A%2F%2Fwww.trulia.com%2Femail%2Feml%7Cfrb%7Ccon=
+_day_infrentsearchfill_bk_emv2%7Cgroup_3%2Fwww.trulia.com%2Frental%2F403733=
+1856%3Falat%3Db55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85=
+bd7%26alrt%3D951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c=
+0a" =0A        style=3D"color: #474E52;=0A                text-decoration: =
+none;=0A                background-color: transparent;=0A                fo=
+nt-family: PostGroteskMedium, Helvetica, Arial, sans-serif;=0A             =
+   font-weight: 500;=0A                font-size: 28px;=0A                t=
+ext-align: left;=0A                padding-top: 0px;=0A                padd=
+ing-bottom: 0px;=0A                letter-spacing: 0px;=0A        =0A      =
+          line-height: 34px;" title=3D"$850">=0A    =0A        <!--[if mso]=
+><font=0A                style=3D"display:none;font-size:0;max-height:0;lin=
+e-height:0;padding:0;mso-hide:all;">@text</font><![endif]-->$850=0A    =0A<=
+/a>=0A=0A        </td>=0A    </tr>=0A    =0A        <tr>=0A    <td  height=
+=3D"15" style=3D"background-color:transparent;font-size: 15;line-height:1px=
+;padding-top: 0px;padding-bottom: 0px;">=0A        &nbsp;=0A    </td>=0A</t=
+r>=0A=0A        <tr> =0A            <td style=3D"font-family: 'PostGroteskM=
+edium', Helvetica, Arial, sans-serif; font-size: 12px; line-height: 17px; l=
+etter-spacing: 1px; font-weight: bold;">=0A                =0A             =
+       <span style=3D"color: #869099; white-space: nowrap; display: inline-=
+block;">ROOM FOR RENT</span>=0A                =0A                    <span=
+ style=3D"color: #869099; white-space: nowrap; display: inline-block;">BEST=
+ VALUE</span>=0A                =0A            </td>=0A        </tr>=0A    =
+=0A    <tr>=0A    <td  height=3D"15" style=3D"background-color:transparent;=
+font-size: 15;line-height:1px;padding-top: 0px;padding-bottom: 0px;">=0A   =
+     &nbsp;=0A    </td>=0A</tr>=0A=0A    =0A        <tr> =0A            <td=
+>=0A                <table cellpadding=3D"0" cellspacing=3D"0" border=3D"0"=
+ width=3D"100%"=0A                       style=3D"font-family: 'PostGrotesk=
+Book', Helvetica, Arial, sans-serif; font-size: 14px; color: #869099">=0A  =
+                  <tr>=0A                        <td style=3D"align: left;"=
+>=0A                            4 bd&nbsp;&nbsp; =0A                       =
+     2 ba&nbsp;=0A                            =0A                          =
+      &nbsp;<img src=3D"http://static.trulia-cdn.com/images/email/icons/ico=
+n_photos_grey_30x26.png" alt=3D"Photos icon" height=3D"16"=0A              =
+                             border=3D"0"/> 5=0A                           =
+ =0A                        </td>=0A                    </tr>=0A           =
+     </table>=0A            </td>=0A        </tr>=0A        <tr>=0A    <td =
+ height=3D"15" style=3D"background-color:transparent;font-size: 15;line-hei=
+ght:1px;padding-top: 0px;padding-bottom: 0px;">=0A        &nbsp;=0A    </td=
+>=0A</tr>=0A=0A    =0A    <tr> =0A        <td>=0A            =0A           =
+     =0A<a =0A         id=3D"w_addr0" =0A         href=3D"https://et.trulia=
+.com/tracker=3Ftype=3Dclick&emailid=3Daustindreier@icloud.com&userid=3DdXN=
+lcl9pZD00Mzk1MjA2NyZjb21tc1BsYXRmb3JtPWVtdjImZ3VpZD0xNTA4NTk4OTQ1MDU0Xzg3Zj=
+cyZjA2YjNkNDM1MGQ4YWY1NWZmNGUyYzRjOWQ4X2lwLTE3Mi0xOC0yNS0xNTAmZW1haWxfdHlwZ=
+V9pZD0yNjcmZW1haWw9YXVzdGluZHJlaWVyQGljbG91ZC5jb20=3D&extra=3DMultivariateI=
+d=3D&&&2000&&&https://www.trulia.com/handshake/=3Falat=3Db55264e32f803ed221=
+d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7&alrt=3D951184f4c70cee06642d5=
+bf437a6e9715b1fe284c8181876066fb0227f7f4c0a&ecampaign=3Deml|frb|con_day_inf=
+rentsearchfill_bk_emv2|group_3&return=3Dhttps%3A%2F%2Fwww.trulia.com%2Femai=
+l%2Feml%7Cfrb%7Ccon_day_infrentsearchfill_bk_emv2%7Cgroup_3%2Fwww.trulia.co=
+m%2Frental%2F4037331856%3Falat%3Db55264e32f803ed221d81f78145dd5914999c6de02=
+4a2b3c78485ba78cf85bd7%26alrt%3D951184f4c70cee06642d5bf437a6e9715b1fe284c81=
+81876066fb0227f7f4c0a#map" =0A        style=3D"color: #20C063;=0A          =
+      text-decoration: none;=0A                background-color: transparen=
+t;=0A                font-family: PostGroteskBook, Helvetica, Arial;=0A    =
+            font-weight: 300;=0A                font-size: 16px;=0A        =
+        text-align: left;=0A                padding-top: 0px;=0A           =
+     padding-bottom: 0px;=0A                letter-spacing: 0px;=0A        =
+=0A                line-height: 18px;" title=3D"4110&#8203; Prospect&#8203;=
+ Ave&#8203;">=0A    4110&#8203; Prospect&#8203; Ave&#8203;=0A    =0A</a>=0A=
+=0A            =0A        </td>=0A    </tr>=0A    =0A        <tr> =0A      =
+      <td>=0A                =0A<a =0A         id=3D"w_addr0" =0A         h=
+ref=3D"https://et.trulia.com/tracker=3Ftype=3Dclick&emailid=3Daustindreier@=
+icloud.com&userid=3DdXNlcl9pZD00Mzk1MjA2NyZjb21tc1BsYXRmb3JtPWVtdjImZ3VpZD0=
+xNTA4NTk4OTQ1MDU0Xzg3ZjcyZjA2YjNkNDM1MGQ4YWY1NWZmNGUyYzRjOWQ4X2lwLTE3Mi0xOC=
+0yNS0xNTAmZW1haWxfdHlwZV9pZD0yNjcmZW1haWw9YXVzdGluZHJlaWVyQGljbG91ZC5jb20=
+=3D&extra=3DMultivariateId=3D&&&2000&&&https://www.trulia.com/handshake/=3F=
+alat=3Db55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7&alr=
+t=3D951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a&ecampa=
+ign=3Deml|frb|con_day_infrentsearchfill_bk_emv2|group_3&return=3Dhttps%3A%2=
+F%2Fwww.trulia.com%2Femail%2Feml%7Cfrb%7Ccon_day_infrentsearchfill_bk_emv2%=
+7Cgroup_3%2Fwww.trulia.com%2Frental%2F4037331856%3Falat%3Db55264e32f803ed22=
+1d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7%26alrt%3D951184f4c70cee0664=
+2d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a#map" =0A        style=3D"col=
+or: #20C063;=0A                text-decoration: none;=0A                bac=
+kground-color: transparent;=0A                font-family: PostGroteskBook,=
+ Helvetica, Arial;=0A                font-weight: 300;=0A                fo=
+nt-size: 16px;=0A                text-align: left;=0A                paddin=
+g-top: 0px;=0A                padding-bottom: 0px;=0A                letter=
+-spacing: 0px;=0A        =0A                line-height: 22px;" title=3D"Lo=
+s&#8203; Angeles,&#8203; CA&#8203;">=0A    Los&#8203; Angeles,&#8203; CA&#8=
+203;=0A    =0A</a>=0A=0A            </td>=0A        </tr>=0A        =0A    =
+        <tr> =0A                <td>=0A                    =0A<a =0A       =
+  id=3D"w_neighbor0" =0A         href=3D"https://et.trulia.com/tracker=3Fty=
+pe=3Dclick&emailid=3Daustindreier@icloud.com&userid=3DdXNlcl9pZD00Mzk1MjA2N=
+yZjb21tc1BsYXRmb3JtPWVtdjImZ3VpZD0xNTA4NTk4OTQ1MDU0Xzg3ZjcyZjA2YjNkNDM1MGQ4=
+YWY1NWZmNGUyYzRjOWQ4X2lwLTE3Mi0xOC0yNS0xNTAmZW1haWxfdHlwZV9pZD0yNjcmZW1haWw=
+9YXVzdGluZHJlaWVyQGljbG91ZC5jb20=3D&extra=3DMultivariateId=3D&&&2000&&&http=
+s://www.trulia.com/handshake/=3Falat=3Db55264e32f803ed221d81f78145dd5914999=
+c6de024a2b3c78485ba78cf85bd7&alrt=3D951184f4c70cee06642d5bf437a6e9715b1fe28=
+4c8181876066fb0227f7f4c0a&ecampaign=3Deml|frb|con_day_infrentsearchfill_bk_=
+emv2|group_3&return=3Dhttps%3A%2F%2Fwww.trulia.com%2Femail%2Feml%7Cfrb%7Cco=
+n_day_infrentsearchfill_bk_emv2%7Cgroup_3%2Fwww.trulia.com%2Frental%2F40373=
+31856%3Falat%3Db55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf8=
+5bd7%26alrt%3D951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4=
+c0a#map" =0A        style=3D"color: #869099;=0A                text-decorat=
+ion: none;=0A                background-color: transparent;=0A             =
+   font-family: PostGroteskBook, Helvetica, Arial;=0A                font-w=
+eight: 300;=0A                font-size: 16px;=0A                text-align=
+: left;=0A                padding-top: 0px;=0A                padding-botto=
+m: 0px;=0A                letter-spacing: 0px;=0A        =0A               =
+ line-height: 22px;" title=3D"Los Feliz">=0A    Los Feliz=0A    =0A</a>=0A=
+=0A                </td>=0A            </tr>=0A        =0A    =0A</table>=
+=0A<!--[if (gte mso 9)|(IE)]>=0A</td>=0A</tr>=0A</table>=0A<![endif]-->=0A=
+=0A</td>=0A</tr>=0A</table>=0A</div>=0A<!--[if (gte mso 9)|(IE)]>=0A</td> =
+=0A</tr>=0A</table>=0A<![endif]-->=0A=0A</td>=0A</tr>=0A=0A    <tr>=0A    <=
+td  height=3D"5" style=3D"background-color:transparent;font-size: 5;line-he=
+ight:1px;padding-top: 0px;padding-bottom: 0px;">=0A        &nbsp;=0A    </t=
+d>=0A</tr>=0A=0A=0A=0A=0A=0A=0A=0A    =0A  =0A=0A=0A=0A=0A=0A<!-- START Two=
+ Columns -->=0A<tr  >=0A    <td class=3D"column"=0A        style=3D"padding=
+: 0; font-size: 0; background-color: #ffffff; width: 100%">=0A        <a  >=
+=0A        <!--[if (gte mso 9)|(IE)]>=0A        <table cellspacing=3D"0" ce=
+llpadding=3D"0" border=3D"0" width=3D"600"=0A               style=3D"width:=
+600px;">=0A            <tr>=0A                <td width=3D"355" style=3D"wi=
+dth: 355px;"> =0A        <![endif]-->=0A        <div class=3D"column"=0A   =
+          style=3D"overflow:hidden; max-width: 355px; width: 100%; display:=
+ inline-block; vertical-align: top;">=0A            <table width=3D"100%" b=
+order=3D"0" cellspacing=3D"0" cellpadding=3D"0"=0A                   style=
+=3D"border-spacing: 0; font-family: 'PostGroteskBook', Helvetica, Arial, sa=
+ns-serif;">=0A                <tr>=0A                    <td style=3D"paddi=
+ng: 15px 15px 0px 15px; background-color: #ffffff">=0A=0A<table cellpadding=
+=3D"0" cellspacing=3D"0" border=3D"0">=0A    <tr>=0A        <td >=0A       =
+     <table cellspacing=3D"0" cellpadding=3D"0" width=3D"100%" border=3D"0"=
+>=0A    <tr valign=3D"top">=0A        <td class=3D"column-sixty" valign=3D"=
+middle"=0A    style=3D"width: 192px;=0A            background-color: transp=
+arent;=0A            padding: 0px;">=0A    =0A    <a href=3D"https://et.tru=
+lia.com/tracker=3Ftype=3Dclick&emailid=3Daustindreier@icloud.com&userid=3Dd=
+XNlcl9pZD00Mzk1MjA2NyZjb21tc1BsYXRmb3JtPWVtdjImZ3VpZD0xNTA4NTk4OTQ1MDU0Xzg3=
+ZjcyZjA2YjNkNDM1MGQ4YWY1NWZmNGUyYzRjOWQ4X2lwLTE3Mi0xOC0yNS0xNTAmZW1haWxfdHl=
+wZV9pZD0yNjcmZW1haWw9YXVzdGluZHJlaWVyQGljbG91ZC5jb20=3D&extra=3DMultivariat=
+eId=3D&&&2000&&&https://www.trulia.com/handshake/=3Falat=3Db55264e32f803ed2=
+21d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7&alrt=3D951184f4c70cee06642=
+d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a&ecampaign=3Deml|frb|con_day_i=
+nfrentsearchfill_bk_emv2|group_3&return=3Dhttps%3A%2F%2Fwww.trulia.com%2Fem=
+ail%2Feml%7Cfrb%7Ccon_day_infrentsearchfill_bk_emv2%7Cgroup_3%2Fwww.trulia.=
+com%2Frental%2F4035255622%3Falat%3Db55264e32f803ed221d81f78145dd5914999c6de=
+024a2b3c78485ba78cf85bd7%26alrt%3D951184f4c70cee06642d5bf437a6e9715b1fe284c=
+8181876066fb0227f7f4c0a" id=3Dw_image1 title=3D"Property details">=0A      =
+  <img src=3D"https://thumbs.trulia-cdn.com/pictures/thumbs_6/ps.109/1/f/6/=
+2/picture-uh=3D838534413c49824a2047bede34a116b9-ps=3D1f62349d30ae9117d22e14=
+fc19f7d427.jpg"=0A             border=3D"0"=0A             width=3D"195"=0A=
+             height=3D"170"=0A             class=3D"fullwidth"=0A          =
+   alt=3D"Home Image"=0A             style=3D"font-family: Helvetica, Arial=
+, sans-serif;=0A                     font-size: 14px;=0A                   =
+  color: #B1B6BB;=0A                     border: 0;" />=0A    </a>=0A    =
+=0A</td>=0A=0A        <td class=3D"column-forty" style=3D"width: 127px; bac=
+kground-color: transparent;">  =0A    =0A    <a href=3D"https://et.trulia.c=
+om/tracker=3Ftype=3Dclick&emailid=3Daustindreier@icloud.com&userid=3DdXNlcl=
+9pZD00Mzk1MjA2NyZjb21tc1BsYXRmb3JtPWVtdjImZ3VpZD0xNTA4NTk4OTQ1MDU0Xzg3ZjcyZ=
+jA2YjNkNDM1MGQ4YWY1NWZmNGUyYzRjOWQ4X2lwLTE3Mi0xOC0yNS0xNTAmZW1haWxfdHlwZV9p=
+ZD0yNjcmZW1haWw9YXVzdGluZHJlaWVyQGljbG91ZC5jb20=3D&extra=3DMultivariateId=
+=3D&&&2000&&&https://www.trulia.com/handshake/=3Falat=3Db55264e32f803ed221d=
+81f78145dd5914999c6de024a2b3c78485ba78cf85bd7&alrt=3D951184f4c70cee06642d5b=
+f437a6e9715b1fe284c8181876066fb0227f7f4c0a&ecampaign=3Deml|frb|con_day_infr=
+entsearchfill_bk_emv2|group_3&return=3Dhttps%3A%2F%2Fwww.trulia.com%2Femail=
+%2Feml%7Cfrb%7Ccon_day_infrentsearchfill_bk_emv2%7Cgroup_3%2Fwww.trulia.com=
+%2Frental%2F4035255622%3Falat%3Db55264e32f803ed221d81f78145dd5914999c6de024=
+a2b3c78485ba78cf85bd7%26alrt%3D951184f4c70cee06642d5bf437a6e9715b1fe284c818=
+1876066fb0227f7f4c0a#map" id=3Dw_map1 title=3D"Property details">=0A       =
+ <img src=3D"https://maps.googleapis.com/maps/api/staticmap=3Fmaptype=3Droa=
+dmap&client=3Dgme-zillowinc3&zoom=3D13&sensor=3Dfalse&size=3D130x170&center=
+=3D34.067177%2C-118.451290&markers=3Dicon%3Ahttps%3A%2F%2Fstatic.trulia-cdn=
+.com%2Fimages%2Fmap%2Fmarkers%2Ffor_rent.png%7C34.067177%2C-118.451290&sig=
+nature=3DnCg8GBhcBxM-ED-Yl9b4B1thh3A=3D" border=3D"0" width=3D"130" height=
+=3D"170" class=3D"fullwidth" alt=3D"Map View" style=3D"font-family: Helveti=
+ca, Arial, sans-serif; font-size: 14px; color: #B1B6BB; border: 0;  height:=
+ auto;" />=0A    </a>=0A    =0A</td>=0A=0A    </tr>=0A</table>=0A=0A       =
+ </td>=0A    </tr>=0A    <tr>=0A    <td  height=3D"15" style=3D"background-=
+color:transparent;font-size: 15;line-height:1px;padding-top: 0px;padding-bo=
+ttom: 0px;">=0A        &nbsp;=0A    </td>=0A</tr>=0A=0A=0A    =0A        =
+=0A<tr align=3D"left">=0A    =0A    =0A    <td style=3D"color: #474E52;=0A =
+           display:inline;=0A            background-color: transparent;=0A =
+           font-family: PostGroteskBook, Helvetica, Arial, san-serif;=0A   =
+         font-weight: 300;=0A            font-size: 16px;=0A            tex=
+t-align: center;=0A            letter-spacing: 0px;=0A            line-heig=
+ht: 18px;=0A            padding-left: 0px;=0A            padding-right: 0px=
+;=0A            padding-top: 0px;=0A            padding-bottom: 0px;">=0A  =
+      =0A                <div align=3D"left" style=3D"display:inline"><!--[=
+if (gte mso 9)|(IE)]>=0A    <v:roundrect xmlns:v=3D"urn:schemas-microsoft-c=
+om:vml" xmlns:w=3D"urn:schemas-microsoft-com:office:word"=0A               =
+  href=3D"https://et.trulia.com/tracker=3Ftype=3Dclick&amp;emailid=3Daustin=
+dreier@icloud.com&amp;userid=3DdXNlcl9pZD00Mzk1MjA2NyZjb21tc1BsYXRmb3JtPWVt=
+djImZ3VpZD0xNTA4NTk4OTQ1MDU0Xzg3ZjcyZjA2YjNkNDM1MGQ4YWY1NWZmNGUyYzRjOWQ4X2l=
+wLTE3Mi0xOC0yNS0xNTAmZW1haWxfdHlwZV9pZD0yNjcmZW1haWw9YXVzdGluZHJlaWVyQGljbG=
+91ZC5jb20=3D&amp;extra=3DMultivariateId=3D&amp;&amp;&amp;2000&amp;&amp;&amp=
+;https://www.trulia.com/handshake/=3Falat=3Db55264e32f803ed221d81f78145dd59=
+14999c6de024a2b3c78485ba78cf85bd7&alrt=3D951184f4c70cee06642d5bf437a6e9715b=
+1fe284c8181876066fb0227f7f4c0a&ecampaign=3Deml|frb|con_day_infrentsearchfil=
+l_bk_emv2|group_3&return=3Dhttps%3A%2F%2Fwww.trulia.com%2Femail%2Feml%7Cfrb=
+%7Ccon_day_infrentsearchfill_bk_emv2%7Cgroup_3%2Fwww.trulia.com%2Frental%2F=
+4035255622%3Falat%3Db55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba=
+78cf85bd7%26alrt%3D951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb022=
+7f7f4c0a#photo-1"=0A                 id=3D"w_button1"=0A                 st=
+yle=3D"height:44px;v-text-anchor:middle;width:325px;" arcsize=3D"15%"=0A   =
+              stroke=3D"f" fillcolor=3D"#20C063">=0A        <center>=0A    =
+<![endif]-->=0A    <!--[if (gte mso 9)|(IE)]>=0A    <a href=3D"https://et.t=
+rulia.com/tracker=3Ftype=3Dclick&amp;emailid=3Daustindreier@icloud.com&amp;=
+userid=3DdXNlcl9pZD00Mzk1MjA2NyZjb21tc1BsYXRmb3JtPWVtdjImZ3VpZD0xNTA4NTk4OT=
+Q1MDU0Xzg3ZjcyZjA2YjNkNDM1MGQ4YWY1NWZmNGUyYzRjOWQ4X2lwLTE3Mi0xOC0yNS0xNTAmZ=
+W1haWxfdHlwZV9pZD0yNjcmZW1haWw9YXVzdGluZHJlaWVyQGljbG91ZC5jb20=3D&amp;extra=
+=3DMultivariateId=3D&amp;&amp;&amp;2000&amp;&amp;&amp;https://www.trulia.co=
+m/handshake/=3Falat=3Db55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485=
+ba78cf85bd7&alrt=3D951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb022=
+7f7f4c0a&ecampaign=3Deml|frb|con_day_infrentsearchfill_bk_emv2|group_3&retu=
+rn=3Dhttps%3A%2F%2Fwww.trulia.com%2Femail%2Feml%7Cfrb%7Ccon_day_infrentsear=
+chfill_bk_emv2%7Cgroup_3%2Fwww.trulia.com%2Frental%2F4035255622%3Falat%3Db5=
+5264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7%26alrt%3D951=
+184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a#photo-1" alig=
+n=3D"left"=0A       id=3D"w_button1"=0A       title=3D"Property Details" st=
+yle=3D"background-color:#20C063;=0A       border-radius:5;=0A       color:#=
+ffffff;=0A       display:block;=0A       font-family:  PostGroteskBook, Hel=
+vetica, Arial, sans-serif;=0A    font-weight: 300;=0A    font-size:16px;=0A=
+    line-height:44px;=0A    text-align:center;=0A    text-decoration:none;=
+=0A    width:325px;=0A    height:44px;=0A    -webkit-text-size-adjust:none;=
+">=0A    View 4 More Photos & Details=0A    </a>=0A    <![endif]-->=0A    <=
+!--[if !((gte mso 9)|(IE))]><!-- -->=0A    <a href=3D"https://et.trulia.com=
+/tracker=3Ftype=3Dclick&emailid=3Daustindreier@icloud.com&userid=3DdXNlcl9p=
+ZD00Mzk1MjA2NyZjb21tc1BsYXRmb3JtPWVtdjImZ3VpZD0xNTA4NTk4OTQ1MDU0Xzg3ZjcyZjA=
+2YjNkNDM1MGQ4YWY1NWZmNGUyYzRjOWQ4X2lwLTE3Mi0xOC0yNS0xNTAmZW1haWxfdHlwZV9pZD=
+0yNjcmZW1haWw9YXVzdGluZHJlaWVyQGljbG91ZC5jb20=3D&extra=3DMultivariateId=3D&=
+&&2000&&&https://www.trulia.com/handshake/=3Falat=3Db55264e32f803ed221d81f7=
+8145dd5914999c6de024a2b3c78485ba78cf85bd7&alrt=3D951184f4c70cee06642d5bf437=
+a6e9715b1fe284c8181876066fb0227f7f4c0a&ecampaign=3Deml|frb|con_day_infrents=
+earchfill_bk_emv2|group_3&return=3Dhttps%3A%2F%2Fwww.trulia.com%2Femail%2Fe=
+ml%7Cfrb%7Ccon_day_infrentsearchfill_bk_emv2%7Cgroup_3%2Fwww.trulia.com%2Fr=
+ental%2F4035255622%3Falat%3Db55264e32f803ed221d81f78145dd5914999c6de024a2b3=
+c78485ba78cf85bd7%26alrt%3D951184f4c70cee06642d5bf437a6e9715b1fe284c8181876=
+066fb0227f7f4c0a#photo-1" align=3D"left"=0A       id=3D"w_button1"=0A      =
+ title=3D"View 4 More Photos & Details" style=3D"background-color:#20C063;=
+=0A            border-radius:5px;=0A            border-color:transparent;=
+=0A            border-width:0px;=0A            border-style:none;=0A       =
+     color:#ffffff;=0A            display:block;=0A            font-family:=
+ PostGroteskBook, Helvetica, Arial, sans-serif;=0A            font-weight: =
+300;=0A            font-size:16px;=0A            line-height:44px;=0A      =
+      text-align:center;=0A            text-decoration:none;=0A            =
+min-width:325px;=0A            max-width:100%;=0A            height:44px;=
+=0A            -webkit-text-size-adjust:none;">=0A        View 4 More Photo=
+s & Details=0A    </a>=0A    <!--<![endif]-->=0A    <!--[if (gte mso 9)|(IE=
+)]>=0A    </center>=0A    </v:roundrect>=0A    <![endif]--></div>=0A=0A    =
+        =0A    </td>=0A</tr>=0A=0A=0A        <tr>=0A    <td class=3D"hide-o=
+n-mobile"  height=3D"15" style=3D"background-color:transparent;font-size: 1=
+5;line-height:1px;padding-top: 0px;padding-bottom: 0px;">=0A        &nbsp;=
+=0A    </td>=0A</tr>=0A=0A    =0A</table>=0A</td>=0A</tr>=0A</table>=0A</di=
+v>=0A<!--[if (gte mso 9)|(IE)]>=0A</td>                                    =
+           =0A<td width=3D"215" valign=3D"top" style=3D"width:215px;"> =0A<=
+![endif]-->=0A<div class=3D"column"=0A     style=3D"max-width: 215px; width=
+: 100%; display: inline-block; vertical-align: top;">=0A    <table width=3D=
+"100%" align=3D"left"=0A           style=3D"border-spacing: 0; font-family:=
+ 'PostGroteskBook', Helvetica, Arial, sans-serif; background-color: #ffffff=
+;">=0A        <tr>=0A            <td style=3D"background-color: #ffffff; pa=
+dding: 15px 15px 15px 15px;">=0A=0A<!--[if (gte mso 9)|(IE)]>=0A<table cell=
+spacing=3D"0" cellpadding=3D"0" border=3D"0" width=3D"205" style=3D"width: =
+205px;">=0A    <tr>=0A        <td width=3D"205" style=3D"width: 205px;">=0A=
+<![endif]-->=0A<table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" st=
+yle=3D"text-align: left;">=0A    <tr> =0A        <td>=0A            =0A    =
+<style>=0A        .removeAutomaticLink a {=0A            color: #474E52 !im=
+portant;=0A            text-decoration: none;=0A        }=0A    </style>=0A=
+=0A<a  class=3D"removeAutomaticLink" =0A         id=3D"w_price1" =0A       =
+  href=3D"https://et.trulia.com/tracker=3Ftype=3Dclick&emailid=3Daustindrei=
+er@icloud.com&userid=3DdXNlcl9pZD00Mzk1MjA2NyZjb21tc1BsYXRmb3JtPWVtdjImZ3Vp=
+ZD0xNTA4NTk4OTQ1MDU0Xzg3ZjcyZjA2YjNkNDM1MGQ4YWY1NWZmNGUyYzRjOWQ4X2lwLTE3Mi0=
+xOC0yNS0xNTAmZW1haWxfdHlwZV9pZD0yNjcmZW1haWw9YXVzdGluZHJlaWVyQGljbG91ZC5jb2=
+0=3D&extra=3DMultivariateId=3D&&&2000&&&https://www.trulia.com/handshake/=
+=3Falat=3Db55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7&=
+alrt=3D951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a&eca=
+mpaign=3Deml|frb|con_day_infrentsearchfill_bk_emv2|group_3&return=3Dhttps%3=
+A%2F%2Fwww.trulia.com%2Femail%2Feml%7Cfrb%7Ccon_day_infrentsearchfill_bk_em=
+v2%7Cgroup_3%2Fwww.trulia.com%2Frental%2F4035255622%3Falat%3Db55264e32f803e=
+d221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7%26alrt%3D951184f4c70cee0=
+6642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a" =0A        style=3D"colo=
+r: #474E52;=0A                text-decoration: none;=0A                back=
+ground-color: transparent;=0A                font-family: PostGroteskMedium=
+, Helvetica, Arial, sans-serif;=0A                font-weight: 500;=0A     =
+           font-size: 28px;=0A                text-align: left;=0A         =
+       padding-top: 0px;=0A                padding-bottom: 0px;=0A         =
+       letter-spacing: 0px;=0A        =0A                line-height: 34px;=
+" title=3D"$900">=0A    =0A        <!--[if mso]><font=0A                sty=
+le=3D"display:none;font-size:0;max-height:0;line-height:0;padding:0;mso-hid=
+e:all;">@text</font><![endif]-->$900=0A    =0A</a>=0A=0A        </td>=0A   =
+ </tr>=0A    =0A        <tr>=0A    <td  height=3D"15" style=3D"background-c=
+olor:transparent;font-size: 15;line-height:1px;padding-top: 0px;padding-bot=
+tom: 0px;">=0A        &nbsp;=0A    </td>=0A</tr>=0A=0A        <tr> =0A     =
+       <td style=3D"font-family: 'PostGroteskMedium', Helvetica, Arial, san=
+s-serif; font-size: 12px; line-height: 17px; letter-spacing: 1px; font-weig=
+ht: bold;">=0A                =0A                    <span style=3D"color: =
+#869099; white-space: nowrap; display: inline-block;">ROOM FOR RENT</span>=
+=0A                =0A                    <span style=3D"color: #869099; wh=
+ite-space: nowrap; display: inline-block;">BEST VALUE</span>=0A            =
+    =0A                    <span style=3D"color: #869099; white-space: nowr=
+ap; display: inline-block;">FURNISHED</span>=0A                =0A         =
+   </td>=0A        </tr>=0A    =0A    <tr>=0A    <td  height=3D"15" style=
+=3D"background-color:transparent;font-size: 15;line-height:1px;padding-top:=
+ 0px;padding-bottom: 0px;">=0A        &nbsp;=0A    </td>=0A</tr>=0A=0A    =
+=0A        <tr> =0A            <td>=0A                <table cellpadding=3D=
+"0" cellspacing=3D"0" border=3D"0" width=3D"100%"=0A                       =
+style=3D"font-family: 'PostGroteskBook', Helvetica, Arial, sans-serif; font=
+-size: 14px; color: #869099">=0A                    <tr>=0A                =
+        <td style=3D"align: left;">=0A                            3 bd&nbsp=
+;&nbsp; =0A                            2 ba&nbsp;=0A                       =
+     =0A                                &nbsp;<img src=3D"http://static.tru=
+lia-cdn.com/images/email/icons/icon_photos_grey_30x26.png" alt=3D"Photos ic=
+on" height=3D"16"=0A                                           border=3D"0"=
+/> 5=0A                            =0A                        </td>=0A     =
+               </tr>=0A                </table>=0A            </td>=0A     =
+   </tr>=0A        <tr>=0A    <td  height=3D"15" style=3D"background-color:=
+transparent;font-size: 15;line-height:1px;padding-top: 0px;padding-bottom: =
+0px;">=0A        &nbsp;=0A    </td>=0A</tr>=0A=0A    =0A    <tr> =0A       =
+ <td>=0A            =0A                =0A<a =0A         id=3D"w_addr1" =0A=
+         href=3D"https://et.trulia.com/tracker=3Ftype=3Dclick&emailid=3Daus=
+tindreier@icloud.com&userid=3DdXNlcl9pZD00Mzk1MjA2NyZjb21tc1BsYXRmb3JtPWVtd=
+jImZ3VpZD0xNTA4NTk4OTQ1MDU0Xzg3ZjcyZjA2YjNkNDM1MGQ4YWY1NWZmNGUyYzRjOWQ4X2lw=
+LTE3Mi0xOC0yNS0xNTAmZW1haWxfdHlwZV9pZD0yNjcmZW1haWw9YXVzdGluZHJlaWVyQGljbG9=
+1ZC5jb20=3D&extra=3DMultivariateId=3D&&&2000&&&https://www.trulia.com/hands=
+hake/=3Falat=3Db55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf8=
+5bd7&alrt=3D951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0=
+a&ecampaign=3Deml|frb|con_day_infrentsearchfill_bk_emv2|group_3&return=3Dht=
+tps%3A%2F%2Fwww.trulia.com%2Femail%2Feml%7Cfrb%7Ccon_day_infrentsearchfill_=
+bk_emv2%7Cgroup_3%2Fwww.trulia.com%2Frental%2F4035255622%3Falat%3Db55264e32=
+f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7%26alrt%3D951184f4c7=
+0cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a#map" =0A        styl=
+e=3D"color: #20C063;=0A                text-decoration: none;=0A           =
+     background-color: transparent;=0A                font-family: PostGrot=
+eskBook, Helvetica, Arial;=0A                font-weight: 300;=0A          =
+      font-size: 16px;=0A                text-align: left;=0A              =
+  padding-top: 0px;=0A                padding-bottom: 0px;=0A              =
+  letter-spacing: 0px;=0A        =0A                line-height: 18px;" tit=
+le=3D"535&#8203; Glenrock&#8203; Ave&#8203;">=0A    535&#8203; Glenrock&#82=
+03; Ave&#8203;=0A    =0A</a>=0A=0A            =0A        </td>=0A    </tr>=
+=0A    =0A        <tr> =0A            <td>=0A                =0A<a =0A     =
+    id=3D"w_addr1" =0A         href=3D"https://et.trulia.com/tracker=3Ftype=
+=3Dclick&emailid=3Daustindreier@icloud.com&userid=3DdXNlcl9pZD00Mzk1MjA2NyZ=
+jb21tc1BsYXRmb3JtPWVtdjImZ3VpZD0xNTA4NTk4OTQ1MDU0Xzg3ZjcyZjA2YjNkNDM1MGQ4YW=
+Y1NWZmNGUyYzRjOWQ4X2lwLTE3Mi0xOC0yNS0xNTAmZW1haWxfdHlwZV9pZD0yNjcmZW1haWw9Y=
+XVzdGluZHJlaWVyQGljbG91ZC5jb20=3D&extra=3DMultivariateId=3D&&&2000&&&https:=
+//www.trulia.com/handshake/=3Falat=3Db55264e32f803ed221d81f78145dd5914999c6=
+de024a2b3c78485ba78cf85bd7&alrt=3D951184f4c70cee06642d5bf437a6e9715b1fe284c=
+8181876066fb0227f7f4c0a&ecampaign=3Deml|frb|con_day_infrentsearchfill_bk_em=
+v2|group_3&return=3Dhttps%3A%2F%2Fwww.trulia.com%2Femail%2Feml%7Cfrb%7Ccon_=
+day_infrentsearchfill_bk_emv2%7Cgroup_3%2Fwww.trulia.com%2Frental%2F4035255=
+622%3Falat%3Db55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85b=
+d7%26alrt%3D951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0=
+a#map" =0A        style=3D"color: #20C063;=0A                text-decoratio=
+n: none;=0A                background-color: transparent;=0A               =
+ font-family: PostGroteskBook, Helvetica, Arial;=0A                font-wei=
+ght: 300;=0A                font-size: 16px;=0A                text-align: =
+left;=0A                padding-top: 0px;=0A                padding-bottom:=
+ 0px;=0A                letter-spacing: 0px;=0A        =0A                l=
+ine-height: 22px;" title=3D"Los&#8203; Angeles,&#8203; CA&#8203;">=0A    Lo=
+s&#8203; Angeles,&#8203; CA&#8203;=0A    =0A</a>=0A=0A            </td>=0A =
+       </tr>=0A        =0A            <tr> =0A                <td>=0A      =
+              =0A<a =0A         id=3D"w_neighbor1" =0A         href=3D"http=
+s://et.trulia.com/tracker=3Ftype=3Dclick&emailid=3Daustindreier@icloud.com&=
+userid=3DdXNlcl9pZD00Mzk1MjA2NyZjb21tc1BsYXRmb3JtPWVtdjImZ3VpZD0xNTA4NTk4OT=
+Q1MDU0Xzg3ZjcyZjA2YjNkNDM1MGQ4YWY1NWZmNGUyYzRjOWQ4X2lwLTE3Mi0xOC0yNS0xNTAmZ=
+W1haWxfdHlwZV9pZD0yNjcmZW1haWw9YXVzdGluZHJlaWVyQGljbG91ZC5jb20=3D&extra=3DM=
+ultivariateId=3D&&&2000&&&https://www.trulia.com/handshake/=3Falat=3Db55264=
+e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7&alrt=3D951184f4c=
+70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a&ecampaign=3Deml|frb=
+|con_day_infrentsearchfill_bk_emv2|group_3&return=3Dhttps%3A%2F%2Fwww.truli=
+a.com%2Femail%2Feml%7Cfrb%7Ccon_day_infrentsearchfill_bk_emv2%7Cgroup_3%2Fw=
+ww.trulia.com%2Frental%2F4035255622%3Falat%3Db55264e32f803ed221d81f78145dd5=
+914999c6de024a2b3c78485ba78cf85bd7%26alrt%3D951184f4c70cee06642d5bf437a6e97=
+15b1fe284c8181876066fb0227f7f4c0a#map" =0A        style=3D"color: #869099;=
+=0A                text-decoration: none;=0A                background-colo=
+r: transparent;=0A                font-family: PostGroteskBook, Helvetica, =
+Arial;=0A                font-weight: 300;=0A                font-size: 16p=
+x;=0A                text-align: left;=0A                padding-top: 0px;=
+=0A                padding-bottom: 0px;=0A                letter-spacing: 0=
+px;=0A        =0A                line-height: 22px;" title=3D"Westwood">=0A=
+    Westwood=0A    =0A</a>=0A=0A                </td>=0A            </tr>=
+=0A        =0A    =0A</table>=0A<!--[if (gte mso 9)|(IE)]>=0A</td>=0A</tr>=
+=0A</table>=0A<![endif]-->=0A=0A</td>=0A</tr>=0A</table>=0A</div>=0A<!--[if=
+ (gte mso 9)|(IE)]>=0A</td> =0A</tr>=0A</table>=0A<![endif]-->=0A=0A</td>=
+=0A</tr>=0A=0A    <tr>=0A    <td  height=3D"5" style=3D"background-color:tr=
+ansparent;font-size: 5;line-height:1px;padding-top: 0px;padding-bottom: 0px=
+;">=0A        &nbsp;=0A    </td>=0A</tr>=0A=0A=0A=0A=0A=0A=0A=0A    =0A  =
+=0A=0A=0A=0A=0A=0A<!-- START Two Columns -->=0A<tr  >=0A    <td class=3D"co=
+lumn"=0A        style=3D"padding: 0; font-size: 0; background-color: #fffff=
+f; width: 100%">=0A        <a  >=0A        <!--[if (gte mso 9)|(IE)]>=0A   =
+     <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" width=3D"600"=
+=0A               style=3D"width:600px;">=0A            <tr>=0A            =
+    <td width=3D"355" style=3D"width: 355px;"> =0A        <![endif]-->=0A  =
+      <div class=3D"column"=0A             style=3D"overflow:hidden; max-wi=
+dth: 355px; width: 100%; display: inline-block; vertical-align: top;">=0A  =
+          <table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=
+=3D"0"=0A                   style=3D"border-spacing: 0; font-family: 'PostG=
+roteskBook', Helvetica, Arial, sans-serif;">=0A                <tr>=0A     =
+               <td style=3D"padding: 15px 15px 0px 15px; background-color: =
+#ffffff">=0A=0A<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0">=0A =
+   <tr>=0A        <td >=0A            <table cellspacing=3D"0" cellpadding=
+=3D"0" width=3D"100%" border=3D"0">=0A    <tr valign=3D"top">=0A        <td=
+ class=3D"column-sixty" valign=3D"middle"=0A    style=3D"width: 192px;=0A  =
+          background-color: transparent;=0A            padding: 0px;">=0A  =
+  =0A    <a href=3D"https://et.trulia.com/tracker=3Ftype=3Dclick&emailid=3D=
+austindreier@icloud.com&userid=3DdXNlcl9pZD00Mzk1MjA2NyZjb21tc1BsYXRmb3JtPW=
+VtdjImZ3VpZD0xNTA4NTk4OTQ1MDU0Xzg3ZjcyZjA2YjNkNDM1MGQ4YWY1NWZmNGUyYzRjOWQ4X=
+2lwLTE3Mi0xOC0yNS0xNTAmZW1haWxfdHlwZV9pZD0yNjcmZW1haWw9YXVzdGluZHJlaWVyQGlj=
+bG91ZC5jb20=3D&extra=3DMultivariateId=3D&&&2000&&&https://www.trulia.com/ha=
+ndshake/=3Falat=3Db55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78=
+cf85bd7&alrt=3D951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f=
+4c0a&ecampaign=3Deml|frb|con_day_infrentsearchfill_bk_emv2|group_3&return=
+=3Dhttps%3A%2F%2Fwww.trulia.com%2Femail%2Feml%7Cfrb%7Ccon_day_infrentsearch=
+fill_bk_emv2%7Cgroup_3%2Fwww.trulia.com%2Frental%2F4010294185%3Falat%3Db552=
+64e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7%26alrt%3D95118=
+4f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a" id=3Dw_image2 =
+title=3D"Property details">=0A        <img src=3D"https://thumbs.trulia-cdn=
+.com/pictures/thumbs_4/ps.109/f/d/e/a/picture-uh=3Dc29b8c939e645c6c0487277=
+b6f483-ps=3Dfdea9b2f8d3de428c84445ea02fd527.jpg"=0A             border=3D"0=
+"=0A             width=3D"195"=0A             height=3D"170"=0A            =
+ class=3D"fullwidth"=0A             alt=3D"Home Image"=0A             style=
+=3D"font-family: Helvetica, Arial, sans-serif;=0A                     font-=
+size: 14px;=0A                     color: #B1B6BB;=0A                     b=
+order: 0;" />=0A    </a>=0A    =0A</td>=0A=0A        <td class=3D"column-fo=
+rty" style=3D"width: 127px; background-color: transparent;">  =0A    =0A   =
+ <a href=3D"https://et.trulia.com/tracker=3Ftype=3Dclick&emailid=3Daustindr=
+eier@icloud.com&userid=3DdXNlcl9pZD00Mzk1MjA2NyZjb21tc1BsYXRmb3JtPWVtdjImZ3=
+VpZD0xNTA4NTk4OTQ1MDU0Xzg3ZjcyZjA2YjNkNDM1MGQ4YWY1NWZmNGUyYzRjOWQ4X2lwLTE3M=
+i0xOC0yNS0xNTAmZW1haWxfdHlwZV9pZD0yNjcmZW1haWw9YXVzdGluZHJlaWVyQGljbG91ZC5j=
+b20=3D&extra=3DMultivariateId=3D&&&2000&&&https://www.trulia.com/handshake/=
+=3Falat=3Db55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7&=
+alrt=3D951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a&eca=
+mpaign=3Deml|frb|con_day_infrentsearchfill_bk_emv2|group_3&return=3Dhttps%3=
+A%2F%2Fwww.trulia.com%2Femail%2Feml%7Cfrb%7Ccon_day_infrentsearchfill_bk_em=
+v2%7Cgroup_3%2Fwww.trulia.com%2Frental%2F4010294185%3Falat%3Db55264e32f803e=
+d221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7%26alrt%3D951184f4c70cee0=
+6642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a#map" id=3Dw_map2 title=3D=
+"Property details">=0A        <img src=3D"https://maps.googleapis.com/maps/=
+api/staticmap=3Fmaptype=3Droadmap&client=3Dgme-zillowinc3&zoom=3D13&sensor=
+=3Dfalse&size=3D130x170&center=3D34.030766%2C-118.342530&markers=3Dicon%3Ah=
+ttps%3A%2F%2Fstatic.trulia-cdn.com%2Fimages%2Fmap%2Fmarkers%2Ffor_rent.png%=
+7C34.030766%2C-118.342530&signature=3DfEsDn8BDke1wwRFy7vICaVsJ-Z0=3D" borde=
+r=3D"0" width=3D"130" height=3D"170" class=3D"fullwidth" alt=3D"Map View" s=
+tyle=3D"font-family: Helvetica, Arial, sans-serif; font-size: 14px; color: =
+#B1B6BB; border: 0;  height: auto;" />=0A    </a>=0A    =0A</td>=0A=0A    <=
+/tr>=0A</table>=0A=0A        </td>=0A    </tr>=0A    <tr>=0A    <td  height=
+=3D"15" style=3D"background-color:transparent;font-size: 15;line-height:1px=
+;padding-top: 0px;padding-bottom: 0px;">=0A        &nbsp;=0A    </td>=0A</t=
+r>=0A=0A=0A    =0A        =0A<tr align=3D"left">=0A    =0A    =0A    <td st=
+yle=3D"color: #474E52;=0A            display:inline;=0A            backgrou=
+nd-color: transparent;=0A            font-family: PostGroteskBook, Helvetic=
+a, Arial, san-serif;=0A            font-weight: 300;=0A            font-siz=
+e: 16px;=0A            text-align: center;=0A            letter-spacing: 0p=
+x;=0A            line-height: 18px;=0A            padding-left: 0px;=0A    =
+        padding-right: 0px;=0A            padding-top: 0px;=0A            p=
+adding-bottom: 0px;">=0A        =0A                <div align=3D"left" styl=
+e=3D"display:inline"><!--[if (gte mso 9)|(IE)]>=0A    <v:roundrect xmlns:v=
+=3D"urn:schemas-microsoft-com:vml" xmlns:w=3D"urn:schemas-microsoft-com:off=
+ice:word"=0A                 href=3D"https://et.trulia.com/tracker=3Ftype=
+=3Dclick&amp;emailid=3Daustindreier@icloud.com&amp;userid=3DdXNlcl9pZD00Mzk=
+1MjA2NyZjb21tc1BsYXRmb3JtPWVtdjImZ3VpZD0xNTA4NTk4OTQ1MDU0Xzg3ZjcyZjA2YjNkND=
+M1MGQ4YWY1NWZmNGUyYzRjOWQ4X2lwLTE3Mi0xOC0yNS0xNTAmZW1haWxfdHlwZV9pZD0yNjcmZ=
+W1haWw9YXVzdGluZHJlaWVyQGljbG91ZC5jb20=3D&amp;extra=3DMultivariateId=3D&amp=
+;&amp;&amp;2000&amp;&amp;&amp;https://www.trulia.com/handshake/=3Falat=3Db5=
+5264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7&alrt=3D95118=
+4f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a&ecampaign=3Deml=
+|frb|con_day_infrentsearchfill_bk_emv2|group_3&return=3Dhttps%3A%2F%2Fwww.t=
+rulia.com%2Femail%2Feml%7Cfrb%7Ccon_day_infrentsearchfill_bk_emv2%7Cgroup_3=
+%2Fwww.trulia.com%2Frental%2F4010294185%3Falat%3Db55264e32f803ed221d81f7814=
+5dd5914999c6de024a2b3c78485ba78cf85bd7%26alrt%3D951184f4c70cee06642d5bf437a=
+6e9715b1fe284c8181876066fb0227f7f4c0a#photo-1"=0A                 id=3D"w_b=
+utton2"=0A                 style=3D"height:44px;v-text-anchor:middle;width:=
+325px;" arcsize=3D"15%"=0A                 stroke=3D"f" fillcolor=3D"#20C06=
+3">=0A        <center>=0A    <![endif]-->=0A    <!--[if (gte mso 9)|(IE)]>=
+=0A    <a href=3D"https://et.trulia.com/tracker=3Ftype=3Dclick&amp;emailid=
+=3Daustindreier@icloud.com&amp;userid=3DdXNlcl9pZD00Mzk1MjA2NyZjb21tc1BsYXR=
+mb3JtPWVtdjImZ3VpZD0xNTA4NTk4OTQ1MDU0Xzg3ZjcyZjA2YjNkNDM1MGQ4YWY1NWZmNGUyYz=
+RjOWQ4X2lwLTE3Mi0xOC0yNS0xNTAmZW1haWxfdHlwZV9pZD0yNjcmZW1haWw9YXVzdGluZHJla=
+WVyQGljbG91ZC5jb20=3D&amp;extra=3DMultivariateId=3D&amp;&amp;&amp;2000&amp;=
+&amp;&amp;https://www.trulia.com/handshake/=3Falat=3Db55264e32f803ed221d81f=
+78145dd5914999c6de024a2b3c78485ba78cf85bd7&alrt=3D951184f4c70cee06642d5bf43=
+7a6e9715b1fe284c8181876066fb0227f7f4c0a&ecampaign=3Deml|frb|con_day_infrent=
+searchfill_bk_emv2|group_3&return=3Dhttps%3A%2F%2Fwww.trulia.com%2Femail%2F=
+eml%7Cfrb%7Ccon_day_infrentsearchfill_bk_emv2%7Cgroup_3%2Fwww.trulia.com%2F=
+rental%2F4010294185%3Falat%3Db55264e32f803ed221d81f78145dd5914999c6de024a2b=
+3c78485ba78cf85bd7%26alrt%3D951184f4c70cee06642d5bf437a6e9715b1fe284c818187=
+6066fb0227f7f4c0a#photo-1" align=3D"left"=0A       id=3D"w_button2"=0A     =
+  title=3D"Property Details" style=3D"background-color:#20C063;=0A       bo=
+rder-radius:5;=0A       color:#ffffff;=0A       display:block;=0A       fon=
+t-family:  PostGroteskBook, Helvetica, Arial, sans-serif;=0A    font-weight=
+: 300;=0A    font-size:16px;=0A    line-height:44px;=0A    text-align:cente=
+r;=0A    text-decoration:none;=0A    width:325px;=0A    height:44px;=0A    =
+-webkit-text-size-adjust:none;">=0A    View 7 More Photos & Details=0A    <=
+/a>=0A    <![endif]-->=0A    <!--[if !((gte mso 9)|(IE))]><!-- -->=0A    <a=
+ href=3D"https://et.trulia.com/tracker=3Ftype=3Dclick&emailid=3Daustindreie=
+r@icloud.com&userid=3DdXNlcl9pZD00Mzk1MjA2NyZjb21tc1BsYXRmb3JtPWVtdjImZ3VpZ=
+D0xNTA4NTk4OTQ1MDU0Xzg3ZjcyZjA2YjNkNDM1MGQ4YWY1NWZmNGUyYzRjOWQ4X2lwLTE3Mi0x=
+OC0yNS0xNTAmZW1haWxfdHlwZV9pZD0yNjcmZW1haWw9YXVzdGluZHJlaWVyQGljbG91ZC5jb20=
+=3D&extra=3DMultivariateId=3D&&&2000&&&https://www.trulia.com/handshake/=3F=
+alat=3Db55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7&alr=
+t=3D951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a&ecampa=
+ign=3Deml|frb|con_day_infrentsearchfill_bk_emv2|group_3&return=3Dhttps%3A%2=
+F%2Fwww.trulia.com%2Femail%2Feml%7Cfrb%7Ccon_day_infrentsearchfill_bk_emv2%=
+7Cgroup_3%2Fwww.trulia.com%2Frental%2F4010294185%3Falat%3Db55264e32f803ed22=
+1d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7%26alrt%3D951184f4c70cee0664=
+2d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a#photo-1" align=3D"left"=0A  =
+     id=3D"w_button2"=0A       title=3D"View 7 More Photos & Details" style=
+=3D"background-color:#20C063;=0A            border-radius:5px;=0A          =
+  border-color:transparent;=0A            border-width:0px;=0A            b=
+order-style:none;=0A            color:#ffffff;=0A            display:block;=
+=0A            font-family: PostGroteskBook, Helvetica, Arial, sans-serif;=
+=0A            font-weight: 300;=0A            font-size:16px;=0A          =
+  line-height:44px;=0A            text-align:center;=0A            text-dec=
+oration:none;=0A            min-width:325px;=0A            max-width:100%;=
+=0A            height:44px;=0A            -webkit-text-size-adjust:none;">=
+=0A        View 7 More Photos & Details=0A    </a>=0A    <!--<![endif]-->=
+=0A    <!--[if (gte mso 9)|(IE)]>=0A    </center>=0A    </v:roundrect>=0A  =
+  <![endif]--></div>=0A=0A            =0A    </td>=0A</tr>=0A=0A=0A        =
+<tr>=0A    <td class=3D"hide-on-mobile"  height=3D"15" style=3D"background-=
+color:transparent;font-size: 15;line-height:1px;padding-top: 0px;padding-bo=
+ttom: 0px;">=0A        &nbsp;=0A    </td>=0A</tr>=0A=0A    =0A</table>=0A</=
+td>=0A</tr>=0A</table>=0A</div>=0A<!--[if (gte mso 9)|(IE)]>=0A</td>       =
+                                        =0A<td width=3D"215" valign=3D"top"=
+ style=3D"width:215px;"> =0A<![endif]-->=0A<div class=3D"column"=0A     sty=
+le=3D"max-width: 215px; width: 100%; display: inline-block; vertical-align:=
+ top;">=0A    <table width=3D"100%" align=3D"left"=0A           style=3D"bo=
+rder-spacing: 0; font-family: 'PostGroteskBook', Helvetica, Arial, sans-ser=
+if; background-color: #ffffff;">=0A        <tr>=0A            <td style=3D"=
+background-color: #ffffff; padding: 15px 15px 15px 15px;">=0A=0A<!--[if (gt=
+e mso 9)|(IE)]>=0A<table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" w=
+idth=3D"205" style=3D"width: 205px;">=0A    <tr>=0A        <td width=3D"205=
+" style=3D"width: 205px;">=0A<![endif]-->=0A<table cellpadding=3D"0" cellsp=
+acing=3D"0" width=3D"100%" style=3D"text-align: left;">=0A    <tr> =0A     =
+   <td>=0A            =0A    <style>=0A        .removeAutomaticLink a {=0A =
+           color: #474E52 !important;=0A            text-decoration: none;=
+=0A        }=0A    </style>=0A=0A<a  class=3D"removeAutomaticLink" =0A     =
+    id=3D"w_price2" =0A         href=3D"https://et.trulia.com/tracker=3Ftyp=
+e=3Dclick&emailid=3Daustindreier@icloud.com&userid=3DdXNlcl9pZD00Mzk1MjA2Ny=
+Zjb21tc1BsYXRmb3JtPWVtdjImZ3VpZD0xNTA4NTk4OTQ1MDU0Xzg3ZjcyZjA2YjNkNDM1MGQ4Y=
+WY1NWZmNGUyYzRjOWQ4X2lwLTE3Mi0xOC0yNS0xNTAmZW1haWxfdHlwZV9pZD0yNjcmZW1haWw9=
+YXVzdGluZHJlaWVyQGljbG91ZC5jb20=3D&extra=3DMultivariateId=3D&&&2000&&&https=
+://www.trulia.com/handshake/=3Falat=3Db55264e32f803ed221d81f78145dd5914999c=
+6de024a2b3c78485ba78cf85bd7&alrt=3D951184f4c70cee06642d5bf437a6e9715b1fe284=
+c8181876066fb0227f7f4c0a&ecampaign=3Deml|frb|con_day_infrentsearchfill_bk_e=
+mv2|group_3&return=3Dhttps%3A%2F%2Fwww.trulia.com%2Femail%2Feml%7Cfrb%7Ccon=
+_day_infrentsearchfill_bk_emv2%7Cgroup_3%2Fwww.trulia.com%2Frental%2F401029=
+4185%3Falat%3Db55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85=
+bd7%26alrt%3D951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c=
+0a" =0A        style=3D"color: #474E52;=0A                text-decoration: =
+none;=0A                background-color: transparent;=0A                fo=
+nt-family: PostGroteskMedium, Helvetica, Arial, sans-serif;=0A             =
+   font-weight: 500;=0A                font-size: 28px;=0A                t=
+ext-align: left;=0A                padding-top: 0px;=0A                padd=
+ing-bottom: 0px;=0A                letter-spacing: 0px;=0A        =0A      =
+          line-height: 34px;" title=3D"$925">=0A    =0A        <!--[if mso]=
+><font=0A                style=3D"display:none;font-size:0;max-height:0;lin=
+e-height:0;padding:0;mso-hide:all;">@text</font><![endif]-->$925=0A    =0A<=
+/a>=0A=0A        </td>=0A    </tr>=0A    =0A        <tr>=0A    <td  height=
+=3D"15" style=3D"background-color:transparent;font-size: 15;line-height:1px=
+;padding-top: 0px;padding-bottom: 0px;">=0A        &nbsp;=0A    </td>=0A</t=
+r>=0A=0A        <tr> =0A            <td style=3D"font-family: 'PostGroteskM=
+edium', Helvetica, Arial, sans-serif; font-size: 12px; line-height: 17px; l=
+etter-spacing: 1px; font-weight: bold;">=0A                =0A             =
+       <span style=3D"color: #869099; white-space: nowrap; display: inline-=
+block;">FURNISHED</span>=0A                =0A            </td>=0A        <=
+/tr>=0A    =0A    <tr>=0A    <td  height=3D"15" style=3D"background-color:t=
+ransparent;font-size: 15;line-height:1px;padding-top: 0px;padding-bottom: 0=
+px;">=0A        &nbsp;=0A    </td>=0A</tr>=0A=0A    =0A        <tr> =0A    =
+        <td>=0A                <table cellpadding=3D"0" cellspacing=3D"0" b=
+order=3D"0" width=3D"100%"=0A                       style=3D"font-family: '=
+PostGroteskBook', Helvetica, Arial, sans-serif; font-size: 14px; color: #86=
+9099">=0A                    <tr>=0A                        <td style=3D"al=
+ign: left;">=0A                            Studio&nbsp;&nbsp; =0A          =
+                  1 ba&nbsp;=0A                            =0A             =
+                   &nbsp;<img src=3D"http://static.trulia-cdn.com/images/em=
+ail/icons/icon_photos_grey_30x26.png" alt=3D"Photos icon" height=3D"16"=0A =
+                                          border=3D"0"/> 8=0A              =
+              =0A                        </td>=0A                    </tr>=
+=0A                </table>=0A            </td>=0A        </tr>=0A        <=
+tr>=0A    <td  height=3D"15" style=3D"background-color:transparent;font-siz=
+e: 15;line-height:1px;padding-top: 0px;padding-bottom: 0px;">=0A        &nb=
+sp;=0A    </td>=0A</tr>=0A=0A    =0A    <tr> =0A        <td>=0A            =
+=0A                =0A<a =0A         id=3D"w_addr2" =0A         href=3D"htt=
+ps://et.trulia.com/tracker=3Ftype=3Dclick&emailid=3Daustindreier@icloud.com=
+&userid=3DdXNlcl9pZD00Mzk1MjA2NyZjb21tc1BsYXRmb3JtPWVtdjImZ3VpZD0xNTA4NTk4O=
+TQ1MDU0Xzg3ZjcyZjA2YjNkNDM1MGQ4YWY1NWZmNGUyYzRjOWQ4X2lwLTE3Mi0xOC0yNS0xNTAm=
+ZW1haWxfdHlwZV9pZD0yNjcmZW1haWw9YXVzdGluZHJlaWVyQGljbG91ZC5jb20=3D&extra=3D=
+MultivariateId=3D&&&2000&&&https://www.trulia.com/handshake/=3Falat=3Db5526=
+4e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7&alrt=3D951184f4=
+c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a&ecampaign=3Deml|fr=
+b|con_day_infrentsearchfill_bk_emv2|group_3&return=3Dhttps%3A%2F%2Fwww.trul=
+ia.com%2Femail%2Feml%7Cfrb%7Ccon_day_infrentsearchfill_bk_emv2%7Cgroup_3%2F=
+www.trulia.com%2Frental%2F4010294185%3Falat%3Db55264e32f803ed221d81f78145dd=
+5914999c6de024a2b3c78485ba78cf85bd7%26alrt%3D951184f4c70cee06642d5bf437a6e9=
+715b1fe284c8181876066fb0227f7f4c0a#map" =0A        style=3D"color: #20C063;=
+=0A                text-decoration: none;=0A                background-colo=
+r: transparent;=0A                font-family: PostGroteskBook, Helvetica, =
+Arial;=0A                font-weight: 300;=0A                font-size: 16p=
+x;=0A                text-align: left;=0A                padding-top: 0px;=
+=0A                padding-bottom: 0px;=0A                letter-spacing: 0=
+px;=0A        =0A                line-height: 18px;" title=3D"2808&#8203; H=
+illcrest&#8203; Dr&#8203;">=0A    2808&#8203; Hillcrest&#8203; Dr&#8203;=0A=
+    =0A</a>=0A=0A            =0A        </td>=0A    </tr>=0A    =0A        =
+<tr> =0A            <td>=0A                =0A<a =0A         id=3D"w_addr2"=
+ =0A         href=3D"https://et.trulia.com/tracker=3Ftype=3Dclick&emailid=
+=3Daustindreier@icloud.com&userid=3DdXNlcl9pZD00Mzk1MjA2NyZjb21tc1BsYXRmb3J=
+tPWVtdjImZ3VpZD0xNTA4NTk4OTQ1MDU0Xzg3ZjcyZjA2YjNkNDM1MGQ4YWY1NWZmNGUyYzRjOW=
+Q4X2lwLTE3Mi0xOC0yNS0xNTAmZW1haWxfdHlwZV9pZD0yNjcmZW1haWw9YXVzdGluZHJlaWVyQ=
+GljbG91ZC5jb20=3D&extra=3DMultivariateId=3D&&&2000&&&https://www.trulia.com=
+/handshake/=3Falat=3Db55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485b=
+a78cf85bd7&alrt=3D951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227=
+f7f4c0a&ecampaign=3Deml|frb|con_day_infrentsearchfill_bk_emv2|group_3&retur=
+n=3Dhttps%3A%2F%2Fwww.trulia.com%2Femail%2Feml%7Cfrb%7Ccon_day_infrentsearc=
+hfill_bk_emv2%7Cgroup_3%2Fwww.trulia.com%2Frental%2F4010294185%3Falat%3Db55=
+264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7%26alrt%3D9511=
+84f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a#map" =0A      =
+  style=3D"color: #20C063;=0A                text-decoration: none;=0A     =
+           background-color: transparent;=0A                font-family: Po=
+stGroteskBook, Helvetica, Arial;=0A                font-weight: 300;=0A    =
+            font-size: 16px;=0A                text-align: left;=0A        =
+        padding-top: 0px;=0A                padding-bottom: 0px;=0A        =
+        letter-spacing: 0px;=0A        =0A                line-height: 22px=
+;" title=3D"West&#8203; Adams,&#8203; CA&#8203;">=0A    West&#8203; Adams,&=
+#8203; CA&#8203;=0A    =0A</a>=0A=0A            </td>=0A        </tr>=0A   =
+     =0A            <tr> =0A                <td>=0A                    =0A<=
+a =0A         id=3D"w_neighbor2" =0A         href=3D"https://et.trulia.com/=
+tracker=3Ftype=3Dclick&emailid=3Daustindreier@icloud.com&userid=3DdXNlcl9pZ=
+D00Mzk1MjA2NyZjb21tc1BsYXRmb3JtPWVtdjImZ3VpZD0xNTA4NTk4OTQ1MDU0Xzg3ZjcyZjA2=
+YjNkNDM1MGQ4YWY1NWZmNGUyYzRjOWQ4X2lwLTE3Mi0xOC0yNS0xNTAmZW1haWxfdHlwZV9pZD0=
+yNjcmZW1haWw9YXVzdGluZHJlaWVyQGljbG91ZC5jb20=3D&extra=3DMultivariateId=3D&&=
+&2000&&&https://www.trulia.com/handshake/=3Falat=3Db55264e32f803ed221d81f78=
+145dd5914999c6de024a2b3c78485ba78cf85bd7&alrt=3D951184f4c70cee06642d5bf437a=
+6e9715b1fe284c8181876066fb0227f7f4c0a&ecampaign=3Deml|frb|con_day_infrentse=
+archfill_bk_emv2|group_3&return=3Dhttps%3A%2F%2Fwww.trulia.com%2Femail%2Fem=
+l%7Cfrb%7Ccon_day_infrentsearchfill_bk_emv2%7Cgroup_3%2Fwww.trulia.com%2Fre=
+ntal%2F4010294185%3Falat%3Db55264e32f803ed221d81f78145dd5914999c6de024a2b3c=
+78485ba78cf85bd7%26alrt%3D951184f4c70cee06642d5bf437a6e9715b1fe284c81818760=
+66fb0227f7f4c0a#map" =0A        style=3D"color: #869099;=0A                =
+text-decoration: none;=0A                background-color: transparent;=0A =
+               font-family: PostGroteskBook, Helvetica, Arial;=0A          =
+      font-weight: 300;=0A                font-size: 16px;=0A              =
+  text-align: left;=0A                padding-top: 0px;=0A                p=
+adding-bottom: 0px;=0A                letter-spacing: 0px;=0A        =0A   =
+             line-height: 22px;" title=3D"Jefferson">=0A    Jefferson=0A   =
+ =0A</a>=0A=0A                </td>=0A            </tr>=0A        =0A    =
+=0A</table>=0A<!--[if (gte mso 9)|(IE)]>=0A</td>=0A</tr>=0A</table>=0A<![en=
+dif]-->=0A=0A</td>=0A</tr>=0A</table>=0A</div>=0A<!--[if (gte mso 9)|(IE)]>=
+=0A</td> =0A</tr>=0A</table>=0A<![endif]-->=0A=0A</td>=0A</tr>=0A=0A    <tr=
+>=0A    <td  height=3D"5" style=3D"background-color:transparent;font-size: =
+5;line-height:1px;padding-top: 0px;padding-bottom: 0px;">=0A        &nbsp;=
+=0A    </td>=0A</tr>=0A=0A=0A=0A=0A=0A=0A=0A    =0A  =0A=0A=0A=0A=0A=0A<!--=
+ START Two Columns -->=0A<tr  >=0A    <td class=3D"column"=0A        style=
+=3D"padding: 0; font-size: 0; background-color: #ffffff; width: 100%">=0A  =
+      <a  >=0A        <!--[if (gte mso 9)|(IE)]>=0A        <table cellspaci=
+ng=3D"0" cellpadding=3D"0" border=3D"0" width=3D"600"=0A               styl=
+e=3D"width:600px;">=0A            <tr>=0A                <td width=3D"355" =
+style=3D"width: 355px;"> =0A        <![endif]-->=0A        <div class=3D"co=
+lumn"=0A             style=3D"overflow:hidden; max-width: 355px; width: 100=
+%; display: inline-block; vertical-align: top;">=0A            <table width=
+=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0"=0A              =
+     style=3D"border-spacing: 0; font-family: 'PostGroteskBook', Helvetica,=
+ Arial, sans-serif;">=0A                <tr>=0A                    <td styl=
+e=3D"padding: 15px 15px 0px 15px; background-color: #ffffff">=0A=0A<table c=
+ellpadding=3D"0" cellspacing=3D"0" border=3D"0">=0A    <tr>=0A        <td >=
+=0A            <table cellspacing=3D"0" cellpadding=3D"0" width=3D"100%" bo=
+rder=3D"0">=0A    <tr valign=3D"top">=0A        <td class=3D"column-sixty" =
+valign=3D"middle"=0A    style=3D"width: 192px;=0A            background-col=
+or: transparent;=0A            padding: 0px;">=0A    =0A    <a href=3D"http=
+s://et.trulia.com/tracker=3Ftype=3Dclick&emailid=3Daustindreier@icloud.com&=
+userid=3DdXNlcl9pZD00Mzk1MjA2NyZjb21tc1BsYXRmb3JtPWVtdjImZ3VpZD0xNTA4NTk4OT=
+Q1MDU0Xzg3ZjcyZjA2YjNkNDM1MGQ4YWY1NWZmNGUyYzRjOWQ4X2lwLTE3Mi0xOC0yNS0xNTAmZ=
+W1haWxfdHlwZV9pZD0yNjcmZW1haWw9YXVzdGluZHJlaWVyQGljbG91ZC5jb20=3D&extra=3DM=
+ultivariateId=3D&&&2000&&&https://www.trulia.com/handshake/=3Falat=3Db55264=
+e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7&alrt=3D951184f4c=
+70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a&ecampaign=3Deml|frb=
+|con_day_infrentsearchfill_bk_emv2|group_3&return=3Dhttps%3A%2F%2Fwww.truli=
+a.com%2Femail%2Feml%7Cfrb%7Ccon_day_infrentsearchfill_bk_emv2%7Cgroup_3%2Fw=
+ww.trulia.com%2Frental%2F4037296642%3Falat%3Db55264e32f803ed221d81f78145dd5=
+914999c6de024a2b3c78485ba78cf85bd7%26alrt%3D951184f4c70cee06642d5bf437a6e97=
+15b1fe284c8181876066fb0227f7f4c0a" id=3Dw_image3 title=3D"Property details"=
+>=0A        <img src=3D"https://thumbs.trulia-cdn.com/pictures/thumbs_6/ps.=
+109/6/9/9/5/picture-uh=3D3484d2d659f6fb117185c6c985d6ba2-ps=3D6995a22490b79=
+6bd9fcac28906e79be.jpg"=0A             border=3D"0"=0A             width=3D=
+"195"=0A             height=3D"170"=0A             class=3D"fullwidth"=0A  =
+           alt=3D"Home Image"=0A             style=3D"font-family: Helvetic=
+a, Arial, sans-serif;=0A                     font-size: 14px;=0A           =
+          color: #B1B6BB;=0A                     border: 0;" />=0A    </a>=
+=0A    =0A</td>=0A=0A        <td class=3D"column-forty" style=3D"width: 127=
+px; background-color: transparent;">  =0A    =0A    <a href=3D"https://et.t=
+rulia.com/tracker=3Ftype=3Dclick&emailid=3Daustindreier@icloud.com&userid=
+=3DdXNlcl9pZD00Mzk1MjA2NyZjb21tc1BsYXRmb3JtPWVtdjImZ3VpZD0xNTA4NTk4OTQ1MDU0=
+Xzg3ZjcyZjA2YjNkNDM1MGQ4YWY1NWZmNGUyYzRjOWQ4X2lwLTE3Mi0xOC0yNS0xNTAmZW1haWx=
+fdHlwZV9pZD0yNjcmZW1haWw9YXVzdGluZHJlaWVyQGljbG91ZC5jb20=3D&extra=3DMultiva=
+riateId=3D&&&2000&&&https://www.trulia.com/handshake/=3Falat=3Db55264e32f80=
+3ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7&alrt=3D951184f4c70cee0=
+6642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a&ecampaign=3Deml|frb|con_d=
+ay_infrentsearchfill_bk_emv2|group_3&return=3Dhttps%3A%2F%2Fwww.trulia.com%=
+2Femail%2Feml%7Cfrb%7Ccon_day_infrentsearchfill_bk_emv2%7Cgroup_3%2Fwww.tru=
+lia.com%2Frental%2F4037296642%3Falat%3Db55264e32f803ed221d81f78145dd5914999=
+c6de024a2b3c78485ba78cf85bd7%26alrt%3D951184f4c70cee06642d5bf437a6e9715b1fe=
+284c8181876066fb0227f7f4c0a#map" id=3Dw_map3 title=3D"Property details">=0A=
+        <img src=3D"https://maps.googleapis.com/maps/api/staticmap=3Fmaptyp=
+e=3Droadmap&client=3Dgme-zillowinc3&zoom=3D13&sensor=3Dfalse&size=3D130x170=
+&center=3D34.052254%2C-118.374680&markers=3Dicon%3Ahttps%3A%2F%2Fstatic.tru=
+lia-cdn.com%2Fimages%2Fmap%2Fmarkers%2Ffor_rent.png%7C34.052254%2C-118.3746=
+80&signature=3D61PAFPtgn0Ql3JdnNwe2l15C3kE=3D" border=3D"0" width=3D"130" h=
+eight=3D"170" class=3D"fullwidth" alt=3D"Map View" style=3D"font-family: He=
+lvetica, Arial, sans-serif; font-size: 14px; color: #B1B6BB; border: 0;  he=
+ight: auto;" />=0A    </a>=0A    =0A</td>=0A=0A    </tr>=0A</table>=0A=0A  =
+      </td>=0A    </tr>=0A    <tr>=0A    <td  height=3D"15" style=3D"backgr=
+ound-color:transparent;font-size: 15;line-height:1px;padding-top: 0px;paddi=
+ng-bottom: 0px;">=0A        &nbsp;=0A    </td>=0A</tr>=0A=0A=0A    =0A     =
+   =0A<tr align=3D"left">=0A    =0A    =0A    <td style=3D"color: #474E52;=
+=0A            display:inline;=0A            background-color: transparent;=
+=0A            font-family: PostGroteskBook, Helvetica, Arial, san-serif;=
+=0A            font-weight: 300;=0A            font-size: 16px;=0A         =
+   text-align: center;=0A            letter-spacing: 0px;=0A            lin=
+e-height: 18px;=0A            padding-left: 0px;=0A            padding-righ=
+t: 0px;=0A            padding-top: 0px;=0A            padding-bottom: 0px;"=
+>=0A        =0A                <div align=3D"left" style=3D"display:inline"=
+><!--[if (gte mso 9)|(IE)]>=0A    <v:roundrect xmlns:v=3D"urn:schemas-micro=
+soft-com:vml" xmlns:w=3D"urn:schemas-microsoft-com:office:word"=0A         =
+        href=3D"https://et.trulia.com/tracker=3Ftype=3Dclick&amp;emailid=3D=
+austindreier@icloud.com&amp;userid=3DdXNlcl9pZD00Mzk1MjA2NyZjb21tc1BsYXRmb3=
+JtPWVtdjImZ3VpZD0xNTA4NTk4OTQ1MDU0Xzg3ZjcyZjA2YjNkNDM1MGQ4YWY1NWZmNGUyYzRjO=
+WQ4X2lwLTE3Mi0xOC0yNS0xNTAmZW1haWxfdHlwZV9pZD0yNjcmZW1haWw9YXVzdGluZHJlaWVy=
+QGljbG91ZC5jb20=3D&amp;extra=3DMultivariateId=3D&amp;&amp;&amp;2000&amp;&am=
+p;&amp;https://www.trulia.com/handshake/=3Falat=3Db55264e32f803ed221d81f781=
+45dd5914999c6de024a2b3c78485ba78cf85bd7&alrt=3D951184f4c70cee06642d5bf437a6=
+e9715b1fe284c8181876066fb0227f7f4c0a&ecampaign=3Deml|frb|con_day_infrentsea=
+rchfill_bk_emv2|group_3&return=3Dhttps%3A%2F%2Fwww.trulia.com%2Femail%2Feml=
+%7Cfrb%7Ccon_day_infrentsearchfill_bk_emv2%7Cgroup_3%2Fwww.trulia.com%2Fren=
+tal%2F4037296642%3Falat%3Db55264e32f803ed221d81f78145dd5914999c6de024a2b3c7=
+8485ba78cf85bd7%26alrt%3D951184f4c70cee06642d5bf437a6e9715b1fe284c818187606=
+6fb0227f7f4c0a#photo-1"=0A                 id=3D"w_button3"=0A             =
+    style=3D"height:44px;v-text-anchor:middle;width:325px;" arcsize=3D"15%"=
+=0A                 stroke=3D"f" fillcolor=3D"#20C063">=0A        <center>=
+=0A    <![endif]-->=0A    <!--[if (gte mso 9)|(IE)]>=0A    <a href=3D"https=
+://et.trulia.com/tracker=3Ftype=3Dclick&amp;emailid=3Daustindreier@icloud.c=
+om&amp;userid=3DdXNlcl9pZD00Mzk1MjA2NyZjb21tc1BsYXRmb3JtPWVtdjImZ3VpZD0xNTA=
+4NTk4OTQ1MDU0Xzg3ZjcyZjA2YjNkNDM1MGQ4YWY1NWZmNGUyYzRjOWQ4X2lwLTE3Mi0xOC0yNS=
+0xNTAmZW1haWxfdHlwZV9pZD0yNjcmZW1haWw9YXVzdGluZHJlaWVyQGljbG91ZC5jb20=3D&am=
+p;extra=3DMultivariateId=3D&amp;&amp;&amp;2000&amp;&amp;&amp;https://www.tr=
+ulia.com/handshake/=3Falat=3Db55264e32f803ed221d81f78145dd5914999c6de024a2b=
+3c78485ba78cf85bd7&alrt=3D951184f4c70cee06642d5bf437a6e9715b1fe284c81818760=
+66fb0227f7f4c0a&ecampaign=3Deml|frb|con_day_infrentsearchfill_bk_emv2|group=
+_3&return=3Dhttps%3A%2F%2Fwww.trulia.com%2Femail%2Feml%7Cfrb%7Ccon_day_infr=
+entsearchfill_bk_emv2%7Cgroup_3%2Fwww.trulia.com%2Frental%2F4037296642%3Fal=
+at%3Db55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7%26alr=
+t%3D951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a#photo-=
+1" align=3D"left"=0A       id=3D"w_button3"=0A       title=3D"Property Deta=
+ils" style=3D"background-color:#20C063;=0A       border-radius:5;=0A       =
+color:#ffffff;=0A       display:block;=0A       font-family:  PostGroteskBo=
+ok, Helvetica, Arial, sans-serif;=0A    font-weight: 300;=0A    font-size:1=
+6px;=0A    line-height:44px;=0A    text-align:center;=0A    text-decoration=
+:none;=0A    width:325px;=0A    height:44px;=0A    -webkit-text-size-adjust=
+:none;">=0A    View 3 More Photos & Details=0A    </a>=0A    <![endif]-->=
+=0A    <!--[if !((gte mso 9)|(IE))]><!-- -->=0A    <a href=3D"https://et.tr=
+ulia.com/tracker=3Ftype=3Dclick&emailid=3Daustindreier@icloud.com&userid=3D=
+dXNlcl9pZD00Mzk1MjA2NyZjb21tc1BsYXRmb3JtPWVtdjImZ3VpZD0xNTA4NTk4OTQ1MDU0Xzg=
+3ZjcyZjA2YjNkNDM1MGQ4YWY1NWZmNGUyYzRjOWQ4X2lwLTE3Mi0xOC0yNS0xNTAmZW1haWxfdH=
+lwZV9pZD0yNjcmZW1haWw9YXVzdGluZHJlaWVyQGljbG91ZC5jb20=3D&extra=3DMultivaria=
+teId=3D&&&2000&&&https://www.trulia.com/handshake/=3Falat=3Db55264e32f803ed=
+221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7&alrt=3D951184f4c70cee0664=
+2d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a&ecampaign=3Deml|frb|con_day_=
+infrentsearchfill_bk_emv2|group_3&return=3Dhttps%3A%2F%2Fwww.trulia.com%2Fe=
+mail%2Feml%7Cfrb%7Ccon_day_infrentsearchfill_bk_emv2%7Cgroup_3%2Fwww.trulia=
+.com%2Frental%2F4037296642%3Falat%3Db55264e32f803ed221d81f78145dd5914999c6=
+de024a2b3c78485ba78cf85bd7%26alrt%3D951184f4c70cee06642d5bf437a6e9715b1fe28=
+4c8181876066fb0227f7f4c0a#photo-1" align=3D"left"=0A       id=3D"w_button3"=
+=0A       title=3D"View 3 More Photos & Details" style=3D"background-color:=
+#20C063;=0A            border-radius:5px;=0A            border-color:transp=
+arent;=0A            border-width:0px;=0A            border-style:none;=0A =
+           color:#ffffff;=0A            display:block;=0A            font-f=
+amily: PostGroteskBook, Helvetica, Arial, sans-serif;=0A            font-we=
+ight: 300;=0A            font-size:16px;=0A            line-height:44px;=0A=
+            text-align:center;=0A            text-decoration:none;=0A      =
+      min-width:325px;=0A            max-width:100%;=0A            height:4=
+4px;=0A            -webkit-text-size-adjust:none;">=0A        View 3 More P=
+hotos & Details=0A    </a>=0A    <!--<![endif]-->=0A    <!--[if (gte mso 9)=
+|(IE)]>=0A    </center>=0A    </v:roundrect>=0A    <![endif]--></div>=0A=0A=
+            =0A    </td>=0A</tr>=0A=0A=0A        <tr>=0A    <td class=3D"hi=
+de-on-mobile"  height=3D"15" style=3D"background-color:transparent;font-siz=
+e: 15;line-height:1px;padding-top: 0px;padding-bottom: 0px;">=0A        &nb=
+sp;=0A    </td>=0A</tr>=0A=0A    =0A</table>=0A</td>=0A</tr>=0A</table>=0A<=
+/div>=0A<!--[if (gte mso 9)|(IE)]>=0A</td>                                 =
+              =0A<td width=3D"215" valign=3D"top" style=3D"width:215px;"> =
+=0A<![endif]-->=0A<div class=3D"column"=0A     style=3D"max-width: 215px; w=
+idth: 100%; display: inline-block; vertical-align: top;">=0A    <table widt=
+h=3D"100%" align=3D"left"=0A           style=3D"border-spacing: 0; font-fam=
+ily: 'PostGroteskBook', Helvetica, Arial, sans-serif; background-color: #ff=
+ffff;">=0A        <tr>=0A            <td style=3D"background-color: #ffffff=
+; padding: 15px 15px 15px 15px;">=0A=0A<!--[if (gte mso 9)|(IE)]>=0A<table =
+cellspacing=3D"0" cellpadding=3D"0" border=3D"0" width=3D"205" style=3D"wid=
+th: 205px;">=0A    <tr>=0A        <td width=3D"205" style=3D"width: 205px;"=
+>=0A<![endif]-->=0A<table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%=
+" style=3D"text-align: left;">=0A    <tr> =0A        <td>=0A            =0A=
+    <style>=0A        .removeAutomaticLink a {=0A            color: #474E52=
+ !important;=0A            text-decoration: none;=0A        }=0A    </style=
+>=0A=0A<a  class=3D"removeAutomaticLink" =0A         id=3D"w_price3" =0A   =
+      href=3D"https://et.trulia.com/tracker=3Ftype=3Dclick&emailid=3Daustin=
+dreier@icloud.com&userid=3DdXNlcl9pZD00Mzk1MjA2NyZjb21tc1BsYXRmb3JtPWVtdjIm=
+Z3VpZD0xNTA4NTk4OTQ1MDU0Xzg3ZjcyZjA2YjNkNDM1MGQ4YWY1NWZmNGUyYzRjOWQ4X2lwLTE=
+3Mi0xOC0yNS0xNTAmZW1haWxfdHlwZV9pZD0yNjcmZW1haWw9YXVzdGluZHJlaWVyQGljbG91ZC=
+5jb20=3D&extra=3DMultivariateId=3D&&&2000&&&https://www.trulia.com/handshak=
+e/=3Falat=3Db55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd=
+7&alrt=3D951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a&e=
+campaign=3Deml|frb|con_day_infrentsearchfill_bk_emv2|group_3&return=3Dhttps=
+%3A%2F%2Fwww.trulia.com%2Femail%2Feml%7Cfrb%7Ccon_day_infrentsearchfill_bk_=
+emv2%7Cgroup_3%2Fwww.trulia.com%2Frental%2F4037296642%3Falat%3Db55264e32f80=
+3ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7%26alrt%3D951184f4c70ce=
+e06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a" =0A        style=3D"co=
+lor: #474E52;=0A                text-decoration: none;=0A                ba=
+ckground-color: transparent;=0A                font-family: PostGroteskMedi=
+um, Helvetica, Arial, sans-serif;=0A                font-weight: 500;=0A   =
+             font-size: 28px;=0A                text-align: left;=0A       =
+         padding-top: 0px;=0A                padding-bottom: 0px;=0A       =
+         letter-spacing: 0px;=0A        =0A                line-height: 34p=
+x;" title=3D"$850">=0A    =0A        <!--[if mso]><font=0A                s=
+tyle=3D"display:none;font-size:0;max-height:0;line-height:0;padding:0;mso-h=
+ide:all;">@text</font><![endif]-->$850=0A    =0A</a>=0A=0A        </td>=0A =
+   </tr>=0A    =0A        <tr>=0A    <td  height=3D"15" style=3D"background=
+-color:transparent;font-size: 15;line-height:1px;padding-top: 0px;padding-b=
+ottom: 0px;">=0A        &nbsp;=0A    </td>=0A</tr>=0A=0A        <tr> =0A   =
+         <td style=3D"font-family: 'PostGroteskMedium', Helvetica, Arial, s=
+ans-serif; font-size: 12px; line-height: 17px; letter-spacing: 1px; font-we=
+ight: bold;">=0A                =0A                    <span style=3D"color=
+: #869099; white-space: nowrap; display: inline-block;">ROOM FOR RENT</span=
+>=0A                =0A                    <span style=3D"color: #869099; w=
+hite-space: nowrap; display: inline-block;">BEST VALUE</span>=0A           =
+     =0A            </td>=0A        </tr>=0A    =0A    <tr>=0A    <td  heig=
+ht=3D"15" style=3D"background-color:transparent;font-size: 15;line-height:1=
+px;padding-top: 0px;padding-bottom: 0px;">=0A        &nbsp;=0A    </td>=0A<=
+/tr>=0A=0A    =0A        <tr> =0A            <td>=0A                <table =
+cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%"=0A         =
+              style=3D"font-family: 'PostGroteskBook', Helvetica, Arial, sa=
+ns-serif; font-size: 14px; color: #869099">=0A                    <tr>=0A  =
+                      <td style=3D"align: left;">=0A                       =
+     2 bd&nbsp;&nbsp; =0A                            1 ba&nbsp;=0A         =
+                   =0A                                &nbsp;<img src=3D"htt=
+p://static.trulia-cdn.com/images/email/icons/icon_photos_grey_30x26.png" al=
+t=3D"Photos icon" height=3D"16"=0A                                         =
+  border=3D"0"/> 4=0A                            =0A                       =
+ </td>=0A                    </tr>=0A                </table>=0A           =
+ </td>=0A        </tr>=0A        <tr>=0A    <td  height=3D"15" style=3D"bac=
+kground-color:transparent;font-size: 15;line-height:1px;padding-top: 0px;pa=
+dding-bottom: 0px;">=0A        &nbsp;=0A    </td>=0A</tr>=0A=0A    =0A    <=
+tr> =0A        <td>=0A            =0A                =0A<a =0A         id=
+=3D"w_addr3" =0A         href=3D"https://et.trulia.com/tracker=3Ftype=3Dcli=
+ck&emailid=3Daustindreier@icloud.com&userid=3DdXNlcl9pZD00Mzk1MjA2NyZjb21tc=
+1BsYXRmb3JtPWVtdjImZ3VpZD0xNTA4NTk4OTQ1MDU0Xzg3ZjcyZjA2YjNkNDM1MGQ4YWY1NWZm=
+NGUyYzRjOWQ4X2lwLTE3Mi0xOC0yNS0xNTAmZW1haWxfdHlwZV9pZD0yNjcmZW1haWw9YXVzdGl=
+uZHJlaWVyQGljbG91ZC5jb20=3D&extra=3DMultivariateId=3D&&&2000&&&https://www.=
+trulia.com/handshake/=3Falat=3Db55264e32f803ed221d81f78145dd5914999c6de024a=
+2b3c78485ba78cf85bd7&alrt=3D951184f4c70cee06642d5bf437a6e9715b1fe284c818187=
+6066fb0227f7f4c0a&ecampaign=3Deml|frb|con_day_infrentsearchfill_bk_emv2|gro=
+up_3&return=3Dhttps%3A%2F%2Fwww.trulia.com%2Femail%2Feml%7Cfrb%7Ccon_day_in=
+frentsearchfill_bk_emv2%7Cgroup_3%2Fwww.trulia.com%2Frental%2F4037296642%3F=
+alat%3Db55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7%26a=
+lrt%3D951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a#map"=
+ =0A        style=3D"color: #20C063;=0A                text-decoration: non=
+e;=0A                background-color: transparent;=0A                font-=
+family: PostGroteskBook, Helvetica, Arial;=0A                font-weight: 3=
+00;=0A                font-size: 16px;=0A                text-align: left;=
+=0A                padding-top: 0px;=0A                padding-bottom: 0px;=
+=0A                letter-spacing: 0px;=0A        =0A                line-h=
+eight: 22px;" title=3D"Address Not Disclosed">=0A    Address Not Disclosed=
+=0A    =0A</a>=0A=0A                <br/>=0A                =0A    <style>=
+=0A        .removeAutomaticLink a {=0A            color: #20C063 !important=
+;=0A            text-decoration: none;=0A        }=0A    </style>=0A=0A<a  =
+class=3D"removeAutomaticLink" =0A         id=3D"w_addr3" =0A         href=
+=3D"https://et.trulia.com/tracker=3Ftype=3Dclick&emailid=3Daustindreier@icl=
+oud.com&userid=3DdXNlcl9pZD00Mzk1MjA2NyZjb21tc1BsYXRmb3JtPWVtdjImZ3VpZD0xNT=
+A4NTk4OTQ1MDU0Xzg3ZjcyZjA2YjNkNDM1MGQ4YWY1NWZmNGUyYzRjOWQ4X2lwLTE3Mi0xOC0yN=
+S0xNTAmZW1haWxfdHlwZV9pZD0yNjcmZW1haWw9YXVzdGluZHJlaWVyQGljbG91ZC5jb20=3D&e=
+xtra=3DMultivariateId=3D&&&2000&&&https://www.trulia.com/handshake/=3Falat=
+=3Db55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7&alrt=3D=
+951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a&ecampaign=
+=3Deml|frb|con_day_infrentsearchfill_bk_emv2|group_3&return=3Dhttps%3A%2F%2=
+Fwww.trulia.com%2Femail%2Feml%7Cfrb%7Ccon_day_infrentsearchfill_bk_emv2%7Cg=
+roup_3%2Fwww.trulia.com%2Frental%2F4037296642%3Falat%3Db55264e32f803ed221d8=
+1f78145dd5914999c6de024a2b3c78485ba78cf85bd7%26alrt%3D951184f4c70cee06642d5=
+bf437a6e9715b1fe284c8181876066fb0227f7f4c0a#map" =0A        style=3D"color:=
+ #20C063;=0A                text-decoration: none;=0A                backgr=
+ound-color: transparent;=0A                font-family: PostGroteskBook, He=
+lvetica, Arial;=0A                font-weight: 300;=0A                font-=
+size: 16px;=0A                text-align: left;=0A                padding-t=
+op: 0px;=0A                padding-bottom: 0px;=0A                letter-sp=
+acing: 0px;=0A        =0A                line-height: 22px;" title=3D"See L=
+isting Here">=0A    =0A        <!--[if mso]><font=0A                style=
+=3D"display:none;font-size:0;max-height:0;line-height:0;padding:0;mso-hide:=
+all;">@text</font><![endif]-->See Listing Here=0A    =0A</a>=0A=0A         =
+   =0A        </td>=0A    </tr>=0A    =0A</table>=0A<!--[if (gte mso 9)|(IE=
+)]>=0A</td>=0A</tr>=0A</table>=0A<![endif]-->=0A=0A</td>=0A</tr>=0A</table>=
+=0A</div>=0A<!--[if (gte mso 9)|(IE)]>=0A</td> =0A</tr>=0A</table>=0A<![end=
+if]-->=0A=0A</td>=0A</tr>=0A=0A    <tr>=0A    <td  height=3D"5" style=3D"ba=
+ckground-color:transparent;font-size: 5;line-height:1px;padding-top: 0px;pa=
+dding-bottom: 0px;">=0A        &nbsp;=0A    </td>=0A</tr>=0A=0A=0A=0A=0A=0A=
+=0A=0A    =0A  =0A=0A=0A=0A=0A=0A<!-- START Two Columns -->=0A<tr  >=0A    =
+<td class=3D"column"=0A        style=3D"padding: 0; font-size: 0; backgroun=
+d-color: #ffffff; width: 100%">=0A        <a  >=0A        <!--[if (gte mso =
+9)|(IE)]>=0A        <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0"=
+ width=3D"600"=0A               style=3D"width:600px;">=0A            <tr>=
+=0A                <td width=3D"355" style=3D"width: 355px;"> =0A        <!=
+[endif]-->=0A        <div class=3D"column"=0A             style=3D"overflow=
+:hidden; max-width: 355px; width: 100%; display: inline-block; vertical-ali=
+gn: top;">=0A            <table width=3D"100%" border=3D"0" cellspacing=3D"=
+0" cellpadding=3D"0"=0A                   style=3D"border-spacing: 0; font-=
+family: 'PostGroteskBook', Helvetica, Arial, sans-serif;">=0A              =
+  <tr>=0A                    <td style=3D"padding: 15px 15px 0px 15px; back=
+ground-color: #ffffff">=0A=0A<table cellpadding=3D"0" cellspacing=3D"0" bor=
+der=3D"0">=0A    <tr>=0A        <td >=0A            <table cellspacing=3D"0=
+" cellpadding=3D"0" width=3D"100%" border=3D"0">=0A    <tr valign=3D"top">=
+=0A        <td class=3D"column-sixty" valign=3D"middle"=0A    style=3D"widt=
+h: 192px;=0A            background-color: transparent;=0A            paddin=
+g: 0px;">=0A    =0A    <a href=3D"https://et.trulia.com/tracker=3Ftype=3Dcl=
+ick&emailid=3Daustindreier@icloud.com&userid=3DdXNlcl9pZD00Mzk1MjA2NyZjb21t=
+c1BsYXRmb3JtPWVtdjImZ3VpZD0xNTA4NTk4OTQ1MDU0Xzg3ZjcyZjA2YjNkNDM1MGQ4YWY1NWZ=
+mNGUyYzRjOWQ4X2lwLTE3Mi0xOC0yNS0xNTAmZW1haWxfdHlwZV9pZD0yNjcmZW1haWw9YXVzdG=
+luZHJlaWVyQGljbG91ZC5jb20=3D&extra=3DMultivariateId=3D&&&2000&&&https://www=
+.trulia.com/handshake/=3Falat=3Db55264e32f803ed221d81f78145dd5914999c6de02=
+4a2b3c78485ba78cf85bd7&alrt=3D951184f4c70cee06642d5bf437a6e9715b1fe284c8181=
+876066fb0227f7f4c0a&ecampaign=3Deml|frb|con_day_infrentsearchfill_bk_emv2|g=
+roup_3&return=3Dhttps%3A%2F%2Fwww.trulia.com%2Femail%2Feml%7Cfrb%7Ccon_day_=
+infrentsearchfill_bk_emv2%7Cgroup_3%2Fwww.trulia.com%2Frental%2F4036769412%=
+3Falat%3Db55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7%2=
+6alrt%3D951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a" i=
+d=3Dw_image4 title=3D"Property details">=0A        <img src=3D"https://thum=
+bs.trulia-cdn.com/pictures/thumbs_6/ps.109/e/a/2/9/picture-uh=3Df56bcce5d11=
+9d53be85de27c22c2dd6e-ps=3Dea292aee97d8271743ef508a92a6c48e.jpg"=0A        =
+     border=3D"0"=0A             width=3D"195"=0A             height=3D"170=
+"=0A             class=3D"fullwidth"=0A             alt=3D"Home Image"=0A  =
+           style=3D"font-family: Helvetica, Arial, sans-serif;=0A          =
+           font-size: 14px;=0A                     color: #B1B6BB;=0A      =
+               border: 0;" />=0A    </a>=0A    =0A</td>=0A=0A        <td cl=
+ass=3D"column-forty" style=3D"width: 127px; background-color: transparent;"=
+>  =0A    =0A    <a href=3D"https://et.trulia.com/tracker=3Ftype=3Dclick&em=
+ailid=3Daustindreier@icloud.com&userid=3DdXNlcl9pZD00Mzk1MjA2NyZjb21tc1BsYX=
+Rmb3JtPWVtdjImZ3VpZD0xNTA4NTk4OTQ1MDU0Xzg3ZjcyZjA2YjNkNDM1MGQ4YWY1NWZmNGUyY=
+zRjOWQ4X2lwLTE3Mi0xOC0yNS0xNTAmZW1haWxfdHlwZV9pZD0yNjcmZW1haWw9YXVzdGluZHJl=
+aWVyQGljbG91ZC5jb20=3D&extra=3DMultivariateId=3D&&&2000&&&https://www.truli=
+a.com/handshake/=3Falat=3Db55264e32f803ed221d81f78145dd5914999c6de024a2b3c7=
+8485ba78cf85bd7&alrt=3D951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066f=
+b0227f7f4c0a&ecampaign=3Deml|frb|con_day_infrentsearchfill_bk_emv2|group_3&=
+return=3Dhttps%3A%2F%2Fwww.trulia.com%2Femail%2Feml%7Cfrb%7Ccon_day_infrent=
+searchfill_bk_emv2%7Cgroup_3%2Fwww.trulia.com%2Frental%2F4036769412%3Falat%=
+3Db55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7%26alrt%3=
+D951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a#map" id=
+=3Dw_map4 title=3D"Property details">=0A        <img src=3D"https://maps.go=
+ogleapis.com/maps/api/staticmap=3Fmaptype=3Droadmap&client=3Dgme-zillowinc3=
+&zoom=3D13&sensor=3Dfalse&size=3D130x170&center=3D34.110924%2C-118.203010&m=
+arkers=3Dicon%3Ahttps%3A%2F%2Fstatic.trulia-cdn.com%2Fimages%2Fmap%2Fmarker=
+s%2Ffor_rent.png%7C34.110924%2C-118.203010&signature=3DWBovcM0_fJPioWebIP7H=
+3viW_2k=3D" border=3D"0" width=3D"130" height=3D"170" class=3D"fullwidth" a=
+lt=3D"Map View" style=3D"font-family: Helvetica, Arial, sans-serif; font-si=
+ze: 14px; color: #B1B6BB; border: 0;  height: auto;" />=0A    </a>=0A    =
+=0A</td>=0A=0A    </tr>=0A</table>=0A=0A        </td>=0A    </tr>=0A    <tr=
+>=0A    <td  height=3D"15" style=3D"background-color:transparent;font-size:=
+ 15;line-height:1px;padding-top: 0px;padding-bottom: 0px;">=0A        &nbsp=
+;=0A    </td>=0A</tr>=0A=0A=0A    =0A        =0A<tr align=3D"left">=0A    =
+=0A    =0A    <td style=3D"color: #474E52;=0A            display:inline;=0A=
+            background-color: transparent;=0A            font-family: PostG=
+roteskBook, Helvetica, Arial, san-serif;=0A            font-weight: 300;=0A=
+            font-size: 16px;=0A            text-align: center;=0A          =
+  letter-spacing: 0px;=0A            line-height: 18px;=0A            paddi=
+ng-left: 0px;=0A            padding-right: 0px;=0A            padding-top: =
+0px;=0A            padding-bottom: 0px;">=0A        =0A                <div=
+ align=3D"left" style=3D"display:inline"><!--[if (gte mso 9)|(IE)]>=0A    <=
+v:roundrect xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:w=3D"urn:schema=
+s-microsoft-com:office:word"=0A                 href=3D"https://et.trulia.c=
+om/tracker=3Ftype=3Dclick&amp;emailid=3Daustindreier@icloud.com&amp;userid=
+=3DdXNlcl9pZD00Mzk1MjA2NyZjb21tc1BsYXRmb3JtPWVtdjImZ3VpZD0xNTA4NTk4OTQ1MDU0=
+Xzg3ZjcyZjA2YjNkNDM1MGQ4YWY1NWZmNGUyYzRjOWQ4X2lwLTE3Mi0xOC0yNS0xNTAmZW1haWx=
+fdHlwZV9pZD0yNjcmZW1haWw9YXVzdGluZHJlaWVyQGljbG91ZC5jb20=3D&amp;extra=3DMul=
+tivariateId=3D&amp;&amp;&amp;2000&amp;&amp;&amp;https://www.trulia.com/hand=
+shake/=3Falat=3Db55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf=
+85bd7&alrt=3D951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c=
+0a&ecampaign=3Deml|frb|con_day_infrentsearchfill_bk_emv2|group_3&return=3Dh=
+ttps%3A%2F%2Fwww.trulia.com%2Femail%2Feml%7Cfrb%7Ccon_day_infrentsearchfill=
+_bk_emv2%7Cgroup_3%2Fwww.trulia.com%2Frental%2F4036769412%3Falat%3Db55264e3=
+2f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7%26alrt%3D951184f4c=
+70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a#photo-1"=0A        =
+         id=3D"w_button4"=0A                 style=3D"height:44px;v-text-an=
+chor:middle;width:325px;" arcsize=3D"15%"=0A                 stroke=3D"f" f=
+illcolor=3D"#20C063">=0A        <center>=0A    <![endif]-->=0A    <!--[if (=
+gte mso 9)|(IE)]>=0A    <a href=3D"https://et.trulia.com/tracker=3Ftype=3Dc=
+lick&amp;emailid=3Daustindreier@icloud.com&amp;userid=3DdXNlcl9pZD00Mzk1MjA=
+2NyZjb21tc1BsYXRmb3JtPWVtdjImZ3VpZD0xNTA4NTk4OTQ1MDU0Xzg3ZjcyZjA2YjNkNDM1MG=
+Q4YWY1NWZmNGUyYzRjOWQ4X2lwLTE3Mi0xOC0yNS0xNTAmZW1haWxfdHlwZV9pZD0yNjcmZW1ha=
+Ww9YXVzdGluZHJlaWVyQGljbG91ZC5jb20=3D&amp;extra=3DMultivariateId=3D&amp;&am=
+p;&amp;2000&amp;&amp;&amp;https://www.trulia.com/handshake/=3Falat=3Db55264=
+e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7&alrt=3D951184f4c=
+70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a&ecampaign=3Deml|frb=
+|con_day_infrentsearchfill_bk_emv2|group_3&return=3Dhttps%3A%2F%2Fwww.truli=
+a.com%2Femail%2Feml%7Cfrb%7Ccon_day_infrentsearchfill_bk_emv2%7Cgroup_3%2Fw=
+ww.trulia.com%2Frental%2F4036769412%3Falat%3Db55264e32f803ed221d81f78145dd5=
+914999c6de024a2b3c78485ba78cf85bd7%26alrt%3D951184f4c70cee06642d5bf437a6e97=
+15b1fe284c8181876066fb0227f7f4c0a#photo-1" align=3D"left"=0A       id=3D"w_=
+button4"=0A       title=3D"Property Details" style=3D"background-color:#20C=
+063;=0A       border-radius:5;=0A       color:#ffffff;=0A       display:blo=
+ck;=0A       font-family:  PostGroteskBook, Helvetica, Arial, sans-serif;=
+=0A    font-weight: 300;=0A    font-size:16px;=0A    line-height:44px;=0A  =
+  text-align:center;=0A    text-decoration:none;=0A    width:325px;=0A    h=
+eight:44px;=0A    -webkit-text-size-adjust:none;">=0A    View 17 More Photo=
+s & Details=0A    </a>=0A    <![endif]-->=0A    <!--[if !((gte mso 9)|(IE))=
+]><!-- -->=0A    <a href=3D"https://et.trulia.com/tracker=3Ftype=3Dclick&em=
+ailid=3Daustindreier@icloud.com&userid=3DdXNlcl9pZD00Mzk1MjA2NyZjb21tc1BsYX=
+Rmb3JtPWVtdjImZ3VpZD0xNTA4NTk4OTQ1MDU0Xzg3ZjcyZjA2YjNkNDM1MGQ4YWY1NWZmNGUyY=
+zRjOWQ4X2lwLTE3Mi0xOC0yNS0xNTAmZW1haWxfdHlwZV9pZD0yNjcmZW1haWw9YXVzdGluZHJl=
+aWVyQGljbG91ZC5jb20=3D&extra=3DMultivariateId=3D&&&2000&&&https://www.truli=
+a.com/handshake/=3Falat=3Db55264e32f803ed221d81f78145dd5914999c6de024a2b3c7=
+8485ba78cf85bd7&alrt=3D951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066f=
+b0227f7f4c0a&ecampaign=3Deml|frb|con_day_infrentsearchfill_bk_emv2|group_3&=
+return=3Dhttps%3A%2F%2Fwww.trulia.com%2Femail%2Feml%7Cfrb%7Ccon_day_infrent=
+searchfill_bk_emv2%7Cgroup_3%2Fwww.trulia.com%2Frental%2F4036769412%3Falat%=
+3Db55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7%26alrt%3=
+D951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a#photo-1" =
+align=3D"left"=0A       id=3D"w_button4"=0A       title=3D"View 17 More Pho=
+tos & Details" style=3D"background-color:#20C063;=0A            border-radi=
+us:5px;=0A            border-color:transparent;=0A            border-width:=
+0px;=0A            border-style:none;=0A            color:#ffffff;=0A      =
+      display:block;=0A            font-family: PostGroteskBook, Helvetica,=
+ Arial, sans-serif;=0A            font-weight: 300;=0A            font-size=
+:16px;=0A            line-height:44px;=0A            text-align:center;=0A =
+           text-decoration:none;=0A            min-width:325px;=0A         =
+   max-width:100%;=0A            height:44px;=0A            -webkit-text-si=
+ze-adjust:none;">=0A        View 17 More Photos & Details=0A    </a>=0A    =
+<!--<![endif]-->=0A    <!--[if (gte mso 9)|(IE)]>=0A    </center>=0A    </v=
+:roundrect>=0A    <![endif]--></div>=0A=0A            =0A    </td>=0A</tr>=
+=0A=0A=0A        <tr>=0A    <td class=3D"hide-on-mobile"  height=3D"15" sty=
+le=3D"background-color:transparent;font-size: 15;line-height:1px;padding-to=
+p: 0px;padding-bottom: 0px;">=0A        &nbsp;=0A    </td>=0A</tr>=0A=0A   =
+ =0A</table>=0A</td>=0A</tr>=0A</table>=0A</div>=0A<!--[if (gte mso 9)|(IE)=
+]>=0A</td>                                               =0A<td width=3D"21=
+5" valign=3D"top" style=3D"width:215px;"> =0A<![endif]-->=0A<div class=3D"c=
+olumn"=0A     style=3D"max-width: 215px; width: 100%; display: inline-block=
+; vertical-align: top;">=0A    <table width=3D"100%" align=3D"left"=0A     =
+      style=3D"border-spacing: 0; font-family: 'PostGroteskBook', Helvetica=
+, Arial, sans-serif; background-color: #ffffff;">=0A        <tr>=0A        =
+    <td style=3D"background-color: #ffffff; padding: 15px 15px 15px 15px;">=
+=0A=0A<!--[if (gte mso 9)|(IE)]>=0A<table cellspacing=3D"0" cellpadding=3D"=
+0" border=3D"0" width=3D"205" style=3D"width: 205px;">=0A    <tr>=0A       =
+ <td width=3D"205" style=3D"width: 205px;">=0A<![endif]-->=0A<table cellpad=
+ding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"text-align: left;">=0A=
+    <tr> =0A        <td>=0A            =0A    <style>=0A        .removeAuto=
+maticLink a {=0A            color: #474E52 !important;=0A            text-d=
+ecoration: none;=0A        }=0A    </style>=0A=0A<a  class=3D"removeAutomat=
+icLink" =0A         id=3D"w_price4" =0A         href=3D"https://et.trulia.c=
+om/tracker=3Ftype=3Dclick&emailid=3Daustindreier@icloud.com&userid=3DdXNlcl=
+9pZD00Mzk1MjA2NyZjb21tc1BsYXRmb3JtPWVtdjImZ3VpZD0xNTA4NTk4OTQ1MDU0Xzg3ZjcyZ=
+jA2YjNkNDM1MGQ4YWY1NWZmNGUyYzRjOWQ4X2lwLTE3Mi0xOC0yNS0xNTAmZW1haWxfdHlwZV9p=
+ZD0yNjcmZW1haWw9YXVzdGluZHJlaWVyQGljbG91ZC5jb20=3D&extra=3DMultivariateId=
+=3D&&&2000&&&https://www.trulia.com/handshake/=3Falat=3Db55264e32f803ed221d=
+81f78145dd5914999c6de024a2b3c78485ba78cf85bd7&alrt=3D951184f4c70cee06642d5b=
+f437a6e9715b1fe284c8181876066fb0227f7f4c0a&ecampaign=3Deml|frb|con_day_infr=
+entsearchfill_bk_emv2|group_3&return=3Dhttps%3A%2F%2Fwww.trulia.com%2Femail=
+%2Feml%7Cfrb%7Ccon_day_infrentsearchfill_bk_emv2%7Cgroup_3%2Fwww.trulia.com=
+%2Frental%2F4036769412%3Falat%3Db55264e32f803ed221d81f78145dd5914999c6de024=
+a2b3c78485ba78cf85bd7%26alrt%3D951184f4c70cee06642d5bf437a6e9715b1fe284c818=
+1876066fb0227f7f4c0a" =0A        style=3D"color: #474E52;=0A               =
+ text-decoration: none;=0A                background-color: transparent;=0A=
+                font-family: PostGroteskMedium, Helvetica, Arial, sans-seri=
+f;=0A                font-weight: 500;=0A                font-size: 28px;=
+=0A                text-align: left;=0A                padding-top: 0px;=0A=
+                padding-bottom: 0px;=0A                letter-spacing: 0px;=
+=0A        =0A                line-height: 34px;" title=3D"$1,100">=0A    =
+=0A        <!--[if mso]><font=0A                style=3D"display:none;font-=
+size:0;max-height:0;line-height:0;padding:0;mso-hide:all;">@text</font><![e=
+ndif]-->$1,100=0A    =0A</a>=0A=0A        </td>=0A    </tr>=0A    =0A      =
+  <tr>=0A    <td  height=3D"15" style=3D"background-color:transparent;font-=
+size: 15;line-height:1px;padding-top: 0px;padding-bottom: 0px;">=0A        =
+&nbsp;=0A    </td>=0A</tr>=0A=0A        <tr> =0A            <td style=3D"fo=
+nt-family: 'PostGroteskMedium', Helvetica, Arial, sans-serif; font-size: 12=
+px; line-height: 17px; letter-spacing: 1px; font-weight: bold;">=0A        =
+        =0A            </td>=0A        </tr>=0A    =0A    <tr>=0A    <td  h=
+eight=3D"15" style=3D"background-color:transparent;font-size: 15;line-heigh=
+t:1px;padding-top: 0px;padding-bottom: 0px;">=0A        &nbsp;=0A    </td>=
+=0A</tr>=0A=0A    =0A        <tr> =0A            <td>=0A                <ta=
+ble cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%"=0A     =
+                  style=3D"font-family: 'PostGroteskBook', Helvetica, Arial=
+, sans-serif; font-size: 14px; color: #869099">=0A                    <tr>=
+=0A                        <td style=3D"align: left;">=0A                  =
+          4 bd&nbsp;&nbsp; =0A                            2 ba&nbsp;=0A    =
+                        =0A                                &nbsp;<img src=
+=3D"http://static.trulia-cdn.com/images/email/icons/icon_photos_grey_30x26.=
+png" alt=3D"Photos icon" height=3D"16"=0A                                  =
+         border=3D"0"/> 18=0A                            =0A               =
+         </td>=0A                    </tr>=0A                </table>=0A   =
+         </td>=0A        </tr>=0A        <tr>=0A    <td  height=3D"15" styl=
+e=3D"background-color:transparent;font-size: 15;line-height:1px;padding-top=
+: 0px;padding-bottom: 0px;">=0A        &nbsp;=0A    </td>=0A</tr>=0A=0A    =
+=0A    <tr> =0A        <td>=0A            =0A                =0A<a =0A     =
+    id=3D"w_addr4" =0A         href=3D"https://et.trulia.com/tracker=3Ftype=
+=3Dclick&emailid=3Daustindreier@icloud.com&userid=3DdXNlcl9pZD00Mzk1MjA2NyZ=
+jb21tc1BsYXRmb3JtPWVtdjImZ3VpZD0xNTA4NTk4OTQ1MDU0Xzg3ZjcyZjA2YjNkNDM1MGQ4YW=
+Y1NWZmNGUyYzRjOWQ4X2lwLTE3Mi0xOC0yNS0xNTAmZW1haWxfdHlwZV9pZD0yNjcmZW1haWw9Y=
+XVzdGluZHJlaWVyQGljbG91ZC5jb20=3D&extra=3DMultivariateId=3D&&&2000&&&https:=
+//www.trulia.com/handshake/=3Falat=3Db55264e32f803ed221d81f78145dd5914999c6=
+de024a2b3c78485ba78cf85bd7&alrt=3D951184f4c70cee06642d5bf437a6e9715b1fe284c=
+8181876066fb0227f7f4c0a&ecampaign=3Deml|frb|con_day_infrentsearchfill_bk_em=
+v2|group_3&return=3Dhttps%3A%2F%2Fwww.trulia.com%2Femail%2Feml%7Cfrb%7Ccon_=
+day_infrentsearchfill_bk_emv2%7Cgroup_3%2Fwww.trulia.com%2Frental%2F4036769=
+412%3Falat%3Db55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85b=
+d7%26alrt%3D951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0=
+a#map" =0A        style=3D"color: #20C063;=0A                text-decoratio=
+n: none;=0A                background-color: transparent;=0A               =
+ font-family: PostGroteskBook, Helvetica, Arial;=0A                font-wei=
+ght: 300;=0A                font-size: 16px;=0A                text-align: =
+left;=0A                padding-top: 0px;=0A                padding-bottom:=
+ 0px;=0A                letter-spacing: 0px;=0A        =0A                l=
+ine-height: 18px;" title=3D"410&#8203; N&#8203; Avenue&#8203; 52&#8203;">=
+=0A    410&#8203; N&#8203; Avenue&#8203; 52&#8203;=0A    =0A</a>=0A=0A     =
+       =0A        </td>=0A    </tr>=0A    =0A        <tr> =0A            <t=
+d>=0A                =0A<a =0A         id=3D"w_addr4" =0A         href=3D"h=
+ttps://et.trulia.com/tracker=3Ftype=3Dclick&emailid=3Daustindreier@icloud.c=
+om&userid=3DdXNlcl9pZD00Mzk1MjA2NyZjb21tc1BsYXRmb3JtPWVtdjImZ3VpZD0xNTA4NTk=
+4OTQ1MDU0Xzg3ZjcyZjA2YjNkNDM1MGQ4YWY1NWZmNGUyYzRjOWQ4X2lwLTE3Mi0xOC0yNS0xNT=
+AmZW1haWxfdHlwZV9pZD0yNjcmZW1haWw9YXVzdGluZHJlaWVyQGljbG91ZC5jb20=3D&extra=
+=3DMultivariateId=3D&&&2000&&&https://www.trulia.com/handshake/=3Falat=3Db5=
+5264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7&alrt=3D95118=
+4f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a&ecampaign=3Deml=
+|frb|con_day_infrentsearchfill_bk_emv2|group_3&return=3Dhttps%3A%2F%2Fwww.t=
+rulia.com%2Femail%2Feml%7Cfrb%7Ccon_day_infrentsearchfill_bk_emv2%7Cgroup_3=
+%2Fwww.trulia.com%2Frental%2F4036769412%3Falat%3Db55264e32f803ed221d81f7814=
+5dd5914999c6de024a2b3c78485ba78cf85bd7%26alrt%3D951184f4c70cee06642d5bf437a=
+6e9715b1fe284c8181876066fb0227f7f4c0a#map" =0A        style=3D"color: #20C0=
+63;=0A                text-decoration: none;=0A                background-c=
+olor: transparent;=0A                font-family: PostGroteskBook, Helvetic=
+a, Arial;=0A                font-weight: 300;=0A                font-size: =
+16px;=0A                text-align: left;=0A                padding-top: 0p=
+x;=0A                padding-bottom: 0px;=0A                letter-spacing:=
+ 0px;=0A        =0A                line-height: 22px;" title=3D"Los&#8203; =
+Angeles,&#8203; CA&#8203;">=0A    Los&#8203; Angeles,&#8203; CA&#8203;=0A  =
+  =0A</a>=0A=0A            </td>=0A        </tr>=0A        =0A            <=
+tr> =0A                <td>=0A                    =0A<a =0A         id=3D"w=
+_neighbor4" =0A         href=3D"https://et.trulia.com/tracker=3Ftype=3Dclic=
+k&emailid=3Daustindreier@icloud.com&userid=3DdXNlcl9pZD00Mzk1MjA2NyZjb21tc1=
+BsYXRmb3JtPWVtdjImZ3VpZD0xNTA4NTk4OTQ1MDU0Xzg3ZjcyZjA2YjNkNDM1MGQ4YWY1NWZmN=
+GUyYzRjOWQ4X2lwLTE3Mi0xOC0yNS0xNTAmZW1haWxfdHlwZV9pZD0yNjcmZW1haWw9YXVzdGlu=
+ZHJlaWVyQGljbG91ZC5jb20=3D&extra=3DMultivariateId=3D&&&2000&&&https://www.t=
+rulia.com/handshake/=3Falat=3Db55264e32f803ed221d81f78145dd5914999c6de024a2=
+b3c78485ba78cf85bd7&alrt=3D951184f4c70cee06642d5bf437a6e9715b1fe284c8181876=
+066fb0227f7f4c0a&ecampaign=3Deml|frb|con_day_infrentsearchfill_bk_emv2|grou=
+p_3&return=3Dhttps%3A%2F%2Fwww.trulia.com%2Femail%2Feml%7Cfrb%7Ccon_day_inf=
+rentsearchfill_bk_emv2%7Cgroup_3%2Fwww.trulia.com%2Frental%2F4036769412%3Fa=
+lat%3Db55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7%26al=
+rt%3D951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a#map" =
+=0A        style=3D"color: #869099;=0A                text-decoration: none=
+;=0A                background-color: transparent;=0A                font-f=
+amily: PostGroteskBook, Helvetica, Arial;=0A                font-weight: 30=
+0;=0A                font-size: 16px;=0A                text-align: left;=
+=0A                padding-top: 0px;=0A                padding-bottom: 0px;=
+=0A                letter-spacing: 0px;=0A        =0A                line-h=
+eight: 22px;" title=3D"Eagle Rock">=0A    Eagle Rock=0A    =0A</a>=0A=0A   =
+             </td>=0A            </tr>=0A        =0A    =0A</table>=0A<!--[=
+if (gte mso 9)|(IE)]>=0A</td>=0A</tr>=0A</table>=0A<![endif]-->=0A=0A</td>=
+=0A</tr>=0A</table>=0A</div>=0A<!--[if (gte mso 9)|(IE)]>=0A</td> =0A</tr>=
+=0A</table>=0A<![endif]-->=0A=0A</td>=0A</tr>=0A=0A    <tr>=0A    <td  heig=
+ht=3D"5" style=3D"background-color:transparent;font-size: 5;line-height:1px=
+;padding-top: 0px;padding-bottom: 0px;">=0A        &nbsp;=0A    </td>=0A</t=
+r>=0A=0A=0A=0A=0A=0A=0A=0A    =0A  =0A=0A=0A=0A=0A=0A<!-- START Two Columns=
+ -->=0A<tr  >=0A    <td class=3D"column"=0A        style=3D"padding: 0; fon=
+t-size: 0; background-color: #ffffff; width: 100%">=0A        <a  >=0A     =
+   <!--[if (gte mso 9)|(IE)]>=0A        <table cellspacing=3D"0" cellpaddin=
+g=3D"0" border=3D"0" width=3D"600"=0A               style=3D"width:600px;">=
+=0A            <tr>=0A                <td width=3D"355" style=3D"width: 355=
+px;"> =0A        <![endif]-->=0A        <div class=3D"column"=0A           =
+  style=3D"overflow:hidden; max-width: 355px; width: 100%; display: inline-=
+block; vertical-align: top;">=0A            <table width=3D"100%" border=3D=
+"0" cellspacing=3D"0" cellpadding=3D"0"=0A                   style=3D"borde=
+r-spacing: 0; font-family: 'PostGroteskBook', Helvetica, Arial, sans-serif;=
+">=0A                <tr>=0A                    <td style=3D"padding: 15px =
+15px 0px 15px; background-color: #ffffff">=0A=0A<table cellpadding=3D"0" ce=
+llspacing=3D"0" border=3D"0">=0A    <tr>=0A        <td >=0A            <tab=
+le cellspacing=3D"0" cellpadding=3D"0" width=3D"100%" border=3D"0">=0A    <=
+tr valign=3D"top">=0A        <td class=3D"column-sixty" valign=3D"middle"=
+=0A    style=3D"width: 192px;=0A            background-color: transparent;=
+=0A            padding: 0px;">=0A    =0A    <a href=3D"https://et.trulia.co=
+m/tracker=3Ftype=3Dclick&emailid=3Daustindreier@icloud.com&userid=3DdXNlcl9=
+pZD00Mzk1MjA2NyZjb21tc1BsYXRmb3JtPWVtdjImZ3VpZD0xNTA4NTk4OTQ1MDU0Xzg3ZjcyZj=
+A2YjNkNDM1MGQ4YWY1NWZmNGUyYzRjOWQ4X2lwLTE3Mi0xOC0yNS0xNTAmZW1haWxfdHlwZV9pZ=
+D0yNjcmZW1haWw9YXVzdGluZHJlaWVyQGljbG91ZC5jb20=3D&extra=3DMultivariateId=3D=
+&&&2000&&&https://www.trulia.com/handshake/=3Falat=3Db55264e32f803ed221d81f=
+78145dd5914999c6de024a2b3c78485ba78cf85bd7&alrt=3D951184f4c70cee06642d5bf43=
+7a6e9715b1fe284c8181876066fb0227f7f4c0a&ecampaign=3Deml|frb|con_day_infrent=
+searchfill_bk_emv2|group_3&return=3Dhttps%3A%2F%2Fwww.trulia.com%2Femail%2F=
+eml%7Cfrb%7Ccon_day_infrentsearchfill_bk_emv2%7Cgroup_3%2Fwww.trulia.com%2F=
+rental%2F4037325580%3Falat%3Db55264e32f803ed221d81f78145dd5914999c6de024a2b=
+3c78485ba78cf85bd7%26alrt%3D951184f4c70cee06642d5bf437a6e9715b1fe284c818187=
+6066fb0227f7f4c0a" id=3Dw_image5 title=3D"Property details">=0A        <img=
+ src=3D"https://thumbs.trulia-cdn.com/pictures/thumbs_6/ps.109/d/b/7/1/pict=
+ure-uh=3Dd82331708bcb261c8fb43299f7e9c155-ps=3Ddb7119d88baf2e3e9e9a07f27667=
+cdd.jpg"=0A             border=3D"0"=0A             width=3D"195"=0A       =
+      height=3D"170"=0A             class=3D"fullwidth"=0A             alt=
+=3D"Home Image"=0A             style=3D"font-family: Helvetica, Arial, sans=
+-serif;=0A                     font-size: 14px;=0A                     colo=
+r: #B1B6BB;=0A                     border: 0;" />=0A    </a>=0A    =0A</td>=
+=0A=0A        <td class=3D"column-forty" style=3D"width: 127px; background-=
+color: transparent;">  =0A    =0A    <a href=3D"https://et.trulia.com/track=
+er=3Ftype=3Dclick&emailid=3Daustindreier@icloud.com&userid=3DdXNlcl9pZD00Mz=
+k1MjA2NyZjb21tc1BsYXRmb3JtPWVtdjImZ3VpZD0xNTA4NTk4OTQ1MDU0Xzg3ZjcyZjA2YjNkN=
+DM1MGQ4YWY1NWZmNGUyYzRjOWQ4X2lwLTE3Mi0xOC0yNS0xNTAmZW1haWxfdHlwZV9pZD0yNjcm=
+ZW1haWw9YXVzdGluZHJlaWVyQGljbG91ZC5jb20=3D&extra=3DMultivariateId=3D&&&2000=
+&&&https://www.trulia.com/handshake/=3Falat=3Db55264e32f803ed221d81f78145dd=
+5914999c6de024a2b3c78485ba78cf85bd7&alrt=3D951184f4c70cee06642d5bf437a6e971=
+5b1fe284c8181876066fb0227f7f4c0a&ecampaign=3Deml|frb|con_day_infrentsearchf=
+ill_bk_emv2|group_3&return=3Dhttps%3A%2F%2Fwww.trulia.com%2Femail%2Feml%7Cf=
+rb%7Ccon_day_infrentsearchfill_bk_emv2%7Cgroup_3%2Fwww.trulia.com%2Frental%=
+2F4037325580%3Falat%3Db55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485=
+ba78cf85bd7%26alrt%3D951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0=
+227f7f4c0a#map" id=3Dw_map5 title=3D"Property details">=0A        <img src=
+=3D"https://maps.googleapis.com/maps/api/staticmap=3Fmaptype=3Droadmap&clie=
+nt=3Dgme-zillowinc3&zoom=3D13&sensor=3Dfalse&size=3D130x170&center=3D34.008=
+583%2C-118.302660&markers=3Dicon%3Ahttps%3A%2F%2Fstatic.trulia-cdn.com%2Fim=
+ages%2Fmap%2Fmarkers%2Ffor_rent.png%7C34.008583%2C-118.302660&signature=3D-=
+lkqIIjJ6eBk9viI4c5bUsZGmRg=3D" border=3D"0" width=3D"130" height=3D"170" cl=
+ass=3D"fullwidth" alt=3D"Map View" style=3D"font-family: Helvetica, Arial, =
+sans-serif; font-size: 14px; color: #B1B6BB; border: 0;  height: auto;" />=
+=0A    </a>=0A    =0A</td>=0A=0A    </tr>=0A</table>=0A=0A        </td>=0A =
+   </tr>=0A    <tr>=0A    <td  height=3D"15" style=3D"background-color:tran=
+sparent;font-size: 15;line-height:1px;padding-top: 0px;padding-bottom: 0px;=
+">=0A        &nbsp;=0A    </td>=0A</tr>=0A=0A=0A    =0A        =0A<tr align=
+=3D"left">=0A    =0A    =0A    <td style=3D"color: #474E52;=0A            d=
+isplay:inline;=0A            background-color: transparent;=0A            f=
+ont-family: PostGroteskBook, Helvetica, Arial, san-serif;=0A            fon=
+t-weight: 300;=0A            font-size: 16px;=0A            text-align: cen=
+ter;=0A            letter-spacing: 0px;=0A            line-height: 18px;=0A=
+            padding-left: 0px;=0A            padding-right: 0px;=0A        =
+    padding-top: 0px;=0A            padding-bottom: 0px;">=0A        =0A   =
+             <div align=3D"left" style=3D"display:inline"><!--[if (gte mso =
+9)|(IE)]>=0A    <v:roundrect xmlns:v=3D"urn:schemas-microsoft-com:vml" xmln=
+s:w=3D"urn:schemas-microsoft-com:office:word"=0A                 href=3D"ht=
+tps://et.trulia.com/tracker=3Ftype=3Dclick&amp;emailid=3Daustindreier@iclou=
+d.com&amp;userid=3DdXNlcl9pZD00Mzk1MjA2NyZjb21tc1BsYXRmb3JtPWVtdjImZ3VpZD0x=
+NTA4NTk4OTQ1MDU0Xzg3ZjcyZjA2YjNkNDM1MGQ4YWY1NWZmNGUyYzRjOWQ4X2lwLTE3Mi0xOC0=
+yNS0xNTAmZW1haWxfdHlwZV9pZD0yNjcmZW1haWw9YXVzdGluZHJlaWVyQGljbG91ZC5jb20=3D=
+&amp;extra=3DMultivariateId=3D&amp;&amp;&amp;2000&amp;&amp;&amp;https://www=
+.trulia.com/handshake/=3Falat=3Db55264e32f803ed221d81f78145dd5914999c6de02=
+4a2b3c78485ba78cf85bd7&alrt=3D951184f4c70cee06642d5bf437a6e9715b1fe284c8181=
+876066fb0227f7f4c0a&ecampaign=3Deml|frb|con_day_infrentsearchfill_bk_emv2|g=
+roup_3&return=3Dhttps%3A%2F%2Fwww.trulia.com%2Femail%2Feml%7Cfrb%7Ccon_day_=
+infrentsearchfill_bk_emv2%7Cgroup_3%2Fwww.trulia.com%2Frental%2F4037325580%=
+3Falat%3Db55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7%2=
+6alrt%3D951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a#ph=
+oto-1"=0A                 id=3D"w_button5"=0A                 style=3D"heig=
+ht:44px;v-text-anchor:middle;width:325px;" arcsize=3D"15%"=0A              =
+   stroke=3D"f" fillcolor=3D"#20C063">=0A        <center>=0A    <![endif]--=
+>=0A    <!--[if (gte mso 9)|(IE)]>=0A    <a href=3D"https://et.trulia.com/t=
+racker=3Ftype=3Dclick&amp;emailid=3Daustindreier@icloud.com&amp;userid=3DdX=
+Nlcl9pZD00Mzk1MjA2NyZjb21tc1BsYXRmb3JtPWVtdjImZ3VpZD0xNTA4NTk4OTQ1MDU0Xzg3Z=
+jcyZjA2YjNkNDM1MGQ4YWY1NWZmNGUyYzRjOWQ4X2lwLTE3Mi0xOC0yNS0xNTAmZW1haWxfdHlw=
+ZV9pZD0yNjcmZW1haWw9YXVzdGluZHJlaWVyQGljbG91ZC5jb20=3D&amp;extra=3DMultivar=
+iateId=3D&amp;&amp;&amp;2000&amp;&amp;&amp;https://www.trulia.com/handshake=
+/=3Falat=3Db55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7=
+&alrt=3D951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a&ec=
+ampaign=3Deml|frb|con_day_infrentsearchfill_bk_emv2|group_3&return=3Dhttps%=
+3A%2F%2Fwww.trulia.com%2Femail%2Feml%7Cfrb%7Ccon_day_infrentsearchfill_bk_e=
+mv2%7Cgroup_3%2Fwww.trulia.com%2Frental%2F4037325580%3Falat%3Db55264e32f803=
+ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7%26alrt%3D951184f4c70cee=
+06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a#photo-1" align=3D"left"=
+=0A       id=3D"w_button5"=0A       title=3D"Property Details" style=3D"bac=
+kground-color:#20C063;=0A       border-radius:5;=0A       color:#ffffff;=0A=
+       display:block;=0A       font-family:  PostGroteskBook, Helvetica, Ar=
+ial, sans-serif;=0A    font-weight: 300;=0A    font-size:16px;=0A    line-h=
+eight:44px;=0A    text-align:center;=0A    text-decoration:none;=0A    widt=
+h:325px;=0A    height:44px;=0A    -webkit-text-size-adjust:none;">=0A    Vi=
+ew 17 More Photos & Details=0A    </a>=0A    <![endif]-->=0A    <!--[if !((=
+gte mso 9)|(IE))]><!-- -->=0A    <a href=3D"https://et.trulia.com/tracker=
+=3Ftype=3Dclick&emailid=3Daustindreier@icloud.com&userid=3DdXNlcl9pZD00Mzk1=
+MjA2NyZjb21tc1BsYXRmb3JtPWVtdjImZ3VpZD0xNTA4NTk4OTQ1MDU0Xzg3ZjcyZjA2YjNkNDM=
+1MGQ4YWY1NWZmNGUyYzRjOWQ4X2lwLTE3Mi0xOC0yNS0xNTAmZW1haWxfdHlwZV9pZD0yNjcmZW=
+1haWw9YXVzdGluZHJlaWVyQGljbG91ZC5jb20=3D&extra=3DMultivariateId=3D&&&2000&&=
+&https://www.trulia.com/handshake/=3Falat=3Db55264e32f803ed221d81f78145dd59=
+14999c6de024a2b3c78485ba78cf85bd7&alrt=3D951184f4c70cee06642d5bf437a6e9715b=
+1fe284c8181876066fb0227f7f4c0a&ecampaign=3Deml|frb|con_day_infrentsearchfil=
+l_bk_emv2|group_3&return=3Dhttps%3A%2F%2Fwww.trulia.com%2Femail%2Feml%7Cfrb=
+%7Ccon_day_infrentsearchfill_bk_emv2%7Cgroup_3%2Fwww.trulia.com%2Frental%2F=
+4037325580%3Falat%3Db55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba=
+78cf85bd7%26alrt%3D951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb022=
+7f7f4c0a#photo-1" align=3D"left"=0A       id=3D"w_button5"=0A       title=
+=3D"View 17 More Photos & Details" style=3D"background-color:#20C063;=0A   =
+         border-radius:5px;=0A            border-color:transparent;=0A     =
+       border-width:0px;=0A            border-style:none;=0A            col=
+or:#ffffff;=0A            display:block;=0A            font-family: PostGro=
+teskBook, Helvetica, Arial, sans-serif;=0A            font-weight: 300;=0A =
+           font-size:16px;=0A            line-height:44px;=0A            te=
+xt-align:center;=0A            text-decoration:none;=0A            min-widt=
+h:325px;=0A            max-width:100%;=0A            height:44px;=0A       =
+     -webkit-text-size-adjust:none;">=0A        View 17 More Photos & Detai=
+ls=0A    </a>=0A    <!--<![endif]-->=0A    <!--[if (gte mso 9)|(IE)]>=0A   =
+ </center>=0A    </v:roundrect>=0A    <![endif]--></div>=0A=0A            =
+=0A    </td>=0A</tr>=0A=0A=0A        <tr>=0A    <td class=3D"hide-on-mobile=
+"  height=3D"15" style=3D"background-color:transparent;font-size: 15;line-h=
+eight:1px;padding-top: 0px;padding-bottom: 0px;">=0A        &nbsp;=0A    </=
+td>=0A</tr>=0A=0A    =0A</table>=0A</td>=0A</tr>=0A</table>=0A</div>=0A<!--=
+[if (gte mso 9)|(IE)]>=0A</td>                                             =
+  =0A<td width=3D"215" valign=3D"top" style=3D"width:215px;"> =0A<![endif]-=
+->=0A<div class=3D"column"=0A     style=3D"max-width: 215px; width: 100%; d=
+isplay: inline-block; vertical-align: top;">=0A    <table width=3D"100%" al=
+ign=3D"left"=0A           style=3D"border-spacing: 0; font-family: 'PostGro=
+teskBook', Helvetica, Arial, sans-serif; background-color: #ffffff;">=0A   =
+     <tr>=0A            <td style=3D"background-color: #ffffff; padding: 15=
+px 15px 15px 15px;">=0A=0A<!--[if (gte mso 9)|(IE)]>=0A<table cellspacing=
+=3D"0" cellpadding=3D"0" border=3D"0" width=3D"205" style=3D"width: 205px;"=
+>=0A    <tr>=0A        <td width=3D"205" style=3D"width: 205px;">=0A<![endi=
+f]-->=0A<table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"=
+text-align: left;">=0A    <tr> =0A        <td>=0A            =0A    <style>=
+=0A        .removeAutomaticLink a {=0A            color: #474E52 !important=
+;=0A            text-decoration: none;=0A        }=0A    </style>=0A=0A<a  =
+class=3D"removeAutomaticLink" =0A         id=3D"w_price5" =0A         href=
+=3D"https://et.trulia.com/tracker=3Ftype=3Dclick&emailid=3Daustindreier@icl=
+oud.com&userid=3DdXNlcl9pZD00Mzk1MjA2NyZjb21tc1BsYXRmb3JtPWVtdjImZ3VpZD0xNT=
+A4NTk4OTQ1MDU0Xzg3ZjcyZjA2YjNkNDM1MGQ4YWY1NWZmNGUyYzRjOWQ4X2lwLTE3Mi0xOC0yN=
+S0xNTAmZW1haWxfdHlwZV9pZD0yNjcmZW1haWw9YXVzdGluZHJlaWVyQGljbG91ZC5jb20=3D&e=
+xtra=3DMultivariateId=3D&&&2000&&&https://www.trulia.com/handshake/=3Falat=
+=3Db55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7&alrt=3D=
+951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a&ecampaign=
+=3Deml|frb|con_day_infrentsearchfill_bk_emv2|group_3&return=3Dhttps%3A%2F%2=
+Fwww.trulia.com%2Femail%2Feml%7Cfrb%7Ccon_day_infrentsearchfill_bk_emv2%7Cg=
+roup_3%2Fwww.trulia.com%2Frental%2F4037325580%3Falat%3Db55264e32f803ed221d8=
+1f78145dd5914999c6de024a2b3c78485ba78cf85bd7%26alrt%3D951184f4c70cee06642d5=
+bf437a6e9715b1fe284c8181876066fb0227f7f4c0a" =0A        style=3D"color: #47=
+4E52;=0A                text-decoration: none;=0A                background=
+-color: transparent;=0A                font-family: PostGroteskMedium, Helv=
+etica, Arial, sans-serif;=0A                font-weight: 500;=0A           =
+     font-size: 28px;=0A                text-align: left;=0A               =
+ padding-top: 0px;=0A                padding-bottom: 0px;=0A               =
+ letter-spacing: 0px;=0A        =0A                line-height: 34px;" titl=
+e=3D"$1,050">=0A    =0A        <!--[if mso]><font=0A                style=
+=3D"display:none;font-size:0;max-height:0;line-height:0;padding:0;mso-hide:=
+all;">@text</font><![endif]-->$1,050=0A    =0A</a>=0A=0A        </td>=0A   =
+ </tr>=0A    =0A        <tr>=0A    <td  height=3D"15" style=3D"background-c=
+olor:transparent;font-size: 15;line-height:1px;padding-top: 0px;padding-bot=
+tom: 0px;">=0A        &nbsp;=0A    </td>=0A</tr>=0A=0A        <tr> =0A     =
+       <td style=3D"font-family: 'PostGroteskMedium', Helvetica, Arial, san=
+s-serif; font-size: 12px; line-height: 17px; letter-spacing: 1px; font-weig=
+ht: bold;">=0A                =0A            </td>=0A        </tr>=0A    =
+=0A    <tr>=0A    <td  height=3D"15" style=3D"background-color:transparent;=
+font-size: 15;line-height:1px;padding-top: 0px;padding-bottom: 0px;">=0A   =
+     &nbsp;=0A    </td>=0A</tr>=0A=0A    =0A        <tr> =0A            <td=
+>=0A                <table cellpadding=3D"0" cellspacing=3D"0" border=3D"0"=
+ width=3D"100%"=0A                       style=3D"font-family: 'PostGrotesk=
+Book', Helvetica, Arial, sans-serif; font-size: 14px; color: #869099">=0A  =
+                  <tr>=0A                        <td style=3D"align: left;"=
+>=0A                            Studio&nbsp;&nbsp; =0A                     =
+       1 ba&nbsp;=0A                            =0A                        =
+        &nbsp;<img src=3D"http://static.trulia-cdn.com/images/email/icons/i=
+con_photos_grey_30x26.png" alt=3D"Photos icon" height=3D"16"=0A            =
+                               border=3D"0"/> 18=0A                        =
+    =0A                        </td>=0A                    </tr>=0A        =
+        </table>=0A            </td>=0A        </tr>=0A        <tr>=0A    <=
+td  height=3D"15" style=3D"background-color:transparent;font-size: 15;line-=
+height:1px;padding-top: 0px;padding-bottom: 0px;">=0A        &nbsp;=0A    <=
+/td>=0A</tr>=0A=0A    =0A    <tr> =0A        <td>=0A            =0A        =
+        =0A<a =0A         id=3D"w_addr5" =0A         href=3D"https://et.tru=
+lia.com/tracker=3Ftype=3Dclick&emailid=3Daustindreier@icloud.com&userid=3Dd=
+XNlcl9pZD00Mzk1MjA2NyZjb21tc1BsYXRmb3JtPWVtdjImZ3VpZD0xNTA4NTk4OTQ1MDU0Xzg3=
+ZjcyZjA2YjNkNDM1MGQ4YWY1NWZmNGUyYzRjOWQ4X2lwLTE3Mi0xOC0yNS0xNTAmZW1haWxfdHl=
+wZV9pZD0yNjcmZW1haWw9YXVzdGluZHJlaWVyQGljbG91ZC5jb20=3D&extra=3DMultivariat=
+eId=3D&&&2000&&&https://www.trulia.com/handshake/=3Falat=3Db55264e32f803ed2=
+21d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7&alrt=3D951184f4c70cee06642=
+d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a&ecampaign=3Deml|frb|con_day_i=
+nfrentsearchfill_bk_emv2|group_3&return=3Dhttps%3A%2F%2Fwww.trulia.com%2Fem=
+ail%2Feml%7Cfrb%7Ccon_day_infrentsearchfill_bk_emv2%7Cgroup_3%2Fwww.trulia.=
+com%2Frental%2F4037325580%3Falat%3Db55264e32f803ed221d81f78145dd5914999c6de=
+024a2b3c78485ba78cf85bd7%26alrt%3D951184f4c70cee06642d5bf437a6e9715b1fe284c=
+8181876066fb0227f7f4c0a#map" =0A        style=3D"color: #20C063;=0A        =
+        text-decoration: none;=0A                background-color: transpar=
+ent;=0A                font-family: PostGroteskBook, Helvetica, Arial;=0A  =
+              font-weight: 300;=0A                font-size: 16px;=0A      =
+          text-align: left;=0A                padding-top: 0px;=0A         =
+       padding-bottom: 0px;=0A                letter-spacing: 0px;=0A      =
+  =0A                line-height: 18px;" title=3D"4121&#8203; Halldale&#820=
+3; Ave&#8203;">=0A    4121&#8203; Halldale&#8203; Ave&#8203;=0A    =0A</a>=
+=0A=0A            =0A        </td>=0A    </tr>=0A    =0A        <tr> =0A   =
+         <td>=0A                =0A<a =0A         id=3D"w_addr5" =0A       =
+  href=3D"https://et.trulia.com/tracker=3Ftype=3Dclick&emailid=3Daustindrei=
+er@icloud.com&userid=3DdXNlcl9pZD00Mzk1MjA2NyZjb21tc1BsYXRmb3JtPWVtdjImZ3Vp=
+ZD0xNTA4NTk4OTQ1MDU0Xzg3ZjcyZjA2YjNkNDM1MGQ4YWY1NWZmNGUyYzRjOWQ4X2lwLTE3Mi0=
+xOC0yNS0xNTAmZW1haWxfdHlwZV9pZD0yNjcmZW1haWw9YXVzdGluZHJlaWVyQGljbG91ZC5jb2=
+0=3D&extra=3DMultivariateId=3D&&&2000&&&https://www.trulia.com/handshake/=
+=3Falat=3Db55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7&=
+alrt=3D951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a&eca=
+mpaign=3Deml|frb|con_day_infrentsearchfill_bk_emv2|group_3&return=3Dhttps%3=
+A%2F%2Fwww.trulia.com%2Femail%2Feml%7Cfrb%7Ccon_day_infrentsearchfill_bk_em=
+v2%7Cgroup_3%2Fwww.trulia.com%2Frental%2F4037325580%3Falat%3Db55264e32f803e=
+d221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7%26alrt%3D951184f4c70cee0=
+6642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a#map" =0A        style=3D"=
+color: #20C063;=0A                text-decoration: none;=0A                =
+background-color: transparent;=0A                font-family: PostGroteskBo=
+ok, Helvetica, Arial;=0A                font-weight: 300;=0A               =
+ font-size: 16px;=0A                text-align: left;=0A                pad=
+ding-top: 0px;=0A                padding-bottom: 0px;=0A                let=
+ter-spacing: 0px;=0A        =0A                line-height: 22px;" title=3D=
+"Los&#8203; Angeles,&#8203; CA&#8203;">=0A    Los&#8203; Angeles,&#8203; CA=
+&#8203;=0A    =0A</a>=0A=0A            </td>=0A        </tr>=0A        =0A =
+   =0A</table>=0A<!--[if (gte mso 9)|(IE)]>=0A</td>=0A</tr>=0A</table>=0A<!=
+[endif]-->=0A=0A</td>=0A</tr>=0A</table>=0A</div>=0A<!--[if (gte mso 9)|(IE=
+)]>=0A</td> =0A</tr>=0A</table>=0A<![endif]-->=0A=0A</td>=0A</tr>=0A=0A    =
+<tr>=0A    <td  height=3D"5" style=3D"background-color:transparent;font-siz=
+e: 5;line-height:1px;padding-top: 0px;padding-bottom: 0px;">=0A        &nbs=
+p;=0A    </td>=0A</tr>=0A=0A=0A=0A=0A=0A=0A=0A    =0A  =0A=0A=0A=0A=0A=0A<!=
+-- START Two Columns -->=0A<tr  >=0A    <td class=3D"column"=0A        styl=
+e=3D"padding: 0; font-size: 0; background-color: #ffffff; width: 100%">=0A =
+       <a  >=0A        <!--[if (gte mso 9)|(IE)]>=0A        <table cellspac=
+ing=3D"0" cellpadding=3D"0" border=3D"0" width=3D"600"=0A               sty=
+le=3D"width:600px;">=0A            <tr>=0A                <td width=3D"355"=
+ style=3D"width: 355px;"> =0A        <![endif]-->=0A        <div class=3D"c=
+olumn"=0A             style=3D"overflow:hidden; max-width: 355px; width: 10=
+0%; display: inline-block; vertical-align: top;">=0A            <table widt=
+h=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0"=0A             =
+      style=3D"border-spacing: 0; font-family: 'PostGroteskBook', Helvetica=
+, Arial, sans-serif;">=0A                <tr>=0A                    <td sty=
+le=3D"padding: 15px 15px 0px 15px; background-color: #ffffff">=0A=0A<table =
+cellpadding=3D"0" cellspacing=3D"0" border=3D"0">=0A    <tr>=0A        <td =
+>=0A            <table cellspacing=3D"0" cellpadding=3D"0" width=3D"100%" b=
+order=3D"0">=0A    <tr valign=3D"top">=0A        <td class=3D"column-sixty"=
+ valign=3D"middle"=0A    style=3D"width: 192px;=0A            background-co=
+lor: transparent;=0A            padding: 0px;">=0A    =0A    <a href=3D"htt=
+ps://et.trulia.com/tracker=3Ftype=3Dclick&emailid=3Daustindreier@icloud.com=
+&userid=3DdXNlcl9pZD00Mzk1MjA2NyZjb21tc1BsYXRmb3JtPWVtdjImZ3VpZD0xNTA4NTk4O=
+TQ1MDU0Xzg3ZjcyZjA2YjNkNDM1MGQ4YWY1NWZmNGUyYzRjOWQ4X2lwLTE3Mi0xOC0yNS0xNTAm=
+ZW1haWxfdHlwZV9pZD0yNjcmZW1haWw9YXVzdGluZHJlaWVyQGljbG91ZC5jb20=3D&extra=3D=
+MultivariateId=3D&&&2000&&&https://www.trulia.com/handshake/=3Falat=3Db5526=
+4e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7&alrt=3D951184f4=
+c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a&ecampaign=3Deml|fr=
+b|con_day_infrentsearchfill_bk_emv2|group_3&return=3Dhttps%3A%2F%2Fwww.trul=
+ia.com%2Femail%2Feml%7Cfrb%7Ccon_day_infrentsearchfill_bk_emv2%7Cgroup_3%2F=
+www.trulia.com%2Frental%2F4037337988%3Falat%3Db55264e32f803ed221d81f78145dd=
+5914999c6de024a2b3c78485ba78cf85bd7%26alrt%3D951184f4c70cee06642d5bf437a6e9=
+715b1fe284c8181876066fb0227f7f4c0a" id=3Dw_image6 title=3D"Property details=
+">=0A        <img src=3D"https://thumbs.trulia-cdn.com/pictures/thumbs_6/ps=
+.109/1/5/c/b/picture-uh=3D4d9251424bc58fa8f93bd8999c2acba-ps=3D15cb48d6518=
+6b9287ffdb3278fb225b3.jpg"=0A             border=3D"0"=0A             width=
+=3D"195"=0A             height=3D"170"=0A             class=3D"fullwidth"=
+=0A             alt=3D"Home Image"=0A             style=3D"font-family: Hel=
+vetica, Arial, sans-serif;=0A                     font-size: 14px;=0A      =
+               color: #B1B6BB;=0A                     border: 0;" />=0A    =
+</a>=0A    =0A</td>=0A=0A        <td class=3D"column-forty" style=3D"width:=
+ 127px; background-color: transparent;">  =0A    =0A    <a href=3D"https://=
+et.trulia.com/tracker=3Ftype=3Dclick&emailid=3Daustindreier@icloud.com&user=
+id=3DdXNlcl9pZD00Mzk1MjA2NyZjb21tc1BsYXRmb3JtPWVtdjImZ3VpZD0xNTA4NTk4OTQ1MD=
+U0Xzg3ZjcyZjA2YjNkNDM1MGQ4YWY1NWZmNGUyYzRjOWQ4X2lwLTE3Mi0xOC0yNS0xNTAmZW1ha=
+WxfdHlwZV9pZD0yNjcmZW1haWw9YXVzdGluZHJlaWVyQGljbG91ZC5jb20=3D&extra=3DMulti=
+variateId=3D&&&2000&&&https://www.trulia.com/handshake/=3Falat=3Db55264e32f=
+803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7&alrt=3D951184f4c70ce=
+e06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a&ecampaign=3Deml|frb|con=
+_day_infrentsearchfill_bk_emv2|group_3&return=3Dhttps%3A%2F%2Fwww.trulia.co=
+m%2Femail%2Feml%7Cfrb%7Ccon_day_infrentsearchfill_bk_emv2%7Cgroup_3%2Fwww.t=
+rulia.com%2Frental%2F4037337988%3Falat%3Db55264e32f803ed221d81f78145dd59149=
+99c6de024a2b3c78485ba78cf85bd7%26alrt%3D951184f4c70cee06642d5bf437a6e9715b1=
+fe284c8181876066fb0227f7f4c0a#map" id=3Dw_map6 title=3D"Property details">=
+=0A        <img src=3D"https://maps.googleapis.com/maps/api/staticmap=3Fmap=
+type=3Droadmap&client=3Dgme-zillowinc3&zoom=3D13&sensor=3Dfalse&size=3D130x=
+170&center=3D33.974900%2C-118.373970&markers=3Dicon%3Ahttps%3A%2F%2Fstatic.=
+trulia-cdn.com%2Fimages%2Fmap%2Fmarkers%2Ffor_rent.png%7C33.974900%2C-118.3=
+73970&signature=3DaX4ohyEgzHzFglevEP0E0p_zUw8=3D" border=3D"0" width=3D"130=
+" height=3D"170" class=3D"fullwidth" alt=3D"Map View" style=3D"font-family:=
+ Helvetica, Arial, sans-serif; font-size: 14px; color: #B1B6BB; border: 0; =
+ height: auto;" />=0A    </a>=0A    =0A</td>=0A=0A    </tr>=0A</table>=0A=
+=0A        </td>=0A    </tr>=0A    <tr>=0A    <td  height=3D"15" style=3D"b=
+ackground-color:transparent;font-size: 15;line-height:1px;padding-top: 0px;=
+padding-bottom: 0px;">=0A        &nbsp;=0A    </td>=0A</tr>=0A=0A=0A    =0A=
+        =0A<tr align=3D"left">=0A    =0A    =0A    <td style=3D"color: #474=
+E52;=0A            display:inline;=0A            background-color: transpar=
+ent;=0A            font-family: PostGroteskBook, Helvetica, Arial, san-seri=
+f;=0A            font-weight: 300;=0A            font-size: 16px;=0A       =
+     text-align: center;=0A            letter-spacing: 0px;=0A            l=
+ine-height: 18px;=0A            padding-left: 0px;=0A            padding-ri=
+ght: 0px;=0A            padding-top: 0px;=0A            padding-bottom: 0px=
+;">=0A        =0A                <div align=3D"left" style=3D"display:inlin=
+e"><!--[if (gte mso 9)|(IE)]>=0A    <v:roundrect xmlns:v=3D"urn:schemas-mic=
+rosoft-com:vml" xmlns:w=3D"urn:schemas-microsoft-com:office:word"=0A       =
+          href=3D"https://et.trulia.com/tracker=3Ftype=3Dclick&amp;emailid=
+=3Daustindreier@icloud.com&amp;userid=3DdXNlcl9pZD00Mzk1MjA2NyZjb21tc1BsYXR=
+mb3JtPWVtdjImZ3VpZD0xNTA4NTk4OTQ1MDU0Xzg3ZjcyZjA2YjNkNDM1MGQ4YWY1NWZmNGUyYz=
+RjOWQ4X2lwLTE3Mi0xOC0yNS0xNTAmZW1haWxfdHlwZV9pZD0yNjcmZW1haWw9YXVzdGluZHJla=
+WVyQGljbG91ZC5jb20=3D&amp;extra=3DMultivariateId=3D&amp;&amp;&amp;2000&amp;=
+&amp;&amp;https://www.trulia.com/handshake/=3Falat=3Db55264e32f803ed221d81f=
+78145dd5914999c6de024a2b3c78485ba78cf85bd7&alrt=3D951184f4c70cee06642d5bf43=
+7a6e9715b1fe284c8181876066fb0227f7f4c0a&ecampaign=3Deml|frb|con_day_infrent=
+searchfill_bk_emv2|group_3&return=3Dhttps%3A%2F%2Fwww.trulia.com%2Femail%2F=
+eml%7Cfrb%7Ccon_day_infrentsearchfill_bk_emv2%7Cgroup_3%2Fwww.trulia.com%2F=
+rental%2F4037337988%3Falat%3Db55264e32f803ed221d81f78145dd5914999c6de024a2b=
+3c78485ba78cf85bd7%26alrt%3D951184f4c70cee06642d5bf437a6e9715b1fe284c818187=
+6066fb0227f7f4c0a#photo-1"=0A                 id=3D"w_button6"=0A          =
+       style=3D"height:44px;v-text-anchor:middle;width:325px;" arcsize=3D"1=
+5%"=0A                 stroke=3D"f" fillcolor=3D"#20C063">=0A        <cente=
+r>=0A    <![endif]-->=0A    <!--[if (gte mso 9)|(IE)]>=0A    <a href=3D"htt=
+ps://et.trulia.com/tracker=3Ftype=3Dclick&amp;emailid=3Daustindreier@icloud=
+.com&amp;userid=3DdXNlcl9pZD00Mzk1MjA2NyZjb21tc1BsYXRmb3JtPWVtdjImZ3VpZD0x=
+NTA4NTk4OTQ1MDU0Xzg3ZjcyZjA2YjNkNDM1MGQ4YWY1NWZmNGUyYzRjOWQ4X2lwLTE3Mi0xOC0=
+yNS0xNTAmZW1haWxfdHlwZV9pZD0yNjcmZW1haWw9YXVzdGluZHJlaWVyQGljbG91ZC5jb20=3D=
+&amp;extra=3DMultivariateId=3D&amp;&amp;&amp;2000&amp;&amp;&amp;https://www=
+.trulia.com/handshake/=3Falat=3Db55264e32f803ed221d81f78145dd5914999c6de02=
+4a2b3c78485ba78cf85bd7&alrt=3D951184f4c70cee06642d5bf437a6e9715b1fe284c8181=
+876066fb0227f7f4c0a&ecampaign=3Deml|frb|con_day_infrentsearchfill_bk_emv2|g=
+roup_3&return=3Dhttps%3A%2F%2Fwww.trulia.com%2Femail%2Feml%7Cfrb%7Ccon_day_=
+infrentsearchfill_bk_emv2%7Cgroup_3%2Fwww.trulia.com%2Frental%2F4037337988%=
+3Falat%3Db55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7%2=
+6alrt%3D951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a#ph=
+oto-1" align=3D"left"=0A       id=3D"w_button6"=0A       title=3D"Property =
+Details" style=3D"background-color:#20C063;=0A       border-radius:5;=0A   =
+    color:#ffffff;=0A       display:block;=0A       font-family:  PostGrote=
+skBook, Helvetica, Arial, sans-serif;=0A    font-weight: 300;=0A    font-si=
+ze:16px;=0A    line-height:44px;=0A    text-align:center;=0A    text-decora=
+tion:none;=0A    width:325px;=0A    height:44px;=0A    -webkit-text-size-ad=
+just:none;">=0A    View 1 More Photo & Details=0A    </a>=0A    <![endif]--=
+>=0A    <!--[if !((gte mso 9)|(IE))]><!-- -->=0A    <a href=3D"https://et.t=
+rulia.com/tracker=3Ftype=3Dclick&emailid=3Daustindreier@icloud.com&userid=
+=3DdXNlcl9pZD00Mzk1MjA2NyZjb21tc1BsYXRmb3JtPWVtdjImZ3VpZD0xNTA4NTk4OTQ1MDU0=
+Xzg3ZjcyZjA2YjNkNDM1MGQ4YWY1NWZmNGUyYzRjOWQ4X2lwLTE3Mi0xOC0yNS0xNTAmZW1haWx=
+fdHlwZV9pZD0yNjcmZW1haWw9YXVzdGluZHJlaWVyQGljbG91ZC5jb20=3D&extra=3DMultiva=
+riateId=3D&&&2000&&&https://www.trulia.com/handshake/=3Falat=3Db55264e32f80=
+3ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7&alrt=3D951184f4c70cee0=
+6642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a&ecampaign=3Deml|frb|con_d=
+ay_infrentsearchfill_bk_emv2|group_3&return=3Dhttps%3A%2F%2Fwww.trulia.com%=
+2Femail%2Feml%7Cfrb%7Ccon_day_infrentsearchfill_bk_emv2%7Cgroup_3%2Fwww.tru=
+lia.com%2Frental%2F4037337988%3Falat%3Db55264e32f803ed221d81f78145dd5914999=
+c6de024a2b3c78485ba78cf85bd7%26alrt%3D951184f4c70cee06642d5bf437a6e9715b1fe=
+284c8181876066fb0227f7f4c0a#photo-1" align=3D"left"=0A       id=3D"w_button=
+6"=0A       title=3D"View 1 More Photo & Details" style=3D"background-color=
+:#20C063;=0A            border-radius:5px;=0A            border-color:trans=
+parent;=0A            border-width:0px;=0A            border-style:none;=0A=
+            color:#ffffff;=0A            display:block;=0A            font-=
+family: PostGroteskBook, Helvetica, Arial, sans-serif;=0A            font-w=
+eight: 300;=0A            font-size:16px;=0A            line-height:44px;=
+=0A            text-align:center;=0A            text-decoration:none;=0A   =
+         min-width:325px;=0A            max-width:100%;=0A            heigh=
+t:44px;=0A            -webkit-text-size-adjust:none;">=0A        View 1 Mor=
+e Photo & Details=0A    </a>=0A    <!--<![endif]-->=0A    <!--[if (gte mso =
+9)|(IE)]>=0A    </center>=0A    </v:roundrect>=0A    <![endif]--></div>=0A=
+=0A            =0A    </td>=0A</tr>=0A=0A=0A        <tr>=0A    <td class=3D=
+"hide-on-mobile"  height=3D"15" style=3D"background-color:transparent;font-=
+size: 15;line-height:1px;padding-top: 0px;padding-bottom: 0px;">=0A        =
+&nbsp;=0A    </td>=0A</tr>=0A=0A    =0A</table>=0A</td>=0A</tr>=0A</table>=
+=0A</div>=0A<!--[if (gte mso 9)|(IE)]>=0A</td>                             =
+                  =0A<td width=3D"215" valign=3D"top" style=3D"width:215px;=
+"> =0A<![endif]-->=0A<div class=3D"column"=0A     style=3D"max-width: 215px=
+; width: 100%; display: inline-block; vertical-align: top;">=0A    <table w=
+idth=3D"100%" align=3D"left"=0A           style=3D"border-spacing: 0; font-=
+family: 'PostGroteskBook', Helvetica, Arial, sans-serif; background-color: =
+#ffffff;">=0A        <tr>=0A            <td style=3D"background-color: #fff=
+fff; padding: 15px 15px 15px 15px;">=0A=0A<!--[if (gte mso 9)|(IE)]>=0A<tab=
+le cellspacing=3D"0" cellpadding=3D"0" border=3D"0" width=3D"205" style=3D"=
+width: 205px;">=0A    <tr>=0A        <td width=3D"205" style=3D"width: 205p=
+x;">=0A<![endif]-->=0A<table cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" style=3D"text-align: left;">=0A    <tr> =0A        <td>=0A            =
+=0A    <style>=0A        .removeAutomaticLink a {=0A            color: #474=
+E52 !important;=0A            text-decoration: none;=0A        }=0A    </st=
+yle>=0A=0A<a  class=3D"removeAutomaticLink" =0A         id=3D"w_price6" =0A=
+         href=3D"https://et.trulia.com/tracker=3Ftype=3Dclick&emailid=3Daus=
+tindreier@icloud.com&userid=3DdXNlcl9pZD00Mzk1MjA2NyZjb21tc1BsYXRmb3JtPWVtd=
+jImZ3VpZD0xNTA4NTk4OTQ1MDU0Xzg3ZjcyZjA2YjNkNDM1MGQ4YWY1NWZmNGUyYzRjOWQ4X2lw=
+LTE3Mi0xOC0yNS0xNTAmZW1haWxfdHlwZV9pZD0yNjcmZW1haWw9YXVzdGluZHJlaWVyQGljbG9=
+1ZC5jb20=3D&extra=3DMultivariateId=3D&&&2000&&&https://www.trulia.com/hands=
+hake/=3Falat=3Db55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf8=
+5bd7&alrt=3D951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0=
+a&ecampaign=3Deml|frb|con_day_infrentsearchfill_bk_emv2|group_3&return=3Dht=
+tps%3A%2F%2Fwww.trulia.com%2Femail%2Feml%7Cfrb%7Ccon_day_infrentsearchfill_=
+bk_emv2%7Cgroup_3%2Fwww.trulia.com%2Frental%2F4037337988%3Falat%3Db55264e32=
+f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7%26alrt%3D951184f4c7=
+0cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a" =0A        style=3D=
+"color: #474E52;=0A                text-decoration: none;=0A               =
+ background-color: transparent;=0A                font-family: PostGroteskM=
+edium, Helvetica, Arial, sans-serif;=0A                font-weight: 500;=0A=
+                font-size: 28px;=0A                text-align: left;=0A    =
+            padding-top: 0px;=0A                padding-bottom: 0px;=0A    =
+            letter-spacing: 0px;=0A        =0A                line-height: =
+34px;" title=3D"$900">=0A    =0A        <!--[if mso]><font=0A              =
+  style=3D"display:none;font-size:0;max-height:0;line-height:0;padding:0;ms=
+o-hide:all;">@text</font><![endif]-->$900=0A    =0A</a>=0A=0A        </td>=
+=0A    </tr>=0A    =0A        <tr>=0A    <td  height=3D"15" style=3D"backgr=
+ound-color:transparent;font-size: 15;line-height:1px;padding-top: 0px;paddi=
+ng-bottom: 0px;">=0A        &nbsp;=0A    </td>=0A</tr>=0A=0A        <tr> =
+=0A            <td style=3D"font-family: 'PostGroteskMedium', Helvetica, Ar=
+ial, sans-serif; font-size: 12px; line-height: 17px; letter-spacing: 1px; f=
+ont-weight: bold;">=0A                =0A                    <span style=3D=
+"color: #869099; white-space: nowrap; display: inline-block;">ROOM FOR RENT=
+</span>=0A                =0A                    <span style=3D"color: #869=
+099; white-space: nowrap; display: inline-block;">BEST VALUE</span>=0A     =
+           =0A            </td>=0A        </tr>=0A    =0A    <tr>=0A    <td=
+  height=3D"15" style=3D"background-color:transparent;font-size: 15;line-he=
+ight:1px;padding-top: 0px;padding-bottom: 0px;">=0A        &nbsp;=0A    </t=
+d>=0A</tr>=0A=0A    =0A        <tr> =0A            <td>=0A                <=
+table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%"=0A   =
+                    style=3D"font-family: 'PostGroteskBook', Helvetica, Ari=
+al, sans-serif; font-size: 14px; color: #869099">=0A                    <tr=
+>=0A                        <td style=3D"align: left;">=0A                 =
+           2 bd&nbsp;&nbsp; =0A                            1 ba&nbsp;=0A   =
+                         =0A                                &nbsp;<img src=
+=3D"http://static.trulia-cdn.com/images/email/icons/icon_photos_grey_30x26.=
+png" alt=3D"Photos icon" height=3D"16"=0A                                  =
+         border=3D"0"/> 2=0A                            =0A                =
+        </td>=0A                    </tr>=0A                </table>=0A    =
+        </td>=0A        </tr>=0A        <tr>=0A    <td  height=3D"15" style=
+=3D"background-color:transparent;font-size: 15;line-height:1px;padding-top:=
+ 0px;padding-bottom: 0px;">=0A        &nbsp;=0A    </td>=0A</tr>=0A=0A    =
+=0A    <tr> =0A        <td>=0A            =0A                =0A<a =0A     =
+    id=3D"w_addr6" =0A         href=3D"https://et.trulia.com/tracker=3Ftype=
+=3Dclick&emailid=3Daustindreier@icloud.com&userid=3DdXNlcl9pZD00Mzk1MjA2NyZ=
+jb21tc1BsYXRmb3JtPWVtdjImZ3VpZD0xNTA4NTk4OTQ1MDU0Xzg3ZjcyZjA2YjNkNDM1MGQ4YW=
+Y1NWZmNGUyYzRjOWQ4X2lwLTE3Mi0xOC0yNS0xNTAmZW1haWxfdHlwZV9pZD0yNjcmZW1haWw9Y=
+XVzdGluZHJlaWVyQGljbG91ZC5jb20=3D&extra=3DMultivariateId=3D&&&2000&&&https:=
+//www.trulia.com/handshake/=3Falat=3Db55264e32f803ed221d81f78145dd5914999c6=
+de024a2b3c78485ba78cf85bd7&alrt=3D951184f4c70cee06642d5bf437a6e9715b1fe284c=
+8181876066fb0227f7f4c0a&ecampaign=3Deml|frb|con_day_infrentsearchfill_bk_em=
+v2|group_3&return=3Dhttps%3A%2F%2Fwww.trulia.com%2Femail%2Feml%7Cfrb%7Ccon_=
+day_infrentsearchfill_bk_emv2%7Cgroup_3%2Fwww.trulia.com%2Frental%2F4037337=
+988%3Falat%3Db55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85b=
+d7%26alrt%3D951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0=
+a#map" =0A        style=3D"color: #20C063;=0A                text-decoratio=
+n: none;=0A                background-color: transparent;=0A               =
+ font-family: PostGroteskBook, Helvetica, Arial;=0A                font-wei=
+ght: 300;=0A                font-size: 16px;=0A                text-align: =
+left;=0A                padding-top: 0px;=0A                padding-bottom:=
+ 0px;=0A                letter-spacing: 0px;=0A        =0A                l=
+ine-height: 22px;" title=3D"Address Not Disclosed">=0A    Address Not Discl=
+osed=0A    =0A</a>=0A=0A                <br/>=0A                =0A    <sty=
+le>=0A        .removeAutomaticLink a {=0A            color: #20C063 !import=
+ant;=0A            text-decoration: none;=0A        }=0A    </style>=0A=0A<=
+a  class=3D"removeAutomaticLink" =0A         id=3D"w_addr6" =0A         hre=
+f=3D"https://et.trulia.com/tracker=3Ftype=3Dclick&emailid=3Daustindreier@ic=
+loud.com&userid=3DdXNlcl9pZD00Mzk1MjA2NyZjb21tc1BsYXRmb3JtPWVtdjImZ3VpZD0xN=
+TA4NTk4OTQ1MDU0Xzg3ZjcyZjA2YjNkNDM1MGQ4YWY1NWZmNGUyYzRjOWQ4X2lwLTE3Mi0xOC0y=
+NS0xNTAmZW1haWxfdHlwZV9pZD0yNjcmZW1haWw9YXVzdGluZHJlaWVyQGljbG91ZC5jb20=3D&=
+extra=3DMultivariateId=3D&&&2000&&&https://www.trulia.com/handshake/=3Falat=
+=3Db55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7&alrt=3D=
+951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a&ecampaign=
+=3Deml|frb|con_day_infrentsearchfill_bk_emv2|group_3&return=3Dhttps%3A%2F%2=
+Fwww.trulia.com%2Femail%2Feml%7Cfrb%7Ccon_day_infrentsearchfill_bk_emv2%7Cg=
+roup_3%2Fwww.trulia.com%2Frental%2F4037337988%3Falat%3Db55264e32f803ed221d8=
+1f78145dd5914999c6de024a2b3c78485ba78cf85bd7%26alrt%3D951184f4c70cee06642d5=
+bf437a6e9715b1fe284c8181876066fb0227f7f4c0a#map" =0A        style=3D"color:=
+ #20C063;=0A                text-decoration: none;=0A                backgr=
+ound-color: transparent;=0A                font-family: PostGroteskBook, He=
+lvetica, Arial;=0A                font-weight: 300;=0A                font-=
+size: 16px;=0A                text-align: left;=0A                padding-t=
+op: 0px;=0A                padding-bottom: 0px;=0A                letter-sp=
+acing: 0px;=0A        =0A                line-height: 22px;" title=3D"See L=
+isting Here">=0A    =0A        <!--[if mso]><font=0A                style=
+=3D"display:none;font-size:0;max-height:0;line-height:0;padding:0;mso-hide:=
+all;">@text</font><![endif]-->See Listing Here=0A    =0A</a>=0A=0A         =
+   =0A        </td>=0A    </tr>=0A    =0A</table>=0A<!--[if (gte mso 9)|(IE=
+)]>=0A</td>=0A</tr>=0A</table>=0A<![endif]-->=0A=0A</td>=0A</tr>=0A</table>=
+=0A</div>=0A<!--[if (gte mso 9)|(IE)]>=0A</td> =0A</tr>=0A</table>=0A<![end=
+if]-->=0A=0A</td>=0A</tr>=0A=0A    <tr>=0A    <td  height=3D"5" style=3D"ba=
+ckground-color:transparent;font-size: 5;line-height:1px;padding-top: 0px;pa=
+dding-bottom: 0px;">=0A        &nbsp;=0A    </td>=0A</tr>=0A=0A=0A=0A=0A=0A=
+=0A=0A=0A <tr valign=3D"top">=0A    <td>=0A        <!--[if (mso)|(IE)]>=0A =
+       <table width=3D"600" cellpadding=3D"0" cellspacing=3D"0" style=3D"ba=
+ckground-color:#ffffff;">=0A            <tr>=0A                <td style=3D=
+"padding-top:15px;=0A                   padding-left:15px;=0A              =
+     padding-right:15px;=0A                   padding-bottom:0px;">=0A     =
+   <![endif]-->=0A        <table cellpadding=3D"0" cellspacing=3D"0"=0A    =
+           class=3D""=0A               style=3D"background-color: #ffffff;=
+=0A                       margin: auto;=0A                       max-width:=
+ 600px;=0A                       width: 100%;=0A                       padd=
+ing-top:15px;=0A                       padding-left:15px;=0A               =
+        padding-right:15px;=0A                       padding-bottom:0px;=0A=
+                       text-align: left;=0A                       border-co=
+llapse:separate">=0A            =0A=0A    =0A<tr align=3D"left">=0A    =0A =
+   =0A    <td style=3D"color: #474E52;=0A            display:inline;=0A    =
+        background-color: transparent;=0A            font-family: PostGrote=
+skBook, Helvetica, Arial;=0A            font-weight: 300;=0A            fon=
+t-size: 16px;=0A            text-align: left;=0A            letter-spacing:=
+ 0px;=0A            line-height: 18px;=0A            padding-left: 0px;=0A =
+           padding-right: 0px;=0A            padding-top: 0px;=0A          =
+  padding-bottom: 0px;">=0A        Know exactly what you want=3F=0A        =
+=0A    </td>=0A</tr>=0A=0A    <tr>=0A    <td  height=3D"10" style=3D"backgr=
+ound-color:transparent;font-size: 10;line-height:1px;padding-top: 0px;paddi=
+ng-bottom: 0px;">=0A        &nbsp;=0A    </td>=0A</tr>=0A=0A=0A=0A=0A    =
+=0A<tr align=3D"left">=0A    =0A    =0A    <td style=3D"color: #474E52;=0A =
+           display:inline;=0A            background-color: transparent;=0A =
+           font-family: PostGroteskBook, Helvetica, Arial;=0A            fo=
+nt-weight: 300;=0A            font-size: 16px;=0A            text-align: le=
+ft;=0A            letter-spacing: 0px;=0A            line-height: 18px;=0A =
+           padding-left: 0px;=0A            padding-right: 0px;=0A         =
+   padding-top: 0px;=0A            padding-bottom: 0px;">=0A        =0A    =
+        =0A<a =0A        =0A        =0A        style=3D"color: #20C063;=0A =
+               text-decoration: none;=0A                background-color: t=
+ransparent;=0A                font-family: PostGroteskBook, Helvetica, Aria=
+l;=0A                font-weight: 300;=0A                font-size: 16px;=
+=0A                text-align: left;=0A                padding-top: 0px;=0A=
+                padding-bottom: 0px;=0A                letter-spacing: 0px;=
+=0A        =0A                line-height: 18px;" title=3D"Save a search">=
+=0A    Save a search=0A    =0A</a>=0A=0A            on Trulia to Have new h=
+omes delivered to your inbox every day.=0A        =0A    </td>=0A</tr>=0A=
+=0A    <tr>=0A    <td  height=3D"15" style=3D"background-color:transparent;=
+font-size: 15;line-height:1px;padding-top: 0px;padding-bottom: 0px;">=0A   =
+     &nbsp;=0A    </td>=0A</tr>=0A=0A=0A=0A </table>=0A<!--[if (mso)|(IE)]>=
+=0A</td>=0A</tr>=0A</table>=0A<![endif]-->=0A</td>=0A</tr>=0A=0A=0A  <tr id=
+=3D"footer">=0A    <td>=0A        <table align=3D"left" cellspacing=3D"0" c=
+ellpadding=3D"0" border=3D"0"=0A               style=3D"background-color: #=
+F5F6F7;=0A                       max-width:600px;=0A                       =
+width:100%">=0A            <tr>=0A    <td  height=3D"10" style=3D"backgroun=
+d-color:transparent;font-size: 10;line-height:1px;padding-top: 0px;padding-=
+bottom: 0px;">=0A        &nbsp;=0A    </td>=0A</tr>=0A=0A            <tr>=
+=0A    <td>=0A        <table cellspacing=3D"0" cellpadding=3D"0" align=3D"l=
+eft">=0A            <tr>=0A                <td style=3D"color: #869099;=0A =
+                       font-family: PostGroteskBook, Helvetica, Arial, sans=
+-serif;=0A                        font-weight: 300;=0A                     =
+   font-size: 16px;">=0A                    Download the Trulia app=0A     =
+           </td>=0A                <td height=3D"20" width=3D"20" style=3D"=
+background-color:transparent">=0A    &nbsp;=0A</td>=0A=0A                <t=
+d>=0A                    <a=0A                            href=3D"https://e=
+t.trulia.com/tracker=3Ftype=3Dclick&emailid=3Daustindreier@icloud.com&useri=
+d=3DdXNlcl9pZD00Mzk1MjA2NyZjb21tc1BsYXRmb3JtPWVtdjImZ3VpZD0xNTA4NTk4OTQ1MDU=
+0Xzg3ZjcyZjA2YjNkNDM1MGQ4YWY1NWZmNGUyYzRjOWQ4X2lwLTE3Mi0xOC0yNS0xNTAmZW1haW=
+xfdHlwZV9pZD0yNjcmZW1haWw9YXVzdGluZHJlaWVyQGljbG91ZC5jb20=3D&extra=3DMultiv=
+ariateId=3D&&&2000&&&https://app.adjust.com/txixh7" id=3D"w_ios" title=3D"D=
+ownload our iOS app"><img border=3D"0"=0A                                  =
+                                                                     src=3D=
+"http://static.trulia-cdn.com/images/email/icons/icon_apple_grey_36x46.png"=
+=0A                                                                        =
+                               alt=3D"apple icon" height=3D"23"></a>=0A    =
+            </td>=0A                <td height=3D"20" width=3D"20" style=3D=
+"background-color:transparent">=0A    &nbsp;=0A</td>=0A=0A                <=
+td>=0A                    <a href=3D"https://et.trulia.com/tracker=3Ftype=
+=3Dclick&emailid=3Daustindreier@icloud.com&userid=3DdXNlcl9pZD00Mzk1MjA2NyZ=
+jb21tc1BsYXRmb3JtPWVtdjImZ3VpZD0xNTA4NTk4OTQ1MDU0Xzg3ZjcyZjA2YjNkNDM1MGQ4YW=
+Y1NWZmNGUyYzRjOWQ4X2lwLTE3Mi0xOC0yNS0xNTAmZW1haWxfdHlwZV9pZD0yNjcmZW1haWw9Y=
+XVzdGluZHJlaWVyQGljbG91ZC5jb20=3D&extra=3DMultivariateId=3D&&&2000&&&https:=
+//app.adjust.com/r2g9xz" id=3D"w_android" title=3D"Download our Android app=
+"><img border=3D"0"=0A                                                     =
+                                               src=3D"http://static.trulia-=
+cdn.com/images/email/icons/icon_android_grey_42x46.png"=0A                 =
+                                                                           =
+        alt=3D"android icon" height=3D"23"></a>=0A                </td>=0A =
+           </tr>=0A            <tr>=0A    <td  height=3D"20" style=3D"backg=
+round-color:transparent;font-size: 20;line-height:1px;padding-top: 0px;padd=
+ing-bottom: 0px;">=0A        &nbsp;=0A    </td>=0A</tr>=0A=0A        </tabl=
+e>=0A    </td>=0A</tr>=0A=0A            <tr>=0A    <td style=3D"color: #869=
+099;=0A            font-family: PostGroteskBook, Helvetica, Arial, sans-ser=
+if;=0A            font-weight: 300;=0A            font-size: 14px;=0A      =
+      line-height: 22px;=0A            text-align: left;">=0A        Please=
+ do not reply to this email. This email was sent to=0A=0A        =0A    <st=
+yle>=0A        .removeAutomaticLink a {=0A            color: #869099 !impor=
+tant;=0A            text-decoration: none;=0A        }=0A    </style>=0A=0A=
+<a  class=3D"removeAutomaticLink" =0A        =0A        =0A        style=3D=
+"color: #869099;=0A                text-decoration: none;=0A               =
+ background-color: transparent;=0A                font-family: PostGroteskB=
+ook, Helvetica, Arial, sans-serif;=0A                font-weight: 500;=0A  =
+              font-size: 14px;=0A                text-align: left;=0A      =
+          padding-top: 0px;=0A                padding-bottom: 0px;=0A      =
+          letter-spacing: 0px;=0A        =0A                line-height: 18=
+px;" title=3D"austindreier@icloud.com">=0A    =0A        <!--[if mso]><font=
+=0A                style=3D"display:none;font-size:0;max-height:0;line-heig=
+ht:0;padding:0;mso-hide:all;">@text</font><![endif]-->austindreier@icloud.c=
+om=0A    =0A</a>=0A=0A    </td>=0A</tr>=0A=0A            <tr>=0A    <td sty=
+le=3D"color: #869099;=0A    font-family: PostGroteskBook, Helvetica, Arial,=
+ sans-serif;=0A    font-weight: 300;=0A    font-size: 14px;=0A    line-heig=
+ht: 22px;=0A    text-align: left;">=0A        If you would like to unsubscr=
+ibe from this email, <a href=3D"https://et.trulia.com/tracker=3Ftype=3Dclic=
+k&emailid=3Daustindreier@icloud.com&userid=3DdXNlcl9pZD00Mzk1MjA2NyZjb21tc1=
+BsYXRmb3JtPWVtdjImZ3VpZD0xNTA4NTk4OTQ1MDU0Xzg3ZjcyZjA2YjNkNDM1MGQ4YWY1NWZmN=
+GUyYzRjOWQ4X2lwLTE3Mi0xOC0yNS0xNTAmZW1haWxfdHlwZV9pZD0yNjcmZW1haWw9YXVzdGlu=
+ZHJlaWVyQGljbG91ZC5jb20=3D&extra=3DMultivariateId=3D&&&2000&&&https://www.t=
+rulia.com/handshake/=3Falat=3Db55264e32f803ed221d81f78145dd5914999c6de024a2=
+b3c78485ba78cf85bd7&alrt=3D951184f4c70cee06642d5bf437a6e9715b1fe284c8181876=
+066fb0227f7f4c0a&ecampaign=3Deml|frb|con_day_infrentsearchfill_bk_emv2|grou=
+p_3&return=3Dhttps%3A%2F%2Fwww.trulia.com%2Funsubscribe%3Fuid%3D43952067%26=
+auth%3D226c87ed06%26ecampaign%3Deml%257Cfrb%257Ccon_day_infrentsearchfill_b=
+k_emv2%257Cgroup_3%26email%3Daustindreier%2540icloud.com%26et%3D267%3Falat%=
+3Db55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7%26alrt%3=
+D951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a" title=3D=
+"Unsubscribe" id=3D"w_unsub" style=3D"text-decoration: none; color: #20C063=
+">click here</a>.=0A    </td>=0A</tr>=0A=0A            <tr>=0A    <td style=
+=3D"color: #869099;=0A            font-family: PostGroteskBook, Helvetica, =
+Arial, sans-serif;=0A            font-weight: 300;=0A            font-size:=
+ 14px;=0A            line-height: 22px;=0A            text-align: left;">=
+=0A        <a href=3D"https://et.trulia.com/tracker=3Ftype=3Dclick&emailid=
+=3Daustindreier@icloud.com&userid=3DdXNlcl9pZD00Mzk1MjA2NyZjb21tc1BsYXRmb3J=
+tPWVtdjImZ3VpZD0xNTA4NTk4OTQ1MDU0Xzg3ZjcyZjA2YjNkNDM1MGQ4YWY1NWZmNGUyYzRjOW=
+Q4X2lwLTE3Mi0xOC0yNS0xNTAmZW1haWxfdHlwZV9pZD0yNjcmZW1haWw9YXVzdGluZHJlaWVyQ=
+GljbG91ZC5jb20=3D&extra=3DMultivariateId=3D&&&2000&&&https://www.trulia.com=
+/handshake/=3Falat=3Db55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485b=
+a78cf85bd7&alrt=3D951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227=
+f7f4c0a&ecampaign=3Deml|frb|con_day_infrentsearchfill_bk_emv2|group_3&retur=
+n=3Dhttps%3A%2F%2Fwww.trulia.com%2Femail%2Feml%7Cfrb%7Ccon_day_infrentsearc=
+hfill_bk_emv2%7Cgroup_3%2Fwww.trulia.com%2Fabout%3Falat%3Db55264e32f803ed22=
+1d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7%26alrt%3D951184f4c70cee0664=
+2d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a" title=3D"About Trulia" id=
+=3D"w_about" style=3D"text-decoration: none;=0A                color: #8690=
+99;">Trulia, Inc. | 535 Mission Street, Suite 700, San Francisco, CA 94105 =
+|</a>=0A        =0A<a =0A         id=3D"w_privacy" =0A         href=3D"http=
+s://et.trulia.com/tracker=3Ftype=3Dclick&emailid=3Daustindreier@icloud.com&=
+userid=3DdXNlcl9pZD00Mzk1MjA2NyZjb21tc1BsYXRmb3JtPWVtdjImZ3VpZD0xNTA4NTk4OT=
+Q1MDU0Xzg3ZjcyZjA2YjNkNDM1MGQ4YWY1NWZmNGUyYzRjOWQ4X2lwLTE3Mi0xOC0yNS0xNTAmZ=
+W1haWxfdHlwZV9pZD0yNjcmZW1haWw9YXVzdGluZHJlaWVyQGljbG91ZC5jb20=3D&extra=3DM=
+ultivariateId=3D&&&2000&&&https://www.trulia.com/handshake/=3Falat=3Db55264=
+e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7&alrt=3D951184f4c=
+70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a&ecampaign=3Deml|frb=
+|con_day_infrentsearchfill_bk_emv2|group_3&return=3Dhttps%3A%2F%2Fwww.truli=
+a.com%2Femail%2Feml%7Cfrb%7Ccon_day_infrentsearchfill_bk_emv2%7Cgroup_3%2Fw=
+ww.trulia.com%2Fprivacy%3Falat%3Db55264e32f803ed221d81f78145dd5914999c6de02=
+4a2b3c78485ba78cf85bd7%26alrt%3D951184f4c70cee06642d5bf437a6e9715b1fe284c81=
+81876066fb0227f7f4c0a" =0A        style=3D"color: #20C063;=0A              =
+  text-decoration: none;=0A                background-color: transparent;=
+=0A                font-family: PostGroteskBook, Helvetica, Arial, sans-ser=
+if;=0A                font-weight: 300;=0A                font-size: 14px;=
+=0A                text-align: left;=0A                padding-top: 0px;=0A=
+                padding-bottom: 0px;=0A                letter-spacing: 0px;=
+=0A        =0A                line-height: 18px;" title=3D" View Privacy Po=
+licy ">=0A     View Privacy Policy =0A    =0A</a>=0A=0A    </td>=0A</tr>=0A=
+=0A            <tr>=0A    <td  height=3D"30" style=3D"background-color:tran=
+sparent;font-size: 30;line-height:1px;padding-top: 0px;padding-bottom: 0px;=
+">=0A        &nbsp;=0A    </td>=0A</tr>=0A=0A        </table>=0A    </td>=
+=0A</tr>=0A=0A=0A</table>=0A</td>=0A</tr>=0A</table>=0A</td>=0A</tr>=0A</ta=
+ble>=0A<!--[if mso]>=0A</td>=0A</tr>=0A</table>=0A</center>=0A<![endif]-->=
+=0A</td>=0A</tr>=0A</table>=0A=0D=0A<img border=3D"0" width=3D"1" height=3D=
+"1" alt=3D"" src=3D"http://click.alerts.trulia.com/q/k1lPvnVozrPnj-IQahNmKg=
+~~/AAAAAQA~/RgRbzkswPkEIAOzv8x20EbJXBnRydWxpYVgEAAAAAEgDMjY3QgoAAzDG61mQF0H=
+9UhdhdXN0aW5kcmVpZXJAaWNsb3VkLmNvbQlRBAAAAABH_3siYmluZGluZyI6ImFsZXJ0cyIsIn=
+Byb3BlcnR5X2NvdW50IjoiNyIsImd1aWQiOiJkWE5sY2w5cFpEMDBNemsxTWpBMk55WmpiMjF0Y=
+zFCc1lYUm1iM0p0UFdWdGRqSW1aM1ZwWkQweE5UQTROVGs0T1RRMU1EVTBYemczWmpjeVpqQTJZ=
+ak5rTkRNMU1HUTRZV1kxTldabU5HVXlZelJqT1dRNFgybHdMVEUzTWkweE9DMHlOUzB4TlRBbVp=
+XMWhhV3hmZEhsd1pWOXBaRDB5TmpjbVpXMWhhV3c5WVhWemRHbHVaSEpsYVdWeVFHbGpiRzkxWk=
+M1amIyMD0ifQ~~">=0D=0A</body>=0A</html>=0A=0A<!--=0AEmail Type Id: 267=0AGU=
+ID: 1508598945054_87f72f06b3d4350d8af55ff4e2c4c9d8_ip-172-18-25-150=0ATo: a=
+ustindreier@icloud.com=0AFrom: no-reply@alerts.trulia.com=0ATimeSent: 2017-=
+10-21T22:12:00.001Z=0AEmailPlatform: Emv2=0A-->
+--_----O2SzLMCiPikTL3baElrWsg===_E0/DF-06032-036CBE95--
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>date-last-viewed</key>
+	<integer>0</integer>
+	<key>date-received</key>
+	<integer>1508623930</integer>
+	<key>flags</key>
+	<integer>8590195712</integer>
+	<key>remote-id</key>
+	<string>4817</string>
+</dict>
+</plist>

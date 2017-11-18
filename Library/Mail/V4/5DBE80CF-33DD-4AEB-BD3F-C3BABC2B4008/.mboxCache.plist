@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>mboxes</key>
+	<dict>
+		<key>Outbox</key>
+		<dict>
+			<key>IMAPMailboxAttributes</key>
+			<integer>257</integer>
+			<key>IMAPMailboxChildren</key>
+			<dict/>
+			<key>MailboxID</key>
+			<string>6396EA3A-4136-4B9E-9714-6A7080829BEB</string>
+			<key>MailboxIsManuallySorted</key>
+			<false/>
+			<key>MailboxPathComponent</key>
+			<string>Outbox</string>
+			<key>MailboxUnreadCount</key>
+			<integer>0</integer>
+		</dict>
+	</dict>
+</dict>
+</plist>

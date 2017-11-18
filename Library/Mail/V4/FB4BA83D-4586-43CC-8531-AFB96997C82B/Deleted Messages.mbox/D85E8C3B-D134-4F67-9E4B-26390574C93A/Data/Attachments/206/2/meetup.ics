@@ -1,0 +1,49 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Meetup//Meetup Events v1.0//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Events - Northern Colorado’s Real Estate Investors Associati
+ on
+X-MS-OLK-FORCEINSPECTOROPEN:TRUE
+BEGIN:VTIMEZONE
+TZID:America/Denver
+X-LIC-LOCATION:America/Denver
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0700
+TZOFFSETTO:-0600
+TZNAME:MDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0700
+TZNAME:MST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+DTSTAMP:20171020T094233Z
+DTSTART;TZID=America/Denver:20171021T083000
+DTEND;TZID=America/Denver:20171021T170000
+STATUS:CONFIRMED
+SUMMARY:Rehab Acquisition Workshop: A Numbers Game
+DESCRIPTION:Northern Colorado’s Real Estate Investors Association\nSaturd
+ ay\, October 21 at 8:30 AM\n\nSpend a day with us in a content-rich trai
+ ning workshop and hands on experience!  This workshop is ICOR’s “flagshi
+ p” & we will be teaming up with our ...\n\nhttps://www.meetup.com/icoroc
+ kies/events/243777679/
+ORGANIZER;CN=Meetup Reminder:MAILTO:info@meetup.com
+CLASS:PUBLIC
+CREATED:20170929T162011Z
+GEO:40.43;-105.08
+LOCATION:Sticks and Stone Fine Colorado Properties (7120 E Orchard Rd #40
+ 0\, Centennial\, CO)
+URL:https://www.meetup.com/icorockies/events/243777679/
+SEQUENCE:4
+LAST-MODIFIED:20170929T163955Z
+UID:event_243777679@meetup.com
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,794 @@
+89414     
+Return-path:
+ <bounce-11721_HTML-280230920-805094-7206997-68127@bounce.e.fitbit.com>
+Received: from pv33p00im-smtpin042.me.com ([17.142.180.68])
+ by ms60015.mac.com (Oracle Communications Messaging Server 8.0.1.2.20170607
+ 64bit (built Jun  7 2017)) with ESMTP id <0OZ600GSQJKJC710@ms60015.mac.com>
+ for austindreier@icloud.com; Fri, 10 Nov 2017 02:14:43 +0000 (GMT)
+Original-recipient: rfc822;austindreier@icloud.com
+Received: from mta2.e.fitbit.com (mta2.e.fitbit.com [136.147.130.215])
+ by pv33p00im-smtpin042.me.com
+ (Oracle Communications Messaging Server 8.0.1.2.20170607 64bit (built Jun  7
+ 2017)) with ESMTPS id <0OZ6002UFJK0YB40@pv33p00im-smtpin042.me.com> for
+ austindreier@icloud.com (ORCPT austindreier@icloud.com); Fri,
+ 10 Nov 2017 02:14:43 +0000 (GMT)
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 spamscore=0
+ clxscore=76 suspectscore=97 malwarescore=0 phishscore=0 adultscore=0
+ bulkscore=100 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.0.1-1707230000 definitions=main-1711100031
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10432:,,
+ definitions=2017-11-09_11:,, signatures=0
+Authentication-results: pv33p00im-dmarcmilter005.me.com; dmarc=pass
+ header.from=e.fitbit.com
+Authentication-results: pv33p00im-spfmilter005.me.com; spf=pass
+ (pv33p00im-spfmilter005.me.com: domain of
+ bounce-11721_HTML-280230920-805094-7206997-68127@bounce.e.fitbit.com
+ designates 136.147.130.215 as permitted sender)
+ smtp.mailfrom=bounce-11721_HTML-280230920-805094-7206997-68127@bounce.e.fitbit.com;
+Received-SPF: pass (pv33p00im-spfmilter005.me.com: domain of
+ bounce-11721_HTML-280230920-805094-7206997-68127@bounce.e.fitbit.com
+ designates 136.147.130.215 as permitted sender)
+ receiver=pv33p00im-spfmilter005.me.com; client-ip=136.147.130.215;
+ helo=mta2.e.fitbit.com;
+ envelope-from=bounce-11721_HTML-280230920-805094-7206997-68127@bounce.e.fitbit.com;
+Authentication-results: pv33p00im-dkimmilter015.me.com;	dkim=pass (1024-bit
+ key) header.d=e.fitbit.com header.i=team@e.fitbit.com header.b=qv+lVyCH;
+	dkim-adsp=pass
+DKIM-Signature: v=1; a=rsa-sha1; c=relaxed/relaxed; s=200608; d=e.fitbit.com;
+ h=From:To:Subject:Date:List-Unsubscribe:MIME-Version:List-ID:Message-ID:Content-Type;
+ i=team@e.fitbit.com; bh=CWPFG4lXQwMeqR1ek3PS+ca2S8g=;
+ b=qv+lVyCHhelAinL+zGmq6Cur+/FGMOfvBiFBV8i37klKf+JQlrPgNpaYFN7KKgiyy76Zg0ga55UF
+   WD4lqiIaMfZTykdYdcGPqsIkmzm3/4Dk7qTGauY1BeVhUs3gPyirN9VJxO+cNiMlzo7+Cse2LIJL
+   PdiwVgNp3zgCu4YJUsg=
+Received: by mta2.e.fitbit.com id h0k5p2163hsi for <austindreier@icloud.com>;
+ Fri,
+ 10 Nov 2017 02:13:51 +0000 (envelope-from <bounce-11721_HTML-280230920-805094-7206997-68127@bounce.e.fitbit.com>)
+From: Fitbit <team@e.fitbit.com>
+To: austindreier@icloud.com
+Subject: Your November Newsletter
+Date: Thu, 09 Nov 2017 20:13:51 -0600
+List-Unsubscribe:
+ <mailto:leave-fcef1571726605122d502d29-fe3516787566077d7c1670-fec51c7070640d79-fe87137275620d7472-fef71278746603@leave.e.fitbit.com>
+MIME-version: 1.0
+List-Id: <7206997_805094.xt.local>
+Message-id: <d8b00566-0153-48d7-b92a-697dd53d755a@atl1s07mta1340.xt.local>
+Content-type: multipart/alternative; boundary="RbSpK4Vb4rVw=_?:"
+x-icloud-spam-score: 3331331
+ f=e.fitbit.com;e=bounce.e.fitbit.com;is=yes;ir=no;spf=pass;dkim=pass;dmarc=pass/reject/none;gdwl=absent;pps=ham;clxs=ham;clxw=neutral
+X-CLX-Spam: false
+X-CLX-UnSpecialScore: None
+X-CLX-Score: 76
+X-CLX-UShades: None
+X-CLX-Shades: None
+X-MANTSH: 1TEIXWlwZGVoaGkNHB0tNT0ReQ0QeGRsdEQpMQxcbHQQbHhgEGxMfBBkYEBseGh8
+ aEQpMWRcdHBEKWU0XZEVETxEKWUkXGnEaEBp3Bh8ccRwTHR8TEBsTGBkadwYYGgYaEQpZXhdra
+ 3kRCkNOFxseaB1SGUVdQRl+UmxBcwFteH5Pe1thUG5dZ10abmx4EQpYXBcZBBoEGRgHTRlOE08
+ TGRgFGx0EGx4YBBsTEgQZEhAbHhofGhEKXlkXeGVYa1kRCk1cFx0aHBEKTFoXZU0aXREKQ1oXG
+ xkcBBseHQQbGRoEGBsfEQpCXhcbEQpCRhdgZnxCXH1nWERoGREKQkcXYngBQk55HV1IZU4RCkJ
+ cFxsRCkJLF25QY1pwS1MaGl9pEQpCRRdgZFheWmwcb0AfXBEKQk4Xb1NuWWl5XWN7TxwRCkJMF
+ 2BtZk1STk4cUhhGEQpCbBdkbAVBel8bQ2tFehEKQkAXaEVgTkdzY28bZxoRCkJYF25HHRtOZGF
+ FGxJAEQpwaBdgYkwTQWRheUkYHhAcGhEKcGgXa1tkaAEBbVsYXUQQGhEKcGgXYW9IbQEFQmASf
+ AEQHhkRCnBoF2BPEh9dXUNrE0JzEAcbEhEKcGgXZkRzcgVQTh1YTk4QGhEKcH8XYmQcARxvUlI
+ ZbmsQHBMRCnBfF215QUlPZXtaa157EB8aEQpwfRdjAX5JeBlyQAFfGxAaEQpwXxduXm5/WwUfY
+ UtnfxAfEhEKcH0XYhkbGl1JXnt6choQGhEKcH0XYhkbGl1JXnt6choQGhEKcH0Xa2RtBWZrc2J
+ nUB0QGhEKcH0Xa2RtBWZrc2JnUB0QGhEKcH0Xb3N5bXhNZlNfc0cQGhEKcH0Xb3N5bXhNZlNfc
+ 0cQGhEKcH0Xb3N5bXhNZlNfc0cQGhEKcH0XbnJkY2BGEhhgengQGhEKcH0XbnJkY2BGEhhgeng
+ QGhEKcH0XbnJkY2BGEhhgengQGhEKcH0XaElbTnx6EmIbeHMQ
+x-dmarc-info: pass=pass; dmarc-policy=reject; s=r1; d=r1
+x-dmarc-policy: v=DMARC1; p=reject; rua=mailto:on8wov6z@ag.dmarcian.com;
+ ruf=mailto:on8wov6z@fr.dmarcian.com;
+X-CSA-Complaints: whitelistcomplaints@eco.de
+x-job: 7206997_805094
+
+This is a multi-part message in MIME format.
+
+--RbSpK4Vb4rVw=_?:
+Content-Type: text/plain;
+	charset="utf-8"
+Content-Transfer-Encoding: 8bit
+
+
+
+
+ 
+Step up your health and wellness with Fitbit. 
+http://view.e.fitbit.com/?qs=f2a40ea2211abf552b6bddbec097361049c91b5b770b40e7813903fab9c8f11633c8c686252e20a8ec1e234548fd567fa152153426101154de44abea9584e371a136052f0caaf421dbd4fae5d42481b4 
+View in web browser  
+
+
+
+
+
+http://click.e.fitbit.com/?qs=015e9ef739c711d37f4bf8fa7345f5655c3d7fae696aa6d947a9cfb3b590be169073ed454c207b072dd2d98c4d30f958a2f1d7f01c6b984a 
+
+http://click.e.fitbit.com/?qs=015e9ef739c711d37f4bf8fa7345f5655c3d7fae696aa6d947a9cfb3b590be169073ed454c207b072dd2d98c4d30f958a2f1d7f01c6b984a 
+
+http://click.e.fitbit.com/?qs=015e9ef739c711d30e2b388f2432dfc8a374e9c59b165f7accf35a902e55148d7f919164d8ebadabd4b3bd212bcd82caf0150f129698a853 
+
+http://click.e.fitbit.com/?qs=015e9ef739c711d30e2b388f2432dfc8a374e9c59b165f7accf35a902e55148d7f919164d8ebadabd4b3bd212bcd82caf0150f129698a853 
+
+ 
+
+http://click.e.fitbit.com/?qs=015e9ef739c711d3df4264560785138bedff15085bf10c6fe6ca2a2a613834346c0f9f89ba249a8435d3a13ae77092ff57e222b20f5d2112 
+ 
+
+http://click.e.fitbit.com/?qs=015e9ef739c711d3df4264560785138bedff15085bf10c6fe6ca2a2a613834346c0f9f89ba249a8435d3a13ae77092ff57e222b20f5d2112 
+Avoid Top Tracker Mistakes: 6 Helpful Tips 
+
+http://click.e.fitbit.com/?qs=015e9ef739c711d3df4264560785138bedff15085bf10c6fe6ca2a2a613834346c0f9f89ba249a8435d3a13ae77092ff57e222b20f5d2112 
+LEARN THE TRICKS 
+
+http://click.e.fitbit.com/?qs=015e9ef739c711d3aed4bd5f65665d9394adf0815196aa43c6407d5b2f7d4d7229403ddca1bf59e9159e5a232d1e35968542c15e3b8a5a8f 
+ 
+
+http://click.e.fitbit.com/?qs=015e9ef739c711d3aed4bd5f65665d9394adf0815196aa43c6407d5b2f7d4d7229403ddca1bf59e9159e5a232d1e35968542c15e3b8a5a8f 
+12 Easy-to-Make Salads for Busy Weeknights 
+
+http://click.e.fitbit.com/?qs=015e9ef739c711d3aed4bd5f65665d9394adf0815196aa43c6407d5b2f7d4d7229403ddca1bf59e9159e5a232d1e35968542c15e3b8a5a8f 
+GET THE RECIPES 
+
+http://click.e.fitbit.com/?qs=015e9ef739c711d3c6b0db8f9cdc8278af1f3dbb298762665d352c2436205c7f336c3d5bc5175a6d4143b52b21c13cbc7256ead238305da4 
+ 
+
+http://click.e.fitbit.com/?qs=015e9ef739c711d3c6b0db8f9cdc8278af1f3dbb298762665d352c2436205c7f336c3d5bc5175a6d4143b52b21c13cbc7256ead238305da4 
+Gabby’s Holiday Tips: De‑Stress and Enjoy The Festivities. 
+
+http://click.e.fitbit.com/?qs=015e9ef739c711d3c6b0db8f9cdc8278af1f3dbb298762665d352c2436205c7f336c3d5bc5175a6d4143b52b21c13cbc7256ead238305da4 
+SEE HOW 
+
+http://click.e.fitbit.com/?qs=015e9ef739c711d3400fadf7e586733e91c176fb656ec9785537abb50e4e5c67fb0503c1ba3ef7178eddd0456adac204923206e7549d36db 
+ 
+
+http://click.e.fitbit.com/?qs=015e9ef739c711d3400fadf7e586733e91c176fb656ec9785537abb50e4e5c67fb0503c1ba3ef7178eddd0456adac204923206e7549d36db 
+4 Common Excuses for Skipping the Gym: Busted! 
+
+http://click.e.fitbit.com/?qs=015e9ef739c711d3400fadf7e586733e91c176fb656ec9785537abb50e4e5c67fb0503c1ba3ef7178eddd0456adac204923206e7549d36db 
+READ THE LIST 
+
+http://click.e.fitbit.com/?qs=015e9ef739c711d307cdbe0c4576022d6895504c9423a2a54ad516014c6fbc8e4d78addf26d7f02025f3814389d5a5d00cd8561570a9c427 
+ 
+
+http://click.e.fitbit.com/?qs=015e9ef739c711d307cdbe0c4576022d6895504c9423a2a54ad516014c6fbc8e4d78addf26d7f02025f3814389d5a5d00cd8561570a9c427 
+Is a Daily Glass of Wine Healthy? 
+
+http://click.e.fitbit.com/?qs=015e9ef739c711d307cdbe0c4576022d6895504c9423a2a54ad516014c6fbc8e4d78addf26d7f02025f3814389d5a5d00cd8561570a9c427 
+FIND OUT 
+
+http://click.e.fitbit.com/?qs=015e9ef739c711d30a9f6ba1fbc683297fad3d88696f3db7e5588c075d034047fda75a09a7f89bc19dc426a4b82367d64cf2b0325340bc97 
+
+http://click.e.fitbit.com/?qs=015e9ef739c711d30a9f6ba1fbc683297fad3d88696f3db7e5588c075d034047fda75a09a7f89bc19dc426a4b82367d64cf2b0325340bc97 
+
+ 
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+http://click.e.fitbit.com/?qs=015e9ef739c711d3b7ab17ebdf9e742d21885413e6a47c8a9a877fc231ed8223f2358b1673485db919c7f20e8e8ea400439685d2b4138135c07cc00747ef2a41 
+Unsubscribe  | 
+http://click.e.fitbit.com/?qs=015e9ef739c711d3bc290727bc6483a1c5f10f64f483d4fe9e0d66917b411b8029e678553beb5669488577efa4ca9b8082819c1ffb4fb5afc0f9b5f6916f5f81 
+Blog  | 
+http://click.e.fitbit.com/?qs=015e9ef739c711d3a305ea406173f16faddc8d90f7588e6f43811eb86c87b04bb4e2ec9f4064f2ec0647e2b179044e03080141bec50b4c1bbbe2fdb1870df5e1 
+We're Hiring 
+
+
+http://click.e.fitbit.com/?qs=015e9ef739c711d3ac4c1802cb1419164e9074d950d7bd18d7cb4dae290835f80108866694d99d2a423144675da6ce0b6d272cf7356bd2c0 
+Fitbit and the Fitbit logo are trademarks or registered trademarks of Fitbit, Inc. in the US and other countries. Additional Fitbit trademarks can be found at www.fitbit.com/legal/trademark-list. Third-party trademarks are the property of their respective owners. 
+
+http://click.e.fitbit.com/?qs=015e9ef739c711d35c8acf06d05c1dafe9cf20a98994fd94e22033d2299cbc844f94a12675704a4c910336b9f2a3b70eb2178421ddf54c68 
+Fitbit, Inc. — 199 Fremont Street, 14th Floor, San Francisco, CA 94105
+ 
+
+
+                                                             
+
+
+--RbSpK4Vb4rVw=_?:
+Content-Type: text/html;
+	charset="utf-8"
+Content-Transfer-Encoding: 8bit
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="../css/app.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title></title>
+    <style>@media only screen {
+  html {
+    min-height: 100%;
+    background: #f3f3f3;
+  }
+}
+
+@media only screen and (max-width: 616px) {
+  .small-float-center {
+    margin: 0 auto !important;
+    float: none !important;
+    text-align: center !important;
+  }
+
+  .small-text-center {
+    text-align: center !important;
+  }
+}
+
+@media only screen and (max-width: 616px) {
+  .hide-for-large {
+    display: block !important;
+    width: auto !important;
+    overflow: visible !important;
+    max-height: none !important;
+    font-size: inherit !important;
+    line-height: inherit !important;
+  }
+}
+
+@media only screen and (max-width: 616px) {
+  table.body table.container .hide-for-large {
+    display: table !important;
+    width: 100% !important;
+  }
+}
+
+@media only screen and (max-width: 616px) {
+  table.body table.container .show-for-large {
+    display: none !important;
+    width: 0;
+    mso-hide: all;
+    overflow: hidden;
+  }
+}
+
+@media only screen and (max-width: 616px) {
+  table.body img {
+    width: auto;
+    height: auto;
+  }
+
+  table.body center {
+    min-width: 0 !important;
+  }
+
+  table.body .container {
+    width: 95% !important;
+  }
+
+  table.body .columns {
+    height: auto !important;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  table.body .collapse .columns {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  th.small-1 {
+    display: inline-block !important;
+    width: 8.33333% !important;
+  }
+
+  th.small-2 {
+    display: inline-block !important;
+    width: 16.66667% !important;
+  }
+
+  th.small-5 {
+    display: inline-block !important;
+    width: 41.66667% !important;
+  }
+
+  th.small-6 {
+    display: inline-block !important;
+    width: 50% !important;
+  }
+
+  th.small-11 {
+    display: inline-block !important;
+    width: 91.66667% !important;
+  }
+
+  th.small-12 {
+    display: inline-block !important;
+    width: 100% !important;
+  }
+
+  table.menu {
+    width: 100% !important;
+  }
+
+  table.menu td,
+  table.menu th {
+    width: auto !important;
+    display: inline-block !important;
+  }
+
+  table.menu.vertical td,
+  table.menu.vertical th {
+    display: block !important;
+  }
+}
+
+@media only screen and (max-width: 616px) {
+  .wrapper {
+    width: 100% !important;
+  }
+
+  table.body table.container .hide-for-large {
+    display: inline-block !important;
+  }
+
+  .hide {
+    display: none !important;
+  }
+
+  .display-for-large {
+    display: none !important;
+  }
+}
+
+@media only screen and (min-width: 616px) {
+  .hide-for-large {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 616px) {
+  .header-local .logo {
+    height: 24px !important;
+  }
+}
+
+@media screen and (max-width: 616px) {
+  .header-local .preheader .columns {
+    padding-left: 0 !important;
+  }
+}
+
+@media only screen and (max-width: 616px) {
+  .complete-guide .small-block {
+    display: block;
+    margin-top: 10px;
+    Margin-top: 10px;
+  }
+}
+
+@media screen and (max-width: 616px) {
+  .rounded-button:not(.mobile-left) div {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 616px) {
+  .higgs-hero .display-for-large {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .higgs-two-columns-img-left .columns.pad-top-30,
+  .higgs-two-columns-img-right .columns.pad-top-30 {
+    padding-top: 0;
+  }
+}
+
+@media screen and (max-width: 616px) {
+  .higgs-two-columns-left-ordered-icon-list .table-with-icon {
+    margin: 0 auto;
+    Margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 616px) {
+  .higgs-two-columns-left-ordered-icon-list .ordered-icon {
+    width: 30px;
+  }
+}
+
+@media only screen and (max-width: 616px) {
+  .daily-streaks2_body h1 {
+    font-size: 28px !important;
+    line-height: 36px !important;
+  }
+
+  .daily-streaks2_body p {
+    font-size: 16px !important;
+  }
+}
+
+@media screen and (max-width: 616px) {
+  .nyc_shakeout .display-for-large {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 616px) {
+  .newsletter .display-for-large {
+    display: none !important;
+  }
+
+  .newsletter h2 {
+    font-size: 22px !important;
+    line-height: 26px !important;
+  }
+}
+
+@media only screen and (max-width: 616px) {
+  .article-spacing .wrapper-inner {
+    padding: 0 20px 20px 20px !important;
+    padding-top: 0 !important;
+    padding-right: 20px !important;
+    padding-bottom: 20px !important;
+    padding-left: 20px !important;
+  }
+}</style>
+    <style>
+        a.learn-more,
+        .higgs-two-columns-img-left .cta-right-arrow, 
+        .higgs-two-columns-img-right .cta-right-arrow  {
+            color: #EF426F !important;
+        }
+        @media screen and (max-width: 480px) {
+            .hidden {
+                display: none !important;
+            }
+        }
+    </style>
+    <!--[if mso 9]>
+        <style>
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6,
+            p,
+            a {
+                font-family: Helvetica, Arial, sans-serif;
+            }
+            li {
+                text-indent: -1em; /* Normalise space between bullets and text */
+            }
+        </style>
+    <![endif]-->
+  </head>
+  <body style="-moz-box-sizing: border-box; -ms-text-size-adjust: 100%; -webkit-box-sizing: border-box; -webkit-text-size-adjust: 100%; Margin: 0; background-color: #f5f5f5 !important; box-sizing: border-box; color: #000000; font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: normal; line-height: 1.3; margin: 0; min-width: 100%; padding: 0; padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left; width: 100% !important;">
+    <img src="http://click.e.fitbit.com/open.aspx?ffcb10-fec51c7070640d79-fe2910787461047e721076-fe87137275620d7472-ff031571726605-fe3516787566077d7c1670-fef71278746603" width="1" height="1">
+        <span class="preheader" style="color: #f3f3f3; display: none !important; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; mso-hide: all !important; opacity: 0; overflow: hidden; visibility: hidden;"></span>
+        <table class="body" style="Margin: 0; background: #f3f3f3; background-color: #f5f5f5 !important; border-collapse: collapse; border-spacing: 0; color: #000000; font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: normal; height: 100%; line-height: 1.3; margin: 0; padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left; vertical-align: top; width: 100%;">
+        <tr style="padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left; vertical-align: top;">
+            <td class="center" align="center" valign="top" style="-moz-hyphens: none; -ms-hyphens: none; -webkit-hyphens: none; Margin: 0; border-collapse: collapse !important; color: #000000; font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: normal; hyphens: none; line-height: 1.3; margin: 0; overflow: hidden; padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left; vertical-align: top; word-break: keep-all; word-wrap: break-word;">
+            <center style="min-width: 600px; overflow: hidden; width: 100%;" data-parsed="">
+                <table align="center" class="wrapper news_header float-center" style="Margin: 0 auto; background-color: #FFFFFF; border-collapse: collapse; border-spacing: 0; float: none; margin: 0 auto; padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: center; vertical-align: top; width: 600px;"><tr style="padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left; vertical-align: top;">
+<td class="wrapper-inner" style="-moz-hyphens: none; -ms-hyphens: none; -webkit-hyphens: none; Margin: 0; border-collapse: collapse !important; color: #000000; font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: normal; hyphens: none; line-height: 1.3; margin: 0; padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left; vertical-align: top; word-break: keep-all; word-wrap: break-word;">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="wrapper">
+    <tr>
+      <td><table border="0" cellpadding="10" cellspacing="0" width="100%" class="wrapper" bgcolor="#f5f5f5">
+        <tr>
+          <td style="font-family:Helvetica, Arial, sans-serif; color:#a4acae; font-size:12px; padding-top:15px; padding-bottom:15px; padding-left:10px;"><a href="" style="color:#a4acae; text-decoration:none;">Step up your health and wellness with Fitbit.</a></td>
+          <td class="hidden" align="right" style="font-family:Helvetica, Arial, sans-serif; color:#a4acae; font-size:12px; padding-top:15px; padding-bottom:15px; padding-right:10px;"><a href="http://view.e.fitbit.com/?qs=f2a40ea2211abf552b6bddbec097361049c91b5b770b40e7813903fab9c8f11633c8c686252e20a8ec1e234548fd567fa152153426101154de44abea9584e371a136052f0caaf421dbd4fae5d42481b4" style="color:#a4acae; text-decoration:underline;">View in web browser </a></td>
+          
+        </tr>
+      </table></td>
+    </tr>
+</table>
+                    <table align="center" class="container" style="Margin: 0 auto; background: none; border-collapse: collapse; border-spacing: 0; margin: 0 auto; padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: inherit; vertical-align: top; width: 600px;"><tbody><tr style="padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left; vertical-align: top;">
+<td style="-moz-hyphens: none; -ms-hyphens: none; -webkit-hyphens: none; Margin: 0; border-collapse: collapse !important; color: #000000; font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: normal; hyphens: none; line-height: 1.3; margin: 0; padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left; vertical-align: top; word-break: keep-all; word-wrap: break-word;">
+                        <table class="row collapse" style="border-collapse: collapse; border-spacing: 0; display: table; padding: 0; padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; position: relative; text-align: left; vertical-align: top; width: 100%;"><tbody><tr style="padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left; vertical-align: top;">
+                            <th class="col-left small-11 large-11 columns first" valign="middle" style="Margin: 0 auto; background-color: #FFFFFF; color: #000000; font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: normal; height: 70px; line-height: 1.3; margin: 0 auto; padding-bottom: 0; padding-left: 20px; padding-right: 0; padding-top: 0; text-align: left; vertical-align: middle; width: 558px;"><table style="border-collapse: collapse; border-spacing: 0; padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left; vertical-align: top; width: 100%;"><tr style="padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left; vertical-align: top;">
+<th style="Margin: 0; color: #000000; font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: normal; line-height: 1.3; margin: 0; padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left;">
+                                    <a href="http://click.e.fitbit.com/?qs=015e9ef739c711d37f4bf8fa7345f5655c3d7fae696aa6d947a9cfb3b590be169073ed454c207b072dd2d98c4d30f958a2f1d7f01c6b984a" target="_blank" style="-moz-osx-font-smoothing: auto; -webkit-font-smoothing: antialiased; color: #2199e8; font-family: 'ProximaNova-Regular', 'ProximaNova', 'Helvetica-Regular', Helvetica, Arial, sans-serif; font-smooth: always; font-weight: normal; hyphens: none; line-height: 1.3; padding: 0; text-align: left; text-decoration: none;">
+                                        <img class="display-for-large" height="28" width="245" src="http://image.e.fitbit.com/lib/fe9513737565037f73/m/2/b64395bb-7fa2-42f9-bf56-7a2bdac944ea.gif" alt="Fitbit Newsletter" style="-ms-interpolation-mode: bicubic; border: none; clear: both; display: block; max-width: 100%; outline: none; text-decoration: none; width: auto;">
+                                    </a>
+                                    <!--[if !mso 9]><!-->
+                                    <a href="http://click.e.fitbit.com/?qs=015e9ef739c711d37f4bf8fa7345f5655c3d7fae696aa6d947a9cfb3b590be169073ed454c207b072dd2d98c4d30f958a2f1d7f01c6b984a" target="_blank" style="-moz-osx-font-smoothing: auto; -webkit-font-smoothing: antialiased; color: #2199e8; font-family: 'ProximaNova-Regular', 'ProximaNova', 'Helvetica-Regular', Helvetica, Arial, sans-serif; font-smooth: always; font-weight: normal; hyphens: none; line-height: 1.3; padding: 0; text-align: left; text-decoration: none;">
+                                        <img class="hide-for-large mobile_logo" height="20" width="175" src="http://image.e.fitbit.com/lib/fe9513737565037f73/m/2/b64395bb-7fa2-42f9-bf56-7a2bdac944ea.gif" alt="Fitbit Newsletter" style="-ms-interpolation-mode: bicubic; border: none; clear: both; display: none; font-size: 0; height: 20px; line-height: 0; max-height: 20px; max-width: 175px; mso-hide: all; outline: none; overflow: hidden; text-decoration: none; width: 175px;">
+                                    </a>
+                                    <!--<![endif]><!-->
+                            </th></tr></table></th>
+                            <th class="small-1 large-1 columns last" valign="middle" style="Margin: 0 auto; background-color: #FFFFFF; color: #000000; font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: normal; height: 70px; line-height: 1.3; margin: 0 auto; padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left; vertical-align: middle; width: 58px;"><table style="border-collapse: collapse; border-spacing: 0; padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left; vertical-align: top; width: 100%;"><tr style="padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left; vertical-align: top;">
+<th style="Margin: 0; color: #000000; font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: normal; line-height: 1.3; margin: 0; padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left;">
+                                <img src="http://image.e.fitbit.com/lib/fe9513737565037f73/m/1/b0952ec8-cd97-4a8f-9250-4633d04fcd58.gif" width="2" height="70" style="-ms-interpolation-mode: bicubic; border: none; clear: both; display: block; height: 70px; max-width: 100%; outline: none; text-decoration: none; width: 2px;" alt="&nbsp;">
+                            </th></tr></table></th>
+                        </tr></tbody></table>
+                    </td></tr></tbody></table>
+                </td></tr></table>
+                
+                <table style="Margin: 0 auto; background-color: #FFFFFF; border-collapse: collapse; border-spacing: 0; float: none; margin: 0 auto; padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: center; vertical-align: top; width: 600px;" align="center" class="wrapper newsletter float-center"><tr style="padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left; vertical-align: top;">
+<td class="wrapper-inner" style="-moz-hyphens: none; -ms-hyphens: none; -webkit-hyphens: none; Margin: 0; border-collapse: collapse !important; color: #000000; font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: normal; hyphens: none; line-height: 1.3; margin: 0; padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left; vertical-align: top; word-break: keep-all; word-wrap: break-word;">
+                    <table class="row collapse" style="border-collapse: collapse; border-spacing: 0; padding: 0; padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; position: relative; text-align: left; vertical-align: top; width: 100%;"><tbody><tr style="padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left; vertical-align: top;">
+                        <th class="small-12 large-12 columns first last" style="Margin: 0 auto; color: #000000; font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: normal; line-height: 1.3; margin: 0 auto; padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left; width: 608px;"><table style="border-collapse: collapse; border-spacing: 0; padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left; vertical-align: top; width: 100%;"><tr style="padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left; vertical-align: top;">
+<th style="Margin: 0; color: #000000; font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: normal; line-height: 1.3; margin: 0; padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left;">
+                            <img src="http://image.e.fitbit.com/lib/fe9513737565037f73/m/1/5e765388-724b-4627-b224-311bf142a0ee.jpg" class="hero-img" width="600" border="0" alt="Top articles picked for you" style="-ms-interpolation-mode: bicubic; clear: both; display: block; max-width: 600px; outline: none; text-decoration: none; width: 100%;">
+                        </th>
+<th class="expander" style="Margin: 0; border: none; color: #000000; font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: normal; line-height: 1.3; margin: 0; padding: 0 !important; padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left; visibility: hidden; width: 0;"></th></tr></table></th>
+                    </tr></tbody></table>
+                </td></tr></table><table style="Margin: 0 auto; background-color: #FFFFFF; border-collapse: collapse; border-spacing: 0; float: none; margin: 0 auto; padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: center; vertical-align: top; width: 600px;" align="center" class="wrapper float-center"><tr style="padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left; vertical-align: top;">
+<td class="wrapper-inner" style="-moz-hyphens: none; -ms-hyphens: none; -webkit-hyphens: none; Margin: 0; border-collapse: collapse !important; color: #000000; font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: normal; hyphens: none; line-height: 1.3; margin: 0; padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left; vertical-align: top; word-break: keep-all; word-wrap: break-word;">
+                  <table class="spacer" style="border-collapse: collapse; border-spacing: 0; padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left; vertical-align: top; width: 100%;"><tbody><tr style="padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left; vertical-align: top;">
+<td height="20px" style="-moz-hyphens: none; -ms-hyphens: none; -webkit-hyphens: none; Margin: 0; border-collapse: collapse !important; color: #000000; font-family: Helvetica, Arial, sans-serif; font-size: 20px; font-weight: normal; hyphens: none; line-height: 20px; margin: 0; mso-line-height-rule: exactly; padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left; vertical-align: top; word-break: keep-all; word-wrap: break-word;">&#xA0;</td></tr></tbody></table> 
+                </td></tr></table>
+                <table style="Margin: 0 auto; background-color: #FFFFFF; border-collapse: collapse; border-spacing: 0; border-top: none !important; float: none; margin: 0 auto; padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: center; vertical-align: top; width: 600px;" align="center" class="wrapper newsletter float-center"><tr style="padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left; vertical-align: top;">
+<td class="wrapper-inner" style="-moz-hyphens: none; -ms-hyphens: none; -webkit-hyphens: none; Margin: 0; border-collapse: collapse !important; color: #000000; font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: normal; hyphens: none; line-height: 1.3; margin: 0; padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left; vertical-align: top; word-break: keep-all; word-wrap: break-word;">
+                    <center data-parsed="" style="min-width: 600px; width: 100%;">
+                            <a href="http://click.e.fitbit.com/?qs=015e9ef739c711d355162ba37bca0509af800535cb611c2599f67cd39ec797162fdbf9e2fa1b9400b13e48b6edfb5a955ce19163a0ac0c5f" style="-moz-osx-font-smoothing: auto; -webkit-font-smoothing: antialiased; border: none; color: #2199e8; font-family: 'ProximaNova-Regular', 'ProximaNova', 'Helvetica-Regular', Helvetica, Arial, sans-serif; font-smooth: always; font-weight: normal; hyphens: none; line-height: 1.3; max-width: 600px; padding: 0; text-align: left; text-decoration: none; width: 100%;" align="center" class="float-center">
+                                <img width="600" style="-ms-interpolation-mode: bicubic; border: none; clear: both; display: block; max-width: 600px; outline: none; text-decoration: none; width: 100%;" class="hero-img display-for-large" src="http://image.e.fitbit.com/lib/fe9513737565037f73/m/2/f77999f6-8f17-43fb-adf7-f8dfefc42744.png" alt="A Fitbit Story | Real People. Real Stories. | Diabetes and a struggle to get pregnant motivated Rachel to make a change, see how she changed her life with the help of Fitbit. #MyReasonIs">
+                            </a>
+                            <!--[if !mso 9]><!-->
+                                <a href="http://click.e.fitbit.com/?qs=015e9ef739c711d355162ba37bca0509af800535cb611c2599f67cd39ec797162fdbf9e2fa1b9400b13e48b6edfb5a955ce19163a0ac0c5f" style="-moz-osx-font-smoothing: auto; -webkit-font-smoothing: antialiased; border: none; color: #2199e8; font-family: 'ProximaNova-Regular', 'ProximaNova', 'Helvetica-Regular', Helvetica, Arial, sans-serif; font-smooth: always; font-weight: normal; hyphens: none; line-height: 1.3; max-width: 600px; padding: 0; text-align: left; text-decoration: none; width: 100%;" align="center" class="float-center">
+                                    <img class="hero-img hide-for-large" src="http://image.e.fitbit.com/lib/fe9513737565037f73/m/2/facc9442-af88-480c-b3c2-d2bbe78218b2.png" alt="A Fitbit Story | Real People. Real Stories. | Diabetes and a struggle to get pregnant motivated Rachel to make a change, see how she changed her life with the help of Fitbit. #MyReasonIs" style="-ms-interpolation-mode: bicubic; border: none; clear: both; display: none; font-size: 0; line-height: 0; max-height: 0; max-width: 600px; mso-hide: all; outline: none; overflow: hidden; text-decoration: none; width: 100% !important;">
+                                </a>
+                            <!--<![endif]><!-->
+                    </center>
+                </td></tr></table>
+                <table style="Margin: 0 auto; background-color: #FFFFFF; border-collapse: collapse; border-spacing: 0; float: none; margin: 0 auto; padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: center; vertical-align: top; width: 600px;" align="center" class="wrapper float-center"><tr style="padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left; vertical-align: top;">
+<td class="wrapper-inner" style="-moz-hyphens: none; -ms-hyphens: none; -webkit-hyphens: none; Margin: 0; border-collapse: collapse !important; color: #000000; font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: normal; hyphens: none; line-height: 1.3; margin: 0; padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left; vertical-align: top; word-break: keep-all; word-wrap: break-word;">
+                  <table class="spacer" style="border-collapse: collapse; border-spacing: 0; padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left; vertical-align: top; width: 100%;"><tbody><tr style="padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left; vertical-align: top;">
+<td height="20px" style="-moz-hyphens: none; -ms-hyphens: none; -webkit-hyphens: none; Margin: 0; border-collapse: collapse !important; color: #000000; font-family: Helvetica, Arial, sans-serif; font-size: 20px; font-weight: normal; hyphens: none; line-height: 20px; margin: 0; mso-line-height-rule: exactly; padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left; vertical-align: top; word-break: keep-all; word-wrap: break-word;">&#xA0;</td></tr></tbody></table> 
+                </td></tr></table>
+                
+                <table style="Margin: 0 auto; background-color: #FFFFFF; border-collapse: collapse; border-spacing: 0; float: none; margin: 0 auto; padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: center; vertical-align: top; width: 600px;" align="center" class="wrapper newsletter article-spacing float-center"><tr style="padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left; vertical-align: top;">
+<td class="wrapper-inner" style="-moz-hyphens: none; -ms-hyphens: none; -webkit-hyphens: none; Margin: 0; border-collapse: collapse !important; color: #000000; font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: normal; hyphens: none; line-height: 1.3; margin: 0; padding: 0 39px 20px 39px; padding-bottom: 20px; padding-left: 39px; padding-right: 39px; padding-top: 0; text-align: left; vertical-align: top; word-break: keep-all; word-wrap: break-word;">
+                    <table class="row collapse" style="border-collapse: collapse; border-spacing: 0; padding: 0; padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; position: relative; text-align: left; vertical-align: top; width: 100%;"><tbody><tr style="padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left; vertical-align: top;">
+                        <th class="article-border small-12 large-12 columns first last" style="Margin: 0 auto; color: #000000; font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: normal; line-height: 1.3; margin: 0 auto; padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left; width: 608px;"><table style="border-collapse: collapse; border-spacing: 0; padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left; vertical-align: top; width: 100%;"><tr style="padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left; vertical-align: top;">
+<th style="Margin: 0; border: 1px solid #d7d7d7; color: #000000; font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: normal; line-height: 1.3; margin: 0; padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left;">
+                            <a href="http://click.e.fitbit.com/?qs=015e9ef739c711d3662b9713870b1e9d3f647d57ad30294b422e0183c1f5e8321fd42b2f0cb7b754dedb42f346009673b29050326bc51d15" style="-moz-osx-font-smoothing: auto; -webkit-font-smoothing: antialiased; color: #2199e8; font-family: 'ProximaNova-Regular', 'ProximaNova', 'Helvetica-Regular', Helvetica, Arial, sans-serif; font-smooth: always; font-weight: normal; hyphens: none; line-height: 1.3; padding: 0; text-align: left; text-decoration: none;"><img src="http://image.e.fitbit.com/lib/fe9513737565037f73/m/2/0871bdd8-9520-4850-b1be-77fbb749985a.png" class="hero-img" width="520" border="0" alt="interchangeable wrist band" style="-ms-interpolation-mode: bicubic; border: none; clear: both; display: block; max-width: 600px; outline: none; text-decoration: none; width: 100%;"></a>
+                            <table align="center" class="container" style="Margin: 0 auto; background: none; border-collapse: collapse; border-spacing: 0; margin: 0 auto; padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: inherit; vertical-align: top; width: 100%;"><tbody><tr style="padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left; vertical-align: top;">
+<td style="-moz-hyphens: none; -ms-hyphens: none; -webkit-hyphens: none; Margin: 0; border-collapse: collapse !important; color: #000000; font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: normal; hyphens: none; line-height: 1.3; margin: 0; padding: 25px 25px 20px 25px; padding-bottom: 20px; padding-left: 25px; padding-right: 25px; padding-top: 25px; text-align: left; vertical-align: top; word-break: keep-all; word-wrap: break-word;">
+                                <img src="http://image.e.fitbit.com/lib/fe9513737565037f73/m/1/4c16a47d-a424-4740-8c41-b7fb799c7d85.jpg" border="0" height="21" style="-ms-interpolation-mode: bicubic; border: none; clear: both; display: block; height: 21px; max-width: 100%; outline: none; text-decoration: none; vertical-align: top; width: auto;" alt="FITBIT NEWS">
+                                <table class="spacer" style="border-collapse: collapse; border-spacing: 0; padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left; vertical-align: top; width: 100%;"><tbody><tr style="padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left; vertical-align: top;">
+<td height="12px" style="-moz-hyphens: none; -ms-hyphens: none; -webkit-hyphens: none; Margin: 0; border-collapse: collapse !important; color: #000000; font-family: Helvetica, Arial, sans-serif; font-size: 12px; font-weight: normal; hyphens: none; line-height: 12px; margin: 0; mso-line-height-rule: exactly; padding: 0; padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left; vertical-align: top; word-break: keep-all; word-wrap: break-word;">&#xA0;</td></tr></tbody></table> 
+                                <a href="http://click.e.fitbit.com/?qs=015e9ef739c711d3662b9713870b1e9d3f647d57ad30294b422e0183c1f5e8321fd42b2f0cb7b754dedb42f346009673b29050326bc51d15" style="-moz-osx-font-smoothing: auto; -webkit-font-smoothing: antialiased; color: #002a3a; font-family: 'ProximaNova-Regular', 'ProximaNova', 'Helvetica-Regular', Helvetica, Arial, sans-serif; font-smooth: always; font-weight: normal; hyphens: none; line-height: 1.3; padding: 0; text-align: left; text-decoration: none;">
+                                    <h2 style="-moz-osx-font-smoothing: auto; -webkit-font-smoothing: antialiased; Margin: 0; Margin-bottom: 10px; color: #002a3a; font-family: 'Proxima Nova Bold', Helvetica, Arial, sans-serif; font-size: 32px; font-smooth: always; font-weight: bold; hyphens: none; line-height: 36px; margin: 0; margin-bottom: 10px; padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left; text-decoration: none; word-wrap: normal;">Avoid Top Tracker Mistakes: <br class="display-for-large">6 Helpful Tips</h2>
+                                <table class="spacer" style="border-collapse: collapse; border-spacing: 0; padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left; vertical-align: top; width: 100%;"><tbody><tr style="padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left; vertical-align: top;">
+<td height="7px" style="-moz-hyphens: none; -ms-hyphens: none; -webkit-hyphens: none; Margin: 0; border-collapse: collapse !important; color: #000000; font-family: Helvetica, Arial, sans-serif; font-size: 7px; font-weight: normal; hyphens: none; line-height: 7px; margin: 0; mso-line-height-rule: exactly; padding: 0; padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left; vertical-align: top; word-break: keep-all; word-wrap: break-word;">&#xA0;</td></tr></tbody></table> 
+                                </a>
+                                <p style="-moz-osx-font-smoothing: auto; -webkit-font-smoothing: antialiased; Margin: 0; Margin-bottom: 10px; color: #ee3d6e; font-family: 'Proxima Nova Regular', Helvetica, Arial, sans-serif; font-size: 14px; font-smooth: always; font-weight: bold; hyphens: none; line-height: 18px; margin: 0; margin-bottom: 10px; padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left;">
+                                    <a href="http://click.e.fitbit.com/?qs=015e9ef739c711d3662b9713870b1e9d3f647d57ad30294b422e0183c1f5e8321fd42b2f0cb7b754dedb42f346009673b29050326bc51d15" style="-moz-osx-font-smoothing: auto; -webkit-font-smoothing: antialiased; color: #ee3d6e; font-family: 'ProximaNova-Regular', 'ProximaNova', 'Helvetica-Regular', Helvetica, Arial, sans-serif; font-smooth: always; font-weight: bold; hyphens: none; line-height: 1.3; padding: 0; text-align: left; text-decoration: underline;">LEARN THE TRICKS</a>
+                                     <img src="http://image.e.fitbit.com/lib/fe9513737565037f73/m/1/ea031794-cc8f-4efa-9dae-1a8bf9ac770c.png" width="18" height="14" class="arrow" border="0" alt="&#62;" style="-ms-interpolation-mode: bicubic; border: none; clear: both; display: inline; height: 14px; max-width: 100%; outline: none; text-decoration: none; vertical-align: -2px; width: 18px;">
+                                </p>
+                            </td></tr></tbody></table>
+                        </th>
+<th class="expander" style="Margin: 0; border: none; color: #000000; font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: normal; line-height: 1.3; margin: 0; padding: 0 !important; padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left; visibility: hidden; width: 0;"></th></tr></table></th>
+                    </tr></tbody></table>
+                </td></tr></table>
+                
+                
+                <table style="Margin: 0 auto; background-color: #FFFFFF; border-collapse: collapse; border-spacing: 0; float: none; margin: 0 auto; padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: center; vertical-align: top; width: 600px;" align="center" class="wrapper newsletter article-spacing float-center"><tr style="padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left; vertical-align: top;">
+<td class="wrapper-inner" style="-moz-hyphens: none; -ms-hyphens: none; -webkit-hyphens: none; Margin: 0; border-collapse: collapse !important; color: #000000; font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: normal; hyphens: none; line-height: 1.3; margin: 0; padding: 0 39px 20px 39px; padding-bottom: 20px; padding-left: 39px; padding-right: 39px; padding-top: 0; text-align: left; vertical-align: top; word-break: keep-all; word-wrap: break-word;">
+                    <table class="row collapse" style="border-collapse: collapse; border-spacing: 0; padding: 0; padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; position: relative; text-align: left; vertical-align: top; width: 100%;"><tbody><tr style="padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left; vertical-align: top;">
+                        <th class="article-border small-12 large-12 columns first last" style="Margin: 0 auto; color: #000000; font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: normal; line-height: 1.3; margin: 0 auto; padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left; width: 608px;"><table style="border-collapse: collapse; border-spacing: 0; padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left; vertical-align: top; width: 100%;"><tr style="padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left; vertical-align: top;">
+<th style="Margin: 0; border: 1px solid #d7d7d7; color: #000000; font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: normal; line-height: 1.3; margin: 0; padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left;">
+                            <a href="http://click.e.fitbit.com/?qs=015e9ef739c711d31323b2a9fa1fcd71493a5c0dbc46d0829c7ecb61809f092b106badb57670f743d8e8686bd09d1759ac14d0ed65f22514" style="-moz-osx-font-smoothing: auto; -webkit-font-smoothing: antialiased; color: #2199e8; font-family: 'ProximaNova-Regular', 'ProximaNova', 'Helvetica-Regular', Helvetica, Arial, sans-serif; font-smooth: always; font-weight: normal; hyphens: none; line-height: 1.3; padding: 0; text-align: left; text-decoration: none;"><img src="http://image.e.fitbit.com/lib/fe9513737565037f73/m/2/387b4ee5-48ef-4d28-9e2c-2f13023af91f.png" class="hero-img" width="520" border="0" alt="salad" style="-ms-interpolation-mode: bicubic; border: none; clear: both; display: block; max-width: 600px; outline: none; text-decoration: none; width: 100%;"></a>
+                            <table align="center" class="container" style="Margin: 0 auto; background: none; border-collapse: collapse; border-spacing: 0; margin: 0 auto; padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: inherit; vertical-align: top; width: 100%;"><tbody><tr style="padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left; vertical-align: top;">
+<td style="-moz-hyphens: none; -ms-hyphens: none; -webkit-hyphens: none; Margin: 0; border-collapse: collapse !important; color: #000000; font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: normal; hyphens: none; line-height: 1.3; margin: 0; padding: 25px 25px 20px 25px; padding-bottom: 20px; padding-left: 25px; padding-right: 25px; padding-top: 25px; text-align: left; vertical-align: top; word-break: keep-all; word-wrap: break-word;">
+                                <img src="http://image.e.fitbit.com/lib/fe9513737565037f73/m/1/6505e2ee-454c-4a9e-8729-c10c686d5e3e.jpg" border="0" height="21" style="-ms-interpolation-mode: bicubic; border: none; clear: both; display: block; height: 21px; max-width: 100%; outline: none; text-decoration: none; vertical-align: top; width: auto;" alt="EAT WELL">
+                                <table class="spacer" style="border-collapse: collapse; border-spacing: 0; padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left; vertical-align: top; width: 100%;"><tbody><tr style="padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left; vertical-align: top;">
+<td height="12px" style="-moz-hyphens: none; -ms-hyphens: none; -webkit-hyphens: none; Margin: 0; border-collapse: collapse !important; color: #000000; font-family: Helvetica, Arial, sans-serif; font-size: 12px; font-weight: normal; hyphens: none; line-height: 12px; margin: 0; mso-line-height-rule: exactly; padding: 0; padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left; vertical-align: top; word-break: keep-all; word-wrap: break-word;">&#xA0;</td></tr></tbody></table> 
+                                <a href="http://click.e.fitbit.com/?qs=015e9ef739c711d31323b2a9fa1fcd71493a5c0dbc46d0829c7ecb61809f092b106badb57670f743d8e8686bd09d1759ac14d0ed65f22514" style="-moz-osx-font-smoothing: auto; -webkit-font-smoothing: antialiased; color: #002a3a; font-family: 'ProximaNova-Regular', 'ProximaNova', 'Helvetica-Regular', Helvetica, Arial, sans-serif; font-smooth: always; font-weight: normal; hyphens: none; line-height: 1.3; padding: 0; text-align: left; text-decoration: none;">
+                                    <h2 style="-moz-osx-font-smoothing: auto; -webkit-font-smoothing: antialiased; Margin: 0; Margin-bottom: 10px; color: #002a3a; font-family: 'Proxima Nova Bold', Helvetica, Arial, sans-serif; font-size: 32px; font-smooth: always; font-weight: bold; hyphens: none; line-height: 36px; margin: 0; margin-bottom: 10px; padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left; text-decoration: none; word-wrap: normal;">12 Easy-to-Make Salads for Busy Weeknights</h2>
+                                <table class="spacer" style="border-collapse: collapse; border-spacing: 0; padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left; vertical-align: top; width: 100%;"><tbody><tr style="padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left; vertical-align: top;">
+<td height="7px" style="-moz-hyphens: none; -ms-hyphens: none; -webkit-hyphens: none; Margin: 0; border-collapse: collapse !important; color: #000000; font-family: Helvetica, Arial, sans-serif; font-size: 7px; font-weight: normal; hyphens: none; line-height: 7px; margin: 0; mso-line-height-rule: exactly; padding: 0; padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left; vertical-align: top; word-break: keep-all; word-wrap: break-word;">&#xA0;</td></tr></tbody></table> 
+                                </a>
+                                <p style="-moz-osx-font-smoothing: auto; -webkit-font-smoothing: antialiased; Margin: 0; Margin-bottom: 10px; color: #ee3d6e; font-family: 'Proxima Nova Regular', Helvetica, Arial, sans-serif; font-size: 14px; font-smooth: always; font-weight: bold; hyphens: none; line-height: 18px; margin: 0; margin-bottom: 10px; padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left;">
+                                    <a href="http://click.e.fitbit.com/?qs=015e9ef739c711d31323b2a9fa1fcd71493a5c0dbc46d0829c7ecb61809f092b106badb57670f743d8e8686bd09d1759ac14d0ed65f22514" style="-moz-osx-font-smoothing: auto; -webkit-font-smoothing: antialiased; color: #ee3d6e; font-family: 'ProximaNova-Regular', 'ProximaNova', 'Helvetica-Regular', Helvetica, Arial, sans-serif; font-smooth: always; font-weight: bold; hyphens: none; line-height: 1.3; padding: 0; text-align: left; text-decoration: underline;">GET THE RECIPES</a>
+                                     <img src="http://image.e.fitbit.com/lib/fe9513737565037f73/m/1/ea031794-cc8f-4efa-9dae-1a8bf9ac770c.png" width="18" height="14" class="arrow" border="0" alt="&#62;" style="-ms-interpolation-mode: bicubic; border: none; clear: both; display: inline; height: 14px; max-width: 100%; outline: none; text-decoration: none; vertical-align: -2px; width: 18px;">
+                                </p>
+                            </td></tr></tbody></table>
+                        </th>
+<th class="expander" style="Margin: 0; border: none; color: #000000; font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: normal; line-height: 1.3; margin: 0; padding: 0 !important; padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left; visibility: hidden; width: 0;"></th></tr></table></th>
+                    </tr></tbody></table>
+                </td></tr></table>
+                
+                
+                <table style="Margin: 0 auto; background-color: #FFFFFF; border-collapse: collapse; border-spacing: 0; float: none; margin: 0 auto; padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: center; vertical-align: top; width: 600px;" align="center" class="wrapper newsletter article-spacing float-center"><tr style="padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left; vertical-align: top;">
+<td class="wrapper-inner" style="-moz-hyphens: none; -ms-hyphens: none; -webkit-hyphens: none; Margin: 0; border-collapse: collapse !important; color: #000000; font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: normal; hyphens: none; line-height: 1.3; margin: 0; padding: 0 39px 20px 39px; padding-bottom: 20px; padding-left: 39px; padding-right: 39px; padding-top: 0; text-align: left; vertical-align: top; word-break: keep-all; word-wrap: break-word;">
+                    <table class="row collapse" style="border-collapse: collapse; border-spacing: 0; padding: 0; padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; position: relative; text-align: left; vertical-align: top; width: 100%;"><tbody><tr style="padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left; vertical-align: top;">
+                        <th class="article-border small-12 large-12 columns first last" style="Margin: 0 auto; color: #000000; font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: normal; line-height: 1.3; margin: 0 auto; padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left; width: 608px;"><table style="border-collapse: collapse; border-spacing: 0; padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left; vertical-align: top; width: 100%;"><tr style="padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left; vertical-align: top;">
+<th style="Margin: 0; border: 1px solid #d7d7d7; color: #000000; font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: normal; line-height: 1.3; margin: 0; padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left;">
+                            <a href="http://click.e.fitbit.com/?qs=015e9ef739c711d34fa9eb95dd5c6b2a87c1bd320c3a23c9b6d9fa70956d6cdd35244047900bb389799baa40bf149055180a56d586c903c0" style="-moz-osx-font-smoothing: auto; -webkit-font-smoothing: antialiased; color: #2199e8; font-family: 'ProximaNova-Regular', 'ProximaNova', 'Helvetica-Regular', Helvetica, Arial, sans-serif; font-smooth: always; font-weight: normal; hyphens: none; line-height: 1.3; padding: 0; text-align: left; text-decoration: none;"><img src="http://image.e.fitbit.com/lib/fe9513737565037f73/m/2/51155b56-1c6b-4e9b-aa9d-909333285765.png" class="hero-img" width="520" border="0" alt="woman doing yoga" style="-ms-interpolation-mode: bicubic; border: none; clear: both; display: block; max-width: 600px; outline: none; text-decoration: none; width: 100%;"></a>
+                            <table align="center" class="container" style="Margin: 0 auto; background: none; border-collapse: collapse; border-spacing: 0; margin: 0 auto; padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: inherit; vertical-align: top; width: 100%;"><tbody><tr style="padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left; vertical-align: top;">
+<td style="-moz-hyphens: none; -ms-hyphens: none; -webkit-hyphens: none; Margin: 0; border-collapse: collapse !important; color: #000000; font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: normal; hyphens: none; line-height: 1.3; margin: 0; padding: 25px 25px 20px 25px; padding-bottom: 20px; padding-left: 25px; padding-right: 25px; padding-top: 25px; text-align: left; vertical-align: top; word-break: keep-all; word-wrap: break-word;">
+                                <img src="http://image.e.fitbit.com/lib/fe9513737565037f73/m/1/0082b52b-bb81-4b57-8384-d65cb34b67ab.png" border="0" height="21" style="-ms-interpolation-mode: bicubic; border: none; clear: both; display: block; height: 21px; max-width: 100%; outline: none; text-decoration: none; vertical-align: top; width: auto;" alt="PRO TIPS">
+                                <table class="spacer" style="border-collapse: collapse; border-spacing: 0; padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left; vertical-align: top; width: 100%;"><tbody><tr style="padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left; vertical-align: top;">
+<td height="12px" style="-moz-hyphens: none; -ms-hyphens: none; -webkit-hyphens: none; Margin: 0; border-collapse: collapse !important; color: #000000; font-family: Helvetica, Arial, sans-serif; font-size: 12px; font-weight: normal; hyphens: none; line-height: 12px; margin: 0; mso-line-height-rule: exactly; padding: 0; padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left; vertical-align: top; word-break: keep-all; word-wrap: break-word;">&#xA0;</td></tr></tbody></table> 
+                                <a href="http://click.e.fitbit.com/?qs=015e9ef739c711d34fa9eb95dd5c6b2a87c1bd320c3a23c9b6d9fa70956d6cdd35244047900bb389799baa40bf149055180a56d586c903c0" style="-moz-osx-font-smoothing: auto; -webkit-font-smoothing: antialiased; color: #002a3a; font-family: 'ProximaNova-Regular', 'ProximaNova', 'Helvetica-Regular', Helvetica, Arial, sans-serif; font-smooth: always; font-weight: normal; hyphens: none; line-height: 1.3; padding: 0; text-align: left; text-decoration: none;">
+                                    <h2 style="-moz-osx-font-smoothing: auto; -webkit-font-smoothing: antialiased; Margin: 0; Margin-bottom: 10px; color: #002a3a; font-family: 'Proxima Nova Bold', Helvetica, Arial, sans-serif; font-size: 32px; font-smooth: always; font-weight: bold; hyphens: none; line-height: 36px; margin: 0; margin-bottom: 10px; padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left; text-decoration: none; word-wrap: normal;">Gabby's Tips: How to De&#8209;Stress During the Holidays</h2>
+                                <table class="spacer" style="border-collapse: collapse; border-spacing: 0; padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left; vertical-align: top; width: 100%;"><tbody><tr style="padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left; vertical-align: top;">
+<td height="7px" style="-moz-hyphens: none; -ms-hyphens: none; -webkit-hyphens: none; Margin: 0; border-collapse: collapse !important; color: #000000; font-family: Helvetica, Arial, sans-serif; font-size: 7px; font-weight: normal; hyphens: none; line-height: 7px; margin: 0; mso-line-height-rule: exactly; padding: 0; padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left; vertical-align: top; word-break: keep-all; word-wrap: break-word;">&#xA0;</td></tr></tbody></table> 
+                                </a>
+                                <p style="-moz-osx-font-smoothing: auto; -webkit-font-smoothing: antialiased; Margin: 0; Margin-bottom: 10px; color: #ee3d6e; font-family: 'Proxima Nova Regular', Helvetica, Arial, sans-serif; font-size: 14px; font-smooth: always; font-weight: bold; hyphens: none; line-height: 18px; margin: 0; margin-bottom: 10px; padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left;">
+                                    <a href="http://click.e.fitbit.com/?qs=015e9ef739c711d34fa9eb95dd5c6b2a87c1bd320c3a23c9b6d9fa70956d6cdd35244047900bb389799baa40bf149055180a56d586c903c0" style="-moz-osx-font-smoothing: auto; -webkit-font-smoothing: antialiased; color: #ee3d6e; font-family: 'ProximaNova-Regular', 'ProximaNova', 'Helvetica-Regular', Helvetica, Arial, sans-serif; font-smooth: always; font-weight: bold; hyphens: none; line-height: 1.3; padding: 0; text-align: left; text-decoration: underline;">SEE HOW</a>
+                                     <img src="http://image.e.fitbit.com/lib/fe9513737565037f73/m/1/ea031794-cc8f-4efa-9dae-1a8bf9ac770c.png" width="18" height="14" class="arrow" border="0" alt="&#62;" style="-ms-interpolation-mode: bicubic; border: none; clear: both; display: inline; height: 14px; max-width: 100%; outline: none; text-decoration: none; vertical-align: -2px; width: 18px;">
+                                </p>
+                            </td></tr></tbody></table>
+                        </th>
+<th class="expander" style="Margin: 0; border: none; color: #000000; font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: normal; line-height: 1.3; margin: 0; padding: 0 !important; padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left; visibility: hidden; width: 0;"></th></tr></table></th>
+                    </tr></tbody></table>
+                </td></tr></table>
+                
+                
+                <table style="Margin: 0 auto; background-color: #FFFFFF; border-collapse: collapse; border-spacing: 0; float: none; margin: 0 auto; padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: center; vertical-align: top; width: 600px;" align="center" class="wrapper newsletter article-spacing float-center"><tr style="padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left; vertical-align: top;">
+<td class="wrapper-inner" style="-moz-hyphens: none; -ms-hyphens: none; -webkit-hyphens: none; Margin: 0; border-collapse: collapse !important; color: #000000; font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: normal; hyphens: none; line-height: 1.3; margin: 0; padding: 0 39px 20px 39px; padding-bottom: 20px; padding-left: 39px; padding-right: 39px; padding-top: 0; text-align: left; vertical-align: top; word-break: keep-all; word-wrap: break-word;">
+                    <table class="row collapse" style="border-collapse: collapse; border-spacing: 0; padding: 0; padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; position: relative; text-align: left; vertical-align: top; width: 100%;"><tbody><tr style="padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left; vertical-align: top;">
+                        <th class="article-border small-12 large-12 columns first last" style="Margin: 0 auto; color: #000000; font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: normal; line-height: 1.3; margin: 0 auto; padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left; width: 608px;"><table style="border-collapse: collapse; border-spacing: 0; padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left; vertical-align: top; width: 100%;"><tr style="padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left; vertical-align: top;">
+<th style="Margin: 0; border: 1px solid #d7d7d7; color: #000000; font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: normal; line-height: 1.3; margin: 0; padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left;">
+                            <a href="http://click.e.fitbit.com/?qs=015e9ef739c711d3ec4460aeb79a94d714e1d0b1cd8751863a208905ede2f709c4816666a0c1bc57aae3246cae05e98e522006c34a5053bd" style="-moz-osx-font-smoothing: auto; -webkit-font-smoothing: antialiased; color: #2199e8; font-family: 'ProximaNova-Regular', 'ProximaNova', 'Helvetica-Regular', Helvetica, Arial, sans-serif; font-smooth: always; font-weight: normal; hyphens: none; line-height: 1.3; padding: 0; text-align: left; text-decoration: none;"><img src="http://image.e.fitbit.com/lib/fe9513737565037f73/m/2/fc8af9b8-a645-49f2-a522-781275963f9e.png" class="hero-img" width="520" border="0" alt="woman on treadmill" style="-ms-interpolation-mode: bicubic; border: none; clear: both; display: block; max-width: 600px; outline: none; text-decoration: none; width: 100%;"></a>
+                            <table align="center" class="container" style="Margin: 0 auto; background: none; border-collapse: collapse; border-spacing: 0; margin: 0 auto; padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: inherit; vertical-align: top; width: 100%;"><tbody><tr style="padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left; vertical-align: top;">
+<td style="-moz-hyphens: none; -ms-hyphens: none; -webkit-hyphens: none; Margin: 0; border-collapse: collapse !important; color: #000000; font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: normal; hyphens: none; line-height: 1.3; margin: 0; padding: 25px 25px 20px 25px; padding-bottom: 20px; padding-left: 25px; padding-right: 25px; padding-top: 25px; text-align: left; vertical-align: top; word-break: keep-all; word-wrap: break-word;">
+                                <img src="http://image.e.fitbit.com/lib/fe9513737565037f73/m/1/8d4b104f-b398-4b24-bda1-f1c3f102bc15.jpg" border="0" height="21" style="-ms-interpolation-mode: bicubic; border: none; clear: both; display: block; height: 21px; max-width: 100%; outline: none; text-decoration: none; vertical-align: top; width: auto;" alt="GET MOVING">
+                                <table class="spacer" style="border-collapse: collapse; border-spacing: 0; padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left; vertical-align: top; width: 100%;"><tbody><tr style="padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left; vertical-align: top;">
+<td height="12px" style="-moz-hyphens: none; -ms-hyphens: none; -webkit-hyphens: none; Margin: 0; border-collapse: collapse !important; color: #000000; font-family: Helvetica, Arial, sans-serif; font-size: 12px; font-weight: normal; hyphens: none; line-height: 12px; margin: 0; mso-line-height-rule: exactly; padding: 0; padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left; vertical-align: top; word-break: keep-all; word-wrap: break-word;">&#xA0;</td></tr></tbody></table> 
+                                <a href="http://click.e.fitbit.com/?qs=015e9ef739c711d3ec4460aeb79a94d714e1d0b1cd8751863a208905ede2f709c4816666a0c1bc57aae3246cae05e98e522006c34a5053bd" style="-moz-osx-font-smoothing: auto; -webkit-font-smoothing: antialiased; color: #002a3a; font-family: 'ProximaNova-Regular', 'ProximaNova', 'Helvetica-Regular', Helvetica, Arial, sans-serif; font-smooth: always; font-weight: normal; hyphens: none; line-height: 1.3; padding: 0; text-align: left; text-decoration: none;">
+                                    <h2 style="-moz-osx-font-smoothing: auto; -webkit-font-smoothing: antialiased; Margin: 0; Margin-bottom: 10px; color: #002a3a; font-family: 'Proxima Nova Bold', Helvetica, Arial, sans-serif; font-size: 32px; font-smooth: always; font-weight: bold; hyphens: none; line-height: 36px; margin: 0; margin-bottom: 10px; padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left; text-decoration: none; word-wrap: normal;">4 Common Excuses for Skipping the Gym—Busted!</h2>
+                                <table class="spacer" style="border-collapse: collapse; border-spacing: 0; padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left; vertical-align: top; width: 100%;"><tbody><tr style="padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left; vertical-align: top;">
+<td height="7px" style="-moz-hyphens: none; -ms-hyphens: none; -webkit-hyphens: none; Margin: 0; border-collapse: collapse !important; color: #000000; font-family: Helvetica, Arial, sans-serif; font-size: 7px; font-weight: normal; hyphens: none; line-height: 7px; margin: 0; mso-line-height-rule: exactly; padding: 0; padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left; vertical-align: top; word-break: keep-all; word-wrap: break-word;">&#xA0;</td></tr></tbody></table> 
+                                </a>
+                                <p style="-moz-osx-font-smoothing: auto; -webkit-font-smoothing: antialiased; Margin: 0; Margin-bottom: 10px; color: #ee3d6e; font-family: 'Proxima Nova Regular', Helvetica, Arial, sans-serif; font-size: 14px; font-smooth: always; font-weight: bold; hyphens: none; line-height: 18px; margin: 0; margin-bottom: 10px; padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left;">
+                                    <a href="http://click.e.fitbit.com/?qs=015e9ef739c711d3ec4460aeb79a94d714e1d0b1cd8751863a208905ede2f709c4816666a0c1bc57aae3246cae05e98e522006c34a5053bd" style="-moz-osx-font-smoothing: auto; -webkit-font-smoothing: antialiased; color: #ee3d6e; font-family: 'ProximaNova-Regular', 'ProximaNova', 'Helvetica-Regular', Helvetica, Arial, sans-serif; font-smooth: always; font-weight: bold; hyphens: none; line-height: 1.3; padding: 0; text-align: left; text-decoration: underline;">READ THE LIST</a>
+                                     <img src="http://image.e.fitbit.com/lib/fe9513737565037f73/m/1/ea031794-cc8f-4efa-9dae-1a8bf9ac770c.png" width="18" height="14" class="arrow" border="0" alt="&#62;" style="-ms-interpolation-mode: bicubic; border: none; clear: both; display: inline; height: 14px; max-width: 100%; outline: none; text-decoration: none; vertical-align: -2px; width: 18px;">
+                                </p>
+                            </td></tr></tbody></table>
+                        </th>
+<th class="expander" style="Margin: 0; border: none; color: #000000; font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: normal; line-height: 1.3; margin: 0; padding: 0 !important; padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left; visibility: hidden; width: 0;"></th></tr></table></th>
+                    </tr></tbody></table>
+                </td></tr></table>
+                
+                
+                <table style="Margin: 0 auto; background-color: #FFFFFF; border-collapse: collapse; border-spacing: 0; float: none; margin: 0 auto; padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: center; vertical-align: top; width: 600px;" align="center" class="wrapper newsletter article-spacing float-center"><tr style="padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left; vertical-align: top;">
+<td class="wrapper-inner" style="-moz-hyphens: none; -ms-hyphens: none; -webkit-hyphens: none; Margin: 0; border-collapse: collapse !important; color: #000000; font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: normal; hyphens: none; line-height: 1.3; margin: 0; padding: 0 39px 20px 39px; padding-bottom: 20px; padding-left: 39px; padding-right: 39px; padding-top: 0; text-align: left; vertical-align: top; word-break: keep-all; word-wrap: break-word;">
+                    <table class="row collapse" style="border-collapse: collapse; border-spacing: 0; padding: 0; padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; position: relative; text-align: left; vertical-align: top; width: 100%;"><tbody><tr style="padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left; vertical-align: top;">
+                        <th class="article-border small-12 large-12 columns first last" style="Margin: 0 auto; color: #000000; font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: normal; line-height: 1.3; margin: 0 auto; padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left; width: 608px;"><table style="border-collapse: collapse; border-spacing: 0; padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left; vertical-align: top; width: 100%;"><tr style="padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left; vertical-align: top;">
+<th style="Margin: 0; border: 1px solid #d7d7d7; color: #000000; font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: normal; line-height: 1.3; margin: 0; padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left;">
+                            <a href="http://click.e.fitbit.com/?qs=015e9ef739c711d38692ad4e876c051e916a27fd41b88602ce1fab7ae4b6898757a3c352e1f72c388a14c747160a214455ebcd2c986bd15d" style="-moz-osx-font-smoothing: auto; -webkit-font-smoothing: antialiased; color: #2199e8; font-family: 'ProximaNova-Regular', 'ProximaNova', 'Helvetica-Regular', Helvetica, Arial, sans-serif; font-smooth: always; font-weight: normal; hyphens: none; line-height: 1.3; padding: 0; text-align: left; text-decoration: none;"><img src="http://image.e.fitbit.com/lib/fe9513737565037f73/m/2/74c66833-eb44-4090-8540-39adbaee0870.png" class="hero-img" width="520" border="0" alt="woman holding glass of wine" style="-ms-interpolation-mode: bicubic; border: none; clear: both; display: block; max-width: 600px; outline: none; text-decoration: none; width: 100%;"></a>
+                            <table align="center" class="container" style="Margin: 0 auto; background: none; border-collapse: collapse; border-spacing: 0; margin: 0 auto; padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: inherit; vertical-align: top; width: 100%;"><tbody><tr style="padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left; vertical-align: top;">
+<td style="-moz-hyphens: none; -ms-hyphens: none; -webkit-hyphens: none; Margin: 0; border-collapse: collapse !important; color: #000000; font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: normal; hyphens: none; line-height: 1.3; margin: 0; padding: 25px 25px 20px 25px; padding-bottom: 20px; padding-left: 25px; padding-right: 25px; padding-top: 25px; text-align: left; vertical-align: top; word-break: keep-all; word-wrap: break-word;">
+                                <img src="http://image.e.fitbit.com/lib/fe9513737565037f73/m/1/6505e2ee-454c-4a9e-8729-c10c686d5e3e.jpg" border="0" height="21" style="-ms-interpolation-mode: bicubic; border: none; clear: both; display: block; height: 21px; max-width: 100%; outline: none; text-decoration: none; vertical-align: top; width: auto;" alt="EAT WELL">
+                                <table class="spacer" style="border-collapse: collapse; border-spacing: 0; padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left; vertical-align: top; width: 100%;"><tbody><tr style="padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left; vertical-align: top;">
+<td height="12px" style="-moz-hyphens: none; -ms-hyphens: none; -webkit-hyphens: none; Margin: 0; border-collapse: collapse !important; color: #000000; font-family: Helvetica, Arial, sans-serif; font-size: 12px; font-weight: normal; hyphens: none; line-height: 12px; margin: 0; mso-line-height-rule: exactly; padding: 0; padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left; vertical-align: top; word-break: keep-all; word-wrap: break-word;">&#xA0;</td></tr></tbody></table> 
+                                <a href="http://click.e.fitbit.com/?qs=015e9ef739c711d38692ad4e876c051e916a27fd41b88602ce1fab7ae4b6898757a3c352e1f72c388a14c747160a214455ebcd2c986bd15d" style="-moz-osx-font-smoothing: auto; -webkit-font-smoothing: antialiased; color: #002a3a; font-family: 'ProximaNova-Regular', 'ProximaNova', 'Helvetica-Regular', Helvetica, Arial, sans-serif; font-smooth: always; font-weight: normal; hyphens: none; line-height: 1.3; padding: 0; text-align: left; text-decoration: none;">
+                                    <h2 style="-moz-osx-font-smoothing: auto; -webkit-font-smoothing: antialiased; Margin: 0; Margin-bottom: 10px; color: #002a3a; font-family: 'Proxima Nova Bold', Helvetica, Arial, sans-serif; font-size: 32px; font-smooth: always; font-weight: bold; hyphens: none; line-height: 36px; margin: 0; margin-bottom: 10px; padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left; text-decoration: none; word-wrap: normal;">Is a Daily Glass of Wine Healthy?</h2>
+                                <table class="spacer" style="border-collapse: collapse; border-spacing: 0; padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left; vertical-align: top; width: 100%;"><tbody><tr style="padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left; vertical-align: top;">
+<td height="7px" style="-moz-hyphens: none; -ms-hyphens: none; -webkit-hyphens: none; Margin: 0; border-collapse: collapse !important; color: #000000; font-family: Helvetica, Arial, sans-serif; font-size: 7px; font-weight: normal; hyphens: none; line-height: 7px; margin: 0; mso-line-height-rule: exactly; padding: 0; padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left; vertical-align: top; word-break: keep-all; word-wrap: break-word;">&#xA0;</td></tr></tbody></table> 
+                                </a>
+                                <p style="-moz-osx-font-smoothing: auto; -webkit-font-smoothing: antialiased; Margin: 0; Margin-bottom: 10px; color: #ee3d6e; font-family: 'Proxima Nova Regular', Helvetica, Arial, sans-serif; font-size: 14px; font-smooth: always; font-weight: bold; hyphens: none; line-height: 18px; margin: 0; margin-bottom: 10px; padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left;">
+                                    <a href="http://click.e.fitbit.com/?qs=015e9ef739c711d38692ad4e876c051e916a27fd41b88602ce1fab7ae4b6898757a3c352e1f72c388a14c747160a214455ebcd2c986bd15d" style="-moz-osx-font-smoothing: auto; -webkit-font-smoothing: antialiased; color: #ee3d6e; font-family: 'ProximaNova-Regular', 'ProximaNova', 'Helvetica-Regular', Helvetica, Arial, sans-serif; font-smooth: always; font-weight: bold; hyphens: none; line-height: 1.3; padding: 0; text-align: left; text-decoration: underline;">FIND OUT</a>
+                                     <img src="http://image.e.fitbit.com/lib/fe9513737565037f73/m/1/ea031794-cc8f-4efa-9dae-1a8bf9ac770c.png" width="18" height="14" class="arrow" border="0" alt="&#62;" style="-ms-interpolation-mode: bicubic; border: none; clear: both; display: inline; height: 14px; max-width: 100%; outline: none; text-decoration: none; vertical-align: -2px; width: 18px;">
+                                </p>
+                            </td></tr></tbody></table>
+                        </th>
+<th class="expander" style="Margin: 0; border: none; color: #000000; font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: normal; line-height: 1.3; margin: 0; padding: 0 !important; padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left; visibility: hidden; width: 0;"></th></tr></table></th>
+                    </tr></tbody></table>
+                </td></tr></table>
+                
+                <table style="Margin: 0 auto; background-color: #FFFFFF; border-collapse: collapse; border-spacing: 0; border-top: none !important; float: none; margin: 0 auto; padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: center; vertical-align: top; width: 600px;" align="center" class="wrapper newsletter float-center"><tr style="padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left; vertical-align: top;">
+<td class="wrapper-inner" style="-moz-hyphens: none; -ms-hyphens: none; -webkit-hyphens: none; Margin: 0; border-collapse: collapse !important; color: #000000; font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: normal; hyphens: none; line-height: 1.3; margin: 0; padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left; vertical-align: top; word-break: keep-all; word-wrap: break-word;">
+                    <center data-parsed="" style="min-width: 600px; width: 100%;">
+                            <a href="http://click.e.fitbit.com/?qs=015e9ef739c711d358423b5cb92940059e93b63757d1939015195ad1a55d04017c195a3fcb07d277cef4a5974afeec7aca4c93c36c44f104" style="-moz-osx-font-smoothing: auto; -webkit-font-smoothing: antialiased; border: none; color: #2199e8; font-family: 'ProximaNova-Regular', 'ProximaNova', 'Helvetica-Regular', Helvetica, Arial, sans-serif; font-smooth: always; font-weight: normal; hyphens: none; line-height: 1.3; max-width: 600px; padding: 0; text-align: left; text-decoration: none; width: 100%;" align="center" class="float-center">
+                                <img width="600" style="-ms-interpolation-mode: bicubic; border: none; clear: both; display: block; max-width: 600px; outline: none; text-decoration: none; width: 100%;" class="hero-img display-for-large" src="http://image.e.fitbit.com/lib/fe9513737565037f73/m/2/e06c76b6-c597-4974-b2ba-089c9d1eb666.png" alt="Now available: Fitbit Ionic | The watch designed for your life. | Shop Now">
+                            </a>
+                            <!--[if !mso 9]><!-->
+                                <a href="http://click.e.fitbit.com/?qs=015e9ef739c711d358423b5cb92940059e93b63757d1939015195ad1a55d04017c195a3fcb07d277cef4a5974afeec7aca4c93c36c44f104" style="-moz-osx-font-smoothing: auto; -webkit-font-smoothing: antialiased; border: none; color: #2199e8; font-family: 'ProximaNova-Regular', 'ProximaNova', 'Helvetica-Regular', Helvetica, Arial, sans-serif; font-smooth: always; font-weight: normal; hyphens: none; line-height: 1.3; max-width: 600px; padding: 0; text-align: left; text-decoration: none; width: 100%;" align="center" class="float-center">
+                                    <img class="hero-img hide-for-large" src="http://image.e.fitbit.com/lib/fe9513737565037f73/m/2/d91a6e5b-512c-43f2-b165-669a02336c1c.png" alt="Now available: Fitbit Ionic | The watch designed for your life. | Shop Now" style="-ms-interpolation-mode: bicubic; border: none; clear: both; display: none; font-size: 0; line-height: 0; max-height: 0; max-width: 600px; mso-hide: all; outline: none; overflow: hidden; text-decoration: none; width: 100% !important;">
+                                </a>
+                            <!--<![endif]><!-->
+                    </center>
+                </td></tr></table>
+                
+                
+                <table align="center" class="wrapper float-center" style="Margin: 0 auto; border-collapse: collapse; border-spacing: 0; float: none; margin: 0 auto; padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: center; vertical-align: top; width: 600px;"><tr style="padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left; vertical-align: top;">
+<td class="wrapper-inner" style="-moz-hyphens: none; -ms-hyphens: none; -webkit-hyphens: none; Margin: 0; border-collapse: collapse !important; color: #000000; font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: normal; hyphens: none; line-height: 1.3; margin: 0; padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left; vertical-align: top; word-break: keep-all; word-wrap: break-word;">
+                    <style>
+
+.nowrap {
+	word-break: keep-all;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	-webkit-hyphens: none;
+	hyphens: none;
+}
+	a[x-apple-data-detectors] {
+    color: inherit !important;
+    text-decoration: none !important;
+    font-size: inherit !important;
+    font-family: inherit !important;
+    font-weight: inherit !important;
+    line-height: inherit !important;
+}	
+	
+
+</style>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border:none;border-collapse:collapse;mso-table-lspace:0;mso-table-rspace:0; background-color:#ffffff;" width="100%" class="wrapper mobileContainer">
+
+  <tr>
+    <td class="mobileContainer" align="center" style="font-family:Helvetica, Arial, sans-serif; color:#939c9e; font-size:0px; padding-top:24px; font-weight:100; background-color:#ffffff; width:100%">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td class="mobileContainer mobileFooter nowrap" align="center" style="font-family:Helvetica, Arial, sans-serif; font-size:11px; line-height:18px; color:#939c9e; padding-left:30px; padding-right:30px; padding-bottom:40px; background-color:#ffffff;  width:100%">
+
+
+
+
+
+
+
+
+
+<a href="http://click.e.fitbit.com/?qs=015e9ef739c711d3b7ab17ebdf9e742d21885413e6a47c8a9a877fc231ed8223f2358b1673485db919c7f20e8e8ea400439685d2b4138135c07cc00747ef2a41" style="text-decoration:underline; color:#939c9e;font-size:11px">Unsubscribe</a> | <a href="http://click.e.fitbit.com/?qs=015e9ef739c711d3bc290727bc6483a1c5f10f64f483d4fe9e0d66917b411b8029e678553beb5669488577efa4ca9b8082819c1ffb4fb5afc0f9b5f6916f5f81" target="_blank" style="text-decoration:underline; color:#939c9e;font-size:11px">Blog</a> | <a href="http://click.e.fitbit.com/?qs=015e9ef739c711d3a305ea406173f16faddc8d90f7588e6f43811eb86c87b04bb4e2ec9f4064f2ec0647e2b179044e03080141bec50b4c1bbbe2fdb1870df5e1" target="_blank" style="text-decoration:underline; color:#939c9e;font-size:11px">We're Hiring</a>
+<br>
+
+
+
+
+
+
+
+
+
+<a href="http://click.e.fitbit.com/?qs=015e9ef739c711d3ac4c1802cb1419164e9074d950d7bd18d7cb4dae290835f80108866694d99d2a423144675da6ce0b6d272cf7356bd2c0" style="text-decoration:none; color:#939c9e;font-size:11px"><span class="nowrap">Fitbit and the Fitbit logo are trademarks or registered trademarks of Fitbit, Inc. in the US and other countries. Additional Fitbit trademarks can be found at www.fitbit.com/legal/trademark-list. Third-party trademarks are the property of their respective&nbsp;owners. </span></a>
+<br>
+<a href="http://click.e.fitbit.com/?qs=015e9ef739c711d35c8acf06d05c1dafe9cf20a98994fd94e22033d2299cbc844f94a12675704a4c910336b9f2a3b70eb2178421ddf54c68" style="text-decoration:none; color:#939c9e;font-size:11px"><span class="nowrap">Fitbit, Inc. — 199 Fremont Street, 14th Floor,&nbsp;San Francisco,&nbsp;CA&nbsp;94105</span></a></td>
+  </tr>
+ 
+
+</table> 
+                </td></tr></table>
+            </center>
+            </td>
+        </tr>
+        </table>
+        <!-- prevent Gmail on iOS font size manipulation -->
+    <div style="display:none; white-space:nowrap; font:15px courier; line-height:0;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </div>
+    
+        <!-- Gmail app fix -->
+        <table cellpadding="0" cellspacing="0" border="0" class="hide" style="border-collapse: collapse; border-spacing: 0; padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left; vertical-align: top;">
+            <tr style="padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left; vertical-align: top;">
+                <td height="1" class="hide" style="-moz-hyphens: none; -ms-hyphens: none; -webkit-hyphens: none; Margin: 0; border-collapse: collapse !important; color: #000000; font-family: Helvetica, Arial, sans-serif; font-size: 0px; font-weight: normal; hyphens: none; line-height: 0px; margin: 0; min-width: 700px; padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; text-align: left; vertical-align: top; word-break: keep-all; word-wrap: break-word;">
+                    <img height="1" src="http://image.e.fitbit.com/lib/fe9513737565037f73/m/1/b0952ec8-cd97-4a8f-9250-4633d04fcd58.gif" style="-ms-interpolation-mode: bicubic; border: none; clear: both; display: block; max-width: 100%; min-width: 700px; outline: none; text-decoration: none; width: auto;" alt="spacer">
+                </td>
+            </tr>
+        </table>
+    </custom>
+  </body>
+</html>
+
+
+
+--RbSpK4Vb4rVw=_?:--
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>color</key>
+	<string>000000</string>
+	<key>date-last-viewed</key>
+	<integer>0</integer>
+	<key>date-received</key>
+	<integer>1510280083</integer>
+	<key>flags</key>
+	<integer>8590195840</integer>
+	<key>remote-id</key>
+	<string>7794</string>
+</dict>
+</plist>

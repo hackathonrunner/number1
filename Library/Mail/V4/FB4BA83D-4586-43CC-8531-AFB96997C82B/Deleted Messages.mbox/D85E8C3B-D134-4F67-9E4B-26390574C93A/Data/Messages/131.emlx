@@ -1,0 +1,542 @@
+28765     
+Return-path: <bounces+2693180-1ee3-austindreier=icloud.com@m.dripemail2.com>
+Received: from pv33p00im-smtpin004.mac.com ([17.142.194.149])
+ by ms60015.mac.com
+ (Oracle Communications Messaging Server 8.0.1.2.20170607 64bit (built Jun  7
+ 2017)) with ESMTP id <0OYS0042OPEPE670@ms60015.mac.com> for
+ austindreier@icloud.com; Thu, 02 Nov 2017 14:54:25 +0000 (GMT)
+Original-recipient: rfc822;austindreier@icloud.com
+Received: from o2.m.dripemail2.com (o2.m.dripemail2.com [167.89.40.107])
+ by pv33p00im-smtpin004.me.com
+ (Oracle Communications Messaging Server 8.0.1.2.20170607 64bit (built Jun  7
+ 2017)) with ESMTPS id <0OYS00MMHPELC4D0@pv33p00im-smtpin004.me.com> for
+ austindreier@icloud.com (ORCPT austindreier@icloud.com); Thu,
+ 02 Nov 2017 14:54:25 +0000 (GMT)
+X-Spam-Flag: yes
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 spamscore=0
+ clxscore=-6 suspectscore=78 malwarescore=0 phishscore=0 adultscore=0
+ bulkscore=100 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.0.1-1707230000 definitions=main-1711020186
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10432:,,
+ definitions=2017-11-02_05:,, signatures=0
+Authentication-results: pv33p00im-dmarcmilter004.me.com; dmarc=none
+ header.from=flip2freedom.com
+Authentication-results: pv33p00im-spfmilter006.me.com; spf=pass
+ (pv33p00im-spfmilter006.me.com: domain of
+ bounces+2693180-1ee3-austindreier=icloud.com@m.dripemail2.com designates
+ 167.89.40.107 as permitted sender)
+ smtp.mailfrom=bounces+2693180-1ee3-austindreier=icloud.com@m.dripemail2.com;
+Received-SPF: pass (pv33p00im-spfmilter006.me.com: domain of
+ bounces+2693180-1ee3-austindreier=icloud.com@m.dripemail2.com designates
+ 167.89.40.107 as permitted sender) receiver=pv33p00im-spfmilter006.me.com;
+ client-ip=167.89.40.107; helo=o2.m.dripemail2.com;
+ envelope-from=bounces+2693180-1ee3-austindreier=icloud.com@m.dripemail2.com;
+Authentication-results: pv33p00im-dkimmilter016.me.com;	dkim=pass (1024-bit
+ key) header.d=dripemail2.com header.i=@dripemail2.com header.b=om6/XyXC;
+	dkim-adsp=none
+DKIM-Signature: v=1; a=rsa-sha1; c=relaxed/relaxed; d=dripemail2.com;
+	h=content-type:from:mime-version:reply-to:subject:to; s=s1;
+	bh=JKmrEOjW0hyUPzO2SfDcThnxHzA=; b=om6/XyXCceyxE1rsYspp7nVyBSYd/
+	pMT4V9yaFz7gMYJyGpciyLl/KBgY5Hd4r2nEtIiggytxbLFFOLCfuMbSfXZD0372
+	zA5ofWsxAQs/5HRcryAy+PGDmHwTj8jpFIQAWb7hxd40LHe7EeNZhp48Izy04QG3
+	sOXlxlNl+x2gMw=
+Received: by filter0222p1iad2.sendgrid.net with SMTP id
+ filter0222p1iad2-3784-59FB319D-16 2017-11-02 14:54:21.504233592 +0000 UTC
+Received: from MjY5MzE4MA
+ (ec2-52-91-106-186.compute-1.amazonaws.com [52.91.106.186])
+	by ismtpd0019p1iad2.sendgrid.net (SG) with HTTP id NlyvpM6ISe-UFdMNcjuueg	for
+ <austindreier@icloud.com>; Thu, 02 Nov 2017 14:54:21.572 +0000 (UTC)
+Content-type: multipart/alternative;
+ boundary=e12d2d4fcfaf061a4bea51d30f3cb8beb02314d758719c2b45f175900f9c
+Date: Thu, 02 Nov 2017 14:54:21 +0000 (UTC)
+From: Sean Terry <sean@flip2freedom.com>
+MIME-version: 1.0
+Reply-to: reply-qoozormwpgaknpukatjv@in2.getdrip.com
+Subject:
+ =?UTF-8?Q?=E2=9C=85_We're_go_LIVE_at_5:30pm_TONIGHT_(PLUS_win_this...)?=
+To: austindreier@icloud.com
+Message-id: <NlyvpM6ISe-UFdMNcjuueg@ismtpd0019p1iad2.sendgrid.net>
+x-icloud-spam-score: 3311341
+ f=flip2freedom.com;e=m.dripemail2.com;is=yes;ir=no;spf=pass;dkim=pass;dmarc=noPolicy/noPolicy/none;gdwl=absent;pps=ham;clxs=spam;clxw=neutral
+X-CLX-Spam: true
+X-CLX-UnSpecialScore: None
+X-CLX-Score: -6
+X-CLX-Shades: Grey
+X-MANTSH: 1TEIXWlwZGVoaGkNHB0tNT0ReQ0QeHxobEQpMQxcbHQQbHhgEGxMfBBkYEBseGh8
+ aEQpMWRcHHBEKWU0XbVhPUxEKWUkXGnEaEBp3BgcbHnEbGB0QGx0ddwYSBhoRClleF2hjeREKQ
+ 04XTXxnckhGXEYcYRIeW2NOY1xbRR1vW2xzZHt+THNDQBoRClhcFxkEGgQZGAdNGU4TTxMZGAU
+ bHQQbHhgEGxMTBBsaGBAbHhofGhEKXlkXeGdkcxIRCk1cFxkSHREKTFoXaXh6UkFNEQpFWRdoa
+ 2sRCkxfF3oFBQUFBQUFBQUdEQpNThdoEQpMRhdja2sRCkNaFxscHQQSEwQeGgQbGh0RCkJeFxs
+ RCkJFF2Z9G117YmtpTRMbEQpCThdhf0N6bU1FeX4SRxEKQkwXYUFdQAVLehpJbGERCkJsF3pwE
+ 3ljaBMeUAEeEQpCQBdiX19wfmITXX0ccBEKQlgXbkcdG05kYUUbEkARCnBnF25CTEZmHRhfbQV
+ eEBoRCnBoF25EElNnfnkdHX9JEBwdEQpwaBdib2VSfURwQ2kBRhAaEQpwaBdnbR0cQV5bZE5CT
+ RAaEQpwaBduHVBpemh4HBNTchAcHhEKcGgXaUBhaGVcQHlIbn0QGhEKcH8XbgFZbRpwR295Uxo
+ QHRsRCnBfF2AdXBIZfH95E15bEB0bEQpwfRd6b2BoR29uZWR+QhAaEQpwfRd6b2BoR29uZWR+Q
+ hAaEQpwfRd6b2BoR29uZWR+QhAaEQpwfRdlQkBmBW1JZx9oGhAaEQpwfRd6b2BoR29uZWR+QhA
+ aEQpwfRd6b2BoR29uZWR+QhAaEQpwfRdlQkBmBW1JZx9oGhAaEQpwfRd6b2BoR29uZWR+QhAaE
+ QpwfRdhZBNFeQVjaHtIeBAaEQpwfRd6b2BoR29uZWR+QhAaEQpwfRd6b2BoR29uZWR+QhAaEQp
+ wfRd6b2BoR29uZWR+QhAaEQpwfRd6b2BoR29uZWR+QhAaEQpw
+x-dmarc-info: pass=none; dmarc-policy=(nopolicy); s=u0; d=u0
+x-dmarc-policy: none
+X-SG-EID:
+ wDL73fzM24memzQeYD8vNs60a1/y7ttRZFoC2GN2sWDR7/vZ06NtU2oE59MGv7rN3k7z0UbPCNfewo
+ Sccma862aF0ftg8lJjEBu3mo9XQ0KNktrHAfRsWmdxxjITMyX0lytUEZQERXVRdMw5Aai1jc401FIl
+ l2M82SB/fFvTJ+C9dcLkQj6MgQWXYHzIgZQiv0e8lps4T2eYocxqeLdT1wjUu+3M17VglobzZ/YmFr
+ Y=
+X-SG-ID:
+ 6l1ICXxVk1U2NQBE+KPgx3aR97US8fNlOx0JaCzb+gI9FAMnsxm7LLWTND4MiLioC1KaYPd01tzrLE
+ igBxxyHQ==
+
+--e12d2d4fcfaf061a4bea51d30f3cb8beb02314d758719c2b45f175900f9c
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=UTF-8
+Mime-Version: 1.0
+
+Extreme Freedom 2017 was by far our best event ever in the 6
+years I have been doing them.
+
+Breakthroughs happened, lives changed, nagging questions were
+answered, and light bulbs went off in peoples heads.
+
+They got it! ( http://t.dripemail2.com/c/eyJhY2NvdW50X2lkIjoiOTE4MzExNyIsIm=
+RlbGl2ZXJ5X2lkIjoiMTUyNTAxMDA3MiIsInVybCI6Imh0dHBzOi8vd3d3LmV4dHJlbWVmcmVlZ=
+G9tb25saW5lLmNvbS9yZWc_X19zPXNtaWZrN3FzZXFvOG1lNmVkY216In0 )
+
+If you've been struggling to get your 1st check or get consistent
+income so you can quit your JOB or you'll look to scale to the
+next level, and you're not sure how to do it because you're a
+one-man show, doing everything yourself.
+
+Well, you will want to attend TONIGHT at 5:30pm PST which is
+8:30pm EST.
+
+http://t.dripemail2.com/c/eyJhY2NvdW50X2lkIjoiOTE4MzExNyIsImRlbGl2ZXJ5X2lkI=
+joiMTUyNTAxMDA3MiIsInVybCI6Imh0dHBzOi8vd3d3LmV4dHJlbWVmcmVlZG9tb25saW5lLmNv=
+bS9yZWc_X19zPXNtaWZrN3FzZXFvOG1lNmVkY216In0 ( http://t.dripemail2.com/c/eyJ=
+hY2NvdW50X2lkIjoiOTE4MzExNyIsImRlbGl2ZXJ5X2lkIjoiMTUyNTAxMDA3MiIsInVybCI6Im=
+h0dHBzOi8vd3d3LmV4dHJlbWVmcmVlZG9tb25saW5lLmNvbS9yZWc_X19zPXNtaWZrN3FzZXFvO=
+G1lNmVkY216In0 )
+
+We chose 6 of the best TRANSFORMATIONAL highlights from Extreme
+Freedom 2017 that are amazing, and you will not want to miss this
+LIVE event.
+
+You'll hear from Jesse Itzler, best selling author, owner of the
+Atlanta Hawks, he and his wife Sarah Blakley owner of Spanks are
+worth BILLIONS!
+
+His keynote was LIVE ALTERING!!!
+
+Wait to you see the other highlights we chose; you'll be floored.
+
+REGISTER HERE WE HAVE LIMITED SEATING:
+
+http://t.dripemail2.com/c/eyJhY2NvdW50X2lkIjoiOTE4MzExNyIsImRlbGl2ZXJ5X2lkI=
+joiMTUyNTAxMDA3MiIsInVybCI6Imh0dHBzOi8vd3d3LmV4dHJlbWVmcmVlZG9tb25saW5lLmNv=
+bS8_X19zPXNtaWZrN3FzZXFvOG1lNmVkY216In0 ( http://t.dripemail2.com/c/eyJhY2N=
+vdW50X2lkIjoiOTE4MzExNyIsImRlbGl2ZXJ5X2lkIjoiMTUyNTAxMDA3MiIsInVybCI6Imh0dH=
+BzOi8vd3d3LmV4dHJlbWVmcmVlZG9tb25saW5lLmNvbS9yZWc_X19zPXNtaWZrN3FzZXFvOG1lN=
+mVkY216In0 )
+
+I'm going to give away an Amazon Echo Dot on the call tonight to
+one lucky person.
+
+Image ( http://t.dripemail2.com/c/eyJhY2NvdW50X2lkIjoiOTE4MzExNyIsImRlbGl2Z=
+XJ5X2lkIjoiMTUyNTAxMDA3MiIsInVybCI6Imh0dHBzOi8vd3d3LmV4dHJlbWVmcmVlZG9tb25s=
+aW5lLmNvbS9yZWc_X19zPXNtaWZrN3FzZXFvOG1lNmVkY216In0 )
+
+I have one and LOVE it; it plays music, can call my family, gives
+me a customized daily brief. It's pretty cool.
+
+JOIN US LIVE TONIGHT!!
+
+http://t.dripemail2.com/c/eyJhY2NvdW50X2lkIjoiOTE4MzExNyIsImRlbGl2ZXJ5X2lkI=
+joiMTUyNTAxMDA3MiIsInVybCI6Imh0dHBzOi8vd3d3LmV4dHJlbWVmcmVlZG9tb25saW5lLmNv=
+bS8_X19zPXNtaWZrN3FzZXFvOG1lNmVkY216In0 ( http://t.dripemail2.com/c/eyJhY2N=
+vdW50X2lkIjoiOTE4MzExNyIsImRlbGl2ZXJ5X2lkIjoiMTUyNTAxMDA3MiIsInVybCI6Imh0dH=
+BzOi8vd3d3LmV4dHJlbWVmcmVlZG9tb25saW5lLmNvbS9yZWc_X19zPXNtaWZrN3FzZXFvOG1lN=
+mVkY216In0 )
+
+See you soon,
+
+Sean
+
+---------------------
+To make sure you keep getting these emails, please add
+sean@flip2freedom.com to your address book or whitelist us. Want out of
+the loop? <a href=3D"http://t.dripemail2.com/c/eyJhY2NvdW50X2lkIjoiOTE4MzEx=
+NyIsImRlbGl2ZXJ5X2lkIjoiMTUyNTAxMDA3MiIsInVybCI6Imh0dHBzOi8vd3d3LmdldGRyaXA=
+uY29tL3N1YnNjcmliZXJzL3NtaWZrN3FzZXFvOG1lNmVkY216L3N1YnNjcmlwdGlvbnM_ZD1xb2=
+96b3Jtd3BnYWtucHVrYXRqdlx1MDAyNmV4Y2x1ZGVfY2xpY2s9MVx1MDAyNmludGVudD11bnN1Y=
+nNjcmliZVx1MDAyNl9fcz1zbWlmazdxc2VxbzhtZTZlZGNteiJ9">Unsubscribe</a>.
+
+Our postal address: 19420 North 59th Avenue, Glendale, AZ 85308
+
+
+--e12d2d4fcfaf061a4bea51d30f3cb8beb02314d758719c2b45f175900f9c
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=UTF-8
+Mime-Version: 1.0
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.=
+w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns=3D"http://www.w3.org/1999/xhtml" style=3D"box-sizing: border-bo=
+x; font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif=
+; font-size: 14px; line-height: 1.5">
+<head>
+<meta name=3D"viewport" content=3D"width=3Ddevice-width">
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8">
+
+</head>
+<body style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: none; =
+background: #ffffff; box-sizing: border-box; font-family: 'Helvetica Neue',=
+ 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; height: 100%; =
+line-height: 1.6; width: 100% !important" bgcolor=3D"#ffffff">
+<style type=3D"text/css">
+img {
+max-width: 100%; margin-bottom: 14px;
+}
+body {
+background-color: #ffffff; -ms-text-size-adjust: 100%; -webkit-text-size-ad=
+just: none; width: 100% !important; height: 100%; line-height: 1.6;
+}
+.ExternalClass {
+width: 100%;
+}
+.ExternalClass {
+line-height: 100%;
+}
+img {
+-ms-interpolation-mode: bicubic;
+}
+a:visited {
+color: purple !important;
+}
+a:hover {
+color: #e2911a !important;
+}
+a:active {
+color: #0d3d62 !important;
+}
+.cta-button:hover {
+color: #ffffff; background-color: #B67A0D; text-decoration: none; border-co=
+lor: #B67A0D; border: 12px solid #B67A0D;
+}
+[owa] .cta-button:hover {
+color: #ffffff; background-color: #B67A0D; text-decoration: none; border-co=
+lor: #B67A0D; border: 12px solid #B67A0D;
+}
+[class=3D"cta-button"]:hover {
+color: #ffffff; background-color: #B67A0D; text-decoration: none; border-co=
+lor: #B67A0D; border: 12px solid #B67A0D;
+}
+.cta-button:visited {
+color: #ffffff; background-color: #B67A0D; text-decoration: none; border-co=
+lor: #B67A0D; border: 12px solid #B67A0D;
+}
+[owa] .cta-button:visited {
+color: #ffffff; background-color: #B67A0D; text-decoration: none; border-co=
+lor: #B67A0D; border: 12px solid #B67A0D;
+}
+[class=3D"cta-button"]:visited {
+color: #ffffff; background-color: #B67A0D; text-decoration: none; border-co=
+lor: #B67A0D; border: 12px solid #B67A0D;
+}
+.cta-button:active {
+color: #ffffff; background-color: #B67A0D; text-decoration: none; border-co=
+lor: #B67A0D; border: 12px solid #B67A0D;
+}
+[owa] .cta-button:active {
+color: #ffffff; background-color: #B67A0D; text-decoration: none; border-co=
+lor: #B67A0D; border: 12px solid #B67A0D;
+}
+[class=3D"cta-button"]:active {
+color: #ffffff; background-color: #B67A0D; text-decoration: none; border-co=
+lor: #B67A0D; border: 12px solid #B67A0D;
+}
+</style>
+<!--[if mso 16]>
+    <style type=3D"text/css">
+        a{
+            text-decoration:none !important;
+        }
+    </style>
+<![endif]-->
+
+<table class=3D"body-wrap" style=3D"background: #ffffff; box-sizing: border=
+-box; font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-se=
+rif; font-size: 14px; line-height: 1.5; mso-table-lspace: 0pt; mso-table-rs=
+pace: 0pt; width: 100%" bgcolor=3D"#ffffff">
+  <tr style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helv=
+etica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+    <td class=3D"container" style=3D"box-sizing: border-box; clear: both !i=
+mportant; display: block !important; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5; marg=
+in: 0; max-width: 600px !important; overflow: visible; vertical-align: top"=
+ valign=3D"top">
+      <div class=3D"content" style=3D"box-sizing: border-box; display: bloc=
+k; font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif=
+; font-size: 14px; line-height: 1.5; margin: 0; max-width: 600px; overflow:=
+ visible">
+        <table class=3D"main" width=3D"100%" cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Hel=
+vetica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5; m=
+so-table-lspace: 0pt; mso-table-rspace: 0pt">
+          <tr style=3D"box-sizing: border-box; font-family: 'Helvetica Neue=
+', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; line-height:=
+ 1.5">
+            <td class=3D"main-content" style=3D"box-sizing: border-box; col=
+or: #222222; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-seri=
+f; font-size: 14px; line-height: 1.5; padding: 25px; vertical-align: top" v=
+align=3D"top">
+              Extreme Freedom 2017 was by far our best event ever in the 6 =
+years I have been doing them. =C2=A0<br style=3D"box-sizing: border-box; fo=
+nt-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; fon=
+t-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+Breakthroughs happened, lives changed, nagging questions were answered, and=
+ light bulbs went off in peoples heads. =C2=A0<br style=3D"box-sizing: bord=
+er-box; font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-=
+serif; font-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+<strong style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'He=
+lvetica', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: bold;=
+ line-height: 1.5"><a href=3D"http://t.dripemail2.com/c/eyJhY2NvdW50X2lkIjo=
+iOTE4MzExNyIsImRlbGl2ZXJ5X2lkIjoiMTUyNTAxMDA3MiIsInVybCI6Imh0dHBzOi8vd3d3Lm=
+V4dHJlbWVmcmVlZG9tb25saW5lLmNvbS9yZWc_X19zPXNtaWZrN3FzZXFvOG1lNmVkY216In0" =
+style=3D"box-sizing: border-box; color: #4477bd; font-family: 'Helvetica Ne=
+ue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; line-heigh=
+t: 1.5; text-decoration: underline"><span style=3D"box-sizing: border-box; =
+font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; f=
+ont-size: 14px; line-height: 1.5">They got it!</span></a></strong><br style=
+=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvetica', Hel=
+vetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+If you've been struggling to get your 1st check or get consistent income so=
+ you can quit your JOB or you'll look to scale to the next level, and you'r=
+e not sure how to do it because you're a one-man show, doing everything you=
+rself.<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', '=
+Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5=
+">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+Well, you will want to attend TONIGHT at 5:30pm PST which is 8:30pm EST. =
+=C2=A0<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', '=
+Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5=
+">
+<strong style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'He=
+lvetica', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: bold;=
+ line-height: 1.5"><a href=3D"http://t.dripemail2.com/c/eyJhY2NvdW50X2lkIjo=
+iOTE4MzExNyIsImRlbGl2ZXJ5X2lkIjoiMTUyNTAxMDA3MiIsInVybCI6Imh0dHBzOi8vd3d3Lm=
+V4dHJlbWVmcmVlZG9tb25saW5lLmNvbS9yZWc_X19zPXNtaWZrN3FzZXFvOG1lNmVkY216In0" =
+style=3D"box-sizing: border-box; color: #4477bd; font-family: 'Helvetica Ne=
+ue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; line-heigh=
+t: 1.5; text-decoration: underline"><span style=3D"box-sizing: border-box; =
+font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; f=
+ont-size: 14px; line-height: 1.5">https://www.extremefreedomonline.com/reg<=
+/span></a></strong><br style=3D"box-sizing: border-box; font-family: 'Helve=
+tica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; lin=
+e-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+We chose 6 of the best TRANSFORMATIONAL highlights from Extreme Freedom 201=
+7 that are amazing, and you will not want to miss this LIVE event.<br style=
+=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvetica', Hel=
+vetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+You'll hear from Jesse Itzler, best selling author, owner of the Atlanta Ha=
+wks, he and his wife Sarah Blakley owner of Spanks are worth BILLIONS!<br s=
+tyle=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvetica',=
+ Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+His keynote was LIVE ALTERING!!!<br style=3D"box-sizing: border-box; font-f=
+amily: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-si=
+ze: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+Wait to you see the other highlights we chose; you'll be floored.<br style=
+=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvetica', Hel=
+vetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+REGISTER HERE WE HAVE LIMITED SEATING:<br style=3D"box-sizing: border-box; =
+font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; f=
+ont-size: 14px; line-height: 1.5">
+<strong style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'He=
+lvetica', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: bold;=
+ line-height: 1.5"><a href=3D"http://t.dripemail2.com/c/eyJhY2NvdW50X2lkIjo=
+iOTE4MzExNyIsImRlbGl2ZXJ5X2lkIjoiMTUyNTAxMDA3MiIsInVybCI6Imh0dHBzOi8vd3d3Lm=
+V4dHJlbWVmcmVlZG9tb25saW5lLmNvbS9yZWc_X19zPXNtaWZrN3FzZXFvOG1lNmVkY216In0" =
+style=3D"box-sizing: border-box; color: #4477bd; font-family: 'Helvetica Ne=
+ue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; line-heigh=
+t: 1.5; text-decoration: underline"><span style=3D"box-sizing: border-box; =
+font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; f=
+ont-size: 14px; line-height: 1.5">https://www.extremefreedomonline.com/</sp=
+an></a></strong><br style=3D"box-sizing: border-box; font-family: 'Helvetic=
+a Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; line-h=
+eight: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+I'm going to give away an Amazon Echo Dot on the call tonight to one lucky =
+person. =C2=A0<br style=3D"box-sizing: border-box; font-family: 'Helvetica =
+Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; line-hei=
+ght: 1.5">
+<a href=3D"http://t.dripemail2.com/c/eyJhY2NvdW50X2lkIjoiOTE4MzExNyIsImRlbG=
+l2ZXJ5X2lkIjoiMTUyNTAxMDA3MiIsInVybCI6Imh0dHBzOi8vd3d3LmV4dHJlbWVmcmVlZG9tb=
+25saW5lLmNvbS9yZWc_X19zPXNtaWZrN3FzZXFvOG1lNmVkY216In0" style=3D"box-sizing=
+: border-box; color: #4477bd; font-family: 'Helvetica Neue', 'Helvetica', H=
+elvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5; text-decora=
+tion: underline"><span style=3D"box-sizing: border-box; font-family: 'Helve=
+tica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; lin=
+e-height: 1.5"><img alt=3D"Image" src=3D"https://getdrip.s3.amazonaws.com/u=
+ploads/image_upload/image/122875/embeddable_0f453cf3-8e4e-4509-ab8b-0d880fc=
+3ac91.jpg" style=3D"-ms-interpolation-mode: bicubic; box-sizing: border-box=
+; font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;=
+ font-size: 14px; line-height: 1.5; margin-bottom: 14px; margin-top: 14px; =
+max-width: 100%"></span></a><br style=3D"box-sizing: border-box; font-famil=
+y: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: =
+14px; line-height: 1.5">
+I have one and LOVE it; it plays music, can call my family, gives me a cust=
+omized daily brief. =C2=A0It's pretty cool.<br style=3D"box-sizing: border-=
+box; font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-ser=
+if; font-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+JOIN US LIVE TONIGHT!!<br style=3D"box-sizing: border-box; font-family: 'He=
+lvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; =
+line-height: 1.5">
+<strong style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'He=
+lvetica', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: bold;=
+ line-height: 1.5"><a href=3D"http://t.dripemail2.com/c/eyJhY2NvdW50X2lkIjo=
+iOTE4MzExNyIsImRlbGl2ZXJ5X2lkIjoiMTUyNTAxMDA3MiIsInVybCI6Imh0dHBzOi8vd3d3Lm=
+V4dHJlbWVmcmVlZG9tb25saW5lLmNvbS9yZWc_X19zPXNtaWZrN3FzZXFvOG1lNmVkY216In0" =
+style=3D"box-sizing: border-box; color: #4477bd; font-family: 'Helvetica Ne=
+ue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; line-heigh=
+t: 1.5; text-decoration: underline"><span style=3D"box-sizing: border-box; =
+font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; f=
+ont-size: 14px; line-height: 1.5">https://www.extremefreedomonline.com/</sp=
+an></a></strong><br style=3D"box-sizing: border-box; font-family: 'Helvetic=
+a Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; line-h=
+eight: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+See you soon,<br style=3D"box-sizing: border-box; font-family: 'Helvetica N=
+eue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; line-heig=
+ht: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+Sean<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'He=
+lvetica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+=C2=A0
+            </td>
+          </tr>
+        </table>
+      </div>
+=20=20=20=20=20=20
+      <div class=3D"content" style=3D"box-sizing: border-box; display: bloc=
+k; font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif=
+; font-size: 14px; line-height: 1.5; margin: 0; max-width: 600px; overflow:=
+ visible">
+        <table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" style=3D"=
+box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvetica', Helveti=
+ca, Arial, sans-serif; font-size: 14px; line-height: 1.5; mso-table-lspace:=
+ 0pt; mso-table-rspace: 0pt">
+          <tr style=3D"box-sizing: border-box; font-family: 'Helvetica Neue=
+', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; line-height:=
+ 1.5">
+            <td class=3D"footer-content" style=3D"border-top-color: #d0d0d0=
+; border-top-style: solid; border-top-width: 1px; box-sizing: border-box; c=
+lear: both; color: #777; font-family: 'Helvetica Neue', 'Helvetica', 'Arial=
+', sans-serif; font-size: 14px; line-height: 1.5; padding: 25px; vertical-a=
+lign: top; width: 100%" valign=3D"top">
+              To make sure you keep getting these emails, please add sean@f=
+lip2freedom.com to your address book or whitelist us. Want out of the loop?=
+ <a href=3D"http://t.dripemail2.com/c/eyJhY2NvdW50X2lkIjoiOTE4MzExNyIsImRlb=
+Gl2ZXJ5X2lkIjoiMTUyNTAxMDA3MiIsInVybCI6Imh0dHBzOi8vd3d3LmdldGRyaXAuY29tL3N1=
+YnNjcmliZXJzL3NtaWZrN3FzZXFvOG1lNmVkY216L3N1YnNjcmlwdGlvbnM_ZD1xb296b3Jtd3B=
+nYWtucHVrYXRqdlx1MDAyNmV4Y2x1ZGVfY2xpY2s9MVx1MDAyNmludGVudD11bnN1YnNjcmliZV=
+x1MDAyNl9fcz1zbWlmazdxc2VxbzhtZTZlZGNteiJ9">Unsubscribe</a>.<br style=3D"bo=
+x-sizing: border-box; font-family: 'Helvetica Neue', 'Helvetica', Helvetica=
+, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+Our postal address: 19420 North 59th Avenue, Glendale, AZ 85308
+            </td>
+          </tr>
+        </table>
+      </div>
+=20=20=20=20=20=20
+    </td>
+  </tr>
+</table>
+
+<img src=3D"http://o.dripemail2.com/wf/open?upn=3D7XtDdMHRjqIUi4tzSjSp2h-2B=
+oTg8yV1h4-2FGX2SHZpIEpUT1WcYZeziSF1sLE6pr6ZFM-2FOMHq1JnOUCBNgtIvPjKPc9Gysts=
+-2BuBUM3-2BfKgP9kOSRF-2BWXHy8T-2FyY3q38opaJYYUIT24RibmZJ-2FgIloPMHg-2FDnpLq=
+fCmSetY-2B4r6uOySIPdS3h8WNqLRoc9Un-2Fp7xtwaI1BYq6tLB6pt4SBdvGxxtilVSBrOh0yb=
+5oaVCmlIb1hCHSiQ6L85l03TzGeLDJyN6d-2Fz910YiReY-2BjpN-2FBUtNXBFqLO33m5ljMdQK=
+uSmx7oc7PtxOHTXF9cTKOhR" alt=3D"" width=3D"1" height=3D"1" border=3D"0" sty=
+le=3D"height:1px !important;width:1px !important;border-width:0 !important;=
+margin-top:0 !important;margin-bottom:0 !important;margin-right:0 !importan=
+t;margin-left:0 !important;padding-top:0 !important;padding-bottom:0 !impor=
+tant;padding-right:0 !important;padding-left:0 !important;"/>
+</body>
+</html>
+
+
+--e12d2d4fcfaf061a4bea51d30f3cb8beb02314d758719c2b45f175900f9c--
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>date-last-viewed</key>
+	<integer>0</integer>
+	<key>date-received</key>
+	<integer>1509634465</integer>
+	<key>flags</key>
+	<integer>8590195712</integer>
+	<key>remote-id</key>
+	<string>4604</string>
+</dict>
+</plist>

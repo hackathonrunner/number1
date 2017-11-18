@@ -1,0 +1,49 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Meetup//Meetup Events v1.0//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Events - Northern Colorado Real Estate Investor Group
+X-MS-OLK-FORCEINSPECTOROPEN:TRUE
+BEGIN:VTIMEZONE
+TZID:America/Denver
+X-LIC-LOCATION:America/Denver
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0700
+TZOFFSETTO:-0600
+TZNAME:MDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0700
+TZNAME:MST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+DTSTAMP:20171108T143641Z
+DTSTART;TZID=America/Denver:20171213T180000
+DTEND;TZID=America/Denver:20171213T200000
+STATUS:CONFIRMED
+SUMMARY:NCREIG Holiday Networking Party
+DESCRIPTION:Northern Colorado Real Estate Investor Group\nWednesday\, Dec
+ ember 13 at 6:00 PM\n\nAttend this special Holiday networking party to c
+ elebrate your accomplishments in 2017 and prepare yourself for a great r
+ eal estate year in 2018.  For...\n\nhttps://www.meetup.com/Northern-Colo
+ rado-Real-Estate-Investor-Group/events/239513915/
+ORGANIZER;CN=Meetup Reminder:MAILTO:info@meetup.com
+CLASS:PUBLIC
+CREATED:20150325T230844Z
+GEO:40.52;-105.04
+LOCATION:Ryan's Sports Grill (925 E Harmony Rd # 100\, Fort Collins\, CO 
+ 80525)
+URL:https://www.meetup.com/Northern-Colorado-Real-Estate-Investor-Group/e
+ vents/239513915/
+SEQUENCE:2
+LAST-MODIFIED:20171108T143626Z
+UID:event_ztvhglywqbrb@meetup.com
+END:VEVENT
+END:VCALENDAR

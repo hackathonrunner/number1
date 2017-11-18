@@ -1,0 +1,202 @@
+8503      
+Return-path: <bT.1-5KfYr_ZEyju4.6QIZAEh07@track.smtpcorp.com>
+Received: from st11p00im-smtpin024.mac.com ([17.172.80.139])
+ by ms60015.mac.com (Oracle Communications Messaging Server 8.0.1.2.20170607
+ 64bit (built Jun  7 2017)) with ESMTP id <0OY300EZKH5OVAD0@ms60015.mac.com>
+ for austindreier@icloud.com; Thu, 19 Oct 2017 23:56:13 +0000 (GMT)
+Original-recipient: rfc822;austindreier@icloud.com
+Received: from a1i436.smtp2go.com (a1i436.smtp2go.com [43.228.185.180])
+ by st11p00im-smtpin024.me.com
+ (Oracle Communications Messaging Server 8.0.1.2.20170607 64bit (built Jun  7
+ 2017)) with ESMTPS id <0OY3018LJH5NGC00@st11p00im-smtpin024.me.com> for
+ austindreier@icloud.com (ORCPT austindreier@icloud.com); Thu,
+ 19 Oct 2017 23:56:12 +0000 (GMT)
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 spamscore=0
+ clxscore=327 suspectscore=18 malwarescore=0 phishscore=0 adultscore=0
+ bulkscore=100 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.0.1-1707230000 definitions=main-1710190327
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10432:,,
+ definitions=2017-10-19_12:,, signatures=0
+Authentication-results: st11p00mm-dmarcmilter008.me.com; dmarc=none
+ header.from=cologop.org
+Authentication-results: st11p00mm-spfmilter008.mac.com; spf=pass
+ (st11p00mm-spfmilter008.mac.com: domain of
+ bT.1-5KfYr_ZEyju4.6QIZAEh07@track.smtpcorp.com designates 43.228.185.180 as
+ permitted sender) smtp.mailfrom=bT.1-5KfYr_ZEyju4.6QIZAEh07@track.smtpcorp.com;
+Received-SPF: pass (st11p00mm-spfmilter008.mac.com: domain of
+ bT.1-5KfYr_ZEyju4.6QIZAEh07@track.smtpcorp.com designates 43.228.185.180 as
+ permitted sender) receiver=st11p00mm-spfmilter008.mac.com;
+ client-ip=43.228.185.180; helo=a1i436.smtp2go.com;
+ envelope-from=bT.1-5KfYr_ZEyju4.6QIZAEh07@track.smtpcorp.com;
+Authentication-results: st11p00mm-dkimmilter016.mac.com;	dkim=pass (2048-bit
+ key) header.d=smtpcorp.com header.i=@smtpcorp.com header.b=CQGtR+kl;
+	dkim-adsp=none
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=smtpcorp.com; s=a1-4; h=Feedback-ID:X-Smtpcorp-Track:To:From:Subject:Date:
+	Message-ID:Reply-To:Sender:List-Unsubscribe;
+	bh=pcDisWMvooFORLQjgOGwzFejdFEBe2QR06qxqwkh0UM=; b=CQGtR+klIDiQuVPLb26Ya/z5CH
+	NdZogrwW1JeLX1FNUitCzcoI4orpolrdoCU4/CQ+35tJbFPxzyftiF8VNCVHDpoQVQuE7EZC79S/5
+	Q0hRfoZyiWPHWcN9VkljIGoS91cVHBpUsJYYVcKx4rXeNDAL6fd7uCUA8b+5kvdHUKKd2SfbqfG5R
+	VKR9TINAnrwwnQD/qb9HAMZsMYGbQHZWlQw14uwwN8e+yzJ1RkRywweyOjLVeXvwcmwqjs/DTcNAO
+	EESPYhgzNrM4trWIxNYLAX2AFlMCWq5keaGB+8zMQRl1MRUGNGxCYRrP+bp3NopQef+nfYKdkjNm4
+	CwNXYIqg==;
+Message-id: <1902a37a50336d786dfc2a79918f0038@swift.generated>
+Date: Thu, 19 Oct 2017 23:56:07 +0000
+Subject: Join me in supporting the President.
+From: Daniel Fenlason <dfenlason@cologop.org>
+To: Austin Dreier <austindreier@icloud.com>
+MIME-version: 1.0
+Content-type: text/html; charset=utf-8
+Content-transfer-encoding: quoted-printable
+Feedback-ID: 226625m:226625aUsm7QU:226625sLSVRi9gwM:SMTPCORP
+x-icloud-spam-score: 3311331
+ f=cologop.org;e=track.smtpcorp.com;is=yes;ir=no;spf=pass;dkim=pass;dmarc=noPolicy/noPolicy/none;gdwl=absent;pps=ham;clxs=ham;clxw=neutral
+X-CLX-Spam: false
+X-CLX-UnSpecialScore: None
+X-CLX-Score: 327
+X-CLX-Shades: None
+X-MANTSH: 1TEIXWV4bG1oaGkNHB1BeSF8aHBgYHhkaGxEKTEMXGx0EGx0YBBkfBBgSEBseGh8
+ aEQpMWRcZGB0RCllNF2RFRE8RCllJFxgaGnEYHQYYGncGGR0GGgYaBhMbBgcYcRgfEBgcdwYaB
+ hoGGgYaBhoGGnEaEBp3BhoRClleF2hjeREKQ04Xe15iH3IcWAFmW1hzRkJhW0MSbUNdZkNCWHN
+ rUEFHBRwRClhcFxkEGgQZGAdNGU4TTxMZGAUbHQQbHRgEEhkEGxMQGx4aHxoRCl5ZF3hiX2sZE
+ QpNXBcbEhkRCkxaF2loYk1NTREKQ1oXHhkEGBgSBBsSHwQbEhoRCkJeFxsRCkJFF2FebE4Ye09
+ JT35YEQpCThdjfEYYQUB6HBobGhEKQkwXaV1SZFsYZx9yTE4RCkJsF2FDYhxbcFlmE05NEQpCQ
+ BdlUB0bW3pIeR1HGBEKQlgXbkcdG05kYUUbEkARCk1eFxsRCnBoF2kcHU8TehxcZmBYEBkaEQp
+ waBdmeXtMaWwcSEJJRBAZGhEKcGgXbVhNTUlBY3xwWEMQGRoRCnBoF2l8Y09OQ0xIa0NBEBkdE
+ QpwaBdpe2kYU3JsGhlfRhAZGhEKcH8XaF8SR2lSRnxFE3wQGBoRCnBfF2RcZ2xeeUcTW28aEBg
+ aEQpwfRdra3l8QWhpT0tQQBAZGhEKcH0XaXltaW5gRlhoYGcQGRoRCnB9F21Gc0xDUGdBEk5DE
+ BkaEQpwXxdpEmdYRBtsXH1abhAYGhEKcH0XaBprW3BcUBpGS0gQGRoRCnBsF2cSRxxtXEdlb0B
+ GEBkaEQptfhcbEQpYTRdLEQ==
+x-dmarc-info: pass=none; dmarc-policy=(nopolicy); s=u0; d=u0
+x-dmarc-policy: none
+X-CS-Metadata:
+ {"csFrom":"5cec14ab-b60c-4674-91e7-eef718f71f44","emailingId":1780,"csId":291311700}
+X-Smtpcorp-Track: 1-5KfYr_ZEyju4.6QIZAEh07
+X-Report-Abuse: Please forward a copy of this message, including all headers,
+ to <abuse-contact@smtp2go.com>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.=
+w3.org/TR/html4/loose.dtd">
+<html lang=3D"en">
+<head>
+<base target=3D=
+"_parent">
+<meta charset=3D"UTF-8">
+<meta http-equiv=3D"Content-Type" c=
+ontent=3D"text/html; charset=3DUTF-8">
+<meta name=3D"viewport" content=3D=
+"width=3Ddevice-width, initial-scale=3D1">
+<meta http-equiv=3D"X-UA-Compa=
+tible" content=3D"IE=3Dedge">
+<meta name=3D"format-detection" content=3D"=
+telephone=3Dno">
+<title>RNC - CO - Admin - 17</title>
+</head>
+<body s=
+tyle=3D"margin: 0;">
+
+    <div><table width=3D"100%" style=3D"padding-b=
+ottom: 20px;"><tbody><tr>
+<td align=3D"center">
+      <table width=3D"6=
+00px" style=3D"padding-bottom: 20px;"><tbody><tr>
+<!-- Content area --><t=
+d align=3D"left"><div>
+<div>Hello Fellow President Trump Supporter,</div>=
+
+<div><br></div>
+<div>The White House has reached out to our team here =
+in Colorado to find patriots who support the President in his efforts to re=
+form the broken tax code.=C2=A0</div>
+<div><br></div>
+<div>If you suppo=
+rt the President in this effort to unleash the American economy please fill=
+ out this <a href=3D"https://a.crowdskout.com/v1-1/email-click/aHR0cHM6Ly9h=
+cHAuY3Jvd2Rza291dC5jb20vdjJmb3JtLmh0bWw_dXVpZD1mZWRkMTU0ZS0yMzVjLTRhNWQtYTJ=
+mZS1jMTVjZjNkZTcwNzY?b=3DeyJjc0lkIjoyOTEzMTE3MDAsImNsaWVudElkIjoxOTQyLCJvcm=
+dhbml6YXRpb25JZCI6IjE2MzAwMzYiLCJzb3VyY2VJZCI6Ijc3ODgiLCJlbWFpbGluZ0lkIjoxN=
+zgwLCJmcm9tIjoiNWNlYzE0YWItYjYwYy00Njc0LTkxZTctZWVmNzE4ZjcxZjQ0In0" style=
+=3D"color: #00aeef;">form</a> so we can add your name to the list of suppor=
+ts that will be sent to the White House.=C2=A0</div>
+<div><br></div>
+<d=
+iv>Thank you for always standing up for our Country and our President.=
+=C2=A0 Together, we are making America great again.=C2=A0</div>
+<div><br>=
+</div>
+<div>Best,</div>
+<div><br></div>
+<div>Daniel</div>
+</div></t=
+d>
+        </tr></tbody></table>
+</td>
+  </tr></tbody></table></div>=
+
+
+        <table id=3D"email-footer" border=3D"0" width=3D"100%" cellpa=
+dding=3D"0" cellspacing=3D"0" class=3D"table-wrap footer-table ios-footer" =
+style=3D"padding-bottom: 20px;"><tbody><tr>
+<td align=3D"center">
+     =
+       <table border=3D"0" width=3D"100%" cellpadding=3D"0" cellspacing=3D"=
+0" class=3D"container table-content" style=3D"padding-bottom: 20px;"><tbody=
+>
+<tr style=3D"text-align: center; font-size: 12px; font-family: Helvetic=
+a Neue;">
+<td><a href=3D"https://a.crowdskout.com/v1-1/email-click/aHR0cH=
+M6Ly9hcHAuY3Jvd2Rza291dC5jb20vZW1haWwvdW4vNWNlYzE0YWItYjYwYy00Njc0LTkxZTctZ=
+WVmNzE4ZjcxZjQ0?b=3DeyJjc0lkIjoyOTEzMTE3MDAsImNsaWVudElkIjoxOTQyLCJvcmdhbml=
+6YXRpb25JZCI6IjE2MzAwMzYiLCJzb3VyY2VJZCI6Ijc3ODgiLCJlbWFpbGluZ0lkIjoxNzgwLC=
+Jmcm9tIjoiNWNlYzE0YWItYjYwYy00Njc0LTkxZTctZWVmNzE4ZjcxZjQ0In0" class=3D"uns=
+ubscribe" style=3D"color: #00aeef;">Unsubscribe</a></td>
+                =
+</tr>
+<tr style=3D"text-align: center; font-size: 12px; font-family: Helv=
+etica Neue;">
+<td style=3D"padding-top: 10px;" class=3D"ng-binding">
+  =
+                  RNC - CO - Admin - 17. 5950 South Willow Drive, , Greenwo=
+od Village, Colorado 80111
+                  </td>
+                </tr=
+>
+<tr style=3D"text-align: center; font-size: 12px; font-family: Helvetic=
+a Neue;">
+<td>
+                    To view this email in your browser, =
+click <a href=3D"https://a.crowdskout.com/v1-1/email-click/aHR0cHM6Ly9hcHAu=
+Y3Jvd2Rza291dC5jb20vZW1haWwuaHRtbD91dWlkPTVjZWMxNGFiLWI2MGMtNDY3NC05MWU3LWV=
+lZjcxOGY3MWY0NA?b=3DeyJjc0lkIjoyOTEzMTE3MDAsImNsaWVudElkIjoxOTQyLCJvcmdhbml=
+6YXRpb25JZCI6IjE2MzAwMzYiLCJzb3VyY2VJZCI6Ijc3ODgiLCJlbWFpbGluZ0lkIjoxNzgwLC=
+Jmcm9tIjoiNWNlYzE0YWItYjYwYy00Njc0LTkxZTctZWVmNzE4ZjcxZjQ0In0" class=3D"uns=
+ubscribe" style=3D"color: #00aeef;">here</a>.
+                  </td>
+ =
+               </tr>
+</tbody></table>
+<br>
+</td>
+        </tr></tbo=
+dy></table>
+<img src=3D"https://a.crowdskout.com/v1-1/email-open.gif?b=3D=
+eyJjc0lkIjoyOTEzMTE3MDAsImNsaWVudElkIjoxOTQyLCJvcmdhbml6YXRpb25JZCI6IjE2MzA=
+wMzYiLCJzb3VyY2VJZCI6Ijc3ODgiLCJlbWFpbGluZ0lkIjoxNzgwLCJmcm9tIjoiNWNlYzE0YW=
+ItYjYwYy00Njc0LTkxZTctZWVmNzE4ZjcxZjQ0In0"/></body>
+</html>
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>date-last-viewed</key>
+	<integer>0</integer>
+	<key>date-received</key>
+	<integer>1508457373</integer>
+	<key>flags</key>
+	<integer>8590195712</integer>
+	<key>remote-id</key>
+	<string>4805</string>
+</dict>
+</plist>

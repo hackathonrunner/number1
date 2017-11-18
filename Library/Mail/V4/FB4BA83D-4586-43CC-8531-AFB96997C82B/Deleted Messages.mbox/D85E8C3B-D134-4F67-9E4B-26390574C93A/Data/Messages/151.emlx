@@ -1,0 +1,203 @@
+12008     
+Return-path: <jobnotification@noreply.jobs2web.com>
+Received: from ms11p00im-qufv17084201.mac.com ([17.58.36.55])
+ by ms60015.mac.com
+ (Oracle Communications Messaging Server 8.0.1.2.20170607 64bit (built Jun  7
+ 2017)) with ESMTP id <0OYW002FRO4UPU20@ms60015.mac.com> for
+ austindreier@icloud.com; Sat, 04 Nov 2017 18:17:18 +0000 (GMT)
+Original-recipient: rfc822;austindreier@icloud.com
+Received: from cloudmail18.ondemand.com
+ (cloudmail18.ondemand.com [155.56.222.30]) by ms11p00im-qufv17084201.me.com
+ (Oracle Communications Messaging Server 8.0.1.2.20170607 64bit (built Jun  7
+ 2017)) with ESMTPS id <0OYW00IMZO4S0N20@ms11p00im-qufv17084201.me.com> for
+ austindreier@icloud.com (ORCPT austindreier@icloud.com); Sat,
+ 04 Nov 2017 18:17:18 +0000 (GMT)
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 spamscore=0
+ clxscore=1000 suspectscore=0 malwarescore=0 phishscore=0 adultscore=0
+ bulkscore=0 classifier=clx:PersonalWhite adjust=0 reason=mlx scancount=1
+ engine=8.0.1-1707230000 definitions=main-1711040262
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10432:,,
+ definitions=2017-11-04_07:,, signatures=0
+Authentication-results: ms11p00im-qufv10113101.me.com; dmarc=pass
+ header.from=noreply.jobs2web.com
+Authentication-results: ms11p00im-qufv10084001.me.com; spf=pass
+ (ms11p00im-qufv10084001.me.com: domain of jobnotification@noreply.jobs2web.com
+ designates 155.56.222.30 as permitted sender)
+ smtp.mailfrom=jobnotification@noreply.jobs2web.com;
+Received-SPF: pass (ms11p00im-qufv10084001.me.com: domain of
+ jobnotification@noreply.jobs2web.com designates 155.56.222.30 as permitted
+ sender) receiver=ms11p00im-qufv10084001.me.com; client-ip=155.56.222.30;
+ helo=cloudmail18.ondemand.com;
+ envelope-from=jobnotification@noreply.jobs2web.com;
+Authentication-results: ms11p00im-qufv10103001.me.com;	dkim=temperror (0-bit
+ key) header.d=noreply.jobs2web.com header.i=@noreply.jobs2web.com
+ header.b=iVdZEZSm;	dkim-adsp=temperror
+ reason="A query failed for 'noreply.jobs2web.com'"
+Received: from localhost (localhost [127.0.0.1])	by cloudmail18.ondemand.com
+ (Postfix) with ESMTP id BC39A80D7	for <austindreier@icloud.com>; Sat,
+ 4 Nov 2017 18:17:15 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=noreply.jobs2web.com;
+	s=1; t=1509819435; bh=9XtkF51hBaW5l2cpzwdajWnsM2GmeBcx6jQEPBi3maE=;
+	h=From:To:Subject:List-Unsubscribe:Date;
+	b=iVdZEZSm2vkNqeOTeauqPCLAbBlJMm882BJMh3MzSHKIQzGeOI4RUCNE/j5+EV8wq
+ oeizIXonakxewx3WMLLdrA69PA2pc4axFdIBrIAUMBtYMjnhxopXmWqV9m22KahrsF
+ 2K7hewtIbEGtwrDCmDUfXCUJEGYrDSs0szT3RKhM=
+X-Virus-Scanned: amavisd-new at ondemand.com
+Received: from cloudmail18.ondemand.com ([127.0.0.1])
+	by localhost (cloudmail.ondemand.com [127.0.0.1]) (amavisd-new, port 10024)
+	with ESMTP id ejZsbXPp_34V for <austindreier@icloud.com>;	Sat,
+ 4 Nov 2017 18:17:15 +0000 (UTC)
+Received: from 514392-CXXMAL02.j2w.local (unknown [50.57.26.64])
+	by cloudmail18.ondemand.com (Postfix) with ESMTP id 7773F80E2	for
+ <austindreier@icloud.com>; Sat,  4 Nov 2017 18:17:15 +0000 (UTC)
+Received: from 514392-CXXMAL02.j2w.local (localhost [127.0.0.1])
+	by 514392-CXXMAL02.j2w.local (Postfix) with ESMTP id D74C5634CB	for
+ <austindreier@icloud.com>; Sat,  4 Nov 2017 13:10:55 -0500 (CDT)
+From: kroger-jobnotification@noreply.jobs2web.com
+To: Austin Dreier <austindreier@icloud.com>
+Message-id:
+ <858755964.129184231509819055880.JavaMail.tomee@514392-CXXMAL02.j2w.local>
+Subject: New jobs posted from jobs.kroger.com
+MIME-version: 1.0
+Content-type: text/html; charset=utf-8
+Content-transfer-encoding: quoted-printable
+List-Unsubscribe:
+ <https://jobs.kroger.com/unsubscribe/?email=austindreier%40icloud%2ecom&from=email&refid=4004482600&utm_source=J2WEmail&source=2&eid=517-201710040110-8395611000&locale=en_US>
+Date: Sat, 04 Nov 2017 13:10:55 -0500 (CDT)
+x-icloud-spam-score: 3631333
+ f=noreply.jobs2web.com;e=noreply.jobs2web.com;is=yes;ir=no;spf=pass;dkim=other
+ failure;dmarc=pass/none/none;gdwl=absent;pps=ham;clxs=ham;clxw=whitelist
+X-CLX-Spam: false
+X-CLX-UnSpecialScore: 61
+X-CLX-Score: 1000
+X-CLX-UShades: None
+X-CLX-Shades: PersonalWhite
+X-MANTSH: 1TEIXR1kbG1oaGkNHB1tfTFwbGhodGhMaGxEKTEMXGxoEGxsYBBsbGgQeGRAbHho
+ fGhEKTFkXGxoaGhEKWU0Xek9YWUVES0Z9QkNeTxEKX1kXHBsRCl9NF2RFRE8RCllJFxpxGhAad
+ wYeG3EbGBsTEB4dGXcGGBoGGhEKWV4XY255EQpDThdcXVBob2ldR1NdRx15S2FPaWl/eV5kQAE
+ eWl1STx5OQBEKWFwXGQQaBBkYB00ZThNPExkYBRsaBBMEGwQdHhAbHhofGhEKXlkXeGccQGARC
+ k1cFxsSGhEKTFoXZUZBXREKTU4XaBEKQ1oXGx8fBB8cBBgYGAQZGhEKQl4XGxEKQkYXbWdTUht
+ MG39PXX8RCkJHF2FIW1wZc0JCGgFfEQpCRRdtaG1IZl0SGmcaYBEKQk4XbnxIfFtyX0IYXm4RC
+ kJMF21obUhmXRIaZxpgEQpCbBdtaG1IZl0SGmcaYBEKQkAXaB9NXR5EaBxZeH4RCkJYF25HHRt
+ OZGFFGxJAEQpNXhcbEQpwZxdsY1BDWHJ6Q2cebhAcGhEKcGgXaxluaHtrT05SZQUQGhEKcGgXZ
+ UBjGmBkSX9BbmMQGhEKcGgXa2QFXXtTUHxAGUQQGRoRCnBoF2lPG29wE2ZAYnoeEBseHBEKcGg
+ XaF0YAVNyR3JEfWcQGRoRCnB/F2ZPemJHY2xfEk5vEBMfEQpwXxdrExljaGtze3tBWxAdGhEKc
+ H0Xa11QXm5BQx18bEcQHBoRCnBfF2RrHkRcTk1zemViEBwaEQpwfRdlHBpPe1hjQVptSBAcGhE
+ KcH0XaBtMa2RNSUJyfm0QGhEKcH8XelpmRn4YWB9SZmQQEhkRCnBfF2xmHGEbe0AYR2l9EBseG
+ hEKcH0XYRwebn1yZ15/bGwQHhIRCnBfF2BzRklwYUxDTk9sEBkaEQpwfRdnQgVucxpEHHNOcBA
+ aEQpwfRdkRH1tXWxaZ2RzUxAaEQpwfRdgUxkYZBwafmFzZhAa
+x-dmarc-info: pass=pass; dmarc-policy=none; s=r1; d=r0
+x-dmarc-policy: v=DMARC1; p=none; rua=mailto:fbl@noreply.jobs2web.com;
+ ruf=mailto:fbl@noreply.jobs2web.com!10m; rf=afrf; pct=100; ri=86400
+
+<table align=3D"center" width=3D"575" cellspacing=3D"0" cellpadding=3D"20" =
+style=3D"color: #000000; font-size: 12px; line-height: 15px; font-family: A=
+rial,Helvetica,sans-serif;"><tr><td><a href=3D"http://jobs=2Ekroger=2Ecom/"=
+ title=3D"Click here to view jobs with Kroger"><img src=3D"http://jobs=2Ekr=
+oger=2Ecom/sites/kroger/mobile/kroger-mobile-logo=2Epng" alt=3D"Kroger Logo=
+" border=3D"0"/></a></td></tr><tr><td>The following jobs matched your searc=
+h agent at The Kroger Co=2E and our family of companies and can be found at=
+ <a class=3D"agentsitelink" href=3D"http://jobs=2Ekroger=2Ecom/?from=3Demai=
+l&refid=3D4004482600&utm_source=3DJ2WEmail&source=3D2&eid=3D517-20171004011=
+0-8395611000&locale=3Den_US">jobs=2Ekroger=2Ecom</a>=2E<br/><br/>Agent:<br/=
+>&quot;Hourly&quot; OR &quot;Medical&quot; OR &quot;Retail Sales&quot;ANDFo=
+rt Collins<br/><a class=3D"agentmodifylink" href=3D"https://career8=2Esucce=
+ssfactors=2Ecom/careers?site=3D&company=3DKroger&clientId=3Djobs2web&lang=
+=3Den_US&navBarLevel=3DJOB_MGMT&subNavBarLevel=3DJOB_ALERTS">(Click to modi=
+fy)</a><br/><br/>Job Matches:<br/><b><span class=3D"agentjoblink_bullet"></=
+span> <a class=3D"agentjoblink" href=3D"http://jobs=2Ekroger=2Ecom/king-soo=
+pers/job/Fort-Collins-King-Soopers-Retail-Hourly-Associate-CO-80524/4402407=
+00/?from=3Demail&refid=3D4004482600&utm_source=3DJ2WEmail&source=3D2&eid=3D=
+517-201710040110-8395611000&locale=3Den_US">King Soopers Retail Hourly Asso=
+ciate - Fort Collins, CO, US, 80524</a><br/>
+<span class=3D"agentjoblink_bu=
+llet"></span> <a class=3D"agentjoblink" href=3D"http://jobs=2Ekroger=2Ecom/=
+king-soopers/job/Fort-Collins-King-Soopers-Retail-Hourly-Associate-CO-80525=
+/440247300/?from=3Demail&refid=3D4004482600&utm_source=3DJ2WEmail&source=3D=
+2&eid=3D517-201710040110-8395611000&locale=3Den_US">King Soopers Retail Hou=
+rly Associate - Fort Collins, CO, US, 80525</a><br/>
+<span class=3D"agentjo=
+blink_bullet"></span> <a class=3D"agentjoblink" href=3D"http://jobs=2Ekroge=
+r=2Ecom/king-soopers/job/Fort-Collins-King-Soopers-Retail-Hourly-Associate-=
+CO-80525/440252800/?from=3Demail&refid=3D4004482600&utm_source=3DJ2WEmail&s=
+ource=3D2&eid=3D517-201710040110-8395611000&locale=3Den_US">King Soopers Re=
+tail Hourly Associate - Fort Collins, CO, US, 80525</a><br/>
+<span class=3D=
+"agentjoblink_bullet"></span> <a class=3D"agentjoblink" href=3D"http://jobs=
+=2Ekroger=2Ecom/king-soopers/job/Fort-Collins-King-Soopers-Retail-Hourly-As=
+sociate-CO-80525/440250000/?from=3Demail&refid=3D4004482600&utm_source=3DJ2=
+WEmail&source=3D2&eid=3D517-201710040110-8395611000&locale=3Den_US">King So=
+opers Retail Hourly Associate - Fort Collins, CO, US, 80525</a><br/>
+<span =
+class=3D"agentjoblink_bullet"></span> <a class=3D"agentjoblink" href=3D"htt=
+p://jobs=2Ekroger=2Ecom/king-soopers/job/Fort-Collins-King-Soopers-Retail-H=
+ourly-Associate-CO-80521/440242800/?from=3Demail&refid=3D4004482600&utm_sou=
+rce=3DJ2WEmail&source=3D2&eid=3D517-201710040110-8395611000&locale=3Den_US"=
+>King Soopers Retail Hourly Associate - Fort Collins, CO, US, 80521</a><br/=
+>
+<span class=3D"agentjoblink_bullet"></span> <a class=3D"agentjoblink" hre=
+f=3D"http://jobs=2Ekroger=2Ecom/king-soopers/job/Fort-Collins-King-Soopers-=
+Retail-Hourly-Associate-CO-80524/440230600/?from=3Demail&refid=3D4004482600=
+&utm_source=3DJ2WEmail&source=3D2&eid=3D517-201710040110-8395611000&locale=
+=3Den_US">King Soopers Retail Hourly Associate - Fort Collins, CO, US, 8052=
+4</a><br/>
+<span class=3D"agentjoblink_bullet"></span> <a class=3D"agentjob=
+link" href=3D"http://jobs=2Ekroger=2Ecom/king-soopers/job/Longmont-King-Soo=
+pers-Retail-Hourly-Associate-CO-80504/440253500/?from=3Demail&refid=3D40044=
+82600&utm_source=3DJ2WEmail&source=3D2&eid=3D517-201710040110-8395611000&lo=
+cale=3Den_US">King Soopers Retail Hourly Associate - Longmont, CO, US, 8050=
+4</a><br/>
+<span class=3D"agentjoblink_bullet"></span> <a class=3D"agentjob=
+link" href=3D"http://jobs=2Ekroger=2Ecom/king-soopers/job/Greeley-King-Soop=
+ers-Retail-Hourly-Associate-CO-80634/440238300/?from=3Demail&refid=3D400448=
+2600&utm_source=3DJ2WEmail&source=3D2&eid=3D517-201710040110-8395611000&loc=
+ale=3Den_US">King Soopers Retail Hourly Associate - Greeley, CO, US, 80634<=
+/a><br/>
+<span class=3D"agentjoblink_bullet"></span> <a class=3D"agentjobli=
+nk" href=3D"http://jobs=2Ekroger=2Ecom/king-soopers/job/Loveland-King-Soope=
+rs-Retail-Hourly-Associate-CO-80538/440253700/?from=3Demail&refid=3D4004482=
+600&utm_source=3DJ2WEmail&source=3D2&eid=3D517-201710040110-8395611000&loca=
+le=3Den_US">King Soopers Retail Hourly Associate - Loveland, CO, US, 80538<=
+/a><br/>
+<span class=3D"agentjoblink_bullet"></span> <a class=3D"agentjobli=
+nk" href=3D"http://jobs=2Ekroger=2Ecom/king-soopers/job/Loveland-King-Soope=
+rs-Retail-Hourly-Associate-CO-80537/440248900/?from=3Demail&refid=3D4004482=
+600&utm_source=3DJ2WEmail&source=3D2&eid=3D517-201710040110-8395611000&loca=
+le=3Den_US">King Soopers Retail Hourly Associate - Loveland, CO, US, 80537<=
+/a><br/>
+</b><br/><br/>Remember to forward job openings to any of your frie=
+nds who might have interest in these positions=2E<br/><br/>Getting these no=
+tifications too often?<br/><a class=3D"agentmodifylink" href=3D"https://car=
+eer8=2Esuccessfactors=2Ecom/careers?site=3D&company=3DKroger&clientId=3Djob=
+s2web&lang=3Den_US&navBarLevel=3DJOB_MGMT&subNavBarLevel=3DJOB_ALERTS">Chan=
+ge the frequency here=2E</a><br/><a class=3D"agentmodifylink" href=3D"https=
+://career8=2Esuccessfactors=2Ecom/careers?site=3D&company=3DKroger&clientId=
+=3Djobs2web&lang=3Den_US&navBarLevel=3DJOB_MGMT&subNavBarLevel=3DJOB_ALERTS=
+">Add another agent=2E</a><br/><br/><br/><img src=3D"http://jobs=2Ekroger=
+=2Ecom/sites/kroger/images/email-logos-img=2Ejpg" alt=3D"Kroger Logo" borde=
+r=3D"0"/><br/><br/><span style=3D"font-size:0=2E8em"><hr align=3D"left"/><i=
+>* To ensure delivery to your inbox, please add <strong>kroger-jobnotificat=
+ion@noreply=2Ejobs2web=2Ecom</strong> to your address book=2E<br/>* Please =
+do not reply to this email, as we are unable to respond from this address=
+=2E<br />* Don=E2=80=99t want to receive this notification anymore? <a clas=
+s=3D"agentmodifylink" href=3D"https://career8=2Esuccessfactors=2Ecom/career=
+s?site=3D&company=3DKroger&clientId=3Djobs2web&lang=3Den_US&navBarLevel=3DJ=
+OB_MGMT&subNavBarLevel=3DJOB_ALERTS">Manage your Job Preferences</a> or <a =
+class=3D"agentunsubscribelink" href=3D"https://jobs=2Ekroger=2Ecom/unsubscr=
+ibe/?email=3Daustindreier%40icloud%2ecom&from=3Demail&refid=3D4004482600&ut=
+m_source=3DJ2WEmail&source=3D2&eid=3D517-201710040110-8395611000&locale=3De=
+n_US">Click here to unsubscribe=2E</a></i></span></td></tr></table>
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>date-last-viewed</key>
+	<integer>0</integer>
+	<key>date-received</key>
+	<integer>1509819438</integer>
+	<key>flags</key>
+	<integer>8590195712</integer>
+	<key>remote-id</key>
+	<string>4624</string>
+</dict>
+</plist>

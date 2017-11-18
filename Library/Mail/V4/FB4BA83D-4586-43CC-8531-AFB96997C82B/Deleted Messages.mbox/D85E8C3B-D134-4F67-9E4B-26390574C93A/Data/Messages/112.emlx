@@ -1,0 +1,1838 @@
+81776     
+Return-path: <tui.53133@envfrm.rsys5.com>
+Received: from st11p00im-smtpin035.mac.com ([17.172.80.181])
+ by ms60015.mac.com (Oracle Communications Messaging Server 8.0.1.2.20170607
+ 64bit (built Jun  7 2017)) with ESMTP id <0OYP004UG76XFK00@ms60015.mac.com>
+ for austindreier@icloud.com; Tue, 31 Oct 2017 17:28:10 +0000 (GMT)
+Original-recipient: rfc822;austindreier@icloud.com
+Received: from omp.e-tui.transunion.com
+ (omp.e-tui.transunion.com [199.7.204.78]) by st11p00im-smtpin035.me.com
+ (Oracle Communications Messaging Server 8.0.1.2.20170607 64bit (built Jun  7
+ 2017)) with ESMTP id <0OYP00Q3969BMM30@st11p00im-smtpin035.me.com> for
+ austindreier@icloud.com (ORCPT austindreier@icloud.com); Tue,
+ 31 Oct 2017 17:28:09 +0000 (GMT)
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 spamscore=0
+ clxscore=190 suspectscore=99 malwarescore=0 phishscore=0 adultscore=0
+ bulkscore=100 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.0.1-1707230000 definitions=main-1710310218
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10432:,,
+ definitions=2017-10-31_06:,, signatures=0
+Authentication-results: st11p00mm-dmarcmilter003.me.com; dmarc=pass
+ header.from=e-tui.transunion.com
+Authentication-results: st11p00mm-spfmilter009.mac.com; spf=pass
+ (st11p00mm-spfmilter009.mac.com: domain of tui.53133@envfrm.rsys5.com
+ designates 199.7.204.78 as permitted sender)
+ smtp.mailfrom=tui.53133@envfrm.rsys5.com;
+Received-SPF: pass (st11p00mm-spfmilter009.mac.com: domain of
+ tui.53133@envfrm.rsys5.com designates 199.7.204.78 as permitted sender)
+ receiver=st11p00mm-spfmilter009.mac.com; client-ip=199.7.204.78;
+ helo=omp.e-tui.transunion.com; envelope-from=tui.53133@envfrm.rsys5.com;
+Authentication-results: st11p00mm-dkimmilter012.mac.com;	dkim=pass (2048-bit
+ key) header.d=e-tui.transunion.com header.i=transunion@e-tui.transunion.com
+ header.b=FfVX5DAutpRZc3/Ij3C7Q6vWt9RLj0xLnVlL9GEA/rXu9W8KJ34BPM0kIzcLIAYrzn7uSf7eBkVgDrJIsqoo3Brou6SF8+wbwZ2bpfGalDmfG+QjnSfI55fw9s0izcm0b/ZDjgj+7gifoM07mx5HAQGdEKdhAF/yPICBbcJdAWTlqPDLujIcGUx1udwkHJpdoHIhw3ePv8Lvei+l9SjU5Ut4T2uVd+0g19seGoTebT9A/WesXaEtCDXydDy0i5l/gRvgsg7OUk5T5JTAVflvxi9W8dWM/riY4XAj35xjDbIGRXP8EiicDZ0E5PpGbRLEQUMdXOlrXY7htqd725t4bQ==;
+	dkim-adsp=pass
+Authentication-results: st11p00mm-dkimmilter012.mac.com;	dkim=pass (2048-bit
+ key) header.d=e-tui.transunion.com header.i=transunion@e-tui.transunion.com
+ header.b=FfVX5DAutpRZc3/Ij3C7Q6vWt9RLj0xLnVlL9GEA/rXu9W8KJ34BPM0kIzcLIAYrzn7uSf7eBkVgDrJIsqoo3Brou6SF8+wbwZ2bpfGalDmfG+QjnSfI55fw9s0izcm0b/ZDjgj+7gifoM07mx5HAQGdEKdhAF/yPICBbcJdAWTlqPDLujIcGUx1udwkHJpdoHIhw3ePv8Lvei+l9SjU5Ut4T2uVd+0g19seGoTebT9A/WesXaEtCDXydDy0i5l/gRvgsg7OUk5T5JTAVflvxi9W8dWM/riY4XAj35xjDbIGRXP8EiicDZ0E5PpGbRLEQUMdXOlrXY7htqd725t4bQ==;
+	dkim-adsp=pass
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=transunion;
+ d=e-tui.transunion.com;
+ h=MIME-Version:Content-Type:Content-Transfer-Encoding:Date:To:From:Reply-To:
+ Subject:List-Unsubscribe:Message-ID; i=transunion@e-tui.transunion.com;
+ bh=JfbPiZ4M/FF04J+JJE2tkNuHnX2ilmqRBlXMHqtyjqE=;
+ b=FfVX5DAutpRZc3/Ij3C7Q6vWt9RLj0xLnVlL9GEA/rXu9W8KJ34BPM0kIzcLIAYrzn7uSf7eBkVg
+   DrJIsqoo3Brou6SF8+wbwZ2bpfGalDmfG+QjnSfI55fw9s0izcm0b/ZDjgj+7gifoM07mx5HAQGd
+   EKdhAF/yPICBbcJdAWTlqPDLujIcGUx1udwkHJpdoHIhw3ePv8Lvei+l9SjU5Ut4T2uVd+0g19se
+   GoTebT9A/WesXaEtCDXydDy0i5l/gRvgsg7OUk5T5JTAVflvxi9W8dWM/riY4XAj35xjDbIGRXP8
+   EiicDZ0E5PpGbRLEQUMdXOlrXY7htqd725t4bQ==
+Received: by omp.e-tui.transunion.com id hv2pag29qu88 for
+ <austindreier@icloud.com>; Tue,
+ 31 Oct 2017 10:08:59 -0700 (envelope-from <tui.53133@envfrm.rsys5.com>)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=transunion;
+ d=e-tui.transunion.com;
+ h=MIME-Version:Content-Type:Content-Transfer-Encoding:Date:To:From:Reply-To:
+ Subject:List-Unsubscribe:Message-ID; i=transunion@e-tui.transunion.com;
+ bh=JfbPiZ4M/FF04J+JJE2tkNuHnX2ilmqRBlXMHqtyjqE=;
+ b=FfVX5DAutpRZc3/Ij3C7Q6vWt9RLj0xLnVlL9GEA/rXu9W8KJ34BPM0kIzcLIAYrzn7uSf7eBkVg
+   DrJIsqoo3Brou6SF8+wbwZ2bpfGalDmfG+QjnSfI55fw9s0izcm0b/ZDjgj+7gifoM07mx5HAQGd
+   EKdhAF/yPICBbcJdAWTlqPDLujIcGUx1udwkHJpdoHIhw3ePv8Lvei+l9SjU5Ut4T2uVd+0g19se
+   GoTebT9A/WesXaEtCDXydDy0i5l/gRvgsg7OUk5T5JTAVflvxi9W8dWM/riY4XAj35xjDbIGRXP8
+   EiicDZ0E5PpGbRLEQUMdXOlrXY7htqd725t4bQ==
+Received: by mta.prod.dc2.responsys.com id hv2n2m29qu88 for
+ <austindreier@icloud.com>; Tue,
+ 31 Oct 2017 10:08:59 -0700 (envelope-from <tui.53133@envfrm.rsys5.com>)
+MIME-version: 1.0
+Content-type: text/html; charset=UTF-8
+Content-transfer-encoding: quoted-printable
+Date: Tue, 31 Oct 2017 10:08:59 -0700
+To: austindreier@icloud.com
+From: TransUnion <transunion@e-tui.transunion.com>
+Reply-to: TransUnion <donotreply@e-tui.transunion.com>
+Subject: Your October TransUnion Newsletter
+Feedback-ID: 53133:1514085:oraclersys
+List-Unsubscribe:
+ <https://e-tui.transunion.com/pub/optout/UnsubscribeOneStepConfirmAction?YES=true&_ri_=X0Gzc2X%3DYQpglLjHJlYQGiWzdzbN0gzdzb6sIFEzflnk3CpFsITKyWB8I3lAzgdN2MJpHch27nzbG6im7dzd4TTJzg38Ymf&_ei_=EolaGGF4SNMvxFF7KucKuWPhoVSoHc2kDw6aaKjrUDaUMQ9rsDPtRVHvIlPYk1S2rTGvHEER_DqKveWd2uCtyDA>,
+ <mailto:unsubscribe-YQpglLjHJlYQGiWzdzbN0gzdzb6sIFEzflnk3CpFsITKyWB8I3lAzgdN2MJpHch27nzbG6im7dzd4TTJzg38Ymf@imh.rsys5.com?subject=List-Unsubscribe>
+Message-id: <0.1.79.E12.1D3526AF16F3DA2.0@mta.prod.dc2.responsys.com>
+x-icloud-spam-score: 3331331
+ f=e-tui.transunion.com;e=envfrm.rsys5.com;is=yes;ir=no;spf=pass;dkim=pass;dmarc=pass/reject/none;gdwl=absent;pps=ham;clxs=ham;clxw=neutral
+X-CLX-Spam: false
+X-CLX-UnSpecialScore: None
+X-CLX-Score: 190
+X-CLX-Shades: None
+X-MANTSH: 1TEIXWV4bG1oaGkdHB0tNT0ReQ0QYExsZEQpMQxcbHQQbHRgEGR8EGBIQGx4aHxo
+ RCkxZFxsTGhEKWU0XZEVETxEKWUkXGnEaEBp3Bh0acRMeHRgQGxITEncGGBoGGxoaEQpZXhdra
+ 3kRCkNOF2V9Ynh9Z29aZ3waWxkBBWhsaXpnXhJOf0twXnBMXlNpEQpYXBcZBBoEGRgHTRlOE08
+ TGRgFGx0EGx0YBBIZBBsdEBseGh8aEQpeWRd4ZkZObhEKTVwXHxIbEQpMWhdpa20aTV0RCkxGF
+ 2NraxEKQ1oXGxMTBB0EGBoeBB0SEQpCXhcbEQpZRRcTEQpFSRcaEQpFZhcZEQpCRhdhZFxvEml
+ SWB5OGBEKQkcXZBNLBWUFG39iZ2sRCkJcFxsRCkJLF2FGf1JveBxTc0dbEQpCRRdpaFBFRENQe
+ RxfZhEKQk4XZnxAeGhtZGJweU4RCkJMF20cUx15QwVOXUZJEQpCbBdtSFtSb09CXB9hHhEKQkA
+ XYxNfE0FGXUh5TFIRCkJYF25HHRtOZGFFGxJAEQpwZxdmRUJBR25MRGxpTBAeEhEKcGgXYHNtf
+ nheQnhTE0IQBx4SEQpwaBdkZWBrfWNaSGdwaxAHGRoRCnBoF2J4S0geRWlwQlN/EB4SEQpwaBd
+ kXh5lTmJ5eBNQEhAHGRoRCnBoF2ZvZFhQU2JaY0BjEAcZGhEKcH8XaFJHWUhlRBgbXx4QHBsRC
+ nBfF2JeQWtCR1IfaRJSEB4ZEQpwfRdjTE55TXh9S3xbZxAHGRoRCnB/F2hZU0hgcx1dX0JbEB8
+ eEQpwXxdtTFBOQhhoXGhmUxAeEhEKcH0XZWJwEkJ7Q3oFeX4QGhEKcH0XZ2ZOWhNrYXN9axoQG
+ hEKcH0XY0xOeU14fUt8W2cQBxkaEQpwfRdnXXNhXhJSfH9wcBAaEQpwfRdnfR5YbwVhRhpuGBA
+ HGRoRCnB9F29CbEgfXVgeWhJFEAcZGhEKcH0XY0xOeU14fUt8
+x-dmarc-info: pass=pass; dmarc-policy=reject; s=r0; d=r1
+x-dmarc-policy: v=DMARC1; p=reject; pct=100
+X-CSA-Complaints: whitelist-complaints@eco.de
+X-CSA-Complaints: whitelist-complaints@eco.de
+X-sgxh1: HmklpgKjLpLjxpJthmKQJhu
+X-rext:
+ 5.interact5.Ep4ZqvRnZqAkbzGxtgsU8izkb2dP47CbUt6FKvTfciaJoTBgqEApuBKZW22cFUC5uM
+X-cid: tui.2162615
+
+<=21DOCTYPE html PUBLIC =22-//W3C//DTD XHTML 1=2E0 Transitional//EN=22 =22h=
+ttp://www=2Ew3=2Eorg/TR/xhtml1/DTD/xhtml1-transitional=2Edtd=22>
+<html xmlns=3D=22http://www=2Ew3=2Eorg/1999/xhtml=22>
+<head>
+<meta http-equiv=3D=22Content-Type=22 content=3D=22text/html; charset=3DUTF=
+-8=22 />
+<meta charset=3D=22UTF-8=22 />
+<meta name=3D=22viewport=22 content=3D=22width=3Ddevice-width, minimum-scal=
+e=3D1=2E0, maximum-scale=3D1=2E0, initial-scale=3D1=2E0=22 />
+<title>TransUnion</title>
+<style type=3D=22text/css=22>
+html =7B
+	-webkit-text-size-adjust: none;
+=7D
+=2EReadMsgBody =7B
+	width: 100%;
+=7D
+=2EExternalClass =7B
+	width: 100%;
+=7D
+=2EExternalClass * =7B
+	line-height: 100%
+=7D
+body =7B
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	margin: 0 auto;
+=7D
+/* CSS for hiding content in desktop/webmail clients */
+=2Eimghide =7B
+	max-height: 0px;
+	font-size: 0;
+	display: none;
+	overflow: hidden;
+=7D
+ =40media only screen and (max-width: 481px) =7B
+*=5Bclass=5D=2Ebluebg =7B
+	background-color: =2300a6ca =21important;
+=7D
+/* Media query for displaying content in mobile email clients */
+=2Eimghide =7B
+	max-height: none =21important;
+	font-size: 12px =21important;
+	display: block =21important;
+=7D
+*=5Bclass=5D=2Efl =7B
+	float: left =21important;
+=7D
+*=5Bclass=5D=2Efr =7B
+	float: right =21important;
+=7D
+*=5Bclass=5D=2Ewrap =7B
+	display: block =21important;
+=7D
+*=5Bclass=5D=2Ehide =7B
+	display: none =21important;
+=7D
+*=5Bclass=5D=2Ehideflow =7B
+	overflow-x: hidden =21important;
+=7D
+/* WIDTHS */
+
+*=5Bclass=5D=2Ewidth100 =7B
+	width:100% =21important;
+=7D
+*=5Bclass=5D=2Ewidth30 =7B
+	width: 30px =21important;
+=7D
+*=5Bclass=5D=2Ewidth53 =7B
+	width: 53px =21important;
+=7D
+*=5Bclass=5D=2Ewidth260 =7B
+	width: 260px =21important;
+=7D
+*=5Bclass=5D=2Ewidth287 =7B
+	width: 287px =21important;
+=7D
+*=5Bclass=5D=2Ewidth114 =7B
+	width: 114px =21important;
+=7D
+*=5Bclass=5D=2Ewidth127 =7B
+	width: 127px =21important;
+=7D
+*=5Bclass=5D=2Ewidth300 =7B
+	width: 300px =21important;
+=7D
+*=5Bclass=5D=2Ewidth2 =7B
+	width: 2px =21important;
+=7D
+*=5Bclass=5D=2Ewidth5 =7B
+	width: 5px =21important;
+=7D
+*=5Bclass=5D=2Ewidth10 =7B
+	width: 10px =21important;
+=7D
+*=5Bclass=5D=2Ewidth20 =7B
+	width: 20px =21important;
+=7D
+*=5Bclass=5D=2Ewidth29 =7B
+	width: 29px =21important;
+=7D
+*=5Bclass=5D=2Ewidth80 =7B
+	width: 80px =21important;
+=7D
+*=5Bclass=5D=2Ewidth82 =7B
+	width: 82px =21important;
+=7D
+*=5Bclass=5D=2Ewidth141 =7B
+	width: 141px =21important;
+=7D
+*=5Bclass=5D=2Ewidth157 =7B
+	width: 157px =21important;
+=7D
+*=5Bclass=5D=2Ewidth175 =7B
+	width: 175px =21important;
+=7D
+*=5Bclass=5D=2Ewidth187 =7B
+	width: 187px =21important;
+=7D
+*=5Bclass=5D=2Ewidth189 =7B
+	width: 189px =21important;
+=7D
+*=5Bclass=5D=2Ewidth197 =7B
+	width: 197px =21important;
+=7D
+*=5Bclass=5D=2Ewidth207 =7B
+	width: 207px =21important;
+=7D
+*=5Bclass=5D=2Ewidth237 =7B
+	width: 237px =21important;
+=7D
+*=5Bclass=5D=2Ewidth240 =7B
+	width: 240px =21important;
+=7D
+*=5Bclass=5D=2Ewidth246 =7B
+	width: 246px =21important;
+=7D
+*=5Bclass=5D=2Ewidth252 =7B
+	width: 252px =21important;
+=7D
+*=5Bclass=5D=2Ewidth276 =7B
+	width: 276px =21important;
+=7D
+*=5Bclass=5D=2Ewidth280 =7B
+	width: 280px =21important;
+=7D
+*=5Bclass=5D=2Ewidth296 =7B
+	width: 296px =21important;
+=7D
+*=5Bclass=5D=2Ewidth298 =7B
+	width: 298px =21important;
+=7D
+*=5Bclass=5D=2Ewidth300 =7B
+	width: 300px =21important;
+=7D
+*=5Bclass=5D=2Ewidth308 =7B
+	width: 308px =21important;
+=7D
+*=5Bclass=5D=2Ewidth318 =7B
+	width: 318px =21important;
+=7D
+*=5Bclass=5D=2Ewidth320 =7B
+	width: 320px =21important;
+=7D
+*=5Bclass=5D=2Ewidth328 =7B
+	width: 328px =21important;
+=7D
+*=5Bclass=5D=2Ewidth348 =7B
+	width: 348px =21important;
+=7D
+*=5Bclass=5D=2Ewidth353 =7B
+	width: 353px =21important;
+=7D
+*=5Bclass=5D=2Ewidth354 =7B
+	width: 354px =21important;
+=7D
+*=5Bclass=5D=2Ewidth369 =7B
+	width: 369px =21important;
+=7D
+
+*=5Bclass=5D=2Ewidth374 =7B
+	width: 374px =21important;
+=7D
+*=5Bclass=5D=2Ewidth394 =7B
+	width: 394px =21important;
+=7D
+*=5Bclass=5D=2Ewidth414 =7B
+	width: 414px =21important;
+=7D
+/* HEIGHTS */
+*=5Bclass=5D=2Eheight5 =7B
+	height: 5px =21important;
+=7D
+*=5Bclass=5D=2Eheight6 =7B
+	height: 6px =21important;
+=7D
+*=5Bclass=5D=2Eheight57 =7B
+	height: 57px =21important;
+=7D
+*=5Bclass=5D=2Eheight67 =7B
+	height: 67px =21important;
+=7D
+*=5Bclass=5D=2Eheight74 =7B
+	height: 74px =21important;
+=7D
+*=5Bclass=5D=2Eheight63 =7B
+	height: 63px =21important;
+=7D
+*=5Bclass=5D=2Eheight121 =7B
+	height: 121px =21important;
+=7D
+*=5Bclass=5D=2Eheight239 =7B
+	height: 239px =21important;
+=7D
+*=5Bclass=5D=2Eheight2 =7B
+	height: 2px =21important;
+=7D
+*=5Bclass=5D=2Eheight8 =7B
+	height: 8px =21important;
+=7D
+*=5Bclass=5D=2Eheight10 =7B
+	height: 10px =21important;
+=7D
+*=5Bclass=5D=2Eheight15 =7B
+	height: 15px =21important;
+=7D
+*=5Bclass=5D=2Eheight20 =7B
+	height: 20px =21important;
+=7D
+*=5Bclass=5D=2Eheight22 =7B
+	height: 22px =21important;
+=7D
+*=5Bclass=5D=2Eheight25 =7B
+	height: 25px =21important;
+=7D
+*=5Bclass=5D=2Eheight38 =7B
+	height: 38px =21important;
+=7D
+*=5Bclass=5D=2Eheight41 =7B
+	height: 41px =21important;
+=7D
+*=5Bclass=5D=2Eheight43 =7B
+	height: 43px =21important;
+=7D
+*=5Bclass=5D=2Eheight52 =7B
+	height: 52px =21important;
+=7D
+*=5Bclass=5D=2Eheight61 =7B
+	height: 61px =21important;
+=7D
+*=5Bclass=5D=2Eheight81 =7B
+	height: 81px =21important;
+=7D
+*=5Bclass=5D=2Eheight146 =7B
+	height: 146px =21important;
+=7D
+*=5Bclass=5D=2Eheight129 =7B
+	height: 129px =21important;
+=7D
+*=5Bclass=5D=2Eheight131 =7B
+	height: 131px =21important;
+=7D
+*=5Bclass=5D=2Eheight157 =7B
+	height: 157px =21important;
+=7D
+*=5Bclass=5D=2Eheight181 =7B
+	height: 181px =21important;
+=7D
+*=5Bclass=5D=2Eheight250 =7B
+	height: 250px =21important;
+=7D
+*=5Bclass=5D=2Eheight297 =7B
+	height: 297px =21important;
+=7D
+/* MARGINS */
+		=09
+*=5Bclass=5D=2Ecenter =7B
+	text-align: center =21important;
+=7D
+*=5Bclass=5D=2Ecentercenter =7B
+	margin-left: auto=21important;
+	margin-right: auto =21important;
+	padding: 0 =21important;
+=7D
+*=5Bclass=5D=2Ebottom10 =7B
+	margin-bottom: 10px =21important;
+=7D
+*=5Bclass=5D=2Ebottom15 =7B
+	margin-bottom: 15px =21important;
+=7D
+*=5Bclass=5D=2ELR10 =7B
+	padding-left: 10px =21important;
+	padding-right: 10px =21important;
+=7D
+*=5Bclass=5D=2Eleftpad6 =7B
+	padding-left: 6px =21important;
+=7D
+*=5Bclass=5D=2Eleftpad10 =7B
+	padding-left: 10px =21important;
+=7D
+*=5Bclass=5D=2Eleftpad20 =7B
+	padding-left: 20px =21important;
+=7D
+*=5Bclass=5D=2Eleftpad0 =7B
+	padding-left: 0px =21important;
+=7D
+*=5Bclass=5D=2Erightpad10 =7B
+	padding-right: 10px =21important;
+=7D
+*=5Bclass=5D=2Erightpad6 =7B
+	padding-right: 6px =21important;
+=7D
+*=5Bclass=5D=2Erightpad0 =7B
+	padding-right: 0px =21important;
+=7D
+/* POSTITIONING */
+		=09
+*=5Bclass=5D=2Elefty =7B
+	position: relative =21important;
+	left: -320px =21important;
+=7D
+/* FONTS */
+*=5Bclass=5D=2Efont15 =7B
+	font-size: 15px =21important;
+=7D
+*=5Bclass=5D=2Efont17 =7B
+	font-size: 17px =21important;
+=7D
+*=5Bclass=5D=2Efont18 =7B
+	font-size: 18px =21important;
+=7D
+*=5Bclass=5D=2EFS13 =7B
+	font-size: 13px =21important;
+=7D
+*=5Bclass=5D=2EFS14 =7B
+	font-size: 14px =21important;
+=7D
+*=5Bclass=5D=2EFS18 =7B
+	font-size: 18px =21important;
+=7D
+*=5Bclass=5D=2EFS21 =7B
+	font-size: 21px =21important;
+=7D
+/* LINE HEIGHTS */
+
+*=5Bclass=5D=2Elh17 =7B
+	line-height: 17px =21important;
+=7D
+*=5Bclass=5D=2Elh18 =7B
+	line-height: 18px =21important;
+=7D
+*=5Bclass=5D=2Elh20 =7B
+	line-height: 20px =21important;
+=7D
+*=5Bclass=5D=2ELH23 =7B
+	line-height: 23px =21important;
+=7D
+*=5Bclass=5D=2Enorm =7B
+	font-weight: normal =21important;
+=7D
+=7D</style>
+</head>
+<body style=3D=22margin:0; padding:0;=22>
+
+<=21-- PREHEADER -->
+
+<table width=3D=22100%=22 border=3D=220=22 align=3D=22center=22 cellpadding=
+=3D=220=22 cellspacing=3D=220=22 bgcolor=3D=22=23e6e7e8=22>
+  <tr>
+    <td bgcolor=3D=22=23e6e7e8=22 align=3D=22center=22 class=3D=22width414=
+=22><table width=3D=22510=22 cellpadding=3D=220=22 cellspacing=3D=220=22 bo=
+rder=3D=220=22 class=3D=22width414=22 bgcolor=3D=22=23e6e7e8=22>
+        <tr>
+          <td align=3D=22center=22><=21-- Preheader -->
+           =20
+            <table align=3D=22center=22 width=3D=22510=22 border=3D=220=22 =
+bgcolor=3D=22=2300a6ca=22 class=3D=22width414=22>
+              <tr>
+                <td align=3D=22center=22><=21-- margin -->
+                 =20
+                  <table border=3D=220=22 cellpadding=3D=220=22 cellspacing=
+=3D=220=22>
+                    <tr>
+                      <td height=3D=225=22 style=3D=22font-size:5px; line-h=
+eight:5px;=22><img src=3D=22https://static=2Ecdn=2Eresponsys=2Enet/i5/respo=
+nsysimages/tui/contentlibrary/promo_templates/newsletter_new/images/sp=2Epn=
+g=22 width=3D=221=22 height=3D=225=22 alt=3D=22=22 border=3D=220=22 style=
+=3D=22display:block;=22/></td>
+                    </tr>
+                  </table>
+                 =20
+                  <=21--/margin -->
+                 =20
+                 =20
+                 =20
+<div style=3D=22font-family:Arial, Helvetica, sans-serif; font-size:9px; li=
+ne-height:11px; color:=23eeeeee; font-weight:normal;=22>Your credit score m=
+ay have changed since the last time you saw it=2E <a href=3D=22https://e-tu=
+i=2Etransunion=2Ecom/pub/cc?_ri_=3DX0Gzc2X%3DYQpglLjHJlYQGiWzdzbN0gzdzb6sIF=
+Ezflnk3CpFsITKyWB8I3lAzgdN2MJpHch27nzbG6im7dzd4TTJzg38YmfVXtpKX%3DSTRRUCY&_=
+ei_=3DEuLMvqHvzxDQfjPAx6rKbseDzid1MI85u2RrHIglfEmBJpHD6_95JS2Zq3V1efWSCj7yj=
+Z8N__bTjMJBeSE0C-QiJ-4OXBEr92k1s9Q6kLFiTlcWKNSZe-ooOS0xRLy3QaHVFyTbFiFFIUkl=
+emMEr7DSXWA=2E=22 style=3D=22color:=23ffffff=22 rilt=3D=22PreHeader_Link=22=
+>Get your latest score=21</a></div>
+                 =20
+                  <div style=3D=22font-family:Arial, Helvetica, sans-serif;=
+ font-size:9px; line-height:11px; color:=23eeeeee; font-weight:normal;=22>H=
+aving trouble viewing this email? &nbsp;<a href=3D=22https://e-tui=2Etransu=
+nion=2Ecom/pub/cc?_ri_=3DX0Gzc2X%3DYQpglLjHJlYQGiWzdzbN0gzdzb6sIFEzflnk3CpF=
+sITKyWB8I3lAzgdN2MJpHch27nzbG6im7dzd4TTJzg38YmfVXtpKX%3DSTRRWTY&_ei_=3DEmTU=
+Owa1ULmLxlBKi7CTndD6OOSY-5ZBxyShxTjKqLDTuSylrBic34N7B4QRxfo0zgLPPlANelgr-aF=
+B3tktincpWeEnIXQ5cGfJEoDigv2mQ4rpZhV2iATQhm7JCeDpp6pvOINWA8qOOfWsooxeCaRJav=
+KbgD463IyoaVPhgsrnf2_kmmkcJhypnBAjBsRprM79wdGc7Pf-0LbuvfTYpqMu1k1t8bz5vVR5T=
+Tm9Za2zp_vPevkSMQ0xk9sYfaryy5P3NLIaUWc6YWM8tDwciVX-2NoYVYMFcMuqBpXdKAN9EC5H=
+iLG84r9D7PAj=2E=22 style=3D=22color:=23ffffff; font-weight:normal; text-dec=
+oration:underline;=22>Open in your browser</a>=2E</div>
+                 =20
+                  <=21-- margin -->
+                 =20
+                  <table border=3D=220=22 cellpadding=3D=220=22 cellspacing=
+=3D=220=22>
+                    <tr>
+                      <td height=3D=225=22 style=3D=22font-size:5px; line-h=
+eight:5px;=22><img src=3D=22https://static=2Ecdn=2Eresponsys=2Enet/i5/respo=
+nsysimages/tui/contentlibrary/promo_templates/newsletter_new/images/sp=2Epn=
+g=22 width=3D=221=22 height=3D=225=22 alt=3D=22=22 border=3D=220=22 style=
+=3D=22display:block;=22/></td>
+                    </tr>
+                  </table>
+                 =20
+                  <=21--/margin --></td>
+              </tr>
+            </table>
+           =20
+            <=21-- /Preheader -->=20
+           =20
+            <=21-- Header logo -->
+           =20
+            <table width=3D=22510=22 cellpadding=3D=220=22 cellspacing=3D=
+=220=22 border=3D=220=22 class=3D=22width414=22 bgcolor=3D=22=23FFFFFF=22>
+              <tr>
+                <td width=3D=22185=22 valign=3D=22bottom=22 class=3D=22widt=
+h207=22><a href=3D=22https://e-tui=2Etransunion=2Ecom/pub/cc?_ri_=3DX0Gzc2X=
+%3DYQpglLjHJlYQGiWzdzbN0gzdzb6sIFEzflnk3CpFsITKyWB8I3lAzgdN2MJpHch27nzbG6im=
+7dzd4TTJzg38YmfVXtpKX%3DSTRRWWY&_ei_=3DEuLMvqHvzxDQfjPAx6rKbseDzid1MI85u2Rr=
+HIglfEmBJpHD6_95JS2Zq3V1efWSCj7yjZ8N__bTjMJBeSE0C-QqWsZVSKtDUJQT4d0ebJ4fugu=
+pVgmC-rvuj6hmhBvu=2E=22><img src=3D=22https://static=2Ecdn=2Eresponsys=2Ene=
+t/i5/responsysimages/tui/contentlibrary/promo_templates/newsletter_new/imag=
+es/logo=2Ejpg=22 width=3D=22185=22 height=3D=2265=22 border=3D=220=22 alt=
+=3D=22TransUnion&reg;=22 style=3D=22display:block;=22 /></a></td>
+                <td width=3D=22305=22 align=3D=22right=22 valign=3D=22botto=
+m=22 style=3D=22padding-right:20px;=22 class=3D=22width197 rightpad10=22 ><=
+div style=3D=22font-family:Arial, Helvetica, sans-serif; font-size:14px; li=
+ne-height:16px; color:=23000000; font-weight:bold;=22>October 2017</div>
+                 =20
+                  <=21-- margin -->
+                 =20
+                  <table border=3D=220=22 cellpadding=3D=220=22 cellspacing=
+=3D=220=22>
+                    <tr>
+                      <td height=3D=2210=22 style=3D=22font-size:10px; line=
+-height:10px;=22><img src=3D=22https://static=2Ecdn=2Eresponsys=2Enet/i5/re=
+sponsysimages/tui/contentlibrary/promo_templates/newsletter_new/images/sp=
+=2Epng=22 width=3D=221=22 height=3D=2210=22 alt=3D=22=22 border=3D=220=22 s=
+tyle=3D=22display:block;=22/></td>
+                    </tr>
+                  </table>
+                 =20
+                  <=21--/margin --></td>
+              </tr>
+            </table>
+            <table width=3D=22510=22 cellpadding=3D=220=22 cellspacing=3D=
+=220=22 border=3D=220=22 class=3D=22width414=22>
+              <tr>
+                <td height=3D=223=22 style=3D=22font-size:3px; line-height:=
+3px;=22 bgcolor=3D=22=23fcd800=22><img src=3D=22https://static=2Ecdn=2Eresp=
+onsys=2Enet/i5/responsysimages/tui/contentlibrary/promo_templates/newslette=
+r_new/images/sp=2Epng=22 width=3D=221=22 height=3D=223=22 alt=3D=22=22 bord=
+er=3D=220=22 style=3D=22display:block;=22/></td>
+              </tr>
+            </table>
+           =20
+            <=21-- /Header logo -->=20
+            <=21-- margin -->
+           =20
+            <table border=3D=220=22 cellpadding=3D=220=22 cellspacing=3D=22=
+0=22>
+              <tr>
+                <td height=3D=2212=22 style=3D=22font-size:12px; line-heigh=
+t:12px;=22><img src=3D=22https://static=2Ecdn=2Eresponsys=2Enet/i5/responsy=
+simages/tui/contentlibrary/promo_templates/newsletter_new/images/sp=2Epng=
+=22 width=3D=221=22 height=3D=2212=22 alt=3D=22=22 border=3D=220=22 style=
+=3D=22display:block;=22/></td>
+              </tr>
+            </table>
+           =20
+            <=21--/margin -->=20
+          =20
+  <p>
+  <meta charset=3D=22utf-8=22>
+  <title>Untitled Document</title>
+  <=21-- Mod 5-->      </meta>
+  </p>
+  <table class=3D=22width414=22 cellspacing=3D=220=22 cellpadding=3D=220=22=
+ border=3D=220=22 width=3D=22510=22>
+   <tbody>
+    <tr>
+     <td style=3D=22line-height:1px; font-size:0px;=22 class=3D=22width30=
+=22 width=3D=2225=22><img alt=3D=22=22 style=3D=22display:block;=22 src=3D=
+=22https://static=2Ecdn=2Eresponsys=2Enet/i5/responsysimages/tui/contentlib=
+rary/2017/2017_10/20171024_october_nl/images/sp=2Epng=22 height=3D=221=22 b=
+order=3D=220=22 width=3D=221=22 /></td>
+     <td class=3D=22width348=22 valign=3D=22top=22 bgcolor=3D=22=23FFFFFF=
+=22 align=3D=22center=22 width=3D=22459=22><a href=3D=22https://e-tui=2Etra=
+nsunion=2Ecom/pub/cc?_ri_=3DX0Gzc2X%3DYQpglLjHJlYQGiWzdzbN0gzdzb6sIFEzflnk3=
+CpFsITKyWB8I3lAzgdN2MJpHch27nzbG6im7dzd4TTJzg38YmfVXtpKX%3DSTRRWAY&_ei_=3DE=
+uLMvqHvzxDQfjPAx6rKbseDzid1MI85u2RrHIglfEmBJpHD6_95JS2Zq3V1efWSCj7yjZ8N__bT=
+jMJBeSE0C-QqWsZVSKtDUJQT4d0ebJ4fugupVgmC-rvuj6hmhBvu=2E=22><img alt=3D=22=
+=22 style=3D=22display:block;=22 class=3D=22width348 height131=22 src=3D=22=
+https://static=2Ecdn=2Eresponsys=2Enet/i5/responsysimages/tui/contentlibrar=
+y/2017/2017_10/20171024_october_nl/images/image_Article_1_Desktop=2Ejpg=22 =
+height=3D=22173=22 border=3D=220=22 width=3D=22459=22 /></a>
+     <table style=3D=22padding-left:20px; padding-right:20px;=22 class=3D=
+=22width328=22 cellspacing=3D=220=22 cellpadding=3D=220=22 bgcolor=3D=22=23=
+FFFFFF=22 align=3D=22center=22 border=3D=220=22 width=3D=22439=22>
+      <tbody>
+       <tr>
+        <td><=21-- margin -->
+        <table cellspacing=3D=220=22 cellpadding=3D=220=22 border=3D=220=22>
+         <tbody>
+          <tr>
+           <td style=3D=22font-size:10px; line-height:10px;=22 class=3D=22h=
+eight22=22 height=3D=2210=22><img alt=3D=22=22 style=3D=22display:block;=22=
+ class=3D=22height22=22 src=3D=22https://static=2Ecdn=2Eresponsys=2Enet/i5/=
+responsysimages/tui/contentlibrary/2017/2017_10/20171024_october_nl/images/=
+sp=2Epng=22 height=3D=2210=22 border=3D=220=22 width=3D=221=22 /></td>
+          </tr>
+         </tbody>
+        </table>
+        <=21--/margin -->
+        <div style=3D=22font-family:Arial, Helvetica, sans-serif; font-size=
+:15px; line-height:17px; color:=2300a6ca; font-weight:bold;=22 class=3D=22f=
+ont17 lh18=22>Before creating a password, use this checklist=2E</div>
+        <=21-- margin -->
+        <table cellspacing=3D=220=22 cellpadding=3D=220=22 border=3D=220=22>
+         <tbody>
+          <tr>
+           <td style=3D=22font-size:10px; line-height:10px;=22 class=3D=22h=
+eight22=22 height=3D=2210=22><img alt=3D=22=22 style=3D=22display:block;=22=
+ class=3D=22height22=22 src=3D=22https://static=2Ecdn=2Eresponsys=2Enet/i5/=
+responsysimages/tui/contentlibrary/2017/2017_10/20171024_october_nl/images/=
+sp=2Epng=22 height=3D=2210=22 border=3D=220=22 width=3D=221=22 /></td>
+          </tr>
+         </tbody>
+        </table>
+        <=21--/margin -->
+        <div style=3D=22font-family:Arial, Helvetica, sans-serif; font-size=
+:13px; line-height:15px; color:=23000000; font-weight:normal;=22 class=3D=
+=22font17 lh18=22>Here are 5 key questions to ask yourself before creating =
+a password online=2E</div>
+        <=21-- margin -->
+        <table cellspacing=3D=220=22 cellpadding=3D=220=22 border=3D=220=22>
+         <tbody>
+          <tr>
+           <td style=3D=22font-size:15px; line-height:15px;=22 class=3D=22h=
+eight25=22 height=3D=2215=22><img alt=3D=22=22 style=3D=22display:block;=22=
+ class=3D=22height25=22 src=3D=22https://static=2Ecdn=2Eresponsys=2Enet/i5/=
+responsysimages/tui/contentlibrary/2017/2017_10/20171024_october_nl/images/=
+sp=2Epng=22 height=3D=2215=22 border=3D=220=22 width=3D=221=22 /></td>
+          </tr>
+         </tbody>
+        </table>
+        <=21--/margin -->                                                  =
+  <a href=3D=22https://e-tui=2Etransunion=2Ecom/pub/cc?_ri_=3DX0Gzc2X%3DYQp=
+glLjHJlYQGiWzdzbN0gzdzb6sIFEzflnk3CpFsITKyWB8I3lAzgdN2MJpHch27nzbG6im7dzd4T=
+TJzg38YmfVXtpKX%3DSTRRWCY&_ei_=3DEuLMvqHvzxDQfjPAx6rKbseDzid1MI85u2RrHIglfE=
+mBJpHD6_95JS2Zq3V1efWSCj7yjZ8N__bTjMJBeSE0C-QqWsZVSKtDUJQT4d0ebJ4fugupVgmC-=
+rvuj6hmhBvu=2E=22><img alt=3D=22READ MORE=22 style=3D=22display:block;=22 c=
+lass=3D=22centercenter=22 src=3D=22https://static=2Ecdn=2Eresponsys=2Enet/i=
+5/responsysimages/tui/contentlibrary/2017/2017_10/20171024_october_nl/image=
+s/a1_btn_TUI_032216=2Ejpg=22 height=3D=2245=22 border=3D=220=22 width=3D=22=
+214=22 /></a></td>
+       </tr>
+      </tbody>
+     </table>
+     <=21-- margin -->
+     <table cellspacing=3D=220=22 cellpadding=3D=220=22 border=3D=220=22>
+      <tbody>
+       <tr>
+        <td style=3D=22font-size:15px; line-height:15px;=22 class=3D=22heig=
+ht25=22 height=3D=2215=22><img alt=3D=22=22 style=3D=22display:block;=22 cl=
+ass=3D=22height25=22 src=3D=22https://static=2Ecdn=2Eresponsys=2Enet/i5/res=
+ponsysimages/tui/contentlibrary/2017/2017_10/20171024_october_nl/images/sp=
+=2Epng=22 height=3D=2215=22 border=3D=220=22 width=3D=221=22 /></td>
+       </tr>
+      </tbody>
+     </table>
+     <=21--/margin --></td>
+     <td valign=3D=22top=22 bgcolor=3D=22=23a1a1a2=22 width=3D=226=22>
+     <table cellspacing=3D=220=22 cellpadding=3D=220=22 border=3D=220=22>
+      <tbody>
+       <tr>
+        <td bgcolor=3D=22=23e6e7e8=22 width=3D=226=22><img alt=3D=22=22 sty=
+le=3D=22display:block;=22 src=3D=22https://static=2Ecdn=2Eresponsys=2Enet/i=
+5/responsysimages/tui/contentlibrary/2017/2017_10/20171024_october_nl/image=
+s/sp=2Epng=22 height=3D=226=22 border=3D=220=22 width=3D=221=22 /></td>
+       </tr>
+      </tbody>
+     </table>
+     </td>
+     <td style=3D=22line-height:1px; font-size:0px;=22 class=3D=22width30=
+=22 width=3D=2220=22><img alt=3D=22=22 style=3D=22display:block;=22 class=
+=3D=22width30=22 src=3D=22https://static=2Ecdn=2Eresponsys=2Enet/i5/respons=
+ysimages/tui/contentlibrary/2017/2017_10/20171024_october_nl/images/sp=2Epn=
+g=22 height=3D=221=22 border=3D=220=22 width=3D=221=22 /></td>
+    </tr>
+    <tr>
+     <td style=3D=22line-height:6px; font-size:6px;=22 class=3D=22width30=
+=22 height=3D=226=22><img alt=3D=22=22 style=3D=22display:block;=22 src=3D=
+=22https://static=2Ecdn=2Eresponsys=2Enet/i5/responsysimages/tui/contentlib=
+rary/2017/2017_10/20171024_october_nl/images/sp=2Epng=22 height=3D=226=22 b=
+order=3D=220=22 width=3D=221=22 /></td>
+     <td class=3D=22width348=22 valign=3D=22top=22 bgcolor=3D=22=23a1a1a2=
+=22 align=3D=22left=22 height=3D=226=22>
+     <table cellspacing=3D=220=22 cellpadding=3D=220=22 border=3D=220=22>
+      <tbody>
+       <tr>
+        <td style=3D=22line-height:1px; font-size:6px;=22 bgcolor=3D=22=23e=
+6e7e8=22 height=3D=226=22 width=3D=226=22><img alt=3D=22=22 style=3D=22disp=
+lay:block;=22 src=3D=22https://static=2Ecdn=2Eresponsys=2Enet/i5/responsysi=
+mages/tui/contentlibrary/2017/2017_10/20171024_october_nl/images/sp=2Epng=
+=22 height=3D=226=22 border=3D=220=22 width=3D=221=22 /></td>
+       </tr>
+      </tbody>
+     </table>
+     </td>
+     <td style=3D=22line-height:6px; font-size:6px;=22 valign=3D=22top=22 b=
+gcolor=3D=22=23a1a1a2=22 height=3D=226=22><img alt=3D=22=22 style=3D=22disp=
+lay:block;=22 src=3D=22https://static=2Ecdn=2Eresponsys=2Enet/i5/responsysi=
+mages/tui/contentlibrary/2017/2017_10/20171024_october_nl/images/sp=2Epng=
+=22 height=3D=221=22 border=3D=220=22 width=3D=221=22 /></td>
+     <td style=3D=22line-height:1px; font-size:6px;=22 class=3D=22width30=
+=22 height=3D=226=22><img alt=3D=22=22 style=3D=22display:block;=22 src=3D=
+=22https://static=2Ecdn=2Eresponsys=2Enet/i5/responsysimages/tui/contentlib=
+rary/2017/2017_10/20171024_october_nl/images/sp=2Epng=22 height=3D=221=22 b=
+order=3D=220=22 width=3D=221=22 /></td>
+    </tr>
+   </tbody>
+  </table>
+  <=21--=20
+            <table width=3D=22510=22 cellpadding=3D=220=22 cellspacing=3D=
+=220=22 border=3D=220=22 class=3D=22width414=22>
+              <tr>
+                <td class=3D=22width414=22 style=3D=22font-size:6px; line-h=
+eight:6px;=22><img src=3D=22images/b1_btm_TUI_032216=2Ejpg=22 width=3D=2251=
+0=22 height=3D=226=22 border=3D=220=22 alt=3D=22=22 style=3D=22display:bloc=
+k;=22 class=3D=22hide=22 />
+                 =20
+                  </td>
+              </tr>
+            </table>
+           =20
+            <=21--/
+           =20
+            <=21-- /Mod 5-->
+  <p></p>
+           =20
+            <=21-- margin -->
+           =20
+            <table border=3D=220=22 cellpadding=3D=220=22 cellspacing=3D=22=
+0=22>
+              <tr>
+                <td height=3D=2212=22 style=3D=22font-size:12px; line-heigh=
+t:12px;=22><img src=3D=22https://static=2Ecdn=2Eresponsys=2Enet/i5/responsy=
+simages/tui/contentlibrary/promo_templates/newsletter_new/images/sp=2Epng=
+=22 width=3D=221=22 height=3D=2212=22 alt=3D=22=22 border=3D=220=22 style=
+=3D=22display:block;=22/></td>
+              </tr>
+            </table>
+           =20
+            <=21--/margin -->=20
+           =20
+           =20
+  <p>
+  <meta charset=3D=22utf-8=22>
+  <title>Untitled Document</title>
+  <=21-- Mod 5-->         </meta>
+  </p>
+  <table class=3D=22width414=22 cellspacing=3D=220=22 cellpadding=3D=220=22=
+ border=3D=220=22 width=3D=22510=22>
+   <tbody>
+    <tr>
+     <td class=3D=22width30=22 style=3D=22line-height:1px; font-size:0px;=
+=22 width=3D=2225=22><img style=3D=22display:block;=22 alt=3D=22=22 src=3D=
+=22https://static=2Ecdn=2Eresponsys=2Enet/i5/responsysimages/tui/contentlib=
+rary/2017/2017_10/20171024_october_nl/images/sp=2Epng=22 height=3D=221=22 b=
+order=3D=220=22 width=3D=221=22 /></td>
+     <td class=3D=22width348=22 valign=3D=22top=22 bgcolor=3D=22=23FFFFFF=
+=22 align=3D=22center=22 width=3D=22459=22><a href=3D=22https://e-tui=2Etra=
+nsunion=2Ecom/pub/cc?_ri_=3DX0Gzc2X%3DYQpglLjHJlYQGiWzdzbN0gzdzb6sIFEzflnk3=
+CpFsITKyWB8I3lAzgdN2MJpHch27nzbG6im7dzd4TTJzg38YmfVXtpKX%3DSTRRYCY&_ei_=3DE=
+olaGGF4SNMvxFF7KucKuWPhoVSoHc2kDw6aaKjrUDaUMQ9rsDPtRVHvIlPYk1S2rTGvHEER_DqK=
+veWd2uCtyDA=2E=22><img class=3D=22width348 height131=22 style=3D=22display:=
+block;=22 alt=3D=22=22 src=3D=22https://static=2Ecdn=2Eresponsys=2Enet/i5/r=
+esponsysimages/tui/contentlibrary/2017/2017_10/20171024_october_nl/images/T=
+U_SignsIdentityFraud_Header-01-2=2Ejpg=22 height=3D=22173=22 border=3D=220=
+=22 width=3D=22459=22 /></a>
+     <table class=3D=22width328=22 style=3D=22padding-left:20px;=22 cellspa=
+cing=3D=220=22 cellpadding=3D=220=22 bgcolor=3D=22=23FFFFFF=22 align=3D=22c=
+enter=22 border=3D=220=22 width=3D=22439=22>
+      <tbody>
+       <tr>
+        <td><=21-- margin -->
+        <table cellspacing=3D=220=22 cellpadding=3D=220=22 border=3D=220=22>
+         <tbody>
+          <tr>
+           <td class=3D=22height22=22 style=3D=22font-size:10px; line-heigh=
+t:10px;=22 height=3D=2210=22><img class=3D=22height22=22 style=3D=22display=
+:block;=22 alt=3D=22=22 src=3D=22https://static=2Ecdn=2Eresponsys=2Enet/i5/=
+responsysimages/tui/contentlibrary/2017/2017_10/20171024_october_nl/images/=
+sp=2Epng=22 height=3D=2210=22 border=3D=220=22 width=3D=221=22 /></td>
+          </tr>
+         </tbody>
+        </table>
+        <=21--/margin -->
+        <div class=3D=22font17 lh18=22 style=3D=22font-family:Arial, Helvet=
+ica, sans-serif; font-size:15px; line-height:17px; color:=2300a6ca; font-we=
+ight:bold;=22>Identity fraud can be a hard situation to navigate=2E</div>
+        <=21-- margin -->
+        <table cellspacing=3D=220=22 cellpadding=3D=220=22 border=3D=220=22>
+         <tbody>
+          <tr>
+           <td class=3D=22height22=22 style=3D=22font-size:10px; line-heigh=
+t:10px;=22 height=3D=2210=22><img class=3D=22height22=22 style=3D=22display=
+:block;=22 alt=3D=22=22 src=3D=22https://static=2Ecdn=2Eresponsys=2Enet/i5/=
+responsysimages/tui/contentlibrary/2017/2017_10/20171024_october_nl/images/=
+sp=2Epng=22 height=3D=2210=22 border=3D=220=22 width=3D=221=22 /></td>
+          </tr>
+         </tbody>
+        </table>
+        <=21--/margin -->
+        <div class=3D=22font17 lh18=22 style=3D=22font-family:Arial, Helvet=
+ica, sans-serif; font-size:13px; line-height:15px; color:=23000000; font-we=
+ight:normal;=22>Take a look at signs to keep an eye out for and tips on how=
+ to stay as safe as you can=2E</div>
+        <=21-- margin -->
+        <table cellspacing=3D=220=22 cellpadding=3D=220=22 border=3D=220=22>
+         <tbody>
+          <tr>
+           <td class=3D=22height25=22 style=3D=22font-size:15px; line-heigh=
+t:15px;=22 height=3D=2215=22><img class=3D=22height25=22 style=3D=22display=
+:block;=22 alt=3D=22=22 src=3D=22https://static=2Ecdn=2Eresponsys=2Enet/i5/=
+responsysimages/tui/contentlibrary/2017/2017_10/20171024_october_nl/images/=
+sp=2Epng=22 height=3D=2215=22 border=3D=220=22 width=3D=221=22 /></td>
+          </tr>
+         </tbody>
+        </table>
+        <=21--/margin -->                                                  =
+  <a href=3D=22https://e-tui=2Etransunion=2Ecom/pub/cc?_ri_=3DX0Gzc2X%3DYQp=
+glLjHJlYQGiWzdzbN0gzdzb6sIFEzflnk3CpFsITKyWB8I3lAzgdN2MJpHch27nzbG6im7dzd4T=
+TJzg38YmfVXtpKX%3DSTRRYCY&_ei_=3DEolaGGF4SNMvxFF7KucKuWPhoVSoHc2kDw6aaKjrUD=
+aUMQ9rsDPtRVHvIlPYk1S2rTGvHEER_DqKveWd2uCtyDA=2E=22><img class=3D=22centerc=
+enter=22 style=3D=22display:block;=22 alt=3D=22READ MORE=22 src=3D=22https:=
+//static=2Ecdn=2Eresponsys=2Enet/i5/responsysimages/tui/contentlibrary/2017=
+/2017_10/20171024_october_nl/images/a1_btn_TUI_032216=2Ejpg=22 height=3D=22=
+45=22 border=3D=220=22 width=3D=22214=22 /></a></td>
+       </tr>
+      </tbody>
+     </table>
+     <=21-- margin -->
+     <table cellspacing=3D=220=22 cellpadding=3D=220=22 border=3D=220=22>
+      <tbody>
+       <tr>
+        <td class=3D=22height25=22 style=3D=22font-size:15px; line-height:1=
+5px;=22 height=3D=2215=22><img class=3D=22height25=22 style=3D=22display:bl=
+ock;=22 alt=3D=22=22 src=3D=22https://static=2Ecdn=2Eresponsys=2Enet/i5/res=
+ponsysimages/tui/contentlibrary/2017/2017_10/20171024_october_nl/images/sp=
+=2Epng=22 height=3D=2215=22 border=3D=220=22 width=3D=221=22 /></td>
+       </tr>
+      </tbody>
+     </table>
+     <=21--/margin --></td>
+     <td valign=3D=22top=22 bgcolor=3D=22=23a1a1a2=22 width=3D=226=22>
+     <table cellspacing=3D=220=22 cellpadding=3D=220=22 border=3D=220=22>
+      <tbody>
+       <tr>
+        <td bgcolor=3D=22=23e6e7e8=22 width=3D=226=22><img style=3D=22displ=
+ay:block;=22 alt=3D=22=22 src=3D=22https://static=2Ecdn=2Eresponsys=2Enet/i=
+5/responsysimages/tui/contentlibrary/2017/2017_10/20171024_october_nl/image=
+s/sp=2Epng=22 height=3D=226=22 border=3D=220=22 width=3D=221=22 /></td>
+       </tr>
+      </tbody>
+     </table>
+     </td>
+     <td class=3D=22width30=22 style=3D=22line-height:1px; font-size:0px;=
+=22 width=3D=2220=22><img class=3D=22width30=22 style=3D=22display:block;=
+=22 alt=3D=22=22 src=3D=22https://static=2Ecdn=2Eresponsys=2Enet/i5/respons=
+ysimages/tui/contentlibrary/2017/2017_10/20171024_october_nl/images/sp=2Epn=
+g=22 height=3D=221=22 border=3D=220=22 width=3D=221=22 /></td>
+    </tr>
+    <tr>
+     <td class=3D=22width30=22 style=3D=22line-height:6px; font-size:6px;=
+=22 height=3D=226=22><img style=3D=22display:block;=22 alt=3D=22=22 src=3D=
+=22https://static=2Ecdn=2Eresponsys=2Enet/i5/responsysimages/tui/contentlib=
+rary/2017/2017_10/20171024_october_nl/images/sp=2Epng=22 height=3D=226=22 b=
+order=3D=220=22 width=3D=221=22 /></td>
+     <td class=3D=22width348=22 valign=3D=22top=22 bgcolor=3D=22=23a1a1a2=
+=22 align=3D=22left=22 height=3D=226=22>
+     <table cellspacing=3D=220=22 cellpadding=3D=220=22 border=3D=220=22>
+      <tbody>
+       <tr>
+        <td style=3D=22line-height:1px; font-size:6px;=22 bgcolor=3D=22=23e=
+6e7e8=22 height=3D=226=22 width=3D=226=22><img style=3D=22display:block;=22=
+ alt=3D=22=22 src=3D=22https://static=2Ecdn=2Eresponsys=2Enet/i5/responsysi=
+mages/tui/contentlibrary/2017/2017_10/20171024_october_nl/images/sp=2Epng=
+=22 height=3D=226=22 border=3D=220=22 width=3D=221=22 /></td>
+       </tr>
+      </tbody>
+     </table>
+     </td>
+     <td style=3D=22line-height:6px; font-size:6px;=22 valign=3D=22top=22 b=
+gcolor=3D=22=23a1a1a2=22 height=3D=226=22><img style=3D=22display:block;=22=
+ alt=3D=22=22 src=3D=22https://static=2Ecdn=2Eresponsys=2Enet/i5/responsysi=
+mages/tui/contentlibrary/2017/2017_10/20171024_october_nl/images/sp=2Epng=
+=22 height=3D=221=22 border=3D=220=22 width=3D=221=22 /></td>
+     <td class=3D=22width30=22 style=3D=22line-height:1px; font-size:6px;=
+=22 height=3D=226=22><img style=3D=22display:block;=22 alt=3D=22=22 src=3D=
+=22https://static=2Ecdn=2Eresponsys=2Enet/i5/responsysimages/tui/contentlib=
+rary/2017/2017_10/20171024_october_nl/images/sp=2Epng=22 height=3D=221=22 b=
+order=3D=220=22 width=3D=221=22 /></td>
+    </tr>
+   </tbody>
+  </table>
+  <=21--=20
+            <table width=3D=22510=22 cellpadding=3D=220=22 cellspacing=3D=
+=220=22 border=3D=220=22 class=3D=22width414=22>
+              <tr>
+                <td class=3D=22width414=22 style=3D=22font-size:6px; line-h=
+eight:6px;=22><img src=3D=22images/b1_btm_TUI_032216=2Ejpg=22 width=3D=2251=
+0=22 height=3D=226=22 border=3D=220=22 alt=3D=22=22 style=3D=22display:bloc=
+k;=22 class=3D=22hide=22 />
+                 =20
+                  </td>
+              </tr>
+            </table>
+           =20
+            <=21--/
+           =20
+            <=21-- /Mod 5-->
+  <p></p>
+
+
+            <=21-- margin -->
+           =20
+            <table border=3D=220=22 cellpadding=3D=220=22 cellspacing=3D=22=
+0=22>
+              <tr>
+                <td height=3D=2212=22 style=3D=22font-size:12px; line-heigh=
+t:12px;=22><img src=3D=22https://static=2Ecdn=2Eresponsys=2Enet/i5/responsy=
+simages/tui/contentlibrary/promo_templates/newsletter_new/images/sp=2Epng=
+=22 width=3D=221=22 height=3D=2212=22 alt=3D=22=22 border=3D=220=22 style=
+=3D=22display:block;=22/></td>
+              </tr>
+            </table>
+           =20
+            <=21--/margin -->=20
+
+=20
+  <p>
+  <meta charset=3D=22utf-8=22>
+  <title>Untitled Document</title>
+  <=21-- Mod 5-->
+  <table class=3D=22width414=22 cellspacing=3D=220=22 cellpadding=3D=220=22=
+ border=3D=220=22 width=3D=22510=22>
+   <tbody>
+    <tr>
+     <td style=3D=22line-height:1px; font-size:0px;=22 class=3D=22width30=
+=22 width=3D=2225=22><img src=3D=22https://static=2Ecdn=2Eresponsys=2Enet/i=
+5/responsysimages/tui/contentlibrary/2017/2017_03/20170321_marchnewsletter/=
+images/sp=2Epng=22 alt=3D=22=22 style=3D=22display:block;=22 height=3D=221=
+=22 border=3D=220=22 width=3D=221=22 /></td>
+     <td class=3D=22width348=22 valign=3D=22top=22 bgcolor=3D=22=23FFFFFF=
+=22 align=3D=22center=22 width=3D=22459=22><a href=3D=22https://e-tui=2Etra=
+nsunion=2Ecom/pub/cc?_ri_=3DX0Gzc2X%3DYQpglLjHJlYQGiWzdzbN0gzdzb6sIFEzflnk3=
+CpFsITKyWB8I3lAzgdN2MJpHch27nzbG6im7dzd4TTJzg38YmfVXtpKX%3DSTRRWRY&_ei_=3DE=
+uLMvqHvzxDQfjPAx6rKbseDzid1MI85u2RrHIglfEmBJpHD6_95JS2Zq3V1efWSCj7yjZ8N__bT=
+jMJBeSE0C-QiJ-4OXBEr92k1s9Q6kLFiTlcWKNSZe-ooOS0xRLy3QaHVFyTbFiFFIUklemMEr7D=
+SXWA=2E=22><img src=3D=22https://static=2Ecdn=2Eresponsys=2Enet/i5/responsy=
+simages/tui/contentlibrary/2017/2017_03/20170321_marchnewsletter/images/ima=
+ge_Ad_TUCM_Desktop=2Ejpg=22 alt=3D=22=22 style=3D=22display:block;=22 class=
+=3D=22width348 height131=22 height=3D=22173=22 border=3D=220=22 width=3D=22=
+459=22 /></a>
+     <table style=3D=22padding-left:20px; padding-right:20px;=22 class=3D=
+=22width328=22 cellspacing=3D=220=22 cellpadding=3D=220=22 bgcolor=3D=22=23=
+FFFFFF=22 align=3D=22center=22 border=3D=220=22 width=3D=22439=22>
+      <tbody>
+       <tr>
+        <td><=21-- margin -->
+        <table cellspacing=3D=220=22 cellpadding=3D=220=22 border=3D=220=22>
+         <tbody>
+          <tr>
+           <td style=3D=22font-size:10px; line-height:10px;=22 class=3D=22h=
+eight22=22 height=3D=2210=22><img src=3D=22https://static=2Ecdn=2Eresponsys=
+=2Enet/i5/responsysimages/tui/contentlibrary/2017/2017_03/20170321_marchnew=
+sletter/images/sp=2Epng=22 alt=3D=22=22 style=3D=22display:block;=22 class=
+=3D=22height22=22 height=3D=2210=22 border=3D=220=22 width=3D=221=22 /></td>
+          </tr>
+         </tbody>
+        </table>
+        <=21--/margin -->
+        <div style=3D=22font-family:Arial, Helvetica, sans-serif; font-size=
+:15px; line-height:17px; color:=2300a6ca; font-weight:bold;=22 class=3D=22f=
+ont17 lh18=22>Check your TransUnion<sup>&reg;</sup> credit score now=21</di=
+v>
+        <=21-- margin -->
+        <table cellspacing=3D=220=22 cellpadding=3D=220=22 border=3D=220=22>
+         <tbody>
+          <tr>
+           <td style=3D=22font-size:10px; line-height:10px;=22 class=3D=22h=
+eight22=22 height=3D=2210=22><img src=3D=22https://static=2Ecdn=2Eresponsys=
+=2Enet/i5/responsysimages/tui/contentlibrary/2017/2017_03/20170321_marchnew=
+sletter/images/sp=2Epng=22 alt=3D=22=22 style=3D=22display:block;=22 class=
+=3D=22height22=22 height=3D=2210=22 border=3D=220=22 width=3D=221=22 /></td>
+          </tr>
+         </tbody>
+        </table>
+        <=21--/margin -->
+        <div style=3D=22font-family:Arial, Helvetica, sans-serif; font-size=
+:13px; line-height:15px; color:=23000000; font-weight:normal;=22 class=3D=
+=22font17 lh18=22>Whether you&rsquo;re in the market for a credit card, fin=
+ancing a new car, or buying a home, you&rsquo;ll want to get an idea of whe=
+re your credit stands before you apply=2E</div>
+        <=21-- margin -->
+        <table cellspacing=3D=220=22 cellpadding=3D=220=22 border=3D=220=22>
+         <tbody>
+          <tr>
+           <td class=3D=22height25=22 style=3D=22font-size:15px; line-heigh=
+t:15px;=22 height=3D=2215=22><img class=3D=22height25=22 style=3D=22display=
+:block;=22 alt=3D=22=22 src=3D=22https://static=2Ecdn=2Eresponsys=2Enet/i5/=
+responsysimages/tui/contentlibrary/2017/2017_03/20170321_marchnewsletter/im=
+ages/sp=2Epng=22 height=3D=2215=22 border=3D=220=22 width=3D=221=22 /></td>
+          </tr>
+         </tbody>
+        </table>
+        <=21--/margin -->                                                  =
+                          <a href=3D=22https://e-tui=2Etransunion=2Ecom/pub=
+/cc?_ri_=3DX0Gzc2X%3DYQpglLjHJlYQGiWzdzbN0gzdzb6sIFEzflnk3CpFsITKyWB8I3lAzg=
+dN2MJpHch27nzbG6im7dzd4TTJzg38YmfVXtpKX%3DSTRRWRY&_ei_=3DEuLMvqHvzxDQfjPAx6=
+rKbseDzid1MI85u2RrHIglfEmBJpHD6_95JS2Zq3V1efWSCj7yjZ8N__bTjMJBeSE0C-QiJ-4OX=
+BEr92k1s9Q6kLFiTlcWKNSZe-ooOS0xRLy3QaHVFyTbFiFFIUklemMEr7DSXWA=2E=22><img c=
+lass=3D=22centercenter=22 style=3D=22display:block;=22 alt=3D=22Show Me My =
+Score Now=22 src=3D=22https://static=2Ecdn=2Eresponsys=2Enet/i5/responsysim=
+ages/tui/contentlibrary/2017/2017_03/20170321_marchnewsletter/images/btn_My=
+Score=2Egif=22 height=3D=2245=22 border=3D=220=22 width=3D=22214=22 /></a><=
+/td>
+       </tr>
+      </tbody>
+     </table>
+     <=21-- margin -->
+     <table cellspacing=3D=220=22 cellpadding=3D=220=22 border=3D=220=22>
+      <tbody>
+       <tr>
+        <td class=3D=22height25=22 style=3D=22font-size:15px; line-height:1=
+5px;=22 height=3D=2215=22><img class=3D=22height25=22 style=3D=22display:bl=
+ock;=22 alt=3D=22=22 src=3D=22https://static=2Ecdn=2Eresponsys=2Enet/i5/res=
+ponsysimages/tui/contentlibrary/2017/2017_03/20170321_marchnewsletter/image=
+s/sp=2Epng=22 height=3D=2215=22 border=3D=220=22 width=3D=221=22 /></td>
+       </tr>
+      </tbody>
+     </table>
+     <=21--/margin --></td>
+     <td valign=3D=22top=22 bgcolor=3D=22=23a1a1a2=22 width=3D=226=22>
+     <table cellspacing=3D=220=22 cellpadding=3D=220=22 border=3D=220=22>
+      <tbody>
+       <tr>
+        <td bgcolor=3D=22=23e6e7e8=22 width=3D=226=22><img style=3D=22displ=
+ay:block;=22 alt=3D=22=22 src=3D=22https://static=2Ecdn=2Eresponsys=2Enet/i=
+5/responsysimages/tui/contentlibrary/2017/2017_03/20170321_marchnewsletter/=
+images/sp=2Epng=22 height=3D=226=22 border=3D=220=22 width=3D=221=22 /></td>
+       </tr>
+      </tbody>
+     </table>
+     </td>
+     <td class=3D=22width30=22 style=3D=22line-height:1px; font-size:0px;=
+=22 width=3D=2220=22><img class=3D=22width30=22 style=3D=22display:block;=
+=22 alt=3D=22=22 src=3D=22https://static=2Ecdn=2Eresponsys=2Enet/i5/respons=
+ysimages/tui/contentlibrary/2017/2017_03/20170321_marchnewsletter/images/sp=
+=2Epng=22 height=3D=221=22 border=3D=220=22 width=3D=221=22 /></td>
+    </tr>
+    <tr>
+     <td class=3D=22width30=22 style=3D=22line-height:6px; font-size:6px;=
+=22 height=3D=226=22><img style=3D=22display:block;=22 alt=3D=22=22 src=3D=
+=22https://static=2Ecdn=2Eresponsys=2Enet/i5/responsysimages/tui/contentlib=
+rary/2017/2017_03/20170321_marchnewsletter/images/sp=2Epng=22 height=3D=226=
+=22 border=3D=220=22 width=3D=221=22 /></td>
+     <td class=3D=22width348=22 valign=3D=22top=22 bgcolor=3D=22=23a1a1a2=
+=22 align=3D=22left=22 height=3D=226=22>
+     <table cellspacing=3D=220=22 cellpadding=3D=220=22 border=3D=220=22>
+      <tbody>
+       <tr>
+        <td style=3D=22line-height:1px; font-size:6px;=22 bgcolor=3D=22=23e=
+6e7e8=22 height=3D=226=22 width=3D=226=22><img style=3D=22display:block;=22=
+ alt=3D=22=22 src=3D=22https://static=2Ecdn=2Eresponsys=2Enet/i5/responsysi=
+mages/tui/contentlibrary/2017/2017_03/20170321_marchnewsletter/images/sp=2E=
+png=22 height=3D=226=22 border=3D=220=22 width=3D=221=22 /></td>
+       </tr>
+      </tbody>
+     </table>
+     </td>
+     <td style=3D=22line-height:6px; font-size:6px;=22 valign=3D=22top=22 b=
+gcolor=3D=22=23a1a1a2=22 height=3D=226=22><img style=3D=22display:block;=22=
+ alt=3D=22=22 src=3D=22https://static=2Ecdn=2Eresponsys=2Enet/i5/responsysi=
+mages/tui/contentlibrary/2017/2017_03/20170321_marchnewsletter/images/sp=2E=
+png=22 height=3D=221=22 border=3D=220=22 width=3D=221=22 /></td>
+     <td class=3D=22width30=22 style=3D=22line-height:1px; font-size:6px;=
+=22 height=3D=226=22><img style=3D=22display:block;=22 alt=3D=22=22 src=3D=
+=22https://static=2Ecdn=2Eresponsys=2Enet/i5/responsysimages/tui/contentlib=
+rary/2017/2017_03/20170321_marchnewsletter/images/sp=2Epng=22 height=3D=221=
+=22 border=3D=220=22 width=3D=221=22 /></td>
+    </tr>
+   </tbody>
+  </table>
+  <=21--=20
+            <table width=3D=22510=22 cellpadding=3D=220=22 cellspacing=3D=
+=220=22 border=3D=220=22 class=3D=22width414=22>
+              <tr>
+                <td class=3D=22width414=22 style=3D=22font-size:6px; line-h=
+eight:6px;=22><img src=3D=22images/b1_btm_TUI_032216=2Ejpg=22 width=3D=2251=
+0=22 height=3D=226=22 border=3D=220=22 alt=3D=22=22 style=3D=22display:bloc=
+k;=22 class=3D=22hide=22 />
+                 =20
+                  </td>
+              </tr>
+            </table>
+           =20
+            <=21--/
+           =20
+            <=21-- /Mod 5-->
+  <p></p>
+  </meta>
+  </p>
+            <=21-- margin -->
+           =20
+            <table border=3D=220=22 cellpadding=3D=220=22 cellspacing=3D=22=
+0=22>
+              <tr>
+                <td height=3D=2212=22 style=3D=22font-size:12px; line-heigh=
+t:12px;=22><img src=3D=22https://static=2Ecdn=2Eresponsys=2Enet/i5/responsy=
+simages/tui/contentlibrary/promo_templates/newsletter_new/images/sp=2Epng=
+=22 width=3D=221=22 height=3D=2212=22 alt=3D=22=22 border=3D=220=22 style=
+=3D=22display:block;=22/></td>
+              </tr>
+            </table>
+           =20
+            <=21--/margin -->=20
+           =20
+  <p>
+  <meta charset=3D=22utf-8=22>
+  <title>Untitled Document</title>
+  <=21-- Mod 5-->   </meta>
+  </p>
+  <table class=3D=22width414=22 cellspacing=3D=220=22 cellpadding=3D=220=22=
+ border=3D=220=22 width=3D=22510=22>
+   <tbody>
+    <tr>
+     <td class=3D=22width30=22 style=3D=22line-height:1px; font-size:0px;=
+=22 width=3D=2225=22><img style=3D=22display:block;=22 alt=3D=22=22 src=3D=
+=22https://static=2Ecdn=2Eresponsys=2Enet/i5/responsysimages/tui/contentlib=
+rary/2017/2017_10/20171024_october_nl/images/sp=2Epng=22 height=3D=221=22 b=
+order=3D=220=22 width=3D=221=22 /></td>
+     <td class=3D=22width348=22 valign=3D=22top=22 bgcolor=3D=22=23FFFFFF=
+=22 align=3D=22center=22 width=3D=22459=22><a href=3D=22https://e-tui=2Etra=
+nsunion=2Ecom/pub/cc?_ri_=3DX0Gzc2X%3DYQpglLjHJlYQGiWzdzbN0gzdzb6sIFEzflnk3=
+CpFsITKyWB8I3lAzgdN2MJpHch27nzbG6im7dzd4TTJzg38YmfVXtpKX%3DSTRRYWY&_ei_=3DE=
+uLMvqHvzxDQfjPAx6rKbseDzid1MI85u2RrHIglfEmBJpHD6_95JS2Zq3V1efWSCj7yjZ8N__bT=
+jMJBeSE0C-QqWsZVSKtDUJQT4d0ebJ4fugupVgmC-rvuj6hmhBvu=2E=22><img class=3D=22=
+width348 height131=22 style=3D=22display:block;=22 alt=3D=22=22 src=3D=22ht=
+tps://static=2Ecdn=2Eresponsys=2Enet/i5/responsysimages/tui/contentlibrary/=
+2017/2017_10/20171024_october_nl/images/image_Article_3_Desktop2=2Ejpg=22 h=
+eight=3D=22173=22 border=3D=220=22 width=3D=22459=22 /></a>
+     <table class=3D=22width328=22 style=3D=22padding-left:20px; padding-ri=
+ght:20px;=22 cellspacing=3D=220=22 cellpadding=3D=220=22 bgcolor=3D=22=23FF=
+FFFF=22 align=3D=22center=22 border=3D=220=22 width=3D=22439=22>
+      <tbody>
+       <tr>
+        <td><=21-- margin -->
+        <table cellspacing=3D=220=22 cellpadding=3D=220=22 border=3D=220=22>
+         <tbody>
+          <tr>
+           <td class=3D=22height22=22 style=3D=22font-size:10px; line-heigh=
+t:10px;=22 height=3D=2210=22><img class=3D=22height22=22 style=3D=22display=
+:block;=22 alt=3D=22=22 src=3D=22https://static=2Ecdn=2Eresponsys=2Enet/i5/=
+responsysimages/tui/contentlibrary/2017/2017_10/20171024_october_nl/images/=
+sp=2Epng=22 height=3D=2210=22 border=3D=220=22 width=3D=221=22 /></td>
+          </tr>
+         </tbody>
+        </table>
+        <=21--/margin -->
+        <div class=3D=22font17 lh18=22 style=3D=22font-family:Arial, Helvet=
+ica, sans-serif; font-size:15px; line-height:17px; color:=2300a6ca; font-we=
+ight:bold;=22>Do you know how to report identity theft?</div>
+        <=21-- margin -->
+        <table cellspacing=3D=220=22 cellpadding=3D=220=22 border=3D=220=22>
+         <tbody>
+          <tr>
+           <td class=3D=22height22=22 style=3D=22font-size:10px; line-heigh=
+t:10px;=22 height=3D=2210=22><img class=3D=22height22=22 style=3D=22display=
+:block;=22 alt=3D=22=22 src=3D=22https://static=2Ecdn=2Eresponsys=2Enet/i5/=
+responsysimages/tui/contentlibrary/2017/2017_10/20171024_october_nl/images/=
+sp=2Epng=22 height=3D=2210=22 border=3D=220=22 width=3D=221=22 /></td>
+          </tr>
+         </tbody>
+        </table>
+        <=21--/margin -->
+        <div class=3D=22font17 lh18=22 style=3D=22font-family:Arial, Helvet=
+ica, sans-serif; font-size:13px; line-height:15px; color:=23000000; font-we=
+ight:normal;=22>Reacting quickly and decisively to identity theft is the fi=
+rst important step toward putting it behind you=2E Here are a few of the fi=
+rst steps you should take=2E</div>
+        <=21-- margin -->
+        <table cellspacing=3D=220=22 cellpadding=3D=220=22 border=3D=220=22>
+         <tbody>
+          <tr>
+           <td class=3D=22height25=22 style=3D=22font-size:15px; line-heigh=
+t:15px;=22 height=3D=2215=22><img class=3D=22height25=22 style=3D=22display=
+:block;=22 alt=3D=22=22 src=3D=22https://static=2Ecdn=2Eresponsys=2Enet/i5/=
+responsysimages/tui/contentlibrary/2017/2017_10/20171024_october_nl/images/=
+sp=2Epng=22 height=3D=2215=22 border=3D=220=22 width=3D=221=22 /></td>
+          </tr>
+         </tbody>
+        </table>
+        <=21--/margin -->                                                  =
+  <a href=3D=22https://e-tui=2Etransunion=2Ecom/pub/cc?_ri_=3DX0Gzc2X%3DYQp=
+glLjHJlYQGiWzdzbN0gzdzb6sIFEzflnk3CpFsITKyWB8I3lAzgdN2MJpHch27nzbG6im7dzd4T=
+TJzg38YmfVXtpKX%3DSTRRYAY&_ei_=3DEuLMvqHvzxDQfjPAx6rKbseDzid1MI85u2RrHIglfE=
+mBJpHD6_95JS2Zq3V1efWSCj7yjZ8N__bTjMJBeSE0C-QqWsZVSKtDUJQT4d0ebJ4fugupVgmC-=
+rvuj6hmhBvu=2E=22><img class=3D=22centercenter=22 style=3D=22display:block;=
+=22 alt=3D=22READ MORE=22 src=3D=22https://static=2Ecdn=2Eresponsys=2Enet/i=
+5/responsysimages/tui/contentlibrary/2017/2017_10/20171024_october_nl/image=
+s/a1_btn_TUI_032216=2Ejpg=22 height=3D=2245=22 border=3D=220=22 width=3D=22=
+214=22 /></a></td>
+       </tr>
+      </tbody>
+     </table>
+     <=21-- margin -->
+     <table cellspacing=3D=220=22 cellpadding=3D=220=22 border=3D=220=22>
+      <tbody>
+       <tr>
+        <td class=3D=22height25=22 style=3D=22font-size:15px; line-height:1=
+5px;=22 height=3D=2215=22><img class=3D=22height25=22 style=3D=22display:bl=
+ock;=22 alt=3D=22=22 src=3D=22https://static=2Ecdn=2Eresponsys=2Enet/i5/res=
+ponsysimages/tui/contentlibrary/2017/2017_10/20171024_october_nl/images/sp=
+=2Epng=22 height=3D=2215=22 border=3D=220=22 width=3D=221=22 /></td>
+       </tr>
+      </tbody>
+     </table>
+     <=21--/margin --></td>
+     <td valign=3D=22top=22 bgcolor=3D=22=23a1a1a2=22 width=3D=226=22>
+     <table cellspacing=3D=220=22 cellpadding=3D=220=22 border=3D=220=22>
+      <tbody>
+       <tr>
+        <td bgcolor=3D=22=23e6e7e8=22 width=3D=226=22><img style=3D=22displ=
+ay:block;=22 alt=3D=22=22 src=3D=22https://static=2Ecdn=2Eresponsys=2Enet/i=
+5/responsysimages/tui/contentlibrary/2017/2017_10/20171024_october_nl/image=
+s/sp=2Epng=22 height=3D=226=22 border=3D=220=22 width=3D=221=22 /></td>
+       </tr>
+      </tbody>
+     </table>
+     </td>
+     <td class=3D=22width30=22 style=3D=22line-height:1px; font-size:0px;=
+=22 width=3D=2220=22><img class=3D=22width30=22 style=3D=22display:block;=
+=22 alt=3D=22=22 src=3D=22https://static=2Ecdn=2Eresponsys=2Enet/i5/respons=
+ysimages/tui/contentlibrary/2017/2017_10/20171024_october_nl/images/sp=2Epn=
+g=22 height=3D=221=22 border=3D=220=22 width=3D=221=22 /></td>
+    </tr>
+    <tr>
+     <td class=3D=22width30=22 style=3D=22line-height:6px; font-size:6px;=
+=22 height=3D=226=22><img style=3D=22display:block;=22 alt=3D=22=22 src=3D=
+=22https://static=2Ecdn=2Eresponsys=2Enet/i5/responsysimages/tui/contentlib=
+rary/2017/2017_10/20171024_october_nl/images/sp=2Epng=22 height=3D=226=22 b=
+order=3D=220=22 width=3D=221=22 /></td>
+     <td class=3D=22width348=22 valign=3D=22top=22 bgcolor=3D=22=23a1a1a2=
+=22 align=3D=22left=22 height=3D=226=22>
+     <table cellspacing=3D=220=22 cellpadding=3D=220=22 border=3D=220=22>
+      <tbody>
+       <tr>
+        <td style=3D=22line-height:1px; font-size:6px;=22 bgcolor=3D=22=23e=
+6e7e8=22 height=3D=226=22 width=3D=226=22><img style=3D=22display:block;=22=
+ alt=3D=22=22 src=3D=22https://static=2Ecdn=2Eresponsys=2Enet/i5/responsysi=
+mages/tui/contentlibrary/2017/2017_10/20171024_october_nl/images/sp=2Epng=
+=22 height=3D=226=22 border=3D=220=22 width=3D=221=22 /></td>
+       </tr>
+      </tbody>
+     </table>
+     </td>
+     <td style=3D=22line-height:6px; font-size:6px;=22 valign=3D=22top=22 b=
+gcolor=3D=22=23a1a1a2=22 height=3D=226=22><img style=3D=22display:block;=22=
+ alt=3D=22=22 src=3D=22https://static=2Ecdn=2Eresponsys=2Enet/i5/responsysi=
+mages/tui/contentlibrary/2017/2017_10/20171024_october_nl/images/sp=2Epng=
+=22 height=3D=221=22 border=3D=220=22 width=3D=221=22 /></td>
+     <td class=3D=22width30=22 style=3D=22line-height:1px; font-size:6px;=
+=22 height=3D=226=22><img style=3D=22display:block;=22 alt=3D=22=22 src=3D=
+=22https://static=2Ecdn=2Eresponsys=2Enet/i5/responsysimages/tui/contentlib=
+rary/2017/2017_10/20171024_october_nl/images/sp=2Epng=22 height=3D=221=22 b=
+order=3D=220=22 width=3D=221=22 /></td>
+    </tr>
+   </tbody>
+  </table>
+  <=21--=20
+            <table width=3D=22510=22 cellpadding=3D=220=22 cellspacing=3D=
+=220=22 border=3D=220=22 class=3D=22width414=22>
+              <tr>
+                <td class=3D=22width414=22 style=3D=22font-size:6px; line-h=
+eight:6px;=22><img src=3D=22images/b1_btm_TUI_032216=2Ejpg=22 width=3D=2251=
+0=22 height=3D=226=22 border=3D=220=22 alt=3D=22=22 style=3D=22display:bloc=
+k;=22 class=3D=22hide=22 />
+                 =20
+                  </td>
+              </tr>
+            </table>
+           =20
+            <=21--/
+           =20
+            <=21-- /Mod 5-->
+  <p></p>
+           =20
+            <=21-- margin -->
+           =20
+            <table border=3D=220=22 cellpadding=3D=220=22 cellspacing=3D=22=
+0=22>
+              <tr>
+                <td height=3D=2215=22 style=3D=22font-size:15px; line-heigh=
+t:15px;=22><img src=3D=22https://static=2Ecdn=2Eresponsys=2Enet/i5/responsy=
+simages/tui/contentlibrary/promo_templates/newsletter_new/images/sp=2Epng=
+=22 width=3D=221=22 height=3D=2215=22 alt=3D=22=22 border=3D=220=22 style=
+=3D=22display:block;=22/></td>
+              </tr>
+            </table>
+           =20
+            <=21--/margin -->=20
+           =20
+           =20
+           =20
+            <=21-- margin -->
+           =20
+            <table border=3D=220=22 cellpadding=3D=220=22 cellspacing=3D=22=
+0=22>
+              <tr>
+                <td height=3D=2215=22 style=3D=22font-size:15px; line-heigh=
+t:15px;=22><img src=3D=22https://static=2Ecdn=2Eresponsys=2Enet/i5/responsy=
+simages/tui/contentlibrary/promo_templates/newsletter_new/images/sp=2Epng=
+=22 width=3D=221=22 height=3D=2215=22 alt=3D=22=22 border=3D=220=22 style=
+=3D=22display:block;=22/></td>
+              </tr>
+            </table>
+           =20
+            <=21--/margin -->=20
+           =20
+           =20
+<=21-- Mod 3 -->
+           =20
+            <table width=3D=22510=22 cellpadding=3D=220=22 cellspacing=3D=
+=220=22 border=3D=220=22 class=3D=22width414=22>
+              <tr>
+                <td width=3D=2225=22 style=3D=22line-height:1px; font-size:=
+0px;=22 class=3D=22width30=22><img src=3D=22https://static=2Ecdn=2Eresponsy=
+s=2Enet/i5/responsysimages/tui/contentlibrary/2017/2017_10/20171024_october=
+_nl/images/sp=2Epng=22 width=3D=221=22 height=3D=221=22 alt=3D=22=22 border=
+=3D=220=22 style=3D=22display:block;=22 /></td>
+                <td align=3D=22center=22 bgcolor=3D=22=2307b5d4=22><a href=
+=3D=22https://e-tui=2Etransunion=2Ecom/pub/cc?_ri_=3DX0Gzc2X%3DYQpglLjHJlYQ=
+GiWzdzbN0gzdzb6sIFEzflnk3CpFsITKyWB8I3lAzgdN2MJpHch27nzbG6im7dzd4TTJzg38Ymf=
+VXtpKX%3DSTRRATY&_ei_=3DEolaGGF4SNMvxFF7KucKuWPhoVSoHc2kDw6aaKjrUDaUMQ9rsDP=
+tRVHvIlPYk1S2rTGvHEER_DqKveWd2uCtyDA=2E=22><img src=3D=22https://static=2Ec=
+dn=2Eresponsys=2Enet/i5/responsysimages/tui/contentlibrary/2017/2017_10/201=
+71024_october_nl/images/Dashlane_Ad_Desktop_406x250=2Ejpg=22 width=3D=22406=
+=22 height=3D=22250=22 border=3D=220=22 alt=3D=22Stop Forgetting & Resettin=
+g Passwords=22 style=3D=22display:block;=22 class=3D=22hide=22/></a>
+                  <=21-- mobile image -->
+                 =20
+                  <div class=3D=22imghide=22 style=3D=22max-height: 0px; fo=
+nt-size: 0; display: none; overflow:hidden;=22>
+                    <table width=3D=220=22 height=3D=220=22 border=3D=220=
+=22 cellspacing=3D=220=22 cellpadding=3D=220=22 style=3D=22max-height: 0px;=
+ font-size: 0; display: none; overflow:hidden;=22 class=3D=22imghide width3=
+54 height297 center=22>
+                      <tr>
+                        <td class=3D=22width300 height250 center=22><a href=
+=3D=22https://e-tui=2Etransunion=2Ecom/pub/cc?_ri_=3DX0Gzc2X%3DYQpglLjHJlYQ=
+GiWzdzbN0gzdzb6sIFEzflnk3CpFsITKyWB8I3lAzgdN2MJpHch27nzbG6im7dzd4TTJzg38Ymf=
+VXtpKX%3DSTRRAWY&_ei_=3DEolaGGF4SNMvxFF7KucKuWPhoVSoHc2kDw6aaKjrUDaUMQ9rsDP=
+tRVHvIlPYk1S2rTGvHEER_DqKveWd2uCtyDA=2E=22><img src=3D=22https://static=2Ec=
+dn=2Eresponsys=2Enet/i5/responsysimages/tui/contentlibrary/2017/2017_10/201=
+71024_october_nl/images/Dashlane_Ad_Mobile_v2=2Ejpg=22 width=3D=220=22 heig=
+ht=3D=220=22 alt=3D=22Consolidate your high interest credit card debt with =
+a personal loan=22 class=3D=22imghide width354 height297 centercenter=22 />=
+</a></td>
+                      </tr>
+                    </table>
+                  </div>
+                 =20
+                <=21--/mobile image --></td>
+                <td valign=3D=22top=22 class=3D=22hide=22><img src=3D=22htt=
+ps://static=2Ecdn=2Eresponsys=2Enet/i5/responsysimages/tui/contentlibrary/2=
+017/2017_10/20171024_october_nl/images/b6_TUI_032216=2Ejpg=22 width=3D=226=
+=22 height=3D=22304=22 border=3D=220=22 alt=3D=22=22 style=3D=22display:blo=
+ck;=22 /></td>
+                <td width=3D=2220=22 style=3D=22line-height:1px; font-size:=
+0px;=22 class=3D=22width30=22><img src=3D=22https://static=2Ecdn=2Eresponsy=
+s=2Enet/i5/responsysimages/tui/contentlibrary/2017/2017_10/20171024_october=
+_nl/images/sp=2Epng=22 width=3D=221=22 height=3D=221=22 alt=3D=22=22 border=
+=3D=220=22 style=3D=22display:block;=22 class=3D=22width30=22/></td>
+              </tr>
+            </table>
+            <table width=3D=22510=22 cellpadding=3D=220=22 cellspacing=3D=
+=220=22 border=3D=220=22 class=3D=22hide=22>
+              <tr>
+                <td class=3D=22hide=22 style=3D=22font-size:6px; line-heigh=
+t:6px;=22><img src=3D=22https://static=2Ecdn=2Eresponsys=2Enet/i5/responsys=
+images/tui/contentlibrary/2017/2017_10/20171024_october_nl/images/b1_btm_TU=
+I_032216=2Ejpg=22 width=3D=22510=22 height=3D=226=22 border=3D=220=22 alt=
+=3D=22=22 style=3D=22display:block;=22 class=3D=22hide=22 />
+                  <=21-- mobile image -->
+                 =20
+                  <div class=3D=22imghide=22 style=3D=22max-height: 0px; fo=
+nt-size: 0; display: none; overflow:hidden;=22>
+                    <table width=3D=220=22 height=3D=220=22 border=3D=220=
+=22 cellspacing=3D=220=22 cellpadding=3D=220=22 style=3D=22max-height: 0px;=
+ font-size: 0; display: none; overflow:hidden;=22 class=3D=22imghide width4=
+14 height6 center=22>
+                      <tr>
+                        <td class=3D=22width414 height6 center=22><img src=
+=3D=22https://static=2Ecdn=2Eresponsys=2Enet/i5/responsysimages/tui/content=
+library/2017/2017_10/20171024_october_nl/images/b1_btm_TUI_032216_mbl_1=2Ej=
+pg=22 width=3D=220=22 height=3D=220=22 alt=3D=22=22 class=3D=22imghide widt=
+h414 height6 centercenter=22 /></td>
+                      </tr>
+                    </table>
+                  </div>
+                 =20
+                <=21--/mobile image --></td>
+              </tr>
+            </table>
+            <=21-- /Mod 3 -->
+
+            <=21-- margin -->
+           =20
+            <table border=3D=220=22 cellpadding=3D=220=22 cellspacing=3D=22=
+0=22>
+              <tr>
+                <td height=3D=2215=22 style=3D=22font-size:15px; line-heigh=
+t:15px;=22><img src=3D=22https://static=2Ecdn=2Eresponsys=2Enet/i5/responsy=
+simages/tui/contentlibrary/promo_templates/newsletter_new/images/sp=2Epng=
+=22 width=3D=221=22 height=3D=2215=22 alt=3D=22=22 border=3D=220=22 style=
+=3D=22display:block;=22/></td>
+              </tr>
+            </table>
+           =20
+            <=21--/margin -->=20
+           =20
+            <=21-- Related Articles -->
+           =20
+            <table align=3D=22center=22 width=3D=22510=22 cellpadding=3D=22=
+0=22 cellspacing=3D=220=22 border=3D=220=22 class=3D=22width414=22>
+              <tr>
+                <td width=3D=2225=22 style=3D=22line-height:1px; font-size:=
+0px;=22 class=3D=22width30=22><img src=3D=22https://static=2Ecdn=2Eresponsy=
+s=2Enet/i5/responsysimages/tui/contentlibrary/promo_templates/newsletter_ne=
+w/images/sp=2Epng=22 width=3D=221=22 height=3D=221=22 alt=3D=22=22 border=
+=3D=220=22 style=3D=22display:block;=22 /></td>
+                <td valign=3D=22top=22 bgcolor=3D=22=23FFFFFF=22><table wid=
+th=3D=22100%=22 cellpadding=3D=220=22 cellspacing=3D=220=22 border=3D=220=
+=22 bgcolor=3D=22=2300a6ca=22 class=3D=22width348=22>
+                    <tr>
+                      <td align=3D=22left=22 width=3D=22439=22 valign=3D=22=
+top=22 class=3D=22width328=22 style=3D=22padding-left:20px;=22><=21-- margi=
+n -->
+                       =20
+                        <table border=3D=220=22 cellpadding=3D=220=22 cells=
+pacing=3D=220=22>
+                          <tr>
+                            <td height=3D=2210=22 style=3D=22font-size:10px=
+; line-height:12px;=22><img src=3D=22https://static=2Ecdn=2Eresponsys=2Enet=
+/i5/responsysimages/tui/contentlibrary/promo_templates/newsletter_new/image=
+s/sp=2Epng=22 width=3D=221=22 height=3D=2210=22 alt=3D=22=22 border=3D=220=
+=22 style=3D=22display:block;=22/></td>
+                          </tr>
+                        </table>
+                       =20
+                        <=21--/margin -->
+                       =20
+                        <div style=3D=22font-family:Arial, Helvetica, sans-=
+serif; font-size:16px; line-height:18px; color:=23eeeeee; font-weight:bold;=
+=22>Related Articles</div>
+                       =20
+                        <=21-- margin -->
+                       =20
+                        <table border=3D=220=22 cellpadding=3D=220=22 cells=
+pacing=3D=220=22>
+                          <tr>
+                            <td height=3D=2210=22 style=3D=22font-size:10px=
+; line-height:12px;=22><img src=3D=22https://static=2Ecdn=2Eresponsys=2Enet=
+/i5/responsysimages/tui/contentlibrary/promo_templates/newsletter_new/image=
+s/sp=2Epng=22 width=3D=221=22 height=3D=2210=22 alt=3D=22=22 border=3D=220=
+=22 style=3D=22display:block;=22/></td>
+                          </tr>
+                        </table>
+                       =20
+                        <=21--/margin --></td>
+                    </tr>
+                  </table>
+                  <=21--Cut here -->
+                 =20
+
+<table width=3D=22100%=22 cellpadding=3D=220=22 cellspacing=3D=220=22 borde=
+r=3D=220=22 bgcolor=3D=22=23FFFFFF=22>
+                    <tr>
+                      <td align=3D=22left=22 width=3D=22439=22 valign=3D=22=
+middle=22 class=3D=22width328=22 style=3D=22padding-left:20px;=22><=21-- ma=
+rgin -->
+                       =20
+                        <table border=3D=220=22 cellpadding=3D=220=22 cells=
+pacing=3D=220=22>
+                          <tr>
+                            <td height=3D=2225=22 style=3D=22font-size:25px=
+; line-height:25px;=22 class=3D=22height10=22><img src=3D=22https://static=
+=2Ecdn=2Eresponsys=2Enet/i5/responsysimages/tui/contentlibrary/2016/2016_10=
+/20161018_october_newsletter/images/sp=2Epng=22 width=3D=221=22 height=3D=
+=2225=22 alt=3D=22=22 border=3D=220=22 style=3D=22display:block;=22 class=
+=3D=22height10=22/></td>
+                          </tr>
+                        </table>
+                       =20
+                        <=21--/margin -->
+                       =20
+                        <div style=3D=22font-family:Arial, Helvetica, sans-=
+serif; font-size:15px; line-height:17px; color:=23eeeeee; font-weight:bold;=
+=22><a href=3D=22https://e-tui=2Etransunion=2Ecom/pub/cc?_ri_=3DX0Gzc2X%3DY=
+QpglLjHJlYQGiWzdzbN0gzdzb6sIFEzflnk3CpFsITKyWB8I3lAzgdN2MJpHch27nzbG6im7dzd=
+4TTJzg38YmfVXtpKX%3DSTRRAAY&_ei_=3DEuLMvqHvzxDQfjPAx6rKbseDzid1MI85u2RrHIgl=
+fEmBJpHD6_95JS2Zq3V1efWSCj7yjZ8N__bTjMJBeSE0C-QqWsZVSKtDUJQT4d0ebJ4fugupVgm=
+C-rvuj6hmhBvu=2E=22 style=3D=22color:=2300a6ca; text-decoration:underline;=
+=22>3 precautions to take when you pay<span class=3D=22wrap=22></span> at t=
+he pump=2E</a></div>
+                       =20
+                        <=21-- margin -->
+                       =20
+                        <table border=3D=220=22 cellpadding=3D=220=22 cells=
+pacing=3D=220=22>
+                          <tr>
+                            <td height=3D=2210=22 style=3D=22font-size:10px=
+; line-height:10px;=22><img src=3D=22https://static=2Ecdn=2Eresponsys=2Enet=
+/i5/responsysimages/tui/contentlibrary/2016/2016_10/20161018_october_newsle=
+tter/images/sp=2Epng=22 width=3D=221=22 height=3D=2210=22 alt=3D=22=22 bord=
+er=3D=220=22 style=3D=22display:block;=22/></td>
+                          </tr>
+                        </table>
+                       =20
+                        <=21--/margin -->
+                       =20
+                        <div style=3D=22font-family:Arial, Helvetica, sans-=
+serif; font-size:15px; line-height:17px; color:=23eeeeee; font-weight:bold;=
+=22><a href=3D=22https://e-tui=2Etransunion=2Ecom/pub/cc?_ri_=3DX0Gzc2X%3DY=
+QpglLjHJlYQGiWzdzbN0gzdzb6sIFEzflnk3CpFsITKyWB8I3lAzgdN2MJpHch27nzbG6im7dzd=
+4TTJzg38YmfVXtpKX%3DSTRRACY&_ei_=3DEuLMvqHvzxDQfjPAx6rKbseDzid1MI85u2RrHIgl=
+fEmBJpHD6_95JS2Zq3V1efWSCj7yjZ8N__bTjMJBeSE0C-QqWsZVSKtDUJQT4d0ebJ4fugupVgm=
+C-rvuj6hmhBvu=2E=22 style=3D=22color:=2300a6ca; text-decoration:underline;=
+=22>What's the deal with all the replacement credit cards?</a></div>
+                       =20
+                        <=21-- margin -->
+                       =20
+                        <table border=3D=220=22 cellpadding=3D=220=22 cells=
+pacing=3D=220=22>
+                          <tr>
+                            <td height=3D=2210=22 style=3D=22font-size:10px=
+; line-height:10px;=22><img src=3D=22https://static=2Ecdn=2Eresponsys=2Enet=
+/i5/responsysimages/tui/contentlibrary/2016/2016_10/20161018_october_newsle=
+tter/images/sp=2Epng=22 width=3D=221=22 height=3D=2210=22 alt=3D=22=22 bord=
+er=3D=220=22 style=3D=22display:block;=22/></td>
+                          </tr>
+                        </table>
+                       =20
+                        <=21--/margin -->
+                       =20
+                        <div style=3D=22font-family:Arial, Helvetica, sans-=
+serif; font-size:15px; line-height:17px; color:=23eeeeee; font-weight:bold;=
+=22><a href=3D=22https://e-tui=2Etransunion=2Ecom/pub/cc?_ri_=3DX0Gzc2X%3DY=
+QpglLjHJlYQGiWzdzbN0gzdzb6sIFEzflnk3CpFsITKyWB8I3lAzgdN2MJpHch27nzbG6im7dzd=
+4TTJzg38YmfVXtpKX%3DSTRRBRY&_ei_=3DEuLMvqHvzxDQfjPAx6rKbseDzid1MI85u2RrHIgl=
+fEmBJpHD6_95JS2Zq3V1efWSCj7yjZ8N__bTjMJBeSE0C-QqWsZVSKtDUJQT4d0ebJ4fugupVgm=
+C-rvuj6hmhBvu=2E=22 style=3D=22color:=2300a6ca; text-decoration:underline;=
+=22>New email phishing chip &amp; PIN scam:<span class=3D=22wrap=22></span>=
+ don't bite=2E</a></div>
+                       =20
+                        <=21-- margin -->
+                       =20
+                        <table border=3D=220=22 cellpadding=3D=220=22 cells=
+pacing=3D=220=22>
+                          <tr>
+                            <td height=3D=2215=22 style=3D=22font-size:15px=
+; line-height:15px;=22 class=3D=22hide=22><img src=3D=22https://static=2Ecd=
+n=2Eresponsys=2Enet/i5/responsysimages/tui/contentlibrary/2016/2016_10/2016=
+1018_october_newsletter/images/sp=2Epng=22 width=3D=221=22 height=3D=2215=
+=22 alt=3D=22=22 border=3D=220=22 style=3D=22display:block;=22  class=3D=22=
+hide=22/></td>
+                          </tr>
+                        </table>
+                       =20
+                        <=21--/margin --></td>
+                    </tr>
+                  </table>
+                  <=21-- End Cut Here -->
+                 =20
+                  </td>
+                <td valign=3D=22top=22><img src=3D=22https://static=2Ecdn=
+=2Eresponsys=2Enet/i5/responsysimages/tui/contentlibrary/promo_templates/ne=
+wsletter_new/images/b3_TUI_032216=2Ejpg=22 width=3D=226=22 height=3D=22191=
+=22 border=3D=220=22 alt=3D=22=22 style=3D=22display:block;=22 /></td>
+                <td width=3D=2220=22 style=3D=22line-height:1px; font-size:=
+0px;=22 class=3D=22width30=22><img src=3D=22https://static=2Ecdn=2Eresponsy=
+s=2Enet/i5/responsysimages/tui/contentlibrary/promo_templates/newsletter_ne=
+w/images/sp=2Epng=22 width=3D=221=22 height=3D=221=22 alt=3D=22=22 border=
+=3D=220=22 style=3D=22display:block;=22 class=3D=22width30=22/></td>
+              </tr>
+            </table>
+            <table width=3D=22510=22 cellpadding=3D=220=22 cellspacing=3D=
+=220=22 border=3D=220=22 class=3D=22width414=22>
+              <tr>
+                <td class=3D=22width414=22 style=3D=22font-size:6px; line-h=
+eight:6px;=22><img src=3D=22https://static=2Ecdn=2Eresponsys=2Enet/i5/respo=
+nsysimages/tui/contentlibrary/promo_templates/newsletter_new/images/b1_btm_=
+TUI_032216=2Ejpg=22 width=3D=22510=22 height=3D=226=22 border=3D=220=22 alt=
+=3D=22=22 style=3D=22display:block;=22 class=3D=22hide=22 />=20
+                 =20
+                  <=21-- mobile image -->
+                 =20
+                  <div class=3D=22imghide=22 style=3D=22max-height: 0px; fo=
+nt-size: 0; display: none; overflow:hidden;=22>
+                    <table width=3D=220=22 height=3D=220=22 border=3D=220=
+=22 cellspacing=3D=220=22 cellpadding=3D=220=22 style=3D=22max-height: 0px;=
+ font-size: 0; display: none; overflow:hidden;=22 class=3D=22imghide width4=
+14 height6 center=22>
+                      <tr>
+                        <td class=3D=22width414 height6 center=22><img src=
+=3D=22https://static=2Ecdn=2Eresponsys=2Enet/i5/responsysimages/tui/content=
+library/promo_templates/newsletter_new/images/b1_btm_TUI_032216_mbl_1=2Ejpg=
+=22 width=3D=220=22 height=3D=220=22 alt=3D=22=22 class=3D=22imghide width4=
+14 height6 centercenter=22 /></td>
+                      </tr>
+                    </table>
+                  </div>
+                 =20
+                  <=21--/mobile image --></td>
+              </tr>
+            </table>
+           =20
+            <=21-- /Related Articles -->
+           =20
+            <=21-- margin -->
+           =20
+            <table border=3D=220=22 cellpadding=3D=220=22 cellspacing=3D=22=
+0=22>
+              <tr>
+                <td height=3D=2215=22 style=3D=22font-size:15px; line-heigh=
+t:15px;=22><img src=3D=22https://static=2Ecdn=2Eresponsys=2Enet/i5/responsy=
+simages/tui/contentlibrary/promo_templates/newsletter_new/images/sp=2Epng=
+=22 width=3D=221=22 height=3D=2215=22 alt=3D=22=22 border=3D=220=22 style=
+=3D=22display:block;=22/></td>
+              </tr>
+            </table>
+           =20
+            <=21--/margin -->
+           =20
+            <table width=3D=22100%=22 border=3D=220=22 align=3D=22center=22=
+ cellpadding=3D=220=22 cellspacing=3D=220=22 style=3D=22table-layout:fixed;=
+=22>
+	<tr>
+		<td align=3D=22center=22>
+
+
+
+<table width=3D=22560=22 border=3D=220=22 align=3D=22center=22 cellpadding=
+=3D=220=22 cellspacing=3D=220=22 class=3D=22width394=22 bgcolor=3D=22=23e6e=
+7e8=22>
+        <tr>
+           <td align=3D=22left=22 valign=3D=22top=22 width=3D=22520=22 clas=
+s=3D=22width394=22 style=3D=22padding-left:20px; padding-right:20px;=22>
+          =20
+            <div style=3D=22font-family: Arial, Helvetica, sans-serif; colo=
+r:=23313131; font-size:11px; line-height:14px; font-weight:normal;=22>
+
+<strong>Offer Details: </strong>Your TransUnion Score & Credit Report are a=
+vailable as part of our subscription credit monitoring service=2E You will =
+be billed at the low cost of only =2419=2E95 per month (plus tax where appl=
+icable)=2E
+<br/><br/>
+
+Please do not respond directly to this email=2E For assistance, please <a h=
+ref=3D=22https://e-tui=2Etransunion=2Ecom/pub/cc?_ri_=3DX0Gzc2X%3DYQpglLjHJ=
+lYQGiWzdzbN0gzdzb6sIFEzflnk3CpFsITKyWB8I3lAzgdN2MJpHch27nzbG6im7dzd4TTJzg38=
+YmfVXtpKX%3DSTRRBTY&_ei_=3DEuLMvqHvzxDQfjPAx6rKbseDzid1MI85u2RrHIglfEmBJpHD=
+6_95JS2Zq3V1efWSCj7yjZ8N__bTjMJBeSE0C-QqWsZVSKtDUJQT4d0ebJ4fugupVgmC-rvuj6h=
+mhBvu=2E=22 style=3D=22text-decoration:underline; font-weight:bold; color:=
+=23313131;=22>click here</a> for our Customer Service contact information a=
+nd hours of service=2E
+            <br/><br/>
+            This email was sent to you by TransUnion Interactive=2E To ensu=
+re delivery, please add <a href=3D=22mailto:transunion=40e-tui=2Etransunion=
+=2Ecom=22 style=3D=22color:=23313131; text-decoration:none;=22>transunion=
+=40e-tui=2Etransunion=2Ecom</a> to your address book=2E <br/><br/>
+
+You are receiving this email at <a href=3D=22mailto:austindreier=40icloud=
+=2Ecom=22 style=3D=22color:=23313131; text-decoration:none;=22>austindreier=
+=40icloud=2Ecom</a> because you have opted-in to receive email from TransUn=
+ion Interactive=2E To update your preferences, please see the links at the =
+bottom of this message=2E We respect your privacy and post our privacy poli=
+cy prominently <a href=3D=22https://e-tui=2Etransunion=2Ecom/pub/cc?_ri_=3D=
+X0Gzc2X%3DYQpglLjHJlYQGiWzdzbN0gzdzb6sIFEzflnk3CpFsITKyWB8I3lAzgdN2MJpHch27=
+nzbG6im7dzd4TTJzg38YmfVXtpKX%3DSTRRBWY&_ei_=3DEuLMvqHvzxDQfjPAx6rKbseDzid1M=
+I85u2RrHIglfEmBJpHD6_95JS2Zq3V1efWSCj7yjZ8N__bTjMJBeSE0C-QqWsZVSKtDUJQT4d0e=
+bJ4fugupVgmC-rvuj6hmhBvu=2E=22 style=3D=22color:=23313131;=22>on our Web si=
+te</a>=2E<br/><br/>
+
+<strong>ABOUT THIS EMAIL</strong><br />
+Every so often, TransUnion Interactive enjoys sharing special offers with y=
+ou, such as discounts on TransUnion Interactive products as well as offers =
+from our partners=2E You will continue to receive these emails from time to=
+ time because you expressed interest in our special offers when you placed =
+your order or signed up for our newsletter=2E <br/><br/>
+
+<strong>ABOUT TRANSUNION INTERACTIVE</strong><br />
+TransUnion Interactive's family of financial learning tools has empowered m=
+illions of Americans to better manage their borrowing=2E With a commitment =
+to providing exceptional information, support and security, TransUnion Inte=
+ractive has established itself as a leader in the field of corporate and co=
+nsumer financial products=2E To learn more about TransUnion Interactive, pl=
+ease visit <A HREF=3D=22https://e-tui=2Etransunion=2Ecom/pub/cc?_ri_=3DX0Gz=
+c2X%3DYQpglLjHJlYQGiWzdzbN0gzdzb6sIFEzflnk3CpFsITKyWB8I3lAzgdN2MJpHch27nzbG=
+6im7dzd4TTJzg38YmfVXtpKX%3DSTRRBCY&_ei_=3DEuLMvqHvzxDQfjPAx6rKbseDzid1MI85u=
+2RrHIglfEmBJpHD6_95JS2Zq3V1efWSCj7yjZ8N__bTjMJBeSE0C-QqWsZVSKtDUJQT4d0ebJ4f=
+ugupVgmC-rvuj6hmhBvu=2E=22 style=3D=22color:=23313131; text-decoration:none=
+;=22>www=2Etransunion=2Ecom/corporate/about-transunion/about-transunion=2Ep=
+age</a>=2E
+<br/><br/>
+To change your email address, please login to your account, and click on =
+=22Austin's profile=2E=22<br /><br />
+            <a href=3D=22https://e-tui=2Etransunion=2Ecom/pub/cc?_ri_=3DX0G=
+zc2X%3DYQpglLjHJlYQGiWzdzbN0gzdzb6sIFEzflnk3CpFsITKyWB8I3lAzgdN2MJpHch27nzb=
+G6im7dzd4TTJzg38YmfVXtpKX%3DSTRRCRY&_ei_=3DEuLMvqHvzxDQfjPAx6rKbseDzid1MI85=
+u2RrHIglfEmBw3mz2_HhaekWlODDwfRiXO5Gxmc019BwRhhIHvpVqYc6QGag57RiMHMFouc17fY=
+tkwmcw4y0mRmUmIfCNikljt6J2CWFGBBt3Grohe3-7x50yg=2E=22 style=3D=22text-decor=
+ation:underline; font-weight:bold; color:=23313131;=22>Unsubscribe</a>&nbsp=
+;&nbsp;=7C&nbsp;&nbsp;<a href=3D=22https://e-tui=2Etransunion=2Ecom/pub/cc?=
+_ri_=3DX0Gzc2X%3DYQpglLjHJlYQGiWzdzbN0gzdzb6sIFEzflnk3CpFsITKyWB8I3lAzgdN2M=
+JpHch27nzbG6im7dzd4TTJzg38YmfVXtpKX%3DSTRRBAY&_ei_=3DEuLMvqHvzxDQfjPAx6rKbs=
+eDzid1MI85u2RrHIglfEmBJpHD6_95JS2Zq3V1efWSCj7yjZ8N__bTjMJBeSE0C-QqWsZVSKtDU=
+JQT4d0ebJ4fugupVgmC-rvuj6hmhBvu=2E=22 style=3D=22text-decoration:underline;=
+ font-weight:bold; color:=23313131;=22>Privacy Policy</a>&nbsp;&nbsp;=7C&nb=
+sp;&nbsp;<a href=3D=22https://e-tui=2Etransunion=2Ecom/pub/cc?_ri_=3DX0Gzc2=
+X%3DYQpglLjHJlYQGiWzdzbN0gzdzb6sIFEzflnk3CpFsITKyWB8I3lAzgdN2MJpHch27nzbG6i=
+m7dzd4TTJzg38YmfVXtpKX%3DSTRRCTY&_ei_=3DEuLMvqHvzxDQfjPAx6rKbseDzid1MI85u2R=
+rHIglfEmBJpHD6_95JS2Zq3V1efWSCj7yjZ8N__bTjMJBeSE0C-QqWsZVSKtDUJQT4d0ebJ4fug=
+upVgmC-rvuj6hmhBvu=2E=22 style=3D=22text-decoration:underline; font-weight:=
+bold; color:=23313131;=22>Terms of Use</a>&nbsp;&nbsp;=7C&nbsp;&nbsp;<a hre=
+f=3D=22https://e-tui=2Etransunion=2Ecom/pub/cc?_ri_=3DX0Gzc2X%3DYQpglLjHJlY=
+QGiWzdzbN0gzdzb6sIFEzflnk3CpFsITKyWB8I3lAzgdN2MJpHch27nzbG6im7dzd4TTJzg38Ym=
+fVXtpKX%3DSTRRCWY&_ei_=3DEuLMvqHvzxDQfjPAx6rKbseDzid1MI85u2RrHIglfEmBJpHD6_=
+95JS2Zq3V1efWSCj7yjZ8N__bTjMJBeSE0C-QqWsZVSKtDUJQT4d0ebJ4fugupVgmC-rvuj6hmh=
+Bvu=2E=22 style=3D=22text-decoration:underline; font-weight:bold; color:=23=
+313131;=22>Account Login</a>=20
+            <br/><br/>
+            &copy; 2017 TransUnion Interactive, Inc=2E All Rights Reserved=
+=2E
+            <br/><br/>
+            100 Cross Street, Suite 202, San Luis Obispo, CA 93401
+</div>
+            </td>
+            </tr>
+            <tr>
+                <td height=3D=2225=22 style=3D=22line-height:25px; font-siz=
+e:0px;=22><img src=3D=22https://static=2Ecdn=2Eresponsys=2Enet/i5/responsys=
+images/tui/contentlibrary/master_rebranded_template/master_dynamic_footer/i=
+mages/sp=2Epng=22 width=3D=221=22 height=3D=2225=22 alt=3D=22=22 border=3D=
+=220=22 style=3D=22display:block;=22 /></td>
+              </tr>
+            </table>
+</html>
+               </td>
+  </tr>
+</table></td>
+        </tr>
+      </table></td>
+  </tr>
+</table><img width=3D'0' height=3D'0' src=3D'https://log=2Edmtry=2Ecom/redi=
+r/1/189/3857/20171031_October_Newsletter_Paid_12pm/0/1/160/0/971/1=2Ever?at=
+=3Di&d=3DEOpen&img=3D1'><table cellpadding=3D=220=22 cellspacing=3D=220=22 =
+style=3D=22border: 0px; padding: 0px; margin: 0px; position: absolute; disp=
+lay: none; float: left=22>
+<tr>
+<td height=3D=221=22 style=3D=22font-size: 1px; line-height: 1px; padding: =
+0px;=22>
+<br><img height=3D=221=22 width=3D=221=22 style=3D =22padding: 0px 0px; =21=
+important; margin: 0px 0px; font-size: 1px; line-height: 1px;=22 src=3D=22h=
+ttps://e-tui=2Etransunion=2Ecom/pub/as?_ri_=3DX0Gzc2X%3DYQpglLjHJlYQGiWzdzb=
+N0gzdzb6sIFEzflnk3CpFsITKyWB8I3lAzgdN2MJpHch27nzbG6im7dzd4TTJzg38YmfVXHkMX%=
+3Dw&_ei_=3DEolaGGF4SNMvxFF7KucKuWPhoVSoHc2kDw6aaKjrUDaUMQ9rsDPtRVHvIlPYk1S2=
+rTGvHEER_DqKveWd2uCtyDA=2E=22></img>
+<br><img border=3D=220=22 width=3D=221=22 height=3D=221=22 src=3D=22https:/=
+/ib=2Eadnxs=2Ecom/getuid?https://a=2Eadrsp=2Enet/dsp/ci/2/E2ZcypKXuJPVD6PJn=
+GINKAic_OIbDpUqJQ0B472i1p2y7jVjexXrcsoE3gqgzwVrwhrPXvGbAROvwOoB14JqUDue-qDS=
+YW0n35rf9ERWJg/%24UID=22></img>
+</td>
+</tr>
+</table>
+</body>
+</html>
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>date-last-viewed</key>
+	<integer>0</integer>
+	<key>date-received</key>
+	<integer>1509470890</integer>
+	<key>flags</key>
+	<integer>8590195712</integer>
+	<key>remote-id</key>
+	<string>4585</string>
+</dict>
+</plist>

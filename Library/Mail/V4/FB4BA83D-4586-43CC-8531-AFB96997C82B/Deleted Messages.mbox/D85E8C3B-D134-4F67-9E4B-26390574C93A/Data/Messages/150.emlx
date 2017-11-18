@@ -1,0 +1,588 @@
+28955     
+Return-path:
+ <bounce-mc.us6_13323443.910521-austindreier=icloud.com@mail34.sea21.rsgsv.net>
+Received: from mr11p00im-smtpin004.mac.com ([17.110.69.192])
+ by ms60015.mac.com (Oracle Communications Messaging Server 8.0.1.2.20170607
+ 64bit (built Jun  7 2017)) with ESMTP id <0OYW00CVVK4EXC50@ms60015.mac.com>
+ for austindreier@icloud.com; Sat, 04 Nov 2017 16:50:38 +0000 (GMT)
+Original-recipient: rfc822;austindreier@icloud.com
+Received: from mail34.sea21.rsgsv.net (mail34.sea21.rsgsv.net [148.105.12.34])
+ by mr11p00im-smtpin004.me.com
+ (Oracle Communications Messaging Server 8.0.1.2.20170607 64bit (built Jun  7
+ 2017)) with ESMTP id <0OYW00O7LK4DME40@mr11p00im-smtpin004.me.com> for
+ austindreier@icloud.com (ORCPT austindreier@icloud.com); Sat,
+ 04 Nov 2017 16:50:38 +0000 (GMT)
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 spamscore=0
+ clxscore=67 suspectscore=95 malwarescore=0 phishscore=0 adultscore=0
+ bulkscore=100 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.0.1-1707230000 definitions=main-1711040241
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10432:,,
+ definitions=2017-11-04_07:,, signatures=0
+Authentication-results: mr21p00im-dmarcmilter008.me.com; dmarc=pass
+ header.from=roli.com
+Authentication-results: mr21p00im-spfmilter005.me.com; spf=pass
+ (mr21p00im-spfmilter005.me.com: domain of
+ bounce-mc.us6_13323443.910521-austindreier=icloud.com@mail34.sea21.rsgsv.net
+ designates 148.105.12.34 as permitted sender)
+ smtp.mailfrom=bounce-mc.us6_13323443.910521-austindreier=icloud.com@mail34.sea21.rsgsv.net;
+Received-SPF: pass (mr21p00im-spfmilter005.me.com: domain of
+ bounce-mc.us6_13323443.910521-austindreier=icloud.com@mail34.sea21.rsgsv.net
+ designates 148.105.12.34 as permitted sender)
+ receiver=mr21p00im-spfmilter005.me.com; client-ip=148.105.12.34;
+ helo=mail34.sea21.rsgsv.net;
+ envelope-from=bounce-mc.us6_13323443.910521-austindreier=icloud.com@mail34.sea21.rsgsv.net;
+Authentication-results: mr21p00im-dkimmilter008.me.com;	dkim=pass (1024-bit
+ key) header.d=roli.com header.i=noreply@roli.com header.b=R+m7Bnx5;
+	dkim-adsp=pass
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=k1; d=roli.com;
+ h=Subject:From:Reply-To:To:Date:Message-ID:List-ID:List-Unsubscribe:
+ Content-Type:MIME-Version; i=noreply@roli.com;
+ bh=+U0yefUqxMGEMGnp5l1Js0wAFu/2IIAjs3nes2VPUuc=;
+ b=R+m7Bnx5lF6kxNtrweGLEbSQc9UVupfBMYvextEXhEpXoXsIhk+w1/ffbKuf0+nZ9kw9pgaiB30v
+   D/f9LYCLU9xvbwqV7rbUeC7a7mzaPB0z/dUcNwJvrYN6LovCM71GfJ+AkKEIpld1cD9s0ANYp+9+
+   oEDIacELmnBOawEG1yk=
+Received: from (127.0.0.1) by mail34.sea21.rsgsv.net id hvnntq2akecn for
+ <austindreier@icloud.com>; Sat,
+ 4 Nov 2017 16:45:48 +0000 (envelope-from <bounce-mc.us6_13323443.910521-austindreier=icloud.com@mail34.sea21.rsgsv.net>)
+Subject:
+ =?utf-8?Q?Build=20your=20own=20song=20with=20the=20beats=20of=20=22Lemon=2C=22=20the=20new=20single=20from=20Pharrell=27s=20N.E.R.D=20and=20Rihanna?=
+From: =?utf-8?Q?ROLI?= <noreply@roli.com>
+Reply-to: =?utf-8?Q?ROLI?= <noreply@roli.com>
+To: austindreier@icloud.com
+Date: Sat, 04 Nov 2017 16:45:48 +0000
+Message-id:
+ <de5b31d43bd17b6dd173ed2b4.87db4d35bb.20171104164449.dec44d767e.8f8fc7f3@mail34.sea21.rsgsv.net>
+X-Mailer: MailChimp Mailer - **CIDdec44d767e87db4d35bb**
+Feedback-ID: 13323443:13323443.910521:us6:mc
+List-Id: de5b31d43bd17b6dd173ed2b4mc list
+ <de5b31d43bd17b6dd173ed2b4.202809.list-id.mcsv.net>
+List-Unsubscribe:
+ <https://roli.us6.list-manage.com/unsubscribe?u=de5b31d43bd17b6dd173ed2b4&id=0b59ea513b&e=87db4d35bb&c=dec44d767e>,
+ <mailto:unsubscribe-mc.us6_de5b31d43bd17b6dd173ed2b4.dec44d767e-87db4d35bb@mailin1.us2.mcsv.net?subject=unsubscribe>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+Content-type: multipart/alternative; boundary="_----------=_MCPart_1861725644"
+MIME-version: 1.0
+x-icloud-spam-score: 3331331
+ f=roli.com;e=mail34.sea21.rsgsv.net;is=yes;ir=no;spf=pass;dkim=pass;dmarc=pass/quarantine/none;gdwl=absent;pps=ham;clxs=ham;clxw=neutral
+X-CLX-Spam: false
+X-CLX-UnSpecialScore: None
+X-CLX-Score: 67
+X-CLX-UShades: None
+X-CLX-Shades: None
+X-MANTSH: 1TEIXR1gbG1oaGkNHB0tNT0ReQ0QZGxoYEQpMQxcbHQQbGxsEGx0ZBBkYEBseGh8
+ aEQpMWRccHREKWU0XZEVETxEKWUkXGnEaEBp3Bh4dcRgYHBIQHR0adwYYGgYaEQpZXhdra3kRC
+ kNOF317YVJ/cFlSfxtIHWgfQB9HU0gdGUB9f3xMW2sbeXluEQpYXBcZBBoEGRgHTRlOE08TGRg
+ FGx0EGxsbBBsfHwQbHRwQGx4aHxoRCl5ZF3hnH3gfEQpNXBceHB8RCkxaF3hlQUFdEQpFWRdvE
+ QpMXxd6BQUFBQUFBQUFQxEKQ1oXGx4SBBsaHwQbGAQZHhEKQl4XGxEKQkYXaxhFXmdbWX0FWB4
+ RCkJHF2lYb355aR1Bc0kSEQpCXBcbEQpeThcbEQpCSxdsRxNpGFkfcE5SfhEKQkUXZllNH15tH
+ kdCSH8RCkJOF2xHE2kYWR9wTlJ+EQpCTBdsXkEaBU9kWBpsGREKQmwXYEcdbXx6UwFNYnMRCkJ
+ AF2IFbR9oSGlvHQV8EQpCWBduRx0bTmRhRRsSQBEKcGgXZUtQEmhdRUlpHn0QGhEKcGgXY3N7Y
+ EV7WFxNemwQGhEKcGgXZVxiZwViWAFLeloQGhEKcGgXbWJFXxtPRWZpGWYQGhEKcGgXZB9dEmZ
+ oTUIBTWwQBx4SEQpwfxdjQRpmbkxEbHNJbxAbGBEKcH8XZUtuX21TeXxJeEwQBxsSEQpwfxdoW
+ GJcemR/WBtFcxAdGBEKcH8Xa1Iebxx9HGdQb34QGRoRCnB/F2tGHGABcFByYmRYEB8TEQpwfRd
+ mXmFYeVh/QGddQRAaEQpwXxdmRBpfGmNcWB15fRAaEQpwfRd6SVhFa1xyX2caZBAaEQpwXxdpX
+ GZYaEloYnJ4ZhAHGRoRCnB9F29EHU8YUmV/W2kbEBoRCnB9F2xaBVl5G0VPGE5+EBoRCnBfF25
+ cTGRhSBxnRRsYEAcZGhEKcH0XaERPb0ZtYwVTfWcQGhEKcH0X
+x-dmarc-info: pass=pass; dmarc-policy=quarantine; s=r0; d=r1
+x-dmarc-policy: v=DMARC1; p=quarantine; pct=5;
+ rua=mailto:googlesecurity@roli.com
+X-Campaign: mailchimpde5b31d43bd17b6dd173ed2b4.dec44d767e
+X-campaignid: mailchimpde5b31d43bd17b6dd173ed2b4.dec44d767e
+X-Report-Abuse: Please report abuse for this campaign here:
+ http://www.mailchimp.com/abuse/abuse.phtml?u=de5b31d43bd17b6dd173ed2b4&id=dec44d767e&e=87db4d35bb
+X-MC-User: de5b31d43bd17b6dd173ed2b4
+X-Accounttype: pr
+x-mcda: FALSE
+
+This is a multi-part message in MIME format
+
+--_----------=_MCPart_1861725644
+Content-Type: text/plain; charset="utf-8"; format="fixed"
+Content-Transfer-Encoding: quoted-printable
+
+https://www.roli.com?utm_source=3DMaster+ROLI+Creators+List&utm_campaign=
+=3Ddec44d767e-Lemon+%28NOISE%29&utm_medium=3Demail&utm_term=3D0_0b59ea513b=
+-dec44d767e-113104277&mc_cid=3Ddec44d767e&mc_eid=3D[UNIQID] Read in=
+ your browser (http://mailchi.mp/roli/personalize-the-latest-hit-song-from=
+-pharrell-and-rihanna-with-the-new-free-studiopack-910521?e=3D87db4d35bb)
+https://roli.com/article/my-studio-marclohttps://roli.com/stories/lemon-st=
+udiopack?utm_source=3DMaster+ROLI+Creators+List&utm_campaign=3Ddec44d767e-=
+Lemon+%28NOISE%29&utm_medium=3Demail&utm_term=3D0_0b59ea513b-dec44d767e-=
+113104277&mc_cid=3Ddec44d767e&mc_eid=3D[UNIQID]
+
+Featuring irresistible beats and fiery rapping from Rihanna=2C "Lemon" is=
+ the huge comeback single from Pharrell Williams' band N.E.R.D. =E2=80=94=
+ and now you can put your own spin on this instant classic with the new Le=
+mon by N.E.R.D. (https://roli.com/stories/lemon-studiopack?utm_source=3DMa=
+ster+ROLI+Creators+List&utm_campaign=3Ddec44d767e-Lemon+%28NOISE%29&utm_me=
+dium=3Demail&utm_term=3D0_0b59ea513b-dec44d767e-113104277&mc_cid=3Dd=
+ec44d767e&mc_eid=3D[UNIQID]) Studiopack in your NOISE (https://roli.com/p=
+roducts/software/noise?utm_source=3DMaster+ROLI+Creators+List&utm_campaign=
+=3Ddec44d767e-Lemon+%28NOISE%29&utm_medium=3Demail&utm_term=3D0_0b59ea513b=
+-dec44d767e-113104277&mc_cid=3Ddec44d767e&mc_eid=3D[UNIQID]) app.
+
+It=E2=80=99s completely free=2C so you can start playing today. Watch our=
+ demo of the Studiopack below:
+
+https://roli.com/stories/lemon-studiopack?autoplay&utm_source=3DMaster+ROL=
+I+Creators+List&utm_campaign=3Ddec44d767e-Lemon+%28NOISE%29&utm_medium=3De=
+mail&utm_term=3D0_0b59ea513b-dec44d767e-113104277&mc_cid=3Ddec44d767=
+e&mc_eid=3D[UNIQID]
+
+To celebrate this release we're also giving away a Lightpad M (https://rol=
+i.com/products/blocks/lightpad-m?utm_source=3DMaster+ROLI+Creators+List&ut=
+m_campaign=3Ddec44d767e-Lemon+%28NOISE%29&utm_medium=3Demail&utm_term=3D0_=
+0b59ea513b-dec44d767e-113104277&mc_cid=3Ddec44d767e&mc_eid=3D[UNIQI=
+D]) and the full selection of NOISE soundpacks to a lucky winner who share=
+s a photo or video of the Lemon by N.E.R.D. Studiopack on social media. It=
+'s easy to take part =E2=80=94 find out how to enter here (https://roli.co=
+m/stories/lemon-studiopack?utm_source=3DMaster+ROLI+Creators+List&utm_camp=
+aign=3Ddec44d767e-Lemon+%28NOISE%29&utm_medium=3Demail&utm_term=3D0_0b59ea=
+513b-dec44d767e-113104277&mc_cid=3Ddec44d767e&mc_eid=3D[UNIQID]) .
+
+Lemon by N.E.R.D. is only the second Studiopack available in NOISE. Last m=
+onth we released Happy by Pharrell (https://roli.com/stories/play-happy-by=
+-pharrell?utm_source=3DMaster+ROLI+Creators+List&utm_campaign=3Ddec44d767e=
+-Lemon+%28NOISE%29&utm_medium=3Demail&utm_term=3D0_0b59ea513b-dec44d767e-=
+113104277&mc_cid=3Ddec44d767e&mc_eid=3D[UNIQID]) =2C putting all the=
+ ingredients of the uplifting number one single at your fingertips. Find b=
+oth Studiopacks under "Bundles" in the Soundpack Store.
+
+Start remixing "Lemon" today =E2=80=94 and don't forget to share your crea=
+tions!
+
+11c3a673-7fb3-4071-ac26-939635cbc618.png
+#https://roli.com/products/blocks/seaboard-block #https://roli.com/product=
+s/blocks/lightpad-m
+Explore the BLOCKS Collection (https://roli.com/products/blocks/?utm_sourc=
+e=3DMaster+ROLI+Creators+List&utm_campaign=3Ddec44d767e-Lemon+%28NOISE%29&=
+utm_medium=3Demail&utm_term=3D0_0b59ea513b-dec44d767e-113104277&mc_c=
+id=3Ddec44d767e&mc_eid=3D[UNIQID])
+https://www.roli.com?utm_source=3DMaster+ROLI+Creators+List&utm_campaign=
+=3Ddec44d767e-Lemon+%28NOISE%29&utm_medium=3Demail&utm_term=3D0_0b59ea513b=
+-dec44d767e-113104277&mc_cid=3Ddec44d767e&mc_eid=3D[UNIQID]
+https://www.facebook.com/ROLI?utm_source=3DMaster+ROLI+Creators+List&utm_c=
+ampaign=3Ddec44d767e-Lemon+%28NOISE%29&utm_medium=3Demail&utm_term=3D0_0b5=
+9ea513b-dec44d767e-113104277&mc_cid=3Ddec44d767e&mc_eid=3D[UNIQID]=
+ https://twitter.com/WeAreROLI?utm_source=3DMaster+ROLI+Creators+List&utm_=
+campaign=3Ddec44d767e-Lemon+%28NOISE%29&utm_medium=3Demail&utm_term=3D0_0b=
+59ea513b-dec44d767e-113104277&mc_cid=3Ddec44d767e&mc_eid=3D[UNIQID]=
+ https://www.youtube.com/channel/UCz5nFP_ySbbsmo1tWldOuZA?utm_source=3DMas=
+ter+ROLI+Creators+List&utm_campaign=3Ddec44d767e-Lemon+%28NOISE%29&utm_med=
+ium=3Demail&utm_term=3D0_0b59ea513b-dec44d767e-113104277&mc_cid=3Dde=
+c44d767e&mc_eid=3D[UNIQID] https://instagram.com/we.are.roli/?utm_source=
+=3DMaster+ROLI+Creators+List&utm_campaign=3Ddec44d767e-Lemon+%28NOISE%29&u=
+tm_medium=3Demail&utm_term=3D0_0b59ea513b-dec44d767e-113104277&mc_ci=
+d=3Ddec44d767e&mc_eid=3D[UNIQID]
+
+Unsubscribe (https://roli.us6.list-manage.com/unsubscribe?u=3Dde5b31d43bd1=
+7b6dd173ed2b4&id=3D0b59ea513b&e=3D87db4d35bb&c=3Ddec44d767e)
+Copyright =C2=A9 2017 ROLI. All rights reserved.
+--_----------=_MCPart_1861725644
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www=
+=2Ew3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns=3D"http://www.w3.org/1999/xhtml">
+  <head>
+
+  <style type=3D"text/css">
+=09=09html body{
+=09=09=09margin-bottom:0 !important;
+=09=09}
+=09=09td{
+=09=09=09line-height:1.6;
+=09=09=09font-size:16px;
+=09=09=09font-family:"Contax Pro"=2C"ContaxPro45Lig"=2CVerdana=2CGeneva=2C=
+sans-serif;
+=09=09=09color:#323D48;
+=09=09}
+=09=09a{
+=09=09=09text-decoration:none;
+=09=09=09color:#323D48;
+=09=09}
+=09=09.mainbutton a{
+=09=09=09color:#ffffff;
+=09=09}
+=09=09h1=2Ch2=2Ch3{
+=09=09=09font-weight:300;
+=09=09=09margin:.4em 0;
+=09=09}
+=09=09h1{
+=09=09=09font-size:28px;
+=09=09}
+=09=09.archive{
+=09=09=09text-align:right;
+=09=09}
+=09=09.archive a{
+=09=09=09color:#999;
+=09=09=09font-size:12px;
+=09=09}
+=09=09.headerimg img{
+=09=09=09border-radius:0;
+=09=09}
+=09=09.body p a=2C.fancylink{
+=09=09=09font-weight:bold;
+=09=09=09border-bottom:1px solid #b1bdc8;
+=09=09}
+=09=09.quad h2{
+=09=09=09margin:0;
+=09=09}
+=09=09td.quad-box:first-child{
+=09=09=09padding-right:20px;
+=09=09}
+=09=09td.quad-box:nth-child(2){
+=09=09=09padding-left:20px;
+=09=09}
+=09=09.footer td{
+=09=09=09color:#aaaaaa;
+=09=09=09font-size:12px;
+=09=09=09padding-right:0;
+=09=09}
+=09=09.footer td a{
+=09=09=09color:#eeeeee;
+=09=09}
+=09=09.footer td a:hover{
+=09=09=09text-decoration:underline;
+=09=09}
+=09=09td.footer-logo{
+=09=09=09padding-left:0;
+=09=09}
+=09=09.sub-footer{
+=09=09=09text-align:center;
+=09=09}
+=09=09.sub-footer td{
+=09=09=09color:#4c4c4c;
+=09=09=09text-align:center;
+=09=09}
+=09=09.header=2C.footer=2C.body=2C.copyright{
+=09=09=09padding:10px;
+=09=09}
+=09=09.header=2C.footer=2C.copyright{
+=09=09=09width:650px;
+=09=09=09min-width:650px;
+=09=09}
+</style></head>
+  <body style=3D"margin-bottom: 0 !important;">
+    <p>
+  </p>
+  <meta http-equiv=3D"content-type" content=3D"text/html; charset=3DUTF-8"=
+>
+  <meta property=3D"og:title" content=3D"Build your own song with the beat=
+s of "Lemon=2C" the new single from Pharrell's N.E.R.D and Rihanna">
+  <title>Build your own song with the beats of "Lemon=2C" the new single f=
+rom Pharrell's N.E.R.D and Rihanna</title>
+  <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%">
+    <tr>
+      <td align=3D"center" style=3D"line-height:1.6;font-size:16px;font-fa=
+mily:'Contax Pro'=2C ContaxPro45Lig=2C Verdana=2C Geneva=2C sans-serif;col=
+or:#323D48;">
+        <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"6=
+50" style=3D"width:650px;min-width:650px;background-color:#000000;padding:=
+10px;" class=3D"header" bgcolor=3D"#000000">
+          <tr>
+            <td align=3D"center" style=3D"line-height:1.6;font-size:16px;f=
+ont-family:'Contax Pro'=2C ContaxPro45Lig=2C Verdana=2C Geneva=2C sans-ser=
+if;color:#323D48;">
+              <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" widt=
+h=3D"600">
+                <tr>
+                  <td style=3D"line-height:1.6;font-size:16px;font-family:=
+'Contax Pro'=2C ContaxPro45Lig=2C Verdana=2C Geneva=2C sans-serif;color:#3=
+23D48;">
+                    <a href=3D"https://roli.us6.list-manage.com/track/clic=
+k?u=3Dde5b31d43bd17b6dd173ed2b4&id=3D1471471590&e=3D87db4d35bb" style=3D"=
+color:#ffffff;text-decoration:none;"><img src=3D"https://d30pueezughrda.cl=
+oudfront.net/email/roli-monogram-white.gif" alt=3D"ROLI" width=3D"40" heig=
+ht=3D"40"></a>
+                  </td>
+                  <td class=3D"archive" style=3D"line-height:1.6;font-size=
+:16px;font-family:'Contax Pro'=2C ContaxPro45Lig=2C Verdana=2C Geneva=2C s=
+ans-serif;color:#323D48;padding-bottom:0;text-align:right;" align=3D"right=
+">
+                    <a href=3D"http://mailchi.mp/roli/personalize-the-late=
+st-hit-song-from-pharrell-and-rihanna-with-the-new-free-studiopack-910521?=
+e=3D87db4d35bb" target=3D"_blank" style=3D"text-decoration:none;color:#fffff=
+f;font-size:12px;">Read in your browser</a>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+        <!-- BEGIN CONTENT -->
+        <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"6=
+50" style=3D"background-color:#F0F0F0;min-height:100px;" bgcolor=3D"#F0F0F=
+0">
+          <tr>
+            <td align=3D"center" style=3D"line-height:1.6;font-size:16px;f=
+ont-family:'Contax Pro'=2C ContaxPro45Lig=2C Verdana=2C Geneva=2C sans-ser=
+if;color:#323D48;">
+              <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" widt=
+h=3D"650">
+                <tr>
+                  <td align=3D"center" style=3D"line-height:1.6;font-size:=
+16px;font-family:'Contax Pro'=2C ContaxPro45Lig=2C Verdana=2C Geneva=2C sa=
+ns-serif;color:#323D48;">
+                    <a href=3D"https://roli.us6.list-manage.com/track/clic=
+k?u=3Dde5b31d43bd17b6dd173ed2b4&id=3D4f15f38f86&e=3D87db4d35bb" target=3D=
+"_blank" style=3D"text-decoration: none;color: #323D48;"><a href=3D"https:=
+//roli.us6.list-manage.com/track/click?u=3Dde5b31d43bd17b6dd173ed2b4&id=3D=
+96e51b229d&e=3D87db4d35bb" target=3D"_blank" style=3D"text-decoration: no=
+ne;color: #323D48;"><img data-file-id=3D"1360081" height=3D"325" src=3D"ht=
+tps://gallery.mailchimp.com/de5b31d43bd17b6dd173ed2b4/images/a81b94a8-41f7=
+-4707-973d-f92ef6d0b35e.jpg" style=3D"border: 0px  ; width: 650px; height:=
+ 325px; margin: 0px;" width=3D"650"></a></a>
+                  </td>
+                </tr>
+                <tr>
+                  <td align=3D"center" style=3D"line-height:1.6;font-size:=
+16px;font-family:'Contax Pro'=2C ContaxPro45Lig=2C Verdana=2C Geneva=2C sa=
+ns-serif;color:#323D48;">
+                    <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0=
+" width=3D"600" class=3D"body" style=3D"padding:10px 10px 30px;">
+                      <tr>
+                        <td style=3D"line-height:1.6;font-size:16px;font-f=
+amily:'Contax Pro'=2C ContaxPro45Lig=2C Verdana=2C Geneva=2C sans-serif;co=
+lor:#323D48;"><p>Featuring irresistible beats and fiery rapping&nbsp;from=
+ Rihanna=2C &quot;Lemon&quot; is the huge comeback single from Pharrell Wi=
+lliams&#39; band N.E.R.D. &mdash; and now you can put your own spin on thi=
+s instant classic with the new <span class=3D"fancylink" style=3D"font-wei=
+ght: bold;border-bottom: 1px solid #b1bdc8;"><a href=3D"https://roli.us6.l=
+ist-manage.com/track/click?u=3Dde5b31d43bd17b6dd173ed2b4&id=3Dcb84a3690d&e=
+=3D87db4d35bb" target=3D"_blank" style=3D"text-decoration: none;color: #3=
+23D48;font-weight: bold;border-bottom: 1px solid #b1bdc8;"><strong>Lemon b=
+y N.E.R.D.</strong></a></span> Studiopack in your <span class=3D"fancylink=
+" style=3D"font-weight: bold;border-bottom: 1px solid #b1bdc8;"><a href=3D=
+"https://roli.us6.list-manage.com/track/click?u=3Dde5b31d43bd17b6dd173ed2b=
+4&id=3D48985a6dde&e=3D87db4d35bb" target=3D"_blank" style=3D"text-decorat=
+ion: none;color: #323D48;font-weight: bold;border-bottom: 1px solid #b1bdc=
+8;">NOISE</a></span> app.<br>
+<br>
+It&rsquo;s completely free=2C so you can start playing today. Watch our de=
+mo&nbsp;of the Studiopack below:<br>
+<br>
+<a href=3D"https://roli.us6.list-manage.com/track/click?u=3Dde5b31d43bd17b=
+6dd173ed2b4&id=3Ddeed688d21&e=3D87db4d35bb" target=3D"_blank" style=3D"te=
+xt-decoration: none;color: #323D48;font-weight: bold;border-bottom: 1px so=
+lid #b1bdc8;"><img data-file-id=3D"1360089" height=3D"300" src=3D"https://=
+gallery.mailchimp.com/de5b31d43bd17b6dd173ed2b4/images/4fcdc880-15fe-403c-=
+976a-28b7b4662abd.jpg" style=3D"border: 0px  ; width: 600px; height: 300px=
+; margin: 0px;" width=3D"600"></a><br>
+<br>
+To celebrate this release we&#39;re also&nbsp;giving away a <span class=3D=
+"fancylink" style=3D"font-weight: bold;border-bottom: 1px solid #b1bdc8;">=
+<a href=3D"https://roli.us6.list-manage.com/track/click?u=3Dde5b31d43bd17b=
+6dd173ed2b4&id=3Dc74b581a40&e=3D87db4d35bb" target=3D"_blank" style=3D"te=
+xt-decoration: none;color: #323D48;font-weight: bold;border-bottom: 1px so=
+lid #b1bdc8;">Lightpad M</a></span> and the full selection of NOISE soundp=
+acks to a lucky winner who shares a photo or video of the&nbsp;<strong>Lem=
+on by N.E.R.D.</strong>&nbsp;Studiopack on social media.&nbsp;It&#39;s&nbs=
+p;easy to take part &mdash; find out how to enter <span class=3D"fancylink=
+" style=3D"font-weight: bold;border-bottom: 1px solid #b1bdc8;"><a href=3D=
+"https://roli.us6.list-manage.com/track/click?u=3Dde5b31d43bd17b6dd173ed2b=
+4&id=3D68303a98b2&e=3D87db4d35bb" target=3D"_blank" style=3D"text-decorat=
+ion: none;color: #323D48;font-weight: bold;border-bottom: 1px solid #b1bdc=
+8;">here</a></span>.&nbsp;<br>
+<br>
+<strong>Lemon by N.E.R.D.</strong> is only the second Studiopack available=
+ in NOISE. Last month we released <strong><span class=3D"fancylink" style=
+=3D"font-weight: bold;border-bottom: 1px solid #b1bdc8;"><a href=3D"https:=
+//roli.us6.list-manage.com/track/click?u=3Dde5b31d43bd17b6dd173ed2b4&id=3D=
+aba028ee6f&e=3D87db4d35bb" target=3D"_blank" style=3D"text-decoration: no=
+ne;color: #323D48;font-weight: bold;border-bottom: 1px solid #b1bdc8;">Hap=
+py by Pharrell</a></span>=2C </strong>putting all the ingredients of the u=
+plifting number one single at your fingertips. Find both Studiopacks under=
+ &quot;Bundles&quot; in the Soundpack Store.<br>
+<br>
+Start remixing &quot;Lemon&quot; today&nbsp;&mdash; and don&#39;t forget t=
+o share your creations!<br>
+<br>
+<img alt=3D"11c3a673-7fb3-4071-ac26-939635cbc618.png" height=3D"35" src=3D=
+"https://gallery.mailchimp.com/de5b31d43bd17b6dd173ed2b4/images/11c3a673-7=
+fb3-4071-ac26-939635cbc618.png" style=3D"border: 0px  ; width: 250px; heig=
+ht: 35px; margin: 0px;" width=3D"250"></p>
+</td>
+                    </tr>
+                    <tr>
+                      <td style=3D"line-height: 1.6;font-size: 16px;font-f=
+amily: &quot;Contax Pro&quot;=2C&quot;ContaxPro45Lig&quot;=2CVerdana=2CGen=
+eva=2Csans-serif;color: #323D48;">
+                        <table style=3D"margin-left:auto;margin-right:auto=
+;border-collapse:separate;border-spacing:16px;">
+                          <tr>
+                            <td style=3D"width: 262px;height: 280px;text-a=
+lign: center;line-height: 1.6;font-size: 16px;font-family: &quot;Contax Pr=
+o&quot;=2C&quot;ContaxPro45Lig&quot;=2CVerdana=2CGeneva=2Csans-serif;color=
+: #323D48;">
+                              <a href=3D"#" target=3D"_blank" style=3D"tex=
+t-decoration: none;color: #323D48;"><a href=3D"https://roli.us6.list-manag=
+e.com/track/click?u=3Dde5b31d43bd17b6dd173ed2b4&id=3D4f8829ffa4&e=3D=
+87db4d35bb" target=3D"_blank" style=3D"text-decoration: none;color: #323D48;"><=
+img data-file-id=3D"1358985" height=3D"277" src=3D"https://gallery.mailchi=
+mp.com/de5b31d43bd17b6dd173ed2b4/images/7baefca1-83e4-418a-86b2-b07387e953=
+b4.jpg" style=3D"border: 0px  ; width: 260px; height: 277px; margin: 0px;"=
+ width=3D"260"></a></a>
+                            </td>
+                            <td style=3D"width: 262px;height: 280px;text-a=
+lign: center;line-height: 1.6;font-size: 16px;font-family: &quot;Contax Pr=
+o&quot;=2C&quot;ContaxPro45Lig&quot;=2CVerdana=2CGeneva=2Csans-serif;color=
+: #323D48;">
+                              <a href=3D"#" target=3D"_blank" style=3D"tex=
+t-decoration: none;color: #323D48;"><a href=3D"https://roli.us6.list-manag=
+e.com/track/click?u=3Dde5b31d43bd17b6dd173ed2b4&id=3D4ccfee4362&e=3D=
+87db4d35bb" target=3D"_blank" style=3D"text-decoration: none;color: #323D48;"><=
+img data-file-id=3D"1359777" height=3D"277" src=3D"https://gallery.mailchi=
+mp.com/de5b31d43bd17b6dd173ed2b4/images/aefffed3-a088-4d02-bffc-34cd2b7df7=
+de.jpg" style=3D"border: 0px  ; width: 260px; height: 277px; margin: 0px;"=
+ width=3D"260"></a></a>
+                            </td>
+                          </tr>
+                        </table>
+                        <table style=3D"margin-left:auto;margin-right:auto=
+;border-collapse:separate;border-spacing:16px;">
+                          <tr>
+                            <td style=3D"width: 542px;height: 56px;backgro=
+und-color: #9b9b9b;text-align: center;color: #ffffff;font-size: 18px;line-=
+height: 1.6;font-family: &quot;Contax Pro&quot;=2C&quot;ContaxPro45Lig&quo=
+t;=2CVerdana=2CGeneva=2Csans-serif;" class=3D"mainbutton"><a href=3D"https=
+://roli.us6.list-manage.com/track/click?u=3Dde5b31d43bd17b6dd173ed2b4&id=
+=3D024fbe0dca&e=3D87db4d35bb" target=3D"_blank" style=3D"text-decoration:=
+ none;color: #ffffff;">Explore the BLOCKS Collection</a></td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <!-- END CONTENT -->
+      <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"650=
+" style=3D"width:650px;min-width:650px;background-color:#000000;padding:10=
+px;" class=3D"footer" bgcolor=3D"#000000">
+        <tr>
+          <td align=3D"center" style=3D"line-height: 1.6;font-size: 11px;f=
+ont-family: 'Contax Pro'=2C ContaxPro45Lig=2C Verdana=2C Geneva=2C sans-se=
+rif;color: #aaaaaa;padding-bottom: 0;padding-right: 0;">
+            <table border=3D"0" cellpadding=3D"40" cellspacing=3D"0" width=
+=3D"600" style=3D"padding-bottom:30px;">
+              <tr>
+                <td style=3D"width: 40%;line-height: 1.6;font-size: 11px;f=
+ont-family: 'Contax Pro'=2C ContaxPro45Lig=2C Verdana=2C Geneva=2C sans-se=
+rif;color: #aaaaaa;padding-bottom: 0;padding-left: 0;padding-right: 0;" al=
+ign=3D"center" class=3D"footer-logo">
+                  <a href=3D"https://roli.us6.list-manage.com/track/click?=
+u=3Dde5b31d43bd17b6dd173ed2b4&id=3D4e8279ebfd&e=3D87db4d35bb" style=3D"co=
+lor:#ffffff;text-decoration:none;"><img src=3D"https://d30pueezughrda.clou=
+dfront.net/email/roli-logotype-white.gif" alt=3D"ROLI.com" width=3D"132" h=
+eight=3D"48" style=3D"vertical-align: bottom;"></a>
+                </td>
+              </tr>
+              <tr>
+                <td align=3D"center" style=3D"padding-left: 0;line-height:=
+ 1.6;font-size: 11px;font-family: 'Contax Pro'=2C ContaxPro45Lig=2C Verdan=
+a=2C Geneva=2C sans-serif;color: #aaaaaa;padding-bottom: 0;padding-right:=
+ 0;">
+                  <table border=3D"0" cellpadding=3D"0" cellspacing=3D"5"=
+ align=3D"center" width=3D"40%">
+                    <tr>
+                      <td align=3D"center" style=3D"line-height: 1.6;font-=
+size: 12px;font-family: 'Contax Pro'=2C ContaxPro45Lig=2C Verdana=2C Genev=
+a=2C sans-serif;color: #aaaaaa;padding-right: 0;">
+                        <a href=3D"https://roli.us6.list-manage.com/track/=
+click?u=3Dde5b31d43bd17b6dd173ed2b4&id=3D237ff3ef27&e=3D87db4d35bb" title=
+=3D"Facebook" style=3D"text-decoration:none;color:#eeeeee;"><img src=3D"ht=
+tps://d30pueezughrda.cloudfront.net/email/social-facebook-white.gif" width=
+=3D"26" height=3D"22" alt=3D"Facebook"></a>
+                      </td>
+                      <td align=3D"center" style=3D"line-height: 1.6;font-=
+size: 12px;font-family: 'Contax Pro'=2C ContaxPro45Lig=2C Verdana=2C Genev=
+a=2C sans-serif;color: #aaaaaa;padding-right: 0;">
+                        <a href=3D"https://roli.us6.list-manage.com/track/=
+click?u=3Dde5b31d43bd17b6dd173ed2b4&id=3D15f2aae12b&e=3D87db4d35bb" title=
+=3D"Twitter" style=3D"text-decoration:none;color:#eeeeee;"><img src=3D"htt=
+ps://d30pueezughrda.cloudfront.net/email/social-twitter-white.gif" width=
+=3D"26" height=3D"22" alt=3D"Twitter"></a>
+                      </td>
+                      <td align=3D"center" style=3D"line-height: 1.6;font-=
+size: 12px;font-family: 'Contax Pro'=2C ContaxPro45Lig=2C Verdana=2C Genev=
+a=2C sans-serif;color: #aaaaaa;padding-right: 0;">
+                        <a href=3D"https://roli.us6.list-manage.com/track/=
+click?u=3Dde5b31d43bd17b6dd173ed2b4&id=3D2b56c6f029&e=3D87db4d35bb" title=
+=3D"Youtube" style=3D"text-decoration:none;color:#eeeeee;"><img src=3D"htt=
+ps://d30pueezughrda.cloudfront.net/email/social-youtube-white.gif" width=
+=3D"26" height=3D"22" alt=3D"Youtube"></a>
+                      </td>
+                      <td align=3D"center" style=3D"line-height: 1.6;font-=
+size: 12px;font-family: 'Contax Pro'=2C ContaxPro45Lig=2C Verdana=2C Genev=
+a=2C sans-serif;color: #aaaaaa;padding-right: 0;">
+                        <a href=3D"https://roli.us6.list-manage.com/track/=
+click?u=3Dde5b31d43bd17b6dd173ed2b4&id=3Dd6cb12f50d&e=3D87db4d35bb" title=
+=3D"Instagram" style=3D"text-decoration:none;color:#eeeeee;"><img src=3D"h=
+ttps://d30pueezughrda.cloudfront.net/email/social-instagram-white.gif" wid=
+th=3D"26" height=3D"22" alt=3D"Instagram"></a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan=3D"4" style=3D"line-height: 1.6;font-siz=
+e: 12px;font-family: 'Contax Pro'=2C ContaxPro45Lig=2C Verdana=2C Geneva=
+=2C sans-serif;color: #aaaaaa;padding-right: 0;">
+                        <p align=3D"center"><a href=3D"https://roli.us6.li=
+st-manage.com/unsubscribe?u=3Dde5b31d43bd17b6dd173ed2b4&id=3D0b59ea513b&e=
+=3D87db4d35bb&c=3Ddec44d767e" style=3D"text-decoration:none;color:#eeeeee;">=
+Unsubscribe</a>
+                      </p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+    <table border=3D"0" cellpadding=3D"0" style=3D"width:650px;min-width:6=
+50px;background-color:#d1d3d3;padding:10px;" bgcolor=3D"#d1d3d3" cellspaci=
+ng=3D"0" width=3D"650" class=3D"copyright">
+      <tr>
+        <td style=3D"line-height:1.6;font-size:16px;font-family:'Contax Pr=
+o'=2C ContaxPro45Lig=2C Verdana=2C Geneva=2C sans-serif;color:#323D48;">
+          <table class=3D"sub-footer" align=3D"center" style=3D"text-align=
+:center;">
+            <tr>
+              <td style=3D"text-align:center;font-size:13px;line-height:1.=
+6;font-family:'Contax Pro'=2C ContaxPro45Lig=2C Verdana=2C Geneva=2C sans-=
+serif;color:#4c4c4c;" align=3D"center">Copyright =C2=A9 2017 ROLI. All rig=
+hts reserved.</td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<img src=3D"https://roli.us6.list-manage.com/track/open.php?u=3Dde5b31d43b=
+d17b6dd173ed2b4&id=3Ddec44d767e&e=3D87db4d35bb" height=3D"1" width=3D"1">=
+</body>
+</html>
+--_----------=_MCPart_1861725644--
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>date-last-viewed</key>
+	<integer>0</integer>
+	<key>date-received</key>
+	<integer>1509814238</integer>
+	<key>flags</key>
+	<integer>8590195712</integer>
+	<key>remote-id</key>
+	<string>4623</string>
+</dict>
+</plist>

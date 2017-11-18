@@ -1,0 +1,477 @@
+24274     
+Return-path: <bounces+2693180-1ee3-austindreier=icloud.com@m.dripemail2.com>
+Received: from st11p00im-smtpin017.mac.com ([17.172.80.101])
+ by ms60015.mac.com (Oracle Communications Messaging Server 8.0.1.2.20170607
+ 64bit (built Jun  7 2017)) with ESMTP id <0OY200ETQPNQYL00@ms60015.mac.com>
+ for austindreier@icloud.com; Thu, 19 Oct 2017 14:02:14 +0000 (GMT)
+Original-recipient: rfc822;austindreier@icloud.com
+Received: from o3.m.dripemail2.com (o3.m.dripemail2.com [167.89.40.148])
+ by st11p00im-smtpin017.me.com
+ (Oracle Communications Messaging Server 8.0.1.2.20170607 64bit (built Jun  7
+ 2017)) with ESMTPS id <0OY2018PCPNHW2C0@st11p00im-smtpin017.me.com> for
+ austindreier@icloud.com (ORCPT austindreier@icloud.com); Thu,
+ 19 Oct 2017 14:02:14 +0000 (GMT)
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 spamscore=0
+ clxscore=25 suspectscore=79 malwarescore=0 phishscore=0 adultscore=0
+ bulkscore=100 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.0.1-1707230000 definitions=main-1710190194
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10432:,,
+ definitions=2017-10-19_05:,, signatures=0
+Authentication-results: st11p00mm-dmarcmilter002.me.com; dmarc=none
+ header.from=flip2freedom.com
+Authentication-results: st11p00mm-spfmilter006.mac.com; spf=pass
+ (st11p00mm-spfmilter006.mac.com: domain of
+ bounces+2693180-1ee3-austindreier=icloud.com@m.dripemail2.com designates
+ 167.89.40.148 as permitted sender)
+ smtp.mailfrom=bounces+2693180-1ee3-austindreier=icloud.com@m.dripemail2.com;
+Received-SPF: pass (st11p00mm-spfmilter006.mac.com: domain of
+ bounces+2693180-1ee3-austindreier=icloud.com@m.dripemail2.com designates
+ 167.89.40.148 as permitted sender) receiver=st11p00mm-spfmilter006.mac.com;
+ client-ip=167.89.40.148; helo=o3.m.dripemail2.com;
+ envelope-from=bounces+2693180-1ee3-austindreier=icloud.com@m.dripemail2.com;
+Authentication-results: st11p00mm-dkimmilter006.mac.com;	dkim=pass (1024-bit
+ key) header.d=dripemail2.com header.i=@dripemail2.com header.b=esMcGUMn;
+	dkim-adsp=none
+DKIM-Signature: v=1; a=rsa-sha1; c=relaxed/relaxed; d=dripemail2.com;
+	h=content-type:from:mime-version:reply-to:subject:to; s=s1;
+	bh=R4dXjbs1ZdmBM5YWjx1wUZfPHWI=; b=esMcGUMnJqjtvINvT9/bxDDU2Zd44
+	U5w88PZmOUwPVN+FcINzSspv5TsG+8Xc1RSdJTJ0It5PlM99dyGEKKCFoUcBvjrp
+	uPttVYQbE5I0K+QliyTzf0tToJaiTMpXlpLGlhqtM9CivSODPgSXnMELAPZMDqa9
+	svCaGJy98eflNE=
+Received: by filter0263p1iad2.sendgrid.net with SMTP id
+ filter0263p1iad2-9369-59E8B054-49 2017-10-19 14:01:56.712546208 +0000 UTC
+Received: from MjY5MzE4MA
+ (ec2-54-208-49-34.compute-1.amazonaws.com [54.208.49.34])
+	by ismtpd0007p1iad2.sendgrid.net (SG) with HTTP id OCLPdR58Tt-Jea_VRtJLnA	for
+ <austindreier@icloud.com>; Thu, 19 Oct 2017 14:01:56.660 +0000 (UTC)
+Content-type: multipart/alternative;
+ boundary=03d92b11204e5520e0d891b2f12937771fb6bbc1ce0dc41ab13ad72f232e
+Date: Thu, 19 Oct 2017 14:01:56 +0000 (UTC)
+From: Sean Terry <sean@flip2freedom.com>
+MIME-version: 1.0
+Reply-to: reply-sppdsfurzw16jv5xqsex@in2.getdrip.com
+Subject: =?UTF-8?Q?=F0=9F=92=B5_new_video_=3D=3D>_$8,929.55_in_7_days_?=
+To: austindreier@icloud.com
+Message-id: <OCLPdR58Tt-Jea_VRtJLnA@ismtpd0007p1iad2.sendgrid.net>
+x-icloud-spam-score: 3311331
+ f=flip2freedom.com;e=m.dripemail2.com;is=yes;ir=no;spf=pass;dkim=pass;dmarc=noPolicy/noPolicy/none;gdwl=absent;pps=ham;clxs=ham;clxw=neutral
+X-CLX-Spam: false
+X-CLX-UnSpecialScore: None
+X-CLX-Score: 25
+X-CLX-Shades: None
+X-MANTSH: 1TEIXWV4bG1oaGkdHB0tNT0ReQ0QYEhocEQpMQxcbHQQbHRgEGR8EGBIQGx4aHxo
+ RCkxZFxgfEQpZTRdkRURPEQpZSRcacRoQGncGGxpxGRMQGRt3BhsfBhoRClleF2hjeREKQ04XZ
+ XJacktsaVlkWU9AbFlmWXNoc2kYflBpaUhFY25BWVkRClhcFxkEGgQZGAdNGU4TTxMZGAUbHQQ
+ bHRgEEhkEGx0QGx4aHxoRCl5ZF3hiRn4FEQpNXBcdExEKTFoXaXtlUkFNEQpFWRdoa2sRCkxfF
+ 3oFBQUFBQUFBQUdEQpNThdoEQpMRhdja2sRCkNaFxscHQQSEwQeGgQbHhIRCkJeFxsRCkJFF2Z
+ 9G117YmtpTRMbEQpCThdhf0N6bU1FeX4SRxEKQkwXYUFdQAVLehpJbGERCkJsF3pwE3ljaBMeU
+ AEeEQpCQBdlWR9wUFJHY3pwRBEKQlgXbkcdG05kYUUbEkARCk1eFxsRCnBnF2VwXXloSUJeTE4
+ YEBoRCnBoF2teTG5zbnwdQkNGEBkaEQpwaBdjS3JlRExcHEFYaBAZGhEKcGgXZUZGfG8BGGRtT
+ RIQHBMRCnBoF2JBbGhNcGd+XQVpEBoRCnBoF2gdelocXEFTaW1OEBoRCnB/F24BWW0acEdveVM
+ aEB0aEQpwXxdgHVwSGXx/eRNeWxAdGxEKcH0XZGZmWB9CYB5JWV4QGhEKcH0XekVbHXx4flAef
+ G0QGhEKcH0XekVbHXx4flAefG0QGhEKcH0XY3tefk9NYUheAUQQGhEKcH0XZGZmWB9CYB5JWV4
+ QGhEKcH0XekVbHXx4flAefG0QGhEKcH0XekVbHXx4flAefG0QGhEKcH0XY3tefk9NYUheAUQQG
+ hEKcF8XZ3p+flxrekBAZnoQHB0RCnB9F2xyYlpDcmdhXEBNEBoRCnBsF2cdAX1JTlgeZVtGEB0
+ aEQpwQxdpY1IabnBJRk97SBAdHhEKbX4XGxEKWE0XSxE=
+x-dmarc-info: pass=none; dmarc-policy=(nopolicy); s=u0; d=u0
+x-dmarc-policy: none
+X-SG-EID:
+ wDL73fzM24memzQeYD8vNs60a1/y7ttRZFoC2GN2sWADF2tnWAkIyuhQU65Np2otm3e9+EJmOsdWgs
+ i4JncWYypqKaFjWhqJz+oYb4iH5Z1D5i8K6xciF3lgysUwvmNJcgo5pP96PfVrQuK889SHT9LaZGe2
+ 8ZS+6X1tE1OHi5bMCzLJ0r1OF2l8madFb9rgahoAJdx26OSgV7Dgl5KjQ9IwbZt9V1LdA3dtpSVWc6
+ k=
+X-SG-ID:
+ 6l1ICXxVk1U2NQBE+KPgxwjoFy0WtofpTXKSVlXzMPO9sF5OROi5lgwHvCHhkJA/h8sCJ9x9Hjc8J5
+ xsJ/pSJg==
+
+--03d92b11204e5520e0d891b2f12937771fb6bbc1ce0dc41ab13ad72f232e
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=UTF-8
+Mime-Version: 1.0
+
+I wanted to make sure you registered for the "concept"
+
+webinar I sent you yesterday. If not you can see it here:
+
+Register Now ( http://t.dripemail2.com/c/eyJhY2NvdW50X2lkIjoiOTE4MzExNyIsIm=
+RlbGl2ZXJ5X2lkIjoiMTQ1MTc2ODI0OCIsInVybCI6Imh0dHBzOi8vd3d3LmZsaXAyZnJlZWRvb=
+XdlYmNsYXNzLmNvbT9fX3M9c21pZms3cXNlcW84bWU2ZWRjbXoifQ )
+
+Also, now that you've learned the concept, and have seen
+
+how simple and powerful it is, I wanted to introduce you to
+Mark.
+
+He made $8,292.55 in 7 days using none of his own cash or credit.
+
+This is the first property he'd ever "flipped."
+
+I posted his video story here for you to watch:
+
+PROOF this "Concept" Really Works ( http://t.dripemail2.com/c/eyJhY2NvdW50X=
+2lkIjoiOTE4MzExNyIsImRlbGl2ZXJ5X2lkIjoiMTQ1MTc2ODI0OCIsInVybCI6Imh0dHBzOi8v=
+d3d3LmZsaXAyZnJlZWRvbXdlYmNsYXNzLmNvbS9tYXJrLW1ha2VzLTgtMjkyLTU1LWluLTctZGF=
+5cz9fX3M9c21pZms3cXNlcW84bWU2ZWRjbXoifQ )
+
+He's living proof that this system really works.
+
+He applied these 3 simple steps and BOOM...results!
+
+Now it's time for you to get results, don't you think?
+
+To Your Freedom,
+
+Sean Terry
+
+P.S. You can have Mark's success too you know. You just have to
+follow
+
+several simple steps. Anyone can do this, even you.
+
+PROOF this "Concept" Really Works ( http://t.dripemail2.com/c/eyJhY2NvdW50X=
+2lkIjoiOTE4MzExNyIsImRlbGl2ZXJ5X2lkIjoiMTQ1MTc2ODI0OCIsInVybCI6Imh0dHBzOi8v=
+d3d3LmZsaXAyZnJlZWRvbXdlYmNsYXNzLmNvbS9tYXJrLW1ha2VzLTgtMjkyLTU1LWluLTctZGF=
+5cz9fX3M9c21pZms3cXNlcW84bWU2ZWRjbXoifQ )
+
+---------------------
+To make sure you keep getting these emails, please add
+sean@flip2freedom.com to your address book or whitelist us. Want out of
+the loop? <a href=3D"http://t.dripemail2.com/c/eyJhY2NvdW50X2lkIjoiOTE4MzEx=
+NyIsImRlbGl2ZXJ5X2lkIjoiMTQ1MTc2ODI0OCIsInVybCI6Imh0dHBzOi8vd3d3LmdldGRyaXA=
+uY29tL3N1YnNjcmliZXJzL3NtaWZrN3FzZXFvOG1lNmVkY216L3N1YnNjcmlwdGlvbnM_ZD1zcH=
+Bkc2Z1cnp3MTZqdjV4cXNleFx1MDAyNmV4Y2x1ZGVfY2xpY2s9MVx1MDAyNmludGVudD11bnN1Y=
+nNjcmliZVx1MDAyNl9fcz1zbWlmazdxc2VxbzhtZTZlZGNteiJ9">Unsubscribe</a>.
+
+Our postal address: 19420 North 59th Avenue, Glendale, AZ 85308
+
+
+--03d92b11204e5520e0d891b2f12937771fb6bbc1ce0dc41ab13ad72f232e
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=UTF-8
+Mime-Version: 1.0
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.=
+w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns=3D"http://www.w3.org/1999/xhtml" style=3D'font-family: "Helveti=
+ca Neue", "Helvetica", Helvetica, Arial, sans-serif; box-sizing: border-box=
+; font-size: 14px; line-height: 1.5;'>
+<head>
+<meta name=3D"viewport" content=3D"width=3Ddevice-width">
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8">
+
+<style>img {
+max-width: 100%; margin-bottom: 14px;
+}
+body {
+background-color: #ffffff; -ms-text-size-adjust: 100%; -webkit-text-size-ad=
+just: none; width: 100% !important; height: 100%; line-height: 1.6;
+}
+.ExternalClass {
+width: 100%;
+}
+.ExternalClass {
+line-height: 100%;
+}
+img {
+-ms-interpolation-mode: bicubic;
+}
+a:visited {
+color: purple !important;
+}
+a:hover {
+color: #e2911a !important;
+}
+a:active {
+color: #0d3d62 !important;
+}
+.cta-button:hover {
+color: #ffffff; background-color: #B67A0D; text-decoration: none; border-co=
+lor: #B67A0D; border: 12px solid #B67A0D;
+}
+[owa] .cta-button:hover {
+color: #ffffff; background-color: #B67A0D; text-decoration: none; border-co=
+lor: #B67A0D; border: 12px solid #B67A0D;
+}
+[class=3D"cta-button"]:hover {
+color: #ffffff; background-color: #B67A0D; text-decoration: none; border-co=
+lor: #B67A0D; border: 12px solid #B67A0D;
+}
+.cta-button:visited {
+color: #ffffff; background-color: #B67A0D; text-decoration: none; border-co=
+lor: #B67A0D; border: 12px solid #B67A0D;
+}
+[owa] .cta-button:visited {
+color: #ffffff; background-color: #B67A0D; text-decoration: none; border-co=
+lor: #B67A0D; border: 12px solid #B67A0D;
+}
+[class=3D"cta-button"]:visited {
+color: #ffffff; background-color: #B67A0D; text-decoration: none; border-co=
+lor: #B67A0D; border: 12px solid #B67A0D;
+}
+.cta-button:active {
+color: #ffffff; background-color: #B67A0D; text-decoration: none; border-co=
+lor: #B67A0D; border: 12px solid #B67A0D;
+}
+[owa] .cta-button:active {
+color: #ffffff; background-color: #B67A0D; text-decoration: none; border-co=
+lor: #B67A0D; border: 12px solid #B67A0D;
+}
+[class=3D"cta-button"]:active {
+color: #ffffff; background-color: #B67A0D; text-decoration: none; border-co=
+lor: #B67A0D; border: 12px solid #B67A0D;
+}
+</style>
+</head>
+<body style=3D'font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial=
+, sans-serif; box-sizing: border-box; font-size: 14px; line-height: 1.6; -m=
+s-text-size-adjust: 100%; -webkit-text-size-adjust: none; width: 100% !impo=
+rtant; height: 100%;' bgcolor=3D"#ffffff">
+<!--[if mso 16]>
+    <style type=3D"text/css">
+        a{
+            text-decoration:none !important;
+        }
+    </style>
+<![endif]-->
+
+<table class=3D"body-wrap" style=3D'font-family: "Helvetica Neue", "Helveti=
+ca", Helvetica, Arial, sans-serif; box-sizing: border-box; font-size: 14px;=
+ line-height: 1.5; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100=
+%;' bgcolor=3D"#ffffff">
+  <tr style=3D'font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial=
+, sans-serif; box-sizing: border-box; font-size: 14px; line-height: 1.5;'>
+    <td class=3D"container" style=3D'font-family: "Helvetica Neue", "Helvet=
+ica", Helvetica, Arial, sans-serif; box-sizing: border-box; font-size: 14px=
+; line-height: 1.5; display: block !important; max-width: 600px !important;=
+ overflow: visible; clear: both !important; margin: 0;' valign=3D"top">
+      <div class=3D"content" style=3D'font-family: "Helvetica Neue", "Helve=
+tica", Helvetica, Arial, sans-serif; box-sizing: border-box; font-size: 14p=
+x; line-height: 1.5; max-width: 600px; overflow: visible; display: block; m=
+argin: 0;'>
+        <table class=3D"main" width=3D"100%" cellpadding=3D"0" cellspacing=
+=3D"0" style=3D'font-family: "Helvetica Neue", "Helvetica", Helvetica, Aria=
+l, sans-serif; box-sizing: border-box; font-size: 14px; line-height: 1.5; m=
+so-table-lspace: 0pt; mso-table-rspace: 0pt;'>
+          <tr style=3D'font-family: "Helvetica Neue", "Helvetica", Helvetic=
+a, Arial, sans-serif; box-sizing: border-box; font-size: 14px; line-height:=
+ 1.5;'>
+            <td class=3D"main-content" style=3D"font-family: 'Helvetica Neu=
+e', 'Helvetica', 'Arial', sans-serif; box-sizing: border-box; font-size: 14=
+px; line-height: 1.5; color: #222222; padding: 25px;" valign=3D"top">
+              <p style=3D'font-family: "Helvetica Neue", "Helvetica", Helve=
+tica, Arial, sans-serif; box-sizing: border-box; font-size: 14px; line-heig=
+ht: 1.5; margin-bottom: 14px; font-weight: normal;'>I wanted to make sure y=
+ou registered for the "concept"<br style=3D'font-family: "Helvetica Neue", =
+"Helvetica", Helvetica, Arial, sans-serif; box-sizing: border-box; font-siz=
+e: 14px; line-height: 1.5;'>
+webinar I sent you yesterday. If not you can see it here:=C2=A0<br style=3D=
+'font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif; =
+box-sizing: border-box; font-size: 14px; line-height: 1.5;'>
+<br style=3D'font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, =
+sans-serif; box-sizing: border-box; font-size: 14px; line-height: 1.5;'>
+<span style=3D'font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial=
+, sans-serif; box-sizing: border-box; font-size: 14px; line-height: 1.5;'><=
+a href=3D"http://t.dripemail2.com/c/eyJhY2NvdW50X2lkIjoiOTE4MzExNyIsImRlbGl=
+2ZXJ5X2lkIjoiMTQ1MTc2ODI0OCIsInVybCI6Imh0dHBzOi8vd3d3LmZsaXAyZnJlZWRvbXdlYm=
+NsYXNzLmNvbT9fX3M9c21pZms3cXNlcW84bWU2ZWRjbXoifQ" style=3D'font-family: "He=
+lvetica Neue", "Helvetica", Helvetica, Arial, sans-serif; box-sizing: borde=
+r-box; font-size: 14px; line-height: 1.5; color: #4477bd; text-decoration: =
+underline;'>Register Now=C2=A0</a></span><br style=3D'font-family: "Helveti=
+ca Neue", "Helvetica", Helvetica, Arial, sans-serif; box-sizing: border-box=
+; font-size: 14px; line-height: 1.5;'>
+<br style=3D'font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, =
+sans-serif; box-sizing: border-box; font-size: 14px; line-height: 1.5;'>
+Also, now that you've learned the concept, and have seen<br style=3D'font-f=
+amily: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif; box-siz=
+ing: border-box; font-size: 14px; line-height: 1.5;'>
+how simple and powerful it is, I wanted to introduce you to Mark.=C2=A0<br =
+style=3D'font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans=
+-serif; box-sizing: border-box; font-size: 14px; line-height: 1.5;'>
+<br style=3D'font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, =
+sans-serif; box-sizing: border-box; font-size: 14px; line-height: 1.5;'>
+He made $8,292.55 in 7 days using none of his own cash or credit.<br style=
+=3D'font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-seri=
+f; box-sizing: border-box; font-size: 14px; line-height: 1.5;'>
+This is the first property he'd ever "flipped."=C2=A0<br style=3D'font-fami=
+ly: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif; box-sizing=
+: border-box; font-size: 14px; line-height: 1.5;'>
+<br style=3D'font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, =
+sans-serif; box-sizing: border-box; font-size: 14px; line-height: 1.5;'>
+I posted his video story here for you to watch:=C2=A0<br style=3D'font-fami=
+ly: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif; box-sizing=
+: border-box; font-size: 14px; line-height: 1.5;'>
+<br style=3D'font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, =
+sans-serif; box-sizing: border-box; font-size: 14px; line-height: 1.5;'>
+<a href=3D"http://t.dripemail2.com/c/eyJhY2NvdW50X2lkIjoiOTE4MzExNyIsImRlbG=
+l2ZXJ5X2lkIjoiMTQ1MTc2ODI0OCIsInVybCI6Imh0dHBzOi8vd3d3LmZsaXAyZnJlZWRvbXdlY=
+mNsYXNzLmNvbS9tYXJrLW1ha2VzLTgtMjkyLTU1LWluLTctZGF5cz9fX3M9c21pZms3cXNlcW84=
+bWU2ZWRjbXoifQ" style=3D'font-family: "Helvetica Neue", "Helvetica", Helvet=
+ica, Arial, sans-serif; box-sizing: border-box; font-size: 14px; line-heigh=
+t: 1.5; color: #4477bd; text-decoration: underline;'>PROOF this "Concept" R=
+eally Works</a><br style=3D'font-family: "Helvetica Neue", "Helvetica", Hel=
+vetica, Arial, sans-serif; box-sizing: border-box; font-size: 14px; line-he=
+ight: 1.5;'>
+<br style=3D'font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, =
+sans-serif; box-sizing: border-box; font-size: 14px; line-height: 1.5;'>
+He's living proof that this system really works.<br style=3D'font-family: "=
+Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif; box-sizing: bor=
+der-box; font-size: 14px; line-height: 1.5;'>
+He applied these 3 simple steps and=C2=A0<strong style=3D'font-family: "Hel=
+vetica Neue", "Helvetica", Helvetica, Arial, sans-serif; box-sizing: border=
+-box; font-size: 14px; line-height: 1.5; font-weight: bold;'>BOOM</strong>.=
+..results!=C2=A0<br style=3D'font-family: "Helvetica Neue", "Helvetica", He=
+lvetica, Arial, sans-serif; box-sizing: border-box; font-size: 14px; line-h=
+eight: 1.5;'>
+<br style=3D'font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, =
+sans-serif; box-sizing: border-box; font-size: 14px; line-height: 1.5;'>
+Now it's time for you to get results, don't you think?=C2=A0<br style=3D'fo=
+nt-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif; box=
+-sizing: border-box; font-size: 14px; line-height: 1.5;'>
+<br style=3D'font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, =
+sans-serif; box-sizing: border-box; font-size: 14px; line-height: 1.5;'>
+To Your Freedom,=C2=A0<br style=3D'font-family: "Helvetica Neue", "Helvetic=
+a", Helvetica, Arial, sans-serif; box-sizing: border-box; font-size: 14px; =
+line-height: 1.5;'>
+Sean Terry=C2=A0<br style=3D'font-family: "Helvetica Neue", "Helvetica", He=
+lvetica, Arial, sans-serif; box-sizing: border-box; font-size: 14px; line-h=
+eight: 1.5;'>
+<br style=3D'font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, =
+sans-serif; box-sizing: border-box; font-size: 14px; line-height: 1.5;'>
+P.S. You can have Mark's success too you know. You just have to follow<br s=
+tyle=3D'font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-=
+serif; box-sizing: border-box; font-size: 14px; line-height: 1.5;'>
+several simple steps. Anyone can do this, even you.=C2=A0<br style=3D'font-=
+family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif; box-si=
+zing: border-box; font-size: 14px; line-height: 1.5;'>
+<br style=3D'font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, =
+sans-serif; box-sizing: border-box; font-size: 14px; line-height: 1.5;'>
+<a href=3D"http://t.dripemail2.com/c/eyJhY2NvdW50X2lkIjoiOTE4MzExNyIsImRlbG=
+l2ZXJ5X2lkIjoiMTQ1MTc2ODI0OCIsInVybCI6Imh0dHBzOi8vd3d3LmZsaXAyZnJlZWRvbXdlY=
+mNsYXNzLmNvbS9tYXJrLW1ha2VzLTgtMjkyLTU1LWluLTctZGF5cz9fX3M9c21pZms3cXNlcW84=
+bWU2ZWRjbXoifQ" style=3D'font-family: "Helvetica Neue", "Helvetica", Helvet=
+ica, Arial, sans-serif; box-sizing: border-box; font-size: 14px; line-heigh=
+t: 1.5; color: #4477bd; text-decoration: underline;'>PROOF this "Concept" R=
+eally Works</a></p>
+
+<p style=3D'font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, s=
+ans-serif; box-sizing: border-box; font-size: 14px; line-height: 1.5; margi=
+n-bottom: 14px; font-weight: normal;'>=C2=A0</p>
+
+<p style=3D'font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, s=
+ans-serif; box-sizing: border-box; font-size: 14px; line-height: 1.5; margi=
+n-bottom: 14px; font-weight: normal;'>=C2=A0</p>
+
+<p style=3D'font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, s=
+ans-serif; box-sizing: border-box; font-size: 14px; line-height: 1.5; margi=
+n-bottom: 14px; font-weight: normal;'>=C2=A0</p>
+
+<p style=3D'font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, s=
+ans-serif; box-sizing: border-box; font-size: 14px; line-height: 1.5; margi=
+n-bottom: 14px; font-weight: normal;'><br style=3D'font-family: "Helvetica =
+Neue", "Helvetica", Helvetica, Arial, sans-serif; box-sizing: border-box; f=
+ont-size: 14px; line-height: 1.5;'>
+<br style=3D'font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, =
+sans-serif; box-sizing: border-box; font-size: 14px; line-height: 1.5;'>
+<br style=3D'font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, =
+sans-serif; box-sizing: border-box; font-size: 14px; line-height: 1.5;'>
+<br style=3D'font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, =
+sans-serif; box-sizing: border-box; font-size: 14px; line-height: 1.5;'>
+<br style=3D'font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, =
+sans-serif; box-sizing: border-box; font-size: 14px; line-height: 1.5;'>
+<br style=3D'font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, =
+sans-serif; box-sizing: border-box; font-size: 14px; line-height: 1.5;'>
+<br style=3D'font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, =
+sans-serif; box-sizing: border-box; font-size: 14px; line-height: 1.5;'>
+<br style=3D'font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, =
+sans-serif; box-sizing: border-box; font-size: 14px; line-height: 1.5;'>
+<br style=3D'font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, =
+sans-serif; box-sizing: border-box; font-size: 14px; line-height: 1.5;'>
+<br style=3D'font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, =
+sans-serif; box-sizing: border-box; font-size: 14px; line-height: 1.5;'>
+<br style=3D'font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, =
+sans-serif; box-sizing: border-box; font-size: 14px; line-height: 1.5;'>
+<br style=3D'font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, =
+sans-serif; box-sizing: border-box; font-size: 14px; line-height: 1.5;'>
+<br style=3D'font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, =
+sans-serif; box-sizing: border-box; font-size: 14px; line-height: 1.5;'>
+=C2=A0</p>
+
+<p style=3D'font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, s=
+ans-serif; box-sizing: border-box; font-size: 14px; line-height: 1.5; margi=
+n-bottom: 14px; font-weight: normal;'>=C2=A0</p>
+
+<p style=3D'font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, s=
+ans-serif; box-sizing: border-box; font-size: 14px; line-height: 1.5; margi=
+n-bottom: 14px; font-weight: normal;'>=C2=A0</p>
+
+            </td>
+          </tr>
+        </table>
+      </div>
+=20=20=20=20=20=20
+      <div class=3D"content" style=3D'font-family: "Helvetica Neue", "Helve=
+tica", Helvetica, Arial, sans-serif; box-sizing: border-box; font-size: 14p=
+x; line-height: 1.5; max-width: 600px; overflow: visible; display: block; m=
+argin: 0;'>
+        <table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" style=3D'=
+font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif; b=
+ox-sizing: border-box; font-size: 14px; line-height: 1.5; mso-table-lspace:=
+ 0pt; mso-table-rspace: 0pt;'>
+          <tr style=3D'font-family: "Helvetica Neue", "Helvetica", Helvetic=
+a, Arial, sans-serif; box-sizing: border-box; font-size: 14px; line-height:=
+ 1.5;'>
+            <td class=3D"footer-content" style=3D"font-family: 'Helvetica N=
+eue', 'Helvetica', 'Arial', sans-serif; box-sizing: border-box; font-size: =
+14px; line-height: 1.5; width: 100%; clear: both; color: #777; border-top-w=
+idth: 1px; border-top-color: #d0d0d0; border-top-style: solid; padding: 25p=
+x;" valign=3D"top">
+              To make sure you keep getting these emails, please add sean@f=
+lip2freedom.com to your address book or whitelist us. Want out of the loop?=
+ <a href=3D"http://t.dripemail2.com/c/eyJhY2NvdW50X2lkIjoiOTE4MzExNyIsImRlb=
+Gl2ZXJ5X2lkIjoiMTQ1MTc2ODI0OCIsInVybCI6Imh0dHBzOi8vd3d3LmdldGRyaXAuY29tL3N1=
+YnNjcmliZXJzL3NtaWZrN3FzZXFvOG1lNmVkY216L3N1YnNjcmlwdGlvbnM_ZD1zcHBkc2Z1cnp=
+3MTZqdjV4cXNleFx1MDAyNmV4Y2x1ZGVfY2xpY2s9MVx1MDAyNmludGVudD11bnN1YnNjcmliZV=
+x1MDAyNl9fcz1zbWlmazdxc2VxbzhtZTZlZGNteiJ9">Unsubscribe</a>.<br style=3D'fo=
+nt-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif; box=
+-sizing: border-box; font-size: 14px; line-height: 1.5;'>
+<br style=3D'font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, =
+sans-serif; box-sizing: border-box; font-size: 14px; line-height: 1.5;'>
+Our postal address: 19420 North 59th Avenue, Glendale, AZ 85308
+            </td>
+          </tr>
+        </table>
+      </div>
+=20=20=20=20=20=20
+    </td>
+  </tr>
+</table>
+
+<img src=3D"http://o.dripemail2.com/wf/open?upn=3D7XtDdMHRjqIUi4tzSjSp2h-2B=
+oTg8yV1h4-2FGX2SHZpIEpUT1WcYZeziSF1sLE6pr6Zybi7eBimPMcEv59QBDtfLwLZ5oVxFF5M=
+UeTKrbjJLZL3AaiRLJTjM-2FThRl0w7uavObl6fR5W5ZZfR-2B-2FMTWSg9dFQKPOf1GsswXO2M=
+MfdUANg3-2B9zEUfI7I8jmvBZcMX5Dvy55QHDI5Gwlk-2BbXmIUIvoSjHooFOAVDBTfYX1pqvsn=
+BaFbrsUoL2omdY3OJi-2F2e3fyerdN46LF0pOzKlCjP7g1ZFlaS8zhLXaDzfz8IN-2FDS-2FGNG=
+iNQhDaTrnoPbpzr" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=3D"he=
+ight:1px !important;width:1px !important;border-width:0 !important;margin-t=
+op:0 !important;margin-bottom:0 !important;margin-right:0 !important;margin=
+-left:0 !important;padding-top:0 !important;padding-bottom:0 !important;pad=
+ding-right:0 !important;padding-left:0 !important;"/>
+</body>
+</html>
+
+
+--03d92b11204e5520e0d891b2f12937771fb6bbc1ce0dc41ab13ad72f232e--
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>date-last-viewed</key>
+	<integer>0</integer>
+	<key>date-received</key>
+	<integer>1508421734</integer>
+	<key>flags</key>
+	<integer>8590195712</integer>
+	<key>remote-id</key>
+	<string>4798</string>
+</dict>
+</plist>

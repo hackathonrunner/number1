@@ -1,0 +1,133 @@
+7558      
+Return-path: <2017111018590667d814f775814f998bc258c7b2e0p0na@bounces.amazon.com>
+Received: from mr11p00im-smtpin010.mac.com ([17.110.69.198])
+ by ms60015.mac.com (Oracle Communications Messaging Server 8.0.1.2.20170607
+ 64bit (built Jun  7 2017)) with ESMTP id <0OZ700NGEU2LPTC0@ms60015.mac.com>
+ for austindreier@icloud.com; Fri, 10 Nov 2017 18:59:09 +0000 (GMT)
+Original-recipient: rfc822;austindreier@icloud.com
+Received: from a13-19.smtp-out.amazonses.com
+ (a13-19.smtp-out.amazonses.com [54.240.13.19]) by mr11p00im-smtpin010.me.com
+ (Oracle Communications Messaging Server 8.0.1.2.20170607 64bit (built Jun  7
+ 2017)) with ESMTPS id <0OZ700HCJU2J5N00@mr11p00im-smtpin010.me.com> for
+ austindreier@icloud.com (ORCPT austindreier@icloud.com); Fri,
+ 10 Nov 2017 18:59:09 +0000 (GMT)
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 spamscore=0
+ clxscore=1103 suspectscore=3 malwarescore=0 phishscore=0 adultscore=0
+ bulkscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.0.1-1707230000 definitions=main-1711100260
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10432:,,
+ definitions=2017-11-10_09:,, signatures=0
+Authentication-results: mr21p00im-dmarcmilter001.me.com; dmarc=pass
+ header.from=amazon.com
+Authentication-results: mr21p00im-spfmilter007.me.com; spf=pass
+ (mr21p00im-spfmilter007.me.com: domain of
+ 2017111018590667d814f775814f998bc258c7b2e0p0na@bounces.amazon.com designates
+ 54.240.13.19 as permitted sender)
+ smtp.mailfrom=2017111018590667d814f775814f998bc258c7b2e0p0na@bounces.amazon.com;
+Received-SPF: pass (mr21p00im-spfmilter007.me.com: domain of
+ 2017111018590667d814f775814f998bc258c7b2e0p0na@bounces.amazon.com designates
+ 54.240.13.19 as permitted sender) receiver=mr21p00im-spfmilter007.me.com;
+ client-ip=54.240.13.19; helo=a13-19.smtp-out.amazonses.com;
+ envelope-from=2017111018590667d814f775814f998bc258c7b2e0p0na@bounces.amazon.com;
+Authentication-results: mr21p00im-dkimmilter004.me.com;	dkim=pass (1024-bit
+ key) header.d=amazonses.com header.i=@amazonses.com header.b=nhqfnmon;
+	dkim-adsp=pass
+Authentication-results: mr21p00im-dkimmilter004.me.com;	dkim=pass (1024-bit
+ key) header.d=amazon.com header.i=@amazon.com header.b=gYV/HUos;	dkim-adsp=pass
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=yg4mwqurec7fkhzutopddd3ytuaqrvuz; d=amazon.com; t=1510340347;
+	h=From:To:Message-ID:Subject:MIME-Version:Content-Type:Date;
+	bh=U/oY3Omhc9qses42SzHzUJtsf0I7ZEwbK/V/ucN6Idw=;
+	b=gYV/HUosQrJBQZlxmz/n8393erVxE4a+tynQygDILXBNPx/2HkETn4XsiydFVkt3
+	FHHJDhDoMpc4H82TPgqw/nwLvI1tIWXD3Gz+AqucST8Oa5dci8qLGY8+euK27mCo6Hl
+	jmXc6ujyI+VeZN3mqvW8XCFMNrbuy32CgA8z19MA=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=224i4yxa5dv7c2xz3womw6peuasteono; d=amazonses.com; t=1510340347;
+	h=From:To:Message-ID:Subject:MIME-Version:Content-Type:Date:Feedback-ID;
+	bh=U/oY3Omhc9qses42SzHzUJtsf0I7ZEwbK/V/ucN6Idw=;
+	b=nhqfnmonAAKXvbrn1e6BGCo738hZUzvdvLUVy2YLnYvyoyCftgwQSiWn1zf069ta
+	AFM7Ccr3oiAEfYVUqEHPIEQHT3k/tMNooUS/P4le8vphYI7/bgAGAPAtYpOlfsO5/k6
+	VIHtxVj+3FuCqc5XEnt1rkeWEAoYQYjfziCYScEk=
+From: account-update@amazon.com
+To: austindreier@icloud.com
+Message-id:
+ <0100015fa74cc3a3-ddf0de50-dab6-4d6a-9118-fe438ad142fd-000000@email.amazonses.com>
+Subject: Revision to Your Amazon.com Account
+MIME-version: 1.0
+Content-type: multipart/alternative;
+ boundary="----=_Part_2177232_1012027685.1510340346790"
+Bounces-to: 2017111018590667d814f775814f998bc258c7b2e0p0na@bounces.amazon.com
+X-Original-MessageID:
+ <urn.rtn.msg.2017111018590667d814f775814f998bc258c7b2e0p0na@1510340346790.rtn-svc-na-back-m4l1a-3285f068.us-east-1.amazon.com>
+Date: Fri, 10 Nov 2017 18:59:06 +0000
+Feedback-ID: 1.us-east-1.ZHcGJK6s+x+i9lRHKog4RW3tECwWIf1xzTYCZyUaiec=:AmazonSES
+x-icloud-spam-score: 3333311
+ f=amazon.com;e=bounces.amazon.com;is=yes;ir=no;spf=pass;dkim=pass;dmarc=pass/quarantine/none;gdwl=present;pps=ham;clxs=Ham;clxw=neutral
+X-CLX-Spam: false
+X-CLX-UnSpecialScore: 580
+X-CLX-Score: 1103
+X-CLX-UShades: Ham
+X-CLX-Shades: Ham
+X-MANTSH: 1TEIXR1gYG1oaGkNHB0tNT0ReQ0QZGBoZEQpMQxcbHQQbGxsEGx0ZBBkYEBseGh8
+ aEQpMWRcbGxoZEQpZTRdiS0cRCl9ZFx8SGhEKX00XYktHEQpZSRcacRoQGncGExtxHR4bGRATG
+ hx3BhgaBhoRClleF2treREKQ04XUnJnGXJpen5fTGJPcG4ZEnh4SUJLT0xBRWttWBtjY1gRClh
+ cFxkEGgQZGAdNGU4TTxMZGAUbHQQbGxsEGx8fBBgeGhAbHhofGhEKXlkXeGUfX3IRCk1cFxkSH
+ hEKTFoXaWtlQUFNEQpDWhcfHgQYHhoEGxkEGxMRCkJeFxsRCllFFxkRCkVJFxoRCkVmFxoRCkJ
+ cFxsRCl5OFxsRCkJLF2ZTYVxJY3BrfxtnEQpCRRdoXkReb2NHbkN8YxEKQk4XZlNhXEljcGt/G
+ 2cRCkJMF2heRF5vY0duQ3xjEQpCbBdoXkReb2NHbkN8YxEKQkAXbHIZcB59GkQaHBIRCkJYF25
+ HHRtOZGFFGxJAEQpwaBd6HWt+Q35jQGlHZRAaEQpwaBdieE8fcxxiWHJrfBAZGhEKcGgXYUtIQ
+ 05LTWRtGmAQGhEKcGgXYH9LXUJbfR1LGGgQGhEKcGgXYHgfGHpLW1N/Q0kQGhEKcH8XaWVJclk
+ YekcfX1AQBx4cEQpwXxdiWnp4HkZDfV5pGRAYExEKcH0Xem5NTXhTQh8TUl8QBxkaEQpwXxdvH
+ UcBYWdbQE1cfRASHxEKcH0XbmNlch5NWUttGRMQGhEKcF8XYB0cWxlnQ2dPQmYQEh0RCnB9F2I
+ YBU0fGWlFGG1AEBoRCnB9F2JubRp/UxppRFgTEBoRCm1+FxoRClhNF0sR
+x-dmarc-info: pass=pass; dmarc-policy=quarantine; s=r1; d=r1
+x-dmarc-policy: v=DMARC1; p=quarantine; pct=100;
+ rua=mailto:dmarc-reports@bounces.amazon.com;
+ ruf=mailto:dmarc-reports@bounces.amazon.com
+X-AMAZON-MAIL-RELAY-TYPE: notification
+X-AMAZON-METADATA: CA=C1TEA7VXGMXBPR-CU=A38IOK8YZUTAJG-RI=A1G77Y9VJB2KH4
+X-SES-Outgoing: 2017.11.10-54.240.13.19
+
+------=_Part_2177232_1012027685.1510340346790
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 7bit
+
+Thanks for visiting Amazon.com! 
+Per your request, we have successfully enabled Two-Step Verification on your account. You can always go to Your Account > Change Account Settings to manage your security settings. If you have not made any changes to your security settings recently, please <a id="notification-contact-us-link" href=https://www.amazon.com/gp/help/customer/contact-us>Contact Us</a>.
+Thanks again for shopping with us.
+------=_Part_2177232_1012027685.1510340346790
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <head>
+  </head>
+  <body><img width="1" height="1" src="https://www.amazon.com/gp/r.html?C=24TKXQR0FP5W5&K=VDUDIHGDYZU3&M=urn:rtn:msg:2017111018590667d814f775814f998bc258c7b2e0p0na&R=397NU8P05O80Z&T=O&U=https%3A%2F%2Fimages-na.ssl-images-amazon.com%2Fimages%2FG%2F01%2Fnav%2Ftransp.gif&A=X9DSTNGKDRKD5AOX9JMOIYVKMGYA&H=2FUFS2DUJROKNQQQPGSNY04SULAA&ref_=pe_2284640_153822910_opens" />
+
+<p id="htmlNotificationHead">
+Thanks for visiting Amazon.com! </p>
+
+<p id="htmlNotificationBody">
+Per your request, we have successfully enabled Two-Step Verification on your account. You can always go to Your Account > Change Account Settings to manage your security settings. If you have not made any changes to your security settings recently, please <a id="notification-contact-us-link" href=https://www.amazon.com/gp/f.html?C=24TKXQR0FP5W5&K=VDUDIHGDYZU3&M=urn:rtn:msg:2017111018590667d814f775814f998bc258c7b2e0p0na&R=397NU8P05O80Z&T=C&U=https%3A%2F%2Fwww.amazon.com%2Fgp%2Fhelp%2Fcustomer%2Fcontact-us%3Fref_%3Dpe_2284640_153822910&A=HPQFMMON0QFN9OA0TBIHTGVODWIA&H=LXZIDAS0FAEZC6AGLWPWR6ZJT38A&ref_=pe_2284640_153822910>Contact Us</a>.</p>
+
+<p id="htmlNotificationFooter">
+Thanks again for shopping with us.</p>
+  <img width="1" height="1" src="https://www.amazon.com/gp/r.html?C=24TKXQR0FP5W5&K=VDUDIHGDYZU3&M=urn:rtn:msg:2017111018590667d814f775814f998bc258c7b2e0p0na&R=397NU8P05O80Z&T=E&U=https%3A%2F%2Fimages-na.ssl-images-amazon.com%2Fimages%2FG%2F01%2Fnav%2Ftransp.gif&A=QFQSJQUU4FOIV7A7SPUJJTT27PAA&H=Z3DIRAXTHPRM1LWOTZILHAKIAOGA&ref_=pe_2284640_153822910_open" /></body>
+</html>
+------=_Part_2177232_1012027685.1510340346790--
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>color</key>
+	<string>000000</string>
+	<key>date-last-viewed</key>
+	<integer>0</integer>
+	<key>date-received</key>
+	<integer>1510340349</integer>
+	<key>flags</key>
+	<integer>8590195840</integer>
+	<key>remote-id</key>
+	<string>7797</string>
+</dict>
+</plist>

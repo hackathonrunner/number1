@@ -1,0 +1,863 @@
+43806     
+Return-path: <bounces+2693180-1ee3-austindreier=icloud.com@m.dripemail2.com>
+Received: from st11p00im-smtpin012.mac.com ([17.172.80.61])
+ by ms60015.mac.com (Oracle Communications Messaging Server 8.0.1.2.20170607
+ 64bit (built Jun  7 2017)) with ESMTP id <0OYF005OSO9D2L60@ms60015.mac.com>
+ for austindreier@icloud.com; Thu, 26 Oct 2017 14:00:49 +0000 (GMT)
+Original-recipient: rfc822;austindreier@icloud.com
+Received: from o2.m.dripemail2.com (o2.m.dripemail2.com [167.89.40.107])
+ by st11p00im-smtpin012.me.com
+ (Oracle Communications Messaging Server 8.0.1.2.20170607 64bit (built Jun  7
+ 2017)) with ESMTPS id <0OYF00IMYO9BDR40@st11p00im-smtpin012.me.com> for
+ austindreier@icloud.com (ORCPT austindreier@icloud.com); Thu,
+ 26 Oct 2017 14:00:49 +0000 (GMT)
+X-Spam-Flag: yes
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 spamscore=0
+ clxscore=-5 suspectscore=79 malwarescore=0 phishscore=0 adultscore=0
+ bulkscore=100 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.0.1-1707230000 definitions=main-1710260191
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10432:,,
+ definitions=2017-10-26_04:,, signatures=0
+Authentication-results: st11p00mm-dmarcmilter001.me.com; dmarc=none
+ header.from=flip2freedom.com
+Authentication-results: st11p00mm-spfmilter001.mac.com; spf=pass
+ (st11p00mm-spfmilter001.mac.com: domain of
+ bounces+2693180-1ee3-austindreier=icloud.com@m.dripemail2.com designates
+ 167.89.40.107 as permitted sender)
+ smtp.mailfrom=bounces+2693180-1ee3-austindreier=icloud.com@m.dripemail2.com;
+Received-SPF: pass (st11p00mm-spfmilter001.mac.com: domain of
+ bounces+2693180-1ee3-austindreier=icloud.com@m.dripemail2.com designates
+ 167.89.40.107 as permitted sender) receiver=st11p00mm-spfmilter001.mac.com;
+ client-ip=167.89.40.107; helo=o2.m.dripemail2.com;
+ envelope-from=bounces+2693180-1ee3-austindreier=icloud.com@m.dripemail2.com;
+Authentication-results: st11p00mm-dkimmilter014.mac.com;	dkim=pass (1024-bit
+ key) header.d=dripemail2.com header.i=@dripemail2.com header.b=anUEJDb8;
+	dkim-adsp=none
+DKIM-Signature: v=1; a=rsa-sha1; c=relaxed/relaxed; d=dripemail2.com;
+	h=content-type:from:mime-version:reply-to:subject:to; s=s1;
+	bh=9J47I7QRwi/h6CRrPr61rseNvgs=; b=anUEJDb8zUGHIcZNeTHrUCBzuSbQD
+	69GPmPDhTVBorGGIExlMMIcdgytBaBzitEZPh8tk7wikssWzV+h7eD+JZzjK0zuZ
+	+riq/NJCLBEo1Zqtwjh7qUTHsn6DgmfPFXgohZwc+iX5E2Wc19kIRS3G+zw0C5rY
+	dt+EiSU9H+6Z24=
+Received: by filter0457p1mdw1.sendgrid.net with SMTP id
+ filter0457p1mdw1-20060-59F1EA85-34 2017-10-26 14:00:37.926147352 +0000 UTC
+Received: from MjY5MzE4MA
+ (ec2-54-147-77-113.compute-1.amazonaws.com [54.147.77.113])
+	by ismtpd0003p1iad1.sendgrid.net (SG) with HTTP id NVls_YVZSHWfJAtFSyDpew	for
+ <austindreier@icloud.com>; Thu, 26 Oct 2017 14:00:37.896 +0000 (UTC)
+Content-type: multipart/alternative;
+ boundary=a524b76e66a02d5f5fb3391ad7d5311ff373017091afc2c4d4710fc3b528
+Date: Thu, 26 Oct 2017 14:00:47 +0000 (UTC)
+From: Sean Terry <sean@flip2freedom.com>
+MIME-version: 1.0
+Reply-to: reply-ueqnrizgyq8eoqc5pzyw@in2.getdrip.com
+Subject: =?UTF-8?Q?=F0=9F=9A=A7_Maximum_Security=3F?=
+To: austindreier@icloud.com
+Message-id: <NVls_YVZSHWfJAtFSyDpew@ismtpd0003p1iad1.sendgrid.net>
+x-icloud-spam-score: 3311341
+ f=flip2freedom.com;e=m.dripemail2.com;is=yes;ir=no;spf=pass;dkim=pass;dmarc=noPolicy/noPolicy/none;gdwl=absent;pps=ham;clxs=spam;clxw=neutral
+X-CLX-Spam: true
+X-CLX-UnSpecialScore: None
+X-CLX-Score: -5
+X-CLX-Shades: Grey
+X-MANTSH: 1TEIXWV4bG1oaGkNHB1BeSF8aHxsTHhIaGxEKTEMXGx0EGx0YBBkfBBgSEBseGh8
+ aEQpMWRcHHxEKWU0XbVhPUxEKWUkXGnEaEBp3BgcbHXEeHhAcH3cGGxgGGhEKWV4XaGN5EQpDT
+ hdeYGFgZEJ4bH5ObAVpaExGR0McQl1mZ1pEGnlgcmxrHxEKWFwXGQQaBBkYB00ZThNPExkYBRs
+ dBBsdGAQSGQQbHRAbHhofGhEKXlkXeGAeElgRCk1cFx4dEhEKTFoXeHpSQU0RCkVZF2hraxEKT
+ F8XegUFBQUFBQUFBR0RCk1OF2gRCkxGF2NraxEKQ1oXGxwdBBITBB4aBBsaHREKQl4XGxEKQkU
+ XZn0bXXtia2lNExsRCkJOF2F/Q3ptTUV5fhJHEQpCTBdhQV1ABUt6GklsYREKQmwXenATeWNoE
+ x5QAR4RCkJAF21yT0NJHR9ZX0teEQpCWBduRx0bTmRhRRsSQBEKcGcXZBxTZEZgbEh6TXgQGhE
+ KcGgXbkQSU2d+eR0df0kQHBkRCnBoF2BmThNNWXp8S2dhEBoRCnBoF2RkGkcbHG9fZxlsEBoRC
+ nBoF24dUGl6aHgcE1NyEBwfEQpwaBdhc30TQRlhEhJmZRAaEQpwfxduAVltGnBHb3lTGhAcHhE
+ KcF8XYB1cEhl8f3kTXlsQHB4RCnB9F2B4WUJvex5TWFNHEBoRCnB9F2B4WUJvex5TWFNHEBoRC
+ nB9F29NS2hjAVJNelxgEBoRCnBsF2cdAX1JTlgeZVtGEAcZGhEKcEMXYmxkQVBIRnpPWUYQGRo
+ RCm1+FxoRClhNF0sR
+x-dmarc-info: pass=none; dmarc-policy=(nopolicy); s=u0; d=u0
+x-dmarc-policy: none
+X-SG-EID:
+ wDL73fzM24memzQeYD8vNs60a1/y7ttRZFoC2GN2sWAvkX5mh3nj7i3niSYEp93kChUxmWD0KwSbhk
+ ZDthWzwnd31gvVEhcGCKxIkGg8ZPTLMxUrQ/K/v6nuhmlEjOTay7M5QGRWVFI/nkzGLB785/LkGFKO
+ Q98+BUbaKfsBEQeSa3LAReXzAMtWaFf5e8KhfMsc2jrPMVoeJmoEluO1/CyrhDGZats7L1IP7kkFO6
+ E=
+X-SG-ID:
+ 6l1ICXxVk1U2NQBE+KPgx4CLoaCdx9ivUF707sKz28LGZIJV8EOnOSKwS83s07upJFRsxFx50Vliba
+ /l94hZgw==
+
+--a524b76e66a02d5f5fb3391ad7d5311ff373017091afc2c4d4710fc3b528
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=UTF-8
+Mime-Version: 1.0
+
+A few years back I received a call from a seller
+
+that REALLY needed to get rid of her house. She was defiantly
+motivated!
+
+When talking to her about her situation she mentioned that
+
+her husband was in jail and they've run out of money and needed
+to
+
+ASAP to get some cash.
+
+I asked, what's the minimum cash she'd take for the property
+
+and she said $48K. When pulling comparable sales the property
+
+was worth roughly $160K retail.
+
+Boom Baby!!! We got a deal!!
+
+Well I dropped everything and got to the property as fast as
+
+humanly possible.
+
+I got the contract for $48K but here came the hard part,
+
+I had to get the signature from the husband that was in jail...
+
+Now what?
+
+You got it, I told the seller that I would get it taken care of.
+
+(Just a side note, the sellers weren't speaking. She hated her
+husband and was disgusted that he got thrown in jail.)
+
+Yikes ;(
+
+So I made my way to the Arizona State Prison where I had to
+
+go through and full body scan got padded down and had to empty
+
+all my pockets, take off my shoes and belt.
+
+When I walked into the visitors center and saw all the inmates
+speaking to their guest through 5-inch bullet-proof glass, it was
+pretty intimidating say the least.
+
+We to make a long story short, I got the contract signed and got
+out of there as fast as I could.
+
+Wheeew=E2=80=A6
+
+Now as an inmate the majority of your freedom is taken away.
+
+You can't go where you want to go.
+
+You can't go on vacation if you want.
+
+You have to eat when you're told to eat.
+
+You have to be at a certain place when you're told you have to be
+there.
+
+You're limited to the amount of money you can have.
+
+You're literally chained to your cell.
+
+The future looks dim=E2=80=A6
+
+That is called maximum security and we do everything in our power
+
+to avoid this situation, don't we?
+
+Now the amazing thing is that most folks are inmates to their
+JOBS
+
+wouldn't you agree?
+
+Let's look at the similarities for a second,
+
+You can't go where you want to go.
+
+You can't go on vacation if you want.
+
+You have to eat when you're told to eat.
+
+You have to be at a certain place when you're told you have to be
+there.
+
+You're limited to the amount of money you can have.
+
+You're literally chained to your cell.
+
+The future looks dim=E2=80=A6
+
+People are stuck in a crummy job that is taking the majority
+
+of their freedom away.
+
+And what are they trading this freedom for?
+
+Security, well maximum security to be exact.
+
+What if I told you that there is no such thing as security.
+
+How many people do you know that got laid off or downsized
+
+or let go for one reason or the other.
+
+Lots right?
+
+Well, the only security is cash in the bank=E2=80=A6and lots of it.
+
+The fastest and easiest way to generate cash flow around your
+
+job is flipping houses in your spare time.
+
+If you don't have spare time, make spare time. It's worth your
+while, I promise you.
+
+Wholesaling houses can give you the freedom
+
+we all strive for plus allow you to live an amazing lifestyle.
+
+In July I took the whole month off. I went to my beach house
+
+in Dana Point CA. We went to the beach, played tennis, went
+shopping and had a blast. My business continued to grow and money
+continued to come in.
+
+What a great thing.
+
+Well if you're sick of being an inmate and you want
+
+to control your own future, then now is the time
+
+to take action.
+
+Click Here Join The #1 Wholesaling System Online Today ( http://t.dripemail=
+2.com/c/eyJhY2NvdW50X2lkIjoiOTE4MzExNyIsImRlbGl2ZXJ5X2lkIjoiMTQ4OTg0MzIxOSI=
+sInVybCI6Imh0dHBzOi8vd3d3LmZsaXAyZnJlZWRvbXdlYmNsYXNzLmNvbS9vcmdhbmljLXJlZz=
+9fX3M9c21pZms3cXNlcW84bWU2ZWRjbXoifQ )
+
+Check out this page and listen to some of the success stories
+
+of folks just like you that had the guts to get started and now
+
+are reaping the rewards.
+
+You can do this=E2=80=A6
+
+=E2=80=A6it's not rocket science, but it takes hard work
+
+and dedication on your part.
+
+Living life as an inmate is a terrible thing, and it
+
+doesn't matter if it's in a jail cell or in a job that you hate,
+
+the results are still the same=E2=80=A6
+
+NO FREEDOM
+
+All the best,
+
+P.S. You have everything to gain and nothing to lose.
+
+See you soon:
+
+Click Here Join The #1 Wholesaling System Online Today ( http://t.dripemail=
+2.com/c/eyJhY2NvdW50X2lkIjoiOTE4MzExNyIsImRlbGl2ZXJ5X2lkIjoiMTQ4OTg0MzIxOSI=
+sInVybCI6Imh0dHBzOi8vd3d3LmZsaXAyZnJlZWRvbXdlYmNsYXNzLmNvbS9vcmdhbmljLXJlZz=
+9fX3M9c21pZms3cXNlcW84bWU2ZWRjbXoifQ )
+
+---------------------
+To make sure you keep getting these emails, please add
+sean@flip2freedom.com to your address book or whitelist us. Want out of
+the loop? <a href=3D"http://t.dripemail2.com/c/eyJhY2NvdW50X2lkIjoiOTE4MzEx=
+NyIsImRlbGl2ZXJ5X2lkIjoiMTQ4OTg0MzIxOSIsInVybCI6Imh0dHBzOi8vd3d3LmdldGRyaXA=
+uY29tL3N1YnNjcmliZXJzL3NtaWZrN3FzZXFvOG1lNmVkY216L3N1YnNjcmlwdGlvbnM_ZD11ZX=
+Fucml6Z3lxOGVvcWM1cHp5d1x1MDAyNmV4Y2x1ZGVfY2xpY2s9MVx1MDAyNmludGVudD11bnN1Y=
+nNjcmliZVx1MDAyNl9fcz1zbWlmazdxc2VxbzhtZTZlZGNteiJ9">Unsubscribe</a>.
+
+Our postal address: 19420 North 59th Avenue, Glendale, AZ 85308
+
+
+--a524b76e66a02d5f5fb3391ad7d5311ff373017091afc2c4d4710fc3b528
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=UTF-8
+Mime-Version: 1.0
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.=
+w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns=3D"http://www.w3.org/1999/xhtml" style=3D"box-sizing: border-bo=
+x; font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif=
+; font-size: 14px; line-height: 1.5">
+<head>
+<meta name=3D"viewport" content=3D"width=3Ddevice-width">
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8">
+
+</head>
+<body style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: none; =
+background: #ffffff; box-sizing: border-box; font-family: 'Helvetica Neue',=
+ 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; height: 100%; =
+line-height: 1.6; width: 100% !important" bgcolor=3D"#ffffff">
+<style type=3D"text/css">
+img {
+max-width: 100%; margin-bottom: 14px;
+}
+body {
+background-color: #ffffff; -ms-text-size-adjust: 100%; -webkit-text-size-ad=
+just: none; width: 100% !important; height: 100%; line-height: 1.6;
+}
+.ExternalClass {
+width: 100%;
+}
+.ExternalClass {
+line-height: 100%;
+}
+img {
+-ms-interpolation-mode: bicubic;
+}
+a:visited {
+color: purple !important;
+}
+a:hover {
+color: #e2911a !important;
+}
+a:active {
+color: #0d3d62 !important;
+}
+.cta-button:hover {
+color: #ffffff; background-color: #B67A0D; text-decoration: none; border-co=
+lor: #B67A0D; border: 12px solid #B67A0D;
+}
+[owa] .cta-button:hover {
+color: #ffffff; background-color: #B67A0D; text-decoration: none; border-co=
+lor: #B67A0D; border: 12px solid #B67A0D;
+}
+[class=3D"cta-button"]:hover {
+color: #ffffff; background-color: #B67A0D; text-decoration: none; border-co=
+lor: #B67A0D; border: 12px solid #B67A0D;
+}
+.cta-button:visited {
+color: #ffffff; background-color: #B67A0D; text-decoration: none; border-co=
+lor: #B67A0D; border: 12px solid #B67A0D;
+}
+[owa] .cta-button:visited {
+color: #ffffff; background-color: #B67A0D; text-decoration: none; border-co=
+lor: #B67A0D; border: 12px solid #B67A0D;
+}
+[class=3D"cta-button"]:visited {
+color: #ffffff; background-color: #B67A0D; text-decoration: none; border-co=
+lor: #B67A0D; border: 12px solid #B67A0D;
+}
+.cta-button:active {
+color: #ffffff; background-color: #B67A0D; text-decoration: none; border-co=
+lor: #B67A0D; border: 12px solid #B67A0D;
+}
+[owa] .cta-button:active {
+color: #ffffff; background-color: #B67A0D; text-decoration: none; border-co=
+lor: #B67A0D; border: 12px solid #B67A0D;
+}
+[class=3D"cta-button"]:active {
+color: #ffffff; background-color: #B67A0D; text-decoration: none; border-co=
+lor: #B67A0D; border: 12px solid #B67A0D;
+}
+</style>
+<!--[if mso 16]>
+    <style type=3D"text/css">
+        a{
+            text-decoration:none !important;
+        }
+    </style>
+<![endif]-->
+
+<table class=3D"body-wrap" style=3D"background: #ffffff; box-sizing: border=
+-box; font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-se=
+rif; font-size: 14px; line-height: 1.5; mso-table-lspace: 0pt; mso-table-rs=
+pace: 0pt; width: 100%" bgcolor=3D"#ffffff">
+  <tr style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helv=
+etica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+    <td class=3D"container" style=3D"box-sizing: border-box; clear: both !i=
+mportant; display: block !important; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5; marg=
+in: 0; max-width: 600px !important; overflow: visible; vertical-align: top"=
+ valign=3D"top">
+      <div class=3D"content" style=3D"box-sizing: border-box; display: bloc=
+k; font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif=
+; font-size: 14px; line-height: 1.5; margin: 0; max-width: 600px; overflow:=
+ visible">
+        <table class=3D"main" width=3D"100%" cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Hel=
+vetica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5; m=
+so-table-lspace: 0pt; mso-table-rspace: 0pt">
+          <tr style=3D"box-sizing: border-box; font-family: 'Helvetica Neue=
+', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; line-height:=
+ 1.5">
+            <td class=3D"main-content" style=3D"box-sizing: border-box; col=
+or: #222222; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-seri=
+f; font-size: 14px; line-height: 1.5; padding: 25px; vertical-align: top" v=
+align=3D"top">
+              <p style=3D"box-sizing: border-box; font-family: 'Helvetica N=
+eue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; font-weig=
+ht: normal; line-height: 1.5; margin-bottom: 14px">A few years back I recei=
+ved a call from a seller<br style=3D"box-sizing: border-box; font-family: '=
+Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px=
+; line-height: 1.5">
+that <strong style=3D"box-sizing: border-box; font-family: 'Helvetica Neue'=
+, 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: =
+bold; line-height: 1.5">REALLY</strong> needed to get rid of her house. She=
+ was defiantly motivated!<br style=3D"box-sizing: border-box; font-family: =
+'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14p=
+x; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+When talking to her about her situation she mentioned that<br style=3D"box-=
+sizing: border-box; font-family: 'Helvetica Neue', 'Helvetica', Helvetica, =
+Arial, sans-serif; font-size: 14px; line-height: 1.5">
+her husband was in jail and they've run out of money and needed to<br style=
+=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvetica', Hel=
+vetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+ASAP to get some cash.<br style=3D"box-sizing: border-box; font-family: 'He=
+lvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; =
+line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+I asked, what's the minimum cash she'd take for the property<br style=3D"bo=
+x-sizing: border-box; font-family: 'Helvetica Neue', 'Helvetica', Helvetica=
+, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+and she said $48K. When pulling comparable sales the property<br style=3D"b=
+ox-sizing: border-box; font-family: 'Helvetica Neue', 'Helvetica', Helvetic=
+a, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+was worth roughly $160K retail.<br style=3D"box-sizing: border-box; font-fa=
+mily: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-siz=
+e: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+Boom Baby!!! We got a deal!!<br style=3D"box-sizing: border-box; font-famil=
+y: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: =
+14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+Well I dropped everything and got to the property as fast as<br style=3D"bo=
+x-sizing: border-box; font-family: 'Helvetica Neue', 'Helvetica', Helvetica=
+, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+humanly possible.<br style=3D"box-sizing: border-box; font-family: 'Helveti=
+ca Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; line-=
+height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+I got the contract for $48K but here came the hard part,<br style=3D"box-si=
+zing: border-box; font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Ar=
+ial, sans-serif; font-size: 14px; line-height: 1.5">
+I had to get the signature from the husband that was in jail...<br style=3D=
+"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvetica', Helvet=
+ica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+Now what?<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue'=
+, 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: =
+1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+You got it, I told the seller that I would get it taken care of.<br style=
+=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvetica', Hel=
+vetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+(Just a side note, the sellers weren't speaking. She hated her husband and =
+was disgusted that he got thrown in jail.)<br style=3D"box-sizing: border-b=
+ox; font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-seri=
+f; font-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+Yikes ;(<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue',=
+ 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1=
+.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+So I made my way to the Arizona State Prison where I had to<br style=3D"box=
+-sizing: border-box; font-family: 'Helvetica Neue', 'Helvetica', Helvetica,=
+ Arial, sans-serif; font-size: 14px; line-height: 1.5">
+go through and full body scan got padded down and had to empty<br style=3D"=
+box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvetica', Helveti=
+ca, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+all my pockets, take off my shoes and belt.<br style=3D"box-sizing: border-=
+box; font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-ser=
+if; font-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+When I walked into the visitors center and saw all the inmates speaking to =
+their guest through 5-inch bullet-proof glass, it was pretty intimidating s=
+ay the least.<br style=3D"box-sizing: border-box; font-family: 'Helvetica N=
+eue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; line-heig=
+ht: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+We to make a long story short, I got the contract signed and got out of the=
+re as fast as I could.<br style=3D"box-sizing: border-box; font-family: 'He=
+lvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; =
+line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+Wheeew=E2=80=A6<br style=3D"box-sizing: border-box; font-family: 'Helvetica=
+ Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; line-he=
+ight: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+Now as an inmate the majority of your freedom is taken away.<br style=3D"bo=
+x-sizing: border-box; font-family: 'Helvetica Neue', 'Helvetica', Helvetica=
+, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+You can't go where you want to go.<br style=3D"box-sizing: border-box; font=
+-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-=
+size: 14px; line-height: 1.5">
+You can't go on vacation if you want.<br style=3D"box-sizing: border-box; f=
+ont-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; fo=
+nt-size: 14px; line-height: 1.5">
+You have to eat when you're told to eat.<br style=3D"box-sizing: border-box=
+; font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;=
+ font-size: 14px; line-height: 1.5">
+You have to be at a certain place when you're told you have to be there.<br=
+ style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvetica=
+', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+You're limited to the amount of money you can have.<br style=3D"box-sizing:=
+ border-box; font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, =
+sans-serif; font-size: 14px; line-height: 1.5">
+You're literally chained to your cell.<br style=3D"box-sizing: border-box; =
+font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; f=
+ont-size: 14px; line-height: 1.5">
+The future looks dim=E2=80=A6<br style=3D"box-sizing: border-box; font-fami=
+ly: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size:=
+ 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+That is called <strong style=3D"box-sizing: border-box; font-family: 'Helve=
+tica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; fon=
+t-weight: bold; line-height: 1.5"><em style=3D"box-sizing: border-box; font=
+-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-=
+size: 14px; line-height: 1.5">maximum security</em> </strong>and we do ever=
+ything in our power<br style=3D"box-sizing: border-box; font-family: 'Helve=
+tica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; lin=
+e-height: 1.5">
+to avoid this situation, don't we?<br style=3D"box-sizing: border-box; font=
+-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-=
+size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+Now the amazing thing is that most folks are inmates to their JOBS<br style=
+=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvetica', Hel=
+vetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+wouldn't you agree?<br style=3D"box-sizing: border-box; font-family: 'Helve=
+tica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; lin=
+e-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+Let's look at the similarities for a second,<br style=3D"box-sizing: border=
+-box; font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-se=
+rif; font-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+You can't go where you want to go.<br style=3D"box-sizing: border-box; font=
+-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-=
+size: 14px; line-height: 1.5">
+You can't go on vacation if you want.<br style=3D"box-sizing: border-box; f=
+ont-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; fo=
+nt-size: 14px; line-height: 1.5">
+You have to eat when you're told to eat.<br style=3D"box-sizing: border-box=
+; font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;=
+ font-size: 14px; line-height: 1.5">
+You have to be at a certain place when you're told you have to be there.</p>
+
+<p style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helveti=
+ca', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: normal; li=
+ne-height: 1.5; margin-bottom: 14px"><br style=3D"box-sizing: border-box; f=
+ont-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; fo=
+nt-size: 14px; line-height: 1.5">
+You're limited to the amount of money you can have.<br style=3D"box-sizing:=
+ border-box; font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, =
+sans-serif; font-size: 14px; line-height: 1.5">
+You're literally chained to your cell.<br style=3D"box-sizing: border-box; =
+font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; f=
+ont-size: 14px; line-height: 1.5">
+The future looks dim=E2=80=A6<br style=3D"box-sizing: border-box; font-fami=
+ly: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size:=
+ 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+People are stuck in a crummy job that is taking the majority<br style=3D"bo=
+x-sizing: border-box; font-family: 'Helvetica Neue', 'Helvetica', Helvetica=
+, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+of their freedom away.<br style=3D"box-sizing: border-box; font-family: 'He=
+lvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; =
+line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+And what are they trading this freedom for?<br style=3D"box-sizing: border-=
+box; font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-ser=
+if; font-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+Security, well maximum security to be exact.<br style=3D"box-sizing: border=
+-box; font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-se=
+rif; font-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+What if I told you that there is no such thing as security.<br style=3D"box=
+-sizing: border-box; font-family: 'Helvetica Neue', 'Helvetica', Helvetica,=
+ Arial, sans-serif; font-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+How many people do you know that got laid off or downsized<br style=3D"box-=
+sizing: border-box; font-family: 'Helvetica Neue', 'Helvetica', Helvetica, =
+Arial, sans-serif; font-size: 14px; line-height: 1.5">
+or let go for one reason or the other.<br style=3D"box-sizing: border-box; =
+font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; f=
+ont-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+Lots right?<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neu=
+e', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; line-height=
+: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+Well, the only security is cash in the bank=E2=80=A6and lots of it.<br styl=
+e=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvetica', He=
+lvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+The fastest and easiest way to generate cash flow around your<br style=3D"b=
+ox-sizing: border-box; font-family: 'Helvetica Neue', 'Helvetica', Helvetic=
+a, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+job is flipping houses in your spare time.<br style=3D"box-sizing: border-b=
+ox; font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-seri=
+f; font-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+If you don't have spare time, make spare time. It's worth your while, I pro=
+mise you.<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue'=
+, 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: =
+1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+Wholesaling houses can give you the freedom<br style=3D"box-sizing: border-=
+box; font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-ser=
+if; font-size: 14px; line-height: 1.5">
+we all strive for plus allow you to live an amazing lifestyle.<br style=3D"=
+box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvetica', Helveti=
+ca, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+In July I took the whole month off. I went to my beach house<br style=3D"bo=
+x-sizing: border-box; font-family: 'Helvetica Neue', 'Helvetica', Helvetica=
+, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+in Dana Point CA. We went to the beach, played tennis, went shopping and ha=
+d a blast. My business continued to grow and money continued to come in.<br=
+ style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvetica=
+', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+What a great thing.<br style=3D"box-sizing: border-box; font-family: 'Helve=
+tica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; lin=
+e-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+Well if you're sick of<em style=3D"box-sizing: border-box; font-family: 'He=
+lvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; =
+line-height: 1.5"> being an inmate</em> and you want<br style=3D"box-sizing=
+: border-box; font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial,=
+ sans-serif; font-size: 14px; line-height: 1.5">
+to control your own future, then now is the time<br style=3D"box-sizing: bo=
+rder-box; font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, san=
+s-serif; font-size: 14px; line-height: 1.5">
+to take action.<br style=3D"box-sizing: border-box; font-family: 'Helvetica=
+ Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; line-he=
+ight: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+<a href=3D"http://t.dripemail2.com/c/eyJhY2NvdW50X2lkIjoiOTE4MzExNyIsImRlbG=
+l2ZXJ5X2lkIjoiMTQ4OTg0MzIxOSIsInVybCI6Imh0dHBzOi8vd3d3LmZsaXAyZnJlZWRvbXdlY=
+mNsYXNzLmNvbS9vcmdhbmljLXJlZz9fX3M9c21pZms3cXNlcW84bWU2ZWRjbXoifQ" style=3D=
+"box-sizing: border-box; color: #4477bd; font-family: 'Helvetica Neue', 'He=
+lvetica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5; =
+text-decoration: underline">Click Here Join The #1 Wholesaling System Onlin=
+e Today</a><br style=3D"box-sizing: border-box; font-family: 'Helvetica Neu=
+e', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; line-height=
+: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+Check out this page and listen to some of the success stories<br style=3D"b=
+ox-sizing: border-box; font-family: 'Helvetica Neue', 'Helvetica', Helvetic=
+a, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+of folks just like you that had the guts to get started and now<br style=3D=
+"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvetica', Helvet=
+ica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+are reaping the rewards.<br style=3D"box-sizing: border-box; font-family: '=
+Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px=
+; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+You can do this=E2=80=A6<br style=3D"box-sizing: border-box; font-family: '=
+Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px=
+; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+=E2=80=A6it's not rocket science, but it takes hard work<br style=3D"box-si=
+zing: border-box; font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Ar=
+ial, sans-serif; font-size: 14px; line-height: 1.5">
+and dedication on your part.<br style=3D"box-sizing: border-box; font-famil=
+y: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: =
+14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+Living life as an inmate is a terrible thing, and it<br style=3D"box-sizing=
+: border-box; font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial,=
+ sans-serif; font-size: 14px; line-height: 1.5">
+doesn't matter if it's in a jail cell or in a job that you hate,<br style=
+=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvetica', Hel=
+vetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+the results are still the same=E2=80=A6<br style=3D"box-sizing: border-box;=
+ font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; =
+font-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+<strong style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'He=
+lvetica', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: bold;=
+ line-height: 1.5">NO FREEDOM</strong></p>
+
+<p style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helveti=
+ca', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: normal; li=
+ne-height: 1.5; margin-bottom: 14px">All the best,</p>
+
+<p style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helveti=
+ca', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: normal; li=
+ne-height: 1.5; margin-bottom: 14px">P.S. You have everything to gain and n=
+othing to lose.<br style=3D"box-sizing: border-box; font-family: 'Helvetica=
+ Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; line-he=
+ight: 1.5">
+See you soon:<br style=3D"box-sizing: border-box; font-family: 'Helvetica N=
+eue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; line-heig=
+ht: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+<a href=3D"http://t.dripemail2.com/c/eyJhY2NvdW50X2lkIjoiOTE4MzExNyIsImRlbG=
+l2ZXJ5X2lkIjoiMTQ4OTg0MzIxOSIsInVybCI6Imh0dHBzOi8vd3d3LmZsaXAyZnJlZWRvbXdlY=
+mNsYXNzLmNvbS9vcmdhbmljLXJlZz9fX3M9c21pZms3cXNlcW84bWU2ZWRjbXoifQ" style=3D=
+"box-sizing: border-box; color: #4477bd; font-family: 'Helvetica Neue', 'He=
+lvetica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5; =
+text-decoration: underline">Click Here Join The #1 Wholesaling System Onlin=
+e Today</a></p>
+
+<p style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helveti=
+ca', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: normal; li=
+ne-height: 1.5; margin-bottom: 14px">=C2=A0</p>
+
+<p style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helveti=
+ca', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: normal; li=
+ne-height: 1.5; margin-bottom: 14px">=C2=A0</p>
+
+<p style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helveti=
+ca', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: normal; li=
+ne-height: 1.5; margin-bottom: 14px">=C2=A0</p>
+
+<p style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helveti=
+ca', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: normal; li=
+ne-height: 1.5; margin-bottom: 14px"><br style=3D"box-sizing: border-box; f=
+ont-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; fo=
+nt-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+=C2=A0</p>
+
+<p style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helveti=
+ca', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: normal; li=
+ne-height: 1.5; margin-bottom: 14px">=C2=A0</p>
+
+<p style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helveti=
+ca', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: normal; li=
+ne-height: 1.5; margin-bottom: 14px">=C2=A0</p>
+
+            </td>
+          </tr>
+        </table>
+      </div>
+=20=20=20=20=20=20
+      <div class=3D"content" style=3D"box-sizing: border-box; display: bloc=
+k; font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif=
+; font-size: 14px; line-height: 1.5; margin: 0; max-width: 600px; overflow:=
+ visible">
+        <table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" style=3D"=
+box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvetica', Helveti=
+ca, Arial, sans-serif; font-size: 14px; line-height: 1.5; mso-table-lspace:=
+ 0pt; mso-table-rspace: 0pt">
+          <tr style=3D"box-sizing: border-box; font-family: 'Helvetica Neue=
+', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; line-height:=
+ 1.5">
+            <td class=3D"footer-content" style=3D"border-top-color: #d0d0d0=
+; border-top-style: solid; border-top-width: 1px; box-sizing: border-box; c=
+lear: both; color: #777; font-family: 'Helvetica Neue', 'Helvetica', 'Arial=
+', sans-serif; font-size: 14px; line-height: 1.5; padding: 25px; vertical-a=
+lign: top; width: 100%" valign=3D"top">
+              To make sure you keep getting these emails, please add sean@f=
+lip2freedom.com to your address book or whitelist us. Want out of the loop?=
+ <a href=3D"http://t.dripemail2.com/c/eyJhY2NvdW50X2lkIjoiOTE4MzExNyIsImRlb=
+Gl2ZXJ5X2lkIjoiMTQ4OTg0MzIxOSIsInVybCI6Imh0dHBzOi8vd3d3LmdldGRyaXAuY29tL3N1=
+YnNjcmliZXJzL3NtaWZrN3FzZXFvOG1lNmVkY216L3N1YnNjcmlwdGlvbnM_ZD11ZXFucml6Z3l=
+xOGVvcWM1cHp5d1x1MDAyNmV4Y2x1ZGVfY2xpY2s9MVx1MDAyNmludGVudD11bnN1YnNjcmliZV=
+x1MDAyNl9fcz1zbWlmazdxc2VxbzhtZTZlZGNteiJ9">Unsubscribe</a>.<br style=3D"bo=
+x-sizing: border-box; font-family: 'Helvetica Neue', 'Helvetica', Helvetica=
+, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+Our postal address: 19420 North 59th Avenue, Glendale, AZ 85308
+            </td>
+          </tr>
+        </table>
+      </div>
+=20=20=20=20=20=20
+    </td>
+  </tr>
+</table>
+
+<img src=3D"http://o.dripemail2.com/wf/open?upn=3D7XtDdMHRjqIUi4tzSjSp2h-2B=
+oTg8yV1h4-2FGX2SHZpIEpUT1WcYZeziSF1sLE6pr6Z05CwoYs8UOIikUE0Fl3Yohcz7fvI-2F-=
+2B7CByer-2FsSZYDBY2A9tgPdVjpfAc92135lgXT2fnJ5RKkL2p-2Bf3DwC3-2BhI63LhSZf9gs=
+cKWLSS3PtWIVEUeu21g-2Ff1-2FVe7T08Iut3FatnU9i9adGOPgHpY4-2BQE11AFa72yB1JTvff=
+VoNXJhNLFLyiK4rQMFOguVjTSPGy2p4u0Xssg6qjbabEpcHsJ3rBvzKLmj7XJbp9WhSPm6tUstU=
+eoj9rjWHpXjgBak" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=3D"he=
+ight:1px !important;width:1px !important;border-width:0 !important;margin-t=
+op:0 !important;margin-bottom:0 !important;margin-right:0 !important;margin=
+-left:0 !important;padding-top:0 !important;padding-bottom:0 !important;pad=
+ding-right:0 !important;padding-left:0 !important;"/>
+</body>
+</html>
+
+
+--a524b76e66a02d5f5fb3391ad7d5311ff373017091afc2c4d4710fc3b528--
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>date-last-viewed</key>
+	<integer>0</integer>
+	<key>date-received</key>
+	<integer>1509026449</integer>
+	<key>flags</key>
+	<integer>8590195712</integer>
+	<key>remote-id</key>
+	<string>4547</string>
+</dict>
+</plist>

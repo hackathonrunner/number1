@@ -1,0 +1,56 @@
+1209      
+Content-Type: multipart/mixed;
+	boundary=Apple-Mail-2C3CFCAE-78FD-49C0-A7E9-AA4FC5F2809C
+Content-Transfer-Encoding: 7bit
+From: Austin Alexander Dreier <austindreier@icloud.com>
+Mime-Version: 1.0 (1.0)
+Date: Tue, 8 Sep 2015 19:14:07 -0700
+Subject: Resume
+Message-Id: <5B39F90C-67F6-4F87-95C8-82A32F1C7338@icloud.com>
+To: craigslist 5208129690 <rpd46-5208129690@job.craigslist.org>
+
+
+--Apple-Mail-2C3CFCAE-78FD-49C0-A7E9-AA4FC5F2809C
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain;
+	charset=us-ascii
+
+Here is a copy of my resume. I wanted to send this to you so you had a bette=
+r idea of my skills and work history. I just got off work from my current jo=
+b so I will come by and fill out an application
+
+
+--Apple-Mail-2C3CFCAE-78FD-49C0-A7E9-AA4FC5F2809C
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment;
+	filename=Resume.pdf
+Content-Type: application/pdf;
+	name=Resume.pdf;
+	x-apple-part-url=46BFD462-CB2F-4FD3-806B-0CB9BBD199CE
+X-Apple-Content-Length: 312904
+
+
+--Apple-Mail-2C3CFCAE-78FD-49C0-A7E9-AA4FC5F2809C
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain;
+	charset=us-ascii
+
+
+
+
+-Austin Alexander Dreier
+--Apple-Mail-2C3CFCAE-78FD-49C0-A7E9-AA4FC5F2809C--
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>date-last-viewed</key>
+	<integer>0</integer>
+	<key>date-received</key>
+	<integer>1441764847</integer>
+	<key>flags</key>
+	<integer>8623686657</integer>
+	<key>remote-id</key>
+	<string>129</string>
+</dict>
+</plist>

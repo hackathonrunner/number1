@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>DisplayInThreadedMode</key>
+	<string>yes</string>
+	<key>IMAPMailboxUnseenCount</key>
+	<integer>44</integer>
+	<key>MailboxID</key>
+	<string>11612E9D-CBE0-458E-B660-DC4369E98908</string>
+	<key>MailboxIsFirstTimeSync</key>
+	<string>NO</string>
+	<key>MailboxName</key>
+	<string>INBOX</string>
+	<key>SupportsCustomFlags</key>
+	<string>YES</string>
+	<key>UIDNEXT</key>
+	<string>7834</string>
+	<key>UIDVALIDITY</key>
+	<string>1368674422</string>
+</dict>
+</plist>

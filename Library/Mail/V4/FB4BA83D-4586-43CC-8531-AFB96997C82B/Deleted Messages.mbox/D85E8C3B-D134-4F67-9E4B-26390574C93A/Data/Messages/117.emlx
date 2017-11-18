@@ -1,0 +1,371 @@
+18667     
+Return-path: <jLhOSs0WJNumcSft+payment_plans=squareup.com@bounces.squareup.com>
+Received: from ms11p00im-qufv17091101.mac.com ([17.58.36.65])
+ by ms60015.mac.com
+ (Oracle Communications Messaging Server 8.0.1.2.20170607 64bit (built Jun  7
+ 2017)) with ESMTP id <0OYP00E4MH6IEH70@ms60015.mac.com> for
+ austindreier@icloud.com; Tue, 31 Oct 2017 21:03:54 +0000 (GMT)
+Original-recipient: rfc822;austindreier@icloud.com
+Received: from mta.sip.sjc1.squareup.com
+ (mta.sip.sjc1.squareup.com [74.122.190.36]) by ms11p00im-qufv17091101.me.com
+ (Oracle Communications Messaging Server 8.0.1.2.20170607 64bit (built Jun  7
+ 2017)) with ESMTPS id <0OYP005UBH6GOX00@ms11p00im-qufv17091101.me.com> for
+ austindreier@icloud.com (ORCPT austindreier@icloud.com); Tue,
+ 31 Oct 2017 21:03:54 +0000 (GMT)
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 spamscore=0
+ clxscore=202 suspectscore=2 malwarescore=0 phishscore=0 adultscore=0
+ bulkscore=1 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.0.1-1707230000 definitions=main-1710310258
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10432:,,
+ definitions=2017-10-31_11:,, signatures=0
+Authentication-results: ms11p00im-qufv17233101.me.com; dmarc=pass
+ header.from=squareup.com
+Authentication-results: ms11p00im-qufv10074101.me.com; spf=pass
+ (ms11p00im-qufv10074101.me.com: domain of
+ jLhOSs0WJNumcSft+payment_plans=squareup.com@bounces.squareup.com designates
+ 74.122.190.36 as permitted sender)
+ smtp.mailfrom=jLhOSs0WJNumcSft+payment_plans=squareup.com@bounces.squareup.com;
+Received-SPF: pass (ms11p00im-qufv10074101.me.com: domain of
+ jLhOSs0WJNumcSft+payment_plans=squareup.com@bounces.squareup.com designates
+ 74.122.190.36 as permitted sender) receiver=ms11p00im-qufv10074101.me.com;
+ client-ip=74.122.190.36; helo=mta.sip.sjc1.squareup.com;
+ envelope-from=jLhOSs0WJNumcSft+payment_plans=squareup.com@bounces.squareup.com;
+Authentication-results: ms11p00im-qufv10082901.me.com;	dkim=pass (2048-bit key)
+ header.d=squareup.com header.i=@squareup.com header.b=bUH9rAPi;	dkim-adsp=pass
+Received: from mta.sip.sjc1.squareup.com
+ (mta.sip.sjc1.squareup.com [74.122.190.36])	by cep4.sjc1b.square (Postfix)
+ with ESMTPS id 8BE7B16C	for <austindreier@icloud.com>; Tue,
+ 31 Oct 2017 21:03:52 +0000 (UTC)
+Received: from awa270.sjc2b.square (awa270.sjc2b.square [10.4.4.31])
+	by cep4.sjc1b.square (Postfix) with ESMTPS id 68B7E80158595	for
+ <austindreier@icloud.com>; Tue, 31 Oct 2017 21:03:52 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=squareup.com;	s=201308;
+ t=1509483832;	bh=hBGh5ayCiLgtbIascp9gWnT7NdeQedijoGBvfhikmjY=;
+	h=Date:From:Reply-To:To:Message-ID:Subject:Mime-Version:
+ Content-Type:From:Content-Type;
+	b=bUH9rAPiWi0D7AlYxD8EYxjF/KDooNOxKhQ7t4km++Fh2tXdgHl3spBKtYeDi7Vae
+ xXxrhahFvLc4MTRxTPkvRKF3HwygA0Lyhh8AeX4Ej0aTOIRTHcDjfIbhRYETe/Ss3Z
+ T6BRMNrBJcQmZi9nlBkgB+c+EPW7aWrNXc8j6GUqpV4vswNcFDCWdcRlxbBA3u+EmT
+ HN2Bj90SyWGmMhpiEOtjJbAi+RZUJUCfd5ELvzNhbc4M2jJlmnUC+NGC+J2+IsZ6Je
+ QVbRxRxPH9OFz/zyt4mu61Bv+bvwTiiva1/C5W/DAT0bdGGUNc7weGzwMl3zaxlLzB
+ nijQWad9fwktg==
+Received: from localhost.localdomain (localhost [127.0.0.1])
+	by awa270.sjc2b.square (Postfix) with ESMTP id 5F7921203A3	for
+ <austindreier@icloud.com>; Tue, 31 Oct 2017 21:03:52 +0000 (UTC)
+Date: Tue, 31 Oct 2017 21:03:52 +0000
+From: Square Recovery <payment_plans@squareup.com>
+Reply-to: Square Recovery <payment_plans@squareup.com>
+To: austindreier@icloud.com
+Message-id: <jLhOSs0WJNumcSft@squareup.com>
+Subject: =?UTF-8?Q?Northern_Colorado_Moving_Co.=E2=80=99s_account_with?=
+ =?UTF-8?Q?_Square_has_a_negative_balance_of_=28$52.92=29?=
+MIME-version: 1.0
+Content-type: multipart/alternative;
+ boundary="--==_mimepart_59f8e5381e36f_64afc3fbd6e29a23c1005306c"; charset=UTF-8
+Content-transfer-encoding: 7bit
+x-icloud-spam-score: 3331331
+ f=squareup.com;e=bounces.squareup.com;is=yes;ir=no;spf=pass;dkim=pass;dmarc=pass/reject/none;gdwl=absent;pps=ham;clxs=ham;clxw=neutral
+X-CLX-Spam: false
+X-CLX-UnSpecialScore: None
+X-CLX-Score: 202
+X-CLX-UShades: None
+X-CLX-Shades: None
+X-MANTSH: 1TEIXR1kbG1oaGkNHB1tfTFwbGhsaGx4aGxEKTEMXGxoEGxsYBBsbGgQeGRAbHho
+ fGhEKTFkXGBoYEQpZTRdkRURPEQpZSRcacRoQGncGEhhxGxgfEBsSdwYYGgYbGhoRClleF2tre
+ REKQ04XQH4fTXNsSWFra0VHXFJ9c3xeT1tuWGxde2ZLaU5/S1sRClhcFxkEGgQZGAdNGU4TTxM
+ ZGAUbGgQTBBsSBBgaGhAbHhofGhEKXlkXeGZFRH8RCk1cFx0SHxEKTFoXaG1NTU0RCkNaFx0eB
+ BsYGAQbExoEGRwRCkJeFxsRCllFFxMRCkVJFxoRCkVmFxkRCkJcFxsRCl5OFxsRCkJLF3obRVl
+ wGRwBfWUTEQpCRRdoWXJBQmlYT2QdaREKQk4XehtFWXAZHAF9ZRMRCkJMF2VOY3tMWVtzRXJgE
+ QpCbBdhREMSeBpBAWxmZhEKQkAXbRMYcmdzXlAcTkgRCkJYF25HHRtOZGFFGxJAEQpwaBdhQH1
+ zRVl5WH5eARAZGhEKcGgXbW9iRk9+W3tQbE0QGRoRCnBoF2QBGUYaGWRPY3MfEBkaEQpwaBdtX
+ hxhSURnZkt/RhAZGhEKcGgXb2xabEtpWn18SW4QGRoRCnB/F2VLbl9tU3l8SXhMEAcbGREKcF8
+ XbllFUEZwfFJtUkEQHhMRCnB9F25afWVPZHpTHgF9EB4ZEQpwfxdnW1x+fU14Sx1texAfHREKc
+ F8XZ0J7Y0l9bW8YQl0QHxkRCnB9F2cff318SW5eWHNBEBoRCnB/F25AcnsdTRMabnpdEBISEQp
+ wXxdjeRttHHlgXXpJHxAbGhoRCnB9F25DQltzeBxQH0YSEBwaEQpwfRdmeFMFa1lGSxtoYRAaE
+ QpwfRdse1gfaWUZWBJHZBAaEQpwfRdsGRwBWXtdfVpueBAdGhEKcH0XYkdDE0JSBR0fUGMQGhE
+ KcGwXbBpIXG5QE11dGXgQGRoRCm1+FxoRClhNF0sR
+x-dmarc-info: pass=pass; dmarc-policy=reject; s=r1; d=r1
+x-dmarc-policy: v=DMARC1; p=reject;
+ rua=mailto:dmarc_agg@vali.email,mailto:postmasters@squareup.com,mailto:square-dmarc@datafeeds.phishlabs.com;
+ ruf=mailto:dmarc-ruf@squareup.com,mailto:square-dmarc@datafeeds.phishlabs.com
+X-Metadata-campaign-id: 18990
+X-Metadata-template-id: 12978
+X-Metadata-translation-id: 4795
+X-Metadata-bandit-subject: 8NCGY63JDDPPF
+X-Metadata-request-key: b93ad2d1a6558b5e
+X-Delivery-Token: jLhOSs0WJNumcSft
+X-Reply-To-Service:
+
+
+----==_mimepart_59f8e5381e36f_64afc3fbd6e29a23c1005306c
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+Northern Colorado Moving Co.
+
+Account Balance: ($52.92).
+
+Northern Colorado Moving Co.=E2=80=99s account was referred to Square=E2=80=
+=99s Recovery team to assist in repayment of the negative balance on the =
+account. To address this matter, please take one of the following steps:
+
+1. Send a check for the full Account Balance referenced above to:
+Square, Inc.
+Attention: Square Recovery
+1455 Market Street
+San Francisco, CA 94103
+
+2. Call us at 1-415-653-1726 to work out a solution to resolve your balan=
+ce
+
+3. Respond directly to this email
+
+4. Email us at payment_plans@squareup.com
+
+We look forward to working with you to resolve your account=E2=80=99s neg=
+ative balance and get your account back into good standing with Square.
+
+Regards,
+
+Square Recovery
+
+
+-----
+
+=C2=A9 2017 Square, Inc.
+1455 Market Street, Suite 600
+San Francisco, CA 94103=
+
+----==_mimepart_59f8e5381e36f_64afc3fbd6e29a23c1005306c
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name=3D"viewport" content=3D"width=3Ddevice-width">
+<meta http-equiv=3D"Content-Type" content=3D"text/html;charset=3Dutf-8">
+<title>Square</title>
+<!--[if mso]>  <style type=3D"text/css" data-premailer=3D"ignore">
+    .nomso { display: none; font-size: 0; line-height: 0 }  table { font-=
+size: 1px; line-height:0; mso-margin-top-alt: 1px; }    table.MsoNormalTa=
+ble { font-family: sqmarket, Helvetica, sans-serif }
+    .durv { line-height: 14px !important }
+  </style><![endif]--><!--[if !mso]><!--><link rel=3D"stylesheet" type=3D=
+"text/css" href=3D"https://d1g145x70srn7h.cloudfront.net/images/email/mis=
+c/sq-market.css" data-premailer=3D"ignore">
+<style type=3D"text/css" data-premailer=3D"ignore"> a[x-apple-data-detect=
+ors] { color: inherit !important; text-decoration: none !important; font-=
+size: inherit !important; font-family: inherit !important; font-weight: i=
+nherit !important; line-height: inherit !important; }
+
+.invert a, .invert a[href^=3D"tel"], .invert a[href^=3D"mailto"], .invert=
+ a[href*=3D"//maps.apple.com"] { color: #ffffff; text-decoration: none; }=
+
+
+b a { color: #2d394e; }
+
+#hero a { color: #ffffff; }
+
+#outlook a { padding: 0; }
+
+body { width: 100% !important; margin: 0 auto !important; padding: 0; }
+
+.ExternalClass { width: 100%; line-height: 100%; }
+.ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClas=
+s td, .ExternalClass div { line-height: 100%; }
+
+table, td { border-collapse: collapse; mso-table-lspace: 0pt; mso-table-r=
+space: 0pt; }
+
+@media only screen and (min-width: 281px) { #container { position: relati=
+ve; top: 0; left: 0; right: 0; bottom: 0; } }
+div[style*=3D"margin: 16px 0"] { margin:0 !important; }
+@media screen and (min-width: 281px) and (max-width: 569px) and (-webkit-=
+min-device-pixel-ratio: 0) {#container .fullWidth a { display: block !imp=
+ortant; }
+#container .column { width: inherit !important; }
+#container .column .embiggen { width: 420px !important; max-width: 420px =
+!important; }
+#container .column .embiggen .list td:first-child { width: inherit !impor=
+tant; }
+#container .column .embiggen .list td:last-child { widthx: 500px !importa=
+nt; }
+#container .column .embiggen .button td { width: inherit !important; }
+#container .column .embiggen img { max-width: 100% !important; }
+}</style>
+<!--<![endif]-->
+</head>
+<body style=3D"background: #f8f8f8">
+<!--[if !mso]><!--><div id=3D"preheader" style=3D"font-size: 0;max-height=
+: 0;overflow: hidden;display: none"> </div>
+<!--<![endif]--><div id=3D"container" style=3D"-webkit-text-size-adjust: =
+none;-ms-text-size-adjust: none;-webkit-font-smoothing: antialiased">
+<table id=3D"hero" style=3D"table-layout: fixed;background: #5cb8e6" widt=
+h=3D"100%" cellpadding=3D"0" cellspacing=3D"0"><tr><td align=3D"center"><=
+table cellpadding=3D"0" cellspacing=3D"0"><tr><td align=3D"center"><table=
+ cellpadding=3D"0" cellspacing=3D"0"><tr><td align=3D"center" style=3D"pa=
+dding: 20px"><table cellpadding=3D"0" cellspacing=3D"0"><tr><td width=3D"=
+100%" class=3D"jewel"><table width=3D"100%" cellpadding=3D"0" cellspacing=
+=3D"0"><tr><td style=3D"font-size: 0;line-height: 0;padding: 0"><a href=3D=
+"https://squareup.com/subscriptions/r?ee=3Dbb7193f1907359bc421aea700214c5=
+51402a3a55c0ee246a5f44fa1e--ZD1qTGhPU3MwV0pOdW1jU2Z0JmU9JTIzamV3ZWwtaGVyb=
+yZtJTVCYmFuZGl0LXN1YmplY3QlNUQ9OE5DR1k2M0pERFBQRiZtJTVCY2FtcGFpZ24taWQlNU=
+Q9MTg5OTAmbSU1QnJlcXVlc3Qta2V5JTVEPWI5M2FkMmQxYTY1NThiNWUmbSU1QnRlbXBsYXR=
+lLWlkJTVEPTEyOTc4Jm0lNUJ0cmFuc2xhdGlvbi1pZCU1RD00Nzk1Jm49ZW1haWxjbGljayZy=
+PWh0dHBzJTNBJTJGJTJGc3F1YXJldXAuY29tJTJGJTNGdXRtX3NvdXJjZSUzRGVtYWlsJTI2d=
+XRtX21lZGl1bSUzRGVuZ2FnZW1lbnQlMjZ1dG1fY2FtcGFpZ24lM0R1cy1lbi1yZWNvdmVyeS=
+1vbmdvaW5n" id=3D"jewel-hero" style=3D"text-decoration: none"><img src=3D=
+"https://square-mailstrom-production-s.squarecdn.com/_shared/jewel/jewel-=
+white-22.png" width=3D"22" height=3D"22" border=3D"0" style=3D"display: i=
+nline-block"></a></td></tr></table></td></tr></table></td></tr></table></=
+td></tr></table></td></tr></table>
+<table style=3D"table-layout: fixed;background: #ffffff" width=3D"100%" c=
+lass=3D"single default" cellpadding=3D"0" cellspacing=3D"0"><tr><td align=
+=3D"center" style=3D"padding: 0 20px"><table cellpadding=3D"0" cellspacin=
+g=3D"0"><tr><td width=3D"520" style=3D"padding: 34px 0" class=3D"singleCe=
+ll"><table width=3D"100%" class=3D"left" style=3D"text-align: left" cellp=
+adding=3D"0" cellspacing=3D"0">
+<tr><td style=3D"font-size: 14px;line-height: 22px;font-family: sqmarket,=
+ Helvetica, sans-serif;font-weight: normal;color: #5f6a7d;padding: 0px 0 =
+16px" class=3D"p">Northern Colorado Moving Co.</td></tr>
+<tr><td style=3D"font-size: 14px;line-height: 22px;font-family: sqmarket,=
+ Helvetica, sans-serif;font-weight: normal;color: #5f6a7d;padding: 0px 0 =
+16px" class=3D"p">Account Balance: <b style=3D"color: #2d394e;font-family=
+: sqmarket-medium, Helvetica, sans-serif;font-weight: bold">($52.92)</b>.=
+</td></tr>
+<tr><td style=3D"font-size: 14px;line-height: 22px;font-family: sqmarket,=
+ Helvetica, sans-serif;font-weight: normal;color: #5f6a7d;padding: 0px 0 =
+16px" class=3D"p">
+<b style=3D"color: #2d394e;font-family: sqmarket-medium, Helvetica, sans-=
+serif;font-weight: bold">Northern Colorado Moving Co.</b>=E2=80=99s accou=
+nt was referred to Square=E2=80=99s Recovery team to assist in repayment =
+of the negative balance on the account.  To address this matter, please t=
+ake one of the following steps:  </td></tr>
+<tr><td align=3D"left" style=3D"padding: 0px 0 8px" class=3D"list numeric=
+list"><table width=3D"100%" align=3D"center" style=3D"text-align: left" c=
+ellpadding=3D"0" cellspacing=3D"0">
+<tr valign=3D"top">
+<td valign=3D"top" width=3D"10" style=3D"font-size: 14px;line-height: 22p=
+x;font-family: sqmarket, Helvetica, sans-serif;font-weight: normal;color:=
+ #5f6a7d;padding: 0 8px 8px 0" class=3D"p">1.</td>
+<td valign=3D"top" width=3D"560" style=3D"font-size: 14px;line-height: 22=
+px;font-family: sqmarket, Helvetica, sans-serif;font-weight: normal;color=
+: #5f6a7d;padding: 0 0 8px" class=3D"p"><table style=3D"text-align: left"=
+ cellpadding=3D"0" cellspacing=3D"0">
+<tr><td style=3D"font-size: 14px;line-height: 22px;font-family: sqmarket,=
+ Helvetica, sans-serif;font-weight: normal;color: #5f6a7d;padding: 0px 0 =
+8px" class=3D"p">Send a check for the full Account Balance referenced abo=
+ve to:</td></tr>
+<tr><td style=3D"font-size: 14px;line-height: 22px;color: #2d394e;font-fa=
+mily: sqmarket-medium, Helvetica, sans-serif;font-weight: bold;padding: 0=
+px 0 16px" class=3D"h3">Square, Inc.<br>Attention: Square Recovery<br>145=
+5 Market Street<br>San Francisco, CA 94103</td></tr>
+</table></td>
+</tr>
+<tr valign=3D"top">
+<td valign=3D"top" width=3D"10" style=3D"font-size: 14px;line-height: 22p=
+x;font-family: sqmarket, Helvetica, sans-serif;font-weight: normal;color:=
+ #5f6a7d;padding: 0 8px 8px 0" class=3D"p">2.</td>
+<td valign=3D"top" width=3D"560" style=3D"font-size: 14px;line-height: 22=
+px;font-family: sqmarket, Helvetica, sans-serif;font-weight: normal;color=
+: #5f6a7d;padding: 0 0 8px" class=3D"p">Call us at <b style=3D"color: #2d=
+394e;font-family: sqmarket-medium, Helvetica, sans-serif;font-weight: bol=
+d">1-415-653-1726</b> to work out a solution to resolve your balance</td>=
+
+</tr>
+<tr valign=3D"top">
+<td valign=3D"top" width=3D"10" style=3D"font-size: 14px;line-height: 22p=
+x;font-family: sqmarket, Helvetica, sans-serif;font-weight: normal;color:=
+ #5f6a7d;padding: 0 8px 8px 0" class=3D"p">3.</td>
+<td valign=3D"top" width=3D"560" style=3D"font-size: 14px;line-height: 22=
+px;font-family: sqmarket, Helvetica, sans-serif;font-weight: normal;color=
+: #5f6a7d;padding: 0 0 8px" class=3D"p">Respond directly to this email </=
+td>
+</tr>
+<tr valign=3D"top">
+<td valign=3D"top" width=3D"10" style=3D"font-size: 14px;line-height: 22p=
+x;font-family: sqmarket, Helvetica, sans-serif;font-weight: normal;color:=
+ #5f6a7d;padding: 0 8px 8px 0" class=3D"p">4.</td>
+<td valign=3D"top" width=3D"560" style=3D"font-size: 14px;line-height: 22=
+px;font-family: sqmarket, Helvetica, sans-serif;font-weight: normal;color=
+: #5f6a7d;padding: 0 0 8px" class=3D"p">Email us at <a href=3D"mailto:pay=
+ment_plans@squareup.com" style=3D"color: #2996cc;text-decoration: none">p=
+ayment_plans@squareup.com</a>
+</td>
+</tr>
+</table></td></tr>
+<tr><td style=3D"font-size: 14px;line-height: 22px;font-family: sqmarket,=
+ Helvetica, sans-serif;font-weight: normal;color: #5f6a7d;padding: 0px 0 =
+16px" class=3D"p">We look forward to working with you to resolve your acc=
+ount=E2=80=99s negative balance  and get your account back into good stan=
+ding with Square.</td></tr>
+<tr><td style=3D"font-size: 14px;line-height: 22px;font-family: sqmarket,=
+ Helvetica, sans-serif;font-weight: normal;color: #5f6a7d;padding: 0px 0 =
+16px" class=3D"p">Regards,</td></tr>
+<tr><td style=3D"font-size: 14px;line-height: 22px;font-family: sqmarket,=
+ Helvetica, sans-serif;font-weight: normal;color: #5f6a7d;padding: 0px 0 =
+16px" class=3D"p">Square Recovery</td></tr>
+</table></td></tr></table></td></tr></table>
+<table width=3D"100%" class=3D"footer" style=3D"table-layout: fixed;backg=
+round: #f8f8f8" cellpadding=3D"0" cellspacing=3D"0"><tr><td align=3D"cent=
+er" style=3D"padding: 46px 20px 50px"><table cellpadding=3D"0" cellspacin=
+g=3D"0">
+<tr><td class=3D"p" style=3D"font-size: 11px;line-height: 15px;letter-spa=
+cing: 1px;text-transform: uppercase;font-family: sqmarket, Helvetica, san=
+s-serif;font-weight: normal;color: #5f6a7d;text-align: center" align=3D"c=
+enter" width=3D"420">
+<a href=3D"https://squareup.com/subscriptions/r?ee=3Dbfc9655e363fecf398ea=
+30a6f704e54f84d2f3aa7be130db16f65450--ZD1qTGhPU3MwV0pOdW1jU2Z0JmU9JTJGaHR=
+tbCUyRmJvZHklMkZkaXYlNUIyJTVEJTJGdGFibGUlNUIzJTVEJTJGdHIlMkZ0ZCUyRnRhYmxl=
+JTJGdHIlNUIxJTVEJTJGdGQlMkZhJm0lNUJiYW5kaXQtc3ViamVjdCU1RD04TkNHWTYzSkREU=
+FBGJm0lNUJjYW1wYWlnbi1pZCU1RD0xODk5MCZtJTVCcmVxdWVzdC1rZXklNUQ9YjkzYWQyZD=
+FhNjU1OGI1ZSZtJTVCdGVtcGxhdGUtaWQlNUQ9MTI5NzgmbSU1QnRyYW5zbGF0aW9uLWlkJTV=
+EPTQ3OTUmbj1lbWFpbGNsaWNrJnI9aHR0cHMlM0ElMkYlMkZzcXVhcmV1cC5jb20lMkYlM0Z1=
+dG1fc291cmNlJTNEZW1haWwlMjZ1dG1fbWVkaXVtJTNEZW5nYWdlbWVudCUyNnV0bV9jYW1wY=
+WlnbiUzRHVzLWVuLXJlY292ZXJ5LW9uZ29pbmc" style=3D"color: #2d394e;text-deco=
+ration: none;font-family: sqmarket-medium, Helvetica, sans-serif;font-wei=
+ght: bold">=C2=A9 2017 Square, Inc.<br></a>1455 Market Street, Suite 600,=
+<span style=3D"white-space: nowrap"> San Francisco, CA 94103</span>
+</td></tr>
+<tr><td align=3D"center" style=3D"padding: 23px 0 0" width=3D"420"><table=
+ cellpadding=3D"0" cellspacing=3D"0"><tr><td><a id=3D"footer_jewel" href=3D=
+"https://squareup.com/subscriptions/r?ee=3Dae4b600d768550b66764134b74fde6=
+1aba7fb1e8feed0d97e2a20f66--ZD1qTGhPU3MwV0pOdW1jU2Z0JmU9JTIzZm9vdGVyX2pld=
+2VsJm0lNUJiYW5kaXQtc3ViamVjdCU1RD04TkNHWTYzSkREUFBGJm0lNUJjYW1wYWlnbi1pZC=
+U1RD0xODk5MCZtJTVCcmVxdWVzdC1rZXklNUQ9YjkzYWQyZDFhNjU1OGI1ZSZtJTVCdGVtcGx=
+hdGUtaWQlNUQ9MTI5NzgmbSU1QnRyYW5zbGF0aW9uLWlkJTVEPTQ3OTUmbj1lbWFpbGNsaWNr=
+JnI9aHR0cHMlM0ElMkYlMkZzcXVhcmV1cC5jb20lMkYlM0Z1dG1fc291cmNlJTNEZW1haWwlM=
+jZ1dG1fbWVkaXVtJTNEZW5nYWdlbWVudCUyNnV0bV9jYW1wYWlnbiUzRHVzLWVuLXJlY292ZX=
+J5LW9uZ29pbmc" style=3D"text-decoration: none"><img src=3D"https://square=
+-mailstrom-production-s.squarecdn.com/_shared/jewel/jewel-grey-22.png" wi=
+dth=3D"22" height=3D"22" border=3D"0" style=3D"display: block"></a></td><=
+/tr></table></td></tr>
+</table></td></tr></table>
+</div>
+<img id=3D"sa" style=3D"display:none !important" src=3D"https://squareup.=
+com/subscriptions/r?ee=3Deaa4170daa8037713ca301350f9f37741e64163dbdd21e9b=
+bb539c2d--ZD1qTGhPU3MwV0pOdW1jU2Z0Jm0lNUJiYW5kaXQtc3ViamVjdCU1RD04TkNHWTY=
+zSkREUFBGJm0lNUJjYW1wYWlnbi1pZCU1RD0xODk5MCZtJTVCcmVxdWVzdC1rZXklNUQ9Yjkz=
+YWQyZDFhNjU1OGI1ZSZtJTVCdGVtcGxhdGUtaWQlNUQ9MTI5NzgmbSU1QnRyYW5zbGF0aW9uL=
+WlkJTVEPTQ3OTUmbj1lbWFpbHZpZXcmcj1odHRwcyUzQSUyRiUyRnNxdWFyZXVwLmNvbQ">
+</body>
+</html>
+
+----==_mimepart_59f8e5381e36f_64afc3fbd6e29a23c1005306c--
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>date-last-viewed</key>
+	<integer>0</integer>
+	<key>date-received</key>
+	<integer>1509483834</integer>
+	<key>flags</key>
+	<integer>8590195712</integer>
+	<key>remote-id</key>
+	<string>4590</string>
+</dict>
+</plist>

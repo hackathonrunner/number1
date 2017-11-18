@@ -1,0 +1,472 @@
+20878     
+Return-path: <bounce+26f812.5509-austindreier=icloud.com@sigfig.com>
+Received: from ms11p00im-qufv17081401.mac.com ([17.58.36.76])
+ by ms60015.mac.com
+ (Oracle Communications Messaging Server 8.0.1.2.20170607 64bit (built Jun  7
+ 2017)) with ESMTP id <0OYE00AF1HVF3R50@ms60015.mac.com> for
+ austindreier@icloud.com; Wed, 25 Oct 2017 22:45:15 +0000 (GMT)
+Original-recipient: rfc822;austindreier@icloud.com
+Received: from m68-129.mailgun.net (m68-129.mailgun.net [166.78.68.129])
+ by ms11p00im-qufv17081401.me.com
+ (Oracle Communications Messaging Server 8.0.1.2.20170607 64bit (built Jun  7
+ 2017)) with ESMTPS id <0OYE000OMHVCQT30@ms11p00im-qufv17081401.me.com> for
+ austindreier@icloud.com (ORCPT austindreier@icloud.com); Wed,
+ 25 Oct 2017 22:45:15 +0000 (GMT)
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 spamscore=0
+ clxscore=155 suspectscore=46 malwarescore=0 phishscore=0 adultscore=0
+ bulkscore=100 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.0.1-1707230000 definitions=main-1710250292
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10432:,,
+ definitions=2017-10-25_11:,, signatures=0
+Authentication-results: ms11p00im-qufv10093201.me.com; dmarc=pass
+ header.from=sigfig.com
+Authentication-results: ms11p00im-qufv10113901.me.com; spf=pass
+ (ms11p00im-qufv10113901.me.com: domain of
+ bounce+26f812.5509-austindreier=icloud.com@sigfig.com designates 166.78.68.129
+ as permitted sender)
+ smtp.mailfrom=bounce+26f812.5509-austindreier=icloud.com@sigfig.com;
+Received-SPF: pass (ms11p00im-qufv10113901.me.com: domain of
+ bounce+26f812.5509-austindreier=icloud.com@sigfig.com designates 166.78.68.129
+ as permitted sender) receiver=ms11p00im-qufv10113901.me.com;
+ client-ip=166.78.68.129; helo=m68-129.mailgun.net;
+ envelope-from=bounce+26f812.5509-austindreier=icloud.com@sigfig.com;
+Authentication-results: ms11p00im-qufv10093001.me.com;	dkim=pass (1024-bit key)
+ header.d=sigfig.com header.i=@sigfig.com header.b=FP/+GC/x;	dkim-adsp=pass
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=sigfig.com; q=dns/txt;
+ s=mx; t=1508971512; h=Content-Type: Mime-Version: Subject: From: To: Reply-To:
+ Message-Id: Date: Sender; bh=S94vNym1mEdqxfEIMN44Sr03kcC9SHaJXTF2vvjNfbQ=;
+ b=FP/+GC/xeaEq+rOSwH5TvKcECeSTj7o3UL2UcfNyosxLyHy9f8SzcdPaBn+9Ffn8A0u+GrSD
+ yG2QjIM6q3o3FQdF/El2XleOgwkqApO12rDflbDvcUcYuCIb9bWfRkd6Ts9lOe0bdGqyMqhm
+ z6X4KAj8nyEWhzjQFFtIoBw5zCI=
+DomainKey-Signature: a=rsa-sha1; c=nofws; d=sigfig.com; s=mx; q=dns; h=Sender:
+ Date: Message-Id: Reply-To: To: From: Subject: Mime-Version: Content-Type;
+ b=sCN2kILekL+/rNU3kcxVfVyMMh15vcBSBj+AaR0Qd1gMSga8kzSEjRvmSzPV+m0dWkUgNF
+ 40Okr7wxQK590fTJnd1CLW7UhFH1fqUhQ3yRT91UFoWe0GY8YNN8XHjHONgNvPsst2yx/0eX
+ wPeoenxzWoT5nRHunlGFC5gLTW2CI=
+Sender: investment-research@sigfig.com
+Date: Wed, 25 Oct 2017 22:45:12 +0000
+Received: by luna.mailgun.net with HTTP; Wed, 25 Oct 2017 22:45:10 +0000
+Message-id: <20171025224510.78667.C83D7C970DA4AD1E@sigfig.com>
+Reply-to: Aaron Gubin from SigFig Investment Research
+ <investment-research@sigfig.com>
+To: austindreier@icloud.com
+From: Aaron Gubin from SigFig Investment Research
+ <investment-research@sigfig.com>
+Subject: Q3 2017 Quarterly Market Update
+MIME-version: 1.0
+Content-type: multipart/alternative; boundary=ec1b424e98a64c8a9506111e76e1810d
+x-icloud-spam-score: 3331331
+ f=sigfig.com;e=sigfig.com;is=yes;ir=no;spf=pass;dkim=pass;dmarc=pass/quarantine/none;gdwl=absent;pps=ham;clxs=ham;clxw=neutral
+X-CLX-Spam: false
+X-CLX-UnSpecialScore: None
+X-CLX-Score: 155
+X-CLX-UShades: None
+X-CLX-Shades: None
+X-MANTSH: 1TEIXR1kbG1oaGkNHB1tfTFwbGhoTGxwaGxEKTEMXGxoEGxsYBBsbGgQeGRAbHho
+ fGhEKTFkXGx8fEQpZTRdkRURPEQpZSRcacRoQGncGGR9xGR8QGx93BhgaBhsaGhEKWV4Xa2t5E
+ QpDThdYQFpjAUxtAVscHgVcHGdMWFhJTB8bGHhCT1tiTklEGREKWFwXGQQaBBkYB00ZThNPExk
+ YBRsaBBMEGxIEGxkcEBseGh8aEQpeWRd4YFhDfREKTVwXGB4aEQpMWhdsbU1NaxEKQ1oXGxwcB
+ B0SBBwSBBsYExEKQl4XGxEKWUUXExEKRUkXGhEKRWYXGREKQlwXGxEKXk4XGxEKQksXZ0JZT1B
+ caxNzaVARCkJFF2tTWhhJbkZ8TkcaEQpCThdnQllPUFxrE3NpUBEKQkwXawVrGBJoHUMZeG8RC
+ kJsF2FeGx1aUgF7a0doEQpCQBdlSRwBT0JCbHJ9EhEKQlgXbkcdG05kYUUbEkARCk1eFxsRCnB
+ nF2sBHlpwHUFiYmV5EBwaEQpwaBdpQWcYcmtkaRtIehAeEhEKcGgXYGJBHF0TZh59TE8QGRoRC
+ nBoF2Nefh54AX9kE3lLEBkaEQpwaBdsTxhCZExhcnoSbRAZGhEKcGgXZFtmfBl+YExbE3MQGRo
+ RCnB/F2hZf09bARlSe25HEBwaEQpwXxdnHXBuHAVBRWtjGRAZGhEKcH0XbU5oT0ZvcBkTZWYQG
+ RoRCnB/F2VLbl9tU3l8SXhMEAcYGBEKcF8XYRJDb0xvZW0YTEAQGRoRCnB9F2tyT0lFGE1+c05
+ oEB4SEQpwXxdvWx1HaEhyb2NLbhAcGhEKcH0XYGttU2ZIc3prH1IQGRoRCnBfF2dsX10TfG5ka
+ VoFEBkaEQpwfRdlRXwFegVcbUZYfRAZGhEKcH0XaFB6bnsaeG9Qbh0QGRoRCnBnF2dmHkV+Y1t
+ zaUVaEBkaEQpwXxdpUwV/ZWYcbmZIHhAZGhEKcH0XaXBgbmRt
+x-dmarc-info: pass=pass; dmarc-policy=quarantine; s=r1; d=r1
+x-dmarc-policy: v=DMARC1; p=quarantine; rua=mailto:postmaster@sigfig.com
+X-Mailgun-Sending-Ip: 166.78.68.129
+X-Mailgun-Sid: WyI2MDI3MyIsICJhdXN0aW5kcmVpZXJAaWNsb3VkLmNvbSIsICI1NTA5Il0=
+X-Mailgun-Tag: SigFig_market_update.2017_10_18_v0
+
+--ec1b424e98a64c8a9506111e76e1810d
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="ascii"
+Mime-Version: 1.0
+
+
+Q3 2017 Quarterly Market Update
+Q3 2017 Quarterly Market Update: The Fed shows faith in the U.S. economy
+September's Federal Reserve announcement that it will begin unwinding the $4.5 trillion in bonds it purchased during the
+Great Recession in 2009, made some investors wince. But the message the Fed is sending is actually good news: the US economy is back on track.
+Not only did the Fed's bond-purchasing program help inject cash into the financial system, it also drove interest rates down.
+This helped put money back in people's pockets by boosting bond prices, business growth, and wages, while simultaneously reducing unemployment.
+In our Q3 market update, we explain how bonds spurred economic growth in the US, which markets are the year's top performers,
+and why a globally diversified investment strategy continues to be the right call for most investors.
+Read the full Q3 overview
+Blog *
+Contact
+Us * Privacy *
+Terms
+You're receiving this email because you're subscribed to
+advice alerts from SigFig.
+You can update your
+email
+preferences or
+unsubscribe
+at any time.
+(c)
+2017 SigFig * 225 Valencia St, San Francisco, CA 94103
+SigFig Wealth Management LLC is an SEC Registered Investment Advisor. Emails are for
+informational
+purposes only and
+do not constitute an offer to sell or buy securities. Security transactions are not
+without risk
+and past performance
+does not guarantee future returns. Due to differences between your portfolio and the
+performance
+of equity market
+indices, no index is directly comparable to the investment strategy of any given
+portfolio.
+Performance data is
+net of all fees including management, performance fees, transaction costs and
+commissions; and
+includes the
+reinvestment of dividends and interest.
+
+--ec1b424e98a64c8a9506111e76e1810d
+Content-Type: text/html; charset="ascii"
+Mime-Version: 1.0
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+		"http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="initial-scale=1.0">
+	<!-- So that mobile webkit will display zoomed in -->
+	<meta name="format-detection" content="telephone=no">
+	<!-- disable auto telephone linking in iOS -->
+	<title>Q3 2017 Quarterly Market Update</title>
+	<style type="text/css">
+		body {
+			margin: 0;
+			padding: 0;
+			-ms-text-size-adjust: 100%;
+			-webkit-text-size-adjust: 100%;
+		}
+
+		table {
+			border-spacing: 0;
+		}
+
+		table td {
+			border-collapse: collapse;
+		}
+
+		.ExternalClass {
+			width: 100%;
+		}
+
+		.ExternalClass,
+		.ExternalClass p,
+		.ExternalClass span,
+		.ExternalClass font,
+		.ExternalClass td,
+		.ExternalClass div {
+			line-height: 100%;
+		}
+
+		.ReadMsgBody {
+			width: 100%;
+			background-color: #ebebeb;
+		}
+
+		table {
+			mso-table-lspace: 0pt;
+			mso-table-rspace: 0pt;
+		}
+
+		img {
+			-ms-interpolation-mode: bicubic;
+		}
+
+		@media screen and (max-width: 599px) {
+			.force-row, .container {
+				width: 100% !important;
+				min-width: 100% !important;
+				max-width: 100% !important;
+				margin-left: 0 !important;
+				margin-right: 0 !important;
+			}
+
+			td[class="first-col"],
+			td[class="col"] {
+				width: 100% !important;
+				padding-bottom: 16px !important;
+				vertical-align: middle !important;
+			}
+
+			td[class="col"] {
+				border-top: 1px solid #e9e7e1 !important;
+			}
+
+			.corners {
+				border-left-width: 0px !important;
+				border-right-width: 0px !important;
+				border-radius: 0 !important;
+				-webkit-border-radius: 0 !important;
+				-moz-border-radius: 0 !important;
+			}
+
+			.left-align {
+				text-align: left !important;
+			}
+
+			br[class="hide-break"] {
+				display: none !important;
+			}
+
+			img[class="message-header"], img[class="col-image"] {
+				width: 100% !important;
+				height: auto !important;
+				min-width: 100% !important;
+				max-width: 100% !important;
+			}
+
+			img[class="image"] {
+				float: right;
+				margin-left: 20px !important;
+				margin-bottom: 14px !important;
+				max-width: 40% !important;
+				height: auto !important;
+			}
+
+			hr[class="hr"] {
+				margin-left: 0px !important;
+				margin-right: 0px !important;
+			}
+
+			div[class="subtitle"] {
+				margin-top: 0 !important;
+				padding-bottom: 6px !important;
+			}
+
+			div[class="col-copy"] {
+				margin-top: 0 !important;
+				text-align: left !important;
+			}
+
+			td[class="header"] {
+				padding-left: 40px !important;
+				padding-right: 40px !important;
+			}
+
+			td[class="footer"] {
+				padding-left: 40px !important;
+				padding-right: 40px !important;
+			}
+
+			td[class="report-stat-top"] {
+				padding-top: 26px !important;
+			}
+
+			td[class="report-stat-bottom"] {
+				padding-bottom: 16px !important;
+			}
+		}
+
+		@media screen and (max-width: 399px) {
+			td[class="header"] {
+				padding-left: 20px !important;
+				padding-right: 20px !important;
+			}
+
+			td[class="footer"] {
+				padding-left: 20px !important;
+				padding-right: 20px !important;
+			}
+
+			td[class="sm-text"] {
+				font-size: 12px !important;
+			}
+
+			span[class="lg"] {
+				max-height: 0px !important;
+				font-size: 0px !important;
+				display: none !important;
+			}
+
+			span[class="sm"] {
+				max-height: none !important;
+				font-size: 12px !important;
+				display: inline-block !important;
+			}
+
+			.sm-padding {
+				padding-left: 20px !important;
+				padding-right: 20px !important;
+			}
+
+			.consultant-td {
+				width: 80px !important;
+			}
+
+			.consultant-img {
+				height: 60px !important;
+				width: 60px !important;
+			}
+		}
+
+		.yshortcuts a {
+			border-bottom: none !important;
+		}
+
+		.ios-footer a {
+			color: #b2afab !important;
+			text-decoration: none;
+		}
+	</style>
+</head>
+<body style="margin:0; padding:0;" bgcolor="#002841" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+
+<!-- 100% background wrapper (prussian blue) -->
+<table border="0" width="100%" height="100%" cellpadding="0" cellspacing="0" bgcolor="#002841">
+	<tr>
+		<!-- Blue Header -->
+		<td align="center" valign="top" bgcolor="#002841" style="background-color: #002841;">
+			<table border="0" width="100%" cellpadding="0" cellspacing="0" class="container" style="width: 100%!important; max-width: 580px!important; padding-left: 10px; padding-right: 10px;">
+				<tr>
+					<td class="header" align="left" style="font-family: Helvetica, Arial, sans-serif; padding-top: 24px; padding-bottom: 24px; color: #ffffff;">
+						<a href="http://mailgun.sigfig.com/c/eJxVkMFugzAMhp8GbkVOQuLkwAGV9QX2AJFJUhqNlAqS9fUH7DBNsizrs_z_tn0nJZg6dhwYMuCS81YyaFArhc1ViwGvBmHo235gH1ULW5zucWrckupHp43WAYOT5o4elAIT1IiEoxdcwwj13D1yfm2V6Ct-2-P9fjd_CgcTt5KT3ZayulCJIfjiKMflSXPFlbMl-p0CM0imDWC8ZMoLUupOCIoUcnIcnCEmgnftnkmTGREwKCXlCCiJjaeUp3w4HIdeGFy4POlzRy7TXh97OEovitMBE61fIdvyOud-2yn4WNKxZqI412tHZcvx6dcQw7o_J7p5Kf58Tu4-43SLk_2n0xzuloFl2n7DD8CrdB4" target="_blank"><img src="https://d7e8o9i11vi0c.cloudfront.net/l/img/email/logo@2x.gif" border="0" alt="SigFig" width="109" height="40" hspace="0" vspace="0" style="max-width: 100%;"></a>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="top" bgcolor="#f7f6f3" style="background-color: #f7f6f3;">
+			<table width="100%" border="0" cellpadding="0" cellspacing="0" class="force-row corners email-body" style="width: 100%; max-width: 580px; border-left: 1px solid #d1cfca; border-right: 1px solid #d1cfca; border-collapse: collapse; background-color: #ffffff;">
+				<tr>
+    <td class="sm-padding" align="left" style="padding-left: 40px; padding-right: 40px; padding-top: 33px; padding-bottom: 27px; font-family: Helvetica, Arial, sans-serif; font-size: 24px; color: #423d3b; text-align: left; line-height: 34px;">
+        Q3 2017 Quarterly Market Update: The Fed shows faith in the U.S. economy
+    </td>
+</tr>
+<tr>
+    <td class="sm-padding" align="left" style="padding-left: 40px; padding-right: 40px; padding-bottom: 36px; font-family: Helvetica, Arial, sans-serif; font-size: 14px; line-height: 20px; text-align: left; color: #827e7a;">
+
+		September's Federal Reserve announcement that it will begin unwinding the $4.5 trillion in bonds it purchased during the
+		Great Recession in 2009, made some investors wince. But the message the Fed is sending is actually good news: the US economy is back on track.
+
+		<br/><br/>
+
+		Not only did the Fed's bond-purchasing program help inject cash into the financial system, it also drove interest rates down.
+		This helped put money back in people's pockets by boosting bond prices, business growth, and wages, while simultaneously reducing unemployment.
+
+		<br/><br/>
+
+		In our Q3 market update, we explain how bonds spurred economic growth in the US, which markets are the year's top performers,
+		and why a globally diversified investment strategy continues to be the right call for most investors.
+
+		<br/><br/>
+
+        <a href="http://mailgun.sigfig.com/c/eJxFjk1ugzAQRk8Du7H8gzEsWKDQXKAHQA4esFXAxDZtc_s6yaLSSDPzLd73TCclbUvXccoUo1xyXklGiWrqWpFLIwZ1aRUd-qof2EdR0eiW2S1k8ltpOyq1noQ0ire8QtT5V7ep4XoWrKpbUa6dTemIhegLfs1zW_1C_hE5cbvBX3LYI9_-ADR53wU8deB-6pAwrA_YdPjCBOdhdEJIFmFGA9H6nwizdsmC21_xCRFw8rvfHhlUhk6fMeWOgA5D1nfT6k_z0k_dp1uubhnf8PENJ8_mkdGRNeM3_QNOyVqI" style="color: #002841" target="_blank">Read the full Q3 overview</a>
+    </td>
+</tr>
+				<tr>
+					<td class="sm-padding" valign="middle" align="center" style="padding: 40px; border-top: 1px solid #e9e7e1;">
+						<table border="0" cellpadding="0" cellspacing="0">
+							<tr>
+								<td>
+									<a href="http://mailgun.sigfig.com/c/eJwlT82OhCAYexq9Dfn4E-bAwYzrC-wDGBR0vqwKEZjnX9xNmh6atmmdkRKeLRoGVFFgkjEhKRClu06Rl-aDej0VDL3oB_rVCEi4rbiRJRzt22i7es3o3HHNYeaUO25ntczaCz1TWNvdvHOOqeF9w8YKzOX0idgYd393VKmkSlWo_N_9wPPjU8Zze8Rw5TXsGO6ok0wAU7yTDR-P3PBBt5ex5ba6y6O_6jxc9lDc37xsvnEbcZsOe_34PJXobPbkPjpRmKiePvALkE1ONA"
+									   target="_blank"><img src="https://d7e8o9i11vi0c.cloudfront.net/l/img/email/badge_apple@2x.gif"
+											border="0" width="128" height="45" hspace="0" vspace="0"
+											alt="App Store"></a>
+								</td>
+								<td width="8"
+									style="width: 8px;">
+								</td>
+								<td>
+									<a href="http://mailgun.sigfig.com/c/eJwtj1GOwyAMRE-TfCJjICQffETN5gJ7AIQCpVZpiQhZaW9f2l3J0pOsGXvGG6Vg6skgcM0BFaJUHJgeh0GzyygWfZk0LLOcF_7VSTgoXimyLT_6mxFCSEA3yC1MgSvtlBQKNxhR4oRe9sncat2PTswdrm325H5ZzDmm8D7RNkfNJTS6vclw9aE6Ss2wku_E0jTs_-Mf-mLceVR6-hIolBaItpRP_wlUzTfFlaJ9uHIP1Z67dzWwdzXLwfLR_sAL_NtJuQ"
+									   target="_blank"><img src="https://d7e8o9i11vi0c.cloudfront.net/l/img/email/badge_google@2x.gif"
+											border="0" width="128" height="45" hspace="0" vspace="0"
+											alt="Google Play Store"></a>
+								</td>
+							</tr>
+						</table>
+						<div style="color: #827e7a; font-family: Helvetica, Arial, sans-serif; font-size: 12px; line-height: 17px; margin: 24px auto 12px;">
+							<a href="http://mailgun.sigfig.com/c/eJxVkEtuwzAMRE9jLw3qS2vhRRAnF-gBBEpiHKF2HNhSz1-7KFAUILjgAG84kwZjwLV5kCBQgDRSaiOgw95a7K69GvHqEMaLvozi1mjY8_TIUxfXpX0OgVMicEGEpAkZTG-Mo6AxBkGsUjsPz1Lee6MujbwfE-Z16v4Q51Hda1n8vtYtcqPGhbZPLr6-ExVupD3FwttySCAcktMMLhlhkyJrH4RgyaKkKCE6EopT1MemnlxAQLbWmABoSISDFv3rAHGqkUpeXzT_Oiyccj09eKE8t9tAdS_5lTbOvB2pc5zXmn5Sl-EjT_c8-X-fdmd_XoAXvf-Cb2I0afU"
+							   style="text-decoration: none; color: #002841" target="_blank">Blog</a> &middot;
+							<a href="mailto:support@sigfig.com"
+							   style="text-decoration: none; color: #002841" target="_blank">Contact
+								Us</a> &middot; <a
+								href="http://mailgun.sigfig.com/c/eJxVkE2OgzAMhU9Dd0XOf7JgUZXpBeYAyCQptQYKgqTV3H4CsxiNZFnWZ_k926FRCtyJGg7MMOCKc6kY1MZqbeqrFa25OgPtRV5a9lFJ2Gi401D7eTo9GoW91Uoo6yTvg9W2jw5AOykZZ6D4aWweKS1bJS4Vv5V4v9_1n0IBG6V4tETJy0ov9N-VuOU0dducVx8r0caQPSaanzhWXPsuUygUmDPoZAQXFNNBoNZ3NKBRG46eg3fIRAxelowWXW_ARK2V6sEoZP0hFTDtDvvxZwZnrg76LMgnLPW-h8dpQRp2OOH6FVOXl2Putz3FQHna15yQxtPaYN4SPcMaKa7lYeTHOYfjYan5pOFGQ_dPp97dOwYds90LfgDhJ3mT"
+								style="text-decoration: none; color: #002841" target="_blank">Privacy</a> &middot;
+							<a href="http://mailgun.sigfig.com/c/eJxVkEtuhDAMhk8Du0FOQhKyYDEaOhfoAZDJg7FKhhEknes30EVVybKsz_bvh-ulBFNTz4FpBlxy3koGje6U0s2tE4O-GQ3Dtb0O7KNqYac50NzYNdaP3koBwYQuqNLbMh6gC06EKVirBWpVL_0jpddeiWvF78Xe73fzp1DATsmfKVF8WkvlPac47mverK_E4F22mGh94lJxZcdMrlBgRqNpPRgnmXIClQqoQaHSHC0Ha5AJ72xbPHZoJg3aKyXlBFoim04ph-mYcBx-YXDh8qTPgmzCEh97WIwvpPmAEbcvn8b8Ovt-09E7yvFYMyIt9dZj3hM93ebJb-VZZJc1u_NZqf-k-U7z-E-nOaaPDEbWjd_wAzqQeT0"
+							   style="text-decoration: none; color: #002841" target="_blank">Terms</a>
+						</div>
+						<div style="font-family: Helvetica, Arial, sans-serif; font-size: 12px; line-height: 17px; color: #827e7a;">
+							You're receiving this email because you're subscribed to
+							advice alerts from SigFig.
+							You can update your
+							<a href="http://mailgun.sigfig.com/c/eJxVkE1uxCAMhU-T7CbCECAsshhNOhfoAZD5SWo1P6MEev6SzKKqhJD1PfnZfqGXkpmaes5AA-OS81YCa3SnlG4enRj0w2g23Nv7AB9Vyw6aRpoavy31Vx8gcHDB8SBHHoOT4GDU0Bnkzgsn6rn_Sul1VOJe8Wd5R_R5j82fSWHjJYlLTYnW6SjluiUayWOibS3tz5wWe2x597ESQwz5reBcceVtplAoA6PRtJGZIEEFgUqNqJlCpTl6zrxBEDH4tvzYoXGa6aiUlI5pieAuq4DpnHCmcQN24_Kia0E-YanPPTwuL6TphAvu3zHZ_Lr63vISA-XlXHNBmuu9x3yUs8IeKe4lQfLzlsOVYOo_aXrSZP_5NOd0C8xCZ3_YL2C1gbI"
+							   style="text-decoration: none; color: #002841" target="_blank">email
+								preferences</a> or
+							<a href="http://mailgun.sigfig.com/c/eJxFUMtugzAQ_BpzRH5h4OADCuFGKrXpJRcEeEvMW7YpCl9fh0ul1exodjTSrJJRhNNAS4pJTDCNKOURwWGcCBGHl4Tl8SWNcZ7xLCdXxLHV3Y_uwnaZgqdUwAEE5SQBygVuWCMYxxGuiWoortNglE_nVotYhmjhZ9_38D_BC1Y7OE_M4zbbrbGt0Q0gVgzwQiw34I0TzKp2epnt9-oJZCMYh6hYveHRP4bb_bMvj-tx68tXeWTHx_29S0R5YGS9WadnZUCD8QV0Oy6bOgs4-aW7QnfVVJsBXLWd4eH7FRXBFUmqX_wH1sNa1A"
+							   style="text-decoration: none; color: #002841" target="_blank">unsubscribe</a>
+							at any time.
+						</div>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<!-- Blue Footer -->
+		<td align="center" valign="top" bgcolor="#002841" style="background-color: #002841;">
+			<table border="0" width="100%" cellpadding="0" cellspacing="0" class="container"
+			       style="width: 100%; max-width: 580px; padding-left: 10px; padding-right: 10px;">
+				<tr>
+					<td class="footer" align="left" style="padding: 20px 0px 40px;">
+						<p style="margin-top: 0px; font-family: Helvetica, Arial, sans-serif; font-size: 11px; line-height: 15px; color: #b2afab;">&copy;
+							2017 SigFig &middot; <span
+									class="ios-footer">225 Valencia St, San Francisco, CA 94103</span>
+						</p>
+
+						<p style="font-family: Helvetica, Arial, sans-serif; font-size: 11px; line-height: 15px; color: #b2afab;">
+							SigFig Wealth Management LLC is an SEC Registered Investment Advisor. Emails are for
+							informational
+							purposes only and
+							do not constitute an offer to sell or buy securities. Security transactions are not
+							without risk
+							and past performance
+							does not guarantee future returns. Due to differences between your portfolio and the
+							performance
+							of equity market
+							indices, no index is directly comparable to the investment strategy of any given
+							portfolio.
+							Performance data is
+							net of all fees including management, performance fees, transaction costs and
+							commissions; and
+							includes the
+							reinvestment of dividends and interest.
+						</p>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+<!--/100% background wrapper-->
+<img src="http://d2z3m4a3c6jiep.cloudfront.net/i?e=se&se_pr=SigFig&aid=email_prod_SigFig&tv=no-js-0.1.0&se_ac=OPEN&se_la=SigFig_market_update.2017_10_18&uid=0197a94e09d516d3a66fa706a672ac20c9a13edc413ea8a9b707e6655b075a1b" width="0" height="0" style="width:0px;height:0px;">
+<img width="1px" height="1px" alt="" src="http://mailgun.sigfig.com/o/eJwdzksOgyAQANDT1CWZQWB0wcJoe4EegCCDlLTWBrHn7-cAL3lstYa-yVYCEoLUUiqNIKgzhsTYtRONPcE0qGHC80nBntOSkwjb2txsCExIrAyHsHjZ4oxq0Z7MzHMMkppi_bHX_OQScyxfnsNjO_jPq73mdMnJrb7cY3XHi32N4hdxCA4794YPtI4vxA"></body>
+</html>
+--ec1b424e98a64c8a9506111e76e1810d--
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>date-last-viewed</key>
+	<integer>0</integer>
+	<key>date-received</key>
+	<integer>1508971515</integer>
+	<key>flags</key>
+	<integer>8590195712</integer>
+	<key>remote-id</key>
+	<string>4545</string>
+</dict>
+</plist>

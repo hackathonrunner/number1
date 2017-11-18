@@ -1,0 +1,228 @@
+10457     
+Return-path: <bT.1-j7-EwSEeW2Ro.ApPrBuD1u@track.smtpcorp.com>
+Received: from mr28p00im-smtpin036.mac.com ([17.110.71.35])
+ by ms60015.mac.com (Oracle Communications Messaging Server 8.0.1.2.20170607
+ 64bit (built Jun  7 2017)) with ESMTP id <0OYR0042LY0EFV60@ms60015.mac.com>
+ for austindreier@icloud.com; Thu, 02 Nov 2017 05:02:38 +0000 (GMT)
+Original-recipient: rfc822;austindreier@icloud.com
+Received: from a1i436.smtp2go.com (a1i436.smtp2go.com [43.228.185.180])
+ by mr28p00im-smtpin036.me.com
+ (Oracle Communications Messaging Server 8.0.1.2.20170607 64bit (built Jun  7
+ 2017)) with ESMTPS id <0OYR00JYLY0BF700@mr28p00im-smtpin036.me.com> for
+ austindreier@icloud.com (ORCPT austindreier@icloud.com); Thu,
+ 02 Nov 2017 05:02:38 +0000 (GMT)
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 spamscore=0
+ clxscore=375 suspectscore=18 malwarescore=0 phishscore=0 adultscore=0
+ bulkscore=100 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.0.1-1707230000 definitions=main-1711020067
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10432:,,
+ definitions=2017-11-02_01:,, signatures=0
+Authentication-results: mr21p00im-dmarcmilter010.me.com; dmarc=none
+ header.from=cologop.org
+Authentication-results: mr21p00im-spfmilter004.me.com; spf=pass
+ (mr21p00im-spfmilter004.me.com: domain of
+ bT.1-j7-EwSEeW2Ro.ApPrBuD1u@track.smtpcorp.com designates 43.228.185.180 as
+ permitted sender) smtp.mailfrom=bT.1-j7-EwSEeW2Ro.ApPrBuD1u@track.smtpcorp.com;
+Received-SPF: pass (mr21p00im-spfmilter004.me.com: domain of
+ bT.1-j7-EwSEeW2Ro.ApPrBuD1u@track.smtpcorp.com designates 43.228.185.180 as
+ permitted sender) receiver=mr21p00im-spfmilter004.me.com;
+ client-ip=43.228.185.180; helo=a1i436.smtp2go.com;
+ envelope-from=bT.1-j7-EwSEeW2Ro.ApPrBuD1u@track.smtpcorp.com;
+Authentication-results: mr21p00im-dkimmilter001.me.com;	dkim=pass (2048-bit
+ key) header.d=smtpcorp.com header.i=@smtpcorp.com header.b=wcr5tb1c;
+	dkim-adsp=none
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=smtpcorp.com; s=a1-4; h=Feedback-ID:X-Smtpcorp-Track:To:From:Subject:Date:
+	Message-ID:Reply-To:Sender:List-Unsubscribe;
+	bh=42Q4ujllzAoToTTdTkUooaANDXAnRhVb0sMbyOzfXho=; b=wcr5tb1cp9jsoDaNu3u4J59MzB
+	+K6u7Y77pVpGKRdwICK8Txs7Xiw77cvd3wRDSIp0o3SQv1GOgChqPKbYtOJnJV8Byw+9nw4kvWkHN
+	rtT4u98iUIkLRZcRSaJ2e/lZ0fRIUzhwwMJMm5RzgitLOJdpuhv8lrozfgm2QZUncioIniU1fX3ai
+	PDuoAUPMU+OyDtC/HwkHiXrGQ0dXqoFd0Uj1bZ0UPHTHmhPkQxZ5Nu9NlXbma1mnbczNyxujI8O9h
+	rr27BiIC3Gv4yZa3zhdW2napcnfcDbXdnza9tfhbx62y7iZVQB6vTsq0FhmN6C9VkFBVtrujghsPk
+	YHe/VCkA==;
+Message-id: <154fb0de83eda7a30c4e9eab0cd08057@swift.generated>
+Date: Thu, 02 Nov 2017 05:02:34 +0000
+Subject: National Day of Training in Jefferson and Douglas County
+From: Cierra Bayers <Cierra@cologop.org>
+To: Austin Dreier <austindreier@icloud.com>
+MIME-version: 1.0
+Content-type: text/html; charset=utf-8
+Content-transfer-encoding: quoted-printable
+Feedback-ID: 226625m:226625aUsm7QU:226625svaPz7Htj5:SMTPCORP
+x-icloud-spam-score: 3311331
+ f=cologop.org;e=track.smtpcorp.com;is=yes;ir=no;spf=pass;dkim=pass;dmarc=noPolicy/noPolicy/none;gdwl=absent;pps=ham;clxs=ham;clxw=neutral
+X-CLX-Spam: false
+X-CLX-UnSpecialScore: None
+X-CLX-Score: 375
+X-CLX-UShades: None
+X-CLX-Shades: None
+X-MANTSH: 1TEIXR1gYG1oaGkNHB0tNT0ReQ0QZGBsbEQpMQxcbHQQbGxsEGx0ZBBkYEBseGh8
+ aEQpMWRcZHR8RCllNF2RFRE8RCllJFxsYGXEfGwYedwYeHAYZGkIbHgYaBhsaGgYdHHEbHhMQG
+ B93BhoGGgYaBhoGGgYacRoQGncGGhEKWV4XaGN5EQpDThccTlIaGHpYYUZiGHISWBlLXhlBBWV
+ YGk9wQ39fAXBTaBEKWFwXGQQaBBkYB00ZThNPExkYBRsdBBsbGwQbHx8EGBgbEBseGh8aEQpeW
+ Rd4Z29fYBEKTVwXHxwaEQpMWhdpa21BTU0RCkNaFx4ZBBgYEgQbEh8EGxIaEQpCXhcbEQpCRRd
+ mcG1LS39EeUVOehEKQk4XY3xGGEFAehwaGxoRCkJMF2lJRWRsY0djXFBHEQpCbBdoHV5tRXBLf
+ lhZaREKQkAXYkhaeR1+b3kBRGIRCkJYF25HHRtOZGFFGxJAEQpwaBdia0JIRmBOa257YBAZGhE
+ KcGgXaXxjT05DTEhrQ0EQGhEKcGgXZU5bGEwSZ0JPckAQGhEKcGgXY0tMGV5Af2VOTUwQGhEKc
+ GgXYx9JWVh6Tx5me24QGRoRCnB/F2hfEkdpUkZ8RRN8EBkaEQpwXxdkXGdsXnlHE1tvGhAZGhE
+ KcH0XZQVDWlNhQ2QeYG0QGhEKcH0XZhpla3thRhtHb0IQGhEKcH0XZWZMY3plQGgFHmYQGhEKc
+ H0XaBoBbAVDeXlnZmsQGhEKcH0XYx9LR0Vzch1zSFAQGhEKcF8XaRJnWEQbbFx9Wm4QGxIRCnB
+ 9F2hTU2UdW297AX5sEBoRCnBsF2kYE2lLc0NncH1uEBkaEQptfhcaEQpYTRdLEQ==
+x-dmarc-info: pass=none; dmarc-policy=(nopolicy); s=u0; d=u0
+x-dmarc-policy: none
+X-CS-Metadata:
+ {"csFrom":"07cc7e67-9558-4b5b-b3b4-d5a2a44fa192","emailingId":1840,"csId":291311700}
+X-Smtpcorp-Track: 1-j7-EwSEeW2Ro.ApPrBuD1u
+X-Report-Abuse: Please forward a copy of this message, including all headers,
+ to <abuse-contact@smtp2go.com>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.=
+w3.org/TR/html4/loose.dtd">
+<html lang=3D"en">
+<head>
+<base target=3D=
+"_parent">
+<meta charset=3D"UTF-8">
+<meta http-equiv=3D"Content-Type" c=
+ontent=3D"text/html; charset=3DUTF-8">
+<meta name=3D"viewport" content=3D=
+"width=3Ddevice-width, initial-scale=3D1">
+<meta http-equiv=3D"X-UA-Compa=
+tible" content=3D"IE=3Dedge">
+<meta name=3D"format-detection" content=3D"=
+telephone=3Dno">
+<title>RNC - CO - Admin - 17</title>
+</head>
+<body s=
+tyle=3D"margin: 0;">
+
+    <div><div><div><div><div><div><div><table wid=
+th=3D"100%" style=3D"padding-bottom: 20px;"><tbody><tr>
+<td align=3D"cent=
+er">
+      <table width=3D"600px" style=3D"padding-bottom: 20px;"><tbody>=
+<tr>
+<!-- Content area --><td align=3D"left"><div>
+            Hello Fe=
+llow President Trump Supporter,<div><br></div>
+<div>Are you interested in=
+ helping push Tax Relief through Washington? Do you want to support School =
+Choice in Colorado? Do you want want to learn how to be a better activist, =
+campaign volunteer, candidate, or just a more civically engaged citizen? If=
+ you answered yes, then you need to sign up for our National Day of Trainin=
+g in Jefferson County or Douglas County on the 4th of November.=C2=A0 We wi=
+ll train you and give you access to tools and resources that will help us r=
+eclaim our State, starting in Jefferson and Douglas Counties with our Natio=
+nal Day of Training. If you are interested in attending the Jefferson Count=
+y Training that focuses on Tax Reform, please follow this <a href=3D"https:=
+//a.crowdskout.com/v1-1/email-click/aHR0cHM6Ly93d3cuZXZlbnRicml0ZS5jb20vZS9=
+0YXgtcmVmb3JtLW5hdGlvbmFsLWRheS1vZi1hY3Rpb24tdGlja2V0cy0zOTE5NjA5OTU4OQ?b=
+=3DeyJjc0lkIjoyOTEzMTE3MDAsImNsaWVudElkIjoxOTQyLCJvcmdhbml6YXRpb25JZCI6IjE2=
+MzAwMzYiLCJzb3VyY2VJZCI6Ijc3ODgiLCJlbWFpbGluZ0lkIjoxODQwLCJmcm9tIjoiMDdjYzd=
+lNjctOTU1OC00YjViLWIzYjQtZDVhMmE0NGZhMTkyIn0" style=3D"color: #00aeef;">lin=
+k</a> to sign up and learn more information.=C2=A0 If you are interested in=
+ the Douglas County Training that will focus on School Choice and getting o=
+ut the vote in Douglas county please follow this <a href=3D"https://a.crowd=
+skout.com/v1-1/email-click/aHR0cHM6Ly93d3cuZXZlbnRicml0ZS5jb20vZS9kb3VnbGFz=
+LWNvdW50eS1kYXktb2YtYWN0aW9uLXRpY2tldHMtMzkxOTUwODU1NTY?b=3DeyJjc0lkIjoyOTE=
+zMTE3MDAsImNsaWVudElkIjoxOTQyLCJvcmdhbml6YXRpb25JZCI6IjE2MzAwMzYiLCJzb3VyY2=
+VJZCI6Ijc3ODgiLCJlbWFpbGluZ0lkIjoxODQwLCJmcm9tIjoiMDdjYzdlNjctOTU1OC00YjViL=
+WIzYjQtZDVhMmE0NGZhMTkyIn0" style=3D"color: #00aeef;">link</a>.=C2=A0 If yo=
+u are interested please make sure to fill out the link so we can have the c=
+orrect amount of resources available.=C2=A0=C2=A0</div>
+<div><br></div>=
+
+<div>If you are unable to attend these events, please consider following=
+ this <a href=3D"https://a.crowdskout.com/v1-1/email-click/aHR0cHM6Ly9hcHAu=
+Y3Jvd2Rza291dC5jb20vdjJmb3JtLmh0bWw_dXVpZD1mZWRkMTU0ZS0yMzVjLTRhNWQtYTJmZS1=
+jMTVjZjNkZTcwNzY?b=3DeyJjc0lkIjoyOTEzMTE3MDAsImNsaWVudElkIjoxOTQyLCJvcmdhbm=
+l6YXRpb25JZCI6IjE2MzAwMzYiLCJzb3VyY2VJZCI6Ijc3ODgiLCJlbWFpbGluZ0lkIjoxODQwL=
+CJmcm9tIjoiMDdjYzdlNjctOTU1OC00YjViLWIzYjQtZDVhMmE0NGZhMTkyIn0" style=3D"co=
+lor: #00aeef;">link</a> and join me in signing a petition to show Colorado'=
+s support for President Trump's Tax Relief Plan.</div>
+<div><br></div>
+=
+<div>I hope to see you at these events. Together we can get Tax Relief thro=
+ugh DC, get a Republican Governor in 2018, and turn Colorado Red in 2020.=
+=C2=A0 Please let me know if you have any questions.=C2=A0</div>
+<div><br=
+></div>
+<div>Best,</div>
+<div><br></div>
+<div>Cierra Bayers=C2=A0</di=
+v>
+<div>Colorado Strategic Initiatives Director=C2=A0</div>
+</div></td>=
+
+        </tr></tbody></table>
+</td>
+  </tr></tbody></table></div></d=
+iv></div></div></div></div></div>
+
+        <table id=3D"email-footer" b=
+order=3D"0" width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" class=3D"tab=
+le-wrap footer-table ios-footer" style=3D"padding-bottom: 20px;"><tbody><tr=
+>
+<td align=3D"center">
+            <table border=3D"0" width=3D"100%" =
+cellpadding=3D"0" cellspacing=3D"0" class=3D"container table-content" style=
+=3D"padding-bottom: 20px;"><tbody>
+<tr style=3D"text-align: center; font-=
+size: 12px; font-family: Helvetica Neue;">
+<td><a href=3D"https://a.crowd=
+skout.com/v1-1/email-click/aHR0cHM6Ly9hcHAuY3Jvd2Rza291dC5jb20vZW1haWwvdW4v=
+MDdjYzdlNjctOTU1OC00YjViLWIzYjQtZDVhMmE0NGZhMTky?b=3DeyJjc0lkIjoyOTEzMTE3MD=
+AsImNsaWVudElkIjoxOTQyLCJvcmdhbml6YXRpb25JZCI6IjE2MzAwMzYiLCJzb3VyY2VJZCI6I=
+jc3ODgiLCJlbWFpbGluZ0lkIjoxODQwLCJmcm9tIjoiMDdjYzdlNjctOTU1OC00YjViLWIzYjQt=
+ZDVhMmE0NGZhMTkyIn0" class=3D"unsubscribe" style=3D"color: #00aeef;">Unsubs=
+cribe</a></td>
+                </tr>
+<tr style=3D"text-align: center; f=
+ont-size: 12px; font-family: Helvetica Neue;">
+<td style=3D"padding-top: =
+10px;" class=3D"ng-binding">
+                    RNC - CO - Admin - 17. 5=
+950 South Willow Drive, , Greenwood Village, Colorado 80111
+             =
+     </td>
+                </tr>
+<tr style=3D"text-align: center; font-=
+size: 12px; font-family: Helvetica Neue;">
+<td>
+                    To =
+view this email in your browser, click <a href=3D"https://a.crowdskout.com/=
+v1-1/email-click/aHR0cHM6Ly9hcHAuY3Jvd2Rza291dC5jb20vZW1haWwuaHRtbD91dWlkPT=
+A3Y2M3ZTY3LTk1NTgtNGI1Yi1iM2I0LWQ1YTJhNDRmYTE5Mg?b=3DeyJjc0lkIjoyOTEzMTE3MD=
+AsImNsaWVudElkIjoxOTQyLCJvcmdhbml6YXRpb25JZCI6IjE2MzAwMzYiLCJzb3VyY2VJZCI6I=
+jc3ODgiLCJlbWFpbGluZ0lkIjoxODQwLCJmcm9tIjoiMDdjYzdlNjctOTU1OC00YjViLWIzYjQt=
+ZDVhMmE0NGZhMTkyIn0" class=3D"unsubscribe" style=3D"color: #00aeef;">here</=
+a>.
+                  </td>
+                </tr>
+</tbody></table>
+=
+<br>
+</td>
+        </tr></tbody></table>
+<img src=3D"https://a.crowds=
+kout.com/v1-1/email-open.gif?b=3DeyJjc0lkIjoyOTEzMTE3MDAsImNsaWVudElkIjoxOT=
+QyLCJvcmdhbml6YXRpb25JZCI6IjE2MzAwMzYiLCJzb3VyY2VJZCI6Ijc3ODgiLCJlbWFpbGluZ=
+0lkIjoxODQwLCJmcm9tIjoiMDdjYzdlNjctOTU1OC00YjViLWIzYjQtZDVhMmE0NGZhMTkyIn0"=
+/></body>
+</html>
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>date-last-viewed</key>
+	<integer>0</integer>
+	<key>date-received</key>
+	<integer>1509598958</integer>
+	<key>flags</key>
+	<integer>8590195712</integer>
+	<key>remote-id</key>
+	<string>4603</string>
+</dict>
+</plist>

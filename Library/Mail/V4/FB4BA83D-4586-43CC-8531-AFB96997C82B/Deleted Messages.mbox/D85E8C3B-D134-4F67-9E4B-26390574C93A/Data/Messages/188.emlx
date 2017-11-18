@@ -1,0 +1,855 @@
+32474     
+Return-path:
+ <bounce-md_30277569.5a035dc5.v1-2ae670edb1d94deab7da250f1477d2c3@mandrillapp.com>
+Received: from st11p00im-smtpin033.mac.com ([17.172.80.179])
+ by ms60015.mac.com (Oracle Communications Messaging Server 8.0.1.2.20170607
+ 64bit (built Jun  7 2017)) with ESMTP id <0OZ400GXE6O7DT10@ms60015.mac.com>
+ for austindreier@icloud.com; Wed, 08 Nov 2017 19:40:56 +0000 (GMT)
+Original-recipient: rfc822;austindreier@icloud.com
+Received: from mail133-6.atl131.mandrillapp.com
+ (mail133-6.atl131.mandrillapp.com [198.2.133.6]) by st11p00im-smtpin033.me.com
+ (Oracle Communications Messaging Server 8.0.1.2.20170607 64bit (built Jun  7
+ 2017)) with ESMTPS id <0OZ4012K76O6QN20@st11p00im-smtpin033.me.com> for
+ austindreier@icloud.com (ORCPT austindreier@icloud.com); Wed,
+ 08 Nov 2017 19:40:55 +0000 (GMT)
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 spamscore=0
+ clxscore=155 suspectscore=93 malwarescore=0 phishscore=0 adultscore=0
+ bulkscore=100 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.0.1-1707230000 definitions=main-1711080258
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10432:,,
+ definitions=2017-11-08_03:,, signatures=0
+Authentication-results: st11p00mm-dmarcmilter007.me.com; dmarc=pass
+ header.from=switchapp.com
+Authentication-results: st11p00mm-spfmilter008.mac.com; spf=pass
+ (st11p00mm-spfmilter008.mac.com: domain of
+ bounce-md_30277569.5a035dc5.v1-2ae670edb1d94deab7da250f1477d2c3@mandrillapp.com designates
+ 198.2.133.6 as permitted sender)
+ smtp.mailfrom=bounce-md_30277569.5a035dc5.v1-2ae670edb1d94deab7da250f1477d2c3@mandrillapp.com;
+Received-SPF: pass (st11p00mm-spfmilter008.mac.com: domain of
+ bounce-md_30277569.5a035dc5.v1-2ae670edb1d94deab7da250f1477d2c3@mandrillapp.com designates
+ 198.2.133.6 as permitted sender) receiver=st11p00mm-spfmilter008.mac.com;
+ client-ip=198.2.133.6; helo=mail133-6.atl131.mandrillapp.com;
+ envelope-from=bounce-md_30277569.5a035dc5.v1-2ae670edb1d94deab7da250f1477d2c3@mandrillapp.com;
+Authentication-results: st11p00mm-dkimmilter014.mac.com;	dkim=pass (1024-bit
+ key) header.d=mandrillapp.com header.i=@mandrillapp.com header.b=hC4J0R/6;
+	dkim-adsp=pass
+Authentication-results: st11p00mm-dkimmilter014.mac.com;	dkim=pass (1024-bit
+ key) header.d=switchapp.com header.i=team@switchapp.com header.b=k9wGwP+s;
+	dkim-adsp=pass
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=mandrill;
+ d=switchapp.com; h=From:Subject:To:Message-Id:Date:MIME-Version:Content-Type;
+ i=team@switchapp.com; bh=PrtKood//6Slwc0p9Hb1aTBTeXJlZo/xzmlC80yIVM0=;
+ b=k9wGwP+sKu6LMj8SUnbufOj7II4KqrVkDYRCyJzAO/nhCRrwkf4EjklAMDnYDYGZxQYCXK+1D+rt
+   Tr1UE0t/FB4vxw7z7h1CgocujanYp/bj/jsLDpskB/iKaZlnoAaEgS9pvu6dfnnQnPtwcatxBye+
+   pvFvIFyo+itMCs49UI8=
+Received: from pmta02.mandrill.prod.atl01.rsglab.com (127.0.0.1)
+ by mail133-6.atl131.mandrillapp.com id h0desc1sar86 for
+ <austindreier@icloud.com>; Wed,
+ 8 Nov 2017 19:40:54 +0000 (envelope-from <bounce-md_30277569.5a035dc5.v1-2ae670edb1d94deab7da250f1477d2c3@mandrillapp.com>)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=mandrillapp.com;
+ i=@mandrillapp.com; q=dns/txt; s=mandrill; t=1510170054; h=From : Subject : To
+ : Message-Id : Date : MIME-Version : Content-Type : From : Subject : Date :
+ X-Mandrill-User : List-Unsubscribe;
+ bh=PrtKood//6Slwc0p9Hb1aTBTeXJlZo/xzmlC80yIVM0=;
+ b=hC4J0R/6TnEVFt57TuhBL+X3HwrEMLgWSaH+1sQThylQv0HDUC2BTilrQFS7yac5MVr77l
+ m2LHuawFmlWmRKQNmi18HwqNzOu3WJUEVaLQfqMHWXgd/M6La++LGuHGtJbtj+BjBX+oUupW
+ B95Sdc+DAf38ML7EIRatQZTkFsr8Y=
+From: Switch <team@switchapp.com>
+Subject: 21 jobs for you on Switch
+Return-path:
+ <bounce-md_30277569.5a035dc5.v1-2ae670edb1d94deab7da250f1477d2c3@mandrillapp.com>
+Received: from [54.89.90.31] by mandrillapp.com id
+ 2ae670edb1d94deab7da250f1477d2c3; Wed, 08 Nov 2017 19:40:54 +0000
+To: austindreier@icloud.com
+Message-id: <20171108144931.17.24412@135644e7fb14>
+Date: Wed, 08 Nov 2017 19:40:54 +0000
+MIME-version: 1.0
+Content-type: multipart/alternative; boundary=_av-gX7SHPLhhMgYM8cjhLItYg
+x-icloud-spam-score: 3331331
+ f=switchapp.com;e=mandrillapp.com;is=yes;ir=no;spf=pass;dkim=pass;dmarc=pass/none/none;gdwl=absent;pps=ham;clxs=ham;clxw=neutral
+X-CLX-Spam: false
+X-CLX-UnSpecialScore: None
+X-CLX-Score: 155
+X-CLX-Shades: None
+X-MANTSH: 1TEIXWV4bG1oaGkNHB1BeSF8aHxgbHh8aGxEKTEMXGx0EGx0YBBkfBBgSEBseGh8
+ aEQpMWRcbHx8RCllNF2RFRE8RCllJFxpxGhAadwYZH3EYGx0QEx13BhgaBhsaGhEKWV4Xa2t5E
+ QpDThcaSUFuGGFbZX9jeEl+QGceaX1Qa1tgYxJnb01ZWmlQSBEKWFwXGQQaBBkYB00ZThNPExk
+ YBRsdBBsdGAQSGQQbEhAbHhofGhEKXlkXeGV7YEMRCk1cFx8aHREKTFoXT0ZBTREKTU4XaBEKQ
+ 1oXGxMSBBgEGxkZBBwRCkJeFxsRCllFFxMRCkVJFxoRCkVmFxkRCkJcFxsRCl5OFxsRCkJLF2J
+ rSEAffnhAQEt9EQpCRRdvQR5efxpCQR55RhEKQk4XYmtIQB9+eEBAS30RCkJMF2Nof2B5chpyW
+ k19EQpCbBdjUkF7GGhtTxlsbBEKQkAXYHxFXmhSY2xpcB4RCkJYF25HHRtOZGFFGxJAEQpwaBd
+ vHR1oe18fchtaRxAZGhEKcGgXbkljaVNrZ1llZ1wQGRoRCnBoF2teQkNYXElPEkxkEBoRCnBoF
+ 2JnS0B9ZHsFTUceEBoRCnBoF2ltbH98QUwfQhlgEBoRCnB/F2MBXxwffRtBBV0bEBkaEQpwXxd
+ iGmIaaR4SZEVaGhAZGhEKcH0XYRpLc3BvaxJhWW4QGhEKcH0XY1B/fU18WlNpY3sQGhEKcH0Xe
+ nlTHAVBYxIbeh0QGhEKcH0Xen9DQxtNfX5TYhgQGhEKcH0XbUJQWxxkZmkTWnIQGhEKcH8XY00
+ fSRNIc1l8fmkQHhIRCnBfF2IBbXtde0xFb04fEB4SEQpwfRdia24dSG5IGh5EZhAeEhEKcH8Xa
+ B9/ZkBPYWJueG8QHhIRCnBfF2haW0sFE1pOEnx7EBkaEQpwfRdmeX1tbh5BfUl4cBAZGhEKcF8
+ XYBkZY3lgYl5QZEIQGRoRCnB9F2BSGgF9RB9uG2lkEBoRCnB9
+x-dmarc-info: pass=pass; dmarc-policy=none; s=r0; d=r1
+x-dmarc-policy: v=DMARC1; p=none; pct=100;
+ rua=mailto:re+ettnmqoqwlz@dmarc.postmarkapp.com; sp=none; aspf=r;
+X-Report-Abuse: Please forward a copy of this message, including all headers,
+ to abuse@mandrill.com
+X-Report-Abuse: You can also report abuse here:
+ http://mandrillapp.com/contact/abuse?id=30277569.2ae670edb1d94deab7da250f1477d2c3
+X-Mandrill-User: md_30277569
+
+--_av-gX7SHPLhhMgYM8cjhLItYg
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 7bit
+
+
+
+
+Hi Austin,
+
+
+  Here are your job recommendations:
+
+  
+  - District Sales Manager @ Ameritox LLC
+  http://get-employer.switchapp.com/a/key_live_blxt4U8vtdpPCKx49w6jOefjEFbAQlFt/?%24deeplink_path=job/browse%3Fjob_ids%3D16063267&amp;%24fallback_url=https%3A%2F%2Fweb.switchapp.com%2F%23%2Fjobseeker%2Fjob-details%2Fameritox-llc%2Fdistrict-sales-manager%2F16063267%2F
+  
+  - Sales Manager @ DPR Investments (dba Aarons Sales)
+  http://get-employer.switchapp.com/a/key_live_blxt4U8vtdpPCKx49w6jOefjEFbAQlFt/?%24deeplink_path=job/browse%3Fjob_ids%3D16115248&amp;%24fallback_url=https%3A%2F%2Fweb.switchapp.com%2F%23%2Fjobseeker%2Fjob-details%2Fdpr-investments-dba-aarons-sales%2Fsales-manager%2F16115248%2F
+  
+  - Sales Representative @ Combined Insurance
+  http://get-employer.switchapp.com/a/key_live_blxt4U8vtdpPCKx49w6jOefjEFbAQlFt/?%24deeplink_path=job/browse%3Fjob_ids%3D1558186&amp;%24fallback_url=https%3A%2F%2Fweb.switchapp.com%2F%23%2Fjobseeker%2Fjob-details%2Fcombined-insurance%2Fsales-representative%2F1558186%2F
+  
+  - Manager Of Catering Sales @ Leap Hospitality
+  http://get-employer.switchapp.com/a/key_live_blxt4U8vtdpPCKx49w6jOefjEFbAQlFt/?%24deeplink_path=job/browse%3Fjob_ids%3D16081129&amp;%24fallback_url=https%3A%2F%2Fweb.switchapp.com%2F%23%2Fjobseeker%2Fjob-details%2Fleap-hospitality%2Fmanager-of-catering-sales%2F16081129%2F
+  
+  - Senior Business Development Director - Demand Management - North America Utility Sales @ Tendril
+  http://get-employer.switchapp.com/a/key_live_blxt4U8vtdpPCKx49w6jOefjEFbAQlFt/?%24deeplink_path=job/browse%3Fjob_ids%3D14371685&amp;%24fallback_url=https%3A%2F%2Fweb.switchapp.com%2F%23%2Fjobseeker%2Fjob-details%2Ftendril%2Fsenior-business-development-director-demand-management-north-america-utility-sales%2F14371685%2F
+  
+
+
+Check them out on Switch!
+
+You are getting this because you selected: Account Executive / Sales Executive.
+Interested in other opportunities?
+click here to edit your profile: https://get.switchapp.com/a/key_live_jcaJP0r9oi1gg4S8hIk8ihfixvjf6ViW/?%24deeplink_path=edit/talent_profile
+
+
+
+
+
+--_av-gX7SHPLhhMgYM8cjhLItYg
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge">
+    <meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge">
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8=
+">
+    <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=
+=3D1.0">
+    <style type=3D"text/css">
+        @import url('https://fonts.googleapis.com/css?family=3DRoboto:300,4=
+00,500');
+
+        body {
+            font-family: "Roboto", "Helvetica Neue", Helvetica, sans-serif =
+!important;
+            font-weight: 300 !important;
+            font-size: 16px;
+            color: #434343;
+            width: 100%;
+            margin: 0 auto !important;
+            background: #f2f2f2;
+        }
+
+        table,
+        td {
+            border-collapse: collapse;
+            mso-table-lspace: 0pt;
+            mso-table-rspace: 0pt;
+            box-sizing: border-box;
+        }
+
+        ol, ul {
+            padding-left: 30px;
+        }
+
+        ol > li, ul > li {
+            margin-bottom: 20px !important;
+        }
+
+        a, a[href] {
+            color: #00A7FF !important;
+            text-decoration: none;
+        }
+
+        a.cta-button, a[href].cta-button {
+            color:  #fff !important;
+        }
+
+        .content {
+            height: 100%;
+            font-size: 16px !important;
+            padding: 0 10px !important;
+        }
+
+        .content p {
+            line-height: 1.5em !important;
+            color: #434343 !important;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .content .media p {
+            line-height: 1.2em !important;
+        }
+
+        .content-sm {
+            height: 100%;
+            font-size: 12px;
+        }
+
+        .content-sm p {
+          line-height: 1.5em;
+          margin-bottom: 5px;
+        }
+
+        h2 {
+            text-align: center;
+            font-weight: 300 !important;
+            margin-bottom: 30px;
+        }
+
+        h4 {
+            font-weight: 300 !important;
+            margin-bottom: 18px;
+        }
+
+        #switch-header {
+            margin-top: 30px;
+            margin-bottom: 40px;
+        }
+
+        .cta-div {
+            text-align: center;
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+
+        .cta-button {
+            background: #00A7FF;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 11px;
+            padding-bottom: 10px;
+            min-width: 160px !important;
+            text-align: center;
+            border-radius: 1px;
+            color: #fff !important;
+            font-weight: 300;
+            text-decoration: none;
+            text-transform: uppercase;
+            box-sizing: border-box;
+            font-size: 13px;
+        }
+
+        #switch-footer {
+            background-color: #F2F2F2 !important;
+        }
+
+        .social-links {
+            margin-bottom: 45px;
+        }
+
+        .social-links a {
+            text-decoration: none;
+        }
+
+        .social-button {
+            width: 30px !important;
+            height: 30px !important;
+        }
+
+        .social-button img {
+            max-width: 100%;
+        }
+
+        .media tr td {
+            vertical-align: top;
+            padding: 0;
+        }
+
+        .media p {
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        #contact-info {
+            font-weight: 300 !important;
+            font-size: 12px;
+            width: 100%;
+        }
+
+        .address {
+            color: #434343 !important;
+        }
+
+        .copyright-block {
+            width: 100%;
+        }
+
+        .content-list a {
+            text-decoration: none !important;
+        }
+
+        .logo-block {
+            text-align: center;
+            padding: 10px 15px;
+        }
+
+        .footer-row {
+            width: 100%;
+        }
+
+        .chrome-extension {
+            display: block !important;
+            margin: 20px 0;
+        }
+
+        .content-cta {
+            margin: 20px 0;
+        }
+
+        @media screen and (min-width: 481px) {
+            ul, ol {
+                padding-left: 40px !important;
+            }
+
+            .layout {
+                padding: 0 20px !important;
+            }
+
+            .logo-block {
+                padding: 20px 0 !important;
+            }
+
+            .footer-row {
+                display: table;
+            }
+
+            .footer-row + .footer-row {
+                margin-top: 20px;
+            }
+
+            .footer-row.rtl {
+                direction: rtl;
+            }
+
+            .footer-content {
+              display: table !important;
+              width: 100% !important;
+            }
+
+            .copyright-block {
+                display: table-cell;
+                vertical-align: middle;
+                text-align: left !important;
+            }
+
+            .social-block {
+                text-align: right !important;
+                margin-top: 0 !important;
+                display: table-cell !important;
+                vertical-align: middle;
+                padding: 2px 0 0 15px !important;
+            }
+
+            .app-block {
+                display: table-cell;
+                vertical-align: middle;
+                margin-top: 0 !important;
+                position: relative !important;
+                top: 1px !important;
+            }
+
+            .social-button {
+                margin-right: 12px !important;
+            }
+
+            .footer-links {
+                margin-top: 0 !important;
+                margin-bottom: 0 !important;
+                display: table-cell !important;
+                vertical-align: middle;
+                text-align: left !important;
+            }
+
+            .content {
+                padding: 0 20px 0 !important;
+            }
+
+            .content-cta {
+                padding: 0 20px 20px !important;
+                display: table !important;
+                width: 100%;
+            }
+
+            .content-cta .chrome-extension {
+                display: table-cell !important;
+                vertical-align: middle;
+                text-align: right;
+            }
+
+            .content-sm {
+                padding: 0 20px 20px !important;
+            }
+
+            .content-list {
+              padding: 0 20px 5px !important;
+            }
+
+            .media strong {
+                font-size: 20px !important;
+            }
+
+            .media p {
+                font-size: 16px !important;
+            }
+
+            .media.unread-message p strong {
+                font-size: 16px !important;
+            }
+
+            .media img {
+              max-width: 150px !important;
+            }
+
+            .link-divider {
+                padding: 0 7px !important;
+            }
+
+            .footer-deletion .copyright-block {
+                width: auto !important;
+            }
+
+            .footer-deletion .app-block {
+                max-width: 236px !important;
+                margin-left: auto !important;
+                display: block !important;
+            }
+
+            .unread-message-text {
+                margin-bottom: 30px !important;
+            }
+
+            .recomendation-block {
+                margin-top: 4px !important;
+            }
+
+            .visible-desktop {
+                display: inline !important;
+            }
+
+            .hidden-desktop {
+                display: none !important;
+            }
+
+            .no-mb-desktop {
+                margin-bottom: 0 !important;
+            }
+
+            .no-m-desktop {
+                margin: 0 !important;
+            }
+        }
+    </style>
+</head>
+<body style=3D"padding: 0;margin: 0;">
+
+    <!-- use table to achieve full height/width background color -->
+    <table style=3D"background: #F2F2F2; width: 100%; max-width: 700px; mar=
+gin: 0 auto; padding: 0;">
+        <tr>
+            <td id=3D"layout" class=3D"layout" style=3D"padding: 0 10px;">
+                <table style=3D"width: 100%;">
+                    <tr>
+                        <td class=3D"logo-block" style=3D"text-align: cente=
+r; padding: 10px 0;">
+                            <img class=3D"logo" src=3D"https://s3.amazonaws=
+.com/switch-marketing-assets/logo-text.png" width=3D"130" style=3D"width: 1=
+30px;">
+                        </td>
+                    </tr>
+                </table>
+                <table style=3D"background: #fff; width: 100%; box-sizing: =
+border-box; font-family: 'Roboto', 'Helvetica Neue', Helvetica, sans-serif;=
+">
+                    <tr>
+                        <td width=3D'100%' style=3D"color: #434343; font-we=
+ight: 300; line-height: 1.5em; padding: 0;">
+                            
+    <div class=3D"content content-top"
+         style=3D" background: #fff; color: #434343; padding: 15px 15px 10p=
+x 15px; font-weight: 300;">
+        <p style=3D"color: #434343;">
+            Hi Austin,
+        </p>
+        
+            <p style=3D"color: #434343;">
+                Here are your job recommendations for today:
+            </p>
+        
+    </div>
+
+    
+        <div class=3D"content">
+            
+                <table class=3D"media">
+                    <tbody>
+                        <tr>
+                            <td style=3D"padding-right: 12px; padding-left:=
+ 0; vertical-align: middle; height: 86px;">
+                                
+                                    <div style=3D"background-color: #F75C35=
+; border-radius: 3px; width:75px; height:75px; text-align:center;">
+                                        <div style=3D"font-size:40px; color=
+: #fff; padding-top:12px; line-height: 50px;">AL</div>
+                                    </div>
+                                
+                            </td>
+                            <td style=3D"padding-top: 10px; vertical-align:=
+ top;">
+                                <p style=3D"margin-bottom: 7px; margin-top:=
+ 0; line-height: 1.1em;">
+                                    <strong style=3D"font-size: 16px; color=
+: #00A7FF; font-weight: 700;">District Sales Manager</strong>
+                                </p>
+                                <p style=3D"margin-bottom: 0; margin-top: 0=
+; font-size: 14px; font-weight: 300; line-height: 1.1em;">
+                                    Ameritox LLC
+                                </p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <hr style=3D"border-bottom: 1px solid #C7C7C7; border-top: =
+0;">
+            
+                <table class=3D"media">
+                    <tbody>
+                        <tr>
+                            <td style=3D"padding-right: 12px; padding-left:=
+ 0; vertical-align: middle; height: 86px;">
+                                
+                                    <div style=3D"background-color: #F75C35=
+; border-radius: 3px; width:75px; height:75px; text-align:center;">
+                                        <div style=3D"font-size:40px; color=
+: #fff; padding-top:12px; line-height: 50px;">DI</div>
+                                    </div>
+                                
+                            </td>
+                            <td style=3D"padding-top: 10px; vertical-align:=
+ top;">
+                                <p style=3D"margin-bottom: 7px; margin-top:=
+ 0; line-height: 1.1em;">
+                                    <strong style=3D"font-size: 16px; color=
+: #00A7FF; font-weight: 700;">Sales Manager</strong>
+                                </p>
+                                <p style=3D"margin-bottom: 0; margin-top: 0=
+; font-size: 14px; font-weight: 300; line-height: 1.1em;">
+                                    DPR Investments (dba Aarons Sales)
+                                </p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <hr style=3D"border-bottom: 1px solid #C7C7C7; border-top: =
+0;">
+            
+                <table class=3D"media">
+                    <tbody>
+                        <tr>
+                            <td style=3D"padding-right: 12px; padding-left:=
+ 0; vertical-align: middle; height: 86px;">
+                                
+                                    <img src=3D"https://switch-production-a=
+ssets.s3.amazonaws.com/company/182562-85668ed7ed4d4dfb72963e028d8c114d.png"=
+ alt=3D"applicant" style=3D"width:75px; border-radius: 3px;">
+                                
+                            </td>
+                            <td style=3D"padding-top: 10px; vertical-align:=
+ top;">
+                                <p style=3D"margin-bottom: 7px; margin-top:=
+ 0; line-height: 1.1em;">
+                                    <strong style=3D"font-size: 16px; color=
+: #00A7FF; font-weight: 700;">Sales Representative</strong>
+                                </p>
+                                <p style=3D"margin-bottom: 0; margin-top: 0=
+; font-size: 14px; font-weight: 300; line-height: 1.1em;">
+                                    Combined Insurance
+                                </p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <hr style=3D"border-bottom: 1px solid #C7C7C7; border-top: =
+0;">
+            
+                <table class=3D"media">
+                    <tbody>
+                        <tr>
+                            <td style=3D"padding-right: 12px; padding-left:=
+ 0; vertical-align: middle; height: 86px;">
+                                
+                                    <div style=3D"background-color: #FFBD30=
+; border-radius: 3px; width:75px; height:75px; text-align:center;">
+                                        <div style=3D"font-size:40px; color=
+: #fff; padding-top:12px; line-height: 50px;">LH</div>
+                                    </div>
+                                
+                            </td>
+                            <td style=3D"padding-top: 10px; vertical-align:=
+ top;">
+                                <p style=3D"margin-bottom: 7px; margin-top:=
+ 0; line-height: 1.1em;">
+                                    <strong style=3D"font-size: 16px; color=
+: #00A7FF; font-weight: 700;">Manager Of Catering Sales</strong>
+                                </p>
+                                <p style=3D"margin-bottom: 0; margin-top: 0=
+; font-size: 14px; font-weight: 300; line-height: 1.1em;">
+                                    Leap Hospitality
+                                </p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <hr style=3D"border-bottom: 1px solid #C7C7C7; border-top: =
+0;">
+            
+                <table class=3D"media">
+                    <tbody>
+                        <tr>
+                            <td style=3D"padding-right: 12px; padding-left:=
+ 0; vertical-align: middle; height: 86px;">
+                                
+                                    <img src=3D"https://switch-production-a=
+ssets.s3.amazonaws.com/company/64725-b2d17d64645bbe5d8c10aa7a7596ed9c.png" =
+alt=3D"applicant" style=3D"width:75px; border-radius: 3px;">
+                                
+                            </td>
+                            <td style=3D"padding-top: 10px; vertical-align:=
+ top;">
+                                <p style=3D"margin-bottom: 7px; margin-top:=
+ 0; line-height: 1.1em;">
+                                    <strong style=3D"font-size: 16px; color=
+: #00A7FF; font-weight: 700;">Senior Business Development Director - Demand=
+ Management - North America Utility Sales</strong>
+                                </p>
+                                <p style=3D"margin-bottom: 0; margin-top: 0=
+; font-size: 14px; font-weight: 300; line-height: 1.1em;">
+                                    Tendril
+                                </p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <hr style=3D"border-bottom: 1px solid #C7C7C7; border-top: =
+0;">
+            
+        </div>
+    
+
+    <div class=3D"content">
+        <div class=3D"content-cta">
+            <a class=3D"cta-button" href=3D"https://get.switchapp.com/a/key=
+_live_jcaJP0r9oi1gg4S8hIk8ihfixvjf6ViW/?%24deeplink_path=3Djob/browse&amp;%=
+24fallback_url=3Dhttps%3A%2F%2Fwww.switchapp.com%2Fjobseeker.html" style=3D=
+"display: inline-block; background: #00A7FF; color: #fff !important;padding=
+-left: 20px;padding-right: 20px;padding-top: 11px;padding-bottom: 10px;min-=
+width: 150px;text-align: center;color: #fff;font-weight: 300;text-decoratio=
+n: none;text-transform: uppercase;box-sizing: border-box;font-size: 13px; b=
+order-radius: 1.67px;">VIEW JOBS NOW!</a>
+            <div class=3D"chrome-extension" style=3D"color: #00A7FF; text-d=
+ecoration: none; font-size: 12px; margin: 20px 0; display: inline-block; fo=
+nt-weight: 300;">
+                <a href=3D"https://chrome.google.com/webstore/detail/job-se=
+arch-by-switch/ngebglmphkgnfjclncjgnagdembkpakm" style=3D"color: #00A7FF; f=
+ont-weight: 300;">
+                    <img src=3D"https://s3.amazonaws.com/switch-marketing-a=
+ssets/chrome-logo.png" alt=3D"chrome-logo" style=3D"margin-right: 5px; disp=
+lay: inline-block; vertical-align: middle;">
+                    <span style=3D"display: inline-block; vertical-align: m=
+iddle; margin-top: 3px;">
+                        Download our Chrome extension
+                    </span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+    
+
+    <table class=3D"recomendation-block" style=3D"width: 100%; margin: 10px=
+ 0 0; background-color: #f2f2f2;">
+        <tbody>
+            <tr>
+                <td style=3D"text-align: center;">
+                    <p style=3D"font-size: 12px; line-height: 1.5em; paddin=
+g-bottom: 5px;">
+                        You are getting these recommendations because you=
+=E2=80=99ve selected:
+                        <br>
+                        Account Executive / Sales Executive
+                        <br>
+                        Interested in seeing different opportunities?
+                        <a href=3D"https://get.switchapp.com/a/key_live_jca=
+JP0r9oi1gg4S8hIk8ihfixvjf6ViW/?%24deeplink_path=3Dedit/talent_profile" styl=
+e=3D"color: #00A7FF">Edit your profile.</a>
+                        <br><br>
+                        <span style=3D"color: #ED0854;">Your total years of=
+ experience are now calculated by the Work Experience listed on your Profil=
+e. </span>
+                        <br>
+                        <a href=3D"https://get.switchapp.com/a/key_live_jca=
+JP0r9oi1gg4S8hIk8ihfixvjf6ViW/?%24deeplink_path=3Dedit/talent_profile" styl=
+e=3D"color: #00A7FF">Update your Profile</a>, or email your resume to
+                        <a href=3D"mailto:resume@switchapp.com" style=3D"co=
+lor: #00A7FF">resume@switchapp.com</a>.
+                    </p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <hr style=3D"border-bottom: 1px solid #C7C7C7; border-top: 0; margin-bo=
+ttom: 0; margin-top: 0;">
+
+                        </td>
+                    </tr>
+                </table>
+                <table style=3D"width: 100%;">
+                    <tr>
+                        <td>
+                            <div id=3D"switch-footer" style=3D"padding: 20p=
+x 0 20px; width: 100%; height: 100%; box-sizing: border-box;">
+    <table id=3D"contact-info" style=3D"width: 100%; padding-bottom: 2px; w=
+idth: 100%;">
+        <tbody>
+            <tr>
+                <td>
+                    <div class=3D"footer-content">
+                        <div class=3D"footer-row rtl">
+                            <div class=3D"social-block" style=3D"padding: 0=
+ 15px; margin-bottom: 20px; text-align: center; direction: ltr;">
+                                <a class=3D"social-button" href=3D"https://=
+www.instagram.com/getswitch/" style=3D"margin-right: 40px; width: 30px; tex=
+t-decoration: none; color: #00A7FF;">
+                                    <img style=3D"width: 30px;" src=3D"http=
+s://s3.amazonaws.com/switch-marketing-assets/insta-button.png" alt=3D"">
+                                </a>
+                                <a class=3D"social-button" href=3D"https://=
+twitter.com/getswitch" style=3D"margin-right: 40px; width: 30px; text-decor=
+ation: none; color: #00A7FF;">
+                                    <img style=3D"width: 30px;" src=3D"http=
+s://s3.amazonaws.com/switch-marketing-assets/twitter-button.png" alt=3D"">
+                                </a>
+                                <a class=3D"social-button" href=3D"https://=
+www.linkedin.com/company/switch-inc" style=3D"margin-right: 40px; width: 30=
+px; text-decoration: none; color: #00A7FF;">
+                                    <img style=3D"width: 30px;" src=3D"http=
+s://s3.amazonaws.com/switch-marketing-assets/linkedin-button.png" alt=3D"">
+                                </a>
+                                <a class=3D"social-button" href=3D"https://=
+www.facebook.com/GetSwitch/" style=3D"margin-right: 0 !important; width: 30=
+px; text-decoration: none; color: #00A7FF;">
+                                    <img style=3D"width: 30px;" src=3D"http=
+s://s3.amazonaws.com/switch-marketing-assets/facebook-button.png" alt=3D"">
+                                </a>
+                            </div>
+
+                            
+                                <div class=3D"footer-links" style=3D"color:=
+ #00A7FF; font-weight: 300; text-align: center; margin-top: 0; margin-botto=
+m: 20px; direction: ltr;">
+                                    <a href=3D"https://api.switchapp.com/v2=
+.2/talent/preferences/?sig=3DIi90YWxlbnQvcHJlZmVyZW5jZXMvMTE0NDY1Ig%3A1eCRf=
+X%3AiEqVoeyBGpZ8bDERIaboPyGcOwI" style=3D"color: #00A7FF;">Unsubscribe</a>
+                                    <span class=3D"link-divider" style=3D"p=
+adding: 0 5px;">|</span>
+                                    <a href=3D"https://api.switchapp.com/v2=
+.2/talent/preferences/?sig=3DIi90YWxlbnQvcHJlZmVyZW5jZXMvMTE0NDY1Ig%3A1eCRf=
+X%3AiEqVoeyBGpZ8bDERIaboPyGcOwI" style=3D"color: #00A7FF;">Manage notificat=
+ions</a>
+                                </div>
+                            
+
+                        </div>
+
+                        <div class=3D"footer-row">
+                            <div class=3D"copyright-block" style=3D"line-he=
+ight: 1.5; text-align: center; font-weight: 300; margin-bottom: 0; color: #=
+434343 !important;">
+                                Switch App =E2=80=A2 1&zwnj;0 West 18&zwnj;=
+th Street, New York, 10011
+                            </div>
+                            <div class=3D"app-block" style=3D"width: 100%; =
+margin-top: 20px; position: relative; top: 1px;">
+                                <table style=3D"width: 100%;">
+                                    <tr>
+                                        <td style=3D"padding: 0 10px 0 0; t=
+ext-align: right;">
+                                            <a href=3D"https://itunes.apple=
+.com/app/apple-store/id879185767?pt=3D96143108&ct">
+                                                <img src=3D"https://s3.amaz=
+onaws.com/switch-marketing-assets/app-store-button.png" width=3D"108" alt=
+=3D"app-store">
+                                            </a>
+                                        </td>
+                                        <td style=3D"padding: 0 0 0 10px;">
+                                            <a href=3D"https://play.google.=
+com/store/apps/details?id=3Dcom.switchapp.android">
+                                                <img src=3D"https://s3.amaz=
+onaws.com/switch-marketing-assets/google-play-button.png" width=3D"108" alt=
+=3D"app-store">
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+                        </td>
+                    </tr>
+                </table>
+
+            </td>
+        </tr>
+    </table>
+
+<img src=3D"https://mandrillapp.com/track/open.php?u=3D30277569&id=3D2ae670=
+edb1d94deab7da250f1477d2c3" height=3D"1" width=3D"1"></body>
+</html>
+
+
+--_av-gX7SHPLhhMgYM8cjhLItYg--
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>date-last-viewed</key>
+	<integer>0</integer>
+	<key>date-received</key>
+	<integer>1510170056</integer>
+	<key>flags</key>
+	<integer>8590195712</integer>
+	<key>remote-id</key>
+	<string>4661</string>
+</dict>
+</plist>

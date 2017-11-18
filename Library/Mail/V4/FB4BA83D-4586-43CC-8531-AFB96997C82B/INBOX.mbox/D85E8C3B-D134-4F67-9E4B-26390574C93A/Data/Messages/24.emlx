@@ -1,0 +1,182 @@
+9663      
+Return-path: <bounces+3922699-c948-austindreier=icloud.com@sendgrid.meetup.com>
+Received: from mr28p00im-smtpin030.mac.com ([17.110.71.29])
+ by ms60015.mac.com (Oracle Communications Messaging Server 8.0.1.2.20170607
+ 64bit (built Jun  7 2017)) with ESMTP id <0OZH009MW7JJZE70@ms60015.mac.com>
+ for austindreier@icloud.com; Wed, 15 Nov 2017 20:28:31 +0000 (GMT)
+Original-recipient: rfc822;austindreier@icloud.com
+Received: from o16.sendgrid.meetup.com (o16.sendgrid.meetup.com [167.89.56.2])
+ by mr28p00im-smtpin030.me.com
+ (Oracle Communications Messaging Server 8.0.1.2.20170607 64bit (built Jun  7
+ 2017)) with ESMTPS id <0OZH006PY7JGVFF1@mr28p00im-smtpin030.me.com> for
+ austindreier@icloud.com (ORCPT austindreier@icloud.com); Wed,
+ 15 Nov 2017 20:28:31 +0000 (GMT)
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 spamscore=0
+ clxscore=182 suspectscore=70 malwarescore=0 phishscore=0 adultscore=0
+ bulkscore=100 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.0.1-1707230000 definitions=main-1711150266
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10432:,,
+ definitions=2017-11-15_10:,, signatures=0
+Authentication-results: mr21p00im-dmarcmilter009.me.com; dmarc=none
+ header.from=meetup.com
+Authentication-results: mr21p00im-spfmilter009.me.com; spf=pass
+ (mr21p00im-spfmilter009.me.com: domain of
+ bounces+3922699-c948-austindreier=icloud.com@sendgrid.meetup.com designates
+ 167.89.56.2 as permitted sender)
+ smtp.mailfrom=bounces+3922699-c948-austindreier=icloud.com@sendgrid.meetup.com;
+Received-SPF: pass (mr21p00im-spfmilter009.me.com: domain of
+ bounces+3922699-c948-austindreier=icloud.com@sendgrid.meetup.com designates
+ 167.89.56.2 as permitted sender) receiver=mr21p00im-spfmilter009.me.com;
+ client-ip=167.89.56.2; helo=o16.sendgrid.meetup.com;
+ envelope-from=bounces+3922699-c948-austindreier=icloud.com@sendgrid.meetup.com;
+Authentication-results: mr21p00im-dkimmilter006.me.com;	dkim=pass (1024-bit
+ key) header.d=meetup.com header.i=@meetup.com header.b=bSwEPNcT;	dkim-adsp=pass
+DKIM-Signature: v=1; a=rsa-sha1; c=relaxed/relaxed; d=meetup.com;
+	h=from:sender:to:subject:mime-version:content-type:content-transfer-encoding:reply-to:list-id;
+	s=s1; bh=Uz0S33jcVaVQlnV0ZJDH85B06ZE=; b=bSwEPNcTt9snlRC3B5httnl
+	dqPPzQtYbrM/MtdENBAY6wJfvTspCyjd0mVlsS2tWnT/L8mCIErqTsqIJDQYo4pw
+	N5Tps2vJ3oZFlSz9vPRRvlfpTdNfd2UgW2tZXpIL0Bg1mRIYL1uKBejGl9ep0XHY
+	aqet3tflStagfPd2giqA=
+Received: by filter0451p1iad2.sendgrid.net with SMTP id
+ filter0451p1iad2-10984-5A0CA36B-2B 2017-11-15 20:28:27.862713525 +0000 UTC
+Received: from mail.sendgrid.meetup.com
+ (ec2-34-197-179-31.compute-1.amazonaws.com [34.197.179.31])
+	by ismtpd0008p1iad1.sendgrid.net (SG) with ESMTP id BMIkTEPrTg-vu4nYtIjWtg	for
+ <austindreier@icloud.com>; Wed, 15 Nov 2017 20:28:27.757 +0000 (UTC)
+Received: from mail.meetup.com (ip-172-17-0-1.ec2.internal [172.17.0.1])
+	by mail.sendgrid.meetup.com (Postfix) with ESMTP id AAB5180652	for
+ <austindreier@icloud.com>; Wed, 15 Nov 2017 20:28:27 +0000 (UTC)
+From: James Orr <The-NCREIG-announce@meetup.com>
+Sender: The-NCREIG-announce@meetup.com
+To: The-NCREIG-announce@meetup.com
+Subject: [The-NCREIG] IMPORTANT: regarding meeting tonight!!!
+MIME-version: 1.0
+Content-type: text/html; charset=UTF-8
+Content-transfer-encoding: quoted-printable
+Reply-to: The-NCREIG-list@meetup.com
+Mailing-List: list The-NCREIG-list@meetup.com; contact postmaster@meetup.com
+List-Id: <The-NCREIG-list.meetup.com>
+Errors-to: info@meetup.com
+Precedence: list
+Message-id: <358821506.1510777707695.JavaMail.nobody@f5da6093c7c4>
+Date: Wed, 15 Nov 2017 20:28:27 +0000 (UTC)
+x-icloud-spam-score: 3311331
+ f=meetup.com;e=sendgrid.meetup.com;is=yes;ir=no;spf=pass;dkim=pass;dmarc=noPolicy/noPolicy/none;gdwl=absent;pps=ham;clxs=ham;clxw=neutral
+X-CLX-Spam: false
+X-CLX-UnSpecialScore: None
+X-CLX-Score: 182
+X-CLX-Shades: None
+X-MANTSH: 1TEIXR1gYEloaGkNHB0tNT0ReQ0QZHBsfEQpMQxcbHQQbGxsEGx0ZBBkYEBseGh8
+ aEQpMWRcbEhgRCllNF2RFRE8RCllJFxpxGhAadwYbHBhxHhsQGncGGBoGGhEKWV4Xa2tmEQpDT
+ hdFT19yWXhNeF8STB9lBRliWWRPHm8BUkV6E3l9Y0MFWhEKWFwXGQQaBBkYB00ZThNPExkYBRs
+ dBBsbGwQbHx8EGx0cEBseGh8aEQpeWRd4e0FNYREKTVwXEhIRCkxaF2hlXUF7EQpMRhdFa2sRC
+ kNaFxscHQQSEwQfHAQYEQpCXhcbEQpCRhdpbHhfH3wcGUUSZREKQkcXYn9NUFt/GnNQYEsRCkJ
+ cFxsRCl5OFxsRCkJLF2FeTnhyb2ROaFJvEQpCRRdoHllBRlpacEtFXxEKQk4XYV5OeHJvZE5oU
+ m8RCkJMF2d8RmVvWnt+emFNEQpCbBdrRx9TcF1HW3JIYREKQkAXbGZhT10fQgFncGQRCkJYF25
+ HHRtOZGFFGxJAEQpNXhcbEQpwZxdsGh8YHlxJaWNbbBAZGhEKcGgXa0d5WkUeaVxaQ1AQGRoRC
+ nBoF3pwElBSWFgeRRxlEBkaEQpwaBdiUnITS1pjYkVETxAZGhEKcGgXa11QUFxLUH5maUMQGRo
+ RCnBoF2d5e1JJXUtpQ2h+EBkaEQpwfxduWnxcGkh5HXAfHBAeHhEKcF8XemhbenByHHocc28QH
+ hsRCnB9F2wbWxsfZ31aehpwEBkaEQpwfRdhZn8cWXgdckBrUxAZGhEKcH0XYgFFYl5vfHxMT04
+ QGRoRCnB9F2B6UkxhRhMSeQEdEBkaEQpwfRdpGHBOf3hyY0RrfBAZGhEKcGcXbksBSEtuHUxyY
+ gUQHhgRCnBfF2ZIZXJjRX9hQh1LEB4ZEQpwfRdlbnpifF5jUB1OfBAZGhEKcGwXbm9YW3tMR3g
+ dRhoQHBoRCnBDF2gBUFJ5Zh14fWtQEB4fEQptfhcbEQpYTRdL
+x-dmarc-info: pass=none; dmarc-policy=(nopolicy); s=u0; d=u0
+x-dmarc-policy: none
+X-MEETUP-TRACK: bc2
+X-MEETUP-RECIP-ID: 216200702
+X-MEETUP-MESG-ID: 80783338
+X-SG-EID:
+ wDL73fzM24memzQeYD8vNs60a1/y7ttRZFoC2GN2sWBlWDjj7QeExLpaQTNCo+x6kWUykGJ14YHtb+
+ /No3gOWpYQ38eBw5LyQaLCXgjowFatKSYoksKK3jrivGYyIftFM5f+py6+4bIqckBoZZAjXfCx1WJ5
+ aOpFBj1l8dvtfi/Qmm3Fo2t0kJw3HWWl3XV6bSEbNh+R8ljloAzwOkzbXD39/nFvS1cg392LC+t6gv
+ I=
+
+<html><body><div style=3D"color:#333;font-family:Verdana,Arial,sans-serif;f=
+ont-size:12px;"><font face=3D"verdana,arial,sans-serif"><p>This is a very i=
+mportant message regarding the NCREIG meeting tonight!</p>
+<p>The meeting is being held at the Fort Collins Library (at the SE corner =
+of Shields and Harmony) and not at our regular location.</p>
+<p>If you show up to the regular location... you will be there alone, locke=
+d outside, by yourself, with no one else around.</p>
+<p>If you come to the amazing class at the Fort Collins Library=C2=A0(at th=
+e SE corner of Shields and Harmony) you will be among friends, inside the c=
+ommunity room, with lots of other folks.</p>
+<p>We're looking forward to seeing you there.</p>
+<p>Love,</p>
+<p>James</p>
+<p>P.S. RSVP here if you have not done so already:</p>
+<p>https://www.meetup.com/Northern-Colorado-Real-Estate-Investor-Group/even=
+ts/239513909/</p>
+<br /><br />
+<br />
+<br />
+--<br />
+This message was sent by Meetup on behalf of <a href=3D"http://meet.meetup.=
+com/wf/click?upn=3DpEEcc35imY7Cq0tG1vyTt6zEs68RbcMfjPcajNHTKtnyI1dl-2BPdB4V=
+SQtPk6A0gdFcDdqzF1VC4K-2BmbS1-2BUDSt-2BsxH8m32VVRl2bey4ZIuqdHxID3e-2FKulH6S=
+1DHJ5Yw_7XtDdMHRjqIUi4tzSjSp2h-2BoTg8yV1h4-2FGX2SHZpIErfwrwVGe7E-2BU-2BmW-2=
+B2ustROG58vn967Lk1JEy101lgw0LWNodu4SO5qyDSNbGJznuyXRHEYLefw0zuMwW7Wr99c6V7B=
+qUKg5R4yJB05dhgYpfT5i4VebfEb-2FMEXTzwklcwybhlkdYAX89y4hzmd7lzYSKZoO8nitwNsl=
+MuJcieCMXCwGZNMreZRmKkDCyc1syA-3D">James Orr</a> from <a href=3D"http://mee=
+t.meetup.com/wf/click?upn=3DpEEcc35imY7Cq0tG1vyTt6zEs68RbcMfjPcajNHTKtnyI1d=
+l-2BPdB4VSQtPk6A0gdFcDdqzF1VC4K-2BmbS1-2BUDSlfODQWYxX0ySilFVriyOOM-3D_7XtDd=
+MHRjqIUi4tzSjSp2h-2BoTg8yV1h4-2FGX2SHZpIErfwrwVGe7E-2BU-2BmW-2B2ustROG58vn9=
+67Lk1JEy101lgw0Nb4TYN4gaLLsAlgEbmbr9PuxKlurmpwAdsxLI1xvXGEZxud-2Fum3Equa2KS=
+Iu8om6LwlGkFq-2FtiqjWJ-2BD2hy-2BJk29a6rwzWNMBkvxowcSmr4REjo32CMui8dSTvD0pfZ=
+vVoig05RSM3EOq8Vy3WNng8-3D">Northern Colorado Real Estate Investor Group</a=
+>.
+<br />
+To report this message, please <a href=3D"http://meet.meetup.com/wf/click?u=
+pn=3DpEEcc35imY7Cq0tG1vyTtwJVcz-2FJYTCTZukqQTrPJ4k2KBrOmA3BVnT-2BCXw-2FnVJM=
+kw9-2BK-2BO4pNmDx-2BxBGC7Sbv06sW4D6W72TGkuuQs0UD4-3D_7XtDdMHRjqIUi4tzSjSp2h=
+-2BoTg8yV1h4-2FGX2SHZpIErfwrwVGe7E-2BU-2BmW-2B2ustROG58vn967Lk1JEy101lgw0Jt=
+tNiQANPXKVFKfgfvrcgTM2anCQ7tbkBxisfKq64zCQmZx40XDG36NEkinjo-2Fmic35RhLtQfNf=
+hq1d1Y-2Fyl9-2FeariKe8TqTDpDHvtrXwtI6yfvmrizlYCxCbdevIiH3ztRBFuk-2FBezEyvqw=
+onbdNk-3D">click here</a><br>
+To block the sender of this message, please <a href=3D"http://meet.meetup.c=
+om/wf/click?upn=3DpEEcc35imY7Cq0tG1vyTt-2FfH78ByS2gkGngEP9PHfkyD1tOpwzFZBb2=
+gNxqk0Wnn_7XtDdMHRjqIUi4tzSjSp2h-2BoTg8yV1h4-2FGX2SHZpIErfwrwVGe7E-2BU-2BmW=
+-2B2ustROG58vn967Lk1JEy101lgw0DZYQYxqpuGZYQJizC-2FG-2FKa21V764yHJA9pFJJOoXV=
+bAhFM74et-2BDpNURWOWIPwrQ9ol-2BjLqjbMINiqPVt1RacJPR0kLs-2BwiH-2FV3Upb5GyONq=
+AS1PwkkFO-2BHE0fAmhF01dAMrxRp9dL3P-2FwlhFuJ7gs-3D">click here</a><br>
+To unsubscribe from special announcements from your Organizer(s), <a href=
+=3D"http://meet.meetup.com/wf/click?upn=3DpEEcc35imY7Cq0tG1vyTt6zEs68RbcMfj=
+PcajNHTKtnyI1dl-2BPdB4VSQtPk6A0gdFcDdqzF1VC4K-2BmbS1-2BUDSt9P7lx-2BrbUnQkHL=
+5FioLm7gz-2Fl-2F4hntpTPKQbjyrm2S4qERm1c-2BBhPVQTkFCakDIOV6Ip3q6EJB5QgA4PkhT=
+9Q-3D_7XtDdMHRjqIUi4tzSjSp2h-2BoTg8yV1h4-2FGX2SHZpIErfwrwVGe7E-2BU-2BmW-2B2=
+ustROG58vn967Lk1JEy101lgw0Alci-2FHfhej5EQzhSd-2Fodq4ROSYEHYE79xhsZ-2Fp4ThTb=
+R0MtdmRXMP1hKrI1EDGnGVa4G3uZ4ia6fix7-2F2hiKs44Fipo-2BvVBBYKKD3EvdQ67jwXGj1P=
+-2FatRB1YEtdonyBiUexmZsNPVXZ2CU8Jc8YOs-3D">click here</a>
+<br /><br />
+<small style=3D"color:gray">
+<a href=3D"#" style=3D"color:#ccc;text-decoration:none;cursor:default;">Mee=
+tup, POB 4668 #37895 NY NY USA 10163</a> | support@meetup.com
+</small>
+</div>
+<img src=3D"http://meet.meetup.com/wf/open?upn=3D7XtDdMHRjqIUi4tzSjSp2h-2Bo=
+Tg8yV1h4-2FGX2SHZpIErfwrwVGe7E-2BU-2BmW-2B2ustROAUVUzzRP6AqlCKHqzzxSRB9RW9H=
+R0ceY1SBiUY9D80RXY0QFgSZo4mwNS4JaoqSIujc2z7i4sTn1qKIjXNw0j4TXjiFI8bas81NP-2=
+FHNfLBwmi9Y1TaKehLnYvKu2CSjNhrc83kioA8RYabPkjpE4Xl6oPkhASR0FvgPnOn6cedM-3D"=
+ alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=3D"height:1px !import=
+ant;width:1px !important;border-width:0 !important;margin-top:0 !important;=
+margin-bottom:0 !important;margin-right:0 !important;margin-left:0 !importa=
+nt;padding-top:0 !important;padding-bottom:0 !important;padding-right:0 !im=
+portant;padding-left:0 !important;"/>
+</body></html>
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>color</key>
+	<string>000000</string>
+	<key>date-last-viewed</key>
+	<integer>0</integer>
+	<key>date-received</key>
+	<integer>1510777711</integer>
+	<key>flags</key>
+	<integer>8590195840</integer>
+	<key>remote-id</key>
+	<string>7824</string>
+</dict>
+</plist>

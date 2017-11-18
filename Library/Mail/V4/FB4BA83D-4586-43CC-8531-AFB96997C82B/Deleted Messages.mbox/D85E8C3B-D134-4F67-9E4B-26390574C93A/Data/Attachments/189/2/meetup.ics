@@ -1,0 +1,49 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Meetup//Meetup Events v1.0//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Events - Northern Colorado’s Real Estate Investors Associati
+ on
+X-MS-OLK-FORCEINSPECTOROPEN:TRUE
+BEGIN:VTIMEZONE
+TZID:America/Denver
+X-LIC-LOCATION:America/Denver
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0700
+TZOFFSETTO:-0600
+TZNAME:MDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0700
+TZNAME:MST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+DTSTAMP:20171108T195436Z
+DTSTART;TZID=America/Denver:20171109T174500
+DTEND;TZID=America/Denver:20171109T203000
+STATUS:CONFIRMED
+SUMMARY:Monthly Meeting - The 411 From Wholesalers
+DESCRIPTION:Northern Colorado’s Real Estate Investors Association\nThursd
+ ay\, November 9 at 5:45 PM\n\nGet the 411 on working with wholesalers! A
+ re you thinking about buying from a wholesaler? Do you feel like you nee
+ d a little more information to start...\n\nhttps://www.meetup.com/icoroc
+ kies/events/243045929/
+ORGANIZER;CN=Meetup Reminder:MAILTO:info@meetup.com
+CLASS:PUBLIC
+CREATED:20120501T051040Z
+GEO:40.43;-105.08
+LOCATION:Best Western Crossroads Inn & Conference Center (5542 E US Highw
+ ay 34 \, Loveland\, CO 80537)
+URL:https://www.meetup.com/icorockies/events/243045929/
+SEQUENCE:4
+LAST-MODIFIED:20171019T172731Z
+UID:event_qtqlvcywpbmb@meetup.com
+END:VEVENT
+END:VCALENDAR

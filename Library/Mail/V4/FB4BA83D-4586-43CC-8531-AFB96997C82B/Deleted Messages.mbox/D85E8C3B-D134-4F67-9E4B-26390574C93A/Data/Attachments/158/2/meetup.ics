@@ -1,0 +1,48 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Meetup//Meetup Events v1.0//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Events - Northern Colorado’s Real Estate Investors Associati
+ on
+X-MS-OLK-FORCEINSPECTOROPEN:TRUE
+BEGIN:VTIMEZONE
+TZID:America/Denver
+X-LIC-LOCATION:America/Denver
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0700
+TZOFFSETTO:-0600
+TZNAME:MDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0700
+TZNAME:MST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+DTSTAMP:20171105T164019Z
+DTSTART;TZID=America/Denver:20171111T080000
+DTEND;TZID=America/Denver:20171111T170000
+STATUS:CONFIRMED
+SUMMARY:Real Estate Notes & Paper Summit
+DESCRIPTION:Northern Colorado’s Real Estate Investors Association\nSaturd
+ ay\, November 11 at 8:00 AM\n\nICOR’s Real Estate Summit Education Serie
+ s returns with a focus on where more and more passive investors are goin
+ g. Real Estate Notes & Paper is one o...\n\nhttps://www.meetup.com/icoro
+ ckies/events/243778254/
+ORGANIZER;CN=Meetup Reminder:MAILTO:info@meetup.com
+CLASS:PUBLIC
+CREATED:20170929T164352Z
+GEO:40.43;-105.08
+LOCATION:Embassy Suites Denver Stapleton (4444 Havana St\, Denver\, CO)
+URL:https://www.meetup.com/icorockies/events/243778254/
+SEQUENCE:4
+LAST-MODIFIED:20171012T021101Z
+UID:event_243778254@meetup.com
+END:VEVENT
+END:VCALENDAR

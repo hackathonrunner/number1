@@ -1,0 +1,468 @@
+24185     
+Return-path: <bounces+2693180-1ee3-austindreier=icloud.com@m.dripemail2.com>
+Received: from mr28p00im-smtpin019.mac.com ([17.110.71.18])
+ by ms60015.mac.com (Oracle Communications Messaging Server 8.0.1.2.20170607
+ 64bit (built Jun  7 2017)) with ESMTP id <0OYB00KOFYYL4Z00@ms60015.mac.com>
+ for austindreier@icloud.com; Tue, 24 Oct 2017 14:01:33 +0000 (GMT)
+Original-recipient: rfc822;austindreier@icloud.com
+Received: from o3.m.dripemail2.com (o3.m.dripemail2.com [167.89.40.148])
+ by mr28p00im-smtpin019.me.com
+ (Oracle Communications Messaging Server 8.0.1.2.20170607 64bit (built Jun  7
+ 2017)) with ESMTPS id <0OYB00E9SYY7SD90@mr28p00im-smtpin019.me.com> for
+ austindreier@icloud.com (ORCPT austindreier@icloud.com); Tue,
+ 24 Oct 2017 14:01:33 +0000 (GMT)
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 spamscore=0
+ clxscore=0 suspectscore=78 malwarescore=0 phishscore=0 adultscore=0
+ bulkscore=100 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.0.1-1707230000 definitions=main-1710240198
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10432:,,
+ definitions=2017-10-24_07:,, signatures=0
+Authentication-results: mr21p00im-dmarcmilter009.me.com; dmarc=none
+ header.from=flip2freedom.com
+Authentication-results: mr21p00im-spfmilter001.me.com; spf=pass
+ (mr21p00im-spfmilter001.me.com: domain of
+ bounces+2693180-1ee3-austindreier=icloud.com@m.dripemail2.com designates
+ 167.89.40.148 as permitted sender)
+ smtp.mailfrom=bounces+2693180-1ee3-austindreier=icloud.com@m.dripemail2.com;
+Received-SPF: pass (mr21p00im-spfmilter001.me.com: domain of
+ bounces+2693180-1ee3-austindreier=icloud.com@m.dripemail2.com designates
+ 167.89.40.148 as permitted sender) receiver=mr21p00im-spfmilter001.me.com;
+ client-ip=167.89.40.148; helo=o3.m.dripemail2.com;
+ envelope-from=bounces+2693180-1ee3-austindreier=icloud.com@m.dripemail2.com;
+Authentication-results: mr21p00im-dkimmilter002.me.com;	dkim=pass (1024-bit
+ key) header.d=dripemail2.com header.i=@dripemail2.com header.b=LVA4x9eh;
+	dkim-adsp=none
+DKIM-Signature: v=1; a=rsa-sha1; c=relaxed/relaxed; d=dripemail2.com;
+	h=content-type:from:mime-version:reply-to:subject:to; s=s1;
+	bh=N5UXgKRES0kkoJ+17VrDHX7AqVc=; b=LVA4x9ehop2gvU8puQ8AhQazUoiLT
+	lTCshc1/iVdVlSAwSn+0wthnkqmWqjiY0BFqa3ZqR6Qkkzfl4A5A+Bv903xLsGW8
+	+P5FYqH6lU4HdYd7QUhVRnPU6w2bywCqX1sYZ/6LdasBlTBdDHH4TgVWYMMifo1V
+	o2oCQOLj4R/flY=
+Received: by filter0948p1mdw1.sendgrid.net with SMTP id
+ filter0948p1mdw1-4178-59EF47AB-1B 2017-10-24 14:01:15.502583288 +0000 UTC
+Received: from MjY5MzE4MA
+ (ec2-54-157-133-208.compute-1.amazonaws.com [54.157.133.208])
+	by ismtpd0010p1iad1.sendgrid.net (SG) with HTTP id X4hgInEPSJyGZ6dR-_RaQA	for
+ <austindreier@icloud.com>; Tue, 24 Oct 2017 14:01:15.461 +0000 (UTC)
+Content-type: multipart/alternative;
+ boundary=2025e89d175054769473d089ad8c10a792341b38564fbff563c6cc8887d9
+Date: Tue, 24 Oct 2017 14:01:15 +0000 (UTC)
+From: Sean Terry <sean@flip2freedom.com>
+MIME-version: 1.0
+Reply-to: reply-cn3qmdy4w44xoq4m1sam@in2.getdrip.com
+Subject: =?UTF-8?Q?if_these_KIDS_can_do_this...=F0=9F=8E=89?=
+To: austindreier@icloud.com
+Message-id: <X4hgInEPSJyGZ6dR-_RaQA@ismtpd0010p1iad1.sendgrid.net>
+x-icloud-spam-score: 3311331
+ f=flip2freedom.com;e=m.dripemail2.com;is=yes;ir=no;spf=pass;dkim=pass;dmarc=noPolicy/noPolicy/none;gdwl=absent;pps=ham;clxs=ham;clxw=neutral
+X-CLX-Spam: false
+X-CLX-UnSpecialScore: None
+X-CLX-Score: 0
+X-CLX-Shades: None
+X-MANTSH: 1TEIXR1gYEloaGkNHB0tNT0ReQ0QZHxsSEQpMQxcbHQQbGxsEGx0ZBBkYEBseGh8
+ aEQpMWRcaEQpZTRdkRURPEQpZSRcacRoQGncGBxgacRgSEB4fdwYYGgYaEQpZXhdoY3kRCkNOF
+ 1weeExyBRN5bQFufH1mHXhTHxxoX39BXVhJG1lYZn8FEQpYXBcZBBoEGRgHTRlOE08TGRgFGx0
+ EGxsbBBsfHwQbHxwQGx4aHxoRCl5ZF3hgZVJyEQpNXBcbEh0RCkxaF2l4elJBTREKRVkXaGtrE
+ QpMXxd6BQUFBQUFBQUFHREKTU4XaBEKTEYXY2trEQpDWhcbHB0EEhMEHhoEGx4SEQpCXhcbEQp
+ CRRdmfRtde2JraU0TGxEKQk4XYX9Dem1NRXl+EkcRCkJMF2FBXUAFS3oaSWxhEQpCbBd6cBN5Y
+ 2gTHlABHhEKQkAXZnBaTl8ccERZY0IRCkJYF25HHRtOZGFFGxJAEQpwZxdiekVDckFhfQVLaRA
+ aEQpwaBdnREVfHWEdTV1gbxAaEQpwaBdrXF5AXRJnbURORhAaEQpwaBduHVBpemh4HBNTchAcE
+ xEKcGgXZGhlG3labx5dckEQGhEKcGgXa3hnQhNnZh8FYUUQGhEKcH8XbgFZbRpwR295UxoQHRg
+ RCnBfF2AdXBIZfH95E15bEB0ZEQpwfRdibBtFa1xlRUIYUhAaEQpwfRdnRmhce2N+ZmkeYRAaE
+ QpwfRdnRmhce2N+ZmkeYRAaEQpwfRdrTGRiexgYcENSfBAaEQpwfRdibBtFa1xlRUIYUhAaEQp
+ wfxdlS25fbVN5fEl4TBAfBB4RCnBfF3pZXVJ8emhFHmx6EBsaGhEKcH0XaFlhSAFCa2Vpb3IQG
+ hEKcH0XYmwbRWtcZUVCGFIQGhEKcH0XZ0ZoXHtjfmZpHmEQGhEKcH0XZ0ZoXHtjfmZpHmEQGhE
+ KcH0Xa0xkYnsYGHBDUnwQGhEKcF8XZ3p+flxrekBAZnoQHRsR
+x-dmarc-info: pass=none; dmarc-policy=(nopolicy); s=u0; d=u0
+x-dmarc-policy: none
+X-SG-EID:
+ wDL73fzM24memzQeYD8vNs60a1/y7ttRZFoC2GN2sWB++renPhSvgYDyfDahyRFg3V1p2sfN3lLBwE
+ oqSAZbsso/AptwuL+eFkIfZc8e+bCFg0gKitI8Np3n4OkaUTGNK0LT8MD3fxwhN5+kCPsZ9UzLlzR1
+ jtY5KazGpOBMwZcXXBbxTHT2GwdK51FC8riVYzqETnny0qBK/QjADdAtNLe7FM/czTb5jxom7WBNJM
+ I=
+X-SG-ID:
+ 6l1ICXxVk1U2NQBE+KPgx2jfdFdyCERmoZCZZNwZPcTdyH61ETMElXoq2vTIBIFj/79IDKZNCw8ez4
+ zUHBR36w==
+
+--2025e89d175054769473d089ad8c10a792341b38564fbff563c6cc8887d9
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=UTF-8
+Mime-Version: 1.0
+
+Ya know, if these two college kids can do this so can you...
+
+This is crazy, they made over $3,000 on their first real estate
+deal
+
+using NO cash and NO credit working just a couple hours a week.
+
+I can tell ya, this is NOT rocket science here...
+
+2 College Kids Video PROOF ( http://t.dripemail2.com/c/eyJhY2NvdW50X2lkIjoi=
+OTE4MzExNyIsImRlbGl2ZXJ5X2lkIjoiMTQ3ODk3NjQwMSIsInVybCI6Imh0dHBzOi8vd3d3LmZ=
+saXAyZnJlZWRvbXdlYmNsYXNzLmNvbS90d28tY29sbGVnZS1raWRzP19fcz1zbWlmazdxc2Vxbz=
+htZTZlZGNteiJ9 )
+
+So what are you waiting for???
+
+Register for the FREE training on "specifically
+
+HOW they did this"
+
+REGISTER NOW ( http://t.dripemail2.com/c/eyJhY2NvdW50X2lkIjoiOTE4MzExNyIsIm=
+RlbGl2ZXJ5X2lkIjoiMTQ3ODk3NjQwMSIsInVybCI6Imh0dHBzOi8vd3d3LmZsaXAyZnJlZWRvb=
+XdlYmNsYXNzLmNvbS9vcmdhbmljLXJlZz9fX3M9c21pZms3cXNlcW84bWU2ZWRjbXoifQ )
+
+To Your FREEDOM!!
+
+Sean Terry
+
+P.S. I'm getting tired and will stop doing these webinars at any
+moment,...
+
+you might want to watch it now.
+
+REGISTER NOW ( http://t.dripemail2.com/c/eyJhY2NvdW50X2lkIjoiOTE4MzExNyIsIm=
+RlbGl2ZXJ5X2lkIjoiMTQ3ODk3NjQwMSIsInVybCI6Imh0dHBzOi8vd3d3LmZsaXAyZnJlZWRvb=
+XdlYmNsYXNzLmNvbS9vcmdhbmljLXJlZz9fX3M9c21pZms3cXNlcW84bWU2ZWRjbXoifQ )
+
+---------------------
+To make sure you keep getting these emails, please add
+sean@flip2freedom.com to your address book or whitelist us. Want out of
+the loop? <a href=3D"http://t.dripemail2.com/c/eyJhY2NvdW50X2lkIjoiOTE4MzEx=
+NyIsImRlbGl2ZXJ5X2lkIjoiMTQ3ODk3NjQwMSIsInVybCI6Imh0dHBzOi8vd3d3LmdldGRyaXA=
+uY29tL3N1YnNjcmliZXJzL3NtaWZrN3FzZXFvOG1lNmVkY216L3N1YnNjcmlwdGlvbnM_ZD1jbj=
+NxbWR5NHc0NHhvcTRtMXNhbVx1MDAyNmV4Y2x1ZGVfY2xpY2s9MVx1MDAyNmludGVudD11bnN1Y=
+nNjcmliZVx1MDAyNl9fcz1zbWlmazdxc2VxbzhtZTZlZGNteiJ9">Unsubscribe</a>.
+
+Our postal address: 19420 North 59th Avenue, Glendale, AZ 85308
+
+
+--2025e89d175054769473d089ad8c10a792341b38564fbff563c6cc8887d9
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=UTF-8
+Mime-Version: 1.0
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.=
+w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns=3D"http://www.w3.org/1999/xhtml" style=3D"box-sizing: border-bo=
+x; font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif=
+; font-size: 14px; line-height: 1.5">
+<head>
+<meta name=3D"viewport" content=3D"width=3Ddevice-width">
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8">
+
+</head>
+<body style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: none; =
+background: #ffffff; box-sizing: border-box; font-family: 'Helvetica Neue',=
+ 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; height: 100%; =
+line-height: 1.6; width: 100% !important" bgcolor=3D"#ffffff">
+<style type=3D"text/css">
+img {
+max-width: 100%; margin-bottom: 14px;
+}
+body {
+background-color: #ffffff; -ms-text-size-adjust: 100%; -webkit-text-size-ad=
+just: none; width: 100% !important; height: 100%; line-height: 1.6;
+}
+.ExternalClass {
+width: 100%;
+}
+.ExternalClass {
+line-height: 100%;
+}
+img {
+-ms-interpolation-mode: bicubic;
+}
+a:visited {
+color: purple !important;
+}
+a:hover {
+color: #e2911a !important;
+}
+a:active {
+color: #0d3d62 !important;
+}
+.cta-button:hover {
+color: #ffffff; background-color: #B67A0D; text-decoration: none; border-co=
+lor: #B67A0D; border: 12px solid #B67A0D;
+}
+[owa] .cta-button:hover {
+color: #ffffff; background-color: #B67A0D; text-decoration: none; border-co=
+lor: #B67A0D; border: 12px solid #B67A0D;
+}
+[class=3D"cta-button"]:hover {
+color: #ffffff; background-color: #B67A0D; text-decoration: none; border-co=
+lor: #B67A0D; border: 12px solid #B67A0D;
+}
+.cta-button:visited {
+color: #ffffff; background-color: #B67A0D; text-decoration: none; border-co=
+lor: #B67A0D; border: 12px solid #B67A0D;
+}
+[owa] .cta-button:visited {
+color: #ffffff; background-color: #B67A0D; text-decoration: none; border-co=
+lor: #B67A0D; border: 12px solid #B67A0D;
+}
+[class=3D"cta-button"]:visited {
+color: #ffffff; background-color: #B67A0D; text-decoration: none; border-co=
+lor: #B67A0D; border: 12px solid #B67A0D;
+}
+.cta-button:active {
+color: #ffffff; background-color: #B67A0D; text-decoration: none; border-co=
+lor: #B67A0D; border: 12px solid #B67A0D;
+}
+[owa] .cta-button:active {
+color: #ffffff; background-color: #B67A0D; text-decoration: none; border-co=
+lor: #B67A0D; border: 12px solid #B67A0D;
+}
+[class=3D"cta-button"]:active {
+color: #ffffff; background-color: #B67A0D; text-decoration: none; border-co=
+lor: #B67A0D; border: 12px solid #B67A0D;
+}
+</style>
+<!--[if mso 16]>
+    <style type=3D"text/css">
+        a{
+            text-decoration:none !important;
+        }
+    </style>
+<![endif]-->
+
+<table class=3D"body-wrap" style=3D"background: #ffffff; box-sizing: border=
+-box; font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-se=
+rif; font-size: 14px; line-height: 1.5; mso-table-lspace: 0pt; mso-table-rs=
+pace: 0pt; width: 100%" bgcolor=3D"#ffffff">
+  <tr style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helv=
+etica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+    <td class=3D"container" style=3D"box-sizing: border-box; clear: both !i=
+mportant; display: block !important; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5; marg=
+in: 0; max-width: 600px !important; overflow: visible; vertical-align: top"=
+ valign=3D"top">
+      <div class=3D"content" style=3D"box-sizing: border-box; display: bloc=
+k; font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif=
+; font-size: 14px; line-height: 1.5; margin: 0; max-width: 600px; overflow:=
+ visible">
+        <table class=3D"main" width=3D"100%" cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Hel=
+vetica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5; m=
+so-table-lspace: 0pt; mso-table-rspace: 0pt">
+          <tr style=3D"box-sizing: border-box; font-family: 'Helvetica Neue=
+', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; line-height:=
+ 1.5">
+            <td class=3D"main-content" style=3D"box-sizing: border-box; col=
+or: #222222; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-seri=
+f; font-size: 14px; line-height: 1.5; padding: 25px; vertical-align: top" v=
+align=3D"top">
+              <p style=3D"box-sizing: border-box; font-family: 'Helvetica N=
+eue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; font-weig=
+ht: normal; line-height: 1.5; margin-bottom: 14px">Ya know, if these two co=
+llege kids can do this so can you...<br style=3D"box-sizing: border-box; fo=
+nt-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; fon=
+t-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+This is crazy, they made over $3,000 on their first real estate deal<br sty=
+le=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvetica', H=
+elvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+using <strong style=3D"box-sizing: border-box; font-family: 'Helvetica Neue=
+', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; font-weight:=
+ bold; line-height: 1.5">NO</strong> cash and <strong style=3D"box-sizing: =
+border-box; font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, s=
+ans-serif; font-size: 14px; font-weight: bold; line-height: 1.5">NO</strong=
+> credit working just a couple hours a week.<br style=3D"box-sizing: border=
+-box; font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-se=
+rif; font-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+I can tell ya, this is <strong style=3D"box-sizing: border-box; font-family=
+: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 1=
+4px; font-weight: bold; line-height: 1.5">NOT</strong> rocket science here.=
+..<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helv=
+etica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+<a href=3D"http://t.dripemail2.com/c/eyJhY2NvdW50X2lkIjoiOTE4MzExNyIsImRlbG=
+l2ZXJ5X2lkIjoiMTQ3ODk3NjQwMSIsInVybCI6Imh0dHBzOi8vd3d3LmZsaXAyZnJlZWRvbXdlY=
+mNsYXNzLmNvbS90d28tY29sbGVnZS1raWRzP19fcz1zbWlmazdxc2VxbzhtZTZlZGNteiJ9" st=
+yle=3D"box-sizing: border-box; color: #4477bd; font-family: 'Helvetica Neue=
+', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; line-height:=
+ 1.5; text-decoration: underline"><img alt=3D"" src=3D"https://d1yoaun8syyx=
+xt.cloudfront.net/kq115-vihvpbuqfcbfuzayyfrojqjeueofnekq-v2" style=3D"-ms-i=
+nterpolation-mode: bicubic; box-sizing: border-box; font-family: 'Helvetica=
+ Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; line-he=
+ight: 1.5; margin-bottom: 14px; margin-top: 14px; max-width: 100%"></a><br =
+style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvetica'=
+, Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+<a href=3D"http://t.dripemail2.com/c/eyJhY2NvdW50X2lkIjoiOTE4MzExNyIsImRlbG=
+l2ZXJ5X2lkIjoiMTQ3ODk3NjQwMSIsInVybCI6Imh0dHBzOi8vd3d3LmZsaXAyZnJlZWRvbXdlY=
+mNsYXNzLmNvbS90d28tY29sbGVnZS1raWRzP19fcz1zbWlmazdxc2VxbzhtZTZlZGNteiJ9" st=
+yle=3D"box-sizing: border-box; color: #4477bd; font-family: 'Helvetica Neue=
+', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; line-height:=
+ 1.5; text-decoration: underline">2 College Kids Video PROOF</a><br style=
+=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvetica', Hel=
+vetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+So what are you waiting for???<br style=3D"box-sizing: border-box; font-fam=
+ily: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size=
+: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+Register for the FREE training on "specifically<br style=3D"box-sizing: bor=
+der-box; font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans=
+-serif; font-size: 14px; line-height: 1.5">
+HOW they did this"<br style=3D"box-sizing: border-box; font-family: 'Helvet=
+ica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; line=
+-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+<a href=3D"http://t.dripemail2.com/c/eyJhY2NvdW50X2lkIjoiOTE4MzExNyIsImRlbG=
+l2ZXJ5X2lkIjoiMTQ3ODk3NjQwMSIsInVybCI6Imh0dHBzOi8vd3d3LmZsaXAyZnJlZWRvbXdlY=
+mNsYXNzLmNvbS9vcmdhbmljLXJlZz9fX3M9c21pZms3cXNlcW84bWU2ZWRjbXoifQ" style=3D=
+"box-sizing: border-box; color: #4477bd; font-family: 'Helvetica Neue', 'He=
+lvetica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5; =
+text-decoration: underline">REGISTER NOW</a></p>
+
+<p style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helveti=
+ca', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: normal; li=
+ne-height: 1.5; margin-bottom: 14px">To Your FREEDOM!!</p>
+
+<p style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helveti=
+ca', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: normal; li=
+ne-height: 1.5; margin-bottom: 14px">Sean Terry<br style=3D"box-sizing: bor=
+der-box; font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans=
+-serif; font-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+P.S. I'm getting tired and will stop doing these webinars at any moment,...=
+</p>
+
+<p style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helveti=
+ca', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: normal; li=
+ne-height: 1.5; margin-bottom: 14px">you might want to watch it now.<br sty=
+le=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvetica', H=
+elvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+<a href=3D"http://t.dripemail2.com/c/eyJhY2NvdW50X2lkIjoiOTE4MzExNyIsImRlbG=
+l2ZXJ5X2lkIjoiMTQ3ODk3NjQwMSIsInVybCI6Imh0dHBzOi8vd3d3LmZsaXAyZnJlZWRvbXdlY=
+mNsYXNzLmNvbS9vcmdhbmljLXJlZz9fX3M9c21pZms3cXNlcW84bWU2ZWRjbXoifQ" style=3D=
+"box-sizing: border-box; color: #4477bd; font-family: 'Helvetica Neue', 'He=
+lvetica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5; =
+text-decoration: underline">REGISTER NOW</a><br style=3D"box-sizing: border=
+-box; font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-se=
+rif; font-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+=C2=A0</p>
+
+            </td>
+          </tr>
+        </table>
+      </div>
+=20=20=20=20=20=20
+      <div class=3D"content" style=3D"box-sizing: border-box; display: bloc=
+k; font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif=
+; font-size: 14px; line-height: 1.5; margin: 0; max-width: 600px; overflow:=
+ visible">
+        <table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" style=3D"=
+box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvetica', Helveti=
+ca, Arial, sans-serif; font-size: 14px; line-height: 1.5; mso-table-lspace:=
+ 0pt; mso-table-rspace: 0pt">
+          <tr style=3D"box-sizing: border-box; font-family: 'Helvetica Neue=
+', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; line-height:=
+ 1.5">
+            <td class=3D"footer-content" style=3D"border-top-color: #d0d0d0=
+; border-top-style: solid; border-top-width: 1px; box-sizing: border-box; c=
+lear: both; color: #777; font-family: 'Helvetica Neue', 'Helvetica', 'Arial=
+', sans-serif; font-size: 14px; line-height: 1.5; padding: 25px; vertical-a=
+lign: top; width: 100%" valign=3D"top">
+              To make sure you keep getting these emails, please add sean@f=
+lip2freedom.com to your address book or whitelist us. Want out of the loop?=
+ <a href=3D"http://t.dripemail2.com/c/eyJhY2NvdW50X2lkIjoiOTE4MzExNyIsImRlb=
+Gl2ZXJ5X2lkIjoiMTQ3ODk3NjQwMSIsInVybCI6Imh0dHBzOi8vd3d3LmdldGRyaXAuY29tL3N1=
+YnNjcmliZXJzL3NtaWZrN3FzZXFvOG1lNmVkY216L3N1YnNjcmlwdGlvbnM_ZD1jbjNxbWR5NHc=
+0NHhvcTRtMXNhbVx1MDAyNmV4Y2x1ZGVfY2xpY2s9MVx1MDAyNmludGVudD11bnN1YnNjcmliZV=
+x1MDAyNl9fcz1zbWlmazdxc2VxbzhtZTZlZGNteiJ9">Unsubscribe</a>.<br style=3D"bo=
+x-sizing: border-box; font-family: 'Helvetica Neue', 'Helvetica', Helvetica=
+, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+<br style=3D"box-sizing: border-box; font-family: 'Helvetica Neue', 'Helvet=
+ica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5">
+Our postal address: 19420 North 59th Avenue, Glendale, AZ 85308
+            </td>
+          </tr>
+        </table>
+      </div>
+=20=20=20=20=20=20
+    </td>
+  </tr>
+</table>
+
+<img src=3D"http://o.dripemail2.com/wf/open?upn=3D7XtDdMHRjqIUi4tzSjSp2h-2B=
+oTg8yV1h4-2FGX2SHZpIEpUT1WcYZeziSF1sLE6pr6ZYfLxLZ60GElbILPkS1BnV4kHOq5jhuc1=
+-2BFUWSlbwZuRszCDORrHW8wj7Wym4zHjxET9tgkOHrphX89j1pZPnPovjUHII-2B4p6vRsl9VX=
+lAYvwNnJtKvCIOLncdZcFRsf-2BwYdGzfqTrUq3RrvfrzZ4xde1nsZzdM-2BpbwWzGrpwXIEy3n=
+XjY-2FeyL9Ar27ns1TXsyd-2F7aGS5Z6T-2Foy5Nt4vxm2h-2F5ZmnmSiUokeJcooIp2fpHHQzq=
+0C363QTZIgM-2FGEZ" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=3D"=
+height:1px !important;width:1px !important;border-width:0 !important;margin=
+-top:0 !important;margin-bottom:0 !important;margin-right:0 !important;marg=
+in-left:0 !important;padding-top:0 !important;padding-bottom:0 !important;p=
+adding-right:0 !important;padding-left:0 !important;"/>
+</body>
+</html>
+
+
+--2025e89d175054769473d089ad8c10a792341b38564fbff563c6cc8887d9--
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>date-last-viewed</key>
+	<integer>0</integer>
+	<key>date-received</key>
+	<integer>1508853693</integer>
+	<key>flags</key>
+	<integer>8590195712</integer>
+	<key>remote-id</key>
+	<string>4530</string>
+</dict>
+</plist>

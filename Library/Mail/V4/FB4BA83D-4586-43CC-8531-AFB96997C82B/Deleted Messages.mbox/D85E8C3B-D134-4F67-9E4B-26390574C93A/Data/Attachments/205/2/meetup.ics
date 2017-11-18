@@ -1,0 +1,49 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Meetup//Meetup Events v1.0//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Events - Northern Colorado Real Estate Investor Group
+X-MS-OLK-FORCEINSPECTOROPEN:TRUE
+BEGIN:VTIMEZONE
+TZID:America/Denver
+X-LIC-LOCATION:America/Denver
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0700
+TZOFFSETTO:-0600
+TZNAME:MDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0700
+TZNAME:MST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+DTSTAMP:20171020T013237Z
+DTSTART;TZID=America/Denver:20171025T180000
+DTEND;TZID=America/Denver:20171025T200000
+STATUS:CONFIRMED
+SUMMARY:Finding Amazing Real Estate Investor Deals
+DESCRIPTION:Northern Colorado Real Estate Investor Group\nWednesday\, Oct
+ ober 25 at 6:00 PM\n\nIn this special class we will talk about the types
+  and characteristics of properties that make good investment and Nomad p
+ roperties. We'll go into det...\n\nhttps://www.meetup.com/Northern-Color
+ ado-Real-Estate-Investor-Group/events/239513903/
+ORGANIZER;CN=Meetup Reminder:MAILTO:info@meetup.com
+CLASS:PUBLIC
+CREATED:20160127T174347Z
+GEO:40.52;-105.04
+LOCATION:Fort Collins Board of Realtors (826 W Drake Rd #4\, Fort Collins
+ \, CO)
+URL:https://www.meetup.com/Northern-Colorado-Real-Estate-Investor-Group/e
+ vents/239513903/
+SEQUENCE:2
+LAST-MODIFIED:20170919T221209Z
+UID:event_ttwpplywnbhc@meetup.com
+END:VEVENT
+END:VCALENDAR

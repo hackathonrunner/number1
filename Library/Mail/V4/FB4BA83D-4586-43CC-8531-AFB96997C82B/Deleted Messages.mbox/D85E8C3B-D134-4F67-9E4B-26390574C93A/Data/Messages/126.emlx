@@ -1,0 +1,1426 @@
+62302     
+Return-path:
+ <bounce+9f7de5.3f05f-austindreier=icloud.com@makingemailsgreatagain.com>
+Received: from st11p00im-smtpin007.mac.com ([17.172.80.56])
+ by ms60015.mac.com (Oracle Communications Messaging Server 8.0.1.2.20170607
+ 64bit (built Jun  7 2017)) with ESMTP id <0OYR00085CEGYU50@ms60015.mac.com>
+ for austindreier@icloud.com; Wed, 01 Nov 2017 21:15:53 +0000 (GMT)
+Original-recipient: rfc822;austindreier@icloud.com
+Received: from m142.email.mailgun.net (m142.email.mailgun.net [146.20.191.142])
+ by st11p00im-smtpin007.me.com
+ (Oracle Communications Messaging Server 8.0.1.2.20170607 64bit (built Jun  7
+ 2017)) with ESMTPS id <0OYR00GEACE91CF0@st11p00im-smtpin007.me.com> for
+ austindreier@icloud.com (ORCPT austindreier@icloud.com); Wed,
+ 01 Nov 2017 21:15:52 +0000 (GMT)
+X-Spam-Flag: yes
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 spamscore=0
+ clxscore=-62 suspectscore=74 malwarescore=0 phishscore=0 adultscore=0
+ bulkscore=100 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.0.1-1707230000 definitions=main-1711010274
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10432:,,
+ definitions=2017-11-01_07:,, signatures=0
+Authentication-results: st11p00mm-dmarcmilter001.me.com; dmarc=none
+ header.from=makingemailsgreatagain.com
+Authentication-results: st11p00mm-spfmilter006.mac.com; spf=pass
+ (st11p00mm-spfmilter006.mac.com: domain of
+ bounce+9f7de5.3f05f-austindreier=icloud.com@makingemailsgreatagain.com
+ designates 146.20.191.142 as permitted sender)
+ smtp.mailfrom=bounce+9f7de5.3f05f-austindreier=icloud.com@makingemailsgreatagain.com;
+Received-SPF: pass (st11p00mm-spfmilter006.mac.com: domain of
+ bounce+9f7de5.3f05f-austindreier=icloud.com@makingemailsgreatagain.com
+ designates 146.20.191.142 as permitted sender)
+ receiver=st11p00mm-spfmilter006.mac.com; client-ip=146.20.191.142;
+ helo=m142.email.mailgun.net;
+ envelope-from=bounce+9f7de5.3f05f-austindreier=icloud.com@makingemailsgreatagain.com;
+Authentication-results: st11p00mm-dkimmilter012.mac.com;	dkim=pass (1024-bit
+ key) header.d=makingemailsgreatagain.com header.i=@makingemailsgreatagain.com
+ header.b=E5XFf8vY;	dkim-adsp=pass
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed;
+ d=makingemailsgreatagain.com; q=dns/txt; s=mailo; t=1509570951; h=To:
+ Message-Id: Content-Type: Mime-Version: Subject: From: List-Id:
+ List-Unsubscribe: Date: Sender;
+ bh=vhU0vcgRD1Nec/9IHYz7QoA2Hm9Do4Vn1JvBB2E4DqA=;
+ b=E5XFf8vYTet9SF7jxbTq2QxuTBUgVJf79WAd6M4Vxw9f06mIGQY6bngvgZ8q7kuVL4fHESJd
+ DKMD+CxefePVUjp59E1xTJy+gQiLk4kR4+a24RZsp5eGgbg6Qa4LZJDF2ezyXcL9VRCev6oH
+ tzpW1Swm5it7l5MMf0RbNdbhLUk=
+DomainKey-Signature: a=rsa-sha1; c=nofws; d=makingemailsgreatagain.com;
+ s=mailo; q=dns; h=Sender: Date: List-Unsubscribe: List-Id: From: Subject:
+ Mime-Version: Content-Type: Message-Id: To;
+ b=W+V+BUv85z6obT1fq+/sq2EGEMofW3cGviWIPCl+fXiQUz+cY/EValIF0ANPt7c07kovHz
+ qXCQH/om4a8SIWyCoQSToB8scf3rt2a15XWHa5FjHkqplIgJNuRrkrV6rFtFk9TJB4B7t9ek
+ nPZMBGRxiy62k7vsV1UbLT0s7nvZA=
+Sender: contact@makingemailsgreatagain.com
+Date: Wed, 01 Nov 2017 21:15:51 +0000
+List-Unsubscribe:
+ <mailto:u+mq6tgzrqgvtcm2j5giydcnzrgeydcmrrge2tkmbogeydaobvgexeknzzg42tcqkciy3tancfgqzeejjugbwwc23jnztwk3lbnfwhgz3smvqxiylhmfuw4ltdn5wsm2b5he3dczdbg4ydeyzzgmydiylcmuzgcnrsmuzgentfmfqweyrtmu4sm3j5gm4temrsga2cm4r5mf2xg5djnzshezljmvzcknbqnfrwy33vmqxgg33n@makingemailsgreatagain.com>
+Received: by luna.mailgun.net with SMTP X-Mailgun-List-Id=3922204,
+ 8736809066677; Wed, 01 Nov 2017 21:15:51 +0000
+List-Id: <c_exy7-l86c.makingemailsgreatagain.com>
+Received: by luna.mailgun.net with HTTP; Wed, 01 Nov 2017 21:13:29 +0000
+From: Hillsdale College <contact@makingemailsgreatagain.com>
+Subject: The state of higher education
+MIME-version: 1.0
+Content-type: multipart/alternative; boundary=31c05e50260544c99da25e15cb868902
+Message-id: <20171101211550.100851.E79751ABF704E42B@makingemailsgreatagain.com>
+To: austindreier@icloud.com
+x-icloud-spam-score: 3311341
+ f=makingemailsgreatagain.com;e=makingemailsgreatagain.com;is=yes;ir=no;spf=pass;dkim=pass;dmarc=noPolicy/noPolicy/none;gdwl=absent;pps=ham;clxs=spam;clxw=neutral
+X-CLX-Spam: true
+X-CLX-UnSpecialScore: None
+X-CLX-Score: -62
+X-CLX-Shades: Dark
+X-MANTSH: 1TEIXWV4bG1oaGkdHB0tNT0ReQ0QYExocEQpMQxcbHQQbHRgEGR8EGBIQGx4aHxo
+ RCkxZFwccGBEKWU0XbktYQREKWUkXGnEaEBp3BgceGHEcHBoQGx0ZH3cGBxgaBhoRClleF2tre
+ REKQ04Xek0YWB5+ZEBgekFBZU5BR31BXUV6cmFQRgVkehJCenMRClhcFxkEGgQZGAdNGU4TTxM
+ ZGAUbHQQbHRgEEhkEGxIQGx4aHxoRCl5ZF3hmEx5AEQpNXBcZGxMRCkxaF2lGel4bXREKTU4Xa
+ WgRCkNaFxseHAQYGgQbExsEGx4YEQpCXhcbEQpCRhdgQB9YTmJ4X1tnbxEKQkcXYH4TSRMab0A
+ bGkURCkJcFxsRCl5OFxsRCkJLF2RwBWZvf0Z9bn5fEQpCRRdlZHl+H1gfGFJPbBEKQk4XZHAFZ
+ m9/Rn1ufl8RCkJMF2cTeFwaEkBlTGJfEQpCbBdjUlprRE5PH2VfUhEKQkAXYR5/ZAFrfF9LElM
+ RCkJYF25HHRtOZGFFGxJAEQpwaBdnWX5lWWtHThkTeRAHHhIRCnBoF21IW29If0wBTnJ6EAceE
+ hEKcGgXYFBjbUJiS19mU2UQBx4SEQpwaBdgZl1zTl9HfFxtGRAHHhIRCnBoF2BCBVxLG0tdAVJ
+ yEAceEhEKcH8XbVNeeF5eZR9hGUUQBxwaEQpwXxd6S3taYXpbYEYabxAaEQpwfRdmRmhuE0ZwR
+ UxQQhAaEQpwXxdkXVgFf0wYcEBlGBAHGRoRCnB9F2ZvS09YEh59AU17EBoRCnBsF2l5eh1tG0t
+ kHFkfEAcTBB0RCm1+FxoRClhNF0sR
+x-dmarc-info: pass=none; dmarc-policy=(nopolicy); s=u0; d=u0
+x-dmarc-policy: none
+X-Mailgun-Sending-Ip: 146.20.191.142
+X-Mailgun-Sid: WyI2MDVlYSIsICJhdXN0aW5kcmVpZXJAaWNsb3VkLmNvbSIsICIzZjA1ZiJd
+X-Mailgun-List-Id: 3922204
+X-Mailgun-List-Address: c_exy7-l86c@makingemailsgreatagain.com
+X-Mailgun-Track-Opens: true
+X-Mailgun-Track-Clicks: true
+X-Mailgun-Tag: 11012017_HDHigherEducationSurvey_RL_D
+X-Mailgun-Tag: TRL_HL_D
+X-Mailgun-Tag: TRLHL
+
+--31c05e50260544c99da25e15cb868902
+Content-Type: text/plain; charset="utf-8"
+Mime-Version: 1.0
+Content-Transfer-Encoding: quoted-printable
+
+<html><head><meta name=3D"viewport" content=3D"width=3Ddevice-width, initia=
+l-scale=3D1, minimum-scale=3D1"><meta http-equiv=3D"Content-Type" content=
+=3D"text/html; charset=3DUTF-8" /></head><body><p><!--rpcampaign: RL0102201=
+711014--></p>
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" align=3D"center" st=
+yle=3D"max-width:600px;width:100%;margin-top:0;margin-bottom:0;margin-right=
+:auto;margin-left:auto;border-spacing:0;border-collapse:collapse;background=
+-color:#fff;mso-table-lspace:0;mso-table-rspace:0;">
+<tr>
+<td>
+<style type=3D"text/css" id=3D"hs-inline-css">
+<p>            /* =3D=3D=3D=3D Page Styles =3D=3D=3D=3D */</p>
+<p>            body, #backgroundTable {
+                background-color: #f2f2f2; /* Use body to determine backgro=
+und color */
+                font-family: sans-serif;
+            }</p>
+<p>            #templateTable {
+                width: 600px;
+                background-color: #ffffff;
+                -webkit-font-smoothing: antialiased;
+            }</p>
+<p>            h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+                color:#444444;
+                display:block;
+                font-family: sans-serif;
+                font-weight:bold;
+                line-height:100%;
+                margin-top:0;
+                margin-right:0;
+                margin-bottom:10px;
+                margin-left:0;
+                text-align:left;
+            }</p>
+<p>            h1, .h1 {
+                font-size:26px;
+            }</p>
+<p>            h2, .h2 {
+                font-size:20px;
+            }</p>
+<p>            h3, .h3 {
+                font-size:15px;
+            }</p>
+<p>            h4, .h4 {
+                font-size:13px;
+            }</p>
+<p>            h5, .h5 {
+                font-size:11px;
+            }</p>
+<p>            h6, .h6 {
+                font-size:10px;
+            }</p>
+<p>            /* =3D=3D=3D=3D Header Styles =3D=3D=3D=3D */</p>
+<p>            #headerTable {
+                background-color: #f2f2f2;
+                color:#444444;
+                font-family:sans-serif;
+                font-size:10px;
+                line-height:120%;
+                text-align:right;
+                border-collapse: separate !important;
+                padding-right: 0px;
+            }</p>
+<p>            #headerTable a:link, #headerTable a:visited, /* Yahoo! Mail =
+Override */ #headerTable a .yshortcuts /* Yahoo! Mail Override */{
+                font-weight:normal;
+                text-decoration:underline;
+            }</p>
+<p>            /* =3D=3D=3D=3D Template Wrapper Styles =3D=3D=3D=3D */</p>
+<p>            #contentCell {
+                padding: 10px 20px;
+                background-color: #f2f2f2;
+            }</p>
+<p>            #contentTableOuter {
+                border-collapse: separate !important;</p>
+<p>                background-color: #ffffff;</p>
+<p>                box-shadow: 0px 1px rgba(0, 0, 0, 0.1);</p>
+<p>                padding: 0px;
+            }</p>
+<p>            #contentTableInner {
+                width: 600px;
+            }</p>
+<p>            /* =3D=3D=3D=3D Body Styles =3D=3D=3D=3D */</p>
+<p>            .bodyContent {
+                color:#444444;
+                font-family:sans-serif;
+                font-size: 15px;
+                line-height:150%;
+                text-align:left;
+            }</p>
+<p>            /* =3D=3D=3D=3D Column Styles =3D=3D=3D=3D */</p>
+<p>            table.columnContentTable {
+                border-collapse:separate !important;
+                border-spacing:0;</p>
+<p>                background-color: #ffffff;
+            }</p>
+<p>            td[class~=3D"columnContent"] {
+                color:#444444;
+                font-family:sans-serif;
+                font-size:15px;
+                line-height:120%;
+                padding-top:20px;
+                padding-right:20px;
+                padding-bottom:20px;
+                padding-left:20px;
+            }</p>
+<p>            /* =3D=3D=3D=3D Footer Styles =3D=3D=3D=3D */</p>
+<p>            #footerTable {
+                background-color: #f2f2f2;
+            }</p>
+<p>            #footerTable a {
+                color: #999999;
+            }</p>
+<p>            #footerTable {
+                color:#999999;
+                font-family:sans-serif;
+                font-size:12px;
+                line-height:120%;
+                padding-top:20px;
+                padding-right:20px;
+                padding-bottom:20px;
+                padding-left:20px;
+                text-align:center;
+            }</p>
+<p>            #footerTable a:link, #footerTable a:visited, /* Yahoo! Mail =
+Override */ #footerTable a .yshortcuts /* Yahoo! Mail Override */{
+                font-weight:normal;
+                text-decoration:underline;
+            }</p>
+<p>            .hs-image-social-sharing-24 {
+                max-width: 24px;
+                max-height: 24px;
+            }</p>
+<p>            /* =3D=3D=3D=3D Standard Resets =3D=3D=3D=3D */
+            .ExternalClass{
+                width:100%;
+            } /* Force Hotmail to display emails at full width */
+            .ExternalClass, .ExternalClass p, .ExternalClass span, .Externa=
+lClass font, .ExternalClass td, .ExternalClass div {
+                line-height: 100%;
+            } /* Force Hotmail to display normal line spacing */
+            body, table, td, p, a, li, blockquote{
+                -webkit-text-size-adjust:100%;
+                -ms-text-size-adjust:100%;
+            } /* Prevent WebKit and Windows mobile changing default text si=
+zes */
+            table, td {
+                mso-table-lspace:0pt;
+                mso-table-rspace:0pt;
+            } /* Remove spacing between tables in Outlook 2007 and up */
+            img {
+                vertical-align: bottom;
+                -ms-interpolation-mode:bicubic;
+            } /* Allow smoother rendering of resized image in Internet Expl=
+orer */</p>
+<p>            /* Reset Styles */
+            body {
+                margin:0;
+                padding:0;
+            }
+            table {
+                border-collapse:collapse !important;
+            }
+            body, #backgroundTable, #bodyCell{
+                height:100% !important;
+                margin:0;
+                padding:0;
+                width:100% !important;
+            }
+            a:link, a:visited {
+                border-bottom: none;
+            }</p>
+<p>            /* iOS automatically adds a link to addresses */
+            /* Style the footer with the same color as the footer text */
+            #footer a {
+                color: #999999;;
+                -webkit-text-size-adjust: none;
+                text-decoration: underline;
+                font-weight: normal
+            }</p>
+<p>            /* Hide preview text on rendering */
+            #preview_text {
+                display: none;
+            }
+        /*]]>*/
+    </style>
+<style type=3D"text/css">
+<p>            /* =3D=3D=3D=3D Mobile Styles =3D=3D=3D=3D */</p>
+<p>            /* Constrain email width for small screens */
+            @media screen and (max-width: 650px) {
+                table[id=3D"backgroundTable"] {
+                    width: 95% !important;
+                }</p>
+<p>                table[id=3D"templateTable"] {
+                    max-width:600px !important;
+                    width:100% !important;
+                }</p>
+<p>                table[id=3D"contentTableInner"] {
+                    max-width:600px !important;
+                    width:100% !important;
+                }</p>
+<p>                #contentCell {
+                    padding: 10px 10px !important;
+                }</p>
+<p>                #headerTable {
+                    padding-right: 0.0px !important;
+                }</p>
+<p>                #contentTableOuter {
+                    padding: 0.0px !important;
+                }
+            }</p>
+<p>            @media only screen and (max-width: 480px) {
+                /* =3D=3D=3D=3D Client-Specific Mobile Styles =3D=3D=3D=3D =
+*/
+                body, table, td, p, a, li, blockquote{
+                    -webkit-text-size-adjust:none !important;
+                } /* Prevent Webkit platforms from changing default text si=
+zes */
+                body{
+                    width:100% !important;
+                    min-width:100% !important;
+                } /* Prevent iOS Mail from adding padding to the body */</p>
+<p>                /* =3D=3D=3D=3D Mobile Reset Styles =3D=3D=3D=3D */
+                td[id=3D"bodyCell"] {
+                    padding:10px !important;
+                }</p>
+<p>                /* =3D=3D=3D=3D Mobile Template Styles =3D=3D=3D=3D */</=
+p>
+<p>                table[id=3D"templateTable"] {
+                    max-width:600px !important;
+                    width:100% !important;
+                }</p>
+<p>                table[id=3D"contentTableInner"] {
+                    max-width:600px !important;
+                    width:100% !important;
+                }</p>
+<p>                /* =3D=3D=3D=3D Image Alignment Styles =3D=3D=3D=3D */</=
+p>
+<p>                h1, .h1 {
+                    font-size:26px !important;
+                    line-height:125% !important;
+                }</p>
+<p>                h2, .h2 {
+                    font-size:20px !important;
+                    line-height:125% !important;
+                }</p>
+<p>                h3, .h3 {
+                    font-size:15px !important;
+                    line-height:125% !important;
+                }</p>
+<p>                h4, .h4 {
+                    font-size:13px !important;
+                    line-height:125% !important;
+                }</p>
+<p>                h5, .h5 {
+                    font-size:11px !important;
+                    line-height:125% !important;
+                }</p>
+<p>                h6, .h6 {
+                    font-size:10px !important;
+                    line-height:125% !important;
+                }</p>
+<p>                .hide {
+                    display:none !important;
+                } /* Hide to save space */</p>
+<p>                /* =3D=3D=3D=3D Body Styles =3D=3D=3D=3D */</p>
+<p>                td[class=3D"bodyContent"] {
+                    font-size:16px !important;
+                    line-height:145% !important;
+                }</p>
+<p>                /* =3D=3D=3D=3D Footer Styles =3D=3D=3D=3D */</p>
+<p>                td[id=3D"footerTable"]{
+                    padding-left: 0px !important;
+                    padding-right: 0px !important;
+                    font-size:12px !important;
+                    line-height:145% !important;
+                }</p>
+<p>                /* =3D=3D=3D=3D Image Alignment Styles =3D=3D=3D=3D */</=
+p>
+<p>                table[class=3D"alignImageTable"] {
+                    width: 100% !important;
+                }</p>
+<p>                td[class=3D"imageTableTop"] {
+                    display: none !important;
+                    /*padding-top: 10px !important;*/
+                }
+                td[class=3D"imageTableRight"] {
+                    display: none !important;
+                }
+                td[class=3D"imageTableBottom"] {
+                    padding-bottom: 10px !important;
+                }
+                td[class=3D"imageTableLeft"] {
+                    display: none !important;
+                }</p>
+<p>                /* =3D=3D=3D=3D Column Styles =3D=3D=3D=3D */</p>
+<p>                td[class~=3D"column"] {
+                    display: block !important;
+                    width: 100% !important;
+                    padding-top: 0 !important;
+                    padding-right: 0 !important;
+                    padding-bottom: 0 !important;
+                    padding-left: 0 !important;
+                }</p>
+<p>                td[class~=3DcolumnContent] {
+                    font-size:14px !important;
+                    line-height:145% !important;</p>
+<p>                    padding-top: 10px !important;
+                    padding-right: 10px !important;
+                    padding-bottom: 10px !important;
+                    padding-left: 10px !important;
+                }</p>
+<p>                #contentCell {
+                    padding: 10px 0px !important;
+                }</p>
+<p>                #headerTable {
+                    padding-right: 0.0px !important;
+                }</p>
+<p>                #contentTableOuter {
+                    padding: 0.0px !important;
+                }
+                .expand {width:100% !important;}
+            }</p>
+<p>            #preview_text {
+                display: none;
+            }
+        /*]]>*/
+    </style>
+<p>    </head><br />
+    <body leftmargin=3D"0" marginwidth=3D"0" topmargin=3D"0" marginheight=
+=3D"0" offset=3D"0" style=3D"background-color:#f2f2f2; font-family:sans-ser=
+if; -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; height:100% !=
+important; margin:0; padding:0; width:100% !important" bgcolor=3D"#f2f2f2" =
+height=3D"100% !important" width=3D"100% !important"></p>
+<div id=3D"preview_text" style=3D"display:none!important"></div>
+<tbody>
+<tr>
+<td align=3D"center" valign=3D"top" id=3D"bodyCell" style=3D"-webkit-text-s=
+ize-adjust:100%; -ms-text-size-adjust:100%; mso-table-lspace:0pt; mso-table=
+-rspace:0pt; height:100% !important; margin:0; padding:0; width:100% !impor=
+tant" height=3D"100% !important" width=3D"100% !important">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" id=3D"templateTable=
+" style=3D"-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; mso-ta=
+ble-lspace:0pt; mso-table-rspace:0pt; border-collapse:collapse !important; =
+width:600px; background-color:#ffffff; -webkit-font-smoothing:antialiased" =
+width=3D"600" bgcolor=3D"#ffffff">
+<tbody>
+<tr>
+<td align=3D"center" valign=3D"top" style=3D"-webkit-text-size-adjust:100%;=
+ -ms-text-size-adjust:100%; mso-table-lspace:0pt; mso-table-rspace:0pt">
+<div class=3D"header-container-wrapper">
+        </div>
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" id=
+=3D"headerTable" style=3D"-webkit-text-size-adjust:100%; -ms-text-size-adju=
+st:100%; mso-table-lspace:0pt; mso-table-rspace:0pt; background-color:#f2f2=
+f2; color:#444444; font-family:sans-serif; font-size:10px; line-height:120%=
+; text-align:right; border-collapse:separate !important; padding-right:0px"=
+ bgcolor=3D"#f2f2f2" align=3D"right">
+<tbody>
+<tr>
+<td align=3D"left" valign=3D"top" class=3D"bodyContent" width=3D"100%" cols=
+pan=3D"12" style=3D"-webkit-text-size-adjust:100%; -ms-text-size-adjust:100=
+%; mso-table-lspace:0pt; mso-table-rspace:0pt; color:#444444; font-family:s=
+ans-serif; font-size:15px; line-height:150%; text-align:left">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" clas=
+s=3D"templateColumnWrapper" style=3D"-webkit-text-size-adjust:100%; -ms-tex=
+t-size-adjust:100%; mso-table-lspace:0pt; mso-table-rspace:0pt; border-coll=
+apse:collapse !important">
+<tbody>
+<tr>
+<td align=3D"left" valign=3D"top" colspan=3D"12" width=3D"100.0%" class=3D"=
+column" style=3D"-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; =
+mso-table-lspace:0pt; mso-table-rspace:0pt; text-align:left; font-family:sa=
+ns-serif; font-size:15px; line-height:1.5em; color:#444444">
+<div class=3D"widget-span widget-type-email_view_as_web_page " style=3D"" d=
+ata-widget-type=3D"email_view_as_web_page"></div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td align=3D"center" valign=3D"top" id=3D"contentCell" style=3D"-webkit-tex=
+t-size-adjust:100%; -ms-text-size-adjust:100%; mso-table-lspace:0pt; mso-ta=
+ble-rspace:0pt; padding:10px 20px; background-color:#f2f2f2" bgcolor=3D"#f2=
+f2f2">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" id=
+=3D"contentTableOuter" style=3D"-webkit-text-size-adjust:100%; -ms-text-siz=
+e-adjust:100%; mso-table-lspace:0pt; mso-table-rspace:0pt; border-collapse:=
+separate !important; background-color:#ffffff; box-shadow:0px 1px rgba(0, 0=
+, 0, 0.1); padding:0px; border:1px solid #cccccc; border-bottom:1px solid #=
+acacac" bgcolor=3D"#ffffff">
+<tbody>
+<tr>
+<td align=3D"center" valign=3D"top" style=3D"-webkit-text-size-adjust:100%;=
+ -ms-text-size-adjust:100%; mso-table-lspace:0pt; mso-table-rspace:0pt">
+<div class=3D"body-container-wrapper">
+        </div>
+<table>
+<tr>
+<td>
+<p><center><a href=3D"http://email.makingemailsgreatagain.com/c/eJw9j0trxDA=
+MhH-Ncwzyq8kefNglCTnsqe3deG0lMc0L22nov68JtCChYRB8M07xAeRQeMWAVpQCZZRKCSUFqC=
+Ut2-pWSXp_dBWIVrAHEbCYL7-OuBg_xzGgSWY0fi3tthSTYjhwJ-D1khypgOrmBDdDZWsJfKitK=
+xbFb4wxEMWsppT2SPidsC7PeZ5lwIgm2KlcMWUr5J38PEdnZtSTHycMGt1hTfLbquMRvvGH8O5I=
+i47bESwS3uxhizvalEMS9kYYB14XQZkjZssF9BhyC2_n7XBX6qSu3rm_7pv-grR_jI8Lod-fusl=
+_n_n2_7J__gIJxmWS;utm_medium=3Demail&#038;utm_content=3DAE_CInbox110117&#03=
+8;utm_campaign=3Dhighereducationsurvey&#038;appeal_code=3DMK817EM3"><img sr=
+c=3D"http://email.makingemailsgreatagain.com/c/eJw9T7tuxCAQ_Bq7RCz4dQXFnc4n=
+F66S9BY2CybBcML4lOTrg1xkNdKONKPRjBJc01qXVjAKLQAFBlDXlAClXQ2kby9tDdfbo6VVX7F=
+bUdFNfllvcJPW7SaiTNJI68kStnIVQOcLNB2FmTPGJOeNxAY7vdB8OEO5CX7JCq1KJ9aUnnvBrw=
+V7ZKjZ_L6s_g5g-UwWFw6lY_CJeExZjtasSUfEzAfr3K6kwzGYQD6fpoxCHnuyXkW0GHNLewacr=
+ZI4d-V903AfcgzGXh2LTDb49yO-8Gd6G6d79n3kP_zTYfwDS0FZwQ" height=3D"114" width=
+=3D"263"></a></center></p>
+</td>
+</tr>
+</table>
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" id=3D"contentTableI=
+nner" style=3D"-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; ms=
+o-table-lspace:0pt; mso-table-rspace:0pt; border-collapse:collapse !importa=
+nt; width:600px" width=3D"600">
+<tbody>
+<tr>
+<td align=3D"left" valign=3D"top" class=3D"bodyContent" width=3D"100%" cols=
+pan=3D"12" style=3D"-webkit-text-size-adjust:100%; -ms-text-size-adjust:100=
+%; mso-table-lspace:0pt; mso-table-rspace:0pt; color:#444444; font-family:s=
+ans-serif; font-size:15px; line-height:150%; text-align:left">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" clas=
+s=3D"templateColumnWrapper" style=3D"-webkit-text-size-adjust:100%; -ms-tex=
+t-size-adjust:100%; mso-table-lspace:0pt; mso-table-rspace:0pt; border-coll=
+apse:collapse !important">
+<tbody>
+<tr>
+<td align=3D"left" valign=3D"top" colspan=3D"12" width=3D"100.0%" class=3D"=
+column" style=3D"-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; =
+mso-table-lspace:0pt; mso-table-rspace:0pt; text-align:left; font-family:sa=
+ns-serif; font-size:15px; line-height:1.5em; color:#444444">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" styl=
+e=3D"-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; mso-table-ls=
+pace:0pt; mso-table-rspace:0pt; border-collapse:separate !important; border=
+-spacing:0; background-color:#ffffff" class=3D" columnContentTable" bgcolor=
+=3D"#ffffff">
+<tbody>
+<tr>
+<td align=3D"left" valign=3D"top" class=3D"columnContent widget-span widget=
+-type-rich_text" style=3D"-webkit-text-size-adjust:100%; -ms-text-size-adju=
+st:100%; mso-table-lspace:0pt; mso-table-rspace:0pt; text-align:left; paddi=
+ng:0; font-family:sans-serif; font-size:15px; line-height:1.5em; color:#444=
+444; padding:0px 25px 25px 25px" data-widget-type=3D"rich_text">
+<div>&nbsp;</div>
+<div class=3D"layout-widget-wrapper">
+<div id=3D"hs_cos_wrapper_module_1426009925052517" class=3D"hs_cos_wrapper =
+hs_cos_wrapper_widget hs_cos_wrapper_type_rich_text" style=3D"color: inheri=
+t; font-size: inherit; line-height: inherit; margin: inherit; padding: inhe=
+rit" data-hs-cos-general-type=3D"widget" data-hs-cos-type=3D"rich_text">
+<table>
+<tr>
+<td style=3D"width: 50%" rowspan=3D"2" class=3D"expand">
+<p style=3D"margin-bottom: 1em; -webkit-text-size-adjust:100%; -ms-text-siz=
+e-adjust:100%">Fellow American,</p>
+<p style=3D"margin-bottom: 1em; -webkit-text-size-adjust:100%; -ms-text-siz=
+e-adjust:100%">I=E2=80=99m sure you=E2=80=99ve seen it in the national news=
+, but I=E2=80=99d like to reiterate: There is serious hostility towards the=
+ founding principles of liberty on college campuses.</p>
+<p style=3D"margin-bottom: 1em; -webkit-text-size-adjust:100%; -ms-text-siz=
+e-adjust:100%">Many college students are not taught the true meaning of ter=
+ms like =E2=80=9CFreedom=E2=80=9D and =E2=80=9CEquality.=E2=80=9D They are =
+accepting false promises of free college and health care and voting for can=
+didates who wish to embrace that fantasy. This is evidenced by the voting r=
+ecords of millennials in the last election, where <b>many more voted for Be=
+rnie Sanders in the primaries than both Clinton and Trump combined.</b></p>
+<p style=3D"margin-bottom: 1em; -webkit-text-size-adjust:100%; -ms-text-siz=
+e-adjust:100%">Worst of all, students on college campuses refuse to engage =
+with those whom they disagree. Instead, many resort to intimidation, threat=
+s, and rioting in a manner that incites violence. </p>
+<p style=3D"margin-bottom: 1em; -webkit-text-size-adjust:100%; -ms-text-siz=
+e-adjust:100%">I=E2=80=99m curious to know what you think about the state o=
+f higher education in America. If you have a few minutes, I=E2=80=99d love =
+to ask you a few questions about the state of America=E2=80=99s education s=
+ystem, and whether the damage to it can be repaired.</p>
+<p style=3D"margin-bottom: 1em; -webkit-text-size-adjust:100%; -ms-text-siz=
+e-adjust:100%">Take the survey now >> <a href=3D"http://email.makingemailsg=
+reatagain.com/c/eJw9j0trxDAMhH-Ncwzyq8kefNglCTnsqe3deG0lMc0L22nov68JtCChYRB=
+8M07xAeRQeMWAVpQCZZRKCSUFqCUt2-pWSXp_dBWIVrAHEbCYL7-OuBg_xzGgSWY0fi3tthSTYj=
+hwJ-D1khypgOrmBDdDZWsJfKitKxbFb4wxEMWsppT2SPidsC7PeZ5lwIgm2KlcMWUr5J38PEdnZ=
+tSTHycMGt1hTfLbquMRvvGH8O5Ii47bESwS3uxhizvalEMS9kYYB14XQZkjZssF9BhyC2_n7XBX=
+6qSu3rm_7pv-grR_jI8Lod-fusl_n_n2_7J__gIJxmWS;utm_medium=3Demail&#038;utm_co=
+ntent=3DAE_CInbox110117&#038;utm_campaign=3Dhighereducationsurvey&#038;appe=
+al_code=3DMK817EM3"><b>http://email.makingemailsgreatagain.com/c/eJw9T8FqxC=
+AU_JrkGNToJjl42GWz5LCntnd51WeUNUlR09C_rwRaeMN7PGaGGSNbS4StvWSEdpQSyigVgjSUk=
+F7QZuyGTtDr7dERPnJ2qzhZ4OXXGRfwIc0RIcMMfm30ttROGvjsL9ZwawcGQvN-aFH39iIEWK6t=
+qBfZDowxwusgXc5fqWqvFXuUOY6jiZgQonbNirm8YoHzISQDAZXzs8Oo0Owast9Wlfb4jT91lLC=
+n7FcT0WMsCb0O227ORFmenUo3Nd2n02D807-fcvX2VPfC-yh7-j-n5y8ewVpd</b></a></p>
+<p align=3D"center"><center></p>
+<table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" alig=
+n=3D"center">
+<tbody align=3D"center">
+<tr>
+<td>
+<div align=3D"center">
+        <!--[if mso]>
+          <v:roundrect xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:w=3D=
+"urn:schemas-microsoft-com:office:word" href=3D"http://email.makingemailsgr=
+eatagain.com/c/eJw9UEFuwyAQfI19tAAbkxx8SBpHrppc2t4RgbWNasAC3LS_L3GTSKxYzaxm=
+dkc1ZY9on-uGIMwwRphgTCkqMEIbiouWbRnFu_2RoaqtyD6rkBFf2g5ghJ7C4EFEMQhtC-lMPjZ=
+S0g2BS12hCvfkgqEGwqpaip5SSOq5acotIQRV-dSMMc4hK3cZOaZ3vV4LDwGEl2NhISbIpxr1NA=
+UlJuCjHkbwHNQiRdTO8rD4b_jNyuMSDQ9u8RKy8jB7F2aQMS2ZkfpGGVB6MYlal76D0tkINiZ01=
+_KXV3txP7fzMXvwwsxCDzYN_Bs_fe-2pBbzDGJKSurme37bYNaey9w3YgnJXnnQ4FNiWk5uUWtC=
+sVkzTlnz7tCtuu1D92PV5e8nfkhzn-nvnm13-gPEm4vK" style=3D"height:36px;v-text-a=
+nchor:middle;width:230px;" arcsize=3D"5%" strokecolor=3D"#093365" fillcolor=
+=3D"#093365">
+            <w:anchorlock></w:anchorlock>
+            <center style=3D"color:#ffffff;font-family:Helvetica, Arial,Hel=
+vetica;font-size:16px;">Take the Survey</center>
+          </v:roundrect>
+        <![endif]--><br />
+      <a href=3D"http://email.makingemailsgreatagain.com/c/eJw9j0trxDAMhH-N=
+cwzyq8kefNglCTnsqe3deG0lMc0L22nov68JtCChYRB8M07xAeRQeMWAVpQCZZRKCSUFqCUt2-p=
+WSXp_dBWIVrAHEbCYL7-OuBg_xzGgSWY0fi3tthSTYjhwJ-D1khypgOrmBDdDZWsJfKitKxbFb4=
+wxEMWsppT2SPidsC7PeZ5lwIgm2KlcMWUr5J38PEdnZtSTHycMGt1hTfLbquMRvvGH8O5Ii47bE=
+SwS3uxhizvalEMS9kYYB14XQZkjZssF9BhyC2_n7XBX6qSu3rm_7pv-grR_jI8Lod-fusl_n_n2=
+_7J__gIJxmWS;utm_medium=3Demail&#038;utm_content=3DAE_CInbox110117&#038;utm=
+_campaign=3Dhighereducationsurvey&#038;appeal_code=3DMK817EM3" style=3D"mar=
+gin:3px;background-color:#093365;border:1px solid #093365;border-radius:3px=
+;color:#ffffff;display:inline-block;font-family:Helvetica;font-size:16px;li=
+ne-height:44px;text-align:center;text-decoration:none;width:230px;-webkit-t=
+ext-size-adjust:none;mso-hide:all;"><strong>Take the Survey</strong></a></p=
+></div>
+</td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<p style=3D"margin-bottom: 1em; -webkit-text-size-adjust:100%; -ms-text-siz=
+e-adjust:100%">Warm Regards,</p>
+<p style=3D"margin-bottom: 1em; -webkit-text-size-adjust:100%; -ms-text-siz=
+e-adjust:100%"><img src=3D"http://email.makingemailsgreatagain.com/c/eJw9UD=
+1vgzAQ_TWwBZ3PBseDh0SAGDK13ZHBBqyCiYyplH_fa4ZKp3sf95Z7VvMJyin3GoFJxoAhY2UJB=
+QO4lqxopJIlu91bCaIReM8EbObbh9ltxq_HHJ1JZjY-FOO-5YuejEWUcmAjKDmiMANXblCWvCtB=
+lW-aK0QEka96SemZ8VuGLc1oAxbLORzPPRXBJbJI0eZKygqJTH51FwSJlahKoS6zn8jt9vNwfUs=
+3EquJ8WViCJfDz8VfgLcp4zUTqIBXikmQVR61OY_kg43Ou0gv-XHdT_t-Iel3CVRG39WdnxcXG3=
+uOJvk9fJ7xx736j0dfU-6LsPun3eMXpJljXg" alt=3D"larryarnn-sig" width=3D"120" s=
+tyle=3D"vertical-align:bottom; -ms-interpolation-mode:bicubic; width:120px;=
+ max-width:120px"></p>
+<div>Larry P. Arnn</div>
+<div>President, Hillsdale College</div>
+<div>Pursuing Truth=E2=80=94Defending Liberty since 1844</div>
+</div></div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td align=3D"center" valign=3D"top" style=3D"-webkit-text-size-adjust:100%;=
+ -ms-text-size-adjust:100%; mso-table-lspace:0pt; mso-table-rspace:0pt">
+<div class=3D"footer-container-wrapper">
+        </div>
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" id=
+=3D"footerTable" style=3D"-webkit-text-size-adjust:100%; -ms-text-size-adju=
+st:100%; mso-table-lspace:0pt; mso-table-rspace:0pt; border-collapse:collap=
+se !important; background-color:#f2f2f2; color:#999999; font-family:sans-se=
+rif; font-size:12px; line-height:120%; padding-top:20px; padding-right:20px=
+; padding-bottom:20px; padding-left:20px; text-align:center" bgcolor=3D"#f2=
+f2f2" align=3D"center">
+<tbody>
+<tr>
+<td align=3D"left" valign=3D"top" class=3D"bodyContent" width=3D"100%" cols=
+pan=3D"12" style=3D"-webkit-text-size-adjust:100%; -ms-text-size-adjust:100=
+%; mso-table-lspace:0pt; mso-table-rspace:0pt; color:#444444; font-family:s=
+ans-serif; font-size:15px; line-height:150%; text-align:left">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" clas=
+s=3D"templateColumnWrapper" style=3D"-webkit-text-size-adjust:100%; -ms-tex=
+t-size-adjust:100%; mso-table-lspace:0pt; mso-table-rspace:0pt; border-coll=
+apse:collapse !important">
+<tbody>
+<tr>
+<td align=3D"left" valign=3D"top" colspan=3D"12" width=3D"100.0%" class=3D"=
+column" style=3D"-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; =
+mso-table-lspace:0pt; mso-table-rspace:0pt; text-align:left; font-family:sa=
+ns-serif; font-size:15px; line-height:1.5em; color:#444444">
+<div class=3D"widget-span widget-type-email_can_spam " style=3D"" data-widg=
+et-type=3D"email_can_spam">
+<p id=3D"footer" style=3D"margin-bottom: 1em; -webkit-text-size-adjust:100%=
+; -ms-text-size-adjust:100%; font-family:Geneva, Verdana, Arial, Helvetica,=
+ sans-serif; text-align:center; font-size:12px; line-height:1.34em; color:#=
+999999; display:block" align=3D"center">Hillsdale College &nbsp;&nbsp;33 Ea=
+st College St &nbsp; &nbsp;Hillsdale, &nbsp;MI &nbsp;&nbsp;49242 &nbsp;&nbs=
+p;USA </p>
+</p></div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td style=3D"-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; mso-=
+table-lspace:0pt; mso-table-rspace:0pt"></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table style=3D"text-align: center; padding: 15px 0px 0px 0px;" width=3D"10=
+0%" align=3D"center">
+<tbody>
+<tr>
+<td style=3D"padding: 0px 0px 5px; color: #000000; font-family: Arial,sans-=
+serif; font-size: 10px; text-align: center;" align=3D"center">
+To unsubscribe, click <a href=3D"http://email.makingemailsgreatagain.com/u/=
+eJw9jrkOgzAQRL8mlGgXbAyFiyCIKKiS9GiDD1bhkAxEyt8HUaSaKeaNntGpA-ki1gmgQgRMEKW=
+EGAFyiXGtCiXxWt4UiFok5UXARG-evZ2Ix9UHSxt54jnulykatBNCOaLMAb2KIs1yylVvlSycy1=
+OrTBQ07evGswmWbTjuuB-X3Zz4pk-BQ6Rrqob9YENt9p42XubHHj72293brjp2zyObf23aH4ZnP=
+Uo">here.</a>
+</td>
+</tr>
+</table>
+<p></body></p>
+<table style=3D"height:1px;width:1px;">
+<tbody>
+<tr>
+<td>
+<img src=3D"http://email.makingemailsgreatagain.com/c/eJw9j0tvhDAMhH8NHJGdx=
+DwOOewKEIc9tb2jvIBoeSmEqv33pXtYyZKtGUszn5V8ABpSLxlggQjIEIkgQ4CSMGuKqiC83dsC=
+RCPYPRGwqKdfR7coPx9jcCqqUfk1M9uSTjJnFgXZqgBdIYjKaEGuVDnTRlXO8nSRvGKMgUhnOcW=
+4Hwm_Jay9Zvc_bs7UvmfBxTOsu4pTtrr4tkY_JLwNCa8pzzkh_scAMVEYDVTCoGEQzpAm4Pklcp=
+2wXC17GqQ6j-hXG5x34ULwZt5O-6oc5Qv6gu-7uvPj5EJjT6Oi39bPM3y73_7j0dfX39e1u_fZP=
+f4AImhfFA;c=3DRL0102201711014" width=3D"1" height=3D"1">
+</td>
+</tr>
+</tbody>
+</table>
+</body></html>
+
+
+To unsubscribe click: <http://email.makingemailsgreatagain.com/u/eJwdzEsOgy=
+AQANDT6JLM4FBwwUITe48JDHRSPwnq_W16gPdyHAq40mu0gB4R0CI6BwYBgkOz-NE7nOa3B1rIz=
+h3Bxl_dq2ys61mb8MWVdTfp2PpP9KEMmEYKJJmCl3FA4RcKlZJC4dC3yPd56Z6bqLRfp2k97vzn=
+V-zs9ACQGCtZ>
+
+
+--31c05e50260544c99da25e15cb868902
+Content-Type: text/html; charset="utf-8"
+Mime-Version: 1.0
+Content-Transfer-Encoding: quoted-printable
+
+<html><head><meta name=3D"viewport" content=3D"width=3Ddevice-width, initia=
+l-scale=3D1, minimum-scale=3D1"><meta http-equiv=3D"Content-Type" content=
+=3D"text/html; charset=3DUTF-8" /></head><body><p><!--rpcampaign: RL0102201=
+711014--></p>
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" align=3D"center" st=
+yle=3D"max-width:600px;width:100%;margin-top:0;margin-bottom:0;margin-right=
+:auto;margin-left:auto;border-spacing:0;border-collapse:collapse;background=
+-color:#fff;mso-table-lspace:0;mso-table-rspace:0;">
+<tr>
+<td>
+<style type=3D"text/css" id=3D"hs-inline-css">
+<p>            /* =3D=3D=3D=3D Page Styles =3D=3D=3D=3D */</p>
+<p>            body, #backgroundTable {
+                background-color: #f2f2f2; /* Use body to determine backgro=
+und color */
+                font-family: sans-serif;
+            }</p>
+<p>            #templateTable {
+                width: 600px;
+                background-color: #ffffff;
+                -webkit-font-smoothing: antialiased;
+            }</p>
+<p>            h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+                color:#444444;
+                display:block;
+                font-family: sans-serif;
+                font-weight:bold;
+                line-height:100%;
+                margin-top:0;
+                margin-right:0;
+                margin-bottom:10px;
+                margin-left:0;
+                text-align:left;
+            }</p>
+<p>            h1, .h1 {
+                font-size:26px;
+            }</p>
+<p>            h2, .h2 {
+                font-size:20px;
+            }</p>
+<p>            h3, .h3 {
+                font-size:15px;
+            }</p>
+<p>            h4, .h4 {
+                font-size:13px;
+            }</p>
+<p>            h5, .h5 {
+                font-size:11px;
+            }</p>
+<p>            h6, .h6 {
+                font-size:10px;
+            }</p>
+<p>            /* =3D=3D=3D=3D Header Styles =3D=3D=3D=3D */</p>
+<p>            #headerTable {
+                background-color: #f2f2f2;
+                color:#444444;
+                font-family:sans-serif;
+                font-size:10px;
+                line-height:120%;
+                text-align:right;
+                border-collapse: separate !important;
+                padding-right: 0px;
+            }</p>
+<p>            #headerTable a:link, #headerTable a:visited, /* Yahoo! Mail =
+Override */ #headerTable a .yshortcuts /* Yahoo! Mail Override */{
+                font-weight:normal;
+                text-decoration:underline;
+            }</p>
+<p>            /* =3D=3D=3D=3D Template Wrapper Styles =3D=3D=3D=3D */</p>
+<p>            #contentCell {
+                padding: 10px 20px;
+                background-color: #f2f2f2;
+            }</p>
+<p>            #contentTableOuter {
+                border-collapse: separate !important;</p>
+<p>                background-color: #ffffff;</p>
+<p>                box-shadow: 0px 1px rgba(0, 0, 0, 0.1);</p>
+<p>                padding: 0px;
+            }</p>
+<p>            #contentTableInner {
+                width: 600px;
+            }</p>
+<p>            /* =3D=3D=3D=3D Body Styles =3D=3D=3D=3D */</p>
+<p>            .bodyContent {
+                color:#444444;
+                font-family:sans-serif;
+                font-size: 15px;
+                line-height:150%;
+                text-align:left;
+            }</p>
+<p>            /* =3D=3D=3D=3D Column Styles =3D=3D=3D=3D */</p>
+<p>            table.columnContentTable {
+                border-collapse:separate !important;
+                border-spacing:0;</p>
+<p>                background-color: #ffffff;
+            }</p>
+<p>            td[class~=3D"columnContent"] {
+                color:#444444;
+                font-family:sans-serif;
+                font-size:15px;
+                line-height:120%;
+                padding-top:20px;
+                padding-right:20px;
+                padding-bottom:20px;
+                padding-left:20px;
+            }</p>
+<p>            /* =3D=3D=3D=3D Footer Styles =3D=3D=3D=3D */</p>
+<p>            #footerTable {
+                background-color: #f2f2f2;
+            }</p>
+<p>            #footerTable a {
+                color: #999999;
+            }</p>
+<p>            #footerTable {
+                color:#999999;
+                font-family:sans-serif;
+                font-size:12px;
+                line-height:120%;
+                padding-top:20px;
+                padding-right:20px;
+                padding-bottom:20px;
+                padding-left:20px;
+                text-align:center;
+            }</p>
+<p>            #footerTable a:link, #footerTable a:visited, /* Yahoo! Mail =
+Override */ #footerTable a .yshortcuts /* Yahoo! Mail Override */{
+                font-weight:normal;
+                text-decoration:underline;
+            }</p>
+<p>            .hs-image-social-sharing-24 {
+                max-width: 24px;
+                max-height: 24px;
+            }</p>
+<p>            /* =3D=3D=3D=3D Standard Resets =3D=3D=3D=3D */
+            .ExternalClass{
+                width:100%;
+            } /* Force Hotmail to display emails at full width */
+            .ExternalClass, .ExternalClass p, .ExternalClass span, .Externa=
+lClass font, .ExternalClass td, .ExternalClass div {
+                line-height: 100%;
+            } /* Force Hotmail to display normal line spacing */
+            body, table, td, p, a, li, blockquote{
+                -webkit-text-size-adjust:100%;
+                -ms-text-size-adjust:100%;
+            } /* Prevent WebKit and Windows mobile changing default text si=
+zes */
+            table, td {
+                mso-table-lspace:0pt;
+                mso-table-rspace:0pt;
+            } /* Remove spacing between tables in Outlook 2007 and up */
+            img {
+                vertical-align: bottom;
+                -ms-interpolation-mode:bicubic;
+            } /* Allow smoother rendering of resized image in Internet Expl=
+orer */</p>
+<p>            /* Reset Styles */
+            body {
+                margin:0;
+                padding:0;
+            }
+            table {
+                border-collapse:collapse !important;
+            }
+            body, #backgroundTable, #bodyCell{
+                height:100% !important;
+                margin:0;
+                padding:0;
+                width:100% !important;
+            }
+            a:link, a:visited {
+                border-bottom: none;
+            }</p>
+<p>            /* iOS automatically adds a link to addresses */
+            /* Style the footer with the same color as the footer text */
+            #footer a {
+                color: #999999;;
+                -webkit-text-size-adjust: none;
+                text-decoration: underline;
+                font-weight: normal
+            }</p>
+<p>            /* Hide preview text on rendering */
+            #preview_text {
+                display: none;
+            }
+        /*]]>*/
+    </style>
+<style type=3D"text/css">
+<p>            /* =3D=3D=3D=3D Mobile Styles =3D=3D=3D=3D */</p>
+<p>            /* Constrain email width for small screens */
+            @media screen and (max-width: 650px) {
+                table[id=3D"backgroundTable"] {
+                    width: 95% !important;
+                }</p>
+<p>                table[id=3D"templateTable"] {
+                    max-width:600px !important;
+                    width:100% !important;
+                }</p>
+<p>                table[id=3D"contentTableInner"] {
+                    max-width:600px !important;
+                    width:100% !important;
+                }</p>
+<p>                #contentCell {
+                    padding: 10px 10px !important;
+                }</p>
+<p>                #headerTable {
+                    padding-right: 0.0px !important;
+                }</p>
+<p>                #contentTableOuter {
+                    padding: 0.0px !important;
+                }
+            }</p>
+<p>            @media only screen and (max-width: 480px) {
+                /* =3D=3D=3D=3D Client-Specific Mobile Styles =3D=3D=3D=3D =
+*/
+                body, table, td, p, a, li, blockquote{
+                    -webkit-text-size-adjust:none !important;
+                } /* Prevent Webkit platforms from changing default text si=
+zes */
+                body{
+                    width:100% !important;
+                    min-width:100% !important;
+                } /* Prevent iOS Mail from adding padding to the body */</p>
+<p>                /* =3D=3D=3D=3D Mobile Reset Styles =3D=3D=3D=3D */
+                td[id=3D"bodyCell"] {
+                    padding:10px !important;
+                }</p>
+<p>                /* =3D=3D=3D=3D Mobile Template Styles =3D=3D=3D=3D */</=
+p>
+<p>                table[id=3D"templateTable"] {
+                    max-width:600px !important;
+                    width:100% !important;
+                }</p>
+<p>                table[id=3D"contentTableInner"] {
+                    max-width:600px !important;
+                    width:100% !important;
+                }</p>
+<p>                /* =3D=3D=3D=3D Image Alignment Styles =3D=3D=3D=3D */</=
+p>
+<p>                h1, .h1 {
+                    font-size:26px !important;
+                    line-height:125% !important;
+                }</p>
+<p>                h2, .h2 {
+                    font-size:20px !important;
+                    line-height:125% !important;
+                }</p>
+<p>                h3, .h3 {
+                    font-size:15px !important;
+                    line-height:125% !important;
+                }</p>
+<p>                h4, .h4 {
+                    font-size:13px !important;
+                    line-height:125% !important;
+                }</p>
+<p>                h5, .h5 {
+                    font-size:11px !important;
+                    line-height:125% !important;
+                }</p>
+<p>                h6, .h6 {
+                    font-size:10px !important;
+                    line-height:125% !important;
+                }</p>
+<p>                .hide {
+                    display:none !important;
+                } /* Hide to save space */</p>
+<p>                /* =3D=3D=3D=3D Body Styles =3D=3D=3D=3D */</p>
+<p>                td[class=3D"bodyContent"] {
+                    font-size:16px !important;
+                    line-height:145% !important;
+                }</p>
+<p>                /* =3D=3D=3D=3D Footer Styles =3D=3D=3D=3D */</p>
+<p>                td[id=3D"footerTable"]{
+                    padding-left: 0px !important;
+                    padding-right: 0px !important;
+                    font-size:12px !important;
+                    line-height:145% !important;
+                }</p>
+<p>                /* =3D=3D=3D=3D Image Alignment Styles =3D=3D=3D=3D */</=
+p>
+<p>                table[class=3D"alignImageTable"] {
+                    width: 100% !important;
+                }</p>
+<p>                td[class=3D"imageTableTop"] {
+                    display: none !important;
+                    /*padding-top: 10px !important;*/
+                }
+                td[class=3D"imageTableRight"] {
+                    display: none !important;
+                }
+                td[class=3D"imageTableBottom"] {
+                    padding-bottom: 10px !important;
+                }
+                td[class=3D"imageTableLeft"] {
+                    display: none !important;
+                }</p>
+<p>                /* =3D=3D=3D=3D Column Styles =3D=3D=3D=3D */</p>
+<p>                td[class~=3D"column"] {
+                    display: block !important;
+                    width: 100% !important;
+                    padding-top: 0 !important;
+                    padding-right: 0 !important;
+                    padding-bottom: 0 !important;
+                    padding-left: 0 !important;
+                }</p>
+<p>                td[class~=3DcolumnContent] {
+                    font-size:14px !important;
+                    line-height:145% !important;</p>
+<p>                    padding-top: 10px !important;
+                    padding-right: 10px !important;
+                    padding-bottom: 10px !important;
+                    padding-left: 10px !important;
+                }</p>
+<p>                #contentCell {
+                    padding: 10px 0px !important;
+                }</p>
+<p>                #headerTable {
+                    padding-right: 0.0px !important;
+                }</p>
+<p>                #contentTableOuter {
+                    padding: 0.0px !important;
+                }
+                .expand {width:100% !important;}
+            }</p>
+<p>            #preview_text {
+                display: none;
+            }
+        /*]]>*/
+    </style>
+<p>    </head><br />
+    <body leftmargin=3D"0" marginwidth=3D"0" topmargin=3D"0" marginheight=
+=3D"0" offset=3D"0" style=3D"background-color:#f2f2f2; font-family:sans-ser=
+if; -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; height:100% !=
+important; margin:0; padding:0; width:100% !important" bgcolor=3D"#f2f2f2" =
+height=3D"100% !important" width=3D"100% !important"></p>
+<div id=3D"preview_text" style=3D"display:none!important"></div>
+<tbody>
+<tr>
+<td align=3D"center" valign=3D"top" id=3D"bodyCell" style=3D"-webkit-text-s=
+ize-adjust:100%; -ms-text-size-adjust:100%; mso-table-lspace:0pt; mso-table=
+-rspace:0pt; height:100% !important; margin:0; padding:0; width:100% !impor=
+tant" height=3D"100% !important" width=3D"100% !important">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" id=3D"templateTable=
+" style=3D"-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; mso-ta=
+ble-lspace:0pt; mso-table-rspace:0pt; border-collapse:collapse !important; =
+width:600px; background-color:#ffffff; -webkit-font-smoothing:antialiased" =
+width=3D"600" bgcolor=3D"#ffffff">
+<tbody>
+<tr>
+<td align=3D"center" valign=3D"top" style=3D"-webkit-text-size-adjust:100%;=
+ -ms-text-size-adjust:100%; mso-table-lspace:0pt; mso-table-rspace:0pt">
+<div class=3D"header-container-wrapper">
+        </div>
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" id=
+=3D"headerTable" style=3D"-webkit-text-size-adjust:100%; -ms-text-size-adju=
+st:100%; mso-table-lspace:0pt; mso-table-rspace:0pt; background-color:#f2f2=
+f2; color:#444444; font-family:sans-serif; font-size:10px; line-height:120%=
+; text-align:right; border-collapse:separate !important; padding-right:0px"=
+ bgcolor=3D"#f2f2f2" align=3D"right">
+<tbody>
+<tr>
+<td align=3D"left" valign=3D"top" class=3D"bodyContent" width=3D"100%" cols=
+pan=3D"12" style=3D"-webkit-text-size-adjust:100%; -ms-text-size-adjust:100=
+%; mso-table-lspace:0pt; mso-table-rspace:0pt; color:#444444; font-family:s=
+ans-serif; font-size:15px; line-height:150%; text-align:left">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" clas=
+s=3D"templateColumnWrapper" style=3D"-webkit-text-size-adjust:100%; -ms-tex=
+t-size-adjust:100%; mso-table-lspace:0pt; mso-table-rspace:0pt; border-coll=
+apse:collapse !important">
+<tbody>
+<tr>
+<td align=3D"left" valign=3D"top" colspan=3D"12" width=3D"100.0%" class=3D"=
+column" style=3D"-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; =
+mso-table-lspace:0pt; mso-table-rspace:0pt; text-align:left; font-family:sa=
+ns-serif; font-size:15px; line-height:1.5em; color:#444444">
+<div class=3D"widget-span widget-type-email_view_as_web_page " style=3D"" d=
+ata-widget-type=3D"email_view_as_web_page"></div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td align=3D"center" valign=3D"top" id=3D"contentCell" style=3D"-webkit-tex=
+t-size-adjust:100%; -ms-text-size-adjust:100%; mso-table-lspace:0pt; mso-ta=
+ble-rspace:0pt; padding:10px 20px; background-color:#f2f2f2" bgcolor=3D"#f2=
+f2f2">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" id=
+=3D"contentTableOuter" style=3D"-webkit-text-size-adjust:100%; -ms-text-siz=
+e-adjust:100%; mso-table-lspace:0pt; mso-table-rspace:0pt; border-collapse:=
+separate !important; background-color:#ffffff; box-shadow:0px 1px rgba(0, 0=
+, 0, 0.1); padding:0px; border:1px solid #cccccc; border-bottom:1px solid #=
+acacac" bgcolor=3D"#ffffff">
+<tbody>
+<tr>
+<td align=3D"center" valign=3D"top" style=3D"-webkit-text-size-adjust:100%;=
+ -ms-text-size-adjust:100%; mso-table-lspace:0pt; mso-table-rspace:0pt">
+<div class=3D"body-container-wrapper">
+        </div>
+<table>
+<tr>
+<td>
+<p><center><a href=3D"http://email.makingemailsgreatagain.com/c/eJw9UEFuwyA=
+QfI19tAAbkxx8SBpHrppc2t4RgbWNasAC3LS_L3GTSKxYzaxmdkc1ZY9on-uGIMwwRphgTCkqME=
+IbiouWbRnFu_2RoaqtyD6rkBFf2g5ghJ7C4EFEMQhtC-lMPjZS0g2BS12hCvfkgqEGwqpaip5SS=
+Oq5acotIQRV-dSMMc4hK3cZOaZ3vV4LDwGEl2NhISbIpxr1NAUlJuCjHkbwHNQiRdTO8rD4b_jN=
+yuMSDQ9u8RKy8jB7F2aQMS2ZkfpGGVB6MYlal76D0tkINiZ01_KXV3txP7fzMXvwwsxCDzYN_Bs=
+_fe-2pBbzDGJKSurme37bYNaey9w3YgnJXnnQ4FNiWk5uUWtCsVkzTlnz7tCtuu1D92PV5e8nfk=
+hzn-nvnm13-gPEm4vK"><img src=3D"https://dbgzvifxo1i3b.cloudfront.net/rightf=
+ree/HillsdaleLogo.jpg" height=3D"114" width=3D"263"></a></center></p>
+</td>
+</tr>
+</table>
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" id=3D"contentTableI=
+nner" style=3D"-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; ms=
+o-table-lspace:0pt; mso-table-rspace:0pt; border-collapse:collapse !importa=
+nt; width:600px" width=3D"600">
+<tbody>
+<tr>
+<td align=3D"left" valign=3D"top" class=3D"bodyContent" width=3D"100%" cols=
+pan=3D"12" style=3D"-webkit-text-size-adjust:100%; -ms-text-size-adjust:100=
+%; mso-table-lspace:0pt; mso-table-rspace:0pt; color:#444444; font-family:s=
+ans-serif; font-size:15px; line-height:150%; text-align:left">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" clas=
+s=3D"templateColumnWrapper" style=3D"-webkit-text-size-adjust:100%; -ms-tex=
+t-size-adjust:100%; mso-table-lspace:0pt; mso-table-rspace:0pt; border-coll=
+apse:collapse !important">
+<tbody>
+<tr>
+<td align=3D"left" valign=3D"top" colspan=3D"12" width=3D"100.0%" class=3D"=
+column" style=3D"-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; =
+mso-table-lspace:0pt; mso-table-rspace:0pt; text-align:left; font-family:sa=
+ns-serif; font-size:15px; line-height:1.5em; color:#444444">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" styl=
+e=3D"-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; mso-table-ls=
+pace:0pt; mso-table-rspace:0pt; border-collapse:separate !important; border=
+-spacing:0; background-color:#ffffff" class=3D" columnContentTable" bgcolor=
+=3D"#ffffff">
+<tbody>
+<tr>
+<td align=3D"left" valign=3D"top" class=3D"columnContent widget-span widget=
+-type-rich_text" style=3D"-webkit-text-size-adjust:100%; -ms-text-size-adju=
+st:100%; mso-table-lspace:0pt; mso-table-rspace:0pt; text-align:left; paddi=
+ng:0; font-family:sans-serif; font-size:15px; line-height:1.5em; color:#444=
+444; padding:0px 25px 25px 25px" data-widget-type=3D"rich_text">
+<div>&nbsp;</div>
+<div class=3D"layout-widget-wrapper">
+<div id=3D"hs_cos_wrapper_module_1426009925052517" class=3D"hs_cos_wrapper =
+hs_cos_wrapper_widget hs_cos_wrapper_type_rich_text" style=3D"color: inheri=
+t; font-size: inherit; line-height: inherit; margin: inherit; padding: inhe=
+rit" data-hs-cos-general-type=3D"widget" data-hs-cos-type=3D"rich_text">
+<table>
+<tr>
+<td style=3D"width: 50%" rowspan=3D"2" class=3D"expand">
+<p style=3D"margin-bottom: 1em; -webkit-text-size-adjust:100%; -ms-text-siz=
+e-adjust:100%">Fellow American,</p>
+<p style=3D"margin-bottom: 1em; -webkit-text-size-adjust:100%; -ms-text-siz=
+e-adjust:100%">I=E2=80=99m sure you=E2=80=99ve seen it in the national news=
+, but I=E2=80=99d like to reiterate: There is serious hostility towards the=
+ founding principles of liberty on college campuses.</p>
+<p style=3D"margin-bottom: 1em; -webkit-text-size-adjust:100%; -ms-text-siz=
+e-adjust:100%">Many college students are not taught the true meaning of ter=
+ms like =E2=80=9CFreedom=E2=80=9D and =E2=80=9CEquality.=E2=80=9D They are =
+accepting false promises of free college and health care and voting for can=
+didates who wish to embrace that fantasy. This is evidenced by the voting r=
+ecords of millennials in the last election, where <b>many more voted for Be=
+rnie Sanders in the primaries than both Clinton and Trump combined.</b></p>
+<p style=3D"margin-bottom: 1em; -webkit-text-size-adjust:100%; -ms-text-siz=
+e-adjust:100%">Worst of all, students on college campuses refuse to engage =
+with those whom they disagree. Instead, many resort to intimidation, threat=
+s, and rioting in a manner that incites violence. </p>
+<p style=3D"margin-bottom: 1em; -webkit-text-size-adjust:100%; -ms-text-siz=
+e-adjust:100%">I=E2=80=99m curious to know what you think about the state o=
+f higher education in America. If you have a few minutes, I=E2=80=99d love =
+to ask you a few questions about the state of America=E2=80=99s education s=
+ystem, and whether the damage to it can be repaired.</p>
+<p style=3D"margin-bottom: 1em; -webkit-text-size-adjust:100%; -ms-text-siz=
+e-adjust:100%">Take the survey now >> <a href=3D"http://email.makingemailsg=
+reatagain.com/c/eJw9UEFuwyAQfI19tAAbkxx8SBpHrppc2t4RgbWNasAC3LS_L3GTSKxYzax=
+mdkc1ZY9on-uGIMwwRphgTCkqMEIbiouWbRnFu_2RoaqtyD6rkBFf2g5ghJ7C4EFEMQhtC-lMPj=
+ZS0g2BS12hCvfkgqEGwqpaip5SSOq5acotIQRV-dSMMc4hK3cZOaZ3vV4LDwGEl2NhISbIpxr1N=
+AUlJuCjHkbwHNQiRdTO8rD4b_jNyuMSDQ9u8RKy8jB7F2aQMS2ZkfpGGVB6MYlal76D0tkINiZ0=
+1_KXV3txP7fzMXvwwsxCDzYN_Bs_fe-2pBbzDGJKSurme37bYNaey9w3YgnJXnnQ4FNiWk5uUWt=
+CsVkzTlnz7tCtuu1D92PV5e8nfkhzn-nvnm13-gPEm4vK"><b>https://www.research.net/=
+r/hillsdale_higher_education_survey</b></a></p>
+<p align=3D"center"><center></p>
+<table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" alig=
+n=3D"center">
+<tbody align=3D"center">
+<tr>
+<td>
+<div align=3D"center">
+        <!--[if mso]>
+          <v:roundrect xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:w=3D=
+"urn:schemas-microsoft-com:office:word" href=3D"https://www.research.net/r/=
+hillsdale_higher_education_survey?utm_source=3Dprospecting&utm_medium=3Dema=
+il&utm_content=3DAE_CInbox110117&utm_campaign=3Dhighereducationsurvey&appea=
+l_code=3DMK817EM3" style=3D"height:36px;v-text-anchor:middle;width:230px;" =
+arcsize=3D"5%" strokecolor=3D"#093365" fillcolor=3D"#093365">
+            <w:anchorlock></w:anchorlock>
+            <center style=3D"color:#ffffff;font-family:Helvetica, Arial,Hel=
+vetica;font-size:16px;">Take the Survey</center>
+          </v:roundrect>
+        <![endif]--><br />
+      <a href=3D"http://email.makingemailsgreatagain.com/c/eJw9UEFuwyAQfI19=
+tAAbkxx8SBpHrppc2t4RgbWNasAC3LS_L3GTSKxYzaxmdkc1ZY9on-uGIMwwRphgTCkqMEIbiou=
+WbRnFu_2RoaqtyD6rkBFf2g5ghJ7C4EFEMQhtC-lMPjZS0g2BS12hCvfkgqEGwqpaip5SSOq5ac=
+otIQRV-dSMMc4hK3cZOaZ3vV4LDwGEl2NhISbIpxr1NAUlJuCjHkbwHNQiRdTO8rD4b_jNyuMSD=
+Q9u8RKy8jB7F2aQMS2ZkfpGGVB6MYlal76D0tkINiZ01_KXV3txP7fzMXvwwsxCDzYN_Bs_fe-2=
+pBbzDGJKSurme37bYNaey9w3YgnJXnnQ4FNiWk5uUWtCsVkzTlnz7tCtuu1D92PV5e8nfkhzn-n=
+vnm13-gPEm4vK" style=3D"margin:3px;background-color:#093365;border:1px soli=
+d #093365;border-radius:3px;color:#ffffff;display:inline-block;font-family:=
+Helvetica;font-size:16px;line-height:44px;text-align:center;text-decoration=
+:none;width:230px;-webkit-text-size-adjust:none;mso-hide:all;"><strong>Take=
+ the Survey</strong></a></p></div>
+</td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<p style=3D"margin-bottom: 1em; -webkit-text-size-adjust:100%; -ms-text-siz=
+e-adjust:100%">Warm Regards,</p>
+<p style=3D"margin-bottom: 1em; -webkit-text-size-adjust:100%; -ms-text-siz=
+e-adjust:100%"><img src=3D"http://cdn2.hubspot.net/hub/397762/file-20726465=
+49-gif/House_File/larryarnn-sig.gif?t=3D1429036917076" alt=3D"larryarnn-sig=
+" width=3D"120" style=3D"vertical-align:bottom; -ms-interpolation-mode:bicu=
+bic; width:120px; max-width:120px"></p>
+<div>Larry P. Arnn</div>
+<div>President, Hillsdale College</div>
+<div>Pursuing Truth=E2=80=94Defending Liberty since 1844</div>
+</div></div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td align=3D"center" valign=3D"top" style=3D"-webkit-text-size-adjust:100%;=
+ -ms-text-size-adjust:100%; mso-table-lspace:0pt; mso-table-rspace:0pt">
+<div class=3D"footer-container-wrapper">
+        </div>
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" id=
+=3D"footerTable" style=3D"-webkit-text-size-adjust:100%; -ms-text-size-adju=
+st:100%; mso-table-lspace:0pt; mso-table-rspace:0pt; border-collapse:collap=
+se !important; background-color:#f2f2f2; color:#999999; font-family:sans-se=
+rif; font-size:12px; line-height:120%; padding-top:20px; padding-right:20px=
+; padding-bottom:20px; padding-left:20px; text-align:center" bgcolor=3D"#f2=
+f2f2" align=3D"center">
+<tbody>
+<tr>
+<td align=3D"left" valign=3D"top" class=3D"bodyContent" width=3D"100%" cols=
+pan=3D"12" style=3D"-webkit-text-size-adjust:100%; -ms-text-size-adjust:100=
+%; mso-table-lspace:0pt; mso-table-rspace:0pt; color:#444444; font-family:s=
+ans-serif; font-size:15px; line-height:150%; text-align:left">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" clas=
+s=3D"templateColumnWrapper" style=3D"-webkit-text-size-adjust:100%; -ms-tex=
+t-size-adjust:100%; mso-table-lspace:0pt; mso-table-rspace:0pt; border-coll=
+apse:collapse !important">
+<tbody>
+<tr>
+<td align=3D"left" valign=3D"top" colspan=3D"12" width=3D"100.0%" class=3D"=
+column" style=3D"-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; =
+mso-table-lspace:0pt; mso-table-rspace:0pt; text-align:left; font-family:sa=
+ns-serif; font-size:15px; line-height:1.5em; color:#444444">
+<div class=3D"widget-span widget-type-email_can_spam " style=3D"" data-widg=
+et-type=3D"email_can_spam">
+<p id=3D"footer" style=3D"margin-bottom: 1em; -webkit-text-size-adjust:100%=
+; -ms-text-size-adjust:100%; font-family:Geneva, Verdana, Arial, Helvetica,=
+ sans-serif; text-align:center; font-size:12px; line-height:1.34em; color:#=
+999999; display:block" align=3D"center">Hillsdale College &nbsp;&nbsp;33 Ea=
+st College St &nbsp; &nbsp;Hillsdale, &nbsp;MI &nbsp;&nbsp;49242 &nbsp;&nbs=
+p;USA </p>
+</p></div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td style=3D"-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; mso-=
+table-lspace:0pt; mso-table-rspace:0pt"></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table style=3D"text-align: center; padding: 15px 0px 0px 0px;" width=3D"10=
+0%" align=3D"center">
+<tbody>
+<tr>
+<td style=3D"padding: 0px 0px 5px; color: #000000; font-family: Arial,sans-=
+serif; font-size: 10px; text-align: center;" align=3D"center">
+To unsubscribe, click <a href=3D"http://email.makingemailsgreatagain.com/u/=
+eJw9jrkOgzAQRL8mlGgXbAyFiyCIKKiS9GiDD1bhkAxEyt8HUaSaKeaNntGpA-ki1gmgQgRMEKW=
+EGAFyiXGtCiXxWt4UiFok5UXARG-evZ2Ix9UHSxt54jnulykatBNCOaLMAb2KIs1yylVvlSycy1=
+OrTBQ07evGswmWbTjuuB-X3Zz4pk-BQ6Rrqob9YENt9p42XubHHj72293brjp2zyObf23aH4ZnP=
+Uo">here.</a>
+</td>
+</tr>
+</table>
+<p><br><img width=3D"1px" height=3D"1px" alt=3D"" src=3D"http://email.makin=
+gemailsgreatagain.com/o/eJw9jrsOgkAQRb9GSjKzb4otNGIorNSejLsLTBRIVjDx7yUWVvc=
+UNycnetmB7gr2AtAiAgpEraFEAKexrG1lNe4PJwuqVuKwUzDSg6c-jcTPV58TLdQTT2WYx2LwIC=
+UZJ809GOXIKjLWOONihTpI6KgYvayEEKCK7Gl9LTzFnDjlTczhOa_xJ1r8L2VLaptjw_2Qch3XQ=
+AvP03XN7_RpL-f2uP1u2zZ_bM5fGD4-eA"></body></p>
+<table style=3D"height:1px;width:1px;">
+<tbody>
+<tr>
+<td>
+<img src=3D"https://pixel.app.returnpath.net/pixel.gif?r=3D5663511d97005247=
+cb0580fb0f4ec5b503647c3b&amp;c=3DRL0102201711014" width=3D"1" height=3D"1">
+</td>
+</tr>
+</tbody>
+</table>
+</body></html>
+--31c05e50260544c99da25e15cb868902--
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>date-last-viewed</key>
+	<integer>0</integer>
+	<key>date-received</key>
+	<integer>1509570953</integer>
+	<key>flags</key>
+	<integer>8590195712</integer>
+	<key>remote-id</key>
+	<string>4599</string>
+</dict>
+</plist>

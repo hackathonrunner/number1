@@ -1,0 +1,29 @@
+406       
+Content-Type: text/plain;
+	charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Subject: You have received a YouTube video!
+From: Austin Dreier <austindreier@icloud.com>
+Message-Id: <2AF339DF-8298-4309-8F76-344460A47BD9@icloud.com>
+Date: Sun, 19 Apr 2015 15:37:56 -0700
+To: Austin Dreier <austindreier@gmail.com>
+Mime-Version: 1.0 (1.0)
+
+http://www.youtube.com/watch?v=pRGPG4csOAk&sns=em
+
+
+Sent from my iPhone
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>date-last-viewed</key>
+	<integer>0</integer>
+	<key>date-received</key>
+	<integer>1429483076</integer>
+	<key>flags</key>
+	<integer>8590195713</integer>
+	<key>remote-id</key>
+	<string>84</string>
+</dict>
+</plist>

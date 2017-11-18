@@ -1,0 +1,49 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Meetup//Meetup Events v1.0//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Events - Northern Colorado’s Real Estate Investors Associati
+ on
+X-MS-OLK-FORCEINSPECTOROPEN:TRUE
+BEGIN:VTIMEZONE
+TZID:America/Denver
+X-LIC-LOCATION:America/Denver
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0700
+TZOFFSETTO:-0600
+TZNAME:MDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0700
+TZNAME:MST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+DTSTAMP:20171109T022004Z
+DTSTART;TZID=America/Denver:20171114T170000
+DTEND;TZID=America/Denver:20171114T200000
+STATUS:CONFIRMED
+SUMMARY:Beginning Investors Roundtable
+DESCRIPTION:Northern Colorado’s Real Estate Investors Association\nTuesda
+ y\, November 14 at 5:00 PM\n\nThis group will meet regularly on the 2nd 
+ Tuesday evening of every month. ~It is Free to ICOR Members and First Ti
+ me Guests\, and $10 for Returning Gue...\n\nhttps://www.meetup.com/icoro
+ ckies/events/244951022/
+ORGANIZER;CN=Meetup Reminder:MAILTO:info@meetup.com
+CLASS:PUBLIC
+CREATED:20110404T075757Z
+GEO:40.43;-105.08
+LOCATION:The Home Depot - Fort Collins (1251 East Magnolia Street\, Fort 
+ Collins\, CO 80524)
+URL:https://www.meetup.com/icorockies/events/244951022/
+SEQUENCE:1
+LAST-MODIFIED:20170417T173532Z
+UID:event_lxrtqywpbsb@meetup.com
+END:VEVENT
+END:VCALENDAR

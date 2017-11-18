@@ -1,0 +1,713 @@
+36203     
+Return-path:
+ <bounce+aa237d.9dea9b-austindreier=icloud.com@makeemailgreatagain.email>
+Received: from st11p00im-smtpin031.mac.com ([17.172.80.177])
+ by ms60015.mac.com (Oracle Communications Messaging Server 8.0.1.2.20170607
+ 64bit (built Jun  7 2017)) with ESMTP id <0OZD00EJN2VLP9B0@ms60015.mac.com>
+ for austindreier@icloud.com; Mon, 13 Nov 2017 14:57:22 +0000 (GMT)
+Original-recipient: rfc822;austindreier@icloud.com
+Received: from m234-92.mailgun.net (m234-92.mailgun.net [159.135.234.92])
+ by st11p00im-smtpin031.me.com
+ (Oracle Communications Messaging Server 8.0.1.2.20170607 64bit (built Jun  7
+ 2017)) with ESMTPS id <0OZD00AL42UXH080@st11p00im-smtpin031.me.com> for
+ austindreier@icloud.com (ORCPT austindreier@icloud.com); Mon,
+ 13 Nov 2017 14:57:21 +0000 (GMT)
+X-Spam-Flag: yes
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 spamscore=0
+ clxscore=-59 suspectscore=89 malwarescore=0 phishscore=0 adultscore=0
+ bulkscore=100 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.0.1-1707230000 definitions=main-1711130211
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10432:,,
+ definitions=2017-11-13_08:,, signatures=0
+Authentication-results: st11p00mm-dmarcmilter003.me.com; dmarc=none
+ header.from=makeemailgreatagain.email
+Authentication-results: st11p00mm-spfmilter004.mac.com; spf=pass
+ (st11p00mm-spfmilter004.mac.com: domain of
+ bounce+aa237d.9dea9b-austindreier=icloud.com@makeemailgreatagain.email
+ designates 159.135.234.92 as permitted sender)
+ smtp.mailfrom=bounce+aa237d.9dea9b-austindreier=icloud.com@makeemailgreatagain.email;
+Received-SPF: pass (st11p00mm-spfmilter004.mac.com: domain of
+ bounce+aa237d.9dea9b-austindreier=icloud.com@makeemailgreatagain.email
+ designates 159.135.234.92 as permitted sender)
+ receiver=st11p00mm-spfmilter004.mac.com; client-ip=159.135.234.92;
+ helo=m234-92.mailgun.net;
+ envelope-from=bounce+aa237d.9dea9b-austindreier=icloud.com@makeemailgreatagain.email;
+Authentication-results: st11p00mm-dkimmilter010.mac.com;	dkim=pass (1024-bit
+ key) header.d=makeemailgreatagain.email header.i=@makeemailgreatagain.email
+ header.b=JkNtXS0o;	dkim-adsp=pass
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed;
+ d=makeemailgreatagain.email; q=dns/txt; s=pic; t=1510585040; h=To: Message-Id:
+ Content-Type: Mime-Version: Subject: From: List-Id: List-Unsubscribe: Date:
+ Sender; bh=wvosfFkwP9e8ijstr5eOckwndr0Mi7pqgvKOe0TYlRw=;
+ b=JkNtXS0ofCkudIXgjeAIhUKl3+ywMFvwTbhrghVD8eebo8ItTJYo0GKwWLtdYOyeLnL/7FUI
+ MtA59Z/XoBlOAu/nhVa1I5sY4VNmGYXR0nt8FbU1GEslIY/qnj6oQLxWTfLvN5UEtZ3T60qy
+ nvRAEwjeRn438bEMwcFT1ut4Ahw=
+Sender: contact@makeemailgreatagain.email
+Date: Mon, 13 Nov 2017 14:57:20 +0000
+List-Unsubscribe:
+ <mailto:u+mq6tszdfme4wejtjhuzdamjxgeytcmzrgq2tmnjtfy4tcnrvgexdmq2cgzaucqzxgnbdemcbhayekjjugbwwc23fmvwwc2lmm5zgkylumftwc2lofzsw2yljnqtgqpjxgu4tinjqhbtgeytgg44dimtgmjrtqnjummztam3dmzqtezbuhatg2pjthe4tsmzrhatheplbovzxi2lomrzgk2lfoistimdjmnwg65lefzrw63i@makeemailgreatagain.email>
+Received: by luna.mailgun.net with SMTP X-Mailgun-List-Id=3999318,
+ 8791630138565; Mon, 13 Nov 2017 14:57:20 +0000
+List-Id: <tg_ng3y-25qb.makeemailgreatagain.email>
+Received: by luna.mailgun.net with HTTP; Mon, 13 Nov 2017 14:14:54 +0000
+From: Trey Gowdy <contact@makeemailgreatagain.email>
+Subject: =?utf-8?q?Austin=2C_I_hate_asking_for_help=E2=80=A6?=
+MIME-version: 1.0
+Content-type: multipart/alternative; boundary=bcbfff4cc052429b9e88ced3447ec951
+Message-id: <20171113145653.91651.6CB6AAC73B20A80E@makeemailgreatagain.email>
+To: austindreier@icloud.com
+x-icloud-spam-score: 3311341
+ f=makeemailgreatagain.email;e=makeemailgreatagain.email;is=yes;ir=no;spf=pass;dkim=pass;dmarc=noPolicy/noPolicy/none;gdwl=absent;pps=ham;clxs=spam;clxw=neutral
+X-CLX-Spam: true
+X-CLX-UnSpecialScore: None
+X-CLX-Score: -59
+X-CLX-Shades: Dark
+X-MANTSH: 1TEIXWV4bG1oaGkNHB1BeSF8aHBgaGhkaGxEKTEMXGx0EGx0YBBkfBBgSEBseGh8
+ aEQpMWRcHHxMRCllNF25LWEERCllJFxpxGhAadwYHGRNxGxgZEBkaHncGBxgaBhoRClleF2tre
+ REKQ04XbnwBTGFdQm5gAVJIaxNjGnIaeGxrYn4fSXNTeEdzBRMRClhcFxkEGgQZGAdNGU4TTxM
+ ZGAUbHQQbHRgEEhkEGx0QGx4aHxoRCl5ZF3h6G05ZEQpNXBcaEQpMWhdoUnpCQV0RCkVZF3MRC
+ kxfF3oFBQUFBQUFBRNbEQpNThdoEQpDWhcbHxMEGxkfBBgZHgQTGBEKQl4XGxEKQkYXYFhzeGM
+ TU0dga0MRCkJHF2VFX1lIaV5cWUVFEQpCXBcbEQpeThcbEQpCSxdnBRlbTUZEHRlZRREKQkUXe
+ n4eRn1nf2B8TV8RCkJOF2cFGVtNRkQdGVlFEQpCTBdvQxNlE1xoQ0h/TBEKQmwXbUR8YVpGZll
+ kHnARCkJAF2tHYE5OGkRmaHBCEQpCWBduRx0bTmRhRRsSQBEKTV4XBxsRCnBoF2tQGx1TYUVZf
+ GBmEAcZGhEKcGgXa35kEllaYmdyRkMQGhEKcGgXZ30FTEZjWUdkGhoQBxgeEQpwaBdhfkYZekZ
+ 8Gk0YExAHGRoRCnBoF2V/QAFIeWUYUmIZEAcZGhEKcH8XbEZPUnlCW0lleQUQBx4SEQpwXxdoZ
+ RNtS2dsaR1ZUxAHGRoRCnB9F2tbY2tZGhl6bHJMEAcZGhEKcF8XYwUfXUtEQl9rGEYQBxkaEQp
+ wfRd6fUsSGl4ZHBl7WhAHGRoRCnB9F2tbY2tZGhl6bHJMEAcZGhEKcH0Xa1tja1kaGXpsckwQB
+ xkaEQpwXxdkYB1Fb3ISARhlBRAHGRoRCnB9F24SWlp4QHpYRmQTEAcZGhEKcH0Xa1tja1kaGXp
+ sckwQBxkaEQpwfRdrW2NrWRoZemxyTBAHGRoRCnB9F2tbY2tZ
+x-dmarc-info: pass=none; dmarc-policy=(nopolicy); s=u0; d=u0
+x-dmarc-policy: none
+X-Mailgun-Sending-Ip: 159.135.234.92
+X-Mailgun-Sid: WyIzY2M2MiIsICJhdXN0aW5kcmVpZXJAaWNsb3VkLmNvbSIsICI5ZGVhOWIiXQ==
+X-Mailgun-List-Id: 3999318
+X-Mailgun-List-Address: tg_ng3y-25qb@makeemailgreatagain.email
+X-Mailgun-Track-Opens: true
+X-Mailgun-Track-Clicks: true
+X-Mailgun-Tag: 11132017_ThankYou-TG_A
+X-Mailgun-Tag: TRL_TG_A
+X-Mailgun-Tag: TRL_TG
+
+--bcbfff4cc052429b9e88ced3447ec951
+Content-Type: text/plain; charset="ascii"
+Mime-Version: 1.0
+Content-Transfer-Encoding: quoted-printable
+
+<html><body><p><!--rpcampaign: RL0120201711131--></p>
+<table style=3D"max-width: 600px; width: 100%; border-spacing: 0; border-co=
+llapse: collapse; background-color: #fff; mso-table-lspace: 0; mso-table-rs=
+pace: 0; margin: 0 auto 0 auto;" border=3D"0" cellspacing=3D"0" cellpadding=
+=3D"0" align=3D"center">
+<tbody>
+<tr>
+<td>
+<style type=3D"text/css">
+body,td,th {font-family: Arial, Helvetica, sans-serif; font-size: 13px; col=
+or: #000;}
+body {margin-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: =
+0px;}</p>
+<p>a:link {font-family:Arial, Helvetica, sans-serif; font-size:100%; color:=
+#036; text-decoration:underline;}
+a:active {font-family:Arial, Helvetica, sans-serif; font-size:100%; color:#=
+036; text-decoration:underline;}
+a:visited {font-family:Arial, Helvetica, sans-serif; font-size:100%; color:=
+#036; text-decoration:underline;}
+a:hover {font-family:Arial, Helvetica, sans-serif; font-size:100%; color:#0=
+36; text-decoration:none;}</p>
+<p>.preheader { display:none !important; visibility:hidden; opacity:0; colo=
+r:transparent; height:0; width:0; }
+/* - - - - - HOTMAIL FIXES */
+.ReadMsgBody {widows:100%;}
+.ExternalClass {width:100%;}
+@media screen and (max-width: 640px), screen and (max-device-width: 640px)
+{
+	body {-webkit-text-size-adjust: none;}
+	table[id=3Dheader] {width:100% !important;}
+	table[id=3Dcontent] {width:100% !important;}
+	img[class=3Dbanner_scale] {width: 100% !important; max-width: 320px !impor=
+tant; height: auto !important;}
+	img[class=3Dimg_scale] {width: 100% !important; max-width: 250px !importan=
+t; height: auto !important;}
+	table[id=3Ddisclaimer] {width: 240px !important;}
+	table[id=3Ddisclaimer2] {width: 230px !important; font-size:100% !importan=
+t;}
+	font[id=3Ddisclaimertext] {font-size:90% !important;}
+	font[id=3Dmaintext] {font-size: 160% !important; line-height:200% !importa=
+nt;}
+	td[class=3Dmaintext] {font-size: 160% !important; line-height:200% !import=
+ant;}
+}
+</style>
+<p></head><br />
+<body bgcolor=3D"#ffffff" style=3D"background-color:#fff;"><br />
+<span class=3D"preheader" style=3D"display: none !important; visibility: hi=
+dden; opacity: 0; color: transparent; height: 0; width: 0;">Austin, we are =
+one year out from Election Day and the Democrats are already working to def=
+eat me.</span></p>
+<table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" bgco=
+lor=3D"#ffffff" style=3D"background-color:#fff;">
+<tr>
+<td bgcolor=3D"#ffffff" style=3D"background-color:#fff;">
+		<center></p>
+<table width=3D"650" border=3D"0" cellspacing=3D"0" cellpadding=3D"20" id=
+=3D"content" bgcolor=3D"#ffffff" style=3D"background-color:#fff;">
+<tr>
+<td><center><a href=3D"http://email.makeemailgreatagain.email/c/eJxVUMFOhDA=
+Q_Rq4SSillB56YFlXjXox6EYuZLYt0Cy0hBZ1_97izWQy703e5E3mSc6kAnaJNc9SRBFCGOWkID=
+hhqCAoKepDUVU1xYcsrcr0PsrTGa5KzaCnYVXgYQBtkr85HrmAnEjMLkAzjKkoU0n7nKI-eElSU=
+hrPHDPGMCrjiY_eLy7CVZSdQjkltlUlAuYF9GCcnTavrXGJsHOQB_stbwEn7XyA1exdWgP7Etq5=
+6mGbfAJu-Ynw6clor4P4pZ7VLcJH8v56rNv2ozy3j_HKYXNeG7kqrdbwkxaT3eR-KvZ8D2EPo2t=
+GMNdPu901D10VhObtpftHfwHJl2QF"><img src=3D"http://email.makeemailgreatagain=
+.email/c/eJxVj8FuhSAQRb9GdyUigrJg4Xtpu-mqcdOVGWFQ-gQMDxf9-2J3TSaZezI3kxyjpE=
+GQS-1U29CeUspoxwVnRFLBKRH3mxjHe89ubTMOzWvVNR4eiB7cviaEDCu4QP643pShraELZUvTg=
+0Wjl45rMKgFwx4GDrVXTErJ6FDvasv5qNhYtW9lDkigoyfX9vEMuYA_g9OQXQykUClp52HFZ0nW=
+cEvlIizTDGUPHFtuNIfFWsGNaUslJ_yZ97hG8n2sdVJwPrMLJqHDVDSc3uNprsd1Vpf35T9PG4T=
+HVzxfpvd5LIfp82P-F38BibxgYA" border=3D"0" width=3D"273" height=3D"118" alt=
+=3D"Trey Gowdy for Congress" /></a></center></td>
+</tr>
+<tr>
+<td width=3D"100%" valign=3D"top" align=3D"left" bgcolor=3D"#ffffff" style=
+=3D"font-family:Arial, Helvetica, sans-serif;  font-size:18px; line-height:=
+26px; color:#000; background-color:#fff;" class=3D"maintext">
+Austin,</p>
+<p><strong>Thank you.</strong> It is important to me to start with &#8220;t=
+hank you&#8221; because you have stood beside me in past campaigns.  And qu=
+ite simply I would not still be here if not for help from people like you. =
+ </p>
+<p>So it&#8217;s easy for me to remember who I am working for to make our n=
+ation proud and our future safer and brighter. Now more than ever we need t=
+o be accountable, we need to keep our promises, and protect the present and=
+ future for all Americans.  </p>
+<p><strong><a href=3D"http://email.makeemailgreatagain.email/c/eJxVUMFOhDAQ=
+_Rq4SSillB56YFlXjXox6EYuZLYt0Cy0hBZ1_97izWQy703e5E3mSc6kAnaJNc9SRBFCGOWkIDh=
+hqCAoKepDUVU1xYcsrcr0PsrTGa5KzaCnYVXgYQBtkr85HrmAnEjMLkAzjKkoU0n7nKI-eElSUh=
+rPHDPGMCrjiY_eLy7CVZSdQjkltlUlAuYF9GCcnTavrXGJsHOQB_stbwEn7XyA1exdWgP7Etq56=
+mGbfAJu-Ynw6clor4P4pZ7VLcJH8v56rNv2ozy3j_HKYXNeG7kqrdbwkxaT3eR-KvZ8D2EPo2tG=
+MNdPu901D10VhObtpftHfwHJl2QF">But, Austin, in order to stay fighting for ou=
+r beliefs I need your help.</a><br />
+</strong></p>
+<p>We are one year out from Election Day and the Democrats are already work=
+ing to defeat me. </p>
+<p><center><a href=3D"http://email.makeemailgreatagain.email/c/eJxVUMFOhDAQ=
+_Rq4SSillB56YFlXjXox6EYuZLYt0Cy0hBZ1_97izWQy703e5E3mSc6kAnaJNc9SRBFCGOWkIDh=
+hqCAoKepDUVU1xYcsrcr0PsrTGa5KzaCnYVXgYQBtkr85HrmAnEjMLkAzjKkoU0n7nKI-eElSUh=
+rPHDPGMCrjiY_eLy7CVZSdQjkltlUlAuYF9GCcnTavrXGJsHOQB_stbwEn7XyA1exdWgP7Etq56=
+mGbfAJu-Ynw6clor4P4pZ7VLcJH8v56rNv2ozy3j_HKYXNeG7kqrdbwkxaT3eR-KvZ8D2EPo2tG=
+MNdPu901D10VhObtpftHfwHJl2QF"><img src=3D"http://email.makeemailgreatagain.=
+email/c/eJxVkD9vhDAMxT8NbEX5QwIZMnCntkuniqXTyUkM5I4kCML3b-hWyZLfz36S5ee0cgj=
+K1F4zQjtKKaetkII3ikpBG3m_yWG4d_zGyNCT96olAV6IAfw67wgZZvCx-eN60a4XveqM6o3rWs=
+EEl8ywDi0xjAqCpA6aK6U47etVLzlvFR8q9lFqgx1sCs3VQzpjLhDO6C1kn2JTqJisDzDjUdTkx=
+ESVkRO3HFUHAplwVoCZJimcY8WSF9zSkSE6m87d4948N5zrXcN5ZB_djmVW_vF2Tae7LtRZXwFc=
+QTzGBeLrJ51v4-djKIvx--vxT_4C5D9ijQ" border=3D"0" width=3D"590" height=3D"26=
+6" alt=3D"Trey Gowdy for Congress" class=3D"banner_scale" /></a></center><b=
+r />
+<br />
+Austin &#8211; unfortunately this is just a sign of what&#8217;s to come. I=
+&#8217;ve been targeted for defeat by Nancy Pelosi and other Democrats and =
+attacked by left wing media outlets.  I am not afraid to fight back.  </p>
+<p><strong><a href=3D"http://email.makeemailgreatagain.email/c/eJxVUMFOhDAQ=
+_Rq4SSillB56YFlXjXox6EYuZLYt0Cy0hBZ1_97izWQy703e5E3mSc6kAnaJNc9SRBFCGOWkIDh=
+hqCAoKepDUVU1xYcsrcr0PsrTGa5KzaCnYVXgYQBtkr85HrmAnEjMLkAzjKkoU0n7nKI-eElSUh=
+rPHDPGMCrjiY_eLy7CVZSdQjkltlUlAuYF9GCcnTavrXGJsHOQB_stbwEn7XyA1exdWgP7Etq56=
+mGbfAJu-Ynw6clor4P4pZ7VLcJH8v56rNv2ozy3j_HKYXNeG7kqrdbwkxaT3eR-KvZ8D2EPo2tG=
+MNdPu901D10VhObtpftHfwHJl2QF">But I need your help to fight back.<br />
+</a></strong></p>
+<p><strong>I hate asking for money.</strong> It&#8217;s my least favorite p=
+art of a campaign, but unfortunately Austin, it&#8217;s also one of the mos=
+t critical aspects too. The money we raise today will ensure we can run a s=
+trong campaign with the financial resources needed to shut down the Democra=
+ts and their relentless attacks. </p>
+<p>Austin, I know how hard you work for your paycheck.  That&#8217;s what m=
+akes it hard to ask for help.  <strong><span style=3D"background-color: #FF=
+FF00">In order to run a strong campaign and have the resources needed to fi=
+ght back against any/all attacks thrown our way we need to show strength an=
+d resources by the end of the year.</span></strong></p>
+<p><strong><a href=3D"http://email.makeemailgreatagain.email/c/eJxVUMFOhDAQ=
+_Rq4SSillB56YFlXjXox6EYuZLYt0Cy0hBZ1_97izWQy703e5E3mSc6kAnaJNc9SRBFCGOWkIDh=
+hqCAoKepDUVU1xYcsrcr0PsrTGa5KzaCnYVXgYQBtkr85HrmAnEjMLkAzjKkoU0n7nKI-eElSUh=
+rPHDPGMCrjiY_eLy7CVZSdQjkltlUlAuYF9GCcnTavrXGJsHOQB_stbwEn7XyA1exdWgP7Etq56=
+mGbfAJu-Ynw6clor4P4pZ7VLcJH8v56rNv2ozy3j_HKYXNeG7kqrdbwkxaT3eR-KvZ8D2EPo2tG=
+MNdPu901D10VhObtpftHfwHJl2QF">If I can count on you for a donation, please =
+let me know by either following this secure link or clicking the button bel=
+ow.  </a></strong></p>
+<div align=3D"center">
+<table cellpadding=3D"15" bgcolor=3D"#163B81" style=3D"background: #163B81;=
+ -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; b=
+order-bottom: 1px solid #163B81 !important;">
+<tr>
+<td align=3D"center" style=3D"font-family: Verdana, Geneva, sans-serif; fon=
+t-size: 20px;"><a href=3D"http://email.makeemailgreatagain.email/c/eJxVUMFO=
+hDAQ_Rq4SSillB56YFlXjXox6EYuZLYt0Cy0hBZ1_97izWQy703e5E3mSc6kAnaJNc9SRBFCGOW=
+kIDhhqCAoKepDUVU1xYcsrcr0PsrTGa5KzaCnYVXgYQBtkr85HrmAnEjMLkAzjKkoU0n7nKI-eE=
+lSUhrPHDPGMCrjiY_eLy7CVZSdQjkltlUlAuYF9GCcnTavrXGJsHOQB_stbwEn7XyA1exdWgP7E=
+tq56mGbfAJu-Ynw6clor4P4pZ7VLcJH8v56rNv2ozy3j_HKYXNeG7kqrdbwkxaT3eR-KvZ8D2EP=
+o2tGMNdPu901D10VhObtpftHfwHJl2QF" target=3D"_blank" style=3D"color:#ffffff;=
+ text-align: center; text-decoration: none; min-width: 300px; text-transfor=
+m: uppercase;color:#FFFFFF;"><span style=3D"color:#ffffff; text-align: cent=
+er; text-decoration: none; min-width: 300px; text-transform: uppercase;colo=
+r:#FFFFFF;"><strong>&nbsp;&nbsp;&nbsp;DONATE TODAY&nbsp;&nbsp;&nbsp;<br />H=
+ELP TREY GOWDY&gt;&gt;</strong></span></a></td>
+</tr>
+</table>
+</div>
+<p></p>
+<p><strong>Many Democrats such as Nancy Pelosi would love to see me defeate=
+d and have my voice and vote disappear from Washington. Liberal groups are =
+targeting my district in South Carolina as one to reclaim and they are spen=
+ding money here trying to defeat me. </strong></p>
+<p>I will not be bullied into silence by the Democrats or their left wing m=
+edia friends.</p>
+<p>I made it to Congress because of the incredible support from people like=
+ your, and with your continued support I can keep fighting for our values a=
+nd beliefs in Washington. </p>
+<p>Austin, <a href=3D"http://email.makeemailgreatagain.email/c/eJxVUMFOhDAQ=
+_Rq4SSillB56YFlXjXox6EYuZLYt0Cy0hBZ1_97izWQy703e5E3mSc6kAnaJNc9SRBFCGOWkIDh=
+hqCAoKepDUVU1xYcsrcr0PsrTGa5KzaCnYVXgYQBtkr85HrmAnEjMLkAzjKkoU0n7nKI-eElSUh=
+rPHDPGMCrjiY_eLy7CVZSdQjkltlUlAuYF9GCcnTavrXGJsHOQB_stbwEn7XyA1exdWgP7Etq56=
+mGbfAJu-Ynw6clor4P4pZ7VLcJH8v56rNv2ozy3j_HKYXNeG7kqrdbwkxaT3eR-KvZ8D2EPo2tG=
+MNdPu901D10VhObtpftHfwHJl2QF"><strong>your donation</strong></a> &#8212; no=
+ matter the size &#8212; makes a difference. It will get us closer to reach=
+ing our goal and will send a message that our campaign is strong and will b=
+e a force to be reckoned with.  </p>
+<p><strong>I need <a href=3D"http://email.makeemailgreatagain.email/c/eJxVU=
+MFOhDAQ_Rq4SSillB56YFlXjXox6EYuZLYt0Cy0hBZ1_97izWQy703e5E3mSc6kAnaJNc9SRBFC=
+GOWkIDhhqCAoKepDUVU1xYcsrcr0PsrTGa5KzaCnYVXgYQBtkr85HrmAnEjMLkAzjKkoU0n7nKI=
+-eElSUhrPHDPGMCrjiY_eLy7CVZSdQjkltlUlAuYF9GCcnTavrXGJsHOQB_stbwEn7XyA1exdWg=
+P7Etq56mGbfAJu-Ynw6clor4P4pZ7VLcJH8v56rNv2ozy3j_HKYXNeG7kqrdbwkxaT3eR-KvZ8D=
+2EPo2tGMNdPu901D10VhObtpftHfwHJl2QF">your help and support</a></strong>. </=
+p>
+<div align=3D"center">
+<table cellpadding=3D"15" bgcolor=3D"#163B81" style=3D"background: #163B81;=
+ -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; b=
+order-bottom: 1px solid #163B81 !important;">
+<tr>
+<td align=3D"center" style=3D"font-family: Verdana, Geneva, sans-serif; fon=
+t-size: 20px;"><a href=3D"http://email.makeemailgreatagain.email/c/eJxVUMFO=
+hDAQ_Rq4SSillB56YFlXjXox6EYuZLYt0Cy0hBZ1_97izWQy703e5E3mSc6kAnaJNc9SRBFCGOW=
+kIDhhqCAoKepDUVU1xYcsrcr0PsrTGa5KzaCnYVXgYQBtkr85HrmAnEjMLkAzjKkoU0n7nKI-eE=
+lSUhrPHDPGMCrjiY_eLy7CVZSdQjkltlUlAuYF9GCcnTavrXGJsHOQB_stbwEn7XyA1exdWgP7E=
+tq56mGbfAJu-Ynw6clor4P4pZ7VLcJH8v56rNv2ozy3j_HKYXNeG7kqrdbwkxaT3eR-KvZ8D2EP=
+o2tGMNdPu901D10VhObtpftHfwHJl2QF" target=3D"_blank" style=3D"color:#ffffff;=
+ text-align: center; text-decoration: none; min-width: 300px; text-transfor=
+m: uppercase;color:#FFFFFF;"><span style=3D"color:#ffffff; text-align: cent=
+er; text-decoration: none; min-width: 300px; text-transform: uppercase;colo=
+r:#FFFFFF;"><strong>&nbsp;&nbsp;&nbsp;DONATE TODAY&nbsp;&nbsp;&nbsp;<br />H=
+ELP TREY GOWDY&gt;&gt;</strong></span></a></td>
+</tr>
+</table>
+</div>
+<p>
+<strong><a href=3D"http://email.makeemailgreatagain.email/c/eJxVUMFOhDAQ_Rq=
+4SSillB56YFlXjXox6EYuZLYt0Cy0hBZ1_97izWQy703e5E3mSc6kAnaJNc9SRBFCGOWkIDhhqC=
+AoKepDUVU1xYcsrcr0PsrTGa5KzaCnYVXgYQBtkr85HrmAnEjMLkAzjKkoU0n7nKI-eElSUhrPH=
+DPGMCrjiY_eLy7CVZSdQjkltlUlAuYF9GCcnTavrXGJsHOQB_stbwEn7XyA1exdWgP7Etq56mGb=
+fAJu-Ynw6clor4P4pZ7VLcJH8v56rNv2ozy3j_HKYXNeG7kqrdbwkxaT3eR-KvZ8D2EPo2tGMNd=
+Pu901D10VhObtpftHfwHJl2QF">If you can help our reach our goal, please let m=
+e know by making a financial contribution right away.</a></strong></p>
+<p>Thank you for your help.</p>
+<p>Sincerely,</p>
+<p>Trey Gowdy<br />
+South Carolina 4th District</p>
+<p></p>
+<div align=3D"center">
+<table cellpadding=3D"15" bgcolor=3D"#163B81" style=3D"background: #163B81;=
+ -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; b=
+order-bottom: 1px solid #163B81 !important;">
+<tr>
+<td align=3D"center" style=3D"font-family: Verdana, Geneva, sans-serif; fon=
+t-size: 20px;"><a href=3D"http://email.makeemailgreatagain.email/c/eJxVUMFO=
+hDAQ_Rq4SSillB56YFlXjXox6EYuZLYt0Cy0hBZ1_97izWQy703e5E3mSc6kAnaJNc9SRBFCGOW=
+kIDhhqCAoKepDUVU1xYcsrcr0PsrTGa5KzaCnYVXgYQBtkr85HrmAnEjMLkAzjKkoU0n7nKI-eE=
+lSUhrPHDPGMCrjiY_eLy7CVZSdQjkltlUlAuYF9GCcnTavrXGJsHOQB_stbwEn7XyA1exdWgP7E=
+tq56mGbfAJu-Ynw6clor4P4pZ7VLcJH8v56rNv2ozy3j_HKYXNeG7kqrdbwkxaT3eR-KvZ8D2EP=
+o2tGMNdPu901D10VhObtpftHfwHJl2QF" target=3D"_blank" style=3D"color:#ffffff;=
+ text-align: center; text-decoration: none; min-width: 300px; text-transfor=
+m: uppercase;color:#FFFFFF;"><span style=3D"color:#ffffff; text-align: cent=
+er; text-decoration: none; min-width: 300px; text-transform: uppercase;colo=
+r:#FFFFFF;"><strong>&nbsp;&nbsp;&nbsp;DONATE TODAY&nbsp;&nbsp;&nbsp;<br />H=
+ELP TREY GOWDY&gt;&gt;</strong></span></a></td>
+</tr>
+</table>
+</div>
+<p>
+					</td>
+</tr>
+</table>
+<p>		</center></p>
+<p>		<center></p>
+<table width=3D"280" cellspacing=3D"0" cellpadding=3D"0" border=3D"1" style=
+=3D"border:thin solid #000;" id=3D"disclaimer" align=3D"center">
+<tbody>
+<tr>
+<td valign=3D"top" align=3D"center">
+						<center></p>
+<table width=3D"270" cellspacing=3D"0" cellpadding=3D"5" border=3D"0" id=3D=
+"disclaimer2">
+<tbody>
+<tr>
+<td><center><font size=3D"2" face=3D"Arial, Verdana, Geneva" style=3D"font-=
+size: 13px; font-family: arial,verdana,helvetica,sans-serif;" id=3D"disclai=
+mertext">Paid For By Trey Gowdy for Congress</font></center></td>
+</tr>
+</tbody>
+</table>
+<p>						</center>
+						</td>
+</tr>
+</tbody>
+</table>
+<p>		</center></p>
+<table style=3D"text-align: center; padding: 15px 0px 0px 0px;" width=3D"10=
+0%" align=3D"center">
+<tbody>
+<tr>
+<td style=3D"padding: 0px 0px 5px; color: #000000; font-family: Arial,sans-=
+serif; font-size: 10px; text-align: center;" align=3D"center">Click <a href=
+=3D"http://email.makeemailgreatagain.email/u/eJxVjr0OgyAYRZ-mbCV8IiADA5qmS6=
+fGpZP5-KkS_xKq71_t1u3enOSeG4wOEbUjyRQMFABwKIUUnGqQAqhsamlto3hdMFux26VkM44xz=
+pimPkfcsMe00F8ngym1fEsAfEMliuCUZ8ii5wVXzjEGkmSD-2dLS8gxxXysJT-te6B-nclmTv15=
+o2sHXMbXul_be2cP0D4f3V_8Av3TNuc">here</a> to unsubscribe.</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</table>
+<table style=3D"height: 1px; width: 1px;">
+<tbody>
+<tr>
+<td><img src=3D"http://email.makeemailgreatagain.email/c/eJxVj7tuhDAURL8Gul=
+i-fuLCBbvJpkkV0aRCF3wBa3nJa6R8ftgUkSJNMTOnOsG7QOi6MnrBwQKABKWNlsyB0cDM9WLq-=
+mrlRfC64m-F4gveiRaM85gIM44YV_a7y8lry5UKlUXiDobKQI9CEQZh-0AaQrl46ZyTUJWzn3Le=
+H4WsC3E7s8dvmhnuO0uUj7TumCe2Uv5DYxwKeUuFfNXGSA0QnOVcC2X7juuKDx0fFPW601ya85R=
+dIQwue5k8Ho8c15AoUjoNYj9vR2D9tpTZP5Wf6m0z4Xr_2o6X5r2tT9B8frT_6g889Vm6;c=3DR=
+L0120201711131" width=3D"1" height=3D"1" /></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</body></html>
+
+
+To unsubscribe click: <http://email.makeemailgreatagain.email/u/eJwdzDsOwyA=
+MANDThBFhPk4YGEjUgxjspqj5SDS5f6uOb3mcIgvFolqyBkYAcOADBqcjYACNy4w5L6ObrcmTeQ=
+ze7PQW2altaxe6aKV26L_VKzFz4RpCjd5bEyZxBYuLFSNMGJ9e9UT352oHd2nSf1ur23mzrueur=
+jTY_AWkICso>
+
+
+--bcbfff4cc052429b9e88ced3447ec951
+Content-Type: text/html; charset="ascii"
+Mime-Version: 1.0
+Content-Transfer-Encoding: quoted-printable
+
+<html><body><p><!--rpcampaign: RL0120201711131--></p>
+<table style=3D"max-width: 600px; width: 100%; border-spacing: 0; border-co=
+llapse: collapse; background-color: #fff; mso-table-lspace: 0; mso-table-rs=
+pace: 0; margin: 0 auto 0 auto;" border=3D"0" cellspacing=3D"0" cellpadding=
+=3D"0" align=3D"center">
+<tbody>
+<tr>
+<td>
+<style type=3D"text/css">
+body,td,th {font-family: Arial, Helvetica, sans-serif; font-size: 13px; col=
+or: #000;}
+body {margin-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: =
+0px;}</p>
+<p>a:link {font-family:Arial, Helvetica, sans-serif; font-size:100%; color:=
+#036; text-decoration:underline;}
+a:active {font-family:Arial, Helvetica, sans-serif; font-size:100%; color:#=
+036; text-decoration:underline;}
+a:visited {font-family:Arial, Helvetica, sans-serif; font-size:100%; color:=
+#036; text-decoration:underline;}
+a:hover {font-family:Arial, Helvetica, sans-serif; font-size:100%; color:#0=
+36; text-decoration:none;}</p>
+<p>.preheader { display:none !important; visibility:hidden; opacity:0; colo=
+r:transparent; height:0; width:0; }
+/* - - - - - HOTMAIL FIXES */
+.ReadMsgBody {widows:100%;}
+.ExternalClass {width:100%;}
+@media screen and (max-width: 640px), screen and (max-device-width: 640px)
+{
+	body {-webkit-text-size-adjust: none;}
+	table[id=3Dheader] {width:100% !important;}
+	table[id=3Dcontent] {width:100% !important;}
+	img[class=3Dbanner_scale] {width: 100% !important; max-width: 320px !impor=
+tant; height: auto !important;}
+	img[class=3Dimg_scale] {width: 100% !important; max-width: 250px !importan=
+t; height: auto !important;}
+	table[id=3Ddisclaimer] {width: 240px !important;}
+	table[id=3Ddisclaimer2] {width: 230px !important; font-size:100% !importan=
+t;}
+	font[id=3Ddisclaimertext] {font-size:90% !important;}
+	font[id=3Dmaintext] {font-size: 160% !important; line-height:200% !importa=
+nt;}
+	td[class=3Dmaintext] {font-size: 160% !important; line-height:200% !import=
+ant;}
+}
+</style>
+<p></head><br />
+<body bgcolor=3D"#ffffff" style=3D"background-color:#fff;"><br />
+<span class=3D"preheader" style=3D"display: none !important; visibility: hi=
+dden; opacity: 0; color: transparent; height: 0; width: 0;">Austin, we are =
+one year out from Election Day and the Democrats are already working to def=
+eat me.</span></p>
+<table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" bgco=
+lor=3D"#ffffff" style=3D"background-color:#fff;">
+<tr>
+<td bgcolor=3D"#ffffff" style=3D"background-color:#fff;">
+		<center></p>
+<table width=3D"650" border=3D"0" cellspacing=3D"0" cellpadding=3D"20" id=
+=3D"content" bgcolor=3D"#ffffff" style=3D"background-color:#fff;">
+<tr>
+<td><center><a href=3D"http://email.makeemailgreatagain.email/c/eJxVUMFOhDA=
+Q_Rq4SSillB56YFlXjXox6EYuZLYt0Cy0hBZ1_97izWQy703e5E3mSc6kAnaJNc9SRBFCGOWkID=
+hhqCAoKepDUVU1xYcsrcr0PsrTGa5KzaCnYVXgYQBtkr85HrmAnEjMLkAzjKkoU0n7nKI-eElSU=
+hrPHDPGMCrjiY_eLy7CVZSdQjkltlUlAuYF9GCcnTavrXGJsHOQB_stbwEn7XyA1exdWgP7Etq5=
+6mGbfAJu-Ynw6clor4P4pZ7VLcJH8v56rNv2ozy3j_HKYXNeG7kqrdbwkxaT3eR-KvZ8D2EPo2t=
+GMNdPu901D10VhObtpftHfwHJl2QF"><img src=3D"http://paracom.paramountcommunic=
+ation.com/cimages/fd5f19b6f3c3e97a5e25dc5abff65dd2/trey_logo.jpg" border=3D=
+"0" width=3D"273" height=3D"118" alt=3D"Trey Gowdy for Congress" /></a></ce=
+nter></td>
+</tr>
+<tr>
+<td width=3D"100%" valign=3D"top" align=3D"left" bgcolor=3D"#ffffff" style=
+=3D"font-family:Arial, Helvetica, sans-serif;  font-size:18px; line-height:=
+26px; color:#000; background-color:#fff;" class=3D"maintext">
+Austin,</p>
+<p><strong>Thank you.</strong> It is important to me to start with &#8220;t=
+hank you&#8221; because you have stood beside me in past campaigns.  And qu=
+ite simply I would not still be here if not for help from people like you. =
+ </p>
+<p>So it&#8217;s easy for me to remember who I am working for to make our n=
+ation proud and our future safer and brighter. Now more than ever we need t=
+o be accountable, we need to keep our promises, and protect the present and=
+ future for all Americans.  </p>
+<p><strong><a href=3D"http://email.makeemailgreatagain.email/c/eJxVUMFOhDAQ=
+_Rq4SSillB56YFlXjXox6EYuZLYt0Cy0hBZ1_97izWQy703e5E3mSc6kAnaJNc9SRBFCGOWkIDh=
+hqCAoKepDUVU1xYcsrcr0PsrTGa5KzaCnYVXgYQBtkr85HrmAnEjMLkAzjKkoU0n7nKI-eElSUh=
+rPHDPGMCrjiY_eLy7CVZSdQjkltlUlAuYF9GCcnTavrXGJsHOQB_stbwEn7XyA1exdWgP7Etq56=
+mGbfAJu-Ynw6clor4P4pZ7VLcJH8v56rNv2ozy3j_HKYXNeG7kqrdbwkxaT3eR-KvZ8D2EPo2tG=
+MNdPu901D10VhObtpftHfwHJl2QF">But, Austin, in order to stay fighting for ou=
+r beliefs I need your help.</a><br />
+</strong></p>
+<p>We are one year out from Election Day and the Democrats are already work=
+ing to defeat me. </p>
+<p><center><a href=3D"http://email.makeemailgreatagain.email/c/eJxVUMFOhDAQ=
+_Rq4SSillB56YFlXjXox6EYuZLYt0Cy0hBZ1_97izWQy703e5E3mSc6kAnaJNc9SRBFCGOWkIDh=
+hqCAoKepDUVU1xYcsrcr0PsrTGa5KzaCnYVXgYQBtkr85HrmAnEjMLkAzjKkoU0n7nKI-eElSUh=
+rPHDPGMCrjiY_eLy7CVZSdQjkltlUlAuYF9GCcnTavrXGJsHOQB_stbwEn7XyA1exdWgP7Etq56=
+mGbfAJu-Ynw6clor4P4pZ7VLcJH8v56rNv2ozy3j_HKYXNeG7kqrdbwkxaT3eR-KvZ8D2EPo2tG=
+MNdPu901D10VhObtpftHfwHJl2QF"><img src=3D"http://paracom.paramountcommunica=
+tion.com/cimages/fd5f19b6f3c3e97a5e25dc5abff65dd2/thepostandcourier.jpeg" b=
+order=3D"0" width=3D"590" height=3D"266" alt=3D"Trey Gowdy for Congress" cl=
+ass=3D"banner_scale" /></a></center><br />
+<br />
+Austin &#8211; unfortunately this is just a sign of what&#8217;s to come. I=
+&#8217;ve been targeted for defeat by Nancy Pelosi and other Democrats and =
+attacked by left wing media outlets.  I am not afraid to fight back.  </p>
+<p><strong><a href=3D"http://email.makeemailgreatagain.email/c/eJxVUMFOhDAQ=
+_Rq4SSillB56YFlXjXox6EYuZLYt0Cy0hBZ1_97izWQy703e5E3mSc6kAnaJNc9SRBFCGOWkIDh=
+hqCAoKepDUVU1xYcsrcr0PsrTGa5KzaCnYVXgYQBtkr85HrmAnEjMLkAzjKkoU0n7nKI-eElSUh=
+rPHDPGMCrjiY_eLy7CVZSdQjkltlUlAuYF9GCcnTavrXGJsHOQB_stbwEn7XyA1exdWgP7Etq56=
+mGbfAJu-Ynw6clor4P4pZ7VLcJH8v56rNv2ozy3j_HKYXNeG7kqrdbwkxaT3eR-KvZ8D2EPo2tG=
+MNdPu901D10VhObtpftHfwHJl2QF">But I need your help to fight back.<br />
+</a></strong></p>
+<p><strong>I hate asking for money.</strong> It&#8217;s my least favorite p=
+art of a campaign, but unfortunately Austin, it&#8217;s also one of the mos=
+t critical aspects too. The money we raise today will ensure we can run a s=
+trong campaign with the financial resources needed to shut down the Democra=
+ts and their relentless attacks. </p>
+<p>Austin, I know how hard you work for your paycheck.  That&#8217;s what m=
+akes it hard to ask for help.  <strong><span style=3D"background-color: #FF=
+FF00">In order to run a strong campaign and have the resources needed to fi=
+ght back against any/all attacks thrown our way we need to show strength an=
+d resources by the end of the year.</span></strong></p>
+<p><strong><a href=3D"http://email.makeemailgreatagain.email/c/eJxVUMFOhDAQ=
+_Rq4SSillB56YFlXjXox6EYuZLYt0Cy0hBZ1_97izWQy703e5E3mSc6kAnaJNc9SRBFCGOWkIDh=
+hqCAoKepDUVU1xYcsrcr0PsrTGa5KzaCnYVXgYQBtkr85HrmAnEjMLkAzjKkoU0n7nKI-eElSUh=
+rPHDPGMCrjiY_eLy7CVZSdQjkltlUlAuYF9GCcnTavrXGJsHOQB_stbwEn7XyA1exdWgP7Etq56=
+mGbfAJu-Ynw6clor4P4pZ7VLcJH8v56rNv2ozy3j_HKYXNeG7kqrdbwkxaT3eR-KvZ8D2EPo2tG=
+MNdPu901D10VhObtpftHfwHJl2QF">If I can count on you for a donation, please =
+let me know by either following this secure link or clicking the button bel=
+ow.  </a></strong></p>
+<div align=3D"center">
+<table cellpadding=3D"15" bgcolor=3D"#163B81" style=3D"background: #163B81;=
+ -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; b=
+order-bottom: 1px solid #163B81 !important;">
+<tr>
+<td align=3D"center" style=3D"font-family: Verdana, Geneva, sans-serif; fon=
+t-size: 20px;"><a href=3D"http://email.makeemailgreatagain.email/c/eJxVUMFO=
+hDAQ_Rq4SSillB56YFlXjXox6EYuZLYt0Cy0hBZ1_97izWQy703e5E3mSc6kAnaJNc9SRBFCGOW=
+kIDhhqCAoKepDUVU1xYcsrcr0PsrTGa5KzaCnYVXgYQBtkr85HrmAnEjMLkAzjKkoU0n7nKI-eE=
+lSUhrPHDPGMCrjiY_eLy7CVZSdQjkltlUlAuYF9GCcnTavrXGJsHOQB_stbwEn7XyA1exdWgP7E=
+tq56mGbfAJu-Ynw6clor4P4pZ7VLcJH8v56rNv2ozy3j_HKYXNeG7kqrdbwkxaT3eR-KvZ8D2EP=
+o2tGMNdPu901D10VhObtpftHfwHJl2QF" target=3D"_blank" style=3D"color:#ffffff;=
+ text-align: center; text-decoration: none; min-width: 300px; text-transfor=
+m: uppercase;color:#FFFFFF;"><span style=3D"color:#ffffff; text-align: cent=
+er; text-decoration: none; min-width: 300px; text-transform: uppercase;colo=
+r:#FFFFFF;"><strong>&nbsp;&nbsp;&nbsp;DONATE TODAY&nbsp;&nbsp;&nbsp;<br />H=
+ELP TREY GOWDY&gt;&gt;</strong></span></a></td>
+</tr>
+</table>
+</div>
+<p></p>
+<p><strong>Many Democrats such as Nancy Pelosi would love to see me defeate=
+d and have my voice and vote disappear from Washington. Liberal groups are =
+targeting my district in South Carolina as one to reclaim and they are spen=
+ding money here trying to defeat me. </strong></p>
+<p>I will not be bullied into silence by the Democrats or their left wing m=
+edia friends.</p>
+<p>I made it to Congress because of the incredible support from people like=
+ your, and with your continued support I can keep fighting for our values a=
+nd beliefs in Washington. </p>
+<p>Austin, <a href=3D"http://email.makeemailgreatagain.email/c/eJxVUMFOhDAQ=
+_Rq4SSillB56YFlXjXox6EYuZLYt0Cy0hBZ1_97izWQy703e5E3mSc6kAnaJNc9SRBFCGOWkIDh=
+hqCAoKepDUVU1xYcsrcr0PsrTGa5KzaCnYVXgYQBtkr85HrmAnEjMLkAzjKkoU0n7nKI-eElSUh=
+rPHDPGMCrjiY_eLy7CVZSdQjkltlUlAuYF9GCcnTavrXGJsHOQB_stbwEn7XyA1exdWgP7Etq56=
+mGbfAJu-Ynw6clor4P4pZ7VLcJH8v56rNv2ozy3j_HKYXNeG7kqrdbwkxaT3eR-KvZ8D2EPo2tG=
+MNdPu901D10VhObtpftHfwHJl2QF"><strong>your donation</strong></a> &#8212; no=
+ matter the size &#8212; makes a difference. It will get us closer to reach=
+ing our goal and will send a message that our campaign is strong and will b=
+e a force to be reckoned with.  </p>
+<p><strong>I need <a href=3D"http://email.makeemailgreatagain.email/c/eJxVU=
+MFOhDAQ_Rq4SSillB56YFlXjXox6EYuZLYt0Cy0hBZ1_97izWQy703e5E3mSc6kAnaJNc9SRBFC=
+GOWkIDhhqCAoKepDUVU1xYcsrcr0PsrTGa5KzaCnYVXgYQBtkr85HrmAnEjMLkAzjKkoU0n7nKI=
+-eElSUhrPHDPGMCrjiY_eLy7CVZSdQjkltlUlAuYF9GCcnTavrXGJsHOQB_stbwEn7XyA1exdWg=
+P7Etq56mGbfAJu-Ynw6clor4P4pZ7VLcJH8v56rNv2ozy3j_HKYXNeG7kqrdbwkxaT3eR-KvZ8D=
+2EPo2tGMNdPu901D10VhObtpftHfwHJl2QF">your help and support</a></strong>. </=
+p>
+<div align=3D"center">
+<table cellpadding=3D"15" bgcolor=3D"#163B81" style=3D"background: #163B81;=
+ -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; b=
+order-bottom: 1px solid #163B81 !important;">
+<tr>
+<td align=3D"center" style=3D"font-family: Verdana, Geneva, sans-serif; fon=
+t-size: 20px;"><a href=3D"http://email.makeemailgreatagain.email/c/eJxVUMFO=
+hDAQ_Rq4SSillB56YFlXjXox6EYuZLYt0Cy0hBZ1_97izWQy703e5E3mSc6kAnaJNc9SRBFCGOW=
+kIDhhqCAoKepDUVU1xYcsrcr0PsrTGa5KzaCnYVXgYQBtkr85HrmAnEjMLkAzjKkoU0n7nKI-eE=
+lSUhrPHDPGMCrjiY_eLy7CVZSdQjkltlUlAuYF9GCcnTavrXGJsHOQB_stbwEn7XyA1exdWgP7E=
+tq56mGbfAJu-Ynw6clor4P4pZ7VLcJH8v56rNv2ozy3j_HKYXNeG7kqrdbwkxaT3eR-KvZ8D2EP=
+o2tGMNdPu901D10VhObtpftHfwHJl2QF" target=3D"_blank" style=3D"color:#ffffff;=
+ text-align: center; text-decoration: none; min-width: 300px; text-transfor=
+m: uppercase;color:#FFFFFF;"><span style=3D"color:#ffffff; text-align: cent=
+er; text-decoration: none; min-width: 300px; text-transform: uppercase;colo=
+r:#FFFFFF;"><strong>&nbsp;&nbsp;&nbsp;DONATE TODAY&nbsp;&nbsp;&nbsp;<br />H=
+ELP TREY GOWDY&gt;&gt;</strong></span></a></td>
+</tr>
+</table>
+</div>
+<p>
+<strong><a href=3D"http://email.makeemailgreatagain.email/c/eJxVUMFOhDAQ_Rq=
+4SSillB56YFlXjXox6EYuZLYt0Cy0hBZ1_97izWQy703e5E3mSc6kAnaJNc9SRBFCGOWkIDhhqC=
+AoKepDUVU1xYcsrcr0PsrTGa5KzaCnYVXgYQBtkr85HrmAnEjMLkAzjKkoU0n7nKI-eElSUhrPH=
+DPGMCrjiY_eLy7CVZSdQjkltlUlAuYF9GCcnTavrXGJsHOQB_stbwEn7XyA1exdWgP7Etq56mGb=
+fAJu-Ynw6clor4P4pZ7VLcJH8v56rNv2ozy3j_HKYXNeG7kqrdbwkxaT3eR-KvZ8D2EPo2tGMNd=
+Pu901D10VhObtpftHfwHJl2QF">If you can help our reach our goal, please let m=
+e know by making a financial contribution right away.</a></strong></p>
+<p>Thank you for your help.</p>
+<p>Sincerely,</p>
+<p>Trey Gowdy<br />
+South Carolina 4th District</p>
+<p></p>
+<div align=3D"center">
+<table cellpadding=3D"15" bgcolor=3D"#163B81" style=3D"background: #163B81;=
+ -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; b=
+order-bottom: 1px solid #163B81 !important;">
+<tr>
+<td align=3D"center" style=3D"font-family: Verdana, Geneva, sans-serif; fon=
+t-size: 20px;"><a href=3D"http://email.makeemailgreatagain.email/c/eJxVUMFO=
+hDAQ_Rq4SSillB56YFlXjXox6EYuZLYt0Cy0hBZ1_97izWQy703e5E3mSc6kAnaJNc9SRBFCGOW=
+kIDhhqCAoKepDUVU1xYcsrcr0PsrTGa5KzaCnYVXgYQBtkr85HrmAnEjMLkAzjKkoU0n7nKI-eE=
+lSUhrPHDPGMCrjiY_eLy7CVZSdQjkltlUlAuYF9GCcnTavrXGJsHOQB_stbwEn7XyA1exdWgP7E=
+tq56mGbfAJu-Ynw6clor4P4pZ7VLcJH8v56rNv2ozy3j_HKYXNeG7kqrdbwkxaT3eR-KvZ8D2EP=
+o2tGMNdPu901D10VhObtpftHfwHJl2QF" target=3D"_blank" style=3D"color:#ffffff;=
+ text-align: center; text-decoration: none; min-width: 300px; text-transfor=
+m: uppercase;color:#FFFFFF;"><span style=3D"color:#ffffff; text-align: cent=
+er; text-decoration: none; min-width: 300px; text-transform: uppercase;colo=
+r:#FFFFFF;"><strong>&nbsp;&nbsp;&nbsp;DONATE TODAY&nbsp;&nbsp;&nbsp;<br />H=
+ELP TREY GOWDY&gt;&gt;</strong></span></a></td>
+</tr>
+</table>
+</div>
+<p>
+					</td>
+</tr>
+</table>
+<p>		</center></p>
+<p>		<center></p>
+<table width=3D"280" cellspacing=3D"0" cellpadding=3D"0" border=3D"1" style=
+=3D"border:thin solid #000;" id=3D"disclaimer" align=3D"center">
+<tbody>
+<tr>
+<td valign=3D"top" align=3D"center">
+						<center></p>
+<table width=3D"270" cellspacing=3D"0" cellpadding=3D"5" border=3D"0" id=3D=
+"disclaimer2">
+<tbody>
+<tr>
+<td><center><font size=3D"2" face=3D"Arial, Verdana, Geneva" style=3D"font-=
+size: 13px; font-family: arial,verdana,helvetica,sans-serif;" id=3D"disclai=
+mertext">Paid For By Trey Gowdy for Congress</font></center></td>
+</tr>
+</tbody>
+</table>
+<p>						</center>
+						</td>
+</tr>
+</tbody>
+</table>
+<p>		</center></p>
+<table style=3D"text-align: center; padding: 15px 0px 0px 0px;" width=3D"10=
+0%" align=3D"center">
+<tbody>
+<tr>
+<td style=3D"padding: 0px 0px 5px; color: #000000; font-family: Arial,sans-=
+serif; font-size: 10px; text-align: center;" align=3D"center">Click <a href=
+=3D"http://email.makeemailgreatagain.email/u/eJxVjr0OgyAYRZ-mbCV8IiADA5qmS6=
+fGpZP5-KkS_xKq71_t1u3enOSeG4wOEbUjyRQMFABwKIUUnGqQAqhsamlto3hdMFux26VkM44xz=
+pimPkfcsMe00F8ngym1fEsAfEMliuCUZ8ii5wVXzjEGkmSD-2dLS8gxxXysJT-te6B-nclmTv15=
+o2sHXMbXul_be2cP0D4f3V_8Av3TNuc">here</a> to unsubscribe.</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</table>
+<table style=3D"height: 1px; width: 1px;">
+<tbody>
+<tr>
+<td><img src=3D"https://pixel.app.returnpath.net/pixel.gif?r=3D5663511d9700=
+5247cb0580fb0f4ec5b503647c3b&amp;c=3DRL0120201711131" width=3D"1" height=3D=
+"1" /></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<img width=3D"1px" height=3D"1px" alt=3D"" src=3D"http://email.makeemailgre=
+atagain.email/o/eJxVjrEOgyAURb-mbCXgE_QNDGiaLp0al04G5VWJognV_69263ZPbnJyvEF=
+PDjsWTCZkIaUEmSutgKPUSnJdV9rauoAqE7YUt0suopuIogvzkMhtbnBh4T9mo1FKa8yQADxSCf=
+Q-hJnGHnKFGjpi0QAigixZMm7_bGHxiQKlwxv6ed0979fINnOGnEFtM7pleq37tbm39jia56P9m=
+1--ijjP"></body></html>
+--bcbfff4cc052429b9e88ced3447ec951--
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>color</key>
+	<string>000000</string>
+	<key>date-last-viewed</key>
+	<integer>0</integer>
+	<key>date-received</key>
+	<integer>1510585042</integer>
+	<key>flags</key>
+	<integer>8590195840</integer>
+	<key>remote-id</key>
+	<string>7807</string>
+</dict>
+</plist>

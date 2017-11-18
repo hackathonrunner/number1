@@ -1,0 +1,159 @@
+7044      
+Return-path: <noreply@github.com>
+Received: from ms11p00im-qufv17083701.mac.com ([17.58.36.51])
+ by ms60015.mac.com
+ (Oracle Communications Messaging Server 8.0.1.2.20170607 64bit (built Jun  7
+ 2017)) with ESMTP id <0OZL00CE88P0NB00@ms60015.mac.com> for
+ austindreier@icloud.com; Sat, 18 Nov 2017 00:43:48 +0000 (GMT)
+Original-recipient: rfc822;austindreier@icloud.com
+Received: from github-smtp2a-ext-cp1-prd.iad.github.net
+ (github-smtp2-ext1.iad.github.net [192.30.252.192])
+ by ms11p00im-qufv17083701.me.com
+ (Oracle Communications Messaging Server 8.0.1.2.20170607 64bit (built Jun  7
+ 2017)) with ESMTPS id <0OZL00H0E8OYZ970@ms11p00im-qufv17083701.me.com> for
+ austindreier@icloud.com (ORCPT austindreier@icloud.com); Sat,
+ 18 Nov 2017 00:43:48 +0000 (GMT)
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 spamscore=0
+ clxscore=180 suspectscore=4 malwarescore=0 phishscore=0 adultscore=0
+ bulkscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.0.1-1707230000 definitions=main-1711180009
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10432:,,
+ definitions=2017-11-17_09:,, signatures=0
+Authentication-results: ms11p00im-qufv17233101.me.com; dmarc=pass
+ header.from=github.com
+Authentication-results: ms11p00im-qufv17233901.me.com; spf=pass
+ (ms11p00im-qufv17233901.me.com: domain of noreply@github.com designates
+ 192.30.252.192 as permitted sender) smtp.mailfrom=noreply@github.com;
+Received-SPF: pass (ms11p00im-qufv17233901.me.com: domain of noreply@github.com
+ designates 192.30.252.192 as permitted sender)
+ receiver=ms11p00im-qufv17233901.me.com; client-ip=192.30.252.192;
+ helo=github-smtp2a-ext-cp1-prd.iad.github.net;
+ envelope-from=noreply@github.com;
+Authentication-results: ms11p00im-qufv17233001.me.com;	dkim=pass (1024-bit key)
+ header.d=github.com header.i=@github.com header.b=zGmr9JHU;	dkim-adsp=pass
+Date: Fri, 17 Nov 2017 16:43:46 -0800
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=github.com;	s=pf2014;
+ t=1510965826;	bh=f0KPsYvDmXPbfM36hOK1/LAnIcet4R+ilxMP3KP2xsg=;
+	h=From:To:Subject:From;
+	b=zGmr9JHUZYC2ieSkAXAivrNcsPajA1RYz+4iR+u3nSUdxA5/d97rmuDyFAj5dU8jv
+ s2E0ZOivsYRBluM9nnhRiHqODAAhI/PfOTfDbbteSA1Yp6NWBZwqkXIuDNOnyjud6H
+ ucl3snufmdO0sePL+X53GGSf6Pms6afemODo0OmI=
+From: GitHub <noreply@github.com>
+To: hackathonrunner <austindreier@icloud.com>
+Message-id:
+ <5a0f824286894_645e3fd5fcad0f2c17015@github-highworker3-cp1-prd.iad.github.net.mail>
+Subject: [GitHub] Please verify your email address.
+MIME-version: 1.0
+Content-type: multipart/alternative;
+ boundary="--==_mimepart_5a0f824286186_645e3fd5fcad0f2c16967"; charset=UTF-8
+Content-transfer-encoding: 7bit
+x-icloud-spam-score: 3331331
+ f=github.com;e=github.com;is=yes;ir=no;spf=pass;dkim=pass;dmarc=pass/none/none;gdwl=absent;pps=ham;clxs=ham;clxw=neutral
+X-CLX-Spam: false
+X-CLX-UnSpecialScore: None
+X-CLX-Score: 180
+X-CLX-UShades: None
+X-CLX-Shades: None
+X-MANTSH: 1TEIXR1kbG1oaGkNHB1tfTFwbGhsbGh8aGxEKTEMXGxoEGxsYBBsbGgQeGRAbHho
+ fGhEKTFkXGxIaEQpZTRdkRURPEQpZSRcacRoQGncGGxwacRkbHhAcdwYYGgYaEQpZXhdra3kRC
+ kNOF1xmHmtASG5PSBpeb1Ibe0tfb1B/R11rb0tEUx9EfBpbEQpYXBcZBBoEGRgHTRlOE08TGRg
+ FGxoEEwQbBB0eEBseGh8aEQpeWRd4eHlITxEKTVwXGRIdEQpMWhdsQ2tNXREKQ1oXGxMYBBkaB
+ BgfGAQbExgRCkJeFxsRCkJGF2lIclh5WVgeBR5aEQpCXBcbEQpeThcbEQpCSxdofVkbZnhaXW1
+ iSxEKQkUXemR/ZWhQGU9eTHwRCkJOF2h9WRtmeFpdbWJLEQpCTBdsQksZZgF7Tx5kexEKQmwXa
+ UhyWHlZWB4FHloRCkJAF2hfRRlsb2EaWR9gEQpCWBduRx0bTmRhRRsSQBEKcGgXY2lFGUxwEmd
+ pGl8QGRoRCnBoF2MBE0ZSehNHWnpgEBkaEQpwaBd6HktbeElMYlpuHBAZGhEKcGgXb2gcYltSa
+ 1l5GhkQGRoRCnBoF3pZTnJeG2t7XRhJEBkaEQpwfxdrHWseU3tnY0ttehAdHhEKcF8Xb0dheUd
+ ZGhscf2UQGRoRCnB9F2JGTGMBYBlhZURmEBkaEQpwfRdpX0NFGlxSXXweUBAZGhEKcH0XaV9DR
+ RpcUl18HlAQGRoRCnB9F2lfQ0UaXFJdfB5QEBkaEQpwbBdhGn1+e0FjQxlCARAfHhEKcEwXYmV
+ yElN/GhJiHUYQGRoRCm1+FxoRClhNF0sR
+x-dmarc-info: pass=pass; dmarc-policy=none; s=r1; d=r1
+x-dmarc-policy: v=DMARC1; p=none; rua=mailto:dmarc@github.com
+X-Auto-Response-Suppress: All
+
+
+----==_mimepart_5a0f824286186_645e3fd5fcad0f2c16967
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+Hi @hackathonrunner!
+
+Help us secure your GitHub account by verifying your email address (austi=
+ndreier@icloud.com). This lets you access all of GitHub's features.
+
+Click the link below to verify your email address:
+https://github.com/users/hackathonrunner/emails/40709054/confirm_verifica=
+tion/4065c988cd6d55853703281acc69cbcdf351db5a
+
+You=E2=80=99re receiving this email because you recently created a new Gi=
+tHub account or added a new email address. If this wasn=E2=80=99t you, pl=
+ease ignore this email.
+
+---
+Sent with <3 by GitHub.
+GitHub, Inc. 88 Colin P Kelly Jr Street
+San Francisco, CA 94107
+
+----==_mimepart_5a0f824286186_645e3fd5fcad0f2c16967
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><body>
+<p>
+  Hi <strong>@hackathonrunner</strong>!
+</p>
+<p>
+  Help us secure your GitHub account by verifying your email address
+  (<a class="plaintext" href="mailto:austindreier@icloud.com">austindreier@icloud.com</a>).
+    This lets you access all of GitHub's features.
+</p>
+
+<!-- note: VML markup is fallback for Outlook 2007, 2010, and 2013; see http://buttons.cm/ -->
+<div class="cta-button-wrap cta-button-wrap-centered">
+<!--[if mso]>
+<p style="line-height:0px;height:0;font-size:1px;margin:0;padding:0;">&nbsp;</p>
+<v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://github.com/users/hackathonrunner/emails/40709054/confirm_verification/4065c988cd6d55853703281acc69cbcdf351db5a?utm_campaign=github-email-verification&amp;utm_content=html&amp;utm_medium=email&amp;utm_source=verification-email" style="height:40px;v-text-anchor:middle;width:200px;" arcsize="8%" stroke="f" fillcolor="#4183C4">
+  <w:anchorlock/>
+  <center>
+<![endif]-->
+    <a class="cta-button" href="https://github.com/users/hackathonrunner/emails/40709054/confirm_verification/4065c988cd6d55853703281acc69cbcdf351db5a?utm_campaign=github-email-verification&amp;utm_content=html&amp;utm_medium=email&amp;utm_source=verification-email">Verify email address</a>
+<!--[if mso]>
+  </center>
+</v:roundrect>
+<![endif]-->
+</div>
+
+
+<hr>
+
+<p class="email-text-small email-text-gray">
+  Button not working? Paste the following link into your browser:<br>
+  <a href="https://github.com/users/hackathonrunner/emails/40709054/confirm_verification/4065c988cd6d55853703281acc69cbcdf351db5a?utm_campaign=github-email-verification&amp;utm_content=html&amp;utm_medium=email&amp;utm_source=verification-email">https://github.com/users/hackathonrunner/emails/40709054/confirm_verification/4065c988cd6d55853703281acc69cbcdf351db5a</a>
+</p>
+
+<p class="email-text-small email-text-gray">
+  You&#8217;re receiving this email because you recently
+  created a new GitHub account or added a new email address.
+  If this wasn&#8217;t you, please ignore this email.
+</p>
+</body></html>
+
+----==_mimepart_5a0f824286186_645e3fd5fcad0f2c16967--
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>color</key>
+	<string>000000</string>
+	<key>date-last-viewed</key>
+	<integer>1510967417</integer>
+	<key>date-received</key>
+	<integer>1510965828</integer>
+	<key>flags</key>
+	<integer>8590195841</integer>
+	<key>remote-id</key>
+	<string>7832</string>
+</dict>
+</plist>

@@ -1,0 +1,49 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Meetup//Meetup Events v1.0//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Events - Northern Colorado Real Estate Investor Group
+X-MS-OLK-FORCEINSPECTOROPEN:TRUE
+BEGIN:VTIMEZONE
+TZID:America/Denver
+X-LIC-LOCATION:America/Denver
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0700
+TZOFFSETTO:-0600
+TZNAME:MDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0700
+TZNAME:MST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+DTSTAMP:20171110T030246Z
+DTSTART;TZID=America/Denver:20171115T180000
+DTEND;TZID=America/Denver:20171115T200000
+STATUS:CONFIRMED
+SUMMARY:MONEY MATTERS: Considering an Investment Property
+DESCRIPTION:Northern Colorado Real Estate Investor Group\nWednesday\, Nov
+ ember 15 at 6:00 PM\n\nNOTE: DIFFERENT LOCATION! Networking starts at 6 
+ PM. Class starts at 6:30!  This is a special presentation for the Money 
+ Matters program on "Consideri...\n\nhttps://www.meetup.com/Northern-Colo
+ rado-Real-Estate-Investor-Group/events/239513909/
+ORGANIZER;CN=Meetup Reminder:MAILTO:info@meetup.com
+CLASS:PUBLIC
+CREATED:20160127T174711Z
+GEO:40.52;-105.04
+LOCATION:Harmony Library - Community Room (4616 South Shields\, Fort Coll
+ ins\, CO)
+URL:https://www.meetup.com/Northern-Colorado-Real-Estate-Investor-Group/e
+ vents/239513909/
+SEQUENCE:3
+LAST-MODIFIED:20171020T160922Z
+UID:event_gwwpplywpbtb@meetup.com
+END:VEVENT
+END:VCALENDAR

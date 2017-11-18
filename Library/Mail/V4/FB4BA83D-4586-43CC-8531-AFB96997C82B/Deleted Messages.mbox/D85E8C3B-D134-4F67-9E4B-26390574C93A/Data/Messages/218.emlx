@@ -1,0 +1,1474 @@
+69652     
+Return-path: <bounces@prop.trulia.com>
+Received: from mr11p00im-smtpin013.mac.com ([17.110.69.201])
+ by ms60015.mac.com (Oracle Communications Messaging Server 8.0.1.2.20170607
+ 64bit (built Jun  7 2017)) with ESMTP id <0OY800GBU840QH10@ms60015.mac.com>
+ for austindreier@icloud.com; Sun, 22 Oct 2017 13:28:48 +0000 (GMT)
+Original-recipient: rfc822;austindreier@icloud.com
+Received: from mta1a4.update.trulia.com
+ (mta1a4.update.trulia.com [52.37.207.246]) by mr11p00im-smtpin013.me.com
+ (Oracle Communications Messaging Server 8.0.1.2.20170607 64bit (built Jun  7
+ 2017)) with ESMTPS id <0OY800EV483MZ740@mr11p00im-smtpin013.me.com> for
+ austindreier@icloud.com (ORCPT austindreier@icloud.com); Sun,
+ 22 Oct 2017 13:28:48 +0000 (GMT)
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 spamscore=0
+ clxscore=48 suspectscore=82 malwarescore=0 phishscore=0 adultscore=0
+ bulkscore=100 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.0.1-1707230000 definitions=main-1710220195
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10432:,,
+ definitions=2017-10-22_04:,, signatures=0
+Authentication-results: mr21p00im-dmarcmilter004.me.com; dmarc=pass
+ header.from=prop.trulia.com
+Authentication-results: mr21p00im-spfmilter008.me.com; spf=pass
+ (mr21p00im-spfmilter008.me.com: domain of bounces@prop.trulia.com designates
+ 52.37.207.246 as permitted sender) smtp.mailfrom=bounces@prop.trulia.com;
+Received-SPF: pass (mr21p00im-spfmilter008.me.com: domain of
+ bounces@prop.trulia.com designates 52.37.207.246 as permitted sender)
+ receiver=mr21p00im-spfmilter008.me.com; client-ip=52.37.207.246;
+ helo=mta1a4.update.trulia.com; envelope-from=bounces@prop.trulia.com;
+Authentication-results: mr21p00im-dkimmilter003.me.com;	dkim=pass (1024-bit
+ key) header.d=prop.trulia.com header.i=@prop.trulia.com header.b=kk7v4anz;
+	dkim-adsp=pass
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=prop.trulia.com;
+	s=scph0217; t=1508678916; i=@prop.trulia.com;
+	bh=ORV7Xeq/FLBlrl/HCavPVWe7jYKQyjVz3y00NLnqXu0=;
+	h=To:Message-ID:Date:Content-Type:Subject:From;
+	b=kk7v4anzeegX9jPoS7jjIoH12bd5bLcSxXAeDDPT4ykvUI6CLowy3IWRahSSOFUoN
+ jgnS6PtY/U6CjmjVUrTo1gGJvyA3c8PZ1ol49pfaBuR1L9jG9SqLwxCR3/61Bv3udz
+ ZwfG7NYtL8q5Mh3j/KtE5G96uVO7dE6fIR+iW7cQ=
+To: austindreier@icloud.com
+Message-id: <06.D3.06124.40D9CE95@a.plat1.trulia.aws-usw2a.prd.sparkpost>
+Date: Sun, 22 Oct 2017 13:28:36 +0000
+Content-type: multipart/alternative;
+ boundary="_----ovzbjjl6OP2KgbAifEl22g===_35/D3-06124-40D9CE95"
+MIME-version: 1.0
+guid:
+ dXNlcl9pZD00Mzk1MjA2NyZjb21tc1BsYXRmb3JtPWVtdjImZ3VpZD0xNTA4NjcyNzM1MDY1XzljOTU5ZDBjODcxNjM1ZjJjYTdjZGM1MWY4YTk1MTBlX2lwLTE3Mi0xOC0yNS0xNjcmZW1haWxfdHlwZV9pZD0yNDkmZW1haWw9YXVzdGluZHJlaWVyQGljbG91ZC5jb20=
+Subject: 5 popular rentals in Los Angeles
+From: Trulia <no-reply@prop.trulia.com>
+Reply-to: no-reply@prop.trulia.com
+Feedback-ID: 43952067:249:mta:trulia
+List-Unsubscribe:
+ <mailto:unsubscribe@update.trulia.com?subject=unsubscribe:RGoMUutIN_R7Zv8i_NHHC0kbiIRxkoXfbxb6GVUF9Hs~|eyAicmNwdF90byI6ICJhdXN0aW5kcmVpZXJAaWNsb3VkLmNvbSIsICJyY3B0X21ldGEiOiAie1wiZ3VpZFwiOlwiZFhObGNsOXBaRDAwTXprMU1qQTJOeVpqYjIxdGMxQnNZWFJtYjNKdFBXVnRkakltWjNWcFpEMHhOVEE0TmpjeU56TTFNRFkxWHpsak9UVTVaREJqT0RjeE5qTTFaakpqWVRkalpHTTFNV1k0WVRrMU1UQmxYMmx3TFRFM01pMHhPQzB5TlMweE5qY21aVzFoYVd4ZmRIbHdaVjlwWkQweU5Ea21aVzFoYVd3OVlYVnpkR2x1WkhKbGFXVnlRR2xqYkc5MVpDNWpiMjA9XCIsXCJiaW5kaW5nXCI6XCJwcm9wXCIsXCJwcm9wZXJ0eV9jb3VudFwiOlwiNVwifSIsICJmcmllbmRseV9mcm9tIjogIm5vLXJlcGx5QHByb3AudHJ1bGlhLmNvbSIsICJtZXNzYWdlX2lkIjogIjAwMDEwNDlkZWM1OWVjMTc2MDNkIiwgImNhbXBhaWduX2lkIjogIjI0OSIsICJtYWlsZnJvbSI6ICJib3VuY2VzQHByb3AudHJ1bGlhLmNvbSIsICJjdXN0b21lcl9pZCI6ICIxIiwgInRlbmFudF9pZCI6ICJ0cnVsaWEiLCAidHJhbnNtaXNzaW9uX2lkIjogIjMwNjYzMTEyMTQ4MTYxNDUzIiwgInN1YmFjY291bnRfaWQiOiAiMCIgfQ~~>
+List-Id: <trulia-1-0>
+x-icloud-spam-score: 3331331
+ f=prop.trulia.com;e=prop.trulia.com;is=yes;ir=no;spf=pass;dkim=pass;dmarc=pass/reject/none;gdwl=absent;pps=ham;clxs=ham;clxw=neutral
+X-CLX-Spam: false
+X-CLX-UnSpecialScore: None
+X-CLX-Score: 48
+X-CLX-Shades: None
+X-MANTSH: 1TEIXR1gYEloaGkNHB0tNT0ReQ0QZGRsaEQpMQxcbHQQbGxsEGx0ZBBkYEBseGh8
+ aEQpMWRceEhEKWU0XZEVETxEKWUkXGnEaEBp3Bh4fcRkeHxIYEBsYGRwZdwYZBhoRClleF2tre
+ REKQ04XGG1PQEJuextbTQVCG0RIYGFOZ05CfHwcGkxTXWUFfGsRClhcFxkEGgQZGAdNGU4TTxM
+ ZGAUbHQQbGxsEGx8fBBsdHBAbHhofGhEKXlkXeGNBbVsRCk1cFxoRCkxaF2l4ZUZBXREKRVkXc
+ xEKTF8XegUFBQUFBQUFE1sRCk1OF2gRCkNaFx8YBBkdBBgaHQQYHhwRCkJeFxsRCkJGF2tMY1J
+ fb3xhbnxmEQpCRxdnbE9/RUFOaH9BZxEKQlwXGxEKQksXYXlLZFlefHNeTWcRCkJFF2doY057c
+ HAaRFN9EQpCThdmZ2huZVJIbU1efBEKQkwXYE4THR5yZRleHx8RCkJsF2xDY31pWWtQAU8ZEQp
+ CQBdjUF9leVAbWGkeRREKQlgXbkcdG05kYUUbEkARCk1eFxsRCnBnF2ZSSWlrSUlzUFljEBoRC
+ nBoF2VPZkYdYF4FWktcEBoRCnBoF3p+TWB8GElbY1wYEBoRCnBoF2sdWk99THlaZ3lSEAceEhE
+ KcGgXbkhzUmlpRm4SUE0QGxgRCnBoF2YaBVx/a0VPbW9cEBoRCnB/F2B9WlJ6eGkTE20cEB4ZE
+ QpwXxduRWUcZBJ/RkR6WhAHGxgRCnB9F2JkElx6EkhOBVlpEBoRCnB9F3psGlp5TWBte3MdEBo
+ RCnB9F2R+WgVvUm5GWGZBEBoRCnB9F2kTWkB9WG0TRmlPEBoRCnB9F2B7QGJtYUdIXhkdEBoRC
+ nB/F2ZdGUxtWAVNGU9EEBgdEQpwXxduTVppZAV4SVhMehAbEhEKcH0XemhCSRlSSW1lTl4QGxg
+ RCnB9F29eS1hfGnwfS1BCEBoRCnB9F3pvZGxAeXgfBXxPEBoR
+x-dmarc-info: pass=pass; dmarc-policy=reject; s=r1; d=r1
+x-dmarc-policy: v=DMARC1; p=reject;
+ rua=mailto:dmarc_rua@emaildefense.proofpoint.com;
+ ruf=mailto:dmarc_ruf@emaildefense.proofpoint.com;fo=1
+X-MSFBL: Odh6LCjWsDt2ie2jTrVSTLixBkYAQKZeoKQz1LOCsco=|eyJmcmllbmRseV9mcm9
+	tIjoibm8tcmVwbHlAcHJvcC50cnVsaWEuY29tIiwicmNwdF90YWdzIjpbIF0sImN
+	hbXBhaWduX2lkIjoiMjQ5IiwiYiI6ImlwXzUyLjM3LjIwNy4yNDYiLCJ0ZW5hbnR
+	faWQiOiJ0cnVsaWEiLCJzdWJhY2NvdW50X2lkIjoiMCIsInRlbXBsYXRlX3ZlcnN
+	pb24iOiIwIiwiciI6ImF1c3RpbmRyZWllckBpY2xvdWQuY29tIiwibWVzc2FnZV9
+	pZCI6IjAwMDEwNDlkZWM1OWVjMTc2MDNkIiwidGVtcGxhdGVfaWQiOiJ0ZW1wbGF
+	0ZV8zMDY2MzExMjE0ODE2MTQ1MyIsInJjcHRfbWV0YSI6eyAiZ3VpZCI6ICJkWE5
+	sY2w5cFpEMDBNemsxTWpBMk55WmpiMjF0YzFCc1lYUm1iM0p0UFdWdGRqSW1aM1Z
+	wWkQweE5UQTROamN5TnpNMU1EWTFYemxqT1RVNVpEQmpPRGN4TmpNMVpqSmpZVGR
+	qWkdNMU1XWTRZVGsxTVRCbFgybHdMVEUzTWkweE9DMHlOUzB4TmpjbVpXMWhhV3h
+	mZEhsd1pWOXBaRDB5TkRrbVpXMWhhV3c5WVhWemRHbHVaSEpsYVdWeVFHbGpiRzk
+	xWkM1amIyMD0iLCAiYmluZGluZyI6ICJwcm9wIiwgInByb3BlcnR5X2NvdW50Ijo
+	gIjUiIH0sInRyYW5zbWlzc2lvbl9pZCI6IjMwNjYzMTEyMTQ4MTYxNDUzIiwiY3V
+	zdG9tZXJfaWQiOiIxIiwiZyI6InByb3AifQ==
+X-Transport: web
+X-Trulia-Platform: emv2
+X-Sent-Using: SPARKPOST-API
+X-Trulia-Campaign: 249
+X-Trulia-PayloadId:
+ 1508672735065_9c959d0c871635f2ca7cdc51f8a9510e_ip-172-18-25-167
+
+--_----ovzbjjl6OP2KgbAifEl22g===_35/D3-06124-40D9CE95
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="UTF-8"
+
+----------------------------------------------
+
+----------------------------------------------
+
+
+Comparable Homes
+These popular homes are similar to listings you've viewed on Trulia.
+..............................................
+
+    -----------------------------------
+$1,325
+Studio   1 ba   10 photo/s
+ Address Not Disclosed 
+: https://www.trulia.com/handshake/?alat=b55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7&alrt=951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a&ecampaign=eml|frb|con_day_recrentprops_bk_emv2|group_1&return=https%3A%2F%2Fwww.trulia.com%2Femail%2Feml%7Cfrb%7Ccon_day_recrentprops_bk_emv2%7Cgroup_1%2Fwww.trulia.com%2Frental%2F3186615685%3Falat%3Db55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7%26alrt%3D951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a
+-----------------------------------
+
+
+
+    -----------------------------------
+$1,199
+Studio   1 ba   5 photo/s
+ Address Not Disclosed 
+: https://www.trulia.com/handshake/?alat=b55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7&alrt=951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a&ecampaign=eml|frb|con_day_recrentprops_bk_emv2|group_1&return=https%3A%2F%2Fwww.trulia.com%2Femail%2Feml%7Cfrb%7Ccon_day_recrentprops_bk_emv2%7Cgroup_1%2Fwww.trulia.com%2Frental%2F3057360347%3Falat%3Db55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7%26alrt%3D951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a
+-----------------------------------
+
+
+
+    -----------------------------------
+$1,125
+Studio   1 ba   4 photo/s
+ Address Not Disclosed 
+: https://www.trulia.com/handshake/?alat=b55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7&alrt=951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a&ecampaign=eml|frb|con_day_recrentprops_bk_emv2|group_1&return=https%3A%2F%2Fwww.trulia.com%2Femail%2Feml%7Cfrb%7Ccon_day_recrentprops_bk_emv2%7Cgroup_1%2Fwww.trulia.com%2Frental%2F3239684120%3Falat%3Db55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7%26alrt%3D951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a
+-----------------------------------
+
+
+
+    -----------------------------------
+$1,200
+Studio   1 ba   2 photo/s
+ Address Not Disclosed 
+: https://www.trulia.com/handshake/?alat=b55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7&alrt=951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a&ecampaign=eml|frb|con_day_recrentprops_bk_emv2|group_1&return=https%3A%2F%2Fwww.trulia.com%2Femail%2Feml%7Cfrb%7Ccon_day_recrentprops_bk_emv2%7Cgroup_1%2Fwww.trulia.com%2Frental%2F3235260647%3Falat%3Db55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7%26alrt%3D951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a
+-----------------------------------
+
+
+
+    -----------------------------------
+$1,200
+Studio   1 ba   12 photo/s
+ Address Not Disclosed 
+: https://www.trulia.com/handshake/?alat=b55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7&alrt=951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a&ecampaign=eml|frb|con_day_recrentprops_bk_emv2|group_1&return=https%3A%2F%2Fwww.trulia.com%2Femail%2Feml%7Cfrb%7Ccon_day_recrentprops_bk_emv2%7Cgroup_1%2Fwww.trulia.com%2Frental%2F4018937431%3Falat%3Db55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7%26alrt%3D951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a
+-----------------------------------
+
+
+
+----------------------------------------------
+
+Comments, compliments or complaints? Let us know:
+http://www.trulia.com/leave_feedback
+
+This email was sent to austindreier@icloud.com.
+If you would like to unsubscribe from this email, follow this link
+https://www.trulia.com/handshake/?alat=b55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7&alrt=951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a&ecampaign=eml|frb|con_day_recrentprops_bk_emv2|group_1&return=https%3A%2F%2Fwww.trulia.com%2Funsubscribe%3Fuid%3D43952067%26auth%3D7910e206c2%26ecampaign%3Deml%257Cfrb%257Ccon_day_recrentprops_bk_emv2%257Cgroup_1%26email%3Daustindreier%2540icloud.com%26et%3D249%3Falat%3Db55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7%26alrt%3D951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a
+
+_________________________________________________
+
+Trulia, Inc. | 535 Mission Street, Suite 700, San Francisco, CA 94105 |
+
+https://www.trulia.com/handshake/?alat=b55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7&alrt=951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a&ecampaign=eml|frb|con_day_recrentprops_bk_emv2|group_1&return=https%3A%2F%2Fwww.trulia.com%2Femail%2Feml%7Cfrb%7Ccon_day_recrentprops_bk_emv2%7Cgroup_1%2Fwww.trulia.com%2Fprivacy%3Falat%3Db55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7%26alrt%3D951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a
+
+
+
+--_----ovzbjjl6OP2KgbAifEl22g===_35/D3-06124-40D9CE95
+Content-Transfer-Encoding: 7bit
+Content-Type: text/html; charset="UTF-8"
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        table {
+            border-spacing: 0 !important;
+            border-collapse: collapse !important;
+            table-layout: fixed !important;
+            margin: 0 auto !important;
+        }
+    </style>
+    <title></title>
+</head>
+
+<body style="width: 100%; height: 100%; margin: 0 !important; padding: 0 !important; background-color: #ffffff; -webkit-text-size-adjust: 100%;"
+      align="left">
+<table cellpadding="0" cellspacing="0"
+       style="width: 100%; height: 100%; margin: 0 !important; padding: 0 !important; background-color: #ffffff; -webkit-text-size-adjust: 100%;"
+       align="left">
+    <tr>
+    <td>
+        <table cellspacing="0" cellpadding="0" border="0" width="100%">
+            <tr>
+                <td height="5"
+                    style="height: 5px;
+                            margin:0px;
+                            font-size: 0px;
+                            line-height: 1px;
+                            background-color: #20C063;
+                            color: #20C063;">We found more matches for you.</td>
+            </tr>
+        </table>
+    </td>
+</tr>
+
+    <tr>
+        <td>
+            <table
+                    style="margin:auto; width: 100%; background-color: #ffffff; padding-top: 0px;"
+                    align="center">
+                <tr>
+                    <td style="padding: 0px;">
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0"
+                               style="margin-right:0; width:100%"
+                               bgcolor="#ffffff">
+                            <tr>
+                                <td>
+                                    <table border="0" cellspacing="0" cellpadding="0" align="center" width="100%">
+    <tr>
+    <td  height="10" style="background-color:transparent;font-size: 10;line-height:1px;padding-top: 0px;padding-bottom: 0px;">
+        &nbsp;
+    </td>
+</tr>
+
+    <tr>
+        <td>
+            <a href="https://et.trulia.com/tracker?type=click&emailid=austindreier@icloud.com&userid=dXNlcl9pZD00Mzk1MjA2NyZjb21tc1BsYXRmb3JtPWVtdjImZ3VpZD0xNTA4NjcyNzM1MDY1XzljOTU5ZDBjODcxNjM1ZjJjYTdjZGM1MWY4YTk1MTBlX2lwLTE3Mi0xOC0yNS0xNjcmZW1haWxfdHlwZV9pZD0yNDkmZW1haWw9YXVzdGluZHJlaWVyQGljbG91ZC5jb20=&extra=MultivariateId=&&&2000&&&https://www.trulia.com" id="w_logo">
+                <center><img width="95"
+                             src="https://static.trulia-cdn.com/images/email/trulia_logos/Trulia-logo.png"
+                             alt="Trulia"
+                             align="center"
+                             border="0"
+                             style="font-size: 16px;
+                                     font-family: Helvetica, Arial, sans-serif;
+                                     color: #20C063;"></center>
+            </a>
+        </td>
+    </tr>
+    <tr>
+    <td  height="10" style="background-color:transparent;font-size: 10;line-height:1px;padding-top: 0px;padding-bottom: 0px;">
+        &nbsp;
+    </td>
+</tr>
+
+</table>
+
+                                </td>
+                            </tr>
+                            <tr style="text-align:center;">
+                                <td id="tp" align="center" style="text-align:center;">
+                                    <IMG SRC="https://et.trulia.com/tracker?type=open&amp;emailid=austindreier@icloud.com&amp;userid=dXNlcl9pZD00Mzk1MjA2NyZjb21tc1BsYXRmb3JtPWVtdjImZ3VpZD0xNTA4NjcyNzM1MDY1XzljOTU5ZDBjODcxNjM1ZjJjYTdjZGM1MWY4YTk1MTBlX2lwLTE3Mi0xOC0yNS0xNjcmZW1haWxfdHlwZV9pZD0yNDkmZW1haWw9YXVzdGluZHJlaWVyQGljbG91ZC5jb20=" WIDTH="1" HEIGHT="1" STYLE="border-width:0; border-style:hidden;display:none" alt=""/>
+
+                                    <table border="0" cellspacing="0" cellpadding="0" align="center" width="100%"  style="text-align:center";>
+                                        
+
+
+
+<tr align="center">
+    
+    
+    <td style="color: #474E52;
+            display:inline;
+            background-color: transparent;
+            font-family: PostGroteskBook, Helvetica, Arial, sans-serif;
+            font-weight: 500;
+            font-size: 18px;
+            text-align: center;
+            letter-spacing: 0px;
+            line-height: 18px;
+            padding-left: 0px;
+            padding-right: 0px;
+            padding-top: 0px;
+            padding-bottom: 0px;">
+        
+        
+            
+        
+        We found
+        <span 
+        style="color: #474E52;
+                background-color: transparent;
+                font-family: PostGroteskMedium, Helvetica, Arial, sans-serif;
+                font-weight: 30;
+                font-size: 18px;
+                text-align: left;
+                padding-top: 0px;
+                padding-bottom: 0px;
+                letter-spacing: 0px;
+        
+                line-height: 18px;" title="5 recommended listings">
+    5 recommended listings
+</span>
+for&nbsp;you!
+    
+    </td>
+</tr>
+
+    <tr>
+    <td  height="30" style="background-color:transparent;font-size: 30;line-height:1px;padding-top: 0px;padding-bottom: 0px;">
+        &nbsp;
+    </td>
+</tr>
+
+
+
+
+
+
+
+
+
+
+
+<tr>
+    <td style="padding: 0; font-size: 0; background-color: #ffffff; width: 100%">
+
+        <table class="column" align="center" width="240px" border="0"
+               cellspacing="0"
+               cellpadding="0"
+               style="margin: 0 auto;width:240px;border-spacing: 0; font-family: 'PostGroteskBook', Helvetica, Arial, sans-serif;">
+            <tr>
+                <td style="padding: 0px 0px 0px 0px; background-color: #ffffff">
+
+
+    
+    
+    
+
+
+
+<table width="100%" cellpadding="0" cellspacing="0" border="0" align="center" style="text-align: center;">
+    <tr>
+        
+        <td valign="top"
+    style="width:74px;background-color: transparent;">
+    
+        <a href="https://et.trulia.com/tracker?type=click&emailid=austindreier@icloud.com&userid=dXNlcl9pZD00Mzk1MjA2NyZjb21tc1BsYXRmb3JtPWVtdjImZ3VpZD0xNTA4NjcyNzM1MDY1XzljOTU5ZDBjODcxNjM1ZjJjYTdjZGM1MWY4YTk1MTBlX2lwLTE3Mi0xOC0yNS0xNjcmZW1haWxfdHlwZV9pZD0yNDkmZW1haWw9YXVzdGluZHJlaWVyQGljbG91ZC5jb20=&extra=MultivariateId=&&&2000&&&https://www.trulia.com/handshake/?alat=b55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7&alrt=951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a&ecampaign=eml|frb|con_day_recrentprops_bk_emv2|group_1&return=https%3A%2F%2Fwww.trulia.com%2Femail%2Feml%7Cfrb%7Ccon_day_recrentprops_bk_emv2%7Cgroup_1%2Fwww.trulia.com%2Frental%2F3186615685%3Falat%3Db55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7%26alrt%3D951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a" id=w_image0 title="Property details">
+        <img src="https://thumbs.trulia-cdn.com/pictures/thumbs_4/ps.109/c/0/2/b/picture-uh=ad95b62417657c2bd4ac33f8b8712187-ps=c02bbbde1062aa0c5e045739e74ba7.jpg"
+             border="0"
+             alt="Home Image"
+             width="74"
+             height="64"
+             style="width:74px;
+                     height:64px;
+                     font-family: Helvetica, Arial, sans-serif;
+                     font-size: 12px;
+                     color: #B1B6BB;
+                     border: 0;"/>
+        </a>
+    
+</td>
+
+        
+        
+        <td valign="top" style="padding-left:12px;">
+    <table cellpadding="0" cellspacing="0" width="100%" style="text-align: left;">
+        <tr> 
+            <td>
+                <span  id="w_price0" 
+        style="color: #474E52;
+                background-color: transparent;
+                font-family: PostGroteskMedium, Helvetica, Arial, sans-serif;
+                font-weight: 500;
+                font-size: 16px;
+                text-align: left;
+                padding-top: 0px;
+                padding-bottom: 0px;
+                letter-spacing: 0px;
+        
+                line-height: 16px;" title="$1,325">
+    $1,325
+</span>
+
+
+                
+                    <span  id="w_bedbath0" 
+        style="color: #474E52;
+                background-color: transparent;
+                font-family: PostGroteskBook, Helvetica, Arial, sans-serif;
+                font-weight: 500;
+                font-size: 13px;
+                text-align: left;
+                padding-top: 0px;
+                padding-bottom: 0px;
+                letter-spacing: 0px;
+        
+                line-height: 13px;" title="Studio&nbsp;&nbsp;1 ba">
+    Studio&nbsp;&nbsp;1 ba
+</span>
+
+                
+            </td>
+            <tr>
+    <td  height="5" style="background-color:transparent;font-size: 5;line-height:1px;padding-top: 0px;padding-bottom: 0px;">
+        &nbsp;
+    </td>
+</tr>
+
+        </tr>
+        <tr> 
+            <td>
+                
+                    
+<a 
+         id="w_addr0" 
+         href="https://et.trulia.com/tracker?type=click&emailid=austindreier@icloud.com&userid=dXNlcl9pZD00Mzk1MjA2NyZjb21tc1BsYXRmb3JtPWVtdjImZ3VpZD0xNTA4NjcyNzM1MDY1XzljOTU5ZDBjODcxNjM1ZjJjYTdjZGM1MWY4YTk1MTBlX2lwLTE3Mi0xOC0yNS0xNjcmZW1haWxfdHlwZV9pZD0yNDkmZW1haWw9YXVzdGluZHJlaWVyQGljbG91ZC5jb20=&extra=MultivariateId=&&&2000&&&https://www.trulia.com/handshake/?alat=b55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7&alrt=951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a&ecampaign=eml|frb|con_day_recrentprops_bk_emv2|group_1&return=https%3A%2F%2Fwww.trulia.com%2Femail%2Feml%7Cfrb%7Ccon_day_recrentprops_bk_emv2%7Cgroup_1%2Fwww.trulia.com%2Frental%2F3186615685%3Falat%3Db55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7%26alrt%3D951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a#map" 
+        style="color: #20C063;
+                text-decoration: none;
+                background-color: transparent;
+                font-family: PostGroteskBook, Helvetica, Arial, sans-serif;
+                font-weight: 300;
+                font-size: 13px;
+                text-align: left;
+                padding-top: 0px;
+                padding-bottom: 0px;
+                letter-spacing: 0px;
+        
+                line-height: 13px;" title="1848&#8203; N&#8203; Gramercy&#8203; Pl&#8203;<br>Los Angeles, CA">
+    1848&#8203; N&#8203; Gramercy&#8203; Pl&#8203;<br>Los Angeles, CA
+    
+</a>
+
+                
+            </td>
+        </tr>
+        
+            <tr>
+    <td  height="5" style="background-color:transparent;font-size: 5;line-height:1px;padding-top: 0px;padding-bottom: 0px;">
+        &nbsp;
+    </td>
+</tr>
+
+            <tr> 
+                <td style="font-family: 'PostGroteskBold', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 13px; letter-spacing: 1px; font-weight: bold;">
+                    
+                        <span style="color: #869099; white-space: nowrap; display: inline-block;">PET FRIENDLY</span>
+                    
+                </td>
+            </tr>
+        
+    </table>
+</td>
+
+        
+    </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0" border="0" align="center" style="text-align: center;">
+    
+    <tr>
+        <td>
+            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                
+        
+    <tr>
+    <td  height="7" style="background-color:transparent;font-size: 7;line-height:1px;padding-top: 0px;padding-bottom: 0px;">
+        &nbsp;
+    </td>
+</tr>
+
+
+<tr style="background-color:transparent">
+    <td align="left" style="text-align:left">
+        <div align="left" style="display:inline"><!--[if (gte mso 9)|(IE)]>
+    <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml"
+                 href="https://et.trulia.com/tracker?type=click&amp;emailid=austindreier@icloud.com&amp;userid=dXNlcl9pZD00Mzk1MjA2NyZjb21tc1BsYXRmb3JtPWVtdjImZ3VpZD0xNTA4NjcyNzM1MDY1XzljOTU5ZDBjODcxNjM1ZjJjYTdjZGM1MWY4YTk1MTBlX2lwLTE3Mi0xOC0yNS0xNjcmZW1haWxfdHlwZV9pZD0yNDkmZW1haWw9YXVzdGluZHJlaWVyQGljbG91ZC5jb20=&amp;extra=MultivariateId=&amp;&amp;&amp;2000&amp;&amp;&amp;https://www.trulia.com/handshake/?alat=b55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7&alrt=951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a&ecampaign=eml|frb|con_day_recrentprops_bk_emv2|group_1&return=https%3A%2F%2Fwww.trulia.com%2Femail%2Feml%7Cfrb%7Ccon_day_recrentprops_bk_emv2%7Cgroup_1%2Fwww.trulia.com%2Frental%2F3186615685%3Falat%3Db55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7%26alrt%3D951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a#photo-1"
+                 id=""
+                 style="height:25px;v-text-anchor:middle;width:240px;"
+                 arcsize="15%"
+                 stroke="f" fillcolor="#20C063">
+        <center>
+    <![endif]-->
+    <a href="https://et.trulia.com/tracker?type=click&emailid=austindreier@icloud.com&userid=dXNlcl9pZD00Mzk1MjA2NyZjb21tc1BsYXRmb3JtPWVtdjImZ3VpZD0xNTA4NjcyNzM1MDY1XzljOTU5ZDBjODcxNjM1ZjJjYTdjZGM1MWY4YTk1MTBlX2lwLTE3Mi0xOC0yNS0xNjcmZW1haWxfdHlwZV9pZD0yNDkmZW1haWw9YXVzdGluZHJlaWVyQGljbG91ZC5jb20=&extra=MultivariateId=&&&2000&&&https://www.trulia.com/handshake/?alat=b55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7&alrt=951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a&ecampaign=eml|frb|con_day_recrentprops_bk_emv2|group_1&return=https%3A%2F%2Fwww.trulia.com%2Femail%2Feml%7Cfrb%7Ccon_day_recrentprops_bk_emv2%7Cgroup_1%2Fwww.trulia.com%2Frental%2F3186615685%3Falat%3Db55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7%26alrt%3D951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a#photo-1" align="left"
+       id=""
+       style="background-color:#20C063;
+               border-radius:2px;
+               border-color:transparent;
+               border-width:0px;
+               border-style:none;
+               color:#ffffff;
+               display:block;
+               font-family: PostGroteskBook, Helvetica, Arial, sans-serif;
+               font-weight: 300;
+               font-size:15px;
+               line-height:25px;
+               text-align:center;
+               text-decoration:none;
+               width:100%;
+               height:25px;
+               -webkit-text-size-adjust:none;">
+        View 9 More Photos
+    </a>
+    <!--[if (gte mso 9)|(IE)]>
+    </center>
+    </v:roundrect>
+    <![endif]--></div>
+    </td>
+</tr>
+
+    <tr>
+    <td  height="27" style="background-color:transparent;font-size: 27;line-height:1px;padding-top: 0px;padding-bottom: 0px;">
+        &nbsp;
+    </td>
+</tr>
+
+
+
+    
+            </table>
+        </td>
+    </tr>
+    
+</table>
+
+
+
+    
+    
+    
+
+
+
+<table width="100%" cellpadding="0" cellspacing="0" border="0" align="center" style="text-align: center;">
+    <tr>
+        
+        <td valign="top"
+    style="width:74px;background-color: transparent;">
+    
+        <a href="https://et.trulia.com/tracker?type=click&emailid=austindreier@icloud.com&userid=dXNlcl9pZD00Mzk1MjA2NyZjb21tc1BsYXRmb3JtPWVtdjImZ3VpZD0xNTA4NjcyNzM1MDY1XzljOTU5ZDBjODcxNjM1ZjJjYTdjZGM1MWY4YTk1MTBlX2lwLTE3Mi0xOC0yNS0xNjcmZW1haWxfdHlwZV9pZD0yNDkmZW1haWw9YXVzdGluZHJlaWVyQGljbG91ZC5jb20=&extra=MultivariateId=&&&2000&&&https://www.trulia.com/handshake/?alat=b55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7&alrt=951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a&ecampaign=eml|frb|con_day_recrentprops_bk_emv2|group_1&return=https%3A%2F%2Fwww.trulia.com%2Femail%2Feml%7Cfrb%7Ccon_day_recrentprops_bk_emv2%7Cgroup_1%2Fwww.trulia.com%2Frental%2F3057360347%3Falat%3Db55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7%26alrt%3D951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a" id=w_image1 title="Property details">
+        <img src="https://thumbs.trulia-cdn.com/pictures/thumbs_6/ps.109/d/8/1/6/picture-uh=57ea34a8518270a3295b7e6f60c474c1-ps=d816926bb6911074b0422b5a61264686.jpg"
+             border="0"
+             alt="Home Image"
+             width="74"
+             height="64"
+             style="width:74px;
+                     height:64px;
+                     font-family: Helvetica, Arial, sans-serif;
+                     font-size: 12px;
+                     color: #B1B6BB;
+                     border: 0;"/>
+        </a>
+    
+</td>
+
+        
+        
+        <td valign="top" style="padding-left:12px;">
+    <table cellpadding="0" cellspacing="0" width="100%" style="text-align: left;">
+        <tr> 
+            <td>
+                <span  id="w_price1" 
+        style="color: #474E52;
+                background-color: transparent;
+                font-family: PostGroteskMedium, Helvetica, Arial, sans-serif;
+                font-weight: 500;
+                font-size: 16px;
+                text-align: left;
+                padding-top: 0px;
+                padding-bottom: 0px;
+                letter-spacing: 0px;
+        
+                line-height: 16px;" title="$1,199">
+    $1,199
+</span>
+
+
+                
+                    <span  id="w_bedbath1" 
+        style="color: #474E52;
+                background-color: transparent;
+                font-family: PostGroteskBook, Helvetica, Arial, sans-serif;
+                font-weight: 500;
+                font-size: 13px;
+                text-align: left;
+                padding-top: 0px;
+                padding-bottom: 0px;
+                letter-spacing: 0px;
+        
+                line-height: 13px;" title="Studio&nbsp;&nbsp;1 ba">
+    Studio&nbsp;&nbsp;1 ba
+</span>
+
+                
+            </td>
+            <tr>
+    <td  height="5" style="background-color:transparent;font-size: 5;line-height:1px;padding-top: 0px;padding-bottom: 0px;">
+        &nbsp;
+    </td>
+</tr>
+
+        </tr>
+        <tr> 
+            <td>
+                
+                    
+<a 
+         id="w_addr1" 
+         href="https://et.trulia.com/tracker?type=click&emailid=austindreier@icloud.com&userid=dXNlcl9pZD00Mzk1MjA2NyZjb21tc1BsYXRmb3JtPWVtdjImZ3VpZD0xNTA4NjcyNzM1MDY1XzljOTU5ZDBjODcxNjM1ZjJjYTdjZGM1MWY4YTk1MTBlX2lwLTE3Mi0xOC0yNS0xNjcmZW1haWxfdHlwZV9pZD0yNDkmZW1haWw9YXVzdGluZHJlaWVyQGljbG91ZC5jb20=&extra=MultivariateId=&&&2000&&&https://www.trulia.com/handshake/?alat=b55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7&alrt=951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a&ecampaign=eml|frb|con_day_recrentprops_bk_emv2|group_1&return=https%3A%2F%2Fwww.trulia.com%2Femail%2Feml%7Cfrb%7Ccon_day_recrentprops_bk_emv2%7Cgroup_1%2Fwww.trulia.com%2Frental%2F3057360347%3Falat%3Db55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7%26alrt%3D951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a#map" 
+        style="color: #20C063;
+                text-decoration: none;
+                background-color: transparent;
+                font-family: PostGroteskBook, Helvetica, Arial, sans-serif;
+                font-weight: 300;
+                font-size: 13px;
+                text-align: left;
+                padding-top: 0px;
+                padding-bottom: 0px;
+                letter-spacing: 0px;
+        
+                line-height: 13px;" title="302&#8203; N&#8203; Alexandria&#8203; Ave&#8203;<br>Los Angeles, CA">
+    302&#8203; N&#8203; Alexandria&#8203; Ave&#8203;<br>Los Angeles, CA
+    
+</a>
+
+                
+            </td>
+        </tr>
+        
+            <tr>
+    <td  height="5" style="background-color:transparent;font-size: 5;line-height:1px;padding-top: 0px;padding-bottom: 0px;">
+        &nbsp;
+    </td>
+</tr>
+
+            <tr> 
+                <td style="font-family: 'PostGroteskBold', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 13px; letter-spacing: 1px; font-weight: bold;">
+                    
+                        <span style="color: #869099; white-space: nowrap; display: inline-block;">PET FRIENDLY</span>
+                    
+                </td>
+            </tr>
+        
+    </table>
+</td>
+
+        
+    </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0" border="0" align="center" style="text-align: center;">
+    
+    <tr>
+        <td>
+            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                
+        
+    <tr>
+    <td  height="7" style="background-color:transparent;font-size: 7;line-height:1px;padding-top: 0px;padding-bottom: 0px;">
+        &nbsp;
+    </td>
+</tr>
+
+
+<tr style="background-color:transparent">
+    <td align="left" style="text-align:left">
+        <div align="left" style="display:inline"><!--[if (gte mso 9)|(IE)]>
+    <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml"
+                 href="https://et.trulia.com/tracker?type=click&amp;emailid=austindreier@icloud.com&amp;userid=dXNlcl9pZD00Mzk1MjA2NyZjb21tc1BsYXRmb3JtPWVtdjImZ3VpZD0xNTA4NjcyNzM1MDY1XzljOTU5ZDBjODcxNjM1ZjJjYTdjZGM1MWY4YTk1MTBlX2lwLTE3Mi0xOC0yNS0xNjcmZW1haWxfdHlwZV9pZD0yNDkmZW1haWw9YXVzdGluZHJlaWVyQGljbG91ZC5jb20=&amp;extra=MultivariateId=&amp;&amp;&amp;2000&amp;&amp;&amp;https://www.trulia.com/handshake/?alat=b55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7&alrt=951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a&ecampaign=eml|frb|con_day_recrentprops_bk_emv2|group_1&return=https%3A%2F%2Fwww.trulia.com%2Femail%2Feml%7Cfrb%7Ccon_day_recrentprops_bk_emv2%7Cgroup_1%2Fwww.trulia.com%2Frental%2F3057360347%3Falat%3Db55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7%26alrt%3D951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a#photo-1"
+                 id=""
+                 style="height:25px;v-text-anchor:middle;width:240px;"
+                 arcsize="15%"
+                 stroke="f" fillcolor="#20C063">
+        <center>
+    <![endif]-->
+    <a href="https://et.trulia.com/tracker?type=click&emailid=austindreier@icloud.com&userid=dXNlcl9pZD00Mzk1MjA2NyZjb21tc1BsYXRmb3JtPWVtdjImZ3VpZD0xNTA4NjcyNzM1MDY1XzljOTU5ZDBjODcxNjM1ZjJjYTdjZGM1MWY4YTk1MTBlX2lwLTE3Mi0xOC0yNS0xNjcmZW1haWxfdHlwZV9pZD0yNDkmZW1haWw9YXVzdGluZHJlaWVyQGljbG91ZC5jb20=&extra=MultivariateId=&&&2000&&&https://www.trulia.com/handshake/?alat=b55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7&alrt=951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a&ecampaign=eml|frb|con_day_recrentprops_bk_emv2|group_1&return=https%3A%2F%2Fwww.trulia.com%2Femail%2Feml%7Cfrb%7Ccon_day_recrentprops_bk_emv2%7Cgroup_1%2Fwww.trulia.com%2Frental%2F3057360347%3Falat%3Db55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7%26alrt%3D951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a#photo-1" align="left"
+       id=""
+       style="background-color:#20C063;
+               border-radius:2px;
+               border-color:transparent;
+               border-width:0px;
+               border-style:none;
+               color:#ffffff;
+               display:block;
+               font-family: PostGroteskBook, Helvetica, Arial, sans-serif;
+               font-weight: 300;
+               font-size:15px;
+               line-height:25px;
+               text-align:center;
+               text-decoration:none;
+               width:100%;
+               height:25px;
+               -webkit-text-size-adjust:none;">
+        View 4 More Photos
+    </a>
+    <!--[if (gte mso 9)|(IE)]>
+    </center>
+    </v:roundrect>
+    <![endif]--></div>
+    </td>
+</tr>
+
+    <tr>
+    <td  height="27" style="background-color:transparent;font-size: 27;line-height:1px;padding-top: 0px;padding-bottom: 0px;">
+        &nbsp;
+    </td>
+</tr>
+
+
+
+    
+            </table>
+        </td>
+    </tr>
+    
+</table>
+
+
+
+    
+    
+    
+
+
+
+<table width="100%" cellpadding="0" cellspacing="0" border="0" align="center" style="text-align: center;">
+    <tr>
+        
+        <td valign="top"
+    style="width:74px;background-color: transparent;">
+    
+        <a href="https://et.trulia.com/tracker?type=click&emailid=austindreier@icloud.com&userid=dXNlcl9pZD00Mzk1MjA2NyZjb21tc1BsYXRmb3JtPWVtdjImZ3VpZD0xNTA4NjcyNzM1MDY1XzljOTU5ZDBjODcxNjM1ZjJjYTdjZGM1MWY4YTk1MTBlX2lwLTE3Mi0xOC0yNS0xNjcmZW1haWxfdHlwZV9pZD0yNDkmZW1haWw9YXVzdGluZHJlaWVyQGljbG91ZC5jb20=&extra=MultivariateId=&&&2000&&&https://www.trulia.com/handshake/?alat=b55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7&alrt=951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a&ecampaign=eml|frb|con_day_recrentprops_bk_emv2|group_1&return=https%3A%2F%2Fwww.trulia.com%2Femail%2Feml%7Cfrb%7Ccon_day_recrentprops_bk_emv2%7Cgroup_1%2Fwww.trulia.com%2Frental%2F3239684120%3Falat%3Db55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7%26alrt%3D951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a" id=w_image2 title="Property details">
+        <img src="https://thumbs.trulia-cdn.com/pictures/thumbs_6/ps.109/f/6/5/7/picture-uh=a2889119eb2cdee19b291816388eeff4-ps=f657b32ac07e5a28e6e24d3d30a2aefa.jpg"
+             border="0"
+             alt="Home Image"
+             width="74"
+             height="64"
+             style="width:74px;
+                     height:64px;
+                     font-family: Helvetica, Arial, sans-serif;
+                     font-size: 12px;
+                     color: #B1B6BB;
+                     border: 0;"/>
+        </a>
+    
+</td>
+
+        
+        
+        <td valign="top" style="padding-left:12px;">
+    <table cellpadding="0" cellspacing="0" width="100%" style="text-align: left;">
+        <tr> 
+            <td>
+                <span  id="w_price2" 
+        style="color: #474E52;
+                background-color: transparent;
+                font-family: PostGroteskMedium, Helvetica, Arial, sans-serif;
+                font-weight: 500;
+                font-size: 16px;
+                text-align: left;
+                padding-top: 0px;
+                padding-bottom: 0px;
+                letter-spacing: 0px;
+        
+                line-height: 16px;" title="$1,125">
+    $1,125
+</span>
+
+
+                
+                    <span  id="w_bedbath2" 
+        style="color: #474E52;
+                background-color: transparent;
+                font-family: PostGroteskBook, Helvetica, Arial, sans-serif;
+                font-weight: 500;
+                font-size: 13px;
+                text-align: left;
+                padding-top: 0px;
+                padding-bottom: 0px;
+                letter-spacing: 0px;
+        
+                line-height: 13px;" title="Studio&nbsp;&nbsp;1 ba">
+    Studio&nbsp;&nbsp;1 ba
+</span>
+
+                
+            </td>
+            <tr>
+    <td  height="5" style="background-color:transparent;font-size: 5;line-height:1px;padding-top: 0px;padding-bottom: 0px;">
+        &nbsp;
+    </td>
+</tr>
+
+        </tr>
+        <tr> 
+            <td>
+                
+                    
+<a 
+         id="w_addr2" 
+         href="https://et.trulia.com/tracker?type=click&emailid=austindreier@icloud.com&userid=dXNlcl9pZD00Mzk1MjA2NyZjb21tc1BsYXRmb3JtPWVtdjImZ3VpZD0xNTA4NjcyNzM1MDY1XzljOTU5ZDBjODcxNjM1ZjJjYTdjZGM1MWY4YTk1MTBlX2lwLTE3Mi0xOC0yNS0xNjcmZW1haWxfdHlwZV9pZD0yNDkmZW1haWw9YXVzdGluZHJlaWVyQGljbG91ZC5jb20=&extra=MultivariateId=&&&2000&&&https://www.trulia.com/handshake/?alat=b55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7&alrt=951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a&ecampaign=eml|frb|con_day_recrentprops_bk_emv2|group_1&return=https%3A%2F%2Fwww.trulia.com%2Femail%2Feml%7Cfrb%7Ccon_day_recrentprops_bk_emv2%7Cgroup_1%2Fwww.trulia.com%2Frental%2F3239684120%3Falat%3Db55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7%26alrt%3D951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a#map" 
+        style="color: #20C063;
+                text-decoration: none;
+                background-color: transparent;
+                font-family: PostGroteskBook, Helvetica, Arial, sans-serif;
+                font-weight: 300;
+                font-size: 13px;
+                text-align: left;
+                padding-top: 0px;
+                padding-bottom: 0px;
+                letter-spacing: 0px;
+        
+                line-height: 13px;" title="425&#8203; S&#8203; Grand&#8203; View&#8203; St&#8203;<br>Los Angeles, CA">
+    425&#8203; S&#8203; Grand&#8203; View&#8203; St&#8203;<br>Los Angeles, CA
+    
+</a>
+
+                
+            </td>
+        </tr>
+        
+            <tr>
+    <td  height="5" style="background-color:transparent;font-size: 5;line-height:1px;padding-top: 0px;padding-bottom: 0px;">
+        &nbsp;
+    </td>
+</tr>
+
+            <tr> 
+                <td style="font-family: 'PostGroteskBold', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 13px; letter-spacing: 1px; font-weight: bold;">
+                    
+                        <span style="color: #869099; white-space: nowrap; display: inline-block;">PET FRIENDLY</span>
+                    
+                </td>
+            </tr>
+        
+    </table>
+</td>
+
+        
+    </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0" border="0" align="center" style="text-align: center;">
+    
+    <tr>
+        <td>
+            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                
+        
+    <tr>
+    <td  height="7" style="background-color:transparent;font-size: 7;line-height:1px;padding-top: 0px;padding-bottom: 0px;">
+        &nbsp;
+    </td>
+</tr>
+
+
+<tr style="background-color:transparent">
+    <td align="left" style="text-align:left">
+        <div align="left" style="display:inline"><!--[if (gte mso 9)|(IE)]>
+    <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml"
+                 href="https://et.trulia.com/tracker?type=click&amp;emailid=austindreier@icloud.com&amp;userid=dXNlcl9pZD00Mzk1MjA2NyZjb21tc1BsYXRmb3JtPWVtdjImZ3VpZD0xNTA4NjcyNzM1MDY1XzljOTU5ZDBjODcxNjM1ZjJjYTdjZGM1MWY4YTk1MTBlX2lwLTE3Mi0xOC0yNS0xNjcmZW1haWxfdHlwZV9pZD0yNDkmZW1haWw9YXVzdGluZHJlaWVyQGljbG91ZC5jb20=&amp;extra=MultivariateId=&amp;&amp;&amp;2000&amp;&amp;&amp;https://www.trulia.com/handshake/?alat=b55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7&alrt=951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a&ecampaign=eml|frb|con_day_recrentprops_bk_emv2|group_1&return=https%3A%2F%2Fwww.trulia.com%2Femail%2Feml%7Cfrb%7Ccon_day_recrentprops_bk_emv2%7Cgroup_1%2Fwww.trulia.com%2Frental%2F3239684120%3Falat%3Db55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7%26alrt%3D951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a#photo-1"
+                 id=""
+                 style="height:25px;v-text-anchor:middle;width:240px;"
+                 arcsize="15%"
+                 stroke="f" fillcolor="#20C063">
+        <center>
+    <![endif]-->
+    <a href="https://et.trulia.com/tracker?type=click&emailid=austindreier@icloud.com&userid=dXNlcl9pZD00Mzk1MjA2NyZjb21tc1BsYXRmb3JtPWVtdjImZ3VpZD0xNTA4NjcyNzM1MDY1XzljOTU5ZDBjODcxNjM1ZjJjYTdjZGM1MWY4YTk1MTBlX2lwLTE3Mi0xOC0yNS0xNjcmZW1haWxfdHlwZV9pZD0yNDkmZW1haWw9YXVzdGluZHJlaWVyQGljbG91ZC5jb20=&extra=MultivariateId=&&&2000&&&https://www.trulia.com/handshake/?alat=b55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7&alrt=951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a&ecampaign=eml|frb|con_day_recrentprops_bk_emv2|group_1&return=https%3A%2F%2Fwww.trulia.com%2Femail%2Feml%7Cfrb%7Ccon_day_recrentprops_bk_emv2%7Cgroup_1%2Fwww.trulia.com%2Frental%2F3239684120%3Falat%3Db55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7%26alrt%3D951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a#photo-1" align="left"
+       id=""
+       style="background-color:#20C063;
+               border-radius:2px;
+               border-color:transparent;
+               border-width:0px;
+               border-style:none;
+               color:#ffffff;
+               display:block;
+               font-family: PostGroteskBook, Helvetica, Arial, sans-serif;
+               font-weight: 300;
+               font-size:15px;
+               line-height:25px;
+               text-align:center;
+               text-decoration:none;
+               width:100%;
+               height:25px;
+               -webkit-text-size-adjust:none;">
+        View 3 More Photos
+    </a>
+    <!--[if (gte mso 9)|(IE)]>
+    </center>
+    </v:roundrect>
+    <![endif]--></div>
+    </td>
+</tr>
+
+    <tr>
+    <td  height="27" style="background-color:transparent;font-size: 27;line-height:1px;padding-top: 0px;padding-bottom: 0px;">
+        &nbsp;
+    </td>
+</tr>
+
+
+
+    
+            </table>
+        </td>
+    </tr>
+    
+</table>
+
+
+
+    
+    
+    
+
+
+
+<table width="100%" cellpadding="0" cellspacing="0" border="0" align="center" style="text-align: center;">
+    <tr>
+        
+        <td valign="top"
+    style="width:74px;background-color: transparent;">
+    
+        <a href="https://et.trulia.com/tracker?type=click&emailid=austindreier@icloud.com&userid=dXNlcl9pZD00Mzk1MjA2NyZjb21tc1BsYXRmb3JtPWVtdjImZ3VpZD0xNTA4NjcyNzM1MDY1XzljOTU5ZDBjODcxNjM1ZjJjYTdjZGM1MWY4YTk1MTBlX2lwLTE3Mi0xOC0yNS0xNjcmZW1haWxfdHlwZV9pZD0yNDkmZW1haWw9YXVzdGluZHJlaWVyQGljbG91ZC5jb20=&extra=MultivariateId=&&&2000&&&https://www.trulia.com/handshake/?alat=b55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7&alrt=951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a&ecampaign=eml|frb|con_day_recrentprops_bk_emv2|group_1&return=https%3A%2F%2Fwww.trulia.com%2Femail%2Feml%7Cfrb%7Ccon_day_recrentprops_bk_emv2%7Cgroup_1%2Fwww.trulia.com%2Frental%2F3235260647%3Falat%3Db55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7%26alrt%3D951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a" id=w_image3 title="Property details">
+        <img src="https://thumbs.trulia-cdn.com/pictures/thumbs_4/ps.108/a/b/b/4/picture-uh=c9476d9491ee4554e4d588b61a5ef98-ps=abb48734ded03e82ab5f15957565ae41.jpg"
+             border="0"
+             alt="Home Image"
+             width="74"
+             height="64"
+             style="width:74px;
+                     height:64px;
+                     font-family: Helvetica, Arial, sans-serif;
+                     font-size: 12px;
+                     color: #B1B6BB;
+                     border: 0;"/>
+        </a>
+    
+</td>
+
+        
+        
+        <td valign="top" style="padding-left:12px;">
+    <table cellpadding="0" cellspacing="0" width="100%" style="text-align: left;">
+        <tr> 
+            <td>
+                <span  id="w_price3" 
+        style="color: #474E52;
+                background-color: transparent;
+                font-family: PostGroteskMedium, Helvetica, Arial, sans-serif;
+                font-weight: 500;
+                font-size: 16px;
+                text-align: left;
+                padding-top: 0px;
+                padding-bottom: 0px;
+                letter-spacing: 0px;
+        
+                line-height: 16px;" title="$1,200">
+    $1,200
+</span>
+
+
+                
+                    <span  id="w_bedbath3" 
+        style="color: #474E52;
+                background-color: transparent;
+                font-family: PostGroteskBook, Helvetica, Arial, sans-serif;
+                font-weight: 500;
+                font-size: 13px;
+                text-align: left;
+                padding-top: 0px;
+                padding-bottom: 0px;
+                letter-spacing: 0px;
+        
+                line-height: 13px;" title="Studio&nbsp;&nbsp;1 ba">
+    Studio&nbsp;&nbsp;1 ba
+</span>
+
+                
+            </td>
+            <tr>
+    <td  height="5" style="background-color:transparent;font-size: 5;line-height:1px;padding-top: 0px;padding-bottom: 0px;">
+        &nbsp;
+    </td>
+</tr>
+
+        </tr>
+        <tr> 
+            <td>
+                
+                    
+<a 
+         id="w_addr3" 
+         href="https://et.trulia.com/tracker?type=click&emailid=austindreier@icloud.com&userid=dXNlcl9pZD00Mzk1MjA2NyZjb21tc1BsYXRmb3JtPWVtdjImZ3VpZD0xNTA4NjcyNzM1MDY1XzljOTU5ZDBjODcxNjM1ZjJjYTdjZGM1MWY4YTk1MTBlX2lwLTE3Mi0xOC0yNS0xNjcmZW1haWxfdHlwZV9pZD0yNDkmZW1haWw9YXVzdGluZHJlaWVyQGljbG91ZC5jb20=&extra=MultivariateId=&&&2000&&&https://www.trulia.com/handshake/?alat=b55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7&alrt=951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a&ecampaign=eml|frb|con_day_recrentprops_bk_emv2|group_1&return=https%3A%2F%2Fwww.trulia.com%2Femail%2Feml%7Cfrb%7Ccon_day_recrentprops_bk_emv2%7Cgroup_1%2Fwww.trulia.com%2Frental%2F3235260647%3Falat%3Db55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7%26alrt%3D951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a#map" 
+        style="color: #20C063;
+                text-decoration: none;
+                background-color: transparent;
+                font-family: PostGroteskBook, Helvetica, Arial, sans-serif;
+                font-weight: 300;
+                font-size: 13px;
+                text-align: left;
+                padding-top: 0px;
+                padding-bottom: 0px;
+                letter-spacing: 0px;
+        
+                line-height: 13px;" title="800&#8203; S&#8203; Burlington&#8203; Ave&#8203;<br>Los Angeles, CA">
+    800&#8203; S&#8203; Burlington&#8203; Ave&#8203;<br>Los Angeles, CA
+    
+</a>
+
+                
+            </td>
+        </tr>
+        
+    </table>
+</td>
+
+        
+    </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0" border="0" align="center" style="text-align: center;">
+    
+    <tr>
+        <td>
+            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                
+        
+    <tr>
+    <td  height="7" style="background-color:transparent;font-size: 7;line-height:1px;padding-top: 0px;padding-bottom: 0px;">
+        &nbsp;
+    </td>
+</tr>
+
+
+<tr style="background-color:transparent">
+    <td align="left" style="text-align:left">
+        <div align="left" style="display:inline"><!--[if (gte mso 9)|(IE)]>
+    <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml"
+                 href="https://et.trulia.com/tracker?type=click&amp;emailid=austindreier@icloud.com&amp;userid=dXNlcl9pZD00Mzk1MjA2NyZjb21tc1BsYXRmb3JtPWVtdjImZ3VpZD0xNTA4NjcyNzM1MDY1XzljOTU5ZDBjODcxNjM1ZjJjYTdjZGM1MWY4YTk1MTBlX2lwLTE3Mi0xOC0yNS0xNjcmZW1haWxfdHlwZV9pZD0yNDkmZW1haWw9YXVzdGluZHJlaWVyQGljbG91ZC5jb20=&amp;extra=MultivariateId=&amp;&amp;&amp;2000&amp;&amp;&amp;https://www.trulia.com/handshake/?alat=b55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7&alrt=951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a&ecampaign=eml|frb|con_day_recrentprops_bk_emv2|group_1&return=https%3A%2F%2Fwww.trulia.com%2Femail%2Feml%7Cfrb%7Ccon_day_recrentprops_bk_emv2%7Cgroup_1%2Fwww.trulia.com%2Frental%2F3235260647%3Falat%3Db55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7%26alrt%3D951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a#photo-1"
+                 id=""
+                 style="height:25px;v-text-anchor:middle;width:240px;"
+                 arcsize="15%"
+                 stroke="f" fillcolor="#20C063">
+        <center>
+    <![endif]-->
+    <a href="https://et.trulia.com/tracker?type=click&emailid=austindreier@icloud.com&userid=dXNlcl9pZD00Mzk1MjA2NyZjb21tc1BsYXRmb3JtPWVtdjImZ3VpZD0xNTA4NjcyNzM1MDY1XzljOTU5ZDBjODcxNjM1ZjJjYTdjZGM1MWY4YTk1MTBlX2lwLTE3Mi0xOC0yNS0xNjcmZW1haWxfdHlwZV9pZD0yNDkmZW1haWw9YXVzdGluZHJlaWVyQGljbG91ZC5jb20=&extra=MultivariateId=&&&2000&&&https://www.trulia.com/handshake/?alat=b55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7&alrt=951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a&ecampaign=eml|frb|con_day_recrentprops_bk_emv2|group_1&return=https%3A%2F%2Fwww.trulia.com%2Femail%2Feml%7Cfrb%7Ccon_day_recrentprops_bk_emv2%7Cgroup_1%2Fwww.trulia.com%2Frental%2F3235260647%3Falat%3Db55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7%26alrt%3D951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a#photo-1" align="left"
+       id=""
+       style="background-color:#20C063;
+               border-radius:2px;
+               border-color:transparent;
+               border-width:0px;
+               border-style:none;
+               color:#ffffff;
+               display:block;
+               font-family: PostGroteskBook, Helvetica, Arial, sans-serif;
+               font-weight: 300;
+               font-size:15px;
+               line-height:25px;
+               text-align:center;
+               text-decoration:none;
+               width:100%;
+               height:25px;
+               -webkit-text-size-adjust:none;">
+        View 1 More Photos
+    </a>
+    <!--[if (gte mso 9)|(IE)]>
+    </center>
+    </v:roundrect>
+    <![endif]--></div>
+    </td>
+</tr>
+
+    <tr>
+    <td  height="27" style="background-color:transparent;font-size: 27;line-height:1px;padding-top: 0px;padding-bottom: 0px;">
+        &nbsp;
+    </td>
+</tr>
+
+
+
+    
+            </table>
+        </td>
+    </tr>
+    
+</table>
+
+
+
+    
+    
+    
+
+
+
+<table width="100%" cellpadding="0" cellspacing="0" border="0" align="center" style="text-align: center;">
+    <tr>
+        
+        <td valign="top"
+    style="width:74px;background-color: transparent;">
+    
+        <a href="https://et.trulia.com/tracker?type=click&emailid=austindreier@icloud.com&userid=dXNlcl9pZD00Mzk1MjA2NyZjb21tc1BsYXRmb3JtPWVtdjImZ3VpZD0xNTA4NjcyNzM1MDY1XzljOTU5ZDBjODcxNjM1ZjJjYTdjZGM1MWY4YTk1MTBlX2lwLTE3Mi0xOC0yNS0xNjcmZW1haWxfdHlwZV9pZD0yNDkmZW1haWw9YXVzdGluZHJlaWVyQGljbG91ZC5jb20=&extra=MultivariateId=&&&2000&&&https://www.trulia.com/handshake/?alat=b55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7&alrt=951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a&ecampaign=eml|frb|con_day_recrentprops_bk_emv2|group_1&return=https%3A%2F%2Fwww.trulia.com%2Femail%2Feml%7Cfrb%7Ccon_day_recrentprops_bk_emv2%7Cgroup_1%2Fwww.trulia.com%2Frental%2F4018937431%3Falat%3Db55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7%26alrt%3D951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a" id=w_image4 title="Property details">
+        <img src="https://thumbs.trulia-cdn.com/pictures/thumbs_4/ps.109/7/5/9/1/picture-uh=2e59dee31b2b70668e764ffe03b52fd3-ps=7591bc3be7e4a9b0b6ba37ea8417258.jpg"
+             border="0"
+             alt="Home Image"
+             width="74"
+             height="64"
+             style="width:74px;
+                     height:64px;
+                     font-family: Helvetica, Arial, sans-serif;
+                     font-size: 12px;
+                     color: #B1B6BB;
+                     border: 0;"/>
+        </a>
+    
+</td>
+
+        
+        
+        <td valign="top" style="padding-left:12px;">
+    <table cellpadding="0" cellspacing="0" width="100%" style="text-align: left;">
+        <tr> 
+            <td>
+                <span  id="w_price4" 
+        style="color: #474E52;
+                background-color: transparent;
+                font-family: PostGroteskMedium, Helvetica, Arial, sans-serif;
+                font-weight: 500;
+                font-size: 16px;
+                text-align: left;
+                padding-top: 0px;
+                padding-bottom: 0px;
+                letter-spacing: 0px;
+        
+                line-height: 16px;" title="$1,200">
+    $1,200
+</span>
+
+
+                
+                    <span  id="w_bedbath4" 
+        style="color: #474E52;
+                background-color: transparent;
+                font-family: PostGroteskBook, Helvetica, Arial, sans-serif;
+                font-weight: 500;
+                font-size: 13px;
+                text-align: left;
+                padding-top: 0px;
+                padding-bottom: 0px;
+                letter-spacing: 0px;
+        
+                line-height: 13px;" title="Studio&nbsp;&nbsp;1 ba">
+    Studio&nbsp;&nbsp;1 ba
+</span>
+
+                
+            </td>
+            <tr>
+    <td  height="5" style="background-color:transparent;font-size: 5;line-height:1px;padding-top: 0px;padding-bottom: 0px;">
+        &nbsp;
+    </td>
+</tr>
+
+        </tr>
+        <tr> 
+            <td>
+                
+                    
+<a 
+         id="w_addr4" 
+         href="https://et.trulia.com/tracker?type=click&emailid=austindreier@icloud.com&userid=dXNlcl9pZD00Mzk1MjA2NyZjb21tc1BsYXRmb3JtPWVtdjImZ3VpZD0xNTA4NjcyNzM1MDY1XzljOTU5ZDBjODcxNjM1ZjJjYTdjZGM1MWY4YTk1MTBlX2lwLTE3Mi0xOC0yNS0xNjcmZW1haWxfdHlwZV9pZD0yNDkmZW1haWw9YXVzdGluZHJlaWVyQGljbG91ZC5jb20=&extra=MultivariateId=&&&2000&&&https://www.trulia.com/handshake/?alat=b55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7&alrt=951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a&ecampaign=eml|frb|con_day_recrentprops_bk_emv2|group_1&return=https%3A%2F%2Fwww.trulia.com%2Femail%2Feml%7Cfrb%7Ccon_day_recrentprops_bk_emv2%7Cgroup_1%2Fwww.trulia.com%2Frental%2F4018937431%3Falat%3Db55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7%26alrt%3D951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a#map" 
+        style="color: #20C063;
+                text-decoration: none;
+                background-color: transparent;
+                font-family: PostGroteskBook, Helvetica, Arial, sans-serif;
+                font-weight: 300;
+                font-size: 13px;
+                text-align: left;
+                padding-top: 0px;
+                padding-bottom: 0px;
+                letter-spacing: 0px;
+        
+                line-height: 13px;" title="200&#8203; S&#8203; Kenmore&#8203; Ave&#8203;<br>Los Angeles, CA">
+    200&#8203; S&#8203; Kenmore&#8203; Ave&#8203;<br>Los Angeles, CA
+    
+</a>
+
+                
+            </td>
+        </tr>
+        
+            <tr>
+    <td  height="5" style="background-color:transparent;font-size: 5;line-height:1px;padding-top: 0px;padding-bottom: 0px;">
+        &nbsp;
+    </td>
+</tr>
+
+            <tr> 
+                <td style="font-family: 'PostGroteskBold', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 13px; letter-spacing: 1px; font-weight: bold;">
+                    
+                        <span style="color: #869099; white-space: nowrap; display: inline-block;">BEST VALUE</span>
+                    
+                </td>
+            </tr>
+        
+    </table>
+</td>
+
+        
+    </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0" border="0" align="center" style="text-align: center;">
+    
+    <tr>
+        <td>
+            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                
+        
+    <tr>
+    <td  height="7" style="background-color:transparent;font-size: 7;line-height:1px;padding-top: 0px;padding-bottom: 0px;">
+        &nbsp;
+    </td>
+</tr>
+
+
+<tr style="background-color:transparent">
+    <td align="left" style="text-align:left">
+        <div align="left" style="display:inline"><!--[if (gte mso 9)|(IE)]>
+    <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml"
+                 href="https://et.trulia.com/tracker?type=click&amp;emailid=austindreier@icloud.com&amp;userid=dXNlcl9pZD00Mzk1MjA2NyZjb21tc1BsYXRmb3JtPWVtdjImZ3VpZD0xNTA4NjcyNzM1MDY1XzljOTU5ZDBjODcxNjM1ZjJjYTdjZGM1MWY4YTk1MTBlX2lwLTE3Mi0xOC0yNS0xNjcmZW1haWxfdHlwZV9pZD0yNDkmZW1haWw9YXVzdGluZHJlaWVyQGljbG91ZC5jb20=&amp;extra=MultivariateId=&amp;&amp;&amp;2000&amp;&amp;&amp;https://www.trulia.com/handshake/?alat=b55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7&alrt=951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a&ecampaign=eml|frb|con_day_recrentprops_bk_emv2|group_1&return=https%3A%2F%2Fwww.trulia.com%2Femail%2Feml%7Cfrb%7Ccon_day_recrentprops_bk_emv2%7Cgroup_1%2Fwww.trulia.com%2Frental%2F4018937431%3Falat%3Db55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7%26alrt%3D951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a#photo-1"
+                 id=""
+                 style="height:25px;v-text-anchor:middle;width:240px;"
+                 arcsize="15%"
+                 stroke="f" fillcolor="#20C063">
+        <center>
+    <![endif]-->
+    <a href="https://et.trulia.com/tracker?type=click&emailid=austindreier@icloud.com&userid=dXNlcl9pZD00Mzk1MjA2NyZjb21tc1BsYXRmb3JtPWVtdjImZ3VpZD0xNTA4NjcyNzM1MDY1XzljOTU5ZDBjODcxNjM1ZjJjYTdjZGM1MWY4YTk1MTBlX2lwLTE3Mi0xOC0yNS0xNjcmZW1haWxfdHlwZV9pZD0yNDkmZW1haWw9YXVzdGluZHJlaWVyQGljbG91ZC5jb20=&extra=MultivariateId=&&&2000&&&https://www.trulia.com/handshake/?alat=b55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7&alrt=951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a&ecampaign=eml|frb|con_day_recrentprops_bk_emv2|group_1&return=https%3A%2F%2Fwww.trulia.com%2Femail%2Feml%7Cfrb%7Ccon_day_recrentprops_bk_emv2%7Cgroup_1%2Fwww.trulia.com%2Frental%2F4018937431%3Falat%3Db55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7%26alrt%3D951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a#photo-1" align="left"
+       id=""
+       style="background-color:#20C063;
+               border-radius:2px;
+               border-color:transparent;
+               border-width:0px;
+               border-style:none;
+               color:#ffffff;
+               display:block;
+               font-family: PostGroteskBook, Helvetica, Arial, sans-serif;
+               font-weight: 300;
+               font-size:15px;
+               line-height:25px;
+               text-align:center;
+               text-decoration:none;
+               width:100%;
+               height:25px;
+               -webkit-text-size-adjust:none;">
+        View 11 More Photos
+    </a>
+    <!--[if (gte mso 9)|(IE)]>
+    </center>
+    </v:roundrect>
+    <![endif]--></div>
+    </td>
+</tr>
+
+    <tr>
+    <td  height="27" style="background-color:transparent;font-size: 27;line-height:1px;padding-top: 0px;padding-bottom: 0px;">
+        &nbsp;
+    </td>
+</tr>
+
+
+
+    
+            </table>
+        </td>
+    </tr>
+    
+</table>
+
+
+
+
+
+</td>
+</tr>
+</table>
+</td>
+</tr>
+
+
+
+
+<tr>
+    <td  height="20" style="background-color:transparent;font-size: 20;line-height:1px;padding-top: 0px;padding-bottom: 0px;">
+        &nbsp;
+    </td>
+</tr>
+
+
+<tr id="footer">
+    <td>
+        <table align="center" cellspacing="0" cellpadding="0" border="0"
+               style="background-color: #ffffff;
+                       max-width:600px;
+                       width:100%">
+            <tr>
+    <td  height="10" style="background-color:transparent;font-size: 10;line-height:1px;padding-top: 0px;padding-bottom: 0px;">
+        &nbsp;
+    </td>
+</tr>
+
+            <tr>
+    <td>
+        <table cellspacing="0" cellpadding="0" align="center">
+            <tr>
+                <td style="color: #869099;
+                        font-family: PostGroteskBook, Helvetica, Arial, sans-serif;
+                        font-weight: 300;
+                        font-size: 12px;">
+                    Download the Trulia app on 
+                    
+<a 
+         id="w_android" 
+         href="https://et.trulia.com/tracker?type=click&emailid=austindreier@icloud.com&userid=dXNlcl9pZD00Mzk1MjA2NyZjb21tc1BsYXRmb3JtPWVtdjImZ3VpZD0xNTA4NjcyNzM1MDY1XzljOTU5ZDBjODcxNjM1ZjJjYTdjZGM1MWY4YTk1MTBlX2lwLTE3Mi0xOC0yNS0xNjcmZW1haWxfdHlwZV9pZD0yNDkmZW1haWw9YXVzdGluZHJlaWVyQGljbG91ZC5jb20=&extra=MultivariateId=&&&2000&&&https://app.adjust.com/xjrjfm" 
+        style="color: #20C063;
+                text-decoration: none;
+                background-color: transparent;
+                font-family: PostGroteskMedium, Helvetica, Arial, sans-serif;
+                font-weight: 300;
+                font-size: 12px;
+                text-align: left;
+                padding-top: 0px;
+                padding-bottom: 0px;
+                letter-spacing: 0px;
+        
+                line-height: 18px;" title="Android">
+    Android
+    
+</a>
+ or 
+<a 
+         id="w_ios" 
+         href="https://et.trulia.com/tracker?type=click&emailid=austindreier@icloud.com&userid=dXNlcl9pZD00Mzk1MjA2NyZjb21tc1BsYXRmb3JtPWVtdjImZ3VpZD0xNTA4NjcyNzM1MDY1XzljOTU5ZDBjODcxNjM1ZjJjYTdjZGM1MWY4YTk1MTBlX2lwLTE3Mi0xOC0yNS0xNjcmZW1haWxfdHlwZV9pZD0yNDkmZW1haWw9YXVzdGluZHJlaWVyQGljbG91ZC5jb20=&extra=MultivariateId=&&&2000&&&https://app.adjust.com/gcnqis" 
+        style="color: #20C063;
+                text-decoration: none;
+                background-color: transparent;
+                font-family: PostGroteskMedium, Helvetica, Arial, sans-serif;
+                font-weight: 300;
+                font-size: 12px;
+                text-align: left;
+                padding-top: 0px;
+                padding-bottom: 0px;
+                letter-spacing: 0px;
+        
+                line-height: 18px;" title="iPhone/iPad.">
+    iPhone/iPad.
+    
+</a>
+
+                </td>
+        </table>
+    </td>
+</tr>
+
+            
+            <tr>
+    <td style="color: #869099;
+            font-family: PostGroteskBook, Helvetica, Arial, sans-serif;
+            font-weight: 300;
+            font-size: 12px;
+            line-height: 22px;
+            text-align: center;">
+        <a href="https://et.trulia.com/tracker?type=click&emailid=austindreier@icloud.com&userid=dXNlcl9pZD00Mzk1MjA2NyZjb21tc1BsYXRmb3JtPWVtdjImZ3VpZD0xNTA4NjcyNzM1MDY1XzljOTU5ZDBjODcxNjM1ZjJjYTdjZGM1MWY4YTk1MTBlX2lwLTE3Mi0xOC0yNS0xNjcmZW1haWxfdHlwZV9pZD0yNDkmZW1haWw9YXVzdGluZHJlaWVyQGljbG91ZC5jb20=&extra=MultivariateId=&&&2000&&&https://www.trulia.com/handshake/?alat=b55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7&alrt=951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a&ecampaign=eml|frb|con_day_recrentprops_bk_emv2|group_1&return=https%3A%2F%2Fwww.trulia.com%2Femail%2Feml%7Cfrb%7Ccon_day_recrentprops_bk_emv2%7Cgroup_1%2Fwww.trulia.com%2Fabout%3Falat%3Db55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7%26alrt%3D951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a" title="About Trulia" id="w_about" style="text-decoration: none;
+                color: #869099;">Trulia, Inc. | 535 Mission Street, Suite 700, San Francisco, CA 94105</a>
+    </td>
+</tr>
+
+            <tr>
+    <td style="color: #869099;
+            font-family: PostGroteskBook, Helvetica, Arial, sans-serif;
+            font-weight: 300;
+            font-size: 12px;
+            line-height: 22px;
+            text-align: center;">
+        
+<a 
+         id="w_unsub" 
+         href="https://et.trulia.com/tracker?type=click&emailid=austindreier@icloud.com&userid=dXNlcl9pZD00Mzk1MjA2NyZjb21tc1BsYXRmb3JtPWVtdjImZ3VpZD0xNTA4NjcyNzM1MDY1XzljOTU5ZDBjODcxNjM1ZjJjYTdjZGM1MWY4YTk1MTBlX2lwLTE3Mi0xOC0yNS0xNjcmZW1haWxfdHlwZV9pZD0yNDkmZW1haWw9YXVzdGluZHJlaWVyQGljbG91ZC5jb20=&extra=MultivariateId=&&&2000&&&https://www.trulia.com/handshake/?alat=b55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7&alrt=951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a&ecampaign=eml|frb|con_day_recrentprops_bk_emv2|group_1&return=https%3A%2F%2Fwww.trulia.com%2Femail%2Feml%7Cfrb%7Ccon_day_recrentprops_bk_emv2%7Cgroup_1%2Fwww.trulia.com%2Fprivacy%3Falat%3Db55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7%26alrt%3D951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a" 
+        style="color: #20C063;
+                text-decoration: none;
+                background-color: transparent;
+                font-family: PostGroteskBook, Helvetica, Arial, sans-serif;
+                font-weight: 300;
+                font-size: 12px;
+                text-align: left;
+                padding-top: 0px;
+                padding-bottom: 0px;
+                letter-spacing: 0px;
+        
+                line-height: 18px;" title="View Privacy Policy ">
+    View Privacy Policy 
+    
+</a>
+
+        |
+            
+<a 
+         id="w_unsub" 
+         href="https://et.trulia.com/tracker?type=click&emailid=austindreier@icloud.com&userid=dXNlcl9pZD00Mzk1MjA2NyZjb21tc1BsYXRmb3JtPWVtdjImZ3VpZD0xNTA4NjcyNzM1MDY1XzljOTU5ZDBjODcxNjM1ZjJjYTdjZGM1MWY4YTk1MTBlX2lwLTE3Mi0xOC0yNS0xNjcmZW1haWxfdHlwZV9pZD0yNDkmZW1haWw9YXVzdGluZHJlaWVyQGljbG91ZC5jb20=&extra=MultivariateId=&&&2000&&&https://www.trulia.com/handshake/?alat=b55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7&alrt=951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a&ecampaign=eml|frb|con_day_recrentprops_bk_emv2|group_1&return=https%3A%2F%2Fwww.trulia.com%2Funsubscribe%3Fuid%3D43952067%26auth%3D7910e206c2%26ecampaign%3Deml%257Cfrb%257Ccon_day_recrentprops_bk_emv2%257Cgroup_1%26email%3Daustindreier%2540icloud.com%26et%3D249%3Falat%3Db55264e32f803ed221d81f78145dd5914999c6de024a2b3c78485ba78cf85bd7%26alrt%3D951184f4c70cee06642d5bf437a6e9715b1fe284c8181876066fb0227f7f4c0a" 
+        style="color: #20C063;
+                text-decoration: none;
+                background-color: transparent;
+                font-family: PostGroteskBook, Helvetica, Arial, sans-serif;
+                font-weight: 300;
+                font-size: 12px;
+                text-align: left;
+                padding-top: 0px;
+                padding-bottom: 0px;
+                letter-spacing: 0px;
+        
+                line-height: 18px;" title=" Unsubscribe">
+     Unsubscribe
+    
+</a>
+
+        
+    </td>
+</tr>
+
+            <tr>
+    <td  height="30" style="background-color:transparent;font-size: 30;line-height:1px;padding-top: 0px;padding-bottom: 0px;">
+        &nbsp;
+    </td>
+</tr>
+
+        </table>
+    </td>
+</tr>
+
+
+
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+
+<img border="0" width="1" height="1" alt="" src="http://click.prop.trulia.com/q/0Zb0KkA2PMu-7jyW65hwfg~~/AAAAAQA~/RgRbzyIEPkEIAGzv8CNMk61XBnRydWxpYVgEAAAAAEgDMjQ5QgoAAQSd7FnsF2A9UhdhdXN0aW5kcmVpZXJAaWNsb3VkLmNvbQlRBAAAAABH_XsiZ3VpZCI6ImRYTmxjbDlwWkQwME16azFNakEyTnlaamIyMXRjMUJzWVhSbWIzSnRQV1Z0ZGpJbVozVnBaRDB4TlRBNE5qY3lOek0xTURZMVh6bGpPVFU1WkRCak9EY3hOak0xWmpKallUZGpaR00xTVdZNFlUazFNVEJsWDJsd0xURTNNaTB4T0MweU5TMHhOamNtWlcxaGFXeGZkSGx3WlY5cFpEMHlORGttWlcxaGFXdzlZWFZ6ZEdsdVpISmxhV1Z5UUdsamJHOTFaQzVqYjIwPSIsInByb3BlcnR5X2NvdW50IjoiNSIsImJpbmRpbmciOiJwcm9wIn0~">
+</body>
+</html>
+
+<!--
+Email Type Id: 249
+GUID: 1508672735065_9c959d0c871635f2ca7cdc51f8a9510e_ip-172-18-25-167
+To: austindreier@icloud.com
+From: no-reply@prop.trulia.com
+TimeSent: 2017-10-22T13:28:36.825Z
+EmailPlatform: Emv2
+-->
+--_----ovzbjjl6OP2KgbAifEl22g===_35/D3-06124-40D9CE95--
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>date-last-viewed</key>
+	<integer>0</integer>
+	<key>date-received</key>
+	<integer>1508678928</integer>
+	<key>flags</key>
+	<integer>8590195712</integer>
+	<key>remote-id</key>
+	<string>4819</string>
+</dict>
+</plist>
