@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AlarmsDisabled</key>
+	<false/>
+	<key>Availability</key>
+	<false/>
+	<key>CTag</key>
+	<string>FT=-@RU=021fb3b7-111b-4a63-861a-2af05c0a4cd3@S=1044</string>
+	<key>CalendarPath</key>
+	<string>/1078388551/calendars/B011685C-B004-4FCF-8669-22A81E90E3D4/</string>
+	<key>CanBePublished</key>
+	<true/>
+	<key>Checked</key>
+	<integer>1</integer>
+	<key>Color</key>
+	<string>#1D9BF6FF</string>
+	<key>ColorEditable</key>
+	<true/>
+	<key>Delegate</key>
+	<false/>
+	<key>Editable</key>
+	<true/>
+	<key>Enabled</key>
+	<true/>
+	<key>EventContainer</key>
+	<true/>
+	<key>Key</key>
+	<string>3C6B283D-0052-4165-928C-0BF1520C1023</string>
+	<key>Order</key>
+	<integer>1001</integer>
+	<key>OwnerPrincipalPath</key>
+	<string>/1078388551/principal/</string>
+	<key>Permission</key>
+	<integer>4</integer>
+	<key>PushKey</key>
+	<string>1078388551-a126401fee</string>
+	<key>Renameable</key>
+	<true/>
+	<key>ShareDefaultAlarmSettings</key>
+	<true/>
+	<key>TaskContainer</key>
+	<false/>
+	<key>TimeZone</key>
+	<string>America/Los_Angeles</string>
+	<key>Title</key>
+	<string>Larimer County Pre-Trial </string>
+	<key>Type</key>
+	<string>CalDAV</string>
+</dict>
+</plist>

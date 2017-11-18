@@ -1,0 +1,1 @@
+[Error] Fri Nov 17 16:13:52.526 2017 (ExtensionManager.cpp, 1081) -CExtensionManager::createDBPath: makeWritableForAllUsers() failed, status = -163!

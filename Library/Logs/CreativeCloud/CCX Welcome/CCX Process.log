@@ -1,0 +1,50 @@
+Fri Nov 17 2017 15:47:24 GMT-0800 (PST) CCXWelcome > VulcanWrapper > Loading Vulcan Library...
+Fri Nov 17 2017 15:47:24 GMT-0800 (PST) CCXWelcome > VulcanWrapper > Vulcan Library Successfully Loaded.
+Fri Nov 17 2017 15:47:24 GMT-0800 (PST) CCXWelcome > IMS > Loading IMS Library...
+Fri Nov 17 2017 15:47:25 GMT-0800 (PST) CCXWelcome > IMS > IMS Library Successfully Loaded.
+Fri Nov 17 2017 15:47:31 GMT-0800 (PST) CCXWelcome > FileUtils > lockfile:/Users/BlackHat01/Library/Caches/Adobe/CCX Welcome/.lockfile
+Fri Nov 17 2017 15:47:31 GMT-0800 (PST) Get lock file successfully.
+Fri Nov 17 2017 15:47:31 GMT-0800 (PST) CCXWelcome > Proxy > Got 168 certificates
+Fri Nov 17 2017 15:47:31 GMT-0800 (PST) -------------------------Startup------------------------------
+Fri Nov 17 2017 15:47:31 GMT-0800 (PST) Build version is 2.1.0-426
+Fri Nov 17 2017 15:47:31 GMT-0800 (PST) CCXWelcome > CardLookupMap > Failed to load lookup file from disk: Error: ENOENT: no such file or directory, open '/Users/BlackHat01/Library/Caches/Adobe/CCX Welcome/data/map.json'
+Fri Nov 17 2017 15:47:31 GMT-0800 (PST) CCXWelcome > StockTemplateLookupMap > Failed to load lookup file from disk: Error: ENOENT: no such file or directory, open '/Users/BlackHat01/Library/Caches/Adobe/CCX Welcome/stock/map.json'
+Fri Nov 17 2017 15:47:31 GMT-0800 (PST) CCXWelcome > VulcanWrapper > -> BROADCAST: ccxprocess.Initialized
+Fri Nov 17 2017 15:47:31 GMT-0800 (PST) CCXWelcome > IMS > Error fetching default user: IMSError: [DEFAULT_USER_FOR_CLIENTID_NOT_PRESENT] Error returned if there is no default user for client_id
+Fri Nov 17 2017 15:47:32 GMT-0800 (PST) CCXWelcome > VulcanWrapper > -> ADCS *: accc.app.ProxySettingsRequest
+Fri Nov 17 2017 15:47:32 GMT-0800 (PST) CCXWelcome > VulcanWrapper > -> ADCS *: accc.notifications
+Fri Nov 17 2017 15:47:32 GMT-0800 (PST) CCXWelcome > VulcanWrapper > -> ADCS *: accc.notifications
+Fri Nov 17 2017 15:47:32 GMT-0800 (PST) Checking rollout status
+Fri Nov 17 2017 15:47:32 GMT-0800 (PST) CCXWelcome > VulcanWrapper > <- ADCS 4.3.0: accc.app.ProxySettingsResponse
+Fri Nov 17 2017 15:47:32 GMT-0800 (PST) CCXWelcome > ThorNotifications > GetProxySettings - Successfully obtained username/password from Thor
+Fri Nov 17 2017 15:47:32 GMT-0800 (PST) CCXWelcome > Proxy > Setting proxy username and password
+Fri Nov 17 2017 15:47:32 GMT-0800 (PST) CCXWelcome > CardLookupMap > GC starts.
+Fri Nov 17 2017 15:47:32 GMT-0800 (PST) CCXWelcome > StockTemplateLookupMap > GC starts.
+Fri Nov 17 2017 15:47:32 GMT-0800 (PST) CCXWelcome > UpdateManager >: Removing Panel manifest CCX_CMDN_EXTENSION_2_0_0_003 from /Users/BlackHat01/Library/Application Support/Adobe/CEP/extensions/CCX_CMDN_EXTENSION_2_0_0_003//CSXS/manifest.xml
+Fri Nov 17 2017 15:47:32 GMT-0800 (PST) CCXWelcome > UpdateManager >: Removing Panel manifest CCX_START_EXTENSION_2_0_0_042 from /Users/BlackHat01/Library/Application Support/Adobe/CEP/extensions/CCX_START_EXTENSION_2_0_0_042//CSXS/manifest.xml
+Fri Nov 17 2017 15:47:32 GMT-0800 (PST) CCXWelcome > CardLookupMap > GC ended successfully.
+Fri Nov 17 2017 15:47:32 GMT-0800 (PST) CCXWelcome > StockTemplateLookupMap > GC ended successfully.
+Fri Nov 17 2017 16:13:53 GMT-0800 (PST) CCXWelcome > VulcanWrapper > Loading Vulcan Library...
+Fri Nov 17 2017 16:13:53 GMT-0800 (PST) CCXWelcome > VulcanWrapper > Vulcan Library Successfully Loaded.
+Fri Nov 17 2017 16:13:53 GMT-0800 (PST) CCXWelcome > IMS > Loading IMS Library...
+Fri Nov 17 2017 16:13:54 GMT-0800 (PST) CCXWelcome > IMS > IMS Library Successfully Loaded.
+Fri Nov 17 2017 16:13:57 GMT-0800 (PST) CCXWelcome > FileUtils > lockfile:/Users/BlackHat01/Library/Caches/Adobe/CCX Welcome/.lockfile
+Fri Nov 17 2017 16:13:57 GMT-0800 (PST) Get lock file successfully.
+Fri Nov 17 2017 16:13:58 GMT-0800 (PST) CCXWelcome > Proxy > Got 170 certificates
+Fri Nov 17 2017 16:13:58 GMT-0800 (PST) -------------------------Startup------------------------------
+Fri Nov 17 2017 16:13:58 GMT-0800 (PST) Build version is 2.1.0-426
+Fri Nov 17 2017 16:13:58 GMT-0800 (PST) CCXWelcome > VulcanWrapper > -> BROADCAST: ccxprocess.Initialized
+Fri Nov 17 2017 16:13:58 GMT-0800 (PST) CCXWelcome > IMS > Error fetching default user: IMSError: [DEFAULT_USER_FOR_CLIENTID_NOT_PRESENT] Error returned if there is no default user for client_id
+Fri Nov 17 2017 16:13:59 GMT-0800 (PST) CCXWelcome > VulcanWrapper > -> ADCS *: accc.app.ProxySettingsRequest
+Fri Nov 17 2017 16:13:59 GMT-0800 (PST) CCXWelcome > VulcanWrapper > -> ADCS *: accc.notifications
+Fri Nov 17 2017 16:13:59 GMT-0800 (PST) CCXWelcome > VulcanWrapper > -> ADCS *: accc.notifications
+Fri Nov 17 2017 16:13:59 GMT-0800 (PST) Checking rollout status
+Fri Nov 17 2017 16:13:59 GMT-0800 (PST) CCXWelcome > VulcanWrapper > <- ADCS 4.3.0: accc.app.ProxySettingsResponse
+Fri Nov 17 2017 16:13:59 GMT-0800 (PST) CCXWelcome > ThorNotifications > GetProxySettings - Successfully obtained username/password from Thor
+Fri Nov 17 2017 16:13:59 GMT-0800 (PST) CCXWelcome > Proxy > Setting proxy username and password
+Fri Nov 17 2017 16:13:59 GMT-0800 (PST) CCXWelcome > CardLookupMap > GC starts.
+Fri Nov 17 2017 16:13:59 GMT-0800 (PST) CCXWelcome > StockTemplateLookupMap > GC starts.
+Fri Nov 17 2017 16:13:59 GMT-0800 (PST) CCXWelcome > UpdateManager >: Removing Panel manifest CCX_CMDN_EXTENSION_2_0_0_003 from /Users/BlackHat01/Library/Application Support/Adobe/CEP/extensions/CCX_CMDN_EXTENSION_2_0_0_003//CSXS/manifest.xml
+Fri Nov 17 2017 16:13:59 GMT-0800 (PST) CCXWelcome > UpdateManager >: Removing Panel manifest CCX_START_EXTENSION_2_0_0_042 from /Users/BlackHat01/Library/Application Support/Adobe/CEP/extensions/CCX_START_EXTENSION_2_0_0_042//CSXS/manifest.xml
+Fri Nov 17 2017 16:13:59 GMT-0800 (PST) CCXWelcome > StockTemplateLookupMap > GC ended successfully.
+Fri Nov 17 2017 16:13:59 GMT-0800 (PST) CCXWelcome > CardLookupMap > GC ended successfully.

@@ -1,0 +1,12 @@
+11/17/17 15:47:21:361 | [INFO] |  | ASU | OPM | OPM |  |  | 23877 | Build Version - 10.0.0.99
+11/17/17 15:47:21:433 | [INFO] |  | ASU | OPM | OPM |  |  | 23877 | Logging Level verbosity Set  to 4
+11/17/17 15:47:21:444 | [INFO] |  | ASU | OPM | OPM |  |  | 23877 | Schema version and schema compatibility version are same or greater than current
+
+11/17/17 15:47:21:468 | [INFO] |  | ASU | OPM | OPM |  |  | 23877 | _opm_handle_OPDReturnedStatus called with opdStatus as:0
+11/17/17 15:47:21:468 | [INFO] |  | ASU | OPM | OPM |  |  | 23877 | No Record found for the input fields in opm_getValueForKey
+11/17/17 16:13:49:163 | [INFO] |  | ASU | OPM | OPM |  |  | 10107 | Build Version - 10.0.0.99
+11/17/17 16:13:49:178 | [INFO] |  | ASU | OPM | OPM |  |  | 10107 | Logging Level verbosity Set  to 4
+11/17/17 16:13:49:254 | [INFO] |  | ASU | OPM | OPM |  |  | 10107 | Schema version and schema compatibility version are same or greater than current
+
+11/17/17 16:13:49:279 | [INFO] |  | ASU | OPM | OPM |  |  | 10107 | _opm_handle_OPDReturnedStatus called with opdStatus as:0
+11/17/17 16:13:49:279 | [INFO] |  | ASU | OPM | OPM |  |  | 10107 | No Record found for the input fields in opm_getValueForKey

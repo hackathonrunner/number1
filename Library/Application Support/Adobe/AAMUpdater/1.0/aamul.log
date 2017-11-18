@@ -1,0 +1,32 @@
+11/17/17 15:46:20:171 | [INFO] |  | UPDATER | STARTUPUTILITY |  |  |  | 20016 | >>> Adobe Updater Log Begin >>>
+11/17/17 15:46:20:190 | [INFO] |  | UPDATER | STARTUPUTILITY |  |  |  | 20016 | Application Version: 9.0.0.30
+11/17/17 15:46:20:190 | [INFO] |  | UPDATER | STARTUPUTILITY |  |  |  | 20016 | cmdline option: -logFile = /Users/BlackHat01/Library/Application Support/Adobe/AAMUpdater/1.0/aamul.log
+11/17/17 15:46:20:190 | [INFO] |  | UPDATER | STARTUPUTILITY |  |  |  | 20016 | cmdline option: -logLevel = 2
+11/17/17 15:46:20:191 | [INFO] |  | UPDATER | STARTUPUTILITY |  |  |  | 20016 | StartupUtility : Loaded at startup/logon.
+11/17/17 15:46:20:195 | [INFO] |  | UPDATER | STARTUPUTILITY |  |  |  | 20016 | UCIsUpdaterEnabled : UpdaterIsEnabled.
+11/17/17 15:46:20:195 | [INFO] |  | UPDATER | STARTUPUTILITY |  |  |  | 20016 | Updater has never been run on the machine.
+11/17/17 15:46:20:195 | [INFO] |  | UPDATER | STARTUPUTILITY |  |  |  | 20016 | StartupUtility : Window is NOT Elapsed.
+11/17/17 15:46:20:195 | [INFO] |  | UPDATER | STARTUPUTILITY |  |  |  | 20016 | AdobeUpdaterGoCartLauncher : inside initialize.
+11/17/17 15:46:20:403 | [INFO] |  | UPDATER | STARTUPUTILITY |  |  |  | 20016 | AdobeUpdaterGoCartLauncher : inside getLatestGCApplication.
+11/17/17 15:46:20:728 | [INFO] |  | UPDATER | STARTUPUTILITY |  |  |  | 20016 | AdobeUpdaterGoCartLauncher : inside waitForCFUCallBack.
+11/17/17 15:46:49:407 | [INFO] |  | UPDATER | STARTUPUTILITY |  |  |  | 20016 | AdobeUpdaterGoCartLauncher : AdobeGC_CFUCallbackFn is invoked
+11/17/17 15:46:49:407 | [INFO] |  | UPDATER | STARTUPUTILITY |  |  |  | 20016 | AdobeUpdaterGoCartLauncher : inside invokeGCApplication.
+11/17/17 15:47:19:996 | [INFO] |  | UPDATER | STARTUPUTILITY |  |  |  | 20016 | AdobeUpdaterGoCartLauncher : AdobeGC_ReleaseRef called.
+11/17/17 15:47:19:996 | [INFO] |  | UPDATER | STARTUPUTILITY |  |  |  | 20016 | AdobeUpdaterGoCartLauncher : inside finalize.
+11/17/17 15:47:19:996 | [INFO] |  | UPDATER | STARTUPUTILITY |  |  |  | 20016 | AdobeUpdaterGoCartLauncher : unloaded goCart library
+11/17/17 16:13:16:114 | [INFO] |  | UPDATER | STARTUPUTILITY |  |  |  | 4655 | >>> Adobe Updater Log Begin >>>
+11/17/17 16:13:16:141 | [INFO] |  | UPDATER | STARTUPUTILITY |  |  |  | 4655 | Application Version: 9.0.0.30
+11/17/17 16:13:16:141 | [INFO] |  | UPDATER | STARTUPUTILITY |  |  |  | 4655 | cmdline option: -logFile = /Users/BlackHat01/Library/Application Support/Adobe/AAMUpdater/1.0/aamul.log
+11/17/17 16:13:16:141 | [INFO] |  | UPDATER | STARTUPUTILITY |  |  |  | 4655 | cmdline option: -logLevel = 2
+11/17/17 16:13:16:141 | [INFO] |  | UPDATER | STARTUPUTILITY |  |  |  | 4655 | StartupUtility : Loaded at startup/logon.
+11/17/17 16:13:16:141 | [INFO] |  | UPDATER | STARTUPUTILITY |  |  |  | 4655 | UCIsUpdaterEnabled : UpdaterIsEnabled.
+11/17/17 16:13:16:141 | [INFO] |  | UPDATER | STARTUPUTILITY |  |  |  | 4655 | Updater has never been run on the machine.
+11/17/17 16:13:16:141 | [INFO] |  | UPDATER | STARTUPUTILITY |  |  |  | 4655 | StartupUtility : Window is NOT Elapsed.
+11/17/17 16:13:16:141 | [INFO] |  | UPDATER | STARTUPUTILITY |  |  |  | 4655 | AdobeUpdaterGoCartLauncher : inside initialize.
+11/17/17 16:13:16:850 | [INFO] |  | UPDATER | STARTUPUTILITY |  |  |  | 4655 | AdobeUpdaterGoCartLauncher : inside getLatestGCApplication.
+11/17/17 16:13:16:922 | [INFO] |  | UPDATER | STARTUPUTILITY |  |  |  | 4655 | AdobeUpdaterGoCartLauncher : inside waitForCFUCallBack.
+11/17/17 16:13:29:410 | [INFO] |  | UPDATER | STARTUPUTILITY |  |  |  | 4655 | AdobeUpdaterGoCartLauncher : AdobeGC_CFUCallbackFn is invoked
+11/17/17 16:13:29:410 | [INFO] |  | UPDATER | STARTUPUTILITY |  |  |  | 4655 | AdobeUpdaterGoCartLauncher : inside invokeGCApplication.
+11/17/17 16:13:59:753 | [INFO] |  | UPDATER | STARTUPUTILITY |  |  |  | 4655 | AdobeUpdaterGoCartLauncher : AdobeGC_ReleaseRef called.
+11/17/17 16:13:59:753 | [INFO] |  | UPDATER | STARTUPUTILITY |  |  |  | 4655 | AdobeUpdaterGoCartLauncher : inside finalize.
+11/17/17 16:13:59:753 | [INFO] |  | UPDATER | STARTUPUTILITY |  |  |  | 4655 | AdobeUpdaterGoCartLauncher : unloaded goCart library

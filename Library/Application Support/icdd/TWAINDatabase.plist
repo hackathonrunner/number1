@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>twainArray</key>
+	<array>
+		<dict>
+			<key>Product Identification</key>
+			<string>PID 08B8</string>
+			<key>TWAIN</key>
+			<false/>
+			<key>bundleID</key>
+			<string>com.epson.scanner.ica</string>
+			<key>bundlePath</key>
+			<string>/Library/Image Capture/Devices/EPSON Scanner.app</string>
+			<key>bundleVersion</key>
+			<integer>14680089</integer>
+			<key>device events</key>
+			<array>
+				<string>scan</string>
+			</array>
+			<key>device type</key>
+			<string>scanner</string>
+			<key>dsPath</key>
+			<string>/Library/Image Capture/TWAIN Data Sources/EPSON WF-3620_3640 Series.ds</string>
+			<key>idProduct</key>
+			<string>0x08B8</string>
+			<key>idVendor</key>
+			<string>0x04B8</string>
+			<key>transportType</key>
+			<string>USB</string>
+		</dict>
+	</array>
+</dict>
+</plist>

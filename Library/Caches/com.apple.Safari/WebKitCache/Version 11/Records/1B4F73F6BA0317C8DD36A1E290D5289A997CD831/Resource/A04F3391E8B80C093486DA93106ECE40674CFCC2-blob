@@ -1,0 +1,919 @@
+﻿var isMobile;
+var isTablet;
+var isDesktop;
+
+//TODO: Remove once this file has been converted to use requirejs
+if (typeof String.prototype.trim !== 'function') {
+    String.prototype.trim = function () {
+        return this.replace(/^\s+|\s+$/g, '');
+    };
+}
+
+if (typeof Array.prototype.indexOf !== 'function') {
+    Array.prototype.indexOf = function (obj, start) {
+        for (var i = (start || 0), j = this.length; i < j; i++) {
+            if (this[i] === obj) { return i; }
+        }
+        return -1;
+    }
+}
+
+
+$(function () {
+    $("form input").keypress(function (e) {
+        if ((e.which && e.which == 13) || (e.keyCode && e.keyCode == 13)) {
+            $('button[type=submit] .default').click();
+            return false;
+        } else {
+            return true;
+        }
+    });
+});
+
+
+function detectScreen() {
+    innerW = window.innerWidth;
+    isDesktop = false;
+    isTablet = false;
+    isMobile = false;
+    if (innerW >= 768 && innerW <= 979) {
+        isTablet = true;
+    } else if (innerW > 979) {
+        isDesktop = true;
+    } else {
+        isMobile = true;
+    }
+    return innerW;
+}
+
+
+var adjustModal = function ($modal) {
+};
+
+var show = function () {
+    var $modal = $(this);
+    adjustModal($modal);
+};
+
+var checkShow = function () {
+    $('.modal').each(function () {
+        var $modal = $(this);
+        if ($modal.css('display') !== 'block') return;
+        adjustModal($modal);
+    });
+};
+
+var modalWindowResize = function () {
+    $('.modal').not('.modal-gallery').on('show', show);
+    $('.modal-gallery').on('displayed', show);
+    // checkShow();
+};
+
+$(modalWindowResize);
+
+var alertIntervalId;
+
+function showError(msg) {
+    closeMessages();
+    $('#msgErrorText').html(msg);
+    $('#msgError').addClass('alertBox');
+    $('#msgError').show();
+
+}
+
+function showSuccess(msg, noAutoReset) {
+    closeMessages();
+    $('#msgSuccessText').html(msg);
+    $('#msgSuccess').addClass('alertBox');
+    $('#msgSuccess').show();
+
+    if (noAutoReset === false) {
+        alertIntervalId = setInterval("resetMessages()", 5000);
+    }
+}
+
+
+function showWarning(msg) {
+    closeMessages();
+    $('#msgWarningText').html(msg);
+    $('#msgWarning').addClass('alertBox');
+    $('#msgWarning').show();
+}
+
+function closeMessages() {
+    $('.alertBox').hide();
+}
+
+
+function resetMessages() {
+    $('.alertBox').fadeOut('fast');
+    clearInterval(alertIntervalId);
+}
+
+
+function setLang(id) {
+    $.ajax({
+
+        url: '/v2/ajx/setUserLang.aspx',
+        data: { langId: id },
+        cache: false,
+        success: function (data) {
+            if (data[0] = 'OK') {
+                if (location.toString().indexOf("/Search") != -1 || location.pathname == "/") {
+                    location = "Search?cl=true";
+                } else if (location.toString().toLowerCase().indexOf("/find-jobs") > -1) {
+                    // english = 0
+                    // spanish = 1
+                    if (id === 0) {
+                        if (location.href.indexOf("/es/") > -1) {
+                            location = location.href.replace("/es/find-jobs", "/find-jobs");
+                        } else {
+                            location.reload();
+                        }
+                    } else if (id === 1) {
+                        if (location.href.indexOf("/es/") < 0) {
+                            location = location.href.replace("/find-jobs", "/es/find-jobs");
+                        } else {
+                            location.reload();
+                        }
+                    }
+                }
+                else
+                    location.reload();
+            }
+        }
+    });
+}
+
+function getQueryString(key, default_) {
+    if (default_ == null) default_ = "";
+    key = key.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+    var regex = new RegExp("[\\?&]" + key + "=([^&#]*)");
+    var qs = regex.exec(window.location.href);
+    if (qs == null)
+        return default_;
+    else
+        return qs[1];
+}
+
+function track(component, action) {
+
+    _gaq.push(['_trackPageview', '/' + component + '/' + action]);
+
+
+}
+
+function clientError(page, error, msg) {
+
+    _gaq.push(['_trackPageview', page, error, msg]);
+}
+
+
+function logout() {
+    $.cookie("what", "0");
+    $.cookie("where", "");
+    $.cookie("isAuthenticated", null);
+    $.cookie("searchResults", null);
+    window.location.href = window.location.pathname + "?logout=1";
+}
+
+function toggleText(c, a, b) {
+    if (c.text() == a) {
+        c.text(b);
+    }
+    else {
+        c.text(a);
+    }
+}
+
+function reportError(func, msg) {
+    var retVal = 'Func: ' + func +
+        ' Message: ' + msg +
+        ' appName: ' + window.navigator.appName +
+        ' appVersion: ' + window.navigator.appVersion +
+        ' appMinorVersion: ' + window.navigator.appMinorVersion +
+        ' userAgent: ' + window.navigator.userAgent;
+
+    $.ajax({
+        type: "POST",
+        url: "/v2/ajx/errorLog.aspx?msg=" + encodeURIComponent(retVal),
+        success: function (data) {
+        },
+        error: function (data) {
+        }
+    });
+}
+
+
+// MAIN NAMESPACE
+var JBLN = {};
+
+JBLN.location = {
+    getLocation: function (success, error, options) {
+        if (navigator && navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(success, error, options);
+        }
+    }
+};
+
+JBLN.locationSearch = function (config) {
+    var me = this,
+        widgetId = config.widgetId,
+        types = config.types || ['geocode', 'establishment'],
+        onLocationFound = config.onLocationFound || function (response) { },
+        autocomplete,
+        geocoder;
+
+    me.lat = 0,
+    me.lon = 0;
+    me.address = undefined;
+    me.place = undefined;
+    replacePlaceHolderTextInIE();
+    geocoder = new google.maps.Geocoder();
+    autocomplete = new google.maps.places.Autocomplete((document.getElementById(widgetId)),
+                                                        {
+                                                            types: types,
+                                                            componentRestrictions: { country: 'us' }
+                                                        });
+    google.maps.event.addListener(
+                                    autocomplete,
+                                    'place_changed',
+                                    function () { onPlaceChanged(); }
+                                    );
+
+    me.lookUpFailed = false;
+    var widgetSelector = $('#' + widgetId);
+    var widgetSelectorParent = widgetSelector.parent();
+
+    var widgetContainer = $('<div style="font-size: 12px;  top: -9px; position: relative;">');
+    widgetContainer.append('<div class="exampleLocation" style="float: left; font-style: italic; color: #aaa;">e.g: business address, city, or zipcode</div>');
+
+    var clearField = $('<div style="float: right" class="clearFieldDiv"></div>');
+    var changeLocation = $('<a href="#" onclick="return false;" class="clearField">change location</a>');
+    if (widgetSelector.val() === "") {
+        changeLocation.addClass('hide');
+    }
+    clearField.append(changeLocation);
+    widgetContainer.append(clearField);
+
+    widgetSelector.after(widgetContainer);
+
+    widgetSelectorParent.find(".clearField").text(widgetSelector.attr('changeLocation'));
+    widgetSelectorParent.find(".exampleLocation").text(widgetSelector.attr('exampleLocation'));
+    widgetSelectorParent.find(".clearField").click(function () {
+
+        widgetSelector.removeAttr('readonly');
+        $(this).addClass('hide');
+        widgetSelector.val("");
+        resetMembers();
+    });
+    
+    function replacePlaceHolderTextInIE() {
+        var ie = JBLN.isIE();
+        if (ie && ie < 10) {
+            $("#" + widgetId).attr("placeholder", "");
+        }
+    }
+
+    function resetMembers() {
+        //reset fields
+        me.address = undefined;
+        me.lookUpFailed = false;
+        me.place = undefined;
+        me.lat = 0;
+        me.lon = 0;
+    }
+
+    //@private
+    function onPlaceChanged() {
+
+        $('#' + widgetId + '').next('span').removeClass('minreq_yes');
+        var response = autocomplete.getPlace();
+
+        if (response.geometry === null || response.geometry === undefined) {
+            me.lookUpFailed = true;
+            return;
+        }
+
+        //set fields
+        me.lat = response.geometry.location.lat();
+        me.lon = response.geometry.location.lng();
+        me.place = response;
+        me.address = $($(response.adr_address)[0]).text();//$('#' + widgetId + '').val();
+
+        // callback
+        onLocationFound(response);
+        me.lockLocation();
+    }
+
+    me.lockLocation = function () {
+        $("#" + widgetId).parent().find(".clearField").removeClass("hide");
+        $("#" + widgetId).attr('readonly', 'readonly');
+        $("#" + widgetId).trigger("JBLN.locationSearch.lockLocation")
+    };
+
+    me.hasValidAddress = function () {
+        return !!me.address // not null or undefined
+               &&
+               me.address.trim().length > 0; // not white space
+    };
+    //@public
+    me.HasLocation = function () {
+        return !!me.address && (me.lat !== 0 && me.lon !== 0);
+    };
+
+    me.isActive = function () {
+
+        return $('#elsewhere').is(':checked');
+    };
+
+    //@public
+    me.getStreetAddress = function (place) {
+        var HOUSE = 'street_number',
+            STREET = 'route',
+            house = '',
+            street = '';
+
+        place = place || me.place;
+
+        if (place) {
+            for (var i = 0; i < place.address_components.length; i++) {
+
+                if (place.address_components[i].types[0] == HOUSE) {
+                    house = place.address_components[i].long_name;
+                    break;
+                }
+            }
+
+            for (var i = 0; i < place.address_components.length; i++) {
+
+                if (place.address_components[i].types[0] == STREET) {
+                    street = place.address_components[i].long_name;
+                    break;
+                }
+            }
+
+            return house + ' ' + street;
+        }
+    };
+
+    //@public 
+    me.getZipCode = function (place) {
+        var POSTAL_CODE = "postal_code";
+        var zipCode = "";
+
+        place = place || me.place;
+        
+        if (!place) return zipCode;
+
+        for (var i = 0; i < place.address_components.length; i++) {
+
+            if (place.address_components[i].types[0] == POSTAL_CODE) {
+                zipCode = place.address_components[i].short_name;
+                break;
+            }
+        }
+
+        return zipCode;
+    };
+    //@public 
+    me.getCity = function (place) {
+        var CITY = "locality";
+        var city = "";
+
+        place = place || me.place;
+
+        if (!place) return city;
+        
+        for (var i = 0; i < place.address_components.length; i++) {
+
+            if (place.address_components[i].types[0] == CITY) {
+                city = place.address_components[i].long_name;
+                break;
+            }
+        }
+
+        return city;
+    };
+    //@public 
+    me.getState = function (place) {
+        var STATE = "administrative_area_level_1";
+        var state = "";
+        
+        place = place || me.place;
+
+        if (!place) return state;
+        
+        for (var i = 0; i < place.address_components.length; i++) {
+
+            if (place.address_components[i].types[0] == STATE) {
+                state = place.address_components[i].short_name;
+                break;
+            }
+        }
+
+        return state;
+    };
+
+    //@public
+    me.getLatLong = function (place) {
+        var location = { };
+        place = place || me.place;
+        
+        if (place) {
+            location.lat = place.geometry.location.lat(),
+            location.long = place.geometry.location.lng();
+        }
+
+        return location;
+    };
+
+
+    //@public
+    me.setLatLonFromZip = function (zip, callback) {
+
+        geocoder.geocode({ address: zip }, function (results, status) {
+
+            if (status === "OK" && results.length) {
+
+                callback({
+                    lat: results[0].geometry.location.lat(),
+                    lon: results[0].geometry.location.lng()
+                }, status);
+
+            } else {
+                callback(null, status);
+            }
+
+        });
+    };
+
+};
+
+//returns the ie version number or false
+JBLN.isIE = (function () {
+    var myNav = navigator.userAgent.toLowerCase();
+    return (myNav.indexOf('msie') != -1) ? parseInt(myNav.split('msie')[1]) : false;
+});
+
+JBLN.employer = {};
+
+JBLN.employer.jobLocation = (function () {
+    var me = {},
+        mileRangeId;
+
+    me.locSearch = undefined;
+    me.companyLocation = undefined;
+    //@public
+    me.latLonfromZipFailed = function () {
+
+        return $('[id$="hfJoblocLookupfailed"]').val() !== "0";
+    };
+
+    //@public
+    me.setlatLonlookUpFailed = function () {
+
+        return $('[id$="hfJoblocLookupfailed"]').val(1);
+    };
+
+    //@public
+    // value = 1 : at Company , 2: else where
+    me.setJobLocationSelection = function (value) {
+
+        return $('[id$="hfLocationSelected"]').val(value);
+    };
+
+    //@public
+    me.setMileRangeSelection = function () {
+
+        $('[id$="' + mileRangeId + '"]').val($('[id$="milecandrange"]').val());
+
+    };
+
+    //@public
+    me.hasLatLon = function () {
+        return $('[id$="hfCompanyLatitude"]').val() !== "0" && $('[id$="hfCompanyLongitude"]').val() !== "0";
+    };
+
+    //@public
+    me.isJobAtCompanyActive = function () {
+        return $('#atcomp').is(':checked');
+    };
+
+    //@public
+    me.displayEmptyAddressError = function () {
+        $("#job_addr").addClass('error');
+    };
+
+    //@public
+    me.setLatLonFromCompanyAddress = function (lt, ln, companyName, zipCode, city, state) {
+        $('[id$="hfCompanyLatitude"]').val(lt);
+        $('[id$="hfCompanyLongitude"]').val(ln);
+
+        $('[id$="hfzipFromAddress"]').val(zipCode);
+        $('[id$="hfcityFromAddress"]').val(city);
+        $('[id$="hfStateFromAddress"]').val(state);
+        $("#companyName").val(companyName);
+    };
+    //@public
+    me.setLocationFromAddress = function (lt, ln, address, zipCode, city, state) {
+
+        $('[id$="hfJobLatitude"]').val(lt);
+        $('[id$="hfJobLongitude"]').val(ln);
+        $('[id$="hfJobAddress"]').val(address);
+        $('[id$="hfzipFromAddress"]').val(zipCode);
+        $('[id$="hfcityFromAddress"]').val(city);
+        $('[id$="hfStateFromAddress"]').val(state);
+    };
+
+    //@public
+    me.validateLocation = function () {
+
+        //check which option is active
+        //@jobAtCompany
+        if (me.isJobAtCompanyActive()) {
+            //we should have a companyName the page validation checks for it , here we just check if we got lat lon
+            if (me.companyLocation.HasLocation() === false) {
+                me.setlatLonlookUpFailed();
+            }
+
+            if (me.companyLocation.HasLocation()) {
+                me.setLatLonFromCompanyAddress(me.companyLocation.lat, me.companyLocation.lon, me.companyLocation.place.name, me.locSearch.getZipCode(me.companyLocation.place), me.locSearch.getCity(me.companyLocation.place), me.locSearch.getState(me.companyLocation.place));
+                me.setJobLocationSelection(1);
+            }
+        }
+
+        //@jobElseWhere
+        if (me.locSearch.isActive()) {
+            me.setJobLocationSelection(2);
+            //  user has not enter address for look up
+            if (me.locSearch.hasValidAddress() === false) {
+                me.displayEmptyAddressError();
+                return true;
+            }
+
+            //here the user enter address but look up might have failed
+            if (me.locSearch.HasLocation() === false) {
+                me.setlatLonlookUpFailed();
+
+            }
+
+            // here we succeeded
+            if (me.locSearch.HasLocation()) {
+                
+                me.setLocationFromAddress(me.locSearch.lat, me.locSearch.lon, me.locSearch.address, me.locSearch.getZipCode(me.locSearch.place), me.locSearch.getCity(me.locSearch.place), me.locSearch.getState(me.locSearch.place));
+            }
+        }
+
+        //gather mile range selection
+        me.setMileRangeSelection();
+        return false;
+    };
+
+
+    function onLocationFound(response) {
+
+        var POSTAL_CODE = "postal_code";
+        var zipCode = "";
+        for (var i = 0; i < response.address_components.length; i++) {
+
+            if (response.address_components[i].types[0] == POSTAL_CODE) {
+                zipCode = response.address_components[i].short_name;
+                break;
+            }
+        }
+        if (zipCode) {
+            $("#txtZipcode").val(zipCode);
+        }
+
+    }
+
+    function onLocationFound2(response) {
+        var POSTAL_CODE = "postal_code";
+        var zipCode = "";
+        for (var i = 0; i < response.address_components.length; i++) {
+
+            if (response.address_components[i].types[0] == POSTAL_CODE) {
+                zipCode = response.address_components[i].short_name;
+                break;
+            }
+        }
+        if (zipCode) {
+            $("#zipcode_field").val(zipCode);
+        }
+    }
+
+    //@public
+    me.init = function (config) {
+
+        mileRangeId = 'hfMileRange';
+        me.locSearch = new JBLN.locationSearch({ widgetId: 'addr_field', onLocationFound: onLocationFound2, toolTipMessage: config.clearMessage });
+        me.companyLocation = new JBLN.locationSearch({ widgetId: 'companyName', types: ['establishment'], onLocationFound: onLocationFound, toolTipMessage: config.clearMessage });
+
+    };
+
+    return me;
+})();
+
+function loginToggle() {
+
+    if ($('#loginOptions').hasClass('panelClosed')) {
+        $('#loginOptions').removeClass('panelClosed');
+        $('#loginOptions').slideDown('slow');
+    }
+    else {
+        $('#loginOptions').addClass('panelClosed');
+        $('#loginOptions').slideUp('slow');
+    }
+
+};
+
+JBLN.userControls = (function () {
+
+    var me = {};
+
+    me.switchTab = function () {
+
+        var parentListItem = $(this).parent();
+        var parentList = $(parentListItem).parent();
+
+        $(parentList).children().removeClass('active');
+        $(parentListItem).addClass('active');
+
+    };
+
+
+    me.init = function () {
+
+        $(".tabbable a").on("click", me.switchTab);
+
+    };
+
+    me.validateZipcode = function (elem) {
+        var zipPattern = /^(\d{5}-\d{4}|\d{5}|\d{9})$/;
+        if (!zipPattern.test(elem.val())) {
+            elem.parent().addClass('error');
+            elem.parent().find('.errorHelp').show('fast');
+            return false;
+        }
+        return true;
+    };
+
+    me.validateAllFields = function (elem) {
+
+        var fieldsValid = true;
+
+        $(elem).find('input, textarea').each(function () {
+
+            if ($(this).val().trim() == '') {
+                $(this).parent().addClass('error');
+                $(this).parent().find('.errorHelp').show('fast');
+                fieldsValid = false
+            }
+
+        });
+
+        if (fieldsValid == true)
+        {
+            return me.validateAllNumbers(elem);
+        }
+
+        return fieldsValid;
+
+    };
+
+    me.validateAllRequiredFields = function (elem) {
+
+        var fieldsValid = true;
+
+        $(elem).find('.required').each(function () {
+
+            if ($(this).val().trim() == '') {
+                $(this).parent().addClass('error');
+                $(this).parent().find('.errorHelp').show('fast');
+                fieldsValid = false;
+            }
+
+        });
+
+        if (fieldsValid == true) {
+            return me.validateAllNumbers(elem);
+        }
+
+        return fieldsValid;
+
+    };
+
+    me.validateAllNumbers = function (elem) {
+
+        var fieldsValid = true;
+
+        $(elem).find('.numbers').each(function () {
+
+            if (!/^\d+$/.test($(this).val())) {
+                $(this).parent().addClass('error');
+                $(this).parent().find('.errorHelp').show('fast');
+                fieldsValid = false;
+            }
+
+        });
+
+        return fieldsValid;
+
+    };
+
+    me.validateAllZipCodes = function (elem) {
+
+        var fieldsValid = true;
+
+        $(elem).find('.zipcode').each(function () {
+
+            //zip code
+            if ($(this).val().length != 5) {
+                $(this).parent().addClass('error');
+                $(this).parent().find('.errorHelp').show('fast');
+                fieldsValid = false;
+            }
+
+        });
+
+        return fieldsValid;
+
+    };
+
+    me.validateAllPhoneNumbers = function (elem) {
+
+        var fieldsValid = true;
+
+        $(elem).find('.phoneNumber').each(function () {
+
+            if ($(this).val().replace(/[^0-9]/g, '').length != 10) {
+                $(this).parent().addClass('error');
+                $(this).parent().find('.errorHelp').show('fast');
+                fieldsValid = false;
+            }
+
+        });
+
+        return fieldsValid;
+
+    };
+
+    me.clearErrors = function () {
+        $('.error').removeClass('error');
+        $('.alert, .errorHelp').hide('fast');
+    };
+
+
+    me.clearFields = function (elem) {
+
+        $(elem).find('input, textarea').val('');
+
+    };
+
+    me.updateSafeHtml = function (source, target) {
+
+        $(target).val(escape($(source).val()));
+
+        return true;
+    };
+
+    me.moveRawHtml = function (source, target) {
+
+        // move raw HTML
+        $(target).val($(source).val());
+
+        // clear raw HTML
+        $(source).val('');
+
+        return true;
+    };
+
+
+    // append a tooltip at the end of an element
+
+    me.addToolTip = function (target, message, triggerType) {
+
+        if (triggerType == "manual")
+        {
+            $(target).append(' <span class="icon-question-sign helpIcon" onclick="$(this).popover(\'toggle\')"></span>');
+        }
+        else
+        {
+            $(target).append(' <span class="icon-question-sign helpIcon"></span>');
+        }
+
+        var popover = $(target).find('.helpIcon');
+
+        $(popover).popover({ trigger: triggerType , content: message });
+    };
+
+
+    // set an element as a tooltip 
+
+    me.setAsToolTip = function (target, message, triggerType) { // trigger type options are 'hover' and 'manual'
+
+        if (triggerType == "manual") {
+            $(target).attr('onClick', '$(this).popover("toggle")');
+        }
+
+        $(target).popover({ trigger: triggerType, content: message });
+
+    };
+
+
+
+
+    // perform specific function based on hash
+
+    // EXAMPLE USAGE
+    //var hashData = [];
+    //var hashOption = { hashText: "yourHash", hashFunction: function () { yourFunction() } };
+    //hashData.push(hashOption);
+    //JBLN.userControls.performHashFunction(hashData);
+    // END EXAMPLE
+
+    me.performHashFunction = function (hashData) {
+
+        if (window.location.hash) {
+            var hash = window.location.hash.substring(1).toLowerCase(); //Puts hash in variable, and removes the # character
+
+            for (var i = 0; i < hashData.length; i++) {
+
+                if (hash == hashData[i].hashText.toLowerCase()) 
+                    return hashData[i].hashFunction();
+            }
+        }
+    };
+
+
+    me.toggleFields = function (hideItem, showItem) {
+
+        $(hideItem).slideUp('fast');
+        $(showItem).slideDown('fast');
+
+    };
+
+    me.toggleTabFields = function (tab, hideItem, showItem) {
+
+        $(tab).closest('ul').children().removeClass('active');
+        $(tab).parent().addClass('active');
+        me.toggleFields(hideItem, showItem);
+
+    };
+        
+    me.mirrorValue = function (source, target) {
+        $(source).keyup(function () { $(target).val($(this).val()) });
+    };
+
+    me.triggerPostOnEnter = function (inputItem, targetButton) {
+        $(inputItem).bind("keydown", function (event) {
+            var keycode = (event.keyCode ? event.keyCode : (event.which ? event.which : event.charCode));
+            if (keycode == 13) {
+                $(targetButton).click();
+                return false;
+            } else {
+                return true;
+            }
+        });
+    };
+
+    me.filterItems = function (searchData) {
+
+        searchData.searchBox.keyup(function () {
+
+            var itemCount = 0;
+
+            $(searchData.itemParent).each(function () {
+
+                // check item for text
+                if ($(this).find(searchData.searchItem).text().toLowerCase().indexOf($(searchData.searchBox).val().toLowerCase()) != -1) {
+                    // display item
+                    $(this).removeClass('hide');
+                    itemCount++;
+                }
+                else
+                    $(this).addClass('hide'); // hide not matching items
+            });
+
+            if (itemCount == 0) {
+                // display no item found text
+                $(searchData.noItemField).text('unable to locate: ' + $(searchData.searchBox).val());
+                $(searchData.noItemField).show('fast');
+            }
+            else
+                $(searchData.noItemField).hide('fast');
+        });
+    };
+
+    me.findAndReplace = function (container, targetText ,replacementText) {
+        $(container).each(function () {
+            $(this).html($(this).html().replace(targetText, replacementText));
+        });
+    };
+
+    return me;
+
+})();
+
+$.fn.modal.Constructor.prototype.enforceFocus = function () { };

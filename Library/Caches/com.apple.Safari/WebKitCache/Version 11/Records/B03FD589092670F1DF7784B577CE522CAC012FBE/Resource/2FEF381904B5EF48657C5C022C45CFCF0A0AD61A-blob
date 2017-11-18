@@ -1,0 +1,1027 @@
+/*****************/
+/* Test Skin CSS */
+/*****************/
+
+/****************************************************************************************************************************/
+/*------------------------------------------------------ Fonts -------------------------------------------------------------*/
+/****************************************************************************************************************************/
+
+/* Initial Default values for Body.  These should never change */
+body { margin: 0 0 0 0; padding: 0 0 0 0; height: 100%; max-height:100%; }
+
+/*********************************************************/
+/* Controls Font across all pages                        */
+/* font(shorthand): style, variant, weight, size, family */          
+/*********************************************************/
+body,td        { line-height: normal; color: #000000; font: normal normal normal 12px arial, helvetica, sans-serif; } 
+.paBody        { line-height: normal; color: #000000; font: normal normal normal 12px arial, helvetica, sans-serif; }  /* for overriding purposes */
+.paBodySmall   { line-height: normal; color: #000000; font: normal normal normal 11px arial, helvetica, sans-serif; }
+.paBodyLarge   { line-height: normal; color: #000000; font: normal normal normal 14px arial, helvetica, sans-serif; }
+
+.paSubHeading        { line-height: normal; color: #000000; font: normal normal bold 12px arial, helvetica, sans-serif; }
+.paSubHeadingSmall   { line-height: normal; color: #000000; font: normal normal bold 11px arial, helvetica, sans-serif; }
+.paSubHeadingLarge   { line-height: normal; color: #000000; font: normal normal bold 14px arial, helvetica, sans-serif; }
+
+.paHeading        { line-height: normal; color: #000000; font: normal normal bold 18px arial, helvetica, sans-serif; }
+.paHeadingSmall   { line-height: normal; color: #000000; font: normal normal bold 16px arial, helvetica, sans-serif; }
+.paHeadingLarge   { line-height: normal; color: #000000; font: normal normal bold 20px arial, helvetica, sans-serif; }
+
+.paLabel        { line-height: normal; color: #000000; font: normal normal bold 12px arial, helvetica, sans-serif; }
+.paLabelSmall   { line-height: normal; color: #000000; font: normal normal bold 11px arial, helvetica, sans-serif; }
+.paLabelLarge   { line-height: normal; color: #000000; font: normal normal bold 14px arial, helvetica, sans-serif; }
+
+/* The following items control text in various elements.  Should typically be the same as the normal body,td font */
+input                 { line-height: normal; color: #000000; font: normal normal normal 12px arial, helvetica, sans-serif; }
+textarea              { line-height: normal; color: #000000; font: normal normal normal 12px arial, helvetica, sans-serif; }
+.paInputTextField     { line-height: normal; color: #000000; font: normal normal normal 12px arial, helvetica, sans-serif; }
+.paInputTextAreaField { line-height: normal; color: #000000; font: normal normal normal 12px arial, helvetica, sans-serif; }
+.paInputButton        { line-height: normal; color: #000000; font: normal normal normal 12px arial, helvetica, sans-serif; }
+.paTestTextNumber     { line-height: normal; color: #000000; font: normal normal bold 12px arial, helvetica, sans-serif; }   /* color should always be black */
+.paTestTextQuestion   { line-height: normal; color: #000000; font: normal normal normal 12px arial, helvetica, sans-serif; }         /* color should always be black */
+.paTestAnswerBox td   { line-height: normal; color: #000000; font: normal normal normal 12px arial, helvetica, sans-serif; } /* color should always be black */
+
+/* The following should only be used as a modifying class that inherits from another class above */
+.paBodyEmphasize       { font-weight: bold; }   /* add in any emphasis elements needed like Italics, Underline, Font-Size */
+.paSubHeadingEmphasize { font: italic; } /* add in any emphasis elements needed like Italics, Underline, Font-Size */
+.paHeadingEmphasize    { font: italic; } /* add in any emphasis elements needed like Italics, Underline, Font-Size */
+.paLabelEmphasize      { font: italic; } /* add in any emphasis elements needed like Italics, Underline, Font-Size */
+.paTextInvert { color: #000000; }  /* used if text is on an opposite colored background. e.g.  inverse of Black would be White */
+.paTextColor1 { color: #000000; }  /* used to apply different text color. */
+.paTextColor2 { color: #666666; }  /* additional classes have been defined for future use if necessary */
+.paTextColor3 { color: #666666; }
+.paTextColor4 { color: #666666; }
+.paTextColor5 { color: #666666; }
+
+/* Items taken from test.css.  No need to change these */
+.errorText      {  font-family: Arial, Helvetica, sans-serif; font-size: 26px; color: #FF0000; font-weight:bold}
+.errorTextSmall {  font-family: Arial, Helvetica, sans-serif; font-size: 18px; color: #FF0000; font-weight:bold}
+.errorGreyText  {  font-family: Arial, Helvetica, sans-serif; font-size: 11px; color: #666666; line-height: 110%}
+
+/***********************************/
+/* Controls Links across all pages */
+/***********************************/
+
+/* Inherits font settings from whichever class its contained in. */
+a         { text-decoration: underline; color: #000000; }
+a:visited { text-decoration: underline; color: #000000; }
+a:hover   { text-decoration: underline; color: #a28a7e; }
+.paLinkSpecial a         { text-decoration: underline; color:#816f38; font: italic; }
+.paLinkSpecial a:visited { text-decoration: underline; color:#816f38; }
+.paLinkSpecial a:hover   { text-decoration: underline; color:#a28a7e; }
+
+
+/****************************************************************************************************************************/
+/*-------------------------------------------------- Page Structure --------------------------------------------------------*/
+/****************************************************************************************************************************/
+
+/*********************/
+/* Scrolling Options */
+/*********************/
+
+body { overflow: auto;}    /* Set to "hidden" if using division scrolls, otherwise set to "auto". */
+
+/* ---------------------------------- */
+/* Scrolling for bottom half of page. */
+/* ---------------------------------- */
+.paScrollDivMain {	
+	padding: 0px; margin: 0px;
+	/*position: fixed;
+	top: 75px; right: 0px; bottom: 0px; left: 0px; 
+	overflow: auto;*/
+	background: transparent;
+	height:100%;
+	#height:100%;    /* Used only for IE Browsers, the # sign is only recognized by IE */
+}
+
+/* ---------------------------------- */
+/* Scrolling for middle section only  */
+/* ---------------------------------- */
+
+/* a static height must be defined to use this type of scrolling.  */
+/* Modifications to ScrollDivMain are required as well to make this work properly */
+/* leave these blank if using only normal bottom half scrolling */
+
+.paScrollDivMiddleSectionOnly {	
+	background: transparent;
+}
+
+/* --------------------------------------------------- */
+/* Allow Scrolling for Both Content and Footer Section */
+/* --------------------------------------------------- */
+.paMiddleInnerColumnCenterScroll {	
+	padding: 0px; margin: 0px;
+	width: 100%; height: 100%;	/* Change Height to static number to activate scrolling for center section. */	
+	background: transparent;
+}
+
+/* ------------------------------------- */
+/* Allow Scrolling for Content Area Only */
+/* ------------------------------------- */
+.paContentMainScroll {	
+	position: relative;
+	padding: 0px; margin: 0px;
+	width: 100%; height: auto;	/* Change Height to static number to activate scrolling */		
+	background: transparent;
+}
+
+
+/******************/
+/* Page Container */
+/******************/
+
+body {	background: url(f) repeat-x #fff; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; text-align: center;}   
+
+/* use this to help center page content or any type of movement. Backgrounds that span the entire page area can be included here as well */
+.paPageContainer{
+	position: relative;
+	margin: 0 auto 0 auto;
+	width: 800px; height: 100%;	
+	text-align: center;
+}
+.paPageContainerTable {
+	margin: 0 auto 0 auto;
+	width: 800px; height: 100%; max-height:100%;
+	border: 0px solid #000000;	
+	border-collapse: collapse;	
+	background: #ffffff;
+}
+.paPageContainerCell {
+	padding: 0 0 0 0;
+	width: 100%; height: 100%; max-height:100%;
+	background: transparent;
+	text-align: left;
+	vertical-align: top;
+}
+
+
+/**********************/
+/* Section Containers */
+/**********************/
+
+.paSectionContainerOuterTable { width: 100%; height: 100%;  }
+.paSectionContainerOuterTop {
+	height: 75px;
+	vertical-align: top;
+	text-align: center;
+	background: url() repeat-x transparent;
+	
+} 
+.paSectionContainerOuterBottom { 
+	width: 100%;
+	height: auto;
+	vertical-align: top;	
+}
+.paSectionContainerInnerTable { width: 100%; height: auto; background: url() no-repeat #ffffff;}
+.paSectionContainerInnerTop { 
+	width: 100%;	
+	vertical-align: top;	
+}
+.paSectionContainerInnerBottom { 
+	width: 100%;
+	height: 100%;	
+	text-align: center;
+}
+
+
+/*******************/
+/* Top OUTER Table */
+/*******************/
+
+
+.paTopOuterTable {
+	margin: 0 0 0 0; 
+	width: 800px; height: 75px;	  
+	border: 0px solid #ff0000;
+	border-collapse: collapse;		
+}
+.paTopOuterCell {
+	padding: 0 0 0 0;         /* Adjust padding for Top Row Content */
+	width: auto; height: 75px;
+	background: url() repeat-x transparent;
+	border: 0px none black;	
+	vertical-align: top;
+}
+
+.paTopOuterContainer      { height: 75px; width: 100%; overflow: hidden; } /* prevents overflow autoresizing */
+.paTopOuterContainerTable { width: 100%; height: 100%; }   /* Do not Modify these Values */
+.paTopOuterContainerCell  {}  /* this is used to allow for alignment of the inner table */
+
+	/*******************/
+	/* Top INNER Table */
+	/*******************/
+	.paTopInnerTable {	
+		margin: 0 0 0 0;		
+		width: auto; height: auto;
+		border: 0px solid green;	  
+		border-collapse: collapse;		
+	}
+	.paTopInnerCell {
+		padding: 0 0 0 0;
+		width: 800px; height: 75px;
+		background: transparent;
+		vertical-align: top;
+	}
+	
+/**********************/
+/* Middle OUTER Table */
+/**********************/
+
+.paMiddleOuterTable {
+	margin: 0 0 0 0; 
+	width: 777px; min-height: 1;	  	
+	border-collapse: collapse;	
+}
+.paMiddleOuterCell {
+	padding: 0 0 0 0;
+	width: 777px; height: 100%;	
+	vertical-align: top;	
+	background: url() repeat-y #ffffff;
+	padding-top: 15px;
+}
+	/**********************************************/
+	/* Middle INNER Table (Contains the 3 Columns)*/
+	/**********************************************/
+	.paMiddleInnerTable {	
+		margin: 0 0 0 0; 
+		width: 777px; height: 100%;
+		border-collapse: collapse;		
+	}
+	.paMiddleInnerColumnLeft {
+		padding: 0 0 0 0;
+		width: 10px; height: 100%;		
+		vertical-align: top;		
+	}
+		/*********************/
+		/* Column Left Inner */
+		/*********************/
+		.paMiddleInnerColumnLeftTable {	
+			margin: 0 0 0 0; 
+			width: 10px; height: 100%;			
+			border-collapse: collapse;			
+		}
+		.paMiddleInnerColumnLeftCell {
+			padding: 0 0 0 0;
+			width: 10px; height: 100% ;			
+		}
+	.paMiddleInnerColumnCenter {
+		padding: 0 0 0 0;
+		width: 757px; height: 100%;		
+		vertical-align: top;						
+	}
+		/***********************/
+		/* Column Center Inner */
+		/***********************/
+		.paMiddleInnerColumnCenterTable {	
+			margin: 0 0 0 0;
+			width: 757px; height: 100%;			
+			border-collapse: collapse;			
+		}
+		.paMiddleInnerColumnCenterCell {
+			padding: 0px;
+			width: 757px; height: auto;			
+			vertical-align: top;				
+		}
+
+		.paContentMainTable{ width: 100%; height: auto; }
+		.paContentMainCell { padding: 10px; width: 100%; height: auto;}
+		
+		.paContentFooterTable{ width: 100%; height: auto;}
+		.paContentFooterCell { padding: 0px; width: 100%; height: auto;}
+		
+	.paMiddleInnerColumnRight {
+		padding: 0 0 0 0;
+		width: 10px; height: 100%;		
+		vertical-align: top;
+	}		
+		/**********************/
+		/* Column Right Inner */
+		/**********************/
+		.paMiddleInnerColumnRightTable {	
+			margin: 0 0 0 0;
+			width: 10px; height: 100%;		
+			border-collapse: collapse;			
+		}
+		.paMiddleInnerColumnRightCell {
+			padding: 0 0 0 0;
+			width: 10px; height: 100%;			
+			vertical-align: middle;			
+		}
+		
+/**********************/
+/* Bottom OUTER Table */
+/**********************/
+
+.paBottomOuterTable {
+	margin: 0 0 0 0;
+	width: 777px; height: 10px;
+	border-collapse: collapse;
+	position: relative;     /* must be relative to contain contents within that have absolute positioning */
+}
+.paBottomOuterCell {
+	padding: 0 0 0 0;
+	width: auto; height: 10px;
+	background: #ffffff;
+	vertical-align: top;
+}
+
+.paBottomOuterContainer      { height: 10px; width: 100%; overflow: hidden; } /* prevents overflow autoresizing */
+.paBottomOuterContainerTable { width: 100%; height: 100%;} /* Do not Modify these Values */
+.paBottomOuterContainerCell  { vertical-align: top; } /* this is used to allow for alignment of the inner table */
+
+	/**********************/
+	/* Bottom INNER Table */
+	/**********************/
+	.paBottomInnerTable {
+		margin: 0 auto 0 auto;
+		width: 777px; height: 10px;		
+		border-collapse: collapse;
+	}
+	.paBottomInnerCell {
+		padding: 0 0 0 0;
+		width: 777px; height: 10px;
+		background: #ffffff;
+	}
+
+
+/****************************************************************************************************************************/
+/*----------------------------------------------------- Elements -----------------------------------------------------------*/
+/****************************************************************************************************************************/
+
+/* note: Define Additional Font adjustments for individual elements if needed.  */
+
+/* Single Line Text Field */
+.paInputTextField {
+	/* border: 0px none #ffffff; */
+	/* background: transparent; */
+	outline-style: none;    /* Only used for Safari Browser */
+	outline-width: 0px;     /* Only used for Safari Browser */
+	outline-offset: 0px;    /* Only used for Safari Browser */
+}
+.paInputTextFieldLeft {
+	width: 0px; height: auto;
+	background: transparent;
+}
+.paInputTextFieldCenter {
+	height: auto;	
+	background: transparent;
+	vertical-align: middle;	
+}
+.paInputTextFieldRight {
+	width: 0px; height: auto;
+	background: transparent;
+}
+
+/* Multi Line Text Area */
+.paInputTextArea {
+	/* border: 0px none #ffffff; */
+	/* background: transparent; */
+	resize: none;
+	overflow: auto;
+	outline-style: none;    /* Only used for Safari Browser */
+	outline-width: 0px;     /* Only used for Safari Browser */
+	outline-offset: 0px;    /* Only used for Safari Browser */
+}
+.paInputTextAreaTopLeft {   
+	width: 0px; height: 0px;
+	background: transparent;
+}
+.paInputTextAreaTopCenter { /* Repeating Background */
+	width: 0px; height: 0px;
+	background: transparent;
+}
+.paInputTextAreaTopRight { 
+	width: 0px; height: 0px;
+	background: transparent;
+}
+.paInputTextAreaMiddleLeft {  /* Repeating Background */
+	width: 0px; height: 0px;
+	background: transparent;
+}
+.paInputTextAreaMiddleCenter { /* Repeating Background */
+	width: auto; height: auto;
+	background: transparent;
+}
+.paInputTextAreaMiddleRight { /* Repeating Background */
+	width: 0px; height: 0px;
+	background: transparent;
+}
+.paInputTextAreaBottomLeft { 
+	width: 0px; height: 0px;
+	background: transparent;
+}
+.paInputTextAreaBottomCenter { /* Repeating Background */
+	width: 0px; height: 0px;
+	background: transparent;
+}
+.paInputTextAreaBottomRight { 
+	width: 0px; height: 0px;
+	background: transparent;
+}
+
+
+/**********************/
+/* Input Button Style */
+/**********************/
+
+.paInputButton {	/* May need to define Font to match the rest of page */
+	/* border: 0px none #fff; */
+	/* background: transparent; */
+	outline-style: none;    /* Only used for Safari Browser */
+	outline-width: 0px;     /* Only used for Safari Browser */
+	outline-offset: 0px;    /* Only used for Safari Browser */	
+	cursor: pointer;
+}
+.paInputButtonLeft {
+	width: 0px; height: 0px;
+	background: transparent;
+}
+.paInputButtonCenter {
+	height: auto;
+	background: transparent;
+	vertical-align: middle;
+}
+.paInputButtonRight {
+	width: 0px; height: 0px;
+	background: transparent;
+}
+
+/***************/
+/* Image Icons */
+/***************/
+
+.paIconHelp {
+width:17px; height:17px; 
+border: 0px none #ffffff;
+background: url(../../../images/test/company8750/help.gif) no-repeat; 
+}
+.paIconThawte {     /* we may end up not needing this because the image is generated from Thawte directly and is a set image. */
+width:61px; height:60px;
+border: 0px none #ffffff;
+background: url(../../../images/sample_SSL_seal.gif) no-repeat; 
+}
+.paIconBullet {
+width: 17px; height: 18px;
+border: 0px none #ffffff;
+background: url(../../../images/test/company8750/arrow_blue3D_on.gif) no-repeat;
+}
+
+
+/*****************/
+/* Image Buttons */
+/*****************/
+/* this is not actually used since we use app:imageTest to call these image buttons by locale. */
+/* this section is for reference only. NO NEED TO MODIFY */
+
+/* 
+.paButtonRegister {
+width:108px; height:35px; 
+border: 0px none #ffffff;
+background: url(../../../images/test/company8251/button_register_EN.gif) no-repeat; 
+}
+.paButtonAgree {
+width:108px; height:35px; 
+border: 0px none #ffffff;
+background: url(../../../images/test/company8251/button_agree_EN.gif) no-repeat; 
+}
+.paButtonNotAgree {
+width:108px; height:35px;
+border: 0px none #ffffff;
+background: url(../../../images/test/company8251/button_notagree_EN.gif) no-repeat; 
+}
+.paButtonLogOut {
+width:108px; height:35px; 
+border: 0px none #ffffff;
+background: url(../../../images/test/company8251/button_logout_EN.gif) no-repeat; 
+}
+.paButtonLogIn {
+width:108px; height:35px; 
+border: 0px none #ffffff;
+background: url(../../../images/test/company8251/button_login_EN.gif) no-repeat; 
+}
+.paButtonContinue {
+width:108px; height:35px; 
+border: 0px none #ffffff;
+background: url(../../../images/test/company8251/button_continue_EN.gif) no-repeat; 
+}
+.paButtonCloseWindow {
+width:108px; height:35px; 
+border: 0px none #ffffff;
+background: url(../../../images/test/company8251/button_close_window.gif) no-repeat; 
+}
+*/
+
+/*******************************/
+/* General Table Border Styles */
+/*******************************/
+
+.paGeneralTableOutline {
+	border: 1px solid #cccccc;
+	width: 100%;
+}
+.paGeneralTableOutlineCell {    /* Define individual cell properties for all cells in Table if necessary */	
+	padding: 10px;	
+}
+/* Use the following to create shadowing effects on the table. */
+.paGeneralTableShadowLeft1 {
+	width: 0px; height: 10%;
+	background: transparent;
+}
+.paGeneralTableShadowLeft2 {
+	width: 0px; height: 90%;
+	background: transparent; 
+}
+.paGeneralTableShadowBottom1 {
+	width:2%;  height: 5px;
+	background: transparent;
+}
+.paGeneralTableShadowBottom2 {
+	width: 98%;  height: 5px;
+	background: #636163; 
+}
+.paGeneralTableShadowRight1 {
+	width: 5px; height: 10%;
+	background: transparent;
+}
+.paGeneralTableShadowRight2 {
+	width: 5px; height: 90%;
+	background: #636163; 
+}
+
+
+
+/***********************/
+/* Status Table Styles */
+/***********************/
+.paStatusDisplayTable {
+	width: 580px; 
+	border-top:2px solid #393939; 
+	border-left:2px solid #393939; 
+	border-right:2px solid #393939;
+}
+.paStatusDisplayHeading {
+	background: #666;
+	color: #fff; 
+	font: bold;
+	border-bottom:2px solid #393939; 
+	padding:4px
+}
+.paStatusDisplayBody {
+	background: #ffffff; 
+	border-bottom:2px solid #393939; 
+	padding:4px;
+}
+/* Use the following to create shadowing effects on the table. */
+.paStatusDisplayShadowLeft1 {
+	width: 0px; height: 10%;
+	background: transparent; 	
+}
+.paStatusDisplayShadowLeft2 {
+	width: 0px; height: 90%;
+	background: transparent; 
+}
+.paStatusDisplayShadowBottom1 {
+	width:2%;  height: 5px;
+	background: transparent; 
+}
+.paStatusDisplayShadowBottom2 {
+	width: 98%;  height: 5px;
+	background: #666666; 
+}
+.paStatusDisplayShadowRight1 {
+	width: 5px; height: 10%;
+	background: transparent; 
+}
+.paStatusDisplayShadowRight2 {
+	width: 5px; height: 90%;
+	background: #666666; 
+}
+
+
+/***********************/
+/* Test Answers Styles */
+/***********************/
+
+input.ns4 {   /* This removes the radio buttons in the test answer selections */
+	display: none; 
+}
+.paTestAnswerBox {
+	width: auto;
+	border-top: 2px solid #666666;
+	border-left: 2px solid #666666;
+	border-bottom: 2px solid #666666;
+	background: #ffffff;
+	cursor: pointer;		
+}
+.paTestAnswerBox td {
+	padding: 3px;
+	border-right: 2px solid #666666;
+}
+
+
+/**********************/
+/* Progress Bar Style */
+/**********************/
+
+.paProgressBar {
+	/* display: none; */    /* hide enter progress bar if necessary */
+}
+.paProgressBarLeft {
+	width: 0px; height: 0px;
+	display: none;
+}
+.paProgressBarCenter {	
+	width: 150px; height: 15px;
+	border: 1px solid #393939;
+	border-collapse: collapse;
+	background: no-repeat #f2f2f2;
+	text-align: left;   /* only valid for IE */
+	vertical-align: middle;
+}
+.paProgressBarRight {
+	width: 0px; height: 0px;
+	display:none;
+}
+.paProgressBarIndicator {
+	margin-left: 0px;
+	height: 15px;
+	border-collapse: collapse;
+	border: 0px solid #ffffff;
+	background: no-repeat #ee1c25;     /* Change the Color or Background of the indicator */
+}
+.paProgressBarIndicatorTip {
+	width: 0px; height: 15px;
+	background: transparent;     /* Change the Color or Background of the indicator */
+	display: none;
+}
+.paProgressBarShowPercentage {	
+	padding-right: 2px;
+	color: #ffffff;
+	font-size: 8px;
+	text-align: right;
+	vertical-align: middle;
+	display: none;
+}
+
+
+/******************/
+/* Footer Divider */
+/******************/
+
+/* Does not need to be modified unless the Footer actually uses this class */
+.paFooterDividerDefaultContainer {
+	width: 100%; height: auto;
+	text-align: center;
+}
+.paFooterDividerDefault {
+	margin: 0 auto 0 auto;
+	width: 100%; height: 1px;
+	border-top: 1px solid #D6D3CE;
+}
+
+
+/****************************************************************************************************************************/
+/*------------------------------------------------ Floating Elements -------------------------------------------------------*/
+/****************************************************************************************************************************/
+
+/* The following items in this next section are all based on absolute positioning in relation to the FloatingElementsContainer */
+/* This container exists in the top and bottom outer table sections.  Elements can be positioned almost anywhere on the page using this concept */
+/* Be wary of z-index as Internet Explorer does not seem to observe this parameter */
+
+.paFloatingElementsContainer { position: relative; height:0px; width: 0px; z-index: 1; }  /* allows for element placement within the Top and Bottom OuterTables */
+
+/***********************/
+/* Timed Test Elements */
+/***********************/
+
+/* Redisplay Instructions Link */
+.paInstructionsLink {
+	width: 400px;
+	text-align: right;
+	position: absolute; left: 365px; top: 55px; z-index: 1;	
+	/* add a background or modify font to allow for better viewing of this text */
+	color: #000;
+}
+
+/* add color modifiers for redisplay instructions link if necessary */
+.paInstructionsLink a { font-weight: bold; color: #000; text-decoration: none; }
+.paInstructionsLink a:visited { font-weight: bold; color: #000; text-decoration: none; }
+.paInstructionsLink a:hover { font-weight: bold; color: #ec1e25; }
+
+/* Stop Watch */
+.paTimerContainer {
+	position: absolute; top: 0px; left: 685px; z-index: 1; border: 0px solid #ff0000;
+}
+
+.paTimerImageTop { position: absolute; left: 0px; top:  0px; width: 73px; height: 12px; background: url(../../../images/timer_top.gif) no-repeat transparent; }
+.paTimerImageLeft { position: absolute; left: 0px; top:  12px; width: 17px; height: 12px; background: url(../../../images/timer_left.gif) no-repeat transparent;}
+.paColon { 
+	position: absolute; left: 33px; top:  12px; width: 5px; height: 12px;
+	background: #ffffff;
+}
+.paTimerImageColon { position: absolute; left: 0px; top:  0px; width: 5px; height: 12px; background: url(../../../images/colon.gif) no-repeat transparent;}
+.paTimerImageRight { position: absolute; left: 54px; top:  12px; width: 20px; height: 12px; background: url(../../../images/timer_right.gif) no-repeat transparent;}
+.paTimerImageMiddle { position: absolute; left: 0px; top:  24px; width: 73px; height: 16px; background: url(../../../images/timer_middle.gif) no-repeat transparent;}
+.paTimerImageBottom { position: absolute; left: 0px; top:  40px; width: 73px; height: 12px; background: url(../../../images/timer_bottom2.gif) no-repeat transparent;}
+
+
+.paMinutesTens {
+	position: absolute; left: 17px; top: 12px; width: 8px; height: 12px;
+	background: #FFE7CE;
+}
+.paMinutesOnes {
+	position: absolute; left: 25px; top: 12px; width: 8px; height: 12px;
+	background: #FFE7CE;
+}
+.paSecondsTens {
+	position: absolute; left: 38px; top: 12px; width: 8px; height: 12px;
+	background: #FFE7CE;
+}
+.paSecondsOnes {
+	position: absolute; left: 46px; top: 12px; width: 8px; height: 12px;
+	background: #FFE7CE;
+}
+
+
+.paDigit1{
+	position: absolute; left: 0px; top: 0px;
+	width: 8px; height: 12px;
+	background: url(../../../images/1.gif) no-repeat transparent;
+	visibility: hidden;
+}
+.paDigit2{
+	position: absolute; left: 0px; top: 0px;
+	width: 8px; height: 12px;
+	background: url(../../../images/2.gif) no-repeat transparent;
+	visibility: hidden;
+}
+.paDigit3{
+	position: absolute; left: 0px; top: 0px;
+	width: 8px; height: 12px;
+	background: url(../../../images/3.gif) no-repeat transparent;
+	visibility: hidden;
+}
+.paDigit4{
+	position: absolute; left: 0px; top: 0px;
+	width: 8px; height: 12px;
+	background: url(../../../images/4.gif) no-repeat transparent;
+	visibility: hidden;
+}
+.paDigit5{
+	position: absolute; left: 0px; top: 0px;
+	width: 8px; height: 12px;
+	background: url(../../../images/5.gif) no-repeat transparent;
+	visibility: hidden;
+}
+.paDigit6{
+	position: absolute; left: 0px; top: 0px;
+	width: 8px; height: 12px;
+	background: url(../../../images/6.gif) no-repeat transparent;
+	visibility: hidden;
+}
+.paDigit7{
+	position: absolute; left: 0px; top: 0px;
+	width: 8px; height: 12px;
+	background: url(../../../images/7.gif) no-repeat transparent;
+	visibility: hidden;
+}
+.paDigit8{
+	position: absolute; left: 0px; top: 0px;
+	width: 8px; height: 12px;
+	background: url(../../../images/8.gif) no-repeat transparent;
+	visibility: hidden;
+}
+.paDigit9{
+	position: absolute; left: 0px; top: 0px;
+	width: 8px; height: 12px;
+	background: url(../../../images/9.gif) no-repeat transparent;
+	visibility: hidden;	
+}
+.paDigit0{
+	position: absolute; left: 0px; top: 0px;
+	width: 8px; height: 12px;
+	background: url(../../../images/0.gif) no-repeat transparent;
+	visibility: hidden;
+}
+
+
+/*********************/
+/* Additional Images */
+/*********************/
+
+.paTopImage1 {	
+	width: 0px; height: 0px;
+	position: absolute; left: 0px; top: 0px;
+	background: transparent;
+	border: 0px solid black;
+	display: none;
+}
+.paTopImage2 {	
+	width: 0px; height: 0px;
+	position: absolute; left: 0px; top: 0px;
+	background: transparent;
+	border: 0px solid black;
+	display: none;
+}
+.paTopImage3 {	
+	width: 150px; height: 75px;
+	position: absolute; left: 0px; top: 0px;
+	background: url(../../../images/test/company9591_2/skin_logo.gif) no-repeat #000000;
+	border: 0px solid black;
+	display: block;
+}
+.paTopImage4 {	
+	width: 0px; height: 0px;
+	position: absolute; left: 0px; top: 0px;
+	background: transparent;
+	border: 0px solid black;
+	display: none;
+}
+.paTopImage5 {	
+	width: 0px; height: 0px;
+	position: absolute; left: 0px; top: 0px;
+	background: transparent;
+	border: 0px solid black;
+	display: none;
+}
+.paTopImage6 {	
+	width: 0px; height: 0px;
+	position: absolute; left: 0px; top: 0px;
+	background: transparent;
+	border: 0px solid black;
+	display: none;
+}
+.paTopImage7 {	
+	width: 0px; height: 0px;
+	position: absolute; left: 0px; top: 0px;
+	background: transparent;
+	border: 0px solid black;
+	display: none;
+}
+.paTopImage8 {	
+	width: 0px; height: 0px;
+	position: absolute; left: 0px; top: 0px;
+	background: transparent;
+	border: 0px solid black;
+	display: none;
+}
+.paTopImage9 {	
+	width: 0px; height: 0px;
+	position: absolute; left: 0px; top: 0px;
+	background: transparent;
+	border: 0px solid black;
+	display: none;
+}
+.paTopImage10 {	
+	width: 0px; height: 0px;
+	position: absolute; left: 0px; top: 0px;
+	background: transparent;
+	border: 0px solid black;
+	display: none;
+}
+
+
+.paBottomImage1 {	
+	width: 0px; height: 0px;
+	position: absolute; left: 0px; top: 0px;
+	background: transparent;
+	border: 0px solid black;
+	display: none;
+}
+.paBottomImage2 {	
+	width: 0px; height: 0px;
+	position: absolute; left: 0px; top: 0px;
+	background: transparent;
+	border: 0px solid black;
+	display: none;
+}
+.paBottomImage3 {	
+	width: 0px; height: 0px;
+	position: absolute; left: 0px; top: 0px;
+	background: transparent;
+	border: 0px solid black;
+	display: none;
+}
+.paBottomImage4 {	
+	width: 0px; height: 0px;
+	position: absolute; left: 0px; top: 0px;
+	background: transparent;
+	border: 0px solid black;
+	display: none;
+}
+.paBottomImage5 {	
+	width: 0px; height: 0px;
+	position: absolute; left: 0px; top: 0px;
+	background: transparent;
+	border: 0px solid black;
+	display: none;
+}
+.paBottomImage6 {	
+	width: 0px; height: 0px;
+	position: absolute; left: 0px; top: 0px;
+	background: transparent;
+	border: 0px solid black;
+	display: none;
+}
+.paBottomImage7 {	
+	width: 0px; height: 0px;
+	position: absolute; left: 0px; top: 0px;
+	background: transparent;
+	border: 0px solid black;
+	display: none;
+}
+.paBottomImage8 {	
+	width: 0px; height: 0px;
+	position: absolute; left: 0px; top: 0px;
+	background: transparent;
+	border: 0px solid black;
+	display: none;
+}
+.paBottomImage9 {	
+	width: 0px; height: 0px;
+	position: absolute; left: 0px; top: 0px;
+	background: transparent;
+	border: 0px solid black;
+	display: none;
+}
+.paBottomImage10 {	
+	width: 0px; height: 0px;
+	position: absolute; left: 0px; top: 0px;
+	background: transparent;
+	border: 0px solid black;
+	display: none;
+}
+
+/***************************************************************/
+/* Middle Images are contained within the Main Scroll Division */ 
+/***************************************************************/
+
+.paMiddleImage1 {	
+	width: 0px; height: 0px;
+	position: absolute; left: 0px; top: 0px;
+	background: transparent;
+	border: 0px solid black;
+	display: none;
+}
+.paMiddleImage2 {	
+	width: 0px; height: 0px;
+	position: absolute; left: 0px; top: 0px;
+	background: transparent;
+	border: 0px solid black;
+	display: none;
+}
+.paMiddleImage3 {	
+	width: 0px; height: 0px;
+	position: absolute; left: 0px; top: 0px;
+	background: transparent;
+	border: 0px solid black;
+	display: none;
+}
+.paMiddleImage4 {	
+	width: 0px; height: 0px;
+	position: absolute; left: 0px; top: 0px;
+	background: transparent;
+	border: 0px solid black;
+	display: none;
+}
+.paMiddleImage5 {	
+	width: 0px; height: 0px;
+	position: absolute; left: 0px; top: 0px;
+	background: transparent;
+	border: 0px solid black;
+	display: none;
+}
+.paMiddleImage6 {	
+	width: 0px; height: 0px;
+	position: absolute; left: 0px; top: 0px;
+	background: transparent;
+	border: 0px solid black;
+	display: none;
+}
+.paMiddleImage7 {	
+	width: 0px; height: 0px;
+	position: absolute; left: 0px; top: 0px;
+	background: transparent;
+	border: 0px solid black;
+	display: none;
+}
+.paMiddleImage8 {	
+	width: 0px; height: 0px;
+	position: absolute; left: 0px; top: 0px;
+	background: transparent;
+	border: 0px solid black;
+	display: none;
+}
+.paMiddleImage9 {	
+	width: 0px; height: 0px;
+	position: absolute; left: 0px; top: 0px;
+	background: transparent;
+	border: 0px solid black;
+	display: none;
+}
+.paMiddleImage10 {	
+	width: 0px; height: 0px;
+	position: absolute; left: 0px; top: 0px;
+	background: transparent;
+	border: 0px solid black;
+	display: none;
+}

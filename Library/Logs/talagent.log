@@ -1,0 +1,69 @@
+ Time	               Bundle ID	              Status	Comment
+0.000	                       -	                   -	TALagent Started (system uptime: 58.38 sec, current time: 532656718.22)
+0.425	                       -	                   -	Liveness: 0 -> 1 (run_as_server)
+0.429	                       -	                   -	Liveness: 1 -> 2 (create_xpc_listener)
+0.429	                       -	                   -	Blocking app contact
+4.095	                       -	                   -	Successfully read encryption key from keychain in 3.66762 seconds
+4.118	                       -	                   -	Liveness: 2 -> 3 (server_show_windows_for_asns)
+4.118	                       -	                   -	server_show_windows_for_asns start
+4.118	                       -	                   -	Allowing apps to contact us
+4.119	                       -	                   -	TAL launch still in progress because com.apple.systempreferences is unstopped (yes) and/or unhidden (yes)
+4.119	                       -	                   -	Still waiting for registration from com.apple.systempreferences, com.apple.Safari, Finder
+4.120	                       -	                   -	Liveness: 3 -> 4 (add_app)
+4.120	com.apple.systempreferences	           Launching	
+4.331	com.apple.systempreferences	                   -	Failed to create a window image: Failed to read metadata for file '/Users/BlackHat01/Library/Saved Application State/com.apple.systempreferences.savedState/window_2.data'. errno is 2 (No such file or directory)
+4.335	        com.apple.Safari	           Launching	
+4.336	        com.apple.Safari	                   -	Failed to create a window image: Failed to read metadata for file '/Users/BlackHat01/Library/Saved Application State/com.apple.Safari.savedState/window_2.data'. errno is 2 (No such file or directory)
+4.338	                       -	                   -	Finder not yet launched, but pretending it is
+4.429	        com.apple.finder	                   -	Skipping window creation because plist is unavailable: 1
+4.429	        com.apple.finder	                   -	Skipping window creation because the archive was created prior to 10.10 (prev: 10.0)
+4.429	                       -	                   -	loginwindow launched apps com.apple.systempreferences, com.apple.Safari
+4.429	                       -	                   -	Bitmaps Ready (2 apps, 0 windows)
+4.429	com.apple.systempreferences	                   -	Disposing because it has no windows
+4.430	com.apple.systempreferences	            Disposed	
+4.430	        com.apple.Safari	                   -	Disposing because it has no windows
+4.431	        com.apple.Safari	            Disposed	
+4.431	        com.apple.finder	                   -	Disposing because it has no windows
+4.431	        com.apple.finder	            Disposed	
+4.431	                       -	                   -	server_show_windows_for_asns end
+4.433	                       -	                   -	TAL launch still in progress because com.apple.systempreferences is unstopped (yes) and/or unhidden (yes)
+4.433	                       -	                   -	Still waiting for registration from com.apple.systempreferences, com.apple.Safari, Finder
+4.433	                       -	                   -	TAL launch still in progress because com.apple.systempreferences is unstopped (yes) and/or unhidden (yes)
+4.433	                       -	                   -	Still waiting for registration from com.apple.systempreferences, com.apple.Safari, Finder
+5.301	                       -	                   -	Liveness: 4 -> 3 (__create_xpc_listener_block_invoke)
+6.617	                       -	                   -	Liveness: 3 -> 2 (__remove_app_block_invoke)
+7.094	                       -	                   -	TAL launch still in progress because com.apple.systempreferences is unstopped (yes) and/or unhidden (yes)
+7.094	                       -	                   -	Still waiting for registration from com.apple.systempreferences, com.apple.Safari, Finder
+12.032	                       -	                   -	TAL launch still in progress because com.apple.systempreferences is unstopped (yes) and/or unhidden (yes)
+12.032	                       -	                   -	Still waiting for registration from com.apple.systempreferences, com.apple.Safari, Finder
+12.309	        com.apple.finder	                   -	Finder checked in
+12.309	                       -	                   -	TAL launch still in progress because com.apple.systempreferences is unstopped (yes) and/or unhidden (yes)
+12.309	                       -	                   -	Still waiting for registration from com.apple.systempreferences, com.apple.Safari
+13.795	                       -	                   -	TAL launch still in progress because com.apple.systempreferences is unstopped (yes) and/or unhidden (yes)
+13.795	                       -	                   -	Still waiting for registration from com.apple.systempreferences, com.apple.Safari
+14.120	                       -	                   -	Assuming that all apps that will be started, have been started. Stopped apps will no longer delay TAL launch completion.
+14.120	                       -	                   -	TAL launch still in progress because com.apple.systempreferences is unstopped (yes) and/or unhidden (yes)
+14.120	                       -	                   -	Still waiting for registration from com.apple.systempreferences, com.apple.Safari
+14.436	                       -	                   -	TAL launch still in progress because com.apple.systempreferences is unstopped (yes) and/or unhidden (yes)
+14.436	                       -	                   -	Still waiting for registration from com.apple.systempreferences, com.apple.Safari
+18.473	                       -	                   -	Liveness: 2 -> 1 (__run_as_server_block_invoke)
+18.986	                       -	                   -	TAL launch still in progress because com.apple.systempreferences is unstopped (yes) and/or unhidden (yes)
+18.986	                       -	                   -	Still waiting for registration from com.apple.systempreferences, com.apple.Safari
+24.349	                       -	                   -	TAL launch still in progress because com.apple.systempreferences is unstopped (yes) and/or unhidden (yes)
+24.349	                       -	                   -	Still waiting for registration from com.apple.systempreferences, com.apple.Safari
+24.527	                       -	                   -	TAL launch still in progress because com.apple.systempreferences is unstopped (yes) and/or unhidden (yes)
+24.527	                       -	                   -	Still waiting for registration from com.apple.systempreferences, com.apple.Safari
+27.085	        com.apple.Safari	                   -	Registered as TAL ready
+27.085	                       -	                   -	TAL launch still in progress because com.apple.systempreferences is unstopped (yes) and/or unhidden (yes)
+27.085	                       -	                   -	Still waiting for registration from com.apple.systempreferences
+28.683	                       -	                   -	TAL launch still in progress because com.apple.systempreferences is unstopped (yes) and/or unhidden (yes)
+28.683	                       -	                   -	Still waiting for registration from com.apple.systempreferences
+29.017	com.apple.systempreferences	                   -	Registered as TAL ready
+29.017	                       -	                   -	All started apps have registered (no remaining unregistered apps)
+29.053	                       -	                   -	Waiting for Dock...
+29.079	                       -	                   -	Dock is avaialable.
+29.079	                       -	                   -	Liveness: 1 -> 2 (_wait_for_dock)
+29.079	                       -	                   -	TAL Relaunch - all apps registered as ready
+29.079	                       -	                   -	Liveness: 2 -> 1 (__server_show_windows_for_asns_block_invoke.34)
+29.080	                       -	                   -	Liveness: 1 -> 0 (___wait_for_dock_block_invoke_3)
+29.080	                       -	                   -	Exiting out of boredom

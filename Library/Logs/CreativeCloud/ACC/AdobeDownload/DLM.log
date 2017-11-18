@@ -1,0 +1,21 @@
+11/17/17 15:47:11:371 | [INFO] |  |  |  |  |  |  | 23877 | *******************start of Download****************
+11/17/17 15:47:11:371 | [INFO] |  |  |  |  |  |  | 23877 | GDE Version is 4.0.0.64
+11/17/17 15:47:12:568 | [INFO] |  |  |  |  |  |  | 24080 | *******************start of Download****************
+11/17/17 15:47:12:568 | [INFO] |  |  |  |  |  |  | 24080 | GDE Version is 4.0.0.64
+11/17/17 15:47:13:472 | [INFO] |  |  |  |  |  |  | 23882 | The file to be downloaded is https://cdn-ffc.oobesaas.adobe.com/core/v2/icons?clientID=apps_panel_desktop
+11/17/17 15:47:13:472 | [INFO] |  |  |  |  |  |  | 23882 | Going to download the file at /tmp/D337A0F3-32F2-4EF2-9CDF-BEE653A858F3/E2602050-7AD3-4CF2-893B-346A9E53F57F
+11/17/17 15:47:13:472 | [INFO] |  |  |  |  |  |  | 23882 | Preference: Preference is set for adding compression header
+11/17/17 15:47:13:472 | [INFO] |  |  |  |  |  |  | 23882 | Preference: Client has set the preference for single stream download
+11/17/17 15:47:14:674 | [INFO] |  |  |  |  |  |  | 24117 | gzip encoding received in respose header. Going to unzip...
+11/17/17 15:47:14:820 | [INFO] |  |  |  |  |  |  | 24117 | successfully unzipped the gzip response
+11/17/17 15:47:15:644 | [INFO] |  |  |  |  |  |  | 24117 | File download complete: https://cdn-ffc.oobesaas.adobe.com/core/v2/icons?clientID=apps_panel_desktop size: 3704445 Bytes, Time Taken:2171.000000 milliseconds 
+11/17/17 16:13:33:558 | [INFO] |  |  |  |  |  |  | 10107 | *******************start of Download****************
+11/17/17 16:13:33:579 | [INFO] |  |  |  |  |  |  | 10107 | GDE Version is 4.0.0.64
+11/17/17 16:13:37:631 | [INFO] |  |  |  |  |  |  | 10402 | *******************start of Download****************
+11/17/17 16:13:37:631 | [INFO] |  |  |  |  |  |  | 10402 | GDE Version is 4.0.0.64
+11/17/17 16:13:39:582 | [INFO] |  |  |  |  |  |  | 10373 | The file to be downloaded is https://cdn-ffc.oobesaas.adobe.com/core/v2/icons?clientID=apps_panel_desktop
+11/17/17 16:13:39:582 | [INFO] |  |  |  |  |  |  | 10373 | Going to download the file at /tmp/80319B86-E0B8-43B3-903C-77D7BAFBD6AA/B95FCF52-2308-4CAA-80BF-29719CFEF28E
+11/17/17 16:13:39:582 | [INFO] |  |  |  |  |  |  | 10373 | Preference: Preference is set for adding compression header
+11/17/17 16:13:39:582 | [INFO] |  |  |  |  |  |  | 10373 | Preference: Client has set the preference for single stream download
+11/17/17 16:13:40:928 | [INFO] |  |  |  |  |  |  | 10700 | No encoding received in respose header. Going to rename...
+11/17/17 16:13:40:928 | [INFO] |  |  |  |  |  |  | 10700 | File download complete: https://cdn-ffc.oobesaas.adobe.com/core/v2/icons?clientID=apps_panel_desktop size: 0 Bytes, Time Taken:1346.000000 milliseconds 

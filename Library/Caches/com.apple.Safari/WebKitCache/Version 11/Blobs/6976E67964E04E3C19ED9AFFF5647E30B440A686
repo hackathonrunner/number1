@@ -1,0 +1,556 @@
+<!doctype html>
+<html lang="en" class="">
+<head>
+<title>Virgin Inner Circle</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="ad.size" content="width=728,height=90">
+  <script type="text/javascript">
+    var clickTag = "http://www.google.com";
+  </script>
+  <script src="/879366/Enabler_01_199.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+  
+<link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body>
+
+<img style="display:none;" data-src="img/svgsprites.svg" data-class=".svgsprites" />
+<div id="container" class="container">
+	<div class="background abs-tl">
+		<img width="728" height="90" data-src="img/background.jpg" class="img0 abs-tl" />
+	</div>
+	<div id="background-image">
+	</div>
+	<div id="legal">
+		<p></p>
+	</div>
+	<div id="frame01" class="frame">
+	</div>
+	<div id="frame02" class="frame">
+	</div>
+	<div id="frame03" class="frame">
+	</div>
+	<div id="frame04" class="frame">
+	</div>
+	<div class="cta-container abs-tl">
+		<div class="cta abs-tl">
+			<h1>TITLE HERE</h1>
+			<div class="arrow svgsprites abs-tl">
+			</div>
+		</div>
+	</div>
+	<div class="logo abs-tl">
+		<img width="342" height="72" data-src="img/logo.png" class="img0 abs-tl" />
+	</div>
+	<div class="endframelockup abs-tl">
+		<img width="538" height="122" data-src="img/logo_end.png" class="img0 abs-tl" />
+	</div>
+	<div class="border svgsprites abs-tl">
+	</div>
+</div>
+ 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+<script src="js/main.js"></script>
+<script type="text/javascript">
+/** start exported javascript - no not remove **/
+
+/** end exported javascript - no not remove **/
+
+/** start custom javascript - no not remove **/
+
+var timeline,
+    adWidth = 728,
+	  adHeight = 90,
+	  numberOfFrames = 3,
+	  fontLoaded = false,
+    enablerLoaded = false,
+    assetsLoaded = false,
+    imagesTotal = 0,
+    imagesLoaded = 0,
+    framesTotal = 0,
+    feed,
+    frames;
+
+function onDocumentReady()
+{
+	if (Enabler.isInitialized()) {
+    enablerInitHandler();
+  } else {
+    Enabler.addEventListener(studio.events.StudioEvent.INIT, enablerInitHandler);
+  }
+
+	WebFontConfig = {
+	 loading: onFontLoading,
+	 inactive : onFontLoadFail,
+   active: onFontLoaded
+	};
+
+	WebFont.load({
+    loading: onFontLoading,
+	 inactive : onFontLoadFail,
+   active: onFontLoaded,
+    google: {
+      families: ['Quicksand:300,400']
+    }
+  });
+	
+
+	fromId('container').addEventListener( 'mouseenter' , function()
+	{
+		TweenLite.to( '.cta' , 0.1 , {backgroundColor:'#953A99'});
+	});
+	fromId('container').addEventListener( 'mouseleave' , function()
+	{
+		TweenLite.to( '.cta' , 0.2 , {backgroundColor:'#5a245a'});
+	});
+	fromId('container').addEventListener('click', function()
+	{
+
+		if( feed.Exit_URL.Url === "" || feed.Exit_URL.Url === undefined )
+		{
+			console.log("[300x600] Exit Main" );
+			Enabler.exit('main');
+		}
+		else
+		{
+			console.log("[300x600] Exit: " + feed.Exit_URL.Url );
+			Enabler.exitOverride('main',feed.Exit_URL.Url );
+		}
+	});
+}
+
+function onFontLoaded()
+{
+	fontLoaded = true;
+	if( enablerLoaded && assetsLoaded  ) {
+		onStartAnimation();
+	}
+}
+
+function onFontLoading()
+{
+	trace("font loaded");
+}
+
+function onFontLoadFail()
+{
+	trace(" font load failed ");
+}
+
+function enablerInitHandler()
+{
+	// Dynamic Content variables and sample values
+  // Enabler.setProfileId(10002672); // live
+  Enabler.setProfileId(10002672); // beta
+
+  var devDynamicContent = {};
+
+  devDynamicContent.Final_Feed_VirginMobile_USA_6417308_Data= [{}];
+  devDynamicContent.Final_Feed_VirginMobile_USA_6417308_Data[0]._id = 0;
+  devDynamicContent.Final_Feed_VirginMobile_USA_6417308_Data[0].Unique_ID = 1;
+  devDynamicContent.Final_Feed_VirginMobile_USA_6417308_Data[0].Reporting_Label = "VIR_VIR_0002_IC_CV_GP_GN_06_DS_AB_300x250_NA";
+  devDynamicContent.Final_Feed_VirginMobile_USA_6417308_Data[0].Targeting_Column = "";
+  devDynamicContent.Final_Feed_VirginMobile_USA_6417308_Data[0].Frame_1_Headline = "BUY AN iPHONE & GET A YEAR OF WIRELESS SERVICE";
+  devDynamicContent.Final_Feed_VirginMobile_USA_6417308_Data[0].Frame_1_Headline_Color = "#ffffff";
+  devDynamicContent.Final_Feed_VirginMobile_USA_6417308_Data[0].Frame_1_Headline_Font_Size = 17;
+  devDynamicContent.Final_Feed_VirginMobile_USA_6417308_Data[0].Frame_1_Subheadline = "";
+  devDynamicContent.Final_Feed_VirginMobile_USA_6417308_Data[0].Frame_1_Subheadline_Color = "#ffffff";
+  devDynamicContent.Final_Feed_VirginMobile_USA_6417308_Data[0].Frame_1_Subheadline_Font_Size = 30;
+  devDynamicContent.Final_Feed_VirginMobile_USA_6417308_Data[0].Frame_1_Body = "";
+  devDynamicContent.Final_Feed_VirginMobile_USA_6417308_Data[0].Frame_1_Body_Color = "#ffffff";
+  devDynamicContent.Final_Feed_VirginMobile_USA_6417308_Data[0].Frame_1_Body_Font_Size = 17;
+  devDynamicContent.Final_Feed_VirginMobile_USA_6417308_Data[0].Frame_1_Image_URL = {};
+  devDynamicContent.Final_Feed_VirginMobile_USA_6417308_Data[0].Frame_1_Image_URL.Type = "file";
+  devDynamicContent.Final_Feed_VirginMobile_USA_6417308_Data[0].Frame_1_Image_URL.Url = "https://s0.2mdn.net/ads/richmedia/studio/11481/11481_20170531031545638_blank.png";
+  devDynamicContent.Final_Feed_VirginMobile_USA_6417308_Data[0].Frame_1_Image_Animation = "";
+  devDynamicContent.Final_Feed_VirginMobile_USA_6417308_Data[0].Frame_1_Legal = "Terms apply. See website for details.";
+  devDynamicContent.Final_Feed_VirginMobile_USA_6417308_Data[0].Frame_2_Headline = "FOR ONLY $1. SERIOUSLY.";
+  devDynamicContent.Final_Feed_VirginMobile_USA_6417308_Data[0].Frame_2_Headline_Color = "#ffffff";
+  devDynamicContent.Final_Feed_VirginMobile_USA_6417308_Data[0].Frame_2_Headline_Font_Size = 17;
+  devDynamicContent.Final_Feed_VirginMobile_USA_6417308_Data[0].Frame_2_Subheadline = "";
+  devDynamicContent.Final_Feed_VirginMobile_USA_6417308_Data[0].Frame_2_Subheadline_Color = "#ffffff";
+  devDynamicContent.Final_Feed_VirginMobile_USA_6417308_Data[0].Frame_2_Subheadline_Font_Size = "";
+  devDynamicContent.Final_Feed_VirginMobile_USA_6417308_Data[0].Frame_2_Body = "";
+  devDynamicContent.Final_Feed_VirginMobile_USA_6417308_Data[0].Frame_2_Body_Color = "#ffffff";
+  devDynamicContent.Final_Feed_VirginMobile_USA_6417308_Data[0].Frame_2_Body_Font_Size = "";
+  devDynamicContent.Final_Feed_VirginMobile_USA_6417308_Data[0].Frame_2_Image_URL = {};
+  devDynamicContent.Final_Feed_VirginMobile_USA_6417308_Data[0].Frame_2_Image_URL.Type = "file";
+  devDynamicContent.Final_Feed_VirginMobile_USA_6417308_Data[0].Frame_2_Image_URL.Url = "https://s0.2mdn.net/ads/richmedia/studio/11481/11481_20170531031545638_blank.png";
+  devDynamicContent.Final_Feed_VirginMobile_USA_6417308_Data[0].Frame_2_Image_Animation = "";
+  devDynamicContent.Final_Feed_VirginMobile_USA_6417308_Data[0].Frame_2_Legal = "Terms apply. See website for details.";
+  devDynamicContent.Final_Feed_VirginMobile_USA_6417308_Data[0].Frame_3_Headline = "UNLIMITED";
+  devDynamicContent.Final_Feed_VirginMobile_USA_6417308_Data[0].Frame_3_Headline_Color = "#FFFFFF";
+  devDynamicContent.Final_Feed_VirginMobile_USA_6417308_Data[0].Frame_3_Headline_Font_Size = "30";
+  devDynamicContent.Final_Feed_VirginMobile_USA_6417308_Data[0].Frame_3_Subheadline = "TALK, TEXT & 10 GB OF HIGH-SPEED DATA\/MO";
+  devDynamicContent.Final_Feed_VirginMobile_USA_6417308_Data[0].Frame_3_Subheadline_Color = "#FFFFFF";
+  devDynamicContent.Final_Feed_VirginMobile_USA_6417308_Data[0].Subheadline_Font_Size = "17";
+  devDynamicContent.Final_Feed_VirginMobile_USA_6417308_Data[0].Frame_3_Body = "";
+  devDynamicContent.Final_Feed_VirginMobile_USA_6417308_Data[0].Frame_3_Body_Color = "";
+  devDynamicContent.Final_Feed_VirginMobile_USA_6417308_Data[0].Frame_3_Body_Font_Size = "";
+  devDynamicContent.Final_Feed_VirginMobile_USA_6417308_Data[0].Frame_3_Image_URL = {};
+  devDynamicContent.Final_Feed_VirginMobile_USA_6417308_Data[0].Frame_3_Image_URL.Type = "file";
+  devDynamicContent.Final_Feed_VirginMobile_USA_6417308_Data[0].Frame_3_Image_URL.Url = "https://s0.2mdn.net/ads/richmedia/studio/11481/11481_20170531031545638_blank.png";
+  devDynamicContent.Final_Feed_VirginMobile_USA_6417308_Data[0].Frame_3_Image_Animation = "pan-left";
+  devDynamicContent.Final_Feed_VirginMobile_USA_6417308_Data[0].Frame_3_Legal = "Terms apply. See website for details.";
+  devDynamicContent.Final_Feed_VirginMobile_USA_6417308_Data[0].Frame_4_Headline = "(Inner Circle Lockup)";
+  devDynamicContent.Final_Feed_VirginMobile_USA_6417308_Data[0].Frame_4_Headline_Color = "";
+  devDynamicContent.Final_Feed_VirginMobile_USA_6417308_Data[0].Frame_4_Headline_Font_Size = "";
+  devDynamicContent.Final_Feed_VirginMobile_USA_6417308_Data[0].Frame_4_Subheadline = "";
+  devDynamicContent.Final_Feed_VirginMobile_USA_6417308_Data[0].Frame_4_Subheadline_Color = "";
+  devDynamicContent.Final_Feed_VirginMobile_USA_6417308_Data[0].Frame_4_Subheadline_Font_Size = "";
+  devDynamicContent.Final_Feed_VirginMobile_USA_6417308_Data[0].Frame_4_Body = "";
+  devDynamicContent.Final_Feed_VirginMobile_USA_6417308_Data[0].Frame_4_Body_Color = "";
+  devDynamicContent.Final_Feed_VirginMobile_USA_6417308_Data[0].Frame_4_Body_Font_Size = "";
+  devDynamicContent.Final_Feed_VirginMobile_USA_6417308_Data[0].Frame_4_Image_URL = {};
+  devDynamicContent.Final_Feed_VirginMobile_USA_6417308_Data[0].Frame_4_Image_URL.Type = "file";
+  devDynamicContent.Final_Feed_VirginMobile_USA_6417308_Data[0].Frame_4_Image_URL.Url = "https://dl.dropboxusercontent.com/u/19196031/droga/redphone_728x90.png";
+  devDynamicContent.Final_Feed_VirginMobile_USA_6417308_Data[0].Frame_4_Image_Animation = "";
+  devDynamicContent.Final_Feed_VirginMobile_USA_6417308_Data[0].Frame_4_Legal = "Terms apply. See website for details.";
+  devDynamicContent.Final_Feed_VirginMobile_USA_6417308_Data[0].Frames_Total = "";
+  devDynamicContent.Final_Feed_VirginMobile_USA_6417308_Data[0].CTA = "FIND OUT MORE";
+  devDynamicContent.Final_Feed_VirginMobile_USA_6417308_Data[0].Exit_URL = {};
+  devDynamicContent.Final_Feed_VirginMobile_USA_6417308_Data[0].Exit_URL.Url = "https://www.virginmobileusa.com/#!";
+  devDynamicContent.Final_Feed_VirginMobile_USA_6417308_Data[0].Default = false;
+  devDynamicContent.Final_Feed_VirginMobile_USA_6417308_Data[0].Active = false;
+  Enabler.setDevDynamicContent(devDynamicContent);
+
+  feed = dynamicContent.Final_Feed_VirginMobile_USA_6417308_Data[0];
+
+  console.log( feed );
+
+  // cta ******************************************** // 
+  queryAll('.cta h1')[0].innerHTML = feed.CTA;
+ 
+  frames = [];
+	var hasImages = false;
+
+  for( var i = 0 ; i < 4 ; i++ )
+  {
+  	var frameHasValue = false;
+  	if( feed["Frame_"+ (i+1) + "_Headline"] !== "" )
+  		frameHasValue = true;
+  	else if( !frameHasValue && feed["Frame_"+ (i+1) + "_Subheadline"] !== "" )
+  		frameHasValue = true;
+  	else if( !frameHasValue && feed["Frame_"+ (i+1) + "_Body"] !== "" )
+  		frameHasValue = true;
+
+  	frames[ i+1 ] = {};
+  	if( frameHasValue ) 
+  	{
+  		framesTotal++;
+  		frames[ i+1 ] = buildFrameCopy( (i+1) );
+  	}
+
+  	// show end logo //
+  	frames[ i+1 ].showEndLogo = (feed["Frame_"+ (i+1) + "_Headline"].toLowerCase() === "(inner circle lockup)");
+
+  	// setup legal //
+  	frames[ i+1 ].legal = feed["Frame_"+ (i+1) + "_Legal"];
+
+  	// setup images //
+  	if( feed["Frame_"+ (i+1) + "_Image_URL"]['Url'] )
+  	{
+  		var str = feed["Frame_"+ (i+1) + "_Image_URL"]['Url'];
+  		if( str.toLowerCase().substring(str.length - 9) !== "blank.png")
+  		{
+  			hasImages = true;
+  			
+  			if( frames[i].imageURL && frames[i].imageURL === str )
+  			{
+  				frames[ i+1 ].keepImage = true;
+  			}
+  			else
+  			{
+  				imagesTotal++;
+	  			frames[ i+1 ].imageURL = str;
+	  			frames[ i+1 ].image = loadImage( i+1 , str );
+	  			frames[ i+1 ].animation = (feed["Frame_"+ (i+1) + "_Image_Animation"] != "" ) ? feed["Frame_"+ (i+1) + "_Image_Animation"] : "pan-left";
+	  		}
+  		}
+  	}
+
+  }
+
+  // start loading //
+  for(var j in frames) {
+	  if(frames[j].image) frames[j].image.src = frames[j].imageURL;
+	}
+
+  if( !hasImages ) assetsLoaded = true;
+
+	enablerLoaded = true;
+	if( fontLoaded && assetsLoaded ) {
+		onStartAnimation();
+	}
+
+	TweenLite.set('.endframelockup' , {alpha:0});
+}
+
+function loadImage( id )
+{
+	var img = new Image();
+	img.id = "image"+id;
+	img.width = adWidth;
+	img.height = adHeight;
+	img.className = "abs-tl";
+	img.addEventListener('load' , function()
+	{
+		if( ++imagesLoaded === imagesTotal ) assetsLoaded = true;
+		if( assetsLoaded && fontLoaded ) onStartAnimation();
+	});
+	fromId('background-image').appendChild(img);
+
+	return img;  
+}
+
+function createHeadlineText( text, fontsize, color, id, classes )
+{
+	if( !fontsize ) fontsize = '10px'; 
+	if( !color ) color = "#fff";
+
+	var h1 = document.createElement("h1");
+	var node = document.createTextNode(text);
+	h1.setAttribute('class' , classes);
+	h1.setAttribute('id' , id ); 
+	h1.setAttribute('style' , "border:1px solid rgba(0, 0, 0, 0); display:block; line-height:90%; font-size:"+ fontsize +"px; color:"+ color +";");
+	h1.appendChild(node);
+	
+	return h1;
+}
+
+function buildFrameCopy( frameNum )
+{
+	var divs = [];
+	var ul = document.createElement('ul');
+
+	// headline //
+	if( feed['Frame_'+frameNum+'_Headline'] && feed['Frame_'+frameNum+'_Headline'].toLowerCase() !== "(inner circle lockup)")
+	{
+		var fontsize = (feed['Frame_'+frameNum+'_Headline_Font_Size'] != "" ) ? feed['Frame_'+frameNum+'_Headline_Font_Size'] : 17;
+		var fontcolor = (feed['Frame_'+frameNum+'_Headline_Font_Color'] != "" ) ? feed['Frame_'+frameNum+'_Headline_Font_Color'] : '#ffffff';
+
+		feed['Frame_'+frameNum+'_Headline'] = feed['Frame_'+frameNum+'_Headline'].replaceAll('<BR>','<br>');
+		var lines = feed['Frame_'+frameNum+'_Headline'].split('<br>');
+
+		for( var i = 0 ; i < lines.length ; i++ )
+		{
+			var li = document.createElement('li');
+			var h1Line = createHeadlineText( lines[i] , fontsize , fontcolor , null , 'headline' );
+			
+			li.appendChild(h1Line);
+			ul.appendChild(li);
+		}
+	}
+
+	// Subheadline //
+	if( feed['Frame_'+frameNum+'_Subheadline'] )
+	{
+
+		var fontsize = (feed['Frame_'+frameNum+'_Subheadline_Font_Size'] != "" ) ? feed['Frame_'+frameNum+'_Subheadline_Font_Size'] : 17;
+		var fontcolor = (feed['Frame_'+frameNum+'_Subheadline_Font_Color'] != "" ) ? feed['Frame_'+frameNum+'_Subheadline_Font_Color'] : '#ffffff';
+
+		feed['Frame_'+frameNum+'_Subheadline'] = feed['Frame_'+frameNum+'_Subheadline'].replaceAll('<BR>','<br>');
+		var lines = feed['Frame_'+frameNum+'_Subheadline'].split('<br>');
+		for( var i = 0 ; i < lines.length ; i++ )
+		{
+			var li = document.createElement('li');
+			var h1Line = createHeadlineText( lines[i] , fontsize , fontcolor , null , 'subheadline' );
+			
+			li.appendChild(h1Line);
+			ul.appendChild(li);
+		}
+	}
+
+	// Body //
+	if( feed['Frame_'+frameNum+'_Body'] )
+	{
+		var fontsize = (feed['Frame_'+frameNum+'_Body_Font_Size'] != "" ) ? feed['Frame_'+frameNum+'_Body_Font_Size'] : 17;
+		var fontcolor = (feed['Frame_'+frameNum+'_Body_Font_Color'] != "" ) ? feed['Frame_'+frameNum+'_Body_Font_Color'] : '#ffffff';
+
+		feed['Frame_'+frameNum+'_Body'] = feed['Frame_'+frameNum+'_Body'].replaceAll('<BR>','<br>');
+		var lines = feed['Frame_'+frameNum+'_Body'].split('<br>');
+		for( var i = 0 ; i < lines.length ; i++ )
+		{
+			var li = document.createElement('li');
+			var h1Line = createHeadlineText( lines[i] , fontsize , fontcolor , null , 'body' );
+			
+			li.appendChild(h1Line);
+			ul.appendChild(li);
+		}
+	}
+
+	fromId('frame0' + frameNum).appendChild( ul );
+
+	return {frame:fromId('frame0' + frameNum), ul:ul };
+}
+
+function calcWidth( element )
+{
+	return parseInt(window.getComputedStyle( element ).width);
+}
+
+function calcHeight( element )
+{
+	return parseInt(window.getComputedStyle( element ).height);
+}
+
+/**********************
+*
+*  START ANIMATION 
+*
+*********************************/
+function onStartAnimation()
+{
+	fromId('container').style.visibility = "visible";
+
+	timeline = new TimelineMax({onStart:main.onStart , onComplete:main.onComplete });
+	timeline.add("start");
+	timeline.call( setLegal , [1] , null , "start+=0" );
+	timeline.from( '#frame01 .headline' , 0.5 , {y:"+=30"} , "start+=0.2" );
+	timeline.from( '#frame01 .subheadline' , 0.5 , {y:"+=30"} , "start+=0.2" );
+	timeline.from( '#frame01 .body' , 0.5 , {y:"+=30" } , "start+=3.5" );
+	
+	if( frames[1].image )
+	{
+		showImageFrame( frames[1].image , frames[1].animation , "start" );
+	}
+	
+	if( frames[1].showEndLogo )
+	{
+		timeline.to( '.logo' , 0.4 , {alpha:0} , "start+=0");
+		timeline.to( '.endframelockup' , 1 , {alpha:1} , "start+=0");
+		timeline.to( '.endframelockup .logo' , 1 , {alpha:1} , "start+=0");
+	}
+
+
+	if( framesTotal >= 2 )
+	{
+		timeline.add( 'frame02' , "start+=4.5")
+		timeline.call( setLegal , [2] , null , "frame02+=0" );
+		timeline.to( '#frame01 .headline' , 0.1 , {alpha:0} , "frame02+=0" );
+		timeline.to( '#frame01 .subheadline' , 0.1 , {alpha:0} , "frame02+=0" );
+		timeline.to( '#frame01 .body' , 0.1 , {alpha:0 } , "frame02+=0" );
+		timeline.from( '#frame02 .headline' , 0.5 , {y:"+=30"} , "frame02+=0.2" );
+		timeline.from( '#frame02 .subheadline' , 0.5 , {y:"+=30"} , "frame02+=0.2" );
+		timeline.from( '#frame02 .body' , 0.5 , {y:"+=30" } , "frame02+=1.2" );
+
+		if( frames[2].showEndLogo )
+		{
+			timeline.to( '.logo' , 0.4 , {alpha:0} , "frame02+=0");
+			timeline.to( '.endframelockup' , 1 , {alpha:1} , "frame02+=0");
+			timeline.to( '.endframelockup .logo' , 1 , {alpha:1} , "frame02+=0");
+			timeline.to( '.cta-container' , 0.6 , {y:"-=12" } , "frame02+=1" );
+		}
+
+		if( frames[2].image )
+		{
+			showImageFrame( frames[2].image , frames[2].animation , "frame02" );
+		}
+
+		if( frames[1].image && !frames[2].keepImage )
+		{
+			timeline.to( frames[1].image , 0.5 , {alpha:0} , "frame02+=0" );
+		}
+	}
+
+	if( framesTotal >= 3)
+	{
+		timeline.add( 'frame03' , "start+=8.5")
+		timeline.call( setLegal , [3] , null , "frame03+=0" );
+		timeline.to( '#frame02 .headline' , 0.1 , {alpha:0} , "frame03+=0" );
+		timeline.to( '#frame02 .subheadline' , 0.1 , {alpha:0} , "frame03+=0" );
+		timeline.to( '#frame02 .body' , 0.1 , {alpha:0 } , "frame03+=0" );
+		timeline.from( '#frame03 .headline' , 0.5 , {y:"+=30"} , "frame03+=0.2" );
+		timeline.from( '#frame03 .subheadline' , 0.5 , {y:"+=30"} , "frame03+=0.2" );
+		timeline.from( '#frame03 .body' , 0.5 , {y:"+=30" } , "frame03+=1.2" );
+
+		if( frames[3].showEndLogo )
+		{
+			timeline.to( '.logo' , 0.4 , {alpha:0} , "frame03+=0");
+			timeline.to( '.endframelockup' , 1 , {alpha:1} , "frame03+=0");
+			timeline.to( '.endframelockup .logo' , 1 , {alpha:1} , "frame03+=0");
+			timeline.to( '.cta-container' , 0.6 , {y:"-=12" } , "frame03+=1" );
+		}
+
+		if( frames[3].image )
+		{
+			showImageFrame( frames[3].image , frames[3].animation , "frame03" );
+		}
+		
+		if( frames[2].image && !frames[3].keepImage )
+		{
+			timeline.to( frames[2].image , 0.5 , {alpha:0} , "frame03+=0" );
+		}
+	}
+
+	if( framesTotal >= 4)
+	{
+		timeline.add( 'frame04' , "start+=12.5")
+		timeline.call( setLegal , [4] , null , "frame04+=0" );
+		timeline.to( '#frame03 .headline' , 0.1 , {alpha:0} , "frame04+=0" );
+		timeline.to( '#frame03 .subheadline' , 0.1 , {alpha:0} , "frame04+=0" );
+		timeline.to( '#frame03 .body' , 0.1 , {alpha:0 } , "frame04+=0" );
+		timeline.from( '#frame04 .headline' , 0.5 , {y:"+=40"} , "frame04+=0.2" );
+		timeline.from( '#frame04 .subheadline' , 0.5 , {y:"+=40"} , "frame04+=0.2" );
+		timeline.from( '#frame04 .body' , 0.5 , {y:"+=30" } , "frame04+=1.2" );
+
+		if( frames[4].showEndLogo )
+		{
+			timeline.to( '.logo' , 0.4 , {alpha:0} , "frame04+=0");
+			timeline.to( '.endframelockup' , 1 , {alpha:1} , "frame04+=0");
+			timeline.to( '.endframelockup .logo' , 1 , {alpha:1} , "frame04+=0");
+			timeline.to( '.cta-container' , 0.6 , {y:"-=12" } , "frame04+=1" );
+		}
+
+		if( frames[4].image )
+		{
+			showImageFrame( frames[4].image , frames[4].animation , "frame04" );
+		}
+		
+		if( frames[3].image && !frames[4].keepImage )
+		{
+			timeline.to( frames[3].image , 0.5 , {alpha:0} , "frame04+=0" );
+		}
+	}
+}
+
+function setLegal( id )
+{
+	queryAll('#legal p')[0].innerHTML = frames[id].legal;
+}
+
+function showImageFrame( image , type , label )
+{
+	if( type == "pan-left" )
+		timeline.from( image , 3 , { alpha:0 , x:"+=50" , force3D:true, ease:Expo.easeOut } , label + "+=0" );
+	else if( type == "pan-right" )
+		timeline.from( image , 3 , { alpha:0 , x:"-=50" , force3D:true, ease:Expo.easeOut } , label + "+=0" );
+	else if( type == "pan-up" )
+		timeline.from( image , 3 , { alpha:0 , y:"+=50" , force3D:true, ease:Expo.easeOut } , label + "+=0" );
+	else if( type == "pan-down" )
+		timeline.from( image , 3 , { alpha:0 , y:"-=50" , force3D:true, ease:Expo.easeOut } , label + "+=0" );
+	else if( type == "fade" )
+		timeline.from( image , 3 , { alpha:0 , force3D:true, ease:Expo.easeOut } , label + "+=0" );
+	else if( type == "fade-in" )
+		timeline.from( image , 3 , { alpha:0 , force3D:true, ease:Expo.easeOut } , label + "+=0" );
+	else if( type == "fade-zoom" )
+		timeline.from( image , 3 , { alpha:0 , force3D:true, ease:Expo.easeOut } , label + "+=0" ).to( image , 3 , {scaleX:1.1 , scaleY:1.1, transformOrigin:"50% 50%" , ease:Expo.easeOut } , label + "+=0" );
+}
+
+/************************
+* prototypes
+*********************************/
+String.prototype.replaceAll = function(searchStr, replaceStr) {
+    var str = this;
+    
+    // escape regexp special characters in search string
+    searchStr = searchStr.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+    
+    return str.replace(new RegExp(searchStr, 'gi'), replaceStr);
+};
+/** end custom javascript - no not remove **/
+</script>
+</body>
+
+</html>

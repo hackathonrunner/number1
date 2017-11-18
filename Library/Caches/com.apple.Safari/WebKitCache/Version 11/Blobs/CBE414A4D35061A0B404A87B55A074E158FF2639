@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="utf-8" />
+    <title>Connect 2017</title>
+    <link type="text/css" rel="stylesheet" href="/events/players/mpsplayer/static/css/style.1.0.4.css" />
+    <style type="text/css">
+        body {
+            overflow: hidden;
+        }
+        html, body, video {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+        }
+        #playerDiv {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            overflow: hidden;
+        }
+        #player {
+            background: #000;
+        }
+
+    </style>
+    <link type="text/css" href="/events/players/amsp/v1.8.0/skins/amp-default/azuremediaplayer.min.css" rel="stylesheet">
+    <style type="text/css">
+        .vjs-error-display:before {
+            content: "";
+        }
+        .azuremediaplayer{
+            border-width: 0px;
+        }
+        #player, #playerDiv{background-color: #000;}
+        @media only screen and (max-width:420px) {
+            .amp-default-skin .vjs-current-time{
+                right:65%;
+            }
+            .amp-default-skin .vjs-time-divider{left:35%;}
+            .amp-default-skin .vjs-duration{left: 35%;}
+
+        }
+         /*for ios device*/
+        #playerDiv.onios .vjs-live-controls .vjs-live-display, #playerDiv.onios .vjs-live-controls
+        {
+            display:none;
+        }
+    </style>
+    <script type="text/javascript" src="/events/players/mpsplayer/static/scripts/jquery-1.12.0.min.js"></script>
+    <script src="/events/players/amsp/v1.8.0/azuremediaplayer.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="/events/players/amsp/v1.0.0/csma.js"></script>
+    <script src="/events/players/amsp/v1.0.0/amsp-metrix.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="https://az725175.vo.msecnd.net/scripts/jsll-4.js"></script>
+    <script type="text/javascript" src="/events/players/mpsplayer/static/scripts/mpsAppInsights-ad.v1.3.min.js"></script>
+
+    <script type="text/javascript">
+        amp.options.flashSS.swf = "/events/players/amsp/v1.8.0/techs/StrobeMediaPlayback.2.0.swf";
+        amp.options.silverlightSS.xap = "/events/players/amsp/v1.8.0/techs/SmoothStreamingPlayer.xap";
+    </script>
+    <script type="text/javascript">
+        var playmaker = playmaker || {};
+        playmaker.options = {
+            playerVtt: [],
+            captionOriginSrc: [],
+            metricsEnabled: true,
+            captionType: "none"
+        }
+        var mainOriginUri = "e7f271bb-5f50-4e89-9419-3d792fd94b27/31a49db7-84ca-4f11-8d99-a2eaa5ed56e8";
+        var altOriginUri = "d585aa5f-5677-4202-9491-2da70775deee/d35b7813-8b0b-406e-b304-6d73f5e8b9c6";
+        var captionOriginUri = ""; //alt=
+        var mp4Url = ""; //optional
+        var vttUrl = ""; //optional
+        var posterUrl = ""; //optional
+        var mpsSource = "MPSLExt"; //for reporting needs. use unique easy to use id.
+        var mpsChannel = "Connect2017"; //for reporting needs. use unique easy to use id.
+        var mpsEventId = "Ad-1-NOV2017"; //for reporting needs. use unique easy to use id.
+		var eventTitle = mpsChannel + "-" + mpsEventId + "-amsp";
+        var mainWeight = 50;
+        var isLive = true;
+        var isAutoPlay = true;
+        var playerStartTime = "";
+        var manifestFilter = "filter=program";
+        var akamaiPlayerUri = "";
+        var mainOriginName = isLive ? "mpslive1" : "mpsvod1";
+        var altOriginName = isLive ? "mpslive2" : "mpsvod2";
+        var pageProtocol = window.location.protocol;
+        var streamDistribution = generateDistributionWeight(mainWeight);
+        var playerDiv = "playerDiv";
+        var plyloadBalance = true;
+        var plyFontColor = 'FFFFFF';
+        var plyFontSize = 14;
+        var plyFontShadow = true;
+        var plyDefaultLanguage = 'OFF';
+        var plyId = '';
+        var plyOffset = '';
+        var agt = navigator.userAgent.toLowerCase();
+        var isWindowsPhone = agt.indexOf("windows phone") != -1;
+        function supportsVideo() {
+            return !!document.createElement('video').canPlayType;
+        }
+        function supportsHls() {
+            if (!supportsVideo()) { return false; }
+            var v = document.createElement("video");
+            return v.canPlayType('application/vnd.apple.mpegURL; "codecs="avc1.42E01E, mp4a.40.2"' || 'application/x-mpegURL; "codecs="avc1.42E01E, mp4a.40.2"');
+        }
+        var isIos = agt.indexOf("ipad") != -1 || agt.indexOf("iphone") != -1 || agt.indexOf("ipod") != -1;
+        var isAndroidHls = (agt.indexOf("android 3.") != -1 || agt.indexOf("android 4.") != -1 || agt.indexOf("android 5.") != -1) && supportsHls() && !isWindowsPhone;
+        var isAndroidDash = (agt.indexOf("android 5.") != -1 || agt.indexOf("android 6.") != -1) && agt.indexOf("chrome") != -1 && !isWindowsPhone;
+        var isMacSafari = agt.indexOf("macintosh") != -1 && agt.indexOf("safari") != -1;
+        var isOldSafari = isMacSafari && agt.indexOf("applewebkit") !== -1 && (agt.indexOf("version/7") !== -1 || agt.indexOf("version/6") !== -1 || agt.indexOf("version/5") !== -1) && agt.indexOf("chrome") === -1;
+        var currentDistro = "";
+        var playCount = 0;
+        var jumpCount = 0;
+        var errorCount = 0;
+        var playerTime;
+        var timingInterval;
+        var playerTime;
+        var playerDuration;
+        var mainAkamaiDashUrl;
+        var mainAkamaiSmoothUrl;
+        var mainAkamaiHlsUrl;
+        var altAkamaiDashUrl;
+        var altAkamaiSmoothUrl;
+        var altAkamaiHlsUrl;
+        var mainLimelightDashUrl;
+        var mainLimelightSmoothUrl;
+        var mainLimelightHlsUrl;
+        var altLimelightDashUrl;
+        var altLimelightSmoothUrl;
+        var altLimelightHlsUrl;
+        var captionAkamaiDashUrl;
+        var captionAkamaiSmoothUrl;
+        var captionAkamaiHlsUrl;
+        var captionLimelightDashUrl;
+        var captionLimelightSmoothUrl;
+        var captionLimelightHlsUrl;
+        var dashUrl;
+        var hlsUrl;
+        var smoothUrl;
+        var playerSrc;
+        var akamaiAnalyticsPlugin;
+        var ampPlayer;
+        var myPlayer = ampPlayer;
+        var akamaiAnalyticsPlugin;
+        var captionVis = false;
+        var playmakerDebug = false;
+        var queryPlyOffset = getQuerystring("plyoffset");
+        if (queryPlyOffset !== "") { plyOffset = parseInt(queryPlyOffset); }
+        if (playmaker.options.captionType == "ply") {
+            var plyMode = isLive ? "live" : "od";
+            var subPLYInitParams = {
+                subplyId: plyId,
+                loadBalance: plyloadBalance,
+                fontColor: plyFontColor,
+                fontSize: plyFontSize,
+                fontShadow: plyFontShadow,
+                defaultLanguage: plyDefaultLanguage,
+                mode: plyMode,
+                offsetOverride: plyOffset
+            };
+        }
+        function checkOldIe() {
+            var version = agt.indexOf('msie') !== -1 ? parseInt(agt.split('msie')[1]) : false;
+            if (version === 7 || version === 8) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        function checkDeadIe() {
+            var version = agt.indexOf('msie') !== -1 ? parseInt(agt.split('msie')[1]) : false;
+            if (version && version <= 6) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        var isOldIe = checkOldIe();
+        var isDeadIe = checkDeadIe();
+
+        function loadPlayer() {
+            var queryTitle = getQuerystring("title");
+            var queryAutoPlay = getQuerystring('autoplay');
+            var queryVolume = getQuerystring('volume');
+            var queryControls = getQuerystring('controls');
+            var queryMetrics = getQuerystring('metrics');
+            var queryMetricsCh9 = getQuerystring('metricsc9');
+            var queryStart = getQuerystring('start');
+            var queryMute = getQuerystring('mute');
+            var playerMute = queryMute == "true";
+            var playerControls = queryControls === "" || queryControls === "true";
+            if (isIos && !playerControls) {
+                playerControls = true;
+            }
+            if (isIos && isLive) {
+                var element = document.getElementById("playerDiv");
+                element.className += " " + "onios";
+            }
+            var metricsEnabledCh9 = queryMetricsCh9 == "true";
+            if (queryTitle !== "") { eventTitle = queryTitle; }
+            if (queryAutoPlay !== "") { isAutoStart = queryAutoPlay; }
+            if (queryMetrics == "false") { playmaker.options.metricsEnabled = false; }
+            var playerTechOrder = ["azureHtml5JS", "flashSS", "silverlightSS", "html5"];
+            if (isMacSafari) {
+                playerTechOrder = ["html5", "azureHtml5JS", "flashSS", "silverlightSS"];
+            }
+            if (isAndroidHls) {
+                playerTechOrder = ["html5"];
+            }
+            if (isAndroidDash) {
+                playerTechOrder = ["azureHtml5JS", "html5", "flashSS"];
+            }
+            if (isOldIe) {
+                loadAkamaiBackupPlayer();
+                return;
+            }
+            if (isDeadIe) {
+                try {
+                    document.getElementById(playerDiv).innerHTML = "<p>Your browser is no longer supported.</p><br/></p>Please upgrade to a newer version or try another browser.</p>";
+                    return;
+                }
+                catch (ex) {
+                    alert("Your browser is no longer supported. Please upgrade to a newer version or try another browser.");
+                }
+            }
+            var analyticsPluginPath = pageProtocol + "//ma822-r.analytics.edgekey.net/config/beacon-8202.xml?enableGenericAPI=1";
+            document.getElementById(playerDiv).innerHTML = "<video id='player' class='azuremediaplayer amp-default-skin amp-big-play-centered' autoplay controls width=100%' height='100%'></video>";
+            setUrls(streamDistribution);
+            getPlayerSrc();
+            ampPlayer = amp(document.getElementById('player'), {
+                techOrder: playerTechOrder,
+                "nativeControlsForTouch": false,
+                autoplay: isAutoPlay,
+                controls: playerControls,
+                poster: posterUrl,
+                plugins: {
+                    appInsights: {
+                        percentsPlayedInterval:5,
+                        timeUpdateInterval: 30,
+                        otherAIProps: {
+                            mpsChannel: mpsChannel,
+                            mpsEventId: mpsEventId,
+                            mpsSourceId: mpsSource
+                        }
+
+                    }
+
+                },
+                logo: { "enabled": false }
+            },function () {
+                if (queryVolume != "") { this.volume(queryVolume); }
+                if (playerMute) {
+                    this.muted(true);
+                }
+                this.addEventListener('playing', function () {
+                    akamaiAnalyticsPlugin.handleBitRateSwitch(ampPlayer.currentPlaybackBitrate());
+                    if (isWindowsPhone) {
+                        onWinPhone();
+                    }
+                    timingInterval = setInterval(getPlayerTime, 2000);
+                    try {
+                        if (queryStart !== "" && jumpCount === 0) {
+                            jumpCount += 1;
+                            var intStart = parseInt(queryStart);
+                            ampPlayer.currentTime(intStart);
+                        }
+                        else if (typeof playerStartTime != 'undefined' && playerStartTime !== '' && jumpCount <= 1) {
+                            jumpCount += 1;
+                            var intStart = parseInt(playerStartTime);
+                            ampPlayer.currentTime(intStart);
+                        }
+                    }
+                    catch (ex) { }
+                    if (typeof playerStartTime != 'undefined' && playerStartTime !== '' && playerStartTime !== 0 && jumpCount <= 1) {
+                        jumpCount += 1;
+                        var intStart = parseInt(playerStartTime);
+                        ampPlayer.currentTime(intStart);
+                    }
+                    //if (playCount < 1) {
+                    //    toggleCaptions();
+                    //}
+                    playCount += 1;
+                });
+                this.addEventListener('playbackbitratechanged', function () {
+                    akamaiAnalyticsPlugin.handleBitRateSwitch(ampPlayer.currentPlaybackBitrate());
+                });
+                this.addEventListener('error', onAmspError);
+            });
+            ampPlayer.addEventListener('loadedmetadata', function () {
+                //try {
+                //    if (ampPlayer.currentAudioStreamList()) {
+                //        for (var i = 0; i < ampPlayer.currentAudioStreamList().streams.length; i++) {
+                //            if (ampPlayer.currentAudioStreamList().streams[i].language == "en" || ampPlayer.currentAudioStreamList().streams[i].language == "eng") {
+                //                ampPlayer.currentAudioStreamList().switchIndex(i);
+                //                break;
+                //            }
+                //        }
+                //    }
+                //}
+                //catch (ex) {
+                //    logError("can't select language : " + ex.message);
+                //}
+                if (playmaker.options.metricsEnabled && typeof ch9 != 'undefined' && ch9 && ch9.functions && ch9.functions.startConviva && metricsEnabledCh9) {
+                    try {
+                        ch9.functions.startConviva(ampPlayer, ampPlayer.currentSrc());
+                    }
+                    catch (ex) {
+                        logError("could not initialize ch9 metrics: " + ex.message);
+                    }
+                }
+            });
+
+            ampPlayer.addEventListener('ended', function () {
+                try {
+                    clearInterval(timingInterval);
+                }
+                catch (ex) { }
+            });
+
+            ampPlayer.addEventListener('pause', function () {
+                //try {
+
+                //    sendUTagData('pause');
+
+                //}
+                //catch (ex) { }
+            });
+            //if (document.querySelector(".vjs-play-control") != null) {
+            //    document.querySelector(".vjs-play-control").addEventListener("click", function () {
+            //        if (this.className.indexOf("vjs-paused") != -1) {
+            //            triggerAtlasTrack();
+            //        }
+            //    });
+            //}
+            ampPlayer.options({
+                'heuristicProfile': 'HighQuality',
+                'customPlayerSettings': {
+                    'customHeuristicSettings': {
+                        'windowSizeHeuristics': true
+                    }
+                }
+            });
+            if (playmaker.options.captionType == "embed" && isLive == true && vttUrl == "") {
+                ampPlayer.src(playerSrc, [{ src: "", srclang: "en", kind: "subtitles", label: "English" }]);
+            }
+            else if (playmaker.options.captionType == "embed" && vttUrl != "") {
+                ampPlayer.src(playerSrc, [{ src: vttUrl, srclang: "en", kind: "subtitles", label: "English" }]);
+            }
+            else {
+                ampPlayer.src(playerSrc);
+            }
+            var pluginOptions = { "configPath": pageProtocol + "//ma822-r.analytics.edgekey.net/config/beacon-8202.xml" };
+            akamaiAnalyticsPlugin = videojs('player').akamaiAnalytics(pluginOptions);
+            akamaiAnalyticsPlugin.setData("title", eventTitle + "-" + currentDistro);
+            akamaiAnalyticsPlugin.setData("eventName", eventTitle + "-" + currentDistro);
+            akamaiAnalyticsPlugin.setData("std:format", getStreamFormat());
+
+            try {
+                //listens for postMessage from parent pages
+                if (window.addEventListener) {
+                    addEventListener("message", postMessageListener, false);
+                } else {
+                    attachEvent("onmessage", postMessageListener);
+                }
+            }
+            catch (ex) {
+                logError("can't add listener : " + ex.message);
+            }
+        }
+        function generateDistributionWeight(main) {
+            //we stream from 2 datacenter origins. this allows us to set the percentage of traffic being sent to each
+            var rand = Math.floor(Math.random() * 100);
+            switch (rand >= main - 1) {
+                case true:
+                    //load secondary DC
+                    return "alt";
+                    break;
+                case false:
+                    // load primary DC
+                    return "main";
+                    break;
+                default:
+                    return "main";
+                    break;
+            }
+        }
+        function toggleCaptions() {
+            if (isLive && playmaker.options.captionType == "embed" && vttUrl == "") {
+                document.querySelector(".vjs-subtitles-button").addEventListener("click", function () {
+                    if (captionVis === false) {
+                        try {
+                            dashUrl = captionAkamaiDashUrl;
+                            smoothUrl = captionAkamaiSmoothUrl;
+                            hlsUrl = captionAkamaiHlsUrl;
+                            getPlayerSrc();
+                            ampPlayer.src(playerSrc, [{ src: "", srclang: "en", kind: "subtitles", label: "English" }]);
+                            captionVis = true;
+                            if (playmaker.options.metricsEnabled) {
+                                akamaiAnalyticsPlugin.setData("CaptionButtonPress", true);
+                            }
+                        }
+                        catch (ex) {
+                            logError("caption toggle show error: " + ex.message);
+                        }
+                    }
+                    else if (captionVis === true) {
+                        try {
+                            dashUrl = mainAkamaiDashUrl;
+                            smoothUrl = mainAkamaiSmoothUrl;
+                            hlsUrl = mainAkamaiHlsUrl;
+                            getPlayerSrc();
+                            ampPlayer.src(playerSrc, [{ src: "", srclang: "en", kind: "subtitles", label: "English" }]);
+                            captionVis = false;
+                        }
+                        catch (ex) {
+                            logError("caption toggle hide error: " + ex.message);
+                        }
+                    }
+                });
+                document.querySelector(".vjs-subtitles-button").innerHTML = "";
+            }
+        }
+        function akamizeStreamUrls() {
+            //generates the URLs for Akamai CDN streams pulling from each datacenter origin
+            mainAkamaiDashUrl = pageProtocol + "//mpsevents-a.akamaihd.net/" + mainOriginName + "/" + mainOriginUri + ".ism/manifest" + manifestAppend("dash");
+            mainAkamaiSmoothUrl = pageProtocol + "//mpsevents-s.akamaihd.net/" + mainOriginName + "/" + mainOriginUri + ".ism/manifest" + manifestAppend("smooth");
+            mainAkamaiHlsUrl = pageProtocol + "//mpsevents-lh.akamaihd.net/" + mainOriginName + "/" + mainOriginUri + ".ism/manifest" + manifestAppend("hls");
+            altAkamaiDashUrl = pageProtocol + "//mpsevents-a.akamaihd.net/" + altOriginName + "/" + altOriginUri + ".ism/manifest" + manifestAppend("dash");
+            altAkamaiSmoothUrl = pageProtocol + "//mpsevents-s.akamaihd.net/" + altOriginName + "/" + altOriginUri + ".ism/manifest" + manifestAppend("smooth");
+            altAkamaiHlsUrl = pageProtocol + "//mpsevents-lh.akamaihd.net/" + altOriginName + "/" + altOriginUri + ".ism/manifest" + manifestAppend("hls");
+            captionAkamaiDashUrl = pageProtocol + "//mpsevents-a.akamaihd.net/" + mainOriginName + "/" + captionOriginUri + ".ism/manifest" + manifestAppend("dash");
+            captionAkamaiSmoothUrl = pageProtocol + "//mpsevents-s.akamaihd.net/" + mainOriginName + "/" + captionOriginUri + ".ism/manifest" + manifestAppend("smooth");
+            captionAkamaiHlsUrl = pageProtocol + "//mpsevents-lh.akamaihd.net/" + mainOriginName + "/" + captionOriginUri + ".ism/manifest" + manifestAppend("hls");
+        }
+        function limelizeStreamUrls() {
+            //generates the URLs for Limelight CDN streams pulling from each datacenter origin
+            mainLimelightDashUrl = pageProtocol + "//amsll.ms-studiosmedia.com/" + mainOriginName + "/llcdn/" + mainOriginUri + ".ism/manifest" + manifestAppend("dash");
+            mainLimelightSmoothUrl = pageProtocol + "//amsll.ms-studiosmedia.com/" + mainOriginName + "/llcdn/" + mainOriginUri + ".ism/manifest" + manifestAppend("smooth");
+            mainLimelightHlsUrl = pageProtocol + "//amsll.ms-studiosmedia.com/" + mainOriginName + "/llcdn/" + mainOriginUri + ".ism/manifest" + manifestAppend("hls");
+            altLimelightDashUrl = pageProtocol + "//amsll.ms-studiosmedia.com/" + altOriginName + "/llcdn/" + altOriginUri + ".ism/manifest" + manifestAppend("dash");
+            altLimelightSmoothUrl = pageProtocol + "//amsll.ms-studiosmedia.com/" + altOriginName + "/llcdn/" + altOriginUri + ".ism/manifest" + manifestAppend("smooth");
+            altLimelightHlsUrl = pageProtocol + "//amsll.ms-studiosmedia.com/" + altOriginName + "/llcdn/" + altOriginUri + ".ism/manifest" + manifestAppend("hls");
+            captionLimelightDashUrl = pageProtocol + "//amsll.ms-studiosmedia.com/" + mainOriginName + "/" + captionOriginUri + ".ism/manifest" + manifestAppend("dash");
+            captionLimelightSmoothUrl = pageProtocol + "//amsll.ms-studiosmedia.com/" + mainOriginName + "/" + captionOriginUri + ".ism/manifest" + manifestAppend("smooth");
+            captionLimelightHlsUrl = pageProtocol + "//amsll.ms-studiosmedia.com/" + mainOriginName + "/" + captionOriginUri + ".ism/manifest" + manifestAppend("hls");
+        }
+        function setUrls(type) {
+            akamizeStreamUrls();
+            limelizeStreamUrls();
+            var rand = Math.floor(Math.random() * 100);
+            if (type === "alt" && rand >= 50) {
+                currentDistro = "East-AK";
+                dashUrl = altAkamaiDashUrl;
+                smoothUrl = altAkamaiSmoothUrl;
+                hlsUrl = altAkamaiHlsUrl;
+            }
+            else if (type === "alt" && rand < 50) {
+                currentDistro = "East-LL";
+                dashUrl = altLimelightDashUrl;
+                smoothUrl = altLimelightSmoothUrl;
+                hlsUrl = altLimelightSmoothUrl;
+            }
+            else if (type === "main" && rand >= 50) {
+                currentDistro = "West-LL";
+                dashUrl = mainLimelightDashUrl;
+                smoothUrl = mainLimelightSmoothUrl;
+                hlsUrl = mainLimelightHlsUrl;
+            }
+            else {
+                currentDistro = "West-AK"
+                dashUrl = mainAkamaiDashUrl;
+                smoothUrl = mainAkamaiSmoothUrl;
+                hlsUrl = mainAkamaiHlsUrl;
+            }
+        }
+        function getPlayerSrc() {
+            if (isLive === true && playmaker.options.captionType.toLowerCase() === "embed") {
+                playerSrc = [{ type: "application/dash+xml", src: dashUrl, disableUrlRewriter: true }, { type: "application/vnd.ms-sstr+xml", src: smoothUrl, disableUrlRewriter: true }, { type: "application/vnd.apple.mpegurl", src: hlsUrl, disableUrlRewriter: true, streamingFormats: ["HLS-V3"] }];
+            }
+            else if (mp4Url === "") {
+                playerSrc = [{ type: "application/dash+xml", src: dashUrl, disableUrlRewriter: true }, { type: "application/vnd.ms-sstr+xml", src: smoothUrl, disableUrlRewriter: true }, { type: "application/vnd.apple.mpegurl", src: hlsUrl, disableUrlRewriter: true, streamingFormats: ["HLS-V3"] }];
+            }
+            else {
+                playerSrc = [{ type: "application/dash+xml", src: dashUrl, disableUrlRewriter: true }, { type: "application/vnd.ms-sstr+xml", src: smoothUrl, disableUrlRewriter: true }, { type: "application/vnd.apple.mpegurl", src: hlsUrl, disableUrlRewriter: true, streamingFormats: ["HLS-V3"] }, { type: "video/mp4", src: mp4Url, disableUrlRewriter: true }];
+            }
+        }
+        function getStreamFormat() {
+            var type = ampPlayer.currentType().toLowerCase();
+            var tech = ampPlayer.currentTechName().toLowerCase();
+            if (type === "application/dash+xml") {
+                return "DASH";
+            }
+            else if (type === "application/vnd.ms-sstr+xml" && (tech === "flashss" || tech === "silverlightss")) {
+                return "Smooth Streaming";
+            }
+            else if (type === "application/vnd.apple.mpegurl") {
+                return "HTTP Live Streaming";
+            }
+            else {
+                return "unknown";
+            }
+        }
+        function getQuerystring(key, default_) {
+            if (default_ == null) default_ = "";
+            key = key.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+            var regex = new RegExp("[\\?&]" + key + "=([^&#]*)");
+            var qs = regex.exec(window.location.href.toLowerCase());
+            if (qs == null)
+                return default_;
+            else
+                return qs[1];
+        }
+        function loadChapterList(chapterList) {
+            //if (isLive) {
+            //    $("#sidebarList").empty();
+            //}
+            //$.each(chapterList.chapters, function (i, result) {
+            //    var time = result.chapterTime;
+            //    var title = result.chapterTitle;
+            //    var active = result.active;
+            //    if (!active) {
+            //        $("#sidebarList").append("<li class='inactive' title='Chapter not yet available'>" + result.chapterTitle + "</li>");
+            //    }
+            //    else {
+
+            //        $("#sidebarList").append("<li><a href='#' title='Jump to chapter: " + title + "' onclick='seekToTime(\"" + time + "\")'>" + title + "</a> - " + time + "</li>");
+            //    }
+            //});
+            //$("li:last").addClass("last");
+        }
+        function getChapters() {
+            //logError("getting chapters");
+            //$.get("chapters.json", "", function (data) {
+            //    //alert("Chapter Title: " + data.chapters[0].chapterTitle + "\n Chapter Time: " + data.chapters[0].chapterTime + "\n Chapter Active: " + data.chapters[0].active);
+            //    loadChapterList(data);
+            //}, "json");
+        }
+        function seekToTime(seekTime) {
+            if (seekTime.indexOf(":") != -1) {
+                var times = seekTime.split(":");
+                var hours = times[0];
+                var minutes = times[1];
+                var seconds = times[2];
+                var totalSeconds = parseInt(seconds, 10) + (parseInt(minutes, 10) * 60) + (parseInt(hours, 10) * 3600);
+                seekTime = totalSeconds;
+            }
+            try {
+                ampPlayer.currentTime(seekTime);
+                ampPlayer.play();
+            }
+            catch (ex) { }
+            event.preventDefault ? event.preventDefault() : event.returnValue = false;
+        }
+        function onWinPhone() {
+            try {
+                var more = document.querySelector(".amp-moreoptions-control");
+                var quality = document.querySelector(".amp-quality-control");
+                more.classList.add('vjs-hidden');
+                more.classList.add('amp-control-disabled');
+                quality.classList.add('vjs-hidden');
+                quality.classList.add('amp-control-disabled');
+            }
+            catch (ex) { }
+        }
+        function getPlayerTime() {
+            try {
+                playerTime = ampPlayer.currentTime();
+            }
+            catch (ex) { }
+            try {
+                playerDuration = ampPlayer.duration();
+            }
+            catch (ex) { }
+        }
+        function loadAkamaiBackupPlayer() {
+            var getvolume = getQuerystring('volume');
+            var volume = "";
+            var time = playerTime ? "?startTime=" + playerTime : "";
+            if (time != "") {
+                volume = getvolume != "" ? "&volume=" + getvolume : "";
+            }
+            else {
+                volume = getvolume != "" ? "?volume=" + getvolume : "";
+            }
+            try {
+                window.location.replace(akamaiPlayerUri); // + time + volume
+                //document.getElementById(playerDiv).innerHTML = "<iframe src='" + akamaiPlayerUri + time + volume + "' border='0' frameborder='0' scrolling='no' width='100%' height='100%' style='overflow:hidden;'></iframe>";
+            }
+            catch (ex) {
+                alert("Unable to connect. Please validate your connection and refresh the page to try again.");
+            }
+        }
+        function onAmspError(forcedError) {
+            //this basically just fails over through all the possible sources on error and also loads the backup player if needed. We also override the default error messaging.
+            var errorReconnectMsg = "<div>Connecting you to the stream. <br/>If the stream does not begin, please refresh your browser.</div>";
+            var errorPlayerFailoverMsg = "<div>Loading alternate stream...</div>";
+            var errorDisplay;
+            var stream;
+            var simulatedError = forcedError == true;
+            try {
+                clearInterval(timingInterval);
+            }
+            catch (ex) { }
+            try {
+                errorDisplay = document.querySelector(".vjs-error-display");
+            }
+            catch (ex) {
+                if (playmakerDebug) {
+                    console.log("unable to get error display");
+                }
+            }
+            var errorTypeNetwork = (simulatedError || ampPlayer.error().code & amp.errorCode.abortedErrStart) || (ampPlayer.error().code & amp.errorCode.networkErrStart);
+            errorCount += 1;
+
+            if (errorCount >= 6) {
+                showPlayerParams();
+                try {
+                    try {
+                        errorDisplay.innerHTML = errorReconnectMsg;
+                    }
+                    catch (ex) {
+                        if (playmakerDebug) {
+                            console.log("can't override error msg: " + ex.message);
+                        }
+                    }
+                    ampPlayer.dispose();
+                }
+                catch (ex) { }
+                loadAkamaiBackupPlayer();
+            }
+            else if (errorTypeNetwork && (errorCount === 1 || errorCount === 5)) {
+                //load wc ak
+                dashUrl = mainAkamaiDashUrl;
+                smoothUrl = mainAkamaiSmoothUrl;
+                hlsUrl = mainAkamaiHlsUrl;
+                currentDistro = "West-AK";
+                getPlayerSrc();
+                stream = playerSrc;
+                try {
+                    try {
+                        errorDisplay.innerHTML = errorReconnectMsg;
+                    }
+                    catch (ex) {
+                        if (playmakerDebug) {
+                            console.log("can't override error msg: " + ex.message);
+                        }
+                    }
+                    ampPlayer.src(stream);
+                    showPlayerParams();
+                    if (playmaker.options.metricsEnabled) {
+                        akamaiAnalyticsPlugin.setData("title", eventTitle + "-" + currentDistro);
+                        akamaiAnalyticsPlugin.setData("eventName", eventTitle + "-" + currentDistro);
+                    }
+                    if (playmakerDebug) {
+                        console.log("current distro: " + currentDistro);
+                    }
+                }
+                catch (ex) {
+                    if (playmakerDebug) {
+                        console.log("Can't load alternate wc ak streams: " + ex.message);
+                    }
+                    try {
+                        ampPlayer.dispose();
+                    }
+                    catch (ex) { }
+                    loadAkamaiBackupPlayer();
+                }
+            }
+            else if (errorTypeNetwork && errorCount === 2) {
+                //load wc ll
+                dashUrl = mainLimelightDashUrl;
+                smoothUrl = mainLimelightSmoothUrl;
+                hlsUrl = mainLimelightHlsUrl;
+                currentDistro = "West-LL";
+                getPlayerSrc();
+                stream = playerSrc;
+                try {
+                    try {
+                        errorDisplay.innerHTML = errorReconnectMsg;
+                    }
+                    catch (ex) {
+                        if (playmakerDebug) {
+                            console.log("can't override error msg: " + ex.message);
+                        }
+                    }
+                    ampPlayer.src(stream);
+                    showPlayerParams();
+                    if (playmaker.options.metricsEnabled) {
+                        akamaiAnalyticsPlugin.setData("title", eventTitle + "-" + currentDistro);
+                        akamaiAnalyticsPlugin.setData("eventName", eventTitle + "-" + currentDistro);
+                    }
+                    if (playmakerDebug) {
+                        console.log("current distro: " + currentDistro);
+                    }
+                }
+                catch (ex) {
+                    if (playmakerDebug) {
+                        console.log("Can't load alternate wc ll streams: " + ex.message);
+                    }
+                    try {
+                        ampPlayer.dispose();
+                    }
+                    catch (ex) { }
+                    loadAkamaiBackupPlayer();
+                }
+            }
+            else if (errorTypeNetwork && errorCount === 3) {
+                //load ec ak
+                dashUrl = altAkamaiDashUrl;
+                smoothUrl = altAkamaiSmoothUrl;
+                hlsUrl = altAkamaiHlsUrl;
+                currentDistro = "East-AK";
+                getPlayerSrc();
+                stream = playerSrc;
+                try {
+                    try {
+                        errorDisplay.innerHTML = errorReconnectMsg;
+                    }
+                    catch (ex) {
+                        if (playmakerDebug) {
+                            console.log("can't override error msg: " + ex.message);
+                        }
+                    }
+                    ampPlayer.src(stream);
+                    showPlayerParams();
+                    if (playmaker.options.metricsEnabled) {
+                        akamaiAnalyticsPlugin.setData("title", eventTitle + "-" + currentDistro);
+                        akamaiAnalyticsPlugin.setData("eventName", eventTitle + "-" + currentDistro);
+                    }
+                    if (playmakerDebug) {
+                        console.log("current distro: " + currentDistro);
+                    }
+                }
+                catch (ex) {
+                    if (playmakerDebug) {
+                        console.log("Can't load alternate streams: " + ex.message);
+                    }
+                    try {
+                        ampPlayer.dispose();
+                    }
+                    catch (ex) { }
+                    loadAkamaiBackupPlayer();
+                }
+            }
+            else if (errorTypeNetwork && errorCount === 4) {
+                //load ec ll
+                dashUrl = altLimelightDashUrl;
+                smoothUrl = altLimelightSmoothUrl;
+                hlsUrl = altLimelightHlsUrl;
+                currentDistro = "East-LL";
+                getPlayerSrc();
+                stream = playerSrc;
+                try {
+                    try {
+                        errorDisplay.innerHTML = errorReconnectMsg;
+                    }
+                    catch (ex) {
+                        if (playmakerDebug) {
+                            console.log("can't override error msg: " + ex.message);
+                        }
+                    }
+                    ampPlayer.src(stream);
+                    showPlayerParams();
+                    if (playmaker.options.metricsEnabled) {
+                        akamaiAnalyticsPlugin.setData("title", eventTitle + "-" + currentDistro);
+                        akamaiAnalyticsPlugin.setData("eventName", eventTitle + "-" + currentDistro);
+                    }
+                    if (playmakerDebug) {
+                        console.log("current distro: " + currentDistro);
+                    }
+                }
+                catch (ex) {
+                    if (playmakerDebug) {
+                        console.log("Can't load alternate streams: " + ex.message);
+                    }
+                    try {
+                        ampPlayer.dispose();
+                    }
+                    catch (ex) { }
+                    loadAkamaiBackupPlayer();
+                }
+            }
+            else if (ampPlayer.error().code & amp.errorCode.decodeErrStart) {
+                // MEDIA_ERR_DECODE errors
+                try {
+                    try {
+                        errorDisplay.innerHTML = errorPlayerFailoverMsg;
+                    }
+                    catch (ex) {
+                        if (playmakerDebug) {
+                            console.log("can't override error msg: " + ex.message);
+                        }
+                    }
+                    ampPlayer.dispose();
+                }
+                catch (ex) { }
+                loadAkamaiBackupPlayer();
+            }
+            else if (ampPlayer.error().code & amp.errorCode.srcErrStart) {
+                // MEDIA_ERR_SRC_NOT_SUPPORTED errors
+                try {
+                    try {
+                        errorDisplay.innerHTML = errorPlayerFailoverMsg;
+                    }
+                    catch (ex) {
+                        if (playmakerDebug) {
+                            console.log("can't override error msg: " + ex.message);
+                        }
+                    }
+                    ampPlayer.dispose();
+                }
+                catch (ex) { }
+                loadAkamaiBackupPlayer();
+            }
+            else if (ampPlayer.error().code & amp.errorCode.encryptErrStart) {
+                // MEDIA_ERR_ENCRYPTED errors
+                try {
+                    try {
+                        errorDisplay.innerHTML = errorPlayerFailoverMsg;
+                    }
+                    catch (ex) {
+                        if (playmakerDebug) {
+                            console.log("can't override error msg: " + ex.message);
+                        }
+                    }
+                    ampPlayer.dispose();
+                }
+                catch (ex) { }
+                loadAkamaiBackupPlayer();
+            }
+            else if (ampPlayer.error().code & amp.errorCode.srcPlayerMismatchStart) {
+                // SRC_PLAYER_MISMATCH errors
+                try {
+                    try {
+                        errorDisplay.innerHTML = errorPlayerFailoverMsg;
+                    }
+                    catch (ex) {
+                        if (playmakerDebug) {
+                            console.log("can't override error msg: " + ex.message);
+                        }
+                    }
+                    ampPlayer.dispose();
+                }
+                catch (ex) { }
+                loadAkamaiBackupPlayer();
+            }
+            else {
+                // unknown errors
+                try {
+                    try {
+                        errorDisplay.innerHTML = errorPlayerFailoverMsg;
+                    }
+                    catch (ex) {
+                        if (playmakerDebug) {
+                            console.log("can't override error msg: " + ex.message);
+                        }
+                    }
+                    ampPlayer.dispose();
+                }
+                catch (ex) { }
+                loadAkamaiBackupPlayer();
+            }
+        }
+        function logError(msg) {
+            if (typeof console != "undefined") {
+                console.log(msg);
+            }
+        }
+        function manifestAppend(type) {
+            if (manifestFilter != "") {
+                if (type == "smooth") {
+                    return "(" + manifestFilter + ")";
+                }
+                else if (type == "hls") {
+                    return "(format=m3u8-aapl-v3," + manifestFilter + ")";
+                }
+                else {
+                    return "(format=mpd-time-csf," + manifestFilter + ")";
+                }
+            }
+            else {
+                if (type == "smooth") {
+                    return "";
+                }
+                else if (type == "hls") {
+                    return "(format=m3u8-aapl-v3)";
+                }
+                else {
+                    return "(format=mpd-time-csf)";
+                }
+            }
+        }
+        function getHashTime() {
+            var hash = window.location.hash.toString();
+            if (hash) {
+                if (hash.toLowerCase().indexOf("time=") === -1) {
+                    return;
+                }
+                var error = "Unable to jump to desired time. Please use the scrub bar on the player to seek within the video.";
+                hash = hash.slice(6);
+                try {
+                    var intHash = parseInt(hash);
+                    ampPlayer.currentTime(intHash);
+                }
+                catch (ex) {
+                    logError("Set Start Time Error: " + ex.message);
+                }
+            }
+            else {
+                return;
+            }
+        }
+        function postMessageListener(event) {
+            try {
+                if (playerTime && event.data === "playertime") {
+                    window.parent.postMessage(playerTime, event.origin);
+                }
+                if (playerDuration && event.data === "playerduration") {
+                    window.parent.postMessage(playerDuration, event.origin);
+                }
+                if (playerTime && playerDuration && event.data === "playertimeduration") {
+                    window.parent.postMessage(playerTime + "," + playerDuration, event.origin);
+                }
+                if (event.data == "pause" && typeof ampPlayer != "undefined")
+                {
+                    ampPlayer.pause();
+                }
+                if (event.data == "play" && typeof ampPlayer != "undefined")
+                {
+                    ampPlayer.play();
+                }
+                if (event.data == "stop"){
+                    if (typeof sendWEDCS != "undefined") {
+                        sendWEDCS(103);
+                    }
+                }
+            }
+            catch (ex) {
+                logError("can't postmessage to parent : " + ex.message);
+            }
+        }
+
+        function triggerAtlasTrack() {
+            //var atlasTrackName = 'CLD_Ignite_USA_Vue_Lev_IgniteLiveStreamPlayButton_FNL';
+            //if (!isLive) {
+            //    atlasTrackName = 'CLD_Ignite_USA_Vue_Lev_IgniteKeynoteVOD_CON';
+            //}
+            //try {
+            //    atlasTrack(atlasTrackName);
+            //}
+            //catch (ex) {
+            //    logError("Error in ATLAS tag: " + ex.message);
+            //}
+        }
+        $(document).ready(function () {
+            loadPlayer();
+        });
+    </script>
+</head>
+<body onhashchange="getHashTime()">
+    <div id ="playerDiv">
+    </div>
+    <script type="text/javascript" src="/events/players/mpsplayer/static/scripts/mpswedcs.1.3.js"></script>
+</body>
+</html>

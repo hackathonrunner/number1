@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Disk Utility</key>
+	<dict>
+		<key>DISPLAY_NAME</key>
+		<string>Disk Utility</string>
+		<key>LAST_USED</key>
+		<date>2017-11-18T00:16:03Z</date>
+		<key>URL</key>
+		<string>file:///Applications/Utilities/Disk%20Utility.app/</string>
+	</dict>
+	<key>Terminal</key>
+	<dict>
+		<key>DISPLAY_NAME</key>
+		<string>Terminal</string>
+		<key>LAST_USED</key>
+		<date>2017-11-18T00:16:17Z</date>
+		<key>URL</key>
+		<string>file:///Applications/Utilities/Terminal.app/</string>
+	</dict>
+</dict>
+</plist>

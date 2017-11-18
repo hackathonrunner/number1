@@ -1,0 +1,30 @@
+ Time	               Bundle ID	              Status	Comment
+0.000	                       -	                   -	TALagent Started (system uptime: 504.09 sec, current time: 532655175.42)
+0.053	                       -	                   -	Liveness: 0 -> 1 (run_as_server)
+0.112	                       -	                   -	Successfully read encryption key from keychain in 0.054698 seconds
+0.141	                       -	                   -	Liveness: 1 -> 2 (server_show_windows_for_asns)
+0.141	                       -	                   -	server_show_windows_for_asns start
+0.142	                       -	                   -	TAL launch still in progress because Finder has not checked in
+0.142	                       -	                   -	Still waiting for registration from Finder
+0.142	                       -	                   -	Liveness: 2 -> 3 (add_app)
+0.142	                       -	                   -	Finder not yet launched, but pretending it is
+0.142	        com.apple.finder	                   -	Skipping window creation because plist is unavailable: 1
+0.142	        com.apple.finder	                   -	Skipping window creation because the archive was created prior to 10.10 (prev: 10.0)
+0.142	                       -	                   -	loginwindow launched no apps (but we still have to handle Finder)
+0.142	                       -	                   -	Bitmaps Ready (0 apps, 0 windows)
+0.143	        com.apple.finder	                   -	Disposing because it has no windows
+0.143	        com.apple.finder	            Disposed	
+0.143	                       -	                   -	server_show_windows_for_asns end
+0.267	                       -	                   -	TAL launch still in progress because Finder has not checked in
+0.267	                       -	                   -	Still waiting for registration from Finder
+0.786	        com.apple.finder	                   -	Finder checked in
+0.786	                       -	                   -	All started apps have registered (no remaining unregistered apps)
+0.787	                       -	                   -	Waiting for Dock...
+0.788	                       -	                   -	Dock is avaialable.
+0.788	                       -	                   -	Liveness: 3 -> 4 (_wait_for_dock)
+0.788	                       -	                   -	TAL Relaunch - all apps registered as ready
+0.788	                       -	                   -	Liveness: 4 -> 3 (__server_show_windows_for_asns_block_invoke.34)
+0.788	                       -	                   -	Liveness: 3 -> 2 (___wait_for_dock_block_invoke_3)
+2.342	                       -	                   -	Liveness: 2 -> 1 (__remove_app_block_invoke)
+16.514	                       -	                   -	Liveness: 1 -> 0 (__run_as_server_block_invoke)
+16.514	                       -	                   -	Exiting out of boredom

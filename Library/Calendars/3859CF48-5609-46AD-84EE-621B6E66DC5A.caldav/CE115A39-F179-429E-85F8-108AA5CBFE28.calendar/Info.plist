@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AlarmsDisabled</key>
+	<false/>
+	<key>Availability</key>
+	<false/>
+	<key>CTag</key>
+	<string>FT=-@RU=021fb3b7-111b-4a63-861a-2af05c0a4cd3@S=1048</string>
+	<key>CalendarPath</key>
+	<string>/1078388551/calendars/EE9B379B-CC4C-4065-92D5-EA32D3D68090/</string>
+	<key>CanBePublished</key>
+	<true/>
+	<key>Checked</key>
+	<integer>1</integer>
+	<key>Color</key>
+	<string>#FD8208FF</string>
+	<key>ColorEditable</key>
+	<true/>
+	<key>Delegate</key>
+	<false/>
+	<key>Editable</key>
+	<true/>
+	<key>Enabled</key>
+	<true/>
+	<key>EventContainer</key>
+	<true/>
+	<key>Key</key>
+	<string>CE115A39-F179-429E-85F8-108AA5CBFE28</string>
+	<key>Order</key>
+	<integer>1004</integer>
+	<key>OwnerPrincipalPath</key>
+	<string>/1078388551/principal/</string>
+	<key>Permission</key>
+	<integer>4</integer>
+	<key>PushKey</key>
+	<string>1078388551-a126401fee</string>
+	<key>Renameable</key>
+	<true/>
+	<key>ShareDefaultAlarmSettings</key>
+	<true/>
+	<key>TaskContainer</key>
+	<false/>
+	<key>TimeZone</key>
+	<string>America/Los_Angeles</string>
+	<key>Title</key>
+	<string>Personal </string>
+	<key>Type</key>
+	<string>CalDAV</string>
+</dict>
+</plist>

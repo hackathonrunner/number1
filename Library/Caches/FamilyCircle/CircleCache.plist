@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>circle</key>
+	<dict>
+		<key>dsid</key>
+		<integer>1078388551</integer>
+		<key>family-members</key>
+		<array>
+			<dict>
+				<key>is-ask-to-buy-enabled</key>
+				<false/>
+				<key>is-itunes-linked</key>
+				<true/>
+				<key>is-me</key>
+				<true/>
+				<key>linked-itunes-account-appleid</key>
+				<string>austindreier@gmail.com</string>
+				<key>linked-itunes-account-dsid</key>
+				<integer>216363878</integer>
+				<key>member-apple-id</key>
+				<string>austindreier@icloud.com</string>
+				<key>member-display-label</key>
+				<string>Organizer</string>
+				<key>member-dsid</key>
+				<integer>1078388551</integer>
+				<key>member-dsid-hash</key>
+				<string>5f19fe65b99d5981405e3558b81e94d83d5ac598a9421986a453df1d0f795a92</string>
+				<key>member-first-name</key>
+				<string>Austin Alexander</string>
+				<key>member-invite-email</key>
+				<string></string>
+				<key>member-is-child-account</key>
+				<false/>
+				<key>member-is-organizer</key>
+				<true/>
+				<key>member-is-parent-account</key>
+				<true/>
+				<key>member-join-date-epoch</key>
+				<integer>1</integer>
+				<key>member-last-name</key>
+				<string>Dreier</string>
+				<key>member-sort-order</key>
+				<integer>1</integer>
+				<key>member-status</key>
+				<string>Accepted</string>
+				<key>member-type</key>
+				<string>ADULT</string>
+			</dict>
+		</array>
+		<key>is-member-of-family</key>
+		<true/>
+		<key>pending-members</key>
+		<array/>
+		<key>status</key>
+		<integer>0</integer>
+		<key>status-message</key>
+		<string>Success</string>
+	</dict>
+	<key>timestamp</key>
+	<date>2017-11-18T00:24:54Z</date>
+	<key>username</key>
+	<string>1078388551</string>
+</dict>
+</plist>

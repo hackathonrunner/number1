@@ -1,0 +1,16 @@
+
+fsck_hfs started at Fri Nov 17 16:23:19 2017
+** /dev/rdisk3s2 (NO WRITE)
+   Executing fsck_hfs (version hfs-366.70.3).
+** Checking Journaled HFS Plus volume.
+   The volume name is KeePassX
+** Checking extents overflow file.
+** Checking catalog file.
+** Checking multi-linked files.
+** Checking catalog hierarchy.
+** Checking extended attributes file.
+** Checking volume bitmap.
+** Checking volume information.
+** The volume KeePassX appears to be OK.
+fsck_hfs completed at Fri Nov 17 16:23:19 2017
+

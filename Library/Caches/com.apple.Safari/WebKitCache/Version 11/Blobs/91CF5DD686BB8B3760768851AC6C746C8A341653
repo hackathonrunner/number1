@@ -1,0 +1,629 @@
+/**
+ * Widget to display tabbed rate table widget
+ * Required Attributes:
+ * - app (which application to run)
+ * - kind (which model to run)
+ *
+ * Example client call:
+ * <script class="bankrateWidget" app="ratetables" kind="tabbed"></script>
+ * <script src="//widgets.bankrate.com/avalon/booter.js"></script>
+ */
+var ratetablessavings = angular.module("ratetablessavings", ['common','GeoFactory','SavRatesFactory','MarketsFactory','ngDialog'])
+
+.controller('Ctrl',function($scope,$filter,$sce,$q,$http,$window,GeoData,SavRatesData,MarketsData,ngDialog) {
+	//load evironment config -- this file is used to load the configuration object: /Affiliate Center/Avalon/widgets.bankrate.com-dev/js/services/envconfig.js
+	$scope.$watch(function(){return $window.bankrateEnvConfig;}, function(){
+		$scope.bankrateEnvConfig = $window.bankrateEnvConfig;
+	});
+	$scope.$watch('clientconfigid',function(){
+		$scope.attr = config.tcfg[$scope.clientconfigid];
+		$scope.isMobile = false;
+		
+   		$scope.technicaldifficulties = false;
+   		$scope.savvalidsearch = true;
+		
+		$scope.attr.poweredby = $scope.attr.poweredby || "text";
+	
+		//function to reset sorting to default state
+		$scope.resetSorting = function() {
+			 //sort rates rows
+			 $scope.savOrderByAttribute = 'defaultSort';
+			 $scope.savReverse = false;
+		 }
+		
+		//reset rates sort on load
+		 $scope.resetSorting();
+		 
+	    /*Open Lightbox*/
+	        $scope.openNgdialog = function (lightboxID) {
+	         ngDialog.open({ template: lightboxID, className: 'ngdialog-theme-default', scope: $scope});
+	     };
+	     /**/
+
+         //Template in use
+        $scope.attr.template = $scope.attr.template|| "default";
+		 
+		 //function called to sort rates based on the selected sorting option
+		 $scope.sortRates = function(orderBy, direction) {
+			 if ( direction == 'asc' ) {
+				 $scope.savReverse = false;
+			 } else if ( direction == 'desc' ) {
+				 $scope.savReverse = true;
+			 }
+			 $scope.savOrderByAttribute = orderBy;		 
+		 }
+		
+		//swap between search by market and search by zipcode. Track the search view state
+		$scope.saventerbyzip = false;
+		$scope.setGeoSearchType = function (enterbyzip) {
+			$scope.saventerbyzip = enterbyzip;
+		};
+	    
+	    //all available mma/savings prods
+		$scope.savprods = {
+			"33": {name:"MMA & Savings",order:1},
+			"34": {name:"$10K MMA & Savings",order:2},
+			"35": {name:"$25K MMA & Savings",order:3},
+			"36": {name:"$50K MMA & Savings",order:4},
+			"76": {name:"IRA MMA",order:5},
+			"37": {name:"Jumbo MMA & Savings",order:6}
+	    };
+		if ( $scope.attr.savprods ) {
+			var savprods = $scope.attr.savprods.split(',');
+			for ( var k in $scope.savprods ) {
+				if ( savprods.indexOf(k) == -1 ) {
+					delete $scope.savprods[k];
+				}
+		    }
+		}
+		// MMA/Savings map
+        $scope.savproducts_map = {'33': '271', '34': '545', '35': '546', '36': '547', '37': '533', '271': '33', '533': '37', '545': '34', '546': '35', '547': '36'};
+        
+		
+	    //widget width
+	    $scope.attr.widgetwidth = $scope.attr.widgetwidth || '';
+	    //Output as html
+        $scope.trustAsHtml = $sce.trustAsHtml;
+
+		/* override style, customizations */
+	    //widget
+		$scope.attr.fontfamily = $scope.attr.fontfamily || '';
+		$scope.attr.widgetWrapperStyle = {};
+		if ( $scope.attr.fontfamily ) {
+			$scope.attr.widgetWrapperStyle['font-family'] = $scope.attr.fontfamily;
+		}
+		//search area
+		$scope.attr.searchareabackgroundcolor = $scope.attr.searchareabackgroundcolor || '';
+		$scope.attr.searcharealabelcolor = $scope.attr.searcharealabelcolor || '';
+		$scope.attr.searchareaStyle = {};
+		if ( $scope.attr.searchareabackgroundcolor ) {
+			$scope.attr.searchareaStyle['background-color'] = $scope.attr.searchareabackgroundcolor;
+		}
+		$scope.attr.searchareaLabelStyle = {};
+		if ( $scope.attr.searcharealabelcolor ) {
+			$scope.attr.searchareaLabelStyle['color'] = $scope.attr.searcharealabelcolor;
+		}
+		$scope.attr.searcharealbuttonbackgroundcolor = $scope.attr.searcharealbuttonbackgroundcolor || '';
+		$scope.attr.searchareabuttoncolor = $scope.attr.searchareabuttoncolor || '';
+		$scope.attr.searchareaButtonStyle = {};
+		if ( $scope.attr.searcharealbuttonbackgroundcolor ) {
+			$scope.attr.searchareaButtonStyle['background-color'] = $scope.attr.searcharealbuttonbackgroundcolor;
+		}
+		if ( $scope.attr.searchareabuttoncolor ) {
+			$scope.attr.searchareaButtonStyle['color'] = $scope.attr.searchareabuttoncolor;
+		}
+		$scope.attr.searcharealinknormalcolor = $scope.attr.searcharealinknormalcolor || '';	
+		$scope.attr.searchareaLinkNormalStyle = {};
+		if ( $scope.attr.searcharealinknormalcolor ) {
+			$scope.attr.searchareaLinkNormalStyle['color'] = $scope.attr.searcharealinknormalcolor;
+		}
+		
+		$scope.attr.ratenextbuttonbackgroundcolor = $scope.attr.ratenextbuttonbackgroundcolor || '';
+		$scope.attr.ratenextbuttoncolor = $scope.attr.ratenextbuttoncolor || '';
+		$scope.attr.rateNextButtonStyle = {};
+		if ( $scope.attr.ratenextbuttonbackgroundcolor ) {
+			$scope.attr.rateNextButtonStyle['background-color'] = $scope.attr.ratenextbuttonbackgroundcolor;
+		}
+		if ( $scope.attr.ratenextbuttoncolor ) {
+			$scope.attr.rateNextButtonStyle['color'] = $scope.attr.ratenextbuttoncolor;
+		}
+
+		//set partner id and key
+		$scope.attr.pid = $scope.attr.pid || "";
+		$scope.attr.pkey = $scope.attr.pkey || "";
+        $scope.attr.pid_add = $scope.attr.pid.length>0?'?pid='+$scope.attr.pid:'';
+        $scope.attr.pid_extend = $scope.attr.pid.length>0?'&pid='+$scope.attr.pid:'';
+		
+		//set parsing method
+		$scope.attr.savApiAdapter = $scope.attr.savApiAdapter || 'v1';
+		
+		//set other params
+		$scope.attr.savmarket = $scope.attr.savmarket || '0';
+		$scope.attr.omni = $scope.attr.omni || "false";
+		$scope.attr.domainloc = $scope.attr.domainloc || 'widgets.bankrate.com';
+		
+		//savings/mma search params/config
+		$scope.attr.savzipcode = $scope.attr.zipcode || '';
+		$scope.attr.savdefaultprod = $scope.attr.savdefaultprod || '33';
+		$scope.attr.savdefaultsearchtype = $scope.attr.savdefaultsearchtype || 'national';
+		$scope.attr.savsearchtype = $scope.attr.savdefaultsearchtype;
+		if ( $scope.attr.savdefaultprod == '' || !$scope.savprods[$scope.attr.savdefaultprod] ) {
+	    	for (var prod in $scope.savprods) {
+	    		$scope.attr.savproducts = prod;
+	    		$scope.attr.savselectedprod = prod;
+	    		break;
+	    	}
+		} else {
+			$scope.attr.savproducts = $scope.attr.savdefaultprod;
+			$scope.attr.savselectedprod = $scope.attr.savdefaultprod;
+		}
+		if ( $scope.savproducts_map[$scope.attr.savproducts] ) {
+			$scope.attr.savproducts_list = $scope.attr.savproducts + ',' + $scope.savproducts_map[$scope.attr.savproducts];
+		} else {
+			$scope.attr.savproducts_list = $scope.attr.savproducts;
+		}
+		$scope.attr.savnumrows = $scope.attr.savnumrows || '1000000';	
+		$scope.attr.savnumrows = $scope.attr.savnumrows.replace(/[^\d]/g, '');
+			
+		$scope.attr.searchzipcode = $scope.attr.zipcode || '';		
+		
+		$scope.errorStyle = "display:none;";
+		
+		// PID builder to append pids in the template if you need them.
+        if ($scope.attr.pid.length>0){
+            $scope.$watch(function() {
+                return document.getElementById($scope.clientconfigid).getElementsByTagName('a').length;
+            },function(){
+                var pidAnchors = document.getElementById($scope.clientconfigid).getElementsByTagName('a');
+
+                var pidUrlPattern = new RegExp('^(https?)://([^/?]+)(\\?*)');
+
+                var r = new RegExp('builder.html.*id='+$scope.attr.frameid);
+
+                for (var i=0; i<pidAnchors.length; i++){
+                    var anchor = pidAnchors[i];
+                    if(r.test(anchor.href) || !pidUrlPattern.test(anchor.href)){continue;}
+                    var m = pidUrlPattern.exec(anchor.href);
+                    if(typeof m[2] == 'undefined' ||  !m[2].match(/bankrate/)){continue;}
+                    if(anchor.href.match(/pid=/)){
+                        anchor.href = anchor.href.replace(/(pid=)[^&]+/,"pid="+$scope.attr.pid);
+                        continue;
+                    }
+                    if(anchor.href.match(/%7B%7B(attr.pid_(extend|add))%7D%7D/)){
+                        anchor.href.replace(/%7B%7B(attr.pid_(extend|add))%7D%7D/g,function(){
+                            return $scope.attr['pid_'+arguments[2]];
+                        });
+                        continue;
+                    }
+                    if(anchor.href.match(/\?/)){
+                        anchor.href += $scope.attr.pid_extend;
+                    }else{
+                        anchor.href += $scope.attr.pid_add;
+                    }
+                }
+            });
+        }
+		
+		//validate entered zipcode
+		$scope.isBadZipcode = function () {
+			var savzipcode = $scope.attr.savzipcode + '';
+			if ( $scope.saventerbyzip && savzipcode.length != 5 ) {
+				return true;
+			}
+			return false;
+		}
+		
+		//validate market 
+		$scope.isBadMarket = function () {
+			var savmarket = $scope.attr.savmarket + '';
+			if ( $scope.attr.savsearchtype == 'local' && !$scope.saventerbyzip && !savmarket ) {
+				return true;
+			}
+			return false;
+		}
+        
+        //called everytime the user select a different market
+        $scope.onMarketChange = function () {
+	        $scope.attr.savzipcode = '';
+        };
+        
+        //called everytime the user select a different state
+        $scope.onStateChange =  function () {
+			$scope.attr.savmarket = '';
+			$scope.attr.savzipcode = '';
+        	$scope.fillMarkets();
+        }
+        
+        //set search type: local or national
+	    $scope.attr.savnational = true;
+	    $scope.changeGeoSearchType = function(type) {
+	    	if ( type == 'national' ) {
+	    		$scope.attr.savnational = true;
+	    	} else {
+	    		$scope.attr.savnational = false;
+	    	}
+	    }
+	    
+	    //toggle search gearbox
+	    $scope.showGearbox = false;
+	    $scope.toggleGearbox = function() {
+	    	$scope.showGearbox = !$scope.showGearbox;
+	    }
+	    	
+		//geo call to set default market id
+		if ( typeof GeoData != 'undefined' ) {
+		    $scope.attr.geoApiPath = '//' + $scope.bankrateEnvConfig.mmaratesapidomain + '/MMA/v2/geo/0';
+			GeoData.getAllItems($scope.attr)
+			   .then(function() {
+				   	//$scope.noresults = false;
+				   	$scope.technicaldifficulties = false;
+				   	$scope.GeoData = arguments[0];
+			       	if ( $scope.GeoData ) {
+			       	    $scope.attr.savmarket = $scope.GeoData.market != '0' ? $scope.GeoData.market : $scope.attr.savmarket;
+			       	} else {
+			       		//$scope.noresults = true;
+			       		$scope.technicaldifficulties = true;
+			       		$scope.savvalidsearch = false;
+			       	}
+			   }).catch(function(){
+				   $scope.technicaldifficulties = true;
+				   $scope.savvalidsearch = false;
+				   //$scope.noresults = true;
+			   });
+		}		
+		
+		$scope.attr.savMobileLocation = "National";
+		
+		//handle next button click
+		$scope.handleClick = function (data) {	
+			//cpc, name, position, pid
+			handle_click(data.cpc, data.name, data.position + 1, $scope.attr.pid, $scope.attr.campaign, $scope.isMobile, $scope.clientconfigid);
+		}
+		
+		//controls loader visibility
+		$scope.attr.loadervisibility = {};
+		$scope.attr.loadervisibility['display'] = 'none';
+		
+		//controls rates visibility
+		$scope.attr.ratesvisibility = {};
+		$scope.attr.ratesvisibility['display'] = 'block';
+		
+		$scope.mobileLocation = "";
+		
+	    //called on search button click. Performs rates search based on selected seach criteria
+		$scope.search = function() {
+			$scope.resetSorting();
+			$scope.noresults = false;
+			$scope.technicaldifficulties = false;
+			$scope.toggleGearbox();
+			$scope.attr.searchzipcode = '';
+		
+			//error handling
+			if ( $scope.isBadZipcode() ) {
+				$scope.savbadzipcode = true;
+			} else {
+				$scope.savbadzipcode = false;
+			}
+			//error handling
+			if ( $scope.isBadMarket() ) {
+				$scope.savbadmarket = true;
+			} else {
+				$scope.savbadmarket = false;
+			}
+			
+			if ( !$scope.savbadzipcode && !$scope.savbadmarket ) {
+				$scope.attr.ratesvisibility['display'] = 'none';
+				$scope.attr.loadervisibility['display'] = 'block';
+				$scope.savvalidsearch = true;
+				$scope.search.savprod = $scope.savprods[$scope.attr.savproducts].name;
+				
+	    		if ( !$scope.saventerbyzip ) {
+	    			$scope.attr.savzipcode = '';
+	    		}
+				if ( $scope.attr.savzipcode != '' ) {
+					$scope.attr.savmarket = 0;
+				}
+					
+				var savpagesShown = 1;
+
+				if ( $scope.savproducts_map[$scope.attr.savproducts] ) {
+					$scope.attr.savproducts_list = $scope.attr.savproducts + ',' + $scope.savproducts_map[$scope.attr.savproducts];
+				} else {						
+					$scope.attr.savproducts_list = $scope.attr.savproducts;
+				}
+				if ( typeof SavRatesData != 'undefined' ) {
+				    if ($scope.attr.savnational == true) {
+				        $scope.attr.savApiPath = '//' + $scope.bankrateEnvConfig.mmaratesapidomain + '/MMA/v2/#{savproducts_list}';  //national rate 
+				    }
+				    else {
+				        if ($scope.saventerbyzip == true) {
+				            //local market
+				            $scope.attr.savApiPath = '//' + $scope.bankrateEnvConfig.mmaratesapidomain + '/MMA/v2/#{savproducts_list}/#{savzipcode}';
+				        }
+				        else{
+				            //local zip
+				            $scope.attr.savApiPath = '//' + $scope.bankrateEnvConfig.mmaratesapidomain + '/MMA/v2/market/#{savproducts_list}/#{savmarket}';
+				        }
+				    }				
+					SavRatesData.getAllItems($scope.attr)
+					   .then(function(){
+						   //$scope.noresults = false;
+						   $scope.technicaldifficulties = false;
+						   $scope.attr.loadervisibility['display'] = 'none';
+						   $scope.attr.ratesvisibility['display'] = 'block';
+					       	$scope.SavRatesData = arguments[0];							       	
+					       	if ( $scope.SavRatesData ) {
+					       		$scope.widgetheader = $scope.SavRatesData.geo.header;
+					       		$scope.attr.savmarket = $scope.SavRatesData.geo.market != '0' ? $scope.SavRatesData.geo.market : $scope.attr.savmarket;
+					       		if ( $scope.attr.savmarket == "" && $scope.attr.savzipcode != "" ) { //workaround/hack because the mma/savings service always return market as "0" -- //TODO: service has to be fixed
+					       			if ( typeof GeoData != 'undefined' ) {
+					       				$scope.attr.searchzipcode = $scope.attr.savzipcode;
+					       				GeoData.getAllItems($scope.attr)
+					       				   .then(function() {
+					       					   	//$scope.noresults = false;
+					       					   	$scope.technicaldifficulties = false;
+					       				       	$scope.GeoData = arguments[0];
+					       				       	if ( $scope.GeoData ) {
+										       		$scope.attr.savMobileLocation = $scope.attr.savsearchtype == 'local' ? $scope.SavRatesData.geo.abbreviatedLocation : 'National';
+										       		if ( typeof $scope.MarketsData == 'undefined' ) {
+										       			if ( typeof MarketsData != 'undefined' ) {
+															MarketsData.getAllItems($scope.attr)
+														   .then(function(){
+														       	$scope.markets = arguments[0].markets;
+														       	$scope.marketsstates = arguments[0].marketsstates;	
+								       				       		$scope.attr.savmarket = $scope.GeoData.market != '0' ? $scope.GeoData.market : $scope.attr.savmarket;
+																$scope.attr.savstate = $scope.marketsstates[$scope.attr.savmarket];
+																$scope.fillMarkets();
+														   });
+										       			}
+													} else {
+														$scope.attr.savstate = $scope.marketsstates[$scope.attr.savmarket];
+														$scope.fillMarkets();
+													}
+					       				       	} else {
+					       				       		$scope.noresults = true;
+					       				       	}
+					       				   }).catch(function(){
+					       					   $scope.technicaldifficulties = true;
+					       					   $scope.savvalidsearch = false;
+											   //$scope.noresults = true;
+										   });
+					       			}
+					       		} else {
+						       		$scope.attr.savMobileLocation = $scope.attr.savsearchtype == 'local' ? $scope.SavRatesData.geo.abbreviatedLocation : 'National';
+						       		if ( typeof $scope.MarketsData == 'undefined' ) {
+						       			if ( typeof MarketsData != 'undefined' ) {
+											MarketsData.getAllItems($scope.attr)
+										   .then(function(){
+											   //$scope.noresults = false;
+											    $scope.technicaldifficulties = false;
+										       	$scope.markets = arguments[0].markets;
+										       	$scope.marketsstates = arguments[0].marketsstates;										
+												$scope.attr.savstate = $scope.marketsstates[$scope.attr.savmarket];
+												$scope.fillMarkets();
+										   }).catch(function(){
+											   $scope.technicaldifficulties = true;
+											   $scope.savvalidsearch = false;
+											   //$scope.noresults = true;
+										   });
+						       			}
+									} else {
+										$scope.attr.savstate = $scope.marketsstates[$scope.attr.savmarket];
+										$scope.fillMarkets();
+									}
+					       		}
+								
+					       		if ( !isEmpty($scope.SavRatesData.items) ) {
+						       		$scope.noresults = false;
+						    		$scope.itemsLimit = function() {
+						    	        return $scope.attr.savnumrows * savpagesShown;
+						    	    };
+						    	    $scope.hasMoreItemsToShow = function() {
+						    	        return savpagesShown < ($scope.SavRatesData.length / $scope.attr.savnumrows);
+						    	    };
+						    	    $scope.showMoreItems = function() {
+						    	    	savpagesShown = savpagesShown + 1;    
+						    	    };
+					       		} else {
+					       			$scope.noresults = true;
+					       		}
+					       	} else {
+					       		$scope.noresults = true;
+					       		$scope.errorStyle = "display:block;";
+					       	}
+					   });
+				}
+			} else {
+				$scope.savvalidsearch = false;
+			}
+		}
+		$scope.fillMarkets = function () {
+			$scope.savstateMarkets = $scope.markets[$scope.attr.savstate];
+		}
+		
+		//display tab content on load
+		$scope.displayContent = function () {
+			$scope.noresults = false;
+			$scope.attr.ratesvisibility['display'] = 'none';
+			$scope.attr.loadervisibility['display'] = 'block';
+					
+			$scope.savvalidsearch = true;
+			$scope.search.savprod = $scope.savprods[$scope.attr.savproducts].name;
+			
+			var savpagesShown = 1;
+			if ( typeof $scope.SavRatesData == 'undefined' ) {
+				if ( typeof SavRatesData != 'undefined' ) {					
+				    $scope.attr.savApiPath = '//' + $scope.bankrateEnvConfig.mmaratesapidomain + '/MMA/v2/#{savproducts_list}';  //national rate
+					SavRatesData.getAllItems($scope.attr)
+				   .then(function(){
+					   //$scope.noresults = false;
+					   $scope.technicaldifficulties = false;
+					   $scope.attr.loadervisibility['display'] = 'none';
+					   $scope.attr.ratesvisibility['display'] = 'block';
+				       	$scope.SavRatesData = arguments[0];
+				       	if ( $scope.SavRatesData ) {
+				       		$scope.widgetheader = $scope.SavRatesData.geo.header;
+				       		$scope.attr.savmarket = $scope.SavRatesData.geo.market != '0' ? $scope.SavRatesData.geo.market : $scope.attr.savmarket;
+							if ( typeof $scope.MarketsData == 'undefined' ) {
+								if ( typeof MarketsData != 'undefined' ) {
+									MarketsData.getAllItems($scope.attr)
+								   .then(function(){
+								       	$scope.markets = arguments[0].markets;
+								       	$scope.marketsstates = arguments[0].marketsstates;
+										$scope.attr.savstate = $scope.marketsstates[$scope.attr.savmarket];
+										$scope.fillMarkets();
+								   });
+								}
+							} else {
+								$scope.attr.savstate = $scope.marketsstates[$scope.attr.savmarket];
+								$scope.fillMarkets();
+							}
+							
+							if ( !isEmpty($scope.SavRatesData.items) ) {
+				       			$scope.noresults = false;
+					    		$scope.itemsLimit = function() {
+					    	        return $scope.attr.savnumrows * savpagesShown;
+					    	    };
+					    	    $scope.hasMoreItemsToShow = function() {
+					    	        return savpagesShown < ($scope.SavRatesData.length / $scope.attr.savnumrows);
+					    	    };
+					    	    $scope.showMoreItems = function() {
+					    	    	savpagesShown = savpagesShown + 1;    
+					    	    };
+				       		} else {
+				       			$scope.noresults = true;
+				       		}
+				       	} else {
+				       		$scope.noresults = true;
+				       		$scope.errorStyle = "display:block;";
+				       	}
+				   }).catch(function(){
+					   $scope.technicaldifficulties = true;
+					   $scope.savvalidsearch = false;
+					   //$scope.noresults = true;
+				   });
+				}
+			} else {
+				$scope.attr.loadervisibility['display'] = 'none';
+				$scope.attr.ratesvisibility['display'] = 'block';
+				$scope.widgetheader = $scope.SavRatesData.geo.header;
+				$scope.attr.savmarket = $scope.SavRatesData.geo.market != '0' ? $scope.SavRatesData.geo.market : $scope.attr.savmarket;
+				if ( !isEmpty($scope.SavRatesData.items) ) {
+					$scope.noresults = false;
+		    		$scope.itemsLimit = function() {
+		    	        return $scope.attr.savnumrows * savpagesShown;
+		    	    };
+		    	    $scope.hasMoreItemsToShow = function() {
+		    	        return savpagesShown < ($scope.SavRatesData.length / $scope.attr.savnumrows);
+		    	    };
+		    	    $scope.showMoreItems = function() {
+		    	    	savpagesShown = savpagesShown + 1;    
+		    	    };
+		    	    
+			       $scope.SavRatesData.dump = (function(){
+		               return dump($scope.SavRatesData);
+			        })();
+				} else {
+					$scope.noresults = true;
+				}
+			}
+		}
+		$scope.displayContent();
+		
+		enquire.register("screen and (max-width:640px)", {
+			  match : function() {
+				  $scope.isMobile = true;
+			  },
+			  unmatch : function() {
+				  $scope.isMobile = false;
+			  }
+		  });
+			    
+	    $scope.$watch(function(){
+	    	var innerDiv = document.getElementById($scope.clientconfigid);
+	    	var height = 0;
+	    	if(typeof window.getComputedStyle == 'function'){
+	    		height = window.getComputedStyle(innerDiv).getPropertyValue("height");
+	    	}
+	    	//add padding of 10px to widget height
+	    	height = (parseInt(height.replace(/px/,""))+10)+"px";
+	    	return height;
+        },function(){
+	    	var innerDiv = document.getElementById($scope.clientconfigid);
+	    	var height = 0;
+	    	if(typeof window.getComputedStyle == 'function'){
+	    		height = window.getComputedStyle(innerDiv).getPropertyValue("height");
+	    	}
+	    	//add padding of 10px to widget height
+	    	height = (parseInt(height.replace(/px/,""))+10)+"px";
+            setTimeout(function(){
+            	callHome('setHeight',{ args:[config.client.frameid,height] } );
+            },700);
+        });
+        $scope.setWidth = function(a){
+            callHome('setWidth',{ args:[config.client.frameid,a] } );
+        }
+        setTimeout(function(){$scope.setWidth($scope.attr.widgetwidth);},700);
+        
+        $scope.setHeight = function(a){
+            callHome('setHeight',{ args:[config.client.frameid,a] } );
+        }
+        window.addEventListener('resize', function(){
+        	var innerDiv = document.getElementById($scope.clientconfigid);
+	    	var height = 0;
+	    	if(typeof window.getComputedStyle == 'function'){
+	    		height = window.getComputedStyle(innerDiv).getPropertyValue("height");
+	    	}
+	    	//add padding of 10px to widget height
+	    	height = (parseInt(height.replace(/px/,""))+10)+"px";
+			var timer = setTimeout(function(){
+				$scope.setHeight(height);
+				clearTimeout(timer);
+			},700);
+        });	
+	});
+});
+
+ratetablessavings.directive('numericformat', ['$filter', function ($filter) { // foramat zipcode/numeric
+    return {
+        require: '?ngModel',
+        link: function (scope, elem, attrs, ctrl) {
+            if (!ctrl) return;
+
+            ctrl.$parsers.unshift(function (viewValue) {
+                var plainNumber = viewValue.replace(/[^\d]/g, '');
+                elem.val(plainNumber);
+                return plainNumber;
+            });
+        }
+    };
+}]).directive('csslink', function($compile, $templateCache){ //insert css from cache
+  return {
+	  restrict:'A',
+	  link: function(scope, element, attrs) {
+          var template = scope.attr.template;
+          template =  template.replace("static", "default"); //default and static templates have the same css
+          element.append($templateCache.get('applications/css/ratetables/tabbed/' + template + '.css'));
+	  }
+  }
+}).directive('clickable', function(){
+	  return {
+		  restrict:'A',
+		  link: function(scope, element, attrs) {
+			  enquire.register("screen and (max-width:640px)", {
+				  match : function() {
+					  element.bind('click', function(e) {
+						  e.stopPropagation();
+						  var clickData = angular.fromJson(attrs['clickable']);
+						  if ( clickData.listingtype == 'paid' ) {
+							  scope.handleClick(clickData);
+						  }
+					  });
+				  },
+				  unmatch : function() {
+					  element.unbind('click');
+				  }
+			  });
+		  }
+	  }
+});

@@ -1,0 +1,1137 @@
+/**
+ * Created by Jonathan on 4/2/15 to replace gloabl8.js
+ * When changing this file please update the version in all files that include this js.
+ *
+ * Current Version = 3
+ *
+ *    Global JavaScript Functions v1.0
+ *    by Edward Smith
+ *    3/12/10
+ */
+
+var dojo = dojo || {};
+var dojox = dojox || {};
+var dijit = dijit || {};
+var newWindow = newWindow || {};
+var dialog = null;
+var dialogIdArray = [];
+var showWaitCursor = true;
+
+dojo.connect(window, "onbeforeunload", displayWaitCursor);
+
+function displayWaitCursor() {
+	if (showWaitCursor) {
+		dojo.addClass(dojo.body(), "wait");
+	}
+
+	setTimeout(function () {
+		showWaitCursor = true;
+	}, 10);
+}
+
+function cancelWaitCursor() {
+	showWaitCursor = false;
+}
+
+function removeWaitCursor() {
+	var DELAY = 250;
+	setTimeout(function () {
+		dojo.removeClass(dojo.body(), 'wait');
+	}, DELAY);
+}
+
+function annotate(nodeId, maxLen, multiple) {
+	var node = dojo.byId(nodeId);
+
+	if (node == null) {
+		// Find by class
+		node = dojo.query(nodeId);
+		if(node.length) {
+			node.forEach(function (nodeItem) {
+				var textNode = (nodeItem.children.length > 0) ? nodeItem.children[0] : nodeItem,
+					text = convertHTMLEntities(dojo.trim(textNode.innerHTML)),
+					result = '';
+
+				if(multiple) {
+					result = _annotateMultipleWords(text, maxLen);
+				} else {
+					result = dojo.trim(text.substring(0, maxLen)) + "...";
+				}
+				nodeItem.title = text;
+
+				if (text.length > maxLen) {
+					textNode.innerHTML = result;
+				}
+			});
+		} else {
+			// nodeId is really just a string
+			var string = nodeId;
+			return (string.length > maxLen) ? string.substr(0, (maxLen - 3)) + '...' : string;
+		}
+	} else {
+		var text = dojo.trim(node.innerHTML);
+		text = convertHTMLEntities(text);
+
+		if (text.length > maxLen) {
+			node.title = text;
+			node.innerHTML = dojo.trim(text.substring(0, maxLen)) + "...";
+		}
+		return null;
+	}
+}
+
+function annotateAll(className, nodeId, maxLen) {
+	var selector = '.' + className;
+
+	dojo.query(selector, nodeId).forEach(function (node) {
+		annotate(node, maxLen);
+	});
+}
+
+function annotateAnchors(className, tableBodyId, maxLen, force, multiple) {
+	multiple = multiple || false;
+
+	var selector = '.' + className + " > a";
+
+	dojo.query(selector, tableBodyId).forEach(function (node) {
+		var textNode,
+			text,
+			result = '';
+		if (force) {
+			// Account for italic anchors
+			textNode = (node.children.length > 0) ? node.children[0] : node;
+			text = convertHTMLEntities(dojo.trim(textNode.innerHTML));
+			if(multiple) {
+				result = _annotateMultipleWords(text, maxLen);
+			} else {
+				result = dojo.trim(text.substring(0, maxLen)) + "...";
+			}
+			node.title = text;
+
+			if (text.length > maxLen) {
+				textNode.innerHTML = result;
+			}
+		} else if (dojo.position(node.parentNode).w == dojo.position(node).w) {
+			// Account for italic anchors
+			textNode = (node.children.length > 0) ? node.children[0] : node;
+			text = dojo.trim(textNode.innerHTML);
+			node.title = convertHTMLEntities(text);
+
+			var maxIterations = 10;
+			do {
+				textNode.innerHTML = dojo.trim(text.substring(0, maxLen)) + "...";
+				maxLen--;
+				maxIterations--;
+			} while (dojo.position(node.parentNode).w == dojo.position(node).w && maxIterations > 0);
+		}
+	});
+}
+
+function annotateByHeight(node, maxLen, normHeight, titleNode) {
+	if (dojo.position(node).h > normHeight) {
+		var anchorNodes = dojo.query('> a', node);
+
+		if (anchorNodes.length > 0) {
+			for (var i = 0; i < anchorNodes.length; i++) {
+				_annotateByHeight(anchorNodes[i], maxLen, normHeight, titleNode);
+			}
+		} else {
+			_annotateByHeight(node, maxLen, normHeight, titleNode);
+		}
+	}
+}
+
+function _annotateByHeight(node, maxLen, normHeight, titleNode) {
+	var text = dojo.trim(node.innerHTML);
+	text = convertHTMLEntities(text);
+
+	if (titleNode) {
+		titleNode.title = text;
+	} else {
+		node.title = text;
+	}
+
+	var maxIterations = 10;
+	do {
+		node.innerHTML = dojo.trim(text.substring(0, maxLen)) + "...";
+		maxLen--;
+		maxIterations--;
+	} while (dojo.position(node).h > normHeight && maxIterations > 0);
+}
+
+/**
+ * Annotate the string for multiple words
+ * @param {string} text to parse
+ * @param {number} maximum length
+ * @returns {string} parsed string
+ * @private
+ */
+function _annotateMultipleWords(text, maxLen) {
+	var returnString = '',
+		textArray = text.split(' ');
+
+	for(var i = 0; i < textArray.length; i++) {
+		var textItem = textArray[i];
+
+		// Word length is greather than max length
+		if (textItem.length > maxLen) {
+			// Trim string and add ellipses. If last character is a comma, don't add ...
+			returnString += dojo.trim(textItem.substring(0, maxLen)) + (textItem[textItem.length - 1] === ',' ? ',' : '...');
+		// Current word if not the last in the array and plus its next word are less than max length, so put them together
+		} else if ((i!= textArray.length-1) && ((textItem + ' ' + textArray[i + 1]).length <= maxLen)) {
+			returnString += textItem + ' ' + textArray[i + 1];
+			i++;
+		// Word is less than max length
+		} else {
+			returnString += textItem;
+		}
+
+		// Place a break after each word except for the last
+		if(i !== textArray.length - 1) {
+			returnString += '<br/>';
+		}
+	}
+
+	return returnString;
+}
+
+/**
+ * Makes every 3rd row of a table identified by tableId grey.  Also supports
+ * grouping rows for striping.
+ *
+ * @param tableId The table ID, or can be a reference to a DOM table object
+ * @param rowGroup The number of rows in a group, defaults to one (optional)
+ */
+function stripeTable(tableId, rowGroup) {
+	var table = dojo.byId(tableId);
+
+	if (table) {
+		var modFactor, greyRowIndex;
+
+		if (!rowGroup) {
+			rowGroup = 1;
+		}
+
+		modFactor = 3 * rowGroup;
+		greyRowIndex = modFactor - rowGroup;
+
+		var numRows = 0;
+		for (var j = 0; j < table.rows.length; j++) {
+			if (!dojo.hasClass(table.rows[j], "skipStripe") && (numRows++ % modFactor) >= greyRowIndex) {
+				dojo.addClass(table.rows[j], "greyRow");
+			} else {
+				dojo.removeClass(table.rows[j], "greyRow");
+			}
+		}
+	}
+}
+
+/**
+ * Returns the number of columns in the table identified by tableId.
+ *
+ * @param tableId The table ID
+ */
+function getNumColumns(tableId) {
+	return dojo.byId(tableId).rows[0].cells.length;
+}
+
+/**
+ * Formats the table header and table body columns according to the desired
+ * table width and specified column width percentages.
+ *
+ * @param tableWidth The desired table width
+ * @param colWidthPcts An array of column width percentages
+ * @param tableHeaderId The table header ID
+ * @param tableBodyId The table body ID
+ */
+function formatTable(tableWidth, colWidthPcts, tableHeaderId, tableBodyId) {
+	var paddingString = '6px';
+	var marginString = '0px';
+	var overflowString = 'hidden';
+
+	// calculate the column widths
+	var widths = new Array(colWidthPcts.length);
+	var widthBuffer = 16;
+
+	for (var i = 0; i < widths.length; i++) {
+		widths[i] = (Math.floor(tableWidth * colWidthPcts[i]) - widthBuffer) + 'px';
+	}
+
+	// Start with the header table
+	var headerTable = dojo.byId(tableHeaderId);
+
+	if (headerTable != null) {
+		headerTable.style.tableLayout = 'fixed';
+		headerTable.style.overflow = 'hidden';
+
+		for (var j = 0; j < headerTable.rows[0].cells.length; j++) {
+			var col = headerTable.rows[0].cells[j];
+			col.width = widths[j];
+			col.style.width = widths[j];
+			col.style.minWidth = widths[j];
+			col.style.maxWidth = widths[j];
+			col.style.paddingLeft = paddingString;
+			col.style.paddingRight = paddingString;
+			col.style.marginLeft = marginString;
+			col.style.marginRight = marginString;
+			col.style.overflow = overflowString;
+		}
+
+		// Now take care of the body table
+		var bodyTable = dojo.byId(tableBodyId);
+		if (bodyTable != null) {
+			bodyTable.style.tableLayout = 'fixed';
+			bodyTable.style.overflow = 'visible';
+
+			for (var k = 0; k < bodyTable.rows.length; k++) {
+				var row = bodyTable.rows[k];
+				//noinspection JSHint
+				for (var kk = 0; kk < row.cells.length; kk++) {
+					row.cells[kk].width = widths[kk];
+					row.cells[kk].style.width = widths[kk];
+					row.cells[kk].style.minWidth = widths[kk];
+					row.cells[kk].style.maxWidth = widths[kk];
+					row.cells[kk].style.paddingLeft = paddingString;
+					row.cells[kk].style.paddingRight = paddingString;
+					row.cells[kk].style.marginLeft = marginString;
+					row.cells[kk].style.marginRight = marginString;
+					if (kk === (row.cells.length - 2)) {
+						row.cells[kk].style.overflow = 'visible'; // This ensure the actions column is not hiding overflow elements.
+					} else {
+						row.cells[kk].style.overflow = overflowString;
+					}
+				}
+			}
+		}
+	}
+}
+
+/**
+ * Applies focus on the first text input within the DOM element identified
+ * by id.
+ *
+ * @param id The DOM element ID
+ */
+function focusOnFirstTextInput(id) {
+	dojo.query('input[type=text]:first-of-type', dojo.byId(id))[0].focus();
+}
+
+/**
+ * Dynamically creates and returns a <form> element. This function is needed
+ * in pop-up JSPs that have form controls now that we use Dojo Dialogs.
+ *
+ * Use this in conjunction with refreshDialog() in cases where an existing
+ * Dialog needs its content pane refreshed with the results of the form
+ * submission.
+ *
+ * @param id The DOM element ID that contains all form inputs
+ * @param formName The name of the form
+ * @param formAction The action of the form
+ * @param btn The button clicked to submit the form (optional)
+ * @param attrs The attribute names to append to the form (optional)
+ * @returns A dynamically generated form populated with all form inputs found
+ *          within the DOM element identified by ID
+ */
+function createForm(id, formName, formAction, csrfToken, btn, attrs) {
+	var domNode = (dojo.isChrome) ? dojo.byId(id).parentNode : dojo.byId(id);
+	var f = dojo.create("form", {name: formName, action: formAction});
+	var isBrowserIE = dojo.isIE;
+
+	dojo.query('input', domNode).forEach(function (node) {
+		if (!attrs || dojo.indexOf(attrs, node.name) != -1) {
+			if (!btn || node.type != btn.type) {
+				if (isBrowserIE && node.type == 'checkbox') {
+					dojo.create("input", {type: "hidden", name: node.name, value: node.checked}, f);
+				} else {
+					f.appendChild(dojo.clone(node));
+				}
+			}
+		}
+	});
+
+	if (csrfToken) {
+		dojo.create('input', {type: 'hidden', name: 'org.apache.struts.taglib.html.TOKEN', value: csrfToken}, f);
+	}
+
+	dojo.query('textarea', domNode).forEach(function (node) {
+		if (!attrs || dojo.indexOf(attrs, node.name) != -1) {
+			var t = dojo.clone(node);
+			t.value = node.value;
+			f.appendChild(t);
+		}
+	});
+
+	dojo.query('select', domNode).forEach(function (node) {
+		if (!attrs || dojo.indexOf(attrs, node.name) != -1) {
+			if (node.multiple) {
+				dojo.forEach(node.options, function (opt) {
+					if (opt.selected) {
+						dojo.create("input", {type: "hidden", name: node.name, value: opt.value}, f);
+					}
+				});
+			} else {
+				dojo.create("input", {type: "hidden", name: node.name, value: node.value}, f);
+			}
+		}
+	});
+
+	if (btn) {
+		dojo.create("input", {type: "hidden", name: btn.name, value: btn.value}, f);
+	}
+
+	return f;
+}
+
+/**
+ * Creates a static dialog from an existing html element.
+ *
+ * @param dialogId
+ * @param dialogTitle
+ * @param contentElement id or reference to element to be used as the dialog content.
+ * @return
+ */
+var newStaticDialog = function (dialogId, dialogTitle, contentElement) {
+	var staticDialog = dijit.byId(dialogId);
+	if (!staticDialog) {
+		staticDialog = new dojox.Dialog({
+			id: dialogId,
+			title: dialogTitle
+		}, contentElement);
+
+		customizeDialog(staticDialog);
+	}
+
+	staticDialog.show();
+	return staticDialog;
+};
+
+function customizeDialog(theDialog) {
+	// 1. Make sure the Tundra Dojo style is on the <body> class
+	dojo.addClass(dojo.body(), 'tundra');
+
+	// 2. Override the Dialog _position function to properly handle dialogs that are too high for the browser viewport height
+	theDialog._position = function () {
+		if (!dojo.hasClass(dojo.body(), "dojoMove")) {
+			var _8 = this.domNode, _9 = dijit.getViewport(), p = this._relativePosition, bb = p ? null : dojo._getBorderBox(_8);
+			var dialogHeight = (bb == null) ? p.h : bb.h;
+			if (_9.h > dialogHeight) {
+				var l = Math.floor(_9.l + (p ? p.x : (_9.w - bb.w) / 2)), t = Math.floor(_9.t + (p ? p.y : (_9.h - bb.h) / 2));
+				dojo.style(_8, {left: l + "px", top: t + "px"});
+			}
+		}
+	};
+}
+
+/**
+ * Creates and displays a new Dojo Dialog.  An Ajax call is made by Dojo under
+ * the hood to retrieve the URL contents for display when the url parameter is
+ * not null.
+ *
+ * If the url is null, then a Dialog with the id and title and
+ * no content will be created and placed on the global dialog JavaScript
+ * variable.  In this case, content will need to be manually set on the dialog
+ * and then shown to the user.
+ *
+ * @param url The URL to load into the Dojo Dialog content pane (may be null).
+ * @param dTitle The Dialog title
+ * @param dialogId The widgit ID
+ */
+function newDialog(url, dTitle, dialogId) {
+	if (dialogId == null || dialogId == '') {
+		// We absolutely must have a dialogId or else we just throw an alert error and don't show the dialog at all.
+		alert('Error Loading Page');
+	} else {
+		// Default dialog title if not provided
+		var name = (dTitle == null || dTitle == '') ? 'New Window' : cleanStr(dTitle);
+
+		// Destroy all potentially opened dialogs in history if they are not open.
+		// first check for the current dialog id being passed in and deal w/ the current active dialog variable.
+
+		// NOTE: this variable 'dialog' is a global!
+		dialog = dijit.byId(dialogId);
+		if (dialog) {
+			// prevents:
+			// exception in animation handler for: onEnd
+			// dojo.js:16 TypeError: Cannot read property 'nodeType' of null
+			dialog.hide();
+			dialog.destroy();
+			dialog = null;
+		}
+
+		// Now check for history of all ids and remove all non-open dialogs as well.
+		// This keeps everything clean and fresh every time a new dialog is opened.
+		// The global array of ids should really only grow in size when dealing w/ nested dialogs.
+		var tempArray = [];
+		for (var i = 0; i < dialogIdArray.length; i++) {
+			var existingDialog = dijit.byId(dialogIdArray[i]);
+			if (existingDialog) {
+				if (!existingDialog.open) {
+					existingDialog.destroy();
+				} else {
+					// Dialog in question was open, so it must mean that we are in a nested set of dialogs.  Do not delete it and keep it in the array of opened dialogs.
+					tempArray[tempArray.length] = dialogIdArray[i];
+				}
+			}
+		}
+		dialogIdArray = tempArray;
+		// Create a new dojox.Dialog if reuse parameter is not true
+		if (dialog == null) {
+			dialog = new dojox.Dialog({
+				id: dialogId,
+				title: name,
+				preventCache: true,
+				onDownloadEnd: function () {
+					dialog.show();
+
+				},
+				onDownloadError: function (error) {
+					console.log("newDialog download error: " + error);
+				},
+				onContentError: function (error) {
+					console.log("newDialog content error: " + error);
+				}
+			});
+
+			// URL can be null when creating a Dialog
+			if (url != null) {
+				dialog.attr('href', url);
+			}
+
+			customizeDialog(dialog);
+		} else if (dialog.onreload) {
+			dialog.onreload();
+		}
+
+		// Only show the dialog if the url was provided.
+		// Otherwise the JSP is in control of populating
+		// the Dialog content and showing it to the user.
+		if (url != null) {
+			dialog.show();
+		}
+
+		dialogIdArray[dialogIdArray.length] = dialogId;
+	}
+
+	dojo.connect(dialog, 'onShow', null, function () {
+		dojo.query('.customSelect', this.domNode).forEach(function (select) {
+			if ($) {
+				$(select).fohoDropdown();
+			}
+		});
+	});
+
+	return false;
+}
+
+/**
+ * A routine used by pages loaded through a Dialog so that they can keep track of the dialog they were loaded in.
+ * The global dialog can change as new dialogs are loaded so this is important if the page needs to take actions on its own dialog.
+ */
+function retrieveDialog() {
+	return dialog;
+}
+
+/**
+ * Submits the dynamic form via Ajax and closes the Dojo Dialog widgit.
+ *
+ * @param theForm The dynamic form to submit
+ * @param currentDialog
+ */
+function closeDialog(theForm, currentDialog) {
+	if (currentDialog != null) {
+		dialog = currentDialog;
+	}
+	dojo.xhrPost({form: theForm});
+	dojo.destroy(theForm);
+	dialog.hide();
+}
+
+/**
+ * Refreshes the content pane of an existing Dojo Dialog with the results of
+ * the dynamic form submission. If the form submission does not return any
+ * data, the dialog will be automatically hidden.
+ *
+ * @param theForm The dynamic form to submit
+ * @param currentDialog Allows the user to explicitly tell the refresh routine which dialog it should be refreshing for.
+ *                         This is needed when dealing with nested dialogs.  It is probably good practice to always pass in the proper dialog whenever you can.
+ *                         Otherwise there is the risk of misuse of the global variable set within this .js file, especially when dealing with nested dialogs.
+ */
+function refreshDialog(theForm, currentDialog) {
+	if (currentDialog != null) {
+		dialog = currentDialog;
+	}
+
+	dojo.xhrPost({
+		form: theForm,
+		load: function (data) {
+			if (typeof data !== 'undefined' && data !== null && data.length > 0) {
+				dialog.containerNode.innerHTML = data;	// Refresh the content pane
+
+				// Evaluate script tags within the Ajax response
+				dojo.query("script", dialog.containerNode).forEach(function (node) {
+					var script = dojo.create("script");
+					script.text = node.text;
+					document.getElementsByTagName('body')[0].appendChild(script);
+				});
+
+				var DELAY = 100;
+				setTimeout(function () {
+					dialog.layout();
+				}, DELAY);	// Redraw the dialog (wait 100 ms for DOM to reload)
+				dojo.destroy(theForm);					// Destroy the dynamic form
+				dojo.removeClass(dojo.body(), "wait");  // Remove the wait class if its there.
+
+				// Reformat custom dropdowns (requires jQuery)
+				dojo.query('.customSelect', dialog.containerNode).forEach(function (select) {
+					if ($) {
+						$(select).fohoDropdown();
+					}
+				});
+			} else {
+				dialog.hide();
+			}
+		}
+	});
+}
+
+/**
+ * Updates the content pane of an existing Dojo Dialog with the results of
+ * the new HREF.  Used when the updated content originates from an <a> tag.
+ *
+ * @param newHref The new HREF to load into the Dojo Dialog content pane
+ * @param currentDialog
+ * @param dTitle desired new title
+ * @param mix
+ * @param callbackFn
+ */
+function updateDialog(newHref, currentDialog, dTitle, mix, callbackFn) {
+	if (currentDialog != null) {
+		dialog = currentDialog;
+	}
+	var mixin = {};
+	if (mix !== undefined) {
+		mixin = mix;
+	}
+	dojo.xhrGet(dojo.mixin(mixin, {
+		url: newHref,
+		preventCache: true,
+		error: function (error) {
+			console.log("updateDialog error: " + error);
+		},
+		load: function (data) {
+			dialog.containerNode.innerHTML = data;	// Refresh the content pane
+
+			// Evaluate script tags within the Ajax response
+			dojo.query("script", dialog.containerNode).forEach(function (node) {
+				var script = dojo.create("script");
+				script.text = node.text;
+				document.getElementsByTagName('body')[0].appendChild(script);
+			});
+
+			var DELAY = 100;
+			setTimeout(function () {
+				dialog.layout();
+			}, DELAY);			// Redraw the dialog (wait 100 ms for DOM to reload)
+			dojo.removeClass(dojo.body(), "wait");						// Remove the wait class if its there.
+
+			// Reformat custom dropdowns (requires jQuery)
+			dojo.query('.customSelect', dialog.containerNode).forEach(function (select) {
+				if ($) {
+					$(select).fohoDropdown();
+				}
+			});
+			if (callbackFn !== undefined && typeof callbackFn === 'function') {
+				callbackFn();
+			}
+		}
+	}));
+
+	if (dTitle && dTitle != '') {
+		dTitle = cleanStr(dTitle);
+		dialog.attr("title", dTitle);
+	}
+
+	return false;
+}
+
+/**
+ * Opens a pop-up window to the target URL. The window dimensions may also be
+ * specified, though defaults will be used if they are not present.
+ *
+ * @param targetURL The target URL for the window to open
+ * @param width The pop-up window width (optional)
+ * @param height The pop-up window height (optional)
+ * @param top The pop-up window top coordinate (optional)
+ * @param left The pop-up window left coordinate (optional)
+ */
+function openPopupToURL(targetURL, width, height, top, left) {
+	var VERTICAL_OFFSET = 50;
+	if (!width) {
+		width = screen.availWidth - 10;
+	}
+	if (!height) {
+		height = screen.availHeight - VERTICAL_OFFSET;
+	}
+	if (!top) {
+		top = 0;
+	}
+	if (!left) {
+		left = 0;
+	}
+
+	var windowName = (new Date()).valueOf();
+	var attr = "width=" + width + ",height=" + height + ",menubar=no,location=no,scrollbars=yes,toolbar=no,status=yes,left=" + left + ",top=" + top + ",screenX=" + left + ",screenY=" + top + ",resizable=yes";
+	window.open(targetURL, windowName, attr);
+}
+
+/**
+ * Cleans string of character combinations that offend JavaScript/Dojo at
+ * runtime.
+ *
+ * @param str The string to clean.
+ * @return a cleaned string.
+ */
+function cleanStr(str) {
+	return str.replace("-#", "#");
+}
+
+/**
+ * Moves selected options from one select list to another.
+ *
+ * @param fromSelect The ID of the from select list
+ * @param toSelect The ID of the to select list
+ * @param messageIfEmpty
+ * @return true if options were moved, false otherwise
+ */
+function moveOptions(fromSelect, toSelect, messageIfEmpty) {
+	var from = dojo.byId(fromSelect);
+	var to = dojo.byId(toSelect);
+	var anyMoved = false;
+
+	// Clear out the empty message option in the destination select, if present
+	if (messageIfEmpty && to.options.length == 1 && to.options[0].value == "") {
+		to.options.length = 0;
+	}
+
+	for (var i = 0; i < from.length; i++) {
+		if (from.options[i].selected && from.options[i].text != messageIfEmpty) {
+			// 1. Capture option text and value information
+			var theText = from.options[i].text;
+			var theValue = from.options[i].value;
+
+			var isSelected = from.options[i].selected;
+			// 2. Delete the option on the from list
+			from.options[i] = null;
+
+			// 3. Create new Option on to list
+			var newOption = new Option(theText, theValue);
+			if (isSelected) {
+				newOption.selected = true;
+			}
+			to.options[to.length] = newOption;
+			anyMoved = true;
+			i--;
+		}
+	}
+
+	// Sets the empty message on the source select if it no longer has options
+	if (anyMoved && messageIfEmpty && from.length == 0) {
+		addMessageIfEmpty(from, messageIfEmpty);
+	}
+
+	return anyMoved;
+}
+
+/**
+ * Add a dummy item to a select element if it is empty.
+ *
+ * @param select the ID of the element to modify
+ * @param messageIfEmpty the message to add
+ */
+function addMessageIfEmpty(select, messageIfEmpty) {
+	select = dojo.byId(select);
+	if (select.length == 0) {
+		select.options[0] = new Option(messageIfEmpty, '');
+	}
+}
+
+/**
+ * Sorts the provided select list (DOM node or ID) by option text.
+ *
+ * @param list The select list to sort. Can also take an Option Array().
+ */
+function sortList(list) {
+	var select = dojo.byId(list);
+	var selectArray = [];
+	var options = (select.options) ? select.options : select;
+
+	for (var i = 0; i < select.length; i++) {
+		selectArray[i] = [];
+		selectArray[i][0] = options[i].text.toUpperCase();
+		selectArray[i][1] = options[i].value;
+		selectArray[i][2] = options[i].text;
+		selectArray[i][3] = options[i].selected;
+	}
+
+	selectArray.sort();
+
+	for (var i = 0; i < select.length; i++) {
+		options[i].selected = selectArray[i][3];
+		options[i].text = selectArray[i][2];
+		options[i].value = selectArray[i][1];
+	}
+}
+
+/**
+ * Selects all options on the provided select list (DOM node or ID).
+ * NOTE: Currently ignores options with empty values.
+ *
+ * @param list The select list.
+ * @param convertToMultiple Converts the select list to allow multiple selected options (optional)
+ */
+function selectAll(list, convertToMultiple) {
+	var select = dojo.byId(list);
+
+	if (select) {
+		if (convertToMultiple) {
+			select.multiple = true;
+			select.focus(); // for IE 6
+		}
+
+		for (var i = 0; i < select.options.length; i++) {
+			if (select.options[i].value != "") {
+				select.options[i].selected = true;
+			}
+		}
+	}
+}
+
+/**
+ * Unselects all options on the provided select list (DOM node or ID).
+ *
+ * @param list The select list.
+ */
+function unselectAll(list) {
+	var select = dojo.byId(list);
+
+	for (var i = 0; i < select.options.length; i++) {
+		select.options[i].selected = false;
+	}
+}
+
+/**
+ * Replaces common HTML special characters with their natural character values.
+ *
+ * @param s The string containing the HTML special characters to convert.
+ * @param lineBreaksToSpace True to convert \n and \r to a space.
+ * @return The string with the converted HTML special characters.
+ */
+function convertHTMLEntities(s, lineBreaksToSpace) {
+	s = decodeHTMLEntities(s);
+	if (typeof lineBreaksToSpace === 'undefined' || lineBreaksToSpace) {
+		s = convertLinebreaksToSpace(s);
+	}
+
+	return s;
+}
+
+/**
+ * Replaces HTML character entities with their natural character values, but preserves html tags
+ *
+ * @param html
+ * @returns The input string with the HTML character entities decoded.
+ */
+function decodeHTMLEntities(html) {
+	var textAreaElementAfterDecodingHtmlCharacterEntities = document.createElement("textarea");
+	textAreaElementAfterDecodingHtmlCharacterEntities.innerHTML = html;
+	return textAreaElementAfterDecodingHtmlCharacterEntities.value;
+}
+
+/**
+ * Replace line breaks, \n and \r, with a space.
+ *
+ * @param s The string containing line breaks to convert to space
+ * @returns The string with line breaks converted to space
+ */
+function convertLinebreaksToSpace(s) {
+	s = s.replace(/\r/g, ' ');
+	s = s.replace(/\n/g, ' ');
+
+	return s;
+}
+
+/**
+ * Adds the endsWith(String) method to the JavaScript String prototype.
+ *
+ * @param str The String that ends this String.
+ * @return true if str ends this String, false otherwise.
+ */
+String.prototype.endsWith = function (str) {
+	if (this.length < str.length) {
+		return false;
+	}
+
+	var i = this.length;
+	var j = str.length;
+	while (j > 0) {
+		if (this.charAt(--i) != str.charAt(--j)) {
+			return false;
+		}
+	}
+
+	return true;
+};
+
+/**
+ * Adds the startsWith(String) method to the JavaScript String prototype.
+ *
+ * @param str The String that starts this String.
+ * @return true if str starts this String, false otherwise.
+ */
+String.prototype.startsWith = function (str) {
+	return this.indexOf(str) === 0;
+};
+
+/**
+ * Set the item display to block if visibility is true, or to none if
+ * visibility is false.
+ *
+ * @param item The item to set its display style.
+ * @param visible Shows item if true, hides item if false.
+ * @param visibleDisplay The visible display type (block, inline, inline-block, inline-table, list-item, run-in, table, table-caption, table-cell, table-column, table-column-group, table-footer-group, table-header-group, table-row table-row-group, inherit)
+ */
+function setItemDisplay(item, visible, visibleDisplay) {
+	var node = dojo.byId(item);
+
+	if (visibleDisplay == undefined) {
+		visibleDisplay = '';
+	}
+
+	if (node) {
+		node.style.display = (visible) ? visibleDisplay : "none";
+	}
+}
+
+/**
+ * Set the item visibility to visible if visibility is true, or to hidden if
+ * visibility is false. This function does not affect the layout of the page
+ * like setItemDisplay().
+ *
+ * @param item The item to set its visibility style.
+ * @param visible Shows item if true, hides item if false.
+ */
+function setItemVisibility(item, visible) {
+	var node = dojo.byId(item);
+
+	if (node) {
+		node.style.visibility = (visible) ? "visible" : "hidden";
+	}
+}
+
+//makes a div with a certain id visible
+function showDiv(divid) {
+	var mydiv = document.getElementById(divid);
+	if (mydiv.style.display == 'none') {
+		mydiv.style.display = 'block';
+	}
+}
+
+// makes a div with a certain id hidden
+function hideDiv(divid) {
+	document.getElementById(divid).style.display = 'none';
+}
+
+/**
+ * Sets the submit action (usually hidden form fields) when one of several
+ * form image buttons is pressed.
+ *
+ * @param actionName The id of the hidden form field to set.
+ */
+function setAction(actionName) {
+	// 1. Clear out any previous set values
+	dojo.query('.submits').forEach(function (input) {
+		input.value = '';
+	});
+
+	// 2. Set the action
+	dojo.byId(actionName).value = "go";
+}
+
+/**
+ * Toggles the disabled setting on an input field identified by inputId.
+ *
+ * @param chkBox The checkbox that drives the disabled setting
+ * @param inputId The DOM ID of the input to toggle
+ */
+function toggleInputDisable(chkBox, inputId) {
+	var input = dojo.byId(inputId);
+
+	input.disabled = !chkBox.checked;
+}
+
+/**
+ * Formats a number with grouped thousands
+ * original by: Jonas Raoni Soares Silva (http://www.jsfromhell.com)
+ * original version: 1103.1210
+ * discuss at: http://phpjs.org/functions/numberFormat
+ *
+ * @param number number to format
+ * @param decimals number of digits after decimal (default 0)
+ * @param decPoint symbol to use for decimal point (defult ".")
+ * @param thousandsSep symbol to use to separate thousands (default ",")
+ * @param dropLeadingZero trim leading zero (e.g., 0.1 -> .1) (default false)
+ * @returns number as formatted string according to args
+ */
+function numberFormat(number, decimals, decPoint, thousandsSep, dropLeadingZero) {
+	// Strip all characters but numerical ones.
+	number = (number + '').replace(/[^0-9+\-Ee.]/g, '');
+	var n = !isFinite(+number) ? 0 : +number,
+		prec = !isFinite(+decimals) ? 0 : Math.abs(decimals),
+		sep = (typeof thousandsSep === 'undefined') ? ',' : thousandsSep,
+		dec = (typeof decPoint === 'undefined') ? '.' : decPoint,
+		toFixedFix = function (n, prec) {
+			var k = Math.pow(10, prec);
+			return '' + Math.round(n * k) / k;
+		};
+
+	// Fix for IE parseFloat(0.55).toFixed(0) = 0;
+	var s = (prec ? toFixedFix(n, prec) : '' + Math.round(n)).split('.');
+
+	if (s[0].length > 3) {
+		s[0] = s[0].replace(/\B(?=(?:\d{3})+(?!\d))/g, sep);
+	}
+	if ((s[1] || '').length < prec) {
+		s[1] = s[1] || '';
+		s[1] += new Array(prec - s[1].length + 1).join('0');
+	}
+	if (dropLeadingZero === true) {
+		s[0] = s[0].replace(/^(-)?0$/g, "$1");
+		if (!s[0] && !s[1]) {
+			s[0] = "0";
+		}
+	}
+	return s.join(dec);
+}
+
+
+/**
+ * Used by the BlockAssessmentScorecard.jsp include to show information
+ * about the dimension and bucket when someone clicks on one of the five
+ * sections of the scorecard.
+ *
+ * @param popUpPage The pop-up page to show
+ * @param dimensionId The dimension primary key
+ * @param bucket An integer from 1-5 corresponding to the scorecard section
+ */
+function showDimensionBucketInfo(popUpPage, dimensionId, bucket) {
+	popUpPage += '?dimensionId=' + dimensionId + '&bucket=' + bucket;
+	newWindow(popUpPage, 'bucketDetails', '600', '480', 'yes');
+}
+
+
+/**
+ * Used to support setting innerText across browsers as Firefox has its own
+ * attribute called textContent. As of 06/23/2011 Dojo does not support this
+ * hence we do it ourselves.
+ *
+ * @param item The item to set the innerText on
+ * @param text The text to set
+ */
+function setInnerText(item, text) {
+	if (document.all) {
+		item.innerText = text;
+	} else { // firefox
+		item.textContent = text;
+	}
+}
+
+var doubleClick = 0;
+
+/**
+ * Prevent multiple form submission on double-click
+ */
+function checkDoubleClick() {
+	if (doubleClick == 0) {
+		doubleClick = 1;
+		return true;
+	}
+	return false;
+}
+
+/**
+ * Determines if a field is exceeding the maximum size and truncates the
+ * string if it is over the limit.  Useful for enforcing max length on
+ * HTML textareas.
+ */
+function maxlength(field, size) {
+	if (field.value.length > size) {
+		field.value = field.value.substring(0, size);
+	}
+}
+
+/**
+ * Returns true if the field is numeric, false otherwise.
+ */
+function isNumeric(field) {
+	return field.match(/(^[-]?\d*(\.\d+)?$)|(^[-]?\d{1,3}(,\d{3})+(\.\d+)?$)/);
+}
+
+/**
+ * Submits form when Enter key is pressed.  Use with the following HTML:
+ *
+ * <input type="text" onkeypress="return submitOnEnter(this, event)"/>
+ */
+function submitOnEnter(element, event) {
+	if (event && event.keyCode == 13) {
+		element.form.submit();
+		return false;
+	}
+
+	return true;
+}
+
+/**
+ * Checks for IE
+ *
+ * returns version number if IE, false if not
+ */
+function isIE() {
+	var myNav = navigator.userAgent.toLowerCase();
+	return (myNav.indexOf('msie') != -1) ? parseInt(myNav.split('msie')[1]) : false;
+}
+
+/**
+ * Attempts to close current window
+ *
+ * This can fail in browsers where the window was opened from an outside link.
+ * This should only be used when it's guarenteed that we created the current window otherwise use closeWindowOrMessage()
+ * This really is used in modern practices anymore.
+ */
+function tryToCloseThisWindow() {
+	var thisWindow = window.self;
+	thisWindow.opener = window.self;
+	thisWindow.close();
+}
+
+/**
+ * Attempts to close current window using dialog with default message in case the broswer doesn't allow it.
+ *
+ */
+function closeWindow() {
+	//Needs to be localized
+	var notLocalizedMsg = 'The browser is preventing us from closing this window, you may now close it';
+	closeWindowOrMessage('dialogCloseWindowNotification', notLocalizedMsg)
+}
+
+/**
+ * Attempts to close current window using tryToCloseThisWindow()
+ *
+ * Displays provided message in a dialog if closing window fails. Parameters cannot be empty, validation done in newStaticDialog()
+ *
+ *  @param dialogID Dialog ID needed by the dialog
+ *  @param dTitle Dialog Title or information
+ */
+function closeWindowOrMessage(dialogID, dTitle) {
+	tryToCloseThisWindow();
+	newStaticDialog(dialogID,dTitle);
+}

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<string>scn</string>
+	<string>xcodeproj</string>
+	<string>tkv</string>
+	<string>dsym</string>
+	<string>ccc</string>
+	<string>mindnode</string>
+	<string>mproject</string>
+	<string>card</string>
+	<string>cptext</string>
+	<string>bentotemplate</string>
+	<string>scene</string>
+	<string>emberbackup</string>
+	<string>appex</string>
+	<string>whink</string>
+	<string>xcworkspace</string>
+	<string>tkp</string>
+	<string>fcarch</string>
+	<string>nbn</string>
+	<string>cpweb</string>
+	<string>tka</string>
+	<string>cpimage</string>
+	<string>soundhoundbookmark</string>
+	<string>lslibrary</string>
+	<string>pzdoc</string>
+	<string>ulproject</string>
+	<string>dayone</string>
+	<string>lrdata</string>
+	<string>goodnotes</string>
+	<string>scriv</string>
+	<string>rgd</string>
+	<string>logarchive</string>
+	<string>mindproj</string>
+	<string>embersnap</string>
+	<string>qvnote</string>
+	<string>soundhoundhistory</string>
+	<string>scd</string>
+	<string>_ultheme</string>
+	<string>pxm</string>
+	<string>epub</string>
+	<string>cplink</string>
+	<string>neunote</string>
+	<string>qvlibrary</string>
+	<string>iwork-tmp</string>
+	<string>_ulstyle</string>
+	<string>storyboardc</string>
+	<string>qvnotebook</string>
+	<string>embermdbackup</string>
+	<string>studydeck</string>
+	<string>ulysses</string>
+	<string>playgroundbook</string>
+</array>
+</plist>
